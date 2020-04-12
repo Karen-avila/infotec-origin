@@ -8,7 +8,7 @@ Clone the project:
 
 Install dependencies:
 
-    $ cd originacion
+    $ cd infotec-bancodelbienestar-originacion
     
     $ npm install
 
