@@ -1,0 +1,10 @@
+.logoFood {
+    display: inline-block;
+    height: auto;
+    width: 180px;
+}
+
+.responsive-img{
+    width: 100%;
+    height: auto;
+}

@@ -1,0 +1,14 @@
+.logoHead {
+    display: inline-block;
+    height: 50px;
+    width: 128px;
+}
+
+.logoHead>img {
+    vertical-align: middle
+}
+
+.responsive-img{
+    width: 100%;
+    height: auto;
+}

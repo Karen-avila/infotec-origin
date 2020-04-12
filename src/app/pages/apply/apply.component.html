@@ -1,0 +1,209 @@
+<app-header></app-header>
+
+<!---->
+<form >
+  <ul class="stepper parallel horizontal">
+      <li class="step">
+          <div class="step-title waves-effect waves-dark">Cuenta</div>
+          <div class="step-content">
+              <div class="row">
+                  <div class="input-field col s12">
+                      <i class="material-icons prefix">account_circle</i>
+                      <input id="email" type="email" required name='email' class="validate">
+                      <label for="email">Email</label>
+                  </div>
+                  <div class="input-field col s12">
+                      <i class="material-icons prefix">account_circle</i>
+                      <input id="password" type="password" required name='password' class="validate">
+                      <label for="password">Password</label>
+                  </div>
+                  <div class="input-field col s12">
+                      <i class="material-icons prefix">account_circle</i>
+                      <input id="passwordconfirm" type="password" required name='passwordconfirm'
+                          class="validate">
+                      <label for="passwordconfirm">Confirma el Password</label>
+                  </div>
+              </div>
+              <div class="step-actions">
+
+                  <button class="waves-effect waves-dark btn next-step">Siguiente</button>
+
+              </div>
+          </div>
+      </li>
+      <li class="step">
+          <div class="step-title waves-effect waves-dark">Datos Personales</div>
+          <div class="step-content">
+              <div class="row">
+                  <div class="input-field col s12">
+                      <i class="material-icons prefix">account_circle</i>
+                      <input id="name" type="text" name='name'>
+                      <label for="name">Nombre completo</label>
+                  </div>
+                  <div class="input-field col s12">
+                      <i class="material-icons prefix">account_balance</i>
+                      <textarea id="address" class="materialize-textarea"></textarea>
+                      <label for="address">Direccion</label>
+                  </div>
+                  <div class="input-field col s12 m6 l6">
+                      <i class="material-icons prefix">phone</i>
+                      <input id="phone" type="number"  name='phone'>
+                      <label for="phone">Telefono</label>
+                  </div>
+                  <div class="input-field col s12 m6 l6">
+                      <select>
+                          <option value="" disabled selected>Selecciona una opcion</option>
+                          <option value="1">Tuxtla Gutierrez</option>
+                          <option value="2">Comitan</option>
+                          <option value="3">San Cristobal</option>
+                      </select>
+                      <label>Ciudad</label>
+                  </div>
+              </div>
+              <div class="step-actions">
+                  <button class="waves-effect waves-dark btn next-step">Siguiente</button>
+                  <button class="waves-effect waves-dark btn previous-step">Atras</button>
+              </div>
+
+          </div>
+      </li>
+      <li class="step">
+          <div class="step-title waves-effect waves-dark">Subir Documentos</div>
+          <div class="step-content">
+              <div class="row">
+                  <div class="file-field input-field">
+                      <div class="btn">
+                          <span>Identificacion de Guia Certificado</span>
+                          <input type="file">
+                      </div>
+                      <div class="file-path-wrapper">
+                          <input class="file-path validate" type="text">
+                      </div>
+                  </div>
+                  <div class="input-field col s12 m6 l6">
+                      <select multiple>
+                          <option value="" disabled>Selecciona uno o mas idiomas</option>
+                          <option value="1">Ingles</option>
+                          <option value="2">Frances</option>
+                          <option value="3">Aleman</option>
+                      </select>
+                      <label>Idiomas</label>
+                  </div>
+                  <div class="input-field col s12 m6 l6">
+                      <select multiple>
+                          <option value="" disabled >Selecciona una o mas opciones</option>
+                          <option value="1">Aventura</option>
+                          <option value="2">General</option>
+                      </select>
+                      <label>Tipo de Turismo</label>
+                  </div>
+                  <div class="input-field col s12">
+                      <i class="material-icons prefix">account_balance</i>
+                      <textarea id="about" class="materialize-textarea"></textarea>
+                      <label for="about">Acerca de mis servicios que ofrezco</label>
+                  </div>
+              </div>
+              <div class="step-actions">
+                  <button class="waves-effect waves-dark btn next-step">Siguiente</button>
+                  <button class="waves-effect waves-dark btn previous-step">Atras</button>
+              </div>
+          </div>
+      </li>
+      <li class="step">
+          <div class="step-title waves-effect waves-dark">Datos Socioecónomicos</div>
+          <div class="step-content">
+              <div class="row">
+                  <div class="input-field col s12">
+                      <i class="material-icons prefix">account_circle</i>
+                      <input id="name" type="text" name='name'>
+                      <label for="name">Nombre completo</label>
+                  </div>
+                  <div class="input-field col s12">
+                      <i class="material-icons prefix">account_balance</i>
+                      <textarea id="address" class="materialize-textarea"></textarea>
+                      <label for="address">Direccion</label>
+                  </div>
+                  <div class="input-field col s12 m6 l6">
+                      <i class="material-icons prefix">phone</i>
+                      <input id="phone" type="number"  name='phone'>
+                      <label for="phone">Telefono</label>
+                  </div>
+                  <div class="input-field col s12 m6 l6">
+                      <select>
+                          <option value="" disabled selected>Selecciona una opcion</option>
+                          <option value="1">Tuxtla Gutierrez</option>
+                          <option value="2">Comitan</option>
+                          <option value="3">San Cristobal</option>
+                      </select>
+                      <label>Ciudad</label>
+                  </div>
+              </div>
+              <div class="step-actions">
+                  <button class="waves-effect waves-dark btn next-step">Siguiente</button>
+                  <button class="waves-effect waves-dark btn previous-step">Atras</button>
+              </div>
+
+          </div>
+      </li>
+      <li class="step">
+          <div class="step-title waves-effect waves-dark">Descarga de Documentos</div>
+          <div class="step-content">
+              <div class="row">
+                  <div class="file-field input-field">
+                      <div class="btn">
+                          <span>Identificacion de Guia Certificado</span>
+                          <input type="file">
+                      </div>
+                      <div class="file-path-wrapper">
+                          <input class="file-path validate" type="text">
+                      </div>
+                  </div>
+                  <div class="input-field col s12 m6 l6">
+                      <select multiple>
+                          <option value="" disabled>Selecciona uno o mas idiomas</option>
+                          <option value="1">Ingles</option>
+                          <option value="2">Frances</option>
+                          <option value="3">Aleman</option>
+                      </select>
+                      <label>Idiomas</label>
+                  </div>
+                  <div class="input-field col s12 m6 l6">
+                      <select multiple>
+                          <option value="" disabled >Selecciona una o mas opciones</option>
+                          <option value="1">Aventura</option>
+                          <option value="2">General</option>
+                      </select>
+                      <label>Tipo de Turismo</label>
+                  </div>
+                  <div class="input-field col s12">
+                      <i class="material-icons prefix">account_balance</i>
+                      <textarea id="about" class="materialize-textarea"></textarea>
+                      <label for="about">Acerca de mis servicios que ofrezco</label>
+                  </div>
+              </div>
+              <div class="step-actions">
+                  <button class="waves-effect waves-dark btn next-step">Siguiente</button>
+                  <button class="waves-effect waves-dark btn previous-step">Atras</button>
+              </div>
+          </div>
+      </li>
+      <li class="step">
+          <div class="step-title waves-effect waves-dark">Felicidades!!!</div>
+          <div class="step-content">
+              <div class="row">
+                  Felicidades!!!
+              </div>
+              <div class="step-actions">
+
+                  <input type="submit" class="waves-effect waves-dark btn next-step"      value="SUBMIT" /> 
+                  <button class="waves-effect waves-dark btn previous-step">Atras</button>
+              </div>
+          </div>
+      </li>
+  </ul>
+</form>
+
+<!---->
+
+
+<app-footer></app-footer>
