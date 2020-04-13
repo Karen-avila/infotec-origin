@@ -34,12 +34,23 @@
             <div class="step-title waves-effect waves-dark">Datos Personales</div>
             <div class="step-content">
                 <div class="row">
-                    <div class="input-field col s12 m6 l6">
+                    <div class="input-field col s12">
+                                <th><label>
+                                  <input name="group1" type="radio" value="verdadero" [(ngModel)]="model"/>
+                                  <span>Persona Fisica con Actividad Empresarial</span>
+                                </label></th>
+                                <th><label>
+                                  <input name="group1" type="radio" value="falso" [(ngModel)]="model"/>
+                                  <span>Regimen de Incorporación Fiscal</span>
+                                </label></th>
+                        </div>
+
+                    <div class="input-field col s12 m6 l6"  >
                         <i class="material-icons prefix">account_circle</i>
                         <input id="name" type="text" name='name'>
                         <label for="name">Nombre(s)</label>
                     </div>
-                    <div class="input-field col s12 m6 l6">
+                    <div class="input-field col s12 m6 l6" >
                         <i class="material-icons prefix">account_circle</i>
                         <input id="name" type="text" name='name'>
                         <label for="name">Apellido paterno</label>
@@ -58,7 +69,7 @@
                           <label>Genero</label>
                     </div>
                     <div class="input-field col s12 m6 l6">
-                        <i class="material-icons prefix">calendar_todayr</i>
+                        <i class="material-icons prefix">calendar_today</i>
                         <textarea id="calendar" type="date" class="materialize-textarea"></textarea>
                         <label>Fecha de nacimiento</label>              
                     </div>
@@ -79,14 +90,7 @@
                         </select>
                           <label>País de nacimiento</label>
                         </div>
-
-                        <div class="input-field col s12 m6 l6">
-                            <i class="material-icons prefix">aspect_ratio</i>
-                            <textarea id="curp" class="materialize-textarea"></textarea>
-                            <label for="curp">CURP</label>
-                        </div>
-
-                        <div class="input-field col s12 m6 l6">
+                        <div class="input-field col s12">
                             <i class="material-icons prefix">business_center</i>
                         <textarea id="occupation" class="materialize-textarea"></textarea>
                         <label for="occupation">Ocupación</label>
@@ -100,6 +104,11 @@
                         <i class="material-icons prefix">aspect_ratio</i>
                         <textarea id="curp" class="materialize-textarea"></textarea>
                         <label for="curp">CURP</label>
+                    </div>
+                    <div class="input-field col s12 m6 l6" *ngIf="model=='verdadero'">
+                        <i class="material-icons prefix">aspect_ratio</i>
+                        <textarea id="rfc" class="materialize-textarea"></textarea>
+                        <label for="rfc">Registro Federal de Contribuyente</label>
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">phone</i>

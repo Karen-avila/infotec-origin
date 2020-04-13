@@ -12,6 +12,8 @@ import { PagesComponent } from './pages.component';
 import { PAGES_ROUTES } from './pages.routes';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
     declarations:[
@@ -24,7 +26,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
         SharedModule,
         Ng5SliderModule,
         BrowserAnimationsModule,
-        PAGES_ROUTES
+        PAGES_ROUTES,
+        FormsModule 
     ],
     exports:[
         HomeComponent,

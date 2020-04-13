@@ -8,8 +8,14 @@ import { PagesModule } from './pages/pages.module';
 
 import { LoginComponent } from './login/login/login.component';
 import { RegisterComponent } from './login/register/register.component';
-
-
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+ 
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(httpClient: HttpClient) {
+   return new TranslateHttpLoader(httpClient);
+}
 
 
 @NgModule({
@@ -21,7 +27,15 @@ import { RegisterComponent } from './login/register/register.component';
   imports: [
     PagesModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
