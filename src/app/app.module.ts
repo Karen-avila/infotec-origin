@@ -4,33 +4,24 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { Ng5SliderModule } from 'ng5-slider';
+import { PagesModule } from './pages/pages.module';
 
-import { HomeComponent } from './pages/home/home.component';
-import { ApplyComponent } from './pages/apply/apply.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { PagesComponent } from './pages/pages.component';
 import { LoginComponent } from './login/login/login.component';
+import { RegisterComponent } from './login/register/register.component';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    ApplyComponent,
-    HeaderComponent,
-    FooterComponent,
-    PagesComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
-    BrowserAnimationsModule,
+    PagesModule,
     BrowserModule,
-    AppRoutingModule,
-    Ng5SliderModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

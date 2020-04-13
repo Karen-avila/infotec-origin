@@ -1,22 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+
 declare const MStepper: any;
 import * as M from 'materialize-css';
 
 @Component({
-  selector: 'app-apply',
-  templateUrl: './apply.component.html',
-  styleUrls: ['./apply.component.css']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
 })
-export class ApplyComponent implements OnInit {
+export class DashboardComponent implements OnInit {
 
-
-  constructor() {
-
-    
-  }
+  constructor() { }
 
   ngOnInit() {
-    
     var select = document.querySelectorAll('select');
     var instances = M.FormSelect.init(select);
 
@@ -40,11 +36,5 @@ export class ApplyComponent implements OnInit {
    })
 
   }
-
-
-  checkEmailDB(){
-    console.log("hi");
-  }
-  
 
 }

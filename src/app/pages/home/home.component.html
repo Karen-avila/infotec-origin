@@ -63,101 +63,101 @@
 <div class="container">
     <blockquote>
         <p class="flow-text"><b>¿Cómo Funciona?</b></p>
-      </blockquote>
-      <div class="col s10 offset-s1">
+    </blockquote>
+    <div class="col s10 offset-s1">
         <p class="flow-text center-align">Los creditos rapidos que ofrecemos funcionan a nivel nacional en cuotas fijas y en pesos. Comienza a pagarlo dentro de <b>4 meses.</b></p>
-          </div>
-      <div class="row">
-          <div class="col m4 s6 offset-s2">
-            <img class="responsive-img" src="../../assets/Banco-del-Bienestar-Gráficos---ENROLL.png">
-          </div>
-          <div class="col m4 s6 offset-s2">
-            <img class="responsive-img" src="../../assets/Banco-del-Bienestar-Gráficos---PREAP.png">
-          </div>
-          <div class="col m4 s6 offset-s2">
-            <img class="responsive-img" src="../../assets/Banco-del-Bienestar-Gráficos---FORMAL.png">
-          </div>
-      </div>
     </div>
-
-
     <div class="row">
-        <div class="cono2 special col xl7 offset-xl1 l6 offset-l1 m6 offset-m1 s10 offset-s1">
-         
-                    <p class="flow-text center-align">MI PRESTAMO DE HASTA $30,000</p>
-                    <br><br>
-                    <div class="custom-slider">
-                    <ng5-slider [(value)]="valueMon" [options]="optionsMon"></ng5-slider>
-                </div>
-                    <br><br>
-                    <div class="custom-slider">
-                    <ng5-slider [(value)]="valuePlaz" [options]="optionsPlaz"></ng5-slider>
-                </div>
-                    <br><br>
-                    <div class="center-align">
-                        <p class="white-text flow-text cr">Total a Pagar <b>$ {{valueMon+(valueMon*.50)}}</b></p>
-                    </div>
-                    <br><br>
-    <!--
+        <div class="col m4 s6 offset-s2">
+            <img class="responsive-img" src="../../assets/Banco-del-Bienestar-Gráficos---ENROLL.png">
+        </div>
+        <div class="col m4 s6 offset-s2">
+            <img class="responsive-img" src="../../assets/Banco-del-Bienestar-Gráficos---PREAP.png">
+        </div>
+        <div class="col m4 s6 offset-s2">
+            <img class="responsive-img" src="../../assets/Banco-del-Bienestar-Gráficos---FORMAL.png">
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="cono2 special col xl7 offset-xl1 l6 offset-l1 m6 offset-m1 s10 offset-s1">
+
+        <p class="flow-text center-align">MI PRESTAMO DE HASTA $30,000</p>
+        <br><br>
+        <div class="custom-slider">
+            <ng5-slider [(value)]="valueMon" [options]="optionsMon"></ng5-slider>
+        </div>
+        <br><br>
+        <div class="custom-slider">
+            <ng5-slider [(value)]="valuePlaz" [options]="optionsPlaz"></ng5-slider>
+        </div>
+        <br><br>
+        <div class="center-align">
+            <p class="white-text flow-text cr">Total a Pagar <b>$ {{valueMon+(valueMon*.50)}}</b></p>
+        </div>
+        <br><br>
+        <!--
                     <div class="card-panel crd ">
                         <h3 class="black-text">Total a Pagar <b>{{valueMon+(valueMon*.50)}}</b></h3>
                     </div>
                     -->
-                    <div class="center-align">
-                        <a routerLink="/apply" class="pulse waves-effect waves-light large red darken-3 btn"><i class="material-icons right">credit_card</i>Solicitalo Ahora</a>
-                    </div>
-                    <br><br>
+        <div class="center-align">
+            <a routerLink="/apply" class="pulse waves-effect waves-light large red darken-3 btn"><i class="material-icons right">credit_card</i>Solicitalo Ahora</a>
         </div>
-    
-        <div class="crono1 col m4 offset-m1 l3 offset-l1 xl2 offset-xl1 s10 offset-s1">
-            <div class="card crd teal darken-4 white-text z-depth-3">
-                <div class="card-content">
-                    <i class="medium material-icons icon-gold">monetization_on</i>
-                    <p>Monto</p>
-                    <p>{{valueMon}}</p>
-                </div>
-            </div>
-    
-            <div class="card crd teal darken-4 white-text z-depth-3">
-                <div class="card-content">
-                    <i class="material-icons medium icon-gold">date_range</i>
-                    <p>Plazo</p>
-                    <p>{{valuePlaz}}</p>
-                </div>
-            </div>
-    
-            <div class="card crd teal darken-4 white-text z-depth-3">
-                <div class="card-content">
-                    <i class="material-icons medium icon-gold">local_atm</i>
-                    <p>Parcialidad</p>
-                    <p>{{valueMon}}</p>
-                </div>
-            </div>
-    
-        </div>
-    
+        <br><br>
     </div>
+
+    <div class="crono1 col m4 offset-m1 l3 offset-l1 xl2 offset-xl1 s10 offset-s1">
+        <div class="card crd teal darken-4 white-text z-depth-3">
+            <div class="card-content">
+                <i class="medium material-icons icon-gold">monetization_on</i>
+                <p>Monto</p>
+                <p>{{valueMon}}</p>
+            </div>
+        </div>
+
+        <div class="card crd teal darken-4 white-text z-depth-3">
+            <div class="card-content">
+                <i class="material-icons medium icon-gold">date_range</i>
+                <p>Plazo</p>
+                <p>{{valuePlaz}}</p>
+            </div>
+        </div>
+
+        <div class="card crd teal darken-4 white-text z-depth-3">
+            <div class="card-content">
+                <i class="material-icons medium icon-gold">local_atm</i>
+                <p>Parcialidad</p>
+                <p>{{valueMon}}</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
 
 
 
 <div class="container">
-<blockquote>
-    <p class="flow-text"><b>Crédito Personal</b></p>
-  </blockquote>
-  <div class="col s10 offset-s1">
-    <p class="flow-text center-align">Los creditos rapidos que ofrecemos funcionan a nivel nacional en cuotas fijas y en pesos. Comienza a pagarlo dentro de <b>4 meses.</b></p>
-      </div>
-  <div class="row">
-      <div class="col m4 s6 offset-s2">
-        <img class="responsive-img" src="../../assets/Banco-del-Bienestar-Gráficos---RQ1.png">
-      </div>
-      <div class="col m4 s6 offset-s2">
-        <img class="responsive-img" src="../../assets/Banco-del-Bienestar-Gráficos----RQ2.png">
-      </div>
-      <div class="col m4 s6 offset-s2">
-        <img class="responsive-img" src="../../assets/Banco-del-Bienestar-Gráficos---RQ4.png">
-      </div>
-  </div>
+    <blockquote>
+        <p class="flow-text"><b>Crédito Personal</b></p>
+    </blockquote>
+    <div class="col s10 offset-s1">
+        <p class="flow-text center-align">Los creditos rapidos que ofrecemos funcionan a nivel nacional en cuotas fijas y en pesos. Comienza a pagarlo dentro de <b>4 meses.</b></p>
+    </div>
+    <div class="row">
+        <div class="col m4 s6 offset-s2">
+            <img class="responsive-img" src="../../assets/Banco-del-Bienestar-Gráficos---RQ1.png">
+        </div>
+        <div class="col m4 s6 offset-s2">
+            <img class="responsive-img" src="../../assets/Banco-del-Bienestar-Gráficos----RQ2.png">
+        </div>
+        <div class="col m4 s6 offset-s2">
+            <img class="responsive-img" src="../../assets/Banco-del-Bienestar-Gráficos---RQ4.png">
+        </div>
+    </div>
 </div>
 
 
@@ -173,25 +173,25 @@
 <div class="container">
     <blockquote>
         <p class="flow-text"><b>Crédito Empresarial</b></p>
-      </blockquote>
-      <div class="col s10 offset-s1">
+    </blockquote>
+    <div class="col s10 offset-s1">
         <p class="flow-text center-align">Los creditos rapidos que ofrecemos funcionan a nivel nacional en cuotas fijas y en pesos. Comienza a pagarlo dentro de <b>4 meses.</b></p>
-          </div>
-      <div class="row">
-          <div class="col m3 s6 offset-s2">
-            <img class="responsive-img" src="../../assets/Banco-del-Bienestar-Gráficos---RQ1.png">
-          </div>
-          <div class="col m3 s6 offset-s2">
-            <img class="responsive-img" src="../../assets/Banco-del-Bienestar-Gráficos----RQ2.png">
-          </div>
-          <div class="col m3 s6 offset-s2">
-            <img class="responsive-img" src="../../assets/Banco-del-Bienestar-Gráficos---RQ3.png">
-          </div>
-          <div class="col m3 s6 offset-s2">
-            <img class="responsive-img" src="../../assets/Banco-del-Bienestar-Gráficos---RQ4.png">
-          </div>
-      </div>
     </div>
+    <div class="row">
+        <div class="col m3 s6 offset-s2">
+            <img class="responsive-img" src="../../assets/Banco-del-Bienestar-Gráficos---RQ1.png">
+        </div>
+        <div class="col m3 s6 offset-s2">
+            <img class="responsive-img" src="../../assets/Banco-del-Bienestar-Gráficos----RQ2.png">
+        </div>
+        <div class="col m3 s6 offset-s2">
+            <img class="responsive-img" src="../../assets/Banco-del-Bienestar-Gráficos---RQ3.png">
+        </div>
+        <div class="col m3 s6 offset-s2">
+            <img class="responsive-img" src="../../assets/Banco-del-Bienestar-Gráficos---RQ4.png">
+        </div>
+    </div>
+</div>
 
 
 <div class="container">
