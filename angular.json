@@ -98,8 +98,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [
-            ]
+            "scripts": []
           }
         },
         "lint": {
@@ -128,6 +127,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "originacion"
+    }
+  },
+  "defaultProject": "originacion",
+  "cli": {
+    "analytics": false
+  }
 }
