@@ -29,7 +29,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     exports:[
         HomeComponent,
         ApplyComponent,
-        PagesComponent       
+        PagesComponent,
+        SharedModule      
     ]
 })
 

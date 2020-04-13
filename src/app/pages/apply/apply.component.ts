@@ -11,16 +11,13 @@ export class ApplyComponent implements OnInit {
 
 
   constructor() {
-
     
   }
 
   ngOnInit() {
 
-    document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('.modal');
-      var instances = M.Modal.init(elems);
-    });
+    var elems = document.querySelectorAll('.modal');
+    M.Modal.init(elems);
     
     var select = document.querySelectorAll('select');
     var instances = M.FormSelect.init(select);
