@@ -32,7 +32,8 @@ import { FormsModule } from '@angular/forms';
     exports:[
         HomeComponent,
         ApplyComponent,
-        PagesComponent       
+        PagesComponent,
+        SharedModule      
     ]
 })
 
