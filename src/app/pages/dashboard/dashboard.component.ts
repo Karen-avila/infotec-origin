@@ -9,7 +9,7 @@ import * as M from 'materialize-css';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
+  model="falso";
   constructor() { }
 
   ngOnInit() {
