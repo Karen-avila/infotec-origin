@@ -15,7 +15,7 @@ const pagesRoutes: Routes = [
           {path: 'home', component: HomeComponent},
           {path: 'apply', component: ApplyComponent},
           {path: 'dashboard', component: DashboardComponent},
-          //{path: '', redirectTo: '/home', pathMatch: 'full' },
+          {path: '', redirectTo: '/home', pathMatch: 'full' },
         ]
       },
 ];
