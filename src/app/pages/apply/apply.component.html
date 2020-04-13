@@ -49,12 +49,15 @@
                             <input id="passwordconfirm" type="password" required name='passwordconfirm' class="validate">
                             <label for="passwordconfirm">Confirma el Password</label>
                         </div>
-                        <div class="col s12">
+                        <div class="col s12 m6">
                             <li><a routerLink="/login">Si ya tienes cuenta, Inicia Sesión</a></li>
+                        </div>
+                        <div class="col s12 m6">
+                            <li><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Registrarse</a></li>
                         </div>
                     </div>
                     <div class="step-actions">
-                        <button class="waves-effect waves-dark btn" type="submit">Registrarse</button>
+                        <!--       <button class="waves-effect waves-dark btn" type="submit">Registrarse</button> -->
                     </div>
                 </div>
             </li>
@@ -75,6 +78,18 @@
             </li>
         </ul>
         <!---->
+    </div>
+</div>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <h4>Solicitud Enviada</h4>
+        <p class="flow-text"><b>N° de Registro: </b>KJF986JHH32</p>
+        <p class="flow-text">Para continuar activa tu cuenta, revisa tu correo que nos proporcionaste y encontraras las instrucciones para continuar con tu solicitud.</p>
+    </div>
+    <div class="modal-footer">
+        <a routerLink="/home" class="modal-close waves-effect waves-green btn-flat">Aceptar</a>
     </div>
 </div>
 
