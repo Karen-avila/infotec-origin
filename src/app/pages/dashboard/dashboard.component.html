@@ -34,32 +34,86 @@
             <div class="step-title waves-effect waves-dark">Datos Personales</div>
             <div class="step-content">
                 <div class="row">
-                    <div class="input-field col s12">
+                    <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
                         <input id="name" type="text" name='name'>
-                        <label for="name">Nombre completo</label>
+                        <label for="name">Nombre(s)</label>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="name" type="text" name='name'>
+                        <label for="name">Apellido paterno</label>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="name" type="text" name='name'>
+                        <label for="name">Apellido materno</label>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <select>
+                            <option value="" disabled selected>Selecciona una opcion</option>
+                            <option value="1">Femenino</option>
+                            <option value="2">Masculino</option>
+                        </select>
+                          <label>Genero</label>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">calendar_todayr</i>
+                        <textarea id="calendar" type="date" class="materialize-textarea"></textarea>
+                        <label>Fecha de nacimiento</label>              
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                    <select>
+                        <option value="" disabled selected>Selecciona una opcion</option>
+                        <option value="1">Ciudad de México</option>
+                        <option value="2">Pachuca, Hgo.</option>
+                        <option value="3">Guadalajara, Jal.</option>
+                    </select>
+                      <label>Entidad federativa</label>
                     </div>
                     <div class="input-field col s12">
-                        <i class="material-icons prefix">account_balance</i>
+                        <select>
+                            <option value="" disabled selected>Selecciona una opcion</option>
+                            <option value="1">México</option>
+                            <option value="2">Estados Unidos</option>
+                        </select>
+                          <label>País de nacimiento</label>
+                        </div>
+
+                        <div class="input-field col s12 m6 l6">
+                            <i class="material-icons prefix">aspect_ratio</i>
+                            <textarea id="curp" class="materialize-textarea"></textarea>
+                            <label for="curp">CURP</label>
+                        </div>
+
+                        <div class="input-field col s12 m6 l6">
+                            <i class="material-icons prefix">business_center</i>
+                        <textarea id="occupation" class="materialize-textarea"></textarea>
+                        <label for="occupation">Ocupación</label>
+                            </div>
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">house</i>
                         <textarea id="address" class="materialize-textarea"></textarea>
-                        <label for="address">Direccion</label>
+                        <label for="address">Domicilio particular</label>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">aspect_ratio</i>
+                        <textarea id="curp" class="materialize-textarea"></textarea>
+                        <label for="curp">CURP</label>
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">phone</i>
                         <input id="phone" type="number" name='phone'>
-                        <label for="phone">Telefono</label>
+                        <label for="phone">Número de Telefono</label>
                     </div>
-                    <div class="input-field col s12 m6 l6">
-                        <select>
-                          <option value="" disabled selected>Selecciona una opcion</option>
-                          <option value="1">Tuxtla Gutierrez</option>
-                          <option value="2">Comitan</option>
-                          <option value="3">San Cristobal</option>
-                      </select>
-                        <label>Ciudad</label>
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">mail</i>
+                        <textarea id="mail" type="email" class="materialize-textarea"></textarea>
+                        <label for="mail">Correo electronico</label>
                     </div>
                 </div>
-                <div class="step-actions">
+
+                <div class="">
                     <button class="waves-effect waves-dark btn next-step">Siguiente</button>
                     <button class="waves-effect waves-dark btn previous-step">Atras</button>
                 </div>
