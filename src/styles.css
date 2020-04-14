@@ -92,3 +92,14 @@ ul.stepper.horizontal .step.active .step-title::before,
 ul.stepper.horizontal .step.done .step-title::before {
     background-color: #BC955C;
 }
+
+[type="radio"]:checked+span:after,
+[type="radio"].with-gap:checked+span:before,
+[type="radio"].with-gap:checked+span:after {
+    border: 2px solid #9F2241;
+}
+
+[type="radio"]:checked+span:after,
+[type="radio"].with-gap:checked+span:after {
+    background-color: #9F2241;
+}

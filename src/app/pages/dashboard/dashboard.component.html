@@ -2,10 +2,10 @@
 
 <!---->
 <form>
-    <ul class="stepper parallel horizontal">
+    <ul class="stepper linear parallel horizontal">
         <li class="step">
             <div class="step-title waves-effect waves-dark">Cuenta</div>
-            <div class="step-content">
+            <!-- <div class="step-content">
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">account_circle</i>
@@ -23,34 +23,34 @@
                         <label for="passwordconfirm">Confirma el Password</label>
                     </div>
                 </div>
-                <div class="step-actions">
+                  <div class="step-actions">
 
                     <button class="waves-effect waves-dark btn next-step">Siguiente</button>
 
-                </div>
-            </div>
+                </div> 
+            </div>-->
         </li>
         <li class="step">
             <div class="step-title waves-effect waves-dark">Datos Personales</div>
             <div class="step-content">
                 <div class="row">
                     <div class="input-field col s12">
-                                <th><label>
-                                  <input name="group1" type="radio" value="verdadero" [(ngModel)]="model"/>
+                        <th><label>
+                                  <input class="with-gap red darken-4" name="group1" type="radio" value="verdadero" [(ngModel)]="model"/>
                                   <span>Persona Fisica con Actividad Empresarial</span>
                                 </label></th>
-                                <th><label>
-                                  <input name="group1" type="radio" value="falso" [(ngModel)]="model"/>
+                        <th><label>
+                                  <input class="with-gap red darken-4" name="group1" type="radio" value="falso" [(ngModel)]="model"/>
                                   <span>Regimen de Incorporación Fiscal</span>
                                 </label></th>
-                        </div>
+                    </div>
 
-                    <div class="input-field col s12 m6 l6"  >
+                    <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
                         <input id="name" type="text" name='name'>
                         <label for="name">Nombre(s)</label>
                     </div>
-                    <div class="input-field col s12 m6 l6" >
+                    <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
                         <input id="name" type="text" name='name'>
                         <label for="name">Apellido paterno</label>
@@ -66,21 +66,21 @@
                             <option value="1">Femenino</option>
                             <option value="2">Masculino</option>
                         </select>
-                          <label>Genero</label>
+                        <label>Genero</label>
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">calendar_today</i>
-                        <input type="text" class="datepicker">     
-                        <label>Fecha de Nacimiento</label>  
+                        <input type="text" class="datepicker">
+                        <label>Fecha de Nacimiento</label>
                     </div>
                     <div class="input-field col s12 m6 l6">
-                    <select>
+                        <select>
                         <option value="" disabled selected>Selecciona una opcion</option>
                         <option value="1">Ciudad de México</option>
                         <option value="2">Pachuca, Hgo.</option>
                         <option value="3">Guadalajara, Jal.</option>
                     </select>
-                      <label>Entidad federativa</label>
+                        <label>Entidad federativa</label>
                     </div>
                     <div class="input-field col s12">
                         <select>
@@ -88,13 +88,13 @@
                             <option value="1">México</option>
                             <option value="2">Estados Unidos</option>
                         </select>
-                          <label>País de nacimiento</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">business_center</i>
+                        <label>País de nacimiento</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">business_center</i>
                         <textarea id="occupation" class="materialize-textarea"></textarea>
                         <label for="occupation">Ocupación</label>
-                            </div>
+                    </div>
                     <div class="input-field col s12">
                         <i class="material-icons prefix">house</i>
                         <textarea id="address" class="materialize-textarea"></textarea>
@@ -123,8 +123,7 @@
                 </div>
 
                 <div class="">
-                    <button class="waves-effect waves-dark btn next-step">Siguiente</button>
-                    <button class="waves-effect waves-dark btn previous-step">Atras</button>
+                    <button class="waves-effect waves-dark btn">Enviar</button>
                 </div>
 
             </div>
@@ -163,9 +162,9 @@
                         </div>
                     </div>
 
-                    <div class="file-field input-field col s12 m6 l6" >
-                        <div class="btn" >
-                            <span >Estado de cuenta</span>
+                    <div class="file-field input-field col s12 m6 l6">
+                        <div class="btn">
+                            <span>Estado de cuenta</span>
                             <input type="file">
                         </div>
                         <div class="file-path-wrapper">
@@ -174,9 +173,8 @@
                     </div>
 
                 </div>
-                <div class="step-actions">
-                    <button class="waves-effect waves-dark btn next-step">Siguiente</button>
-                    <button class="waves-effect waves-dark btn previous-step">Atras</button>
+                <div class="">
+                    <button class="waves-effect waves-dark btn ">Enviar</button>
                 </div>
             </div>
         </li>
@@ -210,8 +208,7 @@
                     </div>
                 </div>
                 <div class="step-actions">
-                    <button class="waves-effect waves-dark btn next-step">Siguiente</button>
-                    <button class="waves-effect waves-dark btn previous-step">Atras</button>
+                    <button class="waves-effect waves-dark btn ">Enviar</button>
                 </div>
 
             </div>
@@ -252,9 +249,9 @@
                         <label for="about">Acerca de mis servicios que ofrezco</label>
                     </div>
                 </div>
-                <div class="step-actions">
-                    <button class="waves-effect waves-dark btn next-step">Siguiente</button>
-                    <button class="waves-effect waves-dark btn previous-step">Atras</button>
+                <div class="">
+                    <button class="waves-effect waves-dark btn ">Firmar</button>
+                    <button class="waves-effect waves-dark btn ">Descargar</button>
                 </div>
             </div>
         </li>
@@ -264,10 +261,10 @@
                 <div class="row">
                     Felicidades!!!
                 </div>
-                <div class="step-actions">
+                <div class="">
 
-                    <input type="submit" class="waves-effect waves-dark btn next-step" value="SUBMIT" />
-                    <button class="waves-effect waves-dark btn previous-step">Atras</button>
+
+                    <button class="waves-effect waves-dark btn ">Finalizar</button>
                 </div>
             </div>
         </li>
