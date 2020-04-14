@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 declare const MStepper: any;
 import * as M from 'materialize-css';
+import { format } from 'util';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,9 +11,13 @@ import * as M from 'materialize-css';
 })
 export class DashboardComponent implements OnInit {
   model="falso";
+ 
   constructor() { }
 
   ngOnInit() {
+    var elems = document.querySelectorAll('.datepicker');
+    var instances = M.Datepicker.init(elems, format);
+
     var select = document.querySelectorAll('select');
     var instances = M.FormSelect.init(select);
 
@@ -34,7 +39,9 @@ export class DashboardComponent implements OnInit {
       // Preloader used when step is waiting for feedback function. If not defined, Materializecss spinner-blue-only will be used.
       feedbackPreloader: '<div class="spinner-layer spinner-blue-only">...</div>'
    })
-
+  
+ 
   }
+
 
 }
