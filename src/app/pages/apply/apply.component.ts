@@ -36,7 +36,7 @@ export class ApplyComponent implements OnInit {
       // Auto generation of a form around the stepper.
       autoFormCreation: true,
       // Enable or disable navigation by clicking on step-titles
-      stepTitleNavigation: true,
+      stepTitleNavigation: false,
       // Preloader used when step is waiting for feedback function. If not defined, Materializecss spinner-blue-only will be used.
       feedbackPreloader: '<div class="spinner-layer spinner-blue-only">...</div>'
    })

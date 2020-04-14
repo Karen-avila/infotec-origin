@@ -15,6 +15,9 @@ export class DashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    var elems = document.querySelectorAll('.modal');
+    M.Modal.init(elems);
+
     var elems = document.querySelectorAll('.datepicker');
     var instances = M.Datepicker.init(elems, format);
 
