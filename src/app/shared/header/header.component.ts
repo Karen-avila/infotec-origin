@@ -11,8 +11,9 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    let elems = document.querySelectorAll('.sidenav');
-    M.Sidenav.init(elems);
+    M.AutoInit();
+
+    
   }
 
 }

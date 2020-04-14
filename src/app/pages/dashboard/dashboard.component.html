@@ -1,11 +1,10 @@
 <app-header></app-header>
 
 <!---->
-<form>
-    <ul class="stepper parallel horizontal">
-        <li class="step">
-            <div class="step-title waves-effect waves-dark">Cuenta</div>
-            <div class="step-content">
+<ul class="stepper linear parallel horizontal">
+    <li class="step">
+        <div class="step-title waves-effect waves-dark">Cuenta</div>
+        <!-- <div class="step-content">
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">account_circle</i>
@@ -23,257 +22,265 @@
                         <label for="passwordconfirm">Confirma el Password</label>
                     </div>
                 </div>
-                <div class="step-actions">
+                  <div class="step-actions">
 
                     <button class="waves-effect waves-dark btn next-step">Siguiente</button>
 
-                </div>
-            </div>
-        </li>
-        <li class="step">
-            <div class="step-title waves-effect waves-dark">Datos Personales</div>
-            <div class="step-content">
-                <div class="row">
-                    <div class="input-field col s12">
-                                <th><label>
-                                  <input name="group1" type="radio" value="verdadero" [(ngModel)]="model"/>
+                </div> 
+            </div>-->
+    </li>
+    <li class="step">
+        <div class="step-title waves-effect waves-dark">Datos Personales</div>
+        <div class="step-content">
+            <div class="row">
+                <div class="input-field col s12">
+                    <th><label>
+                                  <input class="with-gap red darken-4" name="group1" type="radio" value="verdadero" [(ngModel)]="model"/>
                                   <span>Persona Fisica con Actividad Empresarial</span>
                                 </label></th>
-                                <th><label>
-                                  <input name="group1" type="radio" value="falso" [(ngModel)]="model"/>
+                    <th><label>
+                                  <input class="with-gap red darken-4" name="group1" type="radio" value="falso" [(ngModel)]="model"/>
                                   <span>Regimen de Incorporación Fiscal</span>
                                 </label></th>
-                        </div>
+                </div>
 
-                    <div class="input-field col s12 m6 l6"  >
-                        <i class="material-icons prefix">account_circle</i>
-                        <input id="name" type="text" name='name'>
-                        <label for="name">Nombre(s)</label>
-                    </div>
-                    <div class="input-field col s12 m6 l6" >
-                        <i class="material-icons prefix">account_circle</i>
-                        <input id="name" type="text" name='name'>
-                        <label for="name">Apellido paterno</label>
-                    </div>
-                    <div class="input-field col s12 m6 l6">
-                        <i class="material-icons prefix">account_circle</i>
-                        <input id="name" type="text" name='name'>
-                        <label for="name">Apellido materno</label>
-                    </div>
-                    <div class="input-field col s12 m6 l6">
-                        <select>
+                <div class="input-field col s12 m6 l6">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="name" type="text" name='name'>
+                    <label for="name">Nombre(s)</label>
+                </div>
+                <div class="input-field col s12 m6 l6">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="name" type="text" name='name'>
+                    <label for="name">Apellido paterno</label>
+                </div>
+                <div class="input-field col s12 m6 l6">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="name" type="text" name='name'>
+                    <label for="name">Apellido materno</label>
+                </div>
+                <div class="input-field col s12 m6 l6">
+                    <select>
                             <option value="" disabled selected>Selecciona una opcion</option>
                             <option value="1">Femenino</option>
                             <option value="2">Masculino</option>
                         </select>
-                          <label>Genero</label>
-                    </div>
-                    <div class="input-field col s12 m6 l6">
-                        <i class="material-icons prefix">calendar_today</i>
-                        <input type="text" class="datepicker">     
-                        <label>Fecha de Nacimiento</label>  
-                    </div>
-                    <div class="input-field col s12 m6 l6">
+                    <label>Genero</label>
+                </div>
+                <div class="input-field col s12 m6 l6">
+                    <i class="material-icons prefix">calendar_today</i>
+                    <input type="text" class="datepicker">
+                    <label>Fecha de Nacimiento</label>
+                </div>
+                <div class="input-field col s12 m6 l6">
                     <select>
                         <option value="" disabled selected>Selecciona una opcion</option>
                         <option value="1">Ciudad de México</option>
                         <option value="2">Pachuca, Hgo.</option>
                         <option value="3">Guadalajara, Jal.</option>
                     </select>
-                      <label>Entidad federativa</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <select>
+                    <label>Entidad federativa</label>
+                </div>
+                <div class="input-field col s12">
+                    <select>
                             <option value="" disabled selected>Selecciona una opcion</option>
                             <option value="1">México</option>
                             <option value="2">Estados Unidos</option>
                         </select>
-                          <label>País de nacimiento</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">business_center</i>
-                        <textarea id="occupation" class="materialize-textarea"></textarea>
-                        <label for="occupation">Ocupación</label>
-                            </div>
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">house</i>
-                        <textarea id="address" class="materialize-textarea"></textarea>
-                        <label for="address">Domicilio particular</label>
+                    <label>País de nacimiento</label>
+                </div>
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">business_center</i>
+                    <textarea id="occupation" class="materialize-textarea"></textarea>
+                    <label for="occupation">Ocupación</label>
+                </div>
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">house</i>
+                    <textarea id="address" class="materialize-textarea"></textarea>
+                    <label for="address">Domicilio particular</label>
+                </div>
+                <div class="input-field col s12 m6 l6">
+                    <i class="material-icons prefix">aspect_ratio</i>
+                    <textarea id="curp" class="materialize-textarea"></textarea>
+                    <label for="curp">CURP</label>
+                </div>
+                <div class="input-field col s12 m6 l6" *ngIf="model=='verdadero'">
+                    <i class="material-icons prefix">aspect_ratio</i>
+                    <textarea id="rfc" class="materialize-textarea"></textarea>
+                    <label for="rfc">Registro Federal de Contribuyente</label>
+                </div>
+                <div class="input-field col s12 m6 l6">
+                    <i class="material-icons prefix">phone</i>
+                    <input id="phone" type="number" name='phone'>
+                    <label for="phone">Número de Telefono</label>
+                </div>
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">mail</i>
+                    <textarea id="mail" type="email" class="materialize-textarea"></textarea>
+                    <label for="mail">Correo electronico</label>
+                </div>
+            </div>
+
+            <div>
+                <li><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Enviar</a></li>
+            </div>
+
+        </div>
+    </li>
+    <li class="step">
+        <div class="step-title waves-effect waves-dark">Subir Documentos</div>
+        <div class="step-content">
+            <div class="row">
+                <div class="file-field input-field col s12 m6 l6">
+                    <div class="btn">
+                        <span>Identificacion Oficial frontal</span>
+                        <input type="file">
                     </div>
-                    <div class="input-field col s12 m6 l6">
-                        <i class="material-icons prefix">aspect_ratio</i>
-                        <textarea id="curp" class="materialize-textarea"></textarea>
-                        <label for="curp">CURP</label>
-                    </div>
-                    <div class="input-field col s12 m6 l6" *ngIf="model=='verdadero'">
-                        <i class="material-icons prefix">aspect_ratio</i>
-                        <textarea id="rfc" class="materialize-textarea"></textarea>
-                        <label for="rfc">Registro Federal de Contribuyente</label>
-                    </div>
-                    <div class="input-field col s12 m6 l6">
-                        <i class="material-icons prefix">phone</i>
-                        <input id="phone" type="number" name='phone'>
-                        <label for="phone">Número de Telefono</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">mail</i>
-                        <textarea id="mail" type="email" class="materialize-textarea"></textarea>
-                        <label for="mail">Correo electronico</label>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
                     </div>
                 </div>
 
-                <div class="">
-                    <button class="waves-effect waves-dark btn next-step">Siguiente</button>
-                    <button class="waves-effect waves-dark btn previous-step">Atras</button>
+                <div class="file-field input-field col s12 m6 l6">
+                    <div class="btn">
+                        <span>Identificacion Oficial reverso</span>
+                        <input type="file">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+
+                <div class="file-field input-field col s12 m6 l6">
+                    <div class="btn">
+                        <span>Comprobante de Domicilio</span>
+                        <input type="file">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+
+                <div class="file-field input-field col s12 m6 l6">
+                    <div class="btn">
+                        <span>Estado de cuenta</span>
+                        <input type="file">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
                 </div>
 
             </div>
-        </li>
-        <li class="step">
-            <div class="step-title waves-effect waves-dark">Subir Documentos</div>
-            <div class="step-content">
-                <div class="row">
-                    <div class="file-field input-field col s12 m6 l6">
-                        <div class="btn">
-                            <span>Identificacion Oficial frontal</span>
-                            <input type="file">
-                        </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text">
-                        </div>
-                    </div>
-
-                    <div class="file-field input-field col s12 m6 l6">
-                        <div class="btn">
-                            <span>Identificacion Oficial reverso</span>
-                            <input type="file">
-                        </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text">
-                        </div>
-                    </div>
-
-                    <div class="file-field input-field col s12 m6 l6">
-                        <div class="btn">
-                            <span>Comprobante de Domicilio</span>
-                            <input type="file">
-                        </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text">
-                        </div>
-                    </div>
-
-                    <div class="file-field input-field col s12 m6 l6" >
-                        <div class="btn" >
-                            <span >Estado de cuenta</span>
-                            <input type="file">
-                        </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text">
-                        </div>
-                    </div>
-
-                </div>
-                <div class="step-actions">
-                    <button class="waves-effect waves-dark btn next-step">Siguiente</button>
-                    <button class="waves-effect waves-dark btn previous-step">Atras</button>
-                </div>
+            <div>
+                <li><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Enviar</a></li>
             </div>
-        </li>
-        <li class="step">
-            <div class="step-title waves-effect waves-dark">Datos Socioecónomicos</div>
-            <div class="step-content">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">account_circle</i>
-                        <input id="name" type="text" name='name'>
-                        <label for="name">Nombre completo</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">account_balance</i>
-                        <textarea id="address" class="materialize-textarea"></textarea>
-                        <label for="address">Direccion</label>
-                    </div>
-                    <div class="input-field col s12 m6 l6">
-                        <i class="material-icons prefix">phone</i>
-                        <input id="phone" type="number" name='phone'>
-                        <label for="phone">Telefono</label>
-                    </div>
-                    <div class="input-field col s12 m6 l6">
-                        <select>
+        </div>
+    </li>
+    <li class="step">
+        <div class="step-title waves-effect waves-dark">Datos Socioecónomicos</div>
+        <div class="step-content">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="name" type="text" name='name'>
+                    <label for="name">Nombre completo</label>
+                </div>
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">account_balance</i>
+                    <textarea id="address" class="materialize-textarea"></textarea>
+                    <label for="address">Direccion</label>
+                </div>
+                <div class="input-field col s12 m6 l6">
+                    <i class="material-icons prefix">phone</i>
+                    <input id="phone" type="number" name='phone'>
+                    <label for="phone">Telefono</label>
+                </div>
+                <div class="input-field col s12 m6 l6">
+                    <select>
                           <option value="" disabled selected>Selecciona una opcion</option>
                           <option value="1">Tuxtla Gutierrez</option>
                           <option value="2">Comitan</option>
                           <option value="3">San Cristobal</option>
                       </select>
-                        <label>Ciudad</label>
-                    </div>
+                    <label>Ciudad</label>
                 </div>
-                <div class="step-actions">
-                    <button class="waves-effect waves-dark btn next-step">Siguiente</button>
-                    <button class="waves-effect waves-dark btn previous-step">Atras</button>
-                </div>
-
             </div>
-        </li>
-        <li class="step">
-            <div class="step-title waves-effect waves-dark">Descarga de Documentos</div>
-            <div class="step-content">
-                <div class="row">
-                    <div class="file-field input-field">
-                        <div class="btn">
-                            <span>Identificacion de Guia Certificado</span>
-                            <input type="file">
-                        </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text">
-                        </div>
+            <div class="step-actions">
+                <li><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Enviar</a></li>
+            </div>
+
+        </div>
+    </li>
+    <li class="step">
+        <div class="step-title waves-effect waves-dark">Descarga de Documentos</div>
+        <div class="step-content">
+            <div class="row">
+                <div class="file-field input-field">
+                    <div class="btn">
+                        <span>Identificacion de Guia Certificado</span>
+                        <input type="file">
                     </div>
-                    <div class="input-field col s12 m6 l6">
-                        <select multiple>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+                <div class="input-field col s12 m6 l6">
+                    <select multiple>
                           <option value="" disabled>Selecciona uno o mas idiomas</option>
                           <option value="1">Ingles</option>
                           <option value="2">Frances</option>
                           <option value="3">Aleman</option>
                       </select>
-                        <label>Idiomas</label>
-                    </div>
-                    <div class="input-field col s12 m6 l6">
-                        <select multiple>
+                    <label>Idiomas</label>
+                </div>
+                <div class="input-field col s12 m6 l6">
+                    <select multiple>
                           <option value="" disabled >Selecciona una o mas opciones</option>
                           <option value="1">Aventura</option>
                           <option value="2">General</option>
                       </select>
-                        <label>Tipo de Turismo</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">account_balance</i>
-                        <textarea id="about" class="materialize-textarea"></textarea>
-                        <label for="about">Acerca de mis servicios que ofrezco</label>
-                    </div>
+                    <label>Tipo de Turismo</label>
                 </div>
-                <div class="step-actions">
-                    <button class="waves-effect waves-dark btn next-step">Siguiente</button>
-                    <button class="waves-effect waves-dark btn previous-step">Atras</button>
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">account_balance</i>
+                    <textarea id="about" class="materialize-textarea"></textarea>
+                    <label for="about">Acerca de mis servicios que ofrezco</label>
                 </div>
             </div>
-        </li>
-        <li class="step">
-            <div class="step-title waves-effect waves-dark">Felicidades!!!</div>
-            <div class="step-content">
-                <div class="row">
-                    Felicidades!!!
-                </div>
-                <div class="step-actions">
-
-                    <input type="submit" class="waves-effect waves-dark btn next-step" value="SUBMIT" />
-                    <button class="waves-effect waves-dark btn previous-step">Atras</button>
-                </div>
+            <div class="">
+                <button class="waves-effect waves-dark btn ">Firmar</button>
+                <button class="waves-effect waves-dark btn ">Descargar</button>
+                <li><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Enviar</a></li>
             </div>
-        </li>
-    </ul>
-</form>
+        </div>
+    </li>
+    <li class="step">
+        <div class="step-title waves-effect waves-dark">Felicidades!!!</div>
+        <div class="step-content">
+            <div class="row">
+                Felicidades!!!
+            </div>
+            <div class="">
 
+
+                <button class="waves-effect waves-dark btn ">Finalizar</button>
+            </div>
+        </div>
+    </li>
+</ul>
+
+
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <h4>Solicitud Enviada</h4>
+        <p class="flow-text"><b>N° de Registro: </b>KJF986JHH32</p>
+        <p class="flow-text">Para continuar activa tu cuenta, revisa el correo que nos proporcionaste y encontraras las instrucciones para continuar con tu solicitud.</p>
+    </div>
+    <div class="modal-footer">
+        <a routerLink="/home" class="modal-close waves-effect waves-green btn-flat">Aceptar</a>
+    </div>
+</div>
 <!---->
 
 
