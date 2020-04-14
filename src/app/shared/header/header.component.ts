@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as M from 'materialize-css';
 
 @Component({
   selector: 'app-header',
@@ -10,6 +11,8 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    let elems = document.querySelectorAll('.sidenav');
+    M.Sidenav.init(elems);
   }
 
 }
