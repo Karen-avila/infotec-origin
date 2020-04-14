@@ -82,3 +82,13 @@ https://gacm.gob.mx/images/aguilaiori.png
 .login-box .input-field {
     color: #fff;
 }
+
+ul.stepper .step.active::before,
+ul.stepper .step.done::before {
+    background-color: #BC955C;
+}
+
+ul.stepper.horizontal .step.active .step-title::before,
+ul.stepper.horizontal .step.done .step-title::before {
+    background-color: #BC955C;
+}
