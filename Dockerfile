@@ -7,10 +7,6 @@ ENV LC_ALL en_US.UTF-8
 
 ENV NOKOGIRI_USE_SYSTEM_LIBRARIES=1
 
-ADD gemrc /root/.gemrc
-
-ADD bowerrc /root/.bowerrc
-
 # Update distro and install some packages
 RUN export DEBIAN_FRONTEND=noninteractive && \ 
     apt-get update && \
@@ -80,6 +76,6 @@ RUN chmod +x /opt/nginx.sh
 
 VOLUME ["/etc/ssl/certs"]
 
-EXPOSE 443
+EXPOSE 61616
 
 CMD ["/opt/nginx.sh"]
