@@ -16,6 +16,13 @@ export class LoginComponent implements OnInit {
   instance:any;
   output: any;
   signInForm: NgForm;
+  recaptcha: any[];
+
+  resolved(captchaResponse: any[]) {
+    this.recaptcha = captchaResponse;
+    console.log(this.recaptcha);
+  }
+
 
   constructor(private router: Router) { }
 
