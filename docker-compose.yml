@@ -4,7 +4,7 @@ networks:
   mifos:
     driver: bridge
 services:
-  mifos-banca-por-internet:
+  infotec-bancodelbienestar-originacion:
     image: harbor.infotec.mx/mifosio/com.mx.infotec.fineract.cn.creditosimple.se.develop
     mem_limit: 2048m
     volumes:
