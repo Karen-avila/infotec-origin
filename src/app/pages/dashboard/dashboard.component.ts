@@ -29,7 +29,7 @@ export class DashboardComponent implements OnInit {
     console.log(stepperDiv);
     var stepper = new MStepper(stepperDiv, {
       // Default active step.
-      firstActive: 2, //api regresa paso a activar
+      firstActive: 1, //api regresa paso a activar
       // Allow navigation by clicking on the next and previous steps on linear steppers.
       linearStepsNavigation: true,
       // Auto focus on first input of each step.
@@ -39,7 +39,7 @@ export class DashboardComponent implements OnInit {
       // Auto generation of a form around the stepper.
       autoFormCreation: true,
       // Enable or disable navigation by clicking on step-titles
-      stepTitleNavigation: false,
+      stepTitleNavigation: true,
       // Preloader used when step is waiting for feedback function. If not defined, Materializecss spinner-blue-only will be used.
       feedbackPreloader: '<div class="spinner-layer spinner-blue-only">...</div>'
    })
