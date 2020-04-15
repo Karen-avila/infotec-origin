@@ -11,6 +11,7 @@ import { format } from 'util';
 })
 export class DashboardComponent implements OnInit {
   model="falso";
+  modal="falso";
  
   constructor() { }
 
@@ -28,7 +29,7 @@ export class DashboardComponent implements OnInit {
     console.log(stepperDiv);
     var stepper = new MStepper(stepperDiv, {
       // Default active step.
-      firstActive: 1, //api regresa paso a activar
+      firstActive: 2, //api regresa paso a activar
       // Allow navigation by clicking on the next and previous steps on linear steppers.
       linearStepsNavigation: true,
       // Auto focus on first input of each step.
