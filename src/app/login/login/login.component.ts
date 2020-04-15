@@ -4,6 +4,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
+import * as M from 'materialize-css';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,13 +13,16 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  instance:any;
   output: any;
   signInForm: NgForm;
 
   constructor(private router: Router) { }
 
   ngOnInit() {
-
+   // M.AutoInit();
+    var elems = document.querySelectorAll('.modal');
+    this.instance = M.Modal.init(elems);
   }
 
   onSignInSubmit() {
@@ -26,6 +31,23 @@ export class LoginComponent implements OnInit {
 
 console.log("login component")
 this.router.navigate(["dashboard"]);
+  }
+
+  recuperar(){
+    console.log("Recuperar");
+   // M.Modal.open();
+  }
+
+  cancel(){
+    console.log("cancelar");
+    document.getElementById("login").classList.remove("hide");
+    document.getElementById("forgot").classList.add("hide");
+  }
+
+  forgot(){
+    console.log("forgot");
+    document.getElementById("login").classList.add("hide");
+    document.getElementById("forgot").classList.remove("hide");
   }
 
   }
