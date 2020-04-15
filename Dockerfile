@@ -39,8 +39,8 @@ RUN npm install
 
 RUN ng build --prod && \  
     cd dist/originacion/  && \  
-    rm -Rf ../firebase/public/*  && \  
-    cp -Rf * ../firebase/public/
+    rm -Rf ../../firebase/public/*  && \  
+    cp -Rf * ../../firebase/public/
 
 
 RUN cd firebase && npm install -g firebase-tools && \ 
