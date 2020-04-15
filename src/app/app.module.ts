@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RecaptchaModule } from 'ng-recaptcha';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,6 +31,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    RecaptchaModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

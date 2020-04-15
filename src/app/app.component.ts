@@ -8,6 +8,12 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class AppComponent {
   title = 'Banco del Bienestar';
+  recaptcha: any[];
+
+  resolved(captchaResponse: any[]) {
+    this.recaptcha = captchaResponse;
+    console.log(this.recaptcha);
+  }
 
   constructor(public translate: TranslateService) {
     translate.addLangs(['en', 'es']);
