@@ -37,7 +37,10 @@ COPY . .
 
 RUN npm install 
 
-RUN ng build --prod
+RUN ng build --prod && \  
+    cd dist/originacion/  && \  
+    rm -Rf ../../firebase/public/*  && \  
+    cp -Rf * ../../firebase/public/
 
 
 RUN cd firebase && npm install -g firebase-tools && \ 
@@ -64,7 +67,7 @@ RUN apt-get update && \
     && apt-get clean all && \ 
     rm -rf /var/lib/apt/lists/*
 
-COPY --from=node /usr/src/app/dist /usr/share/nginx/html
+COPY --from=node /usr/src/app/dist/originacion/ /usr/share/nginx/html
 
 WORKDIR /etc/nginx
 
