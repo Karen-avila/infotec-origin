@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 declare const MStepper: any;
 import * as M from 'materialize-css';
+//-------------
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-apply',
@@ -8,7 +10,11 @@ import * as M from 'materialize-css';
   styleUrls: ['./apply.component.css']
 })
 export class ApplyComponent implements OnInit {
+  
   recaptcha: any[];
+  //-------
+  form : FormGroup;
+  //-------
 
   resolved(captchaResponse: any[]) {
     this.recaptcha = captchaResponse;
@@ -46,6 +52,15 @@ export class ApplyComponent implements OnInit {
       feedbackPreloader: '<div class="spinner-layer spinner-blue-only">...</div>'
    })
 
+//----------------------
+   this.form = new FormGroup({
+      email: new FormControl(null,[Validators.required, Validators.email]),
+      password: new FormControl(null, Validators.required),
+      rePassword: new FormControl(null, Validators.required)
+   });
+
+
+//------------------------   
   }
 
 
