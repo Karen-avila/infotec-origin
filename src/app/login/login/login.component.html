@@ -1,38 +1,41 @@
 <app-header></app-header>
-
 <div class="bg"></div>
-
-<div class="valign-wrapper row login-box">
-    <div class="col card hoverable s10 pull-s1 m6 pull-m3 l4 pull-l4">
+  <div class="container">
+    <div class="col card s6 offset-s2 m5 offset-m3 l6 offset-l4 mycolor">
+        <br>
+        <div class="container">
         <p class="flow-text white-text center-align">Iniciar Sesion</p>
-        <form>
-            <div class="card-content">
                 <div class="row">
                     <div class="input-field col s12">
-                        <i class="material-icons prefix">account_circle</i>
+                        <i class="material-icons prefix icon-white">account_circle</i>
                         <input id="email" type="email" required name='email' class="validate">
-                        <label for="email">Email</label>
+                        <label class="white-text" for="email">Email</label>
                     </div>
                     <div class="input-field col s12">
-                        <i class="material-icons prefix">lock_circle</i>
+                        <i class="material-icons prefix icon-white">lock_circle</i>
                         <input id="password" type="password" required name='password' class="validate">
-                        <label for="password">Password</label>
+                        <label class="white-text" for="password">Password</label>
                     </div>
-                    <br>
-                    <div class="card-action right-align">
-                        <button routerLink="/dashboard" class="waves-effect waves-light btn red darken-3 right"> 
-                Ingresar <i class="material-icons right">send</i> </button>
-                        <button routerLink="/home" class="waves-effect waves-light btn grey  left">Cancelar</button>
-                    </div>
-
-                    <!--re-captcha-->
-
-                    <div class="recaptcha pull-m3 l3 pull-l4">
-                        <re-captcha (resolved)="resolved($event)" siteKey="6Le-4OkUAAAAAMHSO4vcHcAbkfW2NOR6Rh7-PqkV"></re-captcha>
-                    </div>
-
                 </div>
+
+            <div class="row">
+            <div class="col s6 offset-s1 m4 offset-m3 l4 offset-l2">
+                <button routerLink="/dashboard" class="waves-effect waves-light btn red darken-3"> 
+        Ingresar <i class="material-icons right">send</i> </button>
+                
             </div>
-        </form>
+            <div class="col s4 m4 l4">
+                <button routerLink="/home" class="waves-effect waves-light btn grey">Cancelar</button>
+            </div>
+     
+            </div>
+           <br>
+           <div class="row">
+            <div class="col s9 offset-s1 m8 offset-m3 l7 offset-l3">
+            <re-captcha (resolved)="resolved($event)" siteKey="6Le-4OkUAAAAAMHSO4vcHcAbkfW2NOR6Rh7-PqkV"></re-captcha>
+            </div>
+        </div>
     </div>
-</div>
+        <br>
+    </div>
+</div> 
