@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div class="bg"></div>
   <div class="container">
-    <div id="login" class="col card s6 offset-s2 m5 offset-m3 l6 offset-l4 mycolor">
+    <div id="login" class="col card s6 offset-s3 m6 offset-m3 l6 offset-l4 mycolor">
         
         <br>
         <div class="container">
@@ -27,13 +27,13 @@
             <br>
 
             <div class="row">
-             <div class="col s9 offset-s1 m7 offset-m3 l7 offset-l3">
+             <div class="col s10 offset-s1 m7 offset-m3 l7 offset-l3">
              <re-captcha (resolved)="resolved($event)" siteKey="6Le-4OkUAAAAAMHSO4vcHcAbkfW2NOR6Rh7-PqkV"></re-captcha>
              </div>
          </div>
          <br>
             <div class="row">
-            <div class="col s6 offset-s1 m4 offset-m3 l4 offset-l2">
+            <div class="col s5 offset-s1 m4 offset-m3 l4 offset-l2">
                 <button routerLink="/dashboard" class="waves-effect waves-light btn red darken-3"> 
         Ingresar <i class="material-icons right">send</i> </button>
                 
@@ -47,10 +47,10 @@
     </div>
         <br>
 </div>
-        <div id="forgot" class="hide valign-wrapper row login-box">
-           
-            <div class="container">
-            <div class=" card s6 offset-s2 m6 offset-m3 l8 offset-l2 mycolor">
+
+        <div id="forgot" class="hide valign-wrapper row login-box ">
+         
+            <div class="col card s11 offset-s1 m7 offset-m2 l6 offset-l4 mycolor">
                 <br>
                 <p class="flow-text white-text center-align">Recuperar Contraseña</p>
             <div class="card-content">
@@ -62,22 +62,22 @@
                     </div>
                     <br>
                 <div class="row">
-                    <div class="col s7  m5 offset-m1 l5 offset-l1">
+                    <div class="col s7 offset-s1 m6 offset-m1 l6 offset-l1">
                         <button (click)="recuperar()" ng-click=”recuperar()” class="waves-effect waves-light btn red darken-3 right"> 
                     Recuperar <i class="material-icons right">send</i> </button>
                     </div>
-                    <div class="col s4 m4 l4">
+                    <div class="col s4 m3 l3">
                         <button (click)="cancel()" class="waves-effect waves-light btn grey  left">Cancelar</button>
                     </div>
                 
-                    </div>
+                   
                 </div>
             </div>
     
         </div>
-    
     </div>
-</div>
+    </div>
+
 
     <div id="modal1" class="modal">
         <div class="modal-content">
