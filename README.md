@@ -1,7 +1,4 @@
 # Status de la Contrucción en Ambiente de Desarrollo: 
-protected
-[![Build Status](http://207.249.109.33:8080/job/desarrollo-infotec-bancodelbienestar-mifosio-ui-creditosimple/badge/icon?config=orignacionbuilddesarrollo)](http://207.249.109.33:8080/job/desarrollo-infotec-bancodelbienestar-mifosio-ui-creditosimple/)
-unprotected
 [![Build Status](http://207.249.109.33:8080/buildStatus/icon?config=orignacionbuilddesarrollo&job=desarrollo-infotec-bancodelbienestar-mifosio-ui-creditosimple%2Fdesarrollo)](http://207.249.109.33:8080/job/desarrollo-infotec-bancodelbienestar-mifosio-ui-creditosimple/)
 HTML
 
