@@ -1,4 +1,4 @@
-[![Build Status](http://207.249.109.33:8080/buildStatus/icon?job=desarrollo-infotec-bancodelbienestar-mifosio-ui-creditosimple%2Fdesarrollo)](http://207.249.109.33:8080/job/desarrollo-infotec-bancodelbienestar-mifosio-ui-creditosimple//activity?branch=desarrollo)
+[![Build Status](http://207.249.109.33:8080/buildStatus/icon?job=desarrollo-infotec-bancodelbienestar-mifosio-ui-creditosimple%2Fdesarrollo)](http://207.249.109.33:8080/job/desarrollo-infotec-bancodelbienestar-mifosio-ui-creditosimple/)
 
 # originacion
 
