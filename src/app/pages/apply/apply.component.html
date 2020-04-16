@@ -56,7 +56,16 @@
                             <li><a class="waves-effect teal darken-4 btn modal-trigger" href="#modal1">Registrarse</a></li>
                         </div>
                     </div>
+
+
+
                     <div class="step-actions">
+
+                        <!--re-captcha-->
+
+                        <div class="recaptcha">
+                            <re-captcha (resolved)="resolved($event)" siteKey="6Le-4OkUAAAAAMHSO4vcHcAbkfW2NOR6Rh7-PqkV"></re-captcha>
+                        </div>
                         <!--       <button class="waves-effect waves-dark btn" type="submit">Registrarse</button> -->
                     </div>
                 </div>
