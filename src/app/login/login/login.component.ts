@@ -42,7 +42,7 @@ this.router.navigate(["dashboard"]);
 
   recuperar(){
     console.log("Recuperar");
-   // M.Modal.open();
+   // M.Modal.open(); //Abrir pop up de cambio de contraseña
   }
 
   cancel(){
