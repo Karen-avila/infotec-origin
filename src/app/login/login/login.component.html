@@ -17,12 +17,21 @@
                         <input id="password" type="password" required name='password' class="validate">
                         <label class="white-text" for="password">Password</label>
                     </div>
-                </div>
+               
 
-                <div>
+                <div class="col s9 offset-s3 m8 offset-m4 l8 offset-l4">
                     <a (click)="forgot()" class="white-text">¿Olvidaste tu Contraseña?</a>
                 </div>
+            </div>
 
+            <br>
+
+            <div class="row">
+             <div class="col s9 offset-s1 m7 offset-m3 l7 offset-l3">
+             <re-captcha (resolved)="resolved($event)" siteKey="6Le-4OkUAAAAAMHSO4vcHcAbkfW2NOR6Rh7-PqkV"></re-captcha>
+             </div>
+         </div>
+         <br>
             <div class="row">
             <div class="col s6 offset-s1 m4 offset-m3 l4 offset-l2">
                 <button routerLink="/dashboard" class="waves-effect waves-light btn red darken-3"> 
@@ -34,38 +43,42 @@
             </div>
      
             </div>
-           <br>
-           <div class="row">
-            <div class="col s9 offset-s1 m8 offset-m3 l7 offset-l3">
-            <re-captcha (resolved)="resolved($event)" siteKey="6Le-4OkUAAAAAMHSO4vcHcAbkfW2NOR6Rh7-PqkV"></re-captcha>
-            </div>
-        </div>
+          
     </div>
         <br>
-    </div>
-
-    <div id="forgot" class="hide valign-wrapper row login-box">
-        <div class="col card hoverable s10 pull-s1 m6 pull-m3 l4 pull-l4">
-            <p class="flow-text white-text center-align">Recuperar Contraseña</p>
-    
+</div>
+        <div id="forgot" class="hide valign-wrapper row login-box">
+           
+            <div class="container">
+            <div class=" card s6 offset-s2 m6 offset-m3 l8 offset-l2 mycolor">
+                <br>
+                <p class="flow-text white-text center-align">Recuperar Contraseña</p>
             <div class="card-content">
                 <div class="row">
                     <div class="input-field col s12">
-                        <i class="material-icons prefix">account_circle</i>
+                        <i class="material-icons prefix icon-white">account_circle</i>
                         <input id="email" type="email" required name='email' class="validate">
-                        <label for="email">Email</label>
+                        <label class="white-text"  for="email">Email</label>
                     </div>
                     <br>
-                    <div class="card-action right-align">
+                <div class="row">
+                    <div class="col s7  m5 offset-m1 l5 offset-l1">
                         <button (click)="recuperar()" ng-click=”recuperar()” class="waves-effect waves-light btn red darken-3 right"> 
                     Recuperar <i class="material-icons right">send</i> </button>
+                    </div>
+                    <div class="col s4 m4 l4">
                         <button (click)="cancel()" class="waves-effect waves-light btn grey  left">Cancelar</button>
+                    </div>
+                
                     </div>
                 </div>
             </div>
     
         </div>
+    
     </div>
+</div>
+
     <div id="modal1" class="modal">
         <div class="modal-content">
             <h4>Solicitud de Cambio de Contraseña</h4>
