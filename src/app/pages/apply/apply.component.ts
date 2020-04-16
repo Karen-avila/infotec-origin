@@ -8,7 +8,12 @@ import * as M from 'materialize-css';
   styleUrls: ['./apply.component.css']
 })
 export class ApplyComponent implements OnInit {
+  recaptcha: any[];
 
+  resolved(captchaResponse: any[]) {
+    this.recaptcha = captchaResponse;
+    console.log(this.recaptcha);
+  }
 
   constructor() {
     
