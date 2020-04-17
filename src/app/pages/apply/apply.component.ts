@@ -16,9 +16,10 @@ export class ApplyComponent implements OnInit {
   //-------
   form : FormGroup;
   dic = [
-    "cabron",
-    "puto",
-    "hugo"
+    "apañar",
+    "cagar",
+    "cojo",
+    "chingada"
   ]
   //-------
 
@@ -72,6 +73,7 @@ export class ApplyComponent implements OnInit {
 
 
 //------------
+
 equalPass(p1:string,p2:string){
 
   return ( group:FormGroup)=>{

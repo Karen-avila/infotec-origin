@@ -33,30 +33,49 @@
         <div class="step-title waves-effect waves-dark">Datos Personales</div>
         <div class="step-content">
             <div class="row">
-                <div class="input-field col s12 m6 l6">
+                <form ngNativeValidate [formGroup]="form" (ngSubmit)="dpersonales()">
+                <!--<div class="input-field col s12 m6 l6">
                     <label>
-                    <input class="with-gap teal darken-4" name="group1" type="radio" value="verdadero" [(ngModel)]="model"/>
+                    <input class="with-gap teal darken-4"  name="group1" type="radio" value="verdadero" [(ngModel)]="model"/>
                     <span>Persona Fisica con Actividad Empresarial</span></label>
                 </div>
                 <div class="input-field col s12 m6 l6">
                     <label>
                     <input class="with-gap teal darken-4" name="group1" type="radio" value="falso" [(ngModel)]="model"/>
                     <span>Regimen de Incorporación Fiscal</span></label>
+                </div>-->
+                <div class="input-field col s12 m6 l6">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="name" type="text" formControlName="name" name='name' required class="validate">
+                    <label for="name">Nombre</label>
+                    <div class="red-text" *ngIf="form.errors?.isMatch">
+                        <p>Palabra altisonante</p>     
+                    </div>
+                </div>
+                
+                <div class="input-field col s12 m6 l6">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="name2" type="text" name='name2' formControlName="name2" required class="validate">
+                    <label for="name2">Segundo nombre</label>
+                    <div class="red-text" *ngIf="form.errors?.isMatch">
+                        <p>Palabra altisonante</p>     
+                    </div>
                 </div>
                 <div class="input-field col s12 m6 l6">
                     <i class="material-icons prefix">account_circle</i>
-                    <input id="name" type="text" name='name'>
-                    <label for="name">Nombre(s)</label>
+                    <input id="paterno" type="text" name='paterno' formControlName="paterno" required class="validate">
+                    <label for="paterno">Apellido paterno</label>
+                    <div class="red-text" *ngIf="form.errors?.isMatch">
+                        <p>Palabra altisonante</p>     
+                    </div>
                 </div>
                 <div class="input-field col s12 m6 l6">
                     <i class="material-icons prefix">account_circle</i>
-                    <input id="name" type="text" name='name'>
-                    <label for="name">Apellido paterno</label>
-                </div>
-                <div class="input-field col s12 m6 l6">
-                    <i class="material-icons prefix">account_circle</i>
-                    <input id="name" type="text" name='name'>
-                    <label for="name">Apellido materno</label>
+                    <input id="materno" type="text" name='materno' formControlName="materno" required class="validate">
+                    <label for="materno">Apellido materno</label>
+                    <div class="red-text" *ngIf="form.errors?.isMatch">
+                        <p>Palabra antisonante</p>     
+                    </div>
                 </div>
                 <div class="input-field col s12 m6 l6">
                     <select>
@@ -80,7 +99,7 @@
                     </select>
                     <label>Entidad federativa</label>
                 </div>
-                <div class="input-field col s12">
+                <div class="input-field col s12 m6 l6">
                     <select>
                             <option value="" disabled selected>Selecciona una opcion</option>
                             <option value="1">México</option>
@@ -88,44 +107,49 @@
                         </select>
                     <label>País de nacimiento</label>
                 </div>
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">business_center</i>
-                    <textarea id="occupation" class="materialize-textarea"></textarea>
-                    <label for="occupation">Ocupación</label>
+                <div class="input-field col s12 m6 l6">
+                    <select>
+                            <option value="" disabled selected>Selecciona una opcion</option>
+                            <option value="1">Agricultor</option>
+                            <option value="2">Chofer</option>
+                            <option value="3">Comerciante</option>
+                            <option value="4">Empleado</option>
+                        </select>
+                    <label>Ocupación</label>
                 </div>
-                <div class="input-field col s12">
+                <div class="input-field col s12 m6 l6">
+                    <i class="material-icons prefix">phone</i>
+                    <input id="phone" type="number" name="phone">
+                    <label for="phone">Número de Telefono</label>
+                </div>
+                <div class="input-field col s12 m6 l6">
                     <i class="material-icons prefix">house</i>
-                    <textarea id="address" class="materialize-textarea"></textarea>
-                    <label for="address">Domicilio particular</label>
+                    <input id="domicilio" name='domicilio' formControlName="domicilio" required class="validate">
+                    <label for="domicilio">Domicilio particular</label>
+                
+                    <div class="red-text" *ngIf="form.errors?.isMatch">
+                        <p>Palabras altisonante</p>     
+                    </div>
                 </div>
                 <div class="input-field col s12 m6 l6">
                     <i class="material-icons prefix">aspect_ratio</i>
-                    <textarea id="curp" class="materialize-textarea"></textarea>
+                    <textarea id="curp" class="materialize-textarea" name="curp"></textarea>
                     <label for="curp">CURP</label>
                 </div>
                 <div class="input-field col s12 m6 l6" *ngIf="model=='verdadero'">
                     <i class="material-icons prefix">aspect_ratio</i>
-                    <textarea id="rfc" class="materialize-textarea"></textarea>
+                    <textarea id="rfc" class="materialize-textarea" name="rfc"></textarea>
                     <label for="rfc">Registro Federal de Contribuyente</label>
                 </div>
-                <div class="input-field col s12 m6 l6">
-                    <i class="material-icons prefix">phone</i>
-                    <input id="phone" type="number" name='phone'>
-                    <label for="phone">Número de Telefono</label>
-                </div>
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">mail</i>
-                    <textarea id="mail" type="email" class="materialize-textarea"></textarea>
-                    <label for="mail">Correo electronico</label>
-                </div>
+            <div class="col s12">
+                <button class="waves-effect teal darken-4 btn" type="submit" >Enviar</button>
             </div>
-
-            <div>
-                <li><a class="waves-effect teal darken-4 btn modal-trigger" href="#modal1">Enviar</a></li>
-            </div>
-
+        </form>
         </div>
+        </div>
+    
     </li>
+       
     <li class="step">
         <div class="step-title waves-effect waves-dark">Subir Documentos</div>
         <div class="step-content">
