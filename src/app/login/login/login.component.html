@@ -5,48 +5,48 @@
         <br>
         <div class="container">
             <form ngNativeValidate [formGroup]="form" (ngSubmit)="login()">
-            <p class="flow-text white-text center-align">Iniciar Sesion</p>
-            <div class="row">
-                
-                <div class="input-field col s12">
-                    <i class="material-icons prefix icon-white">account_circle</i>
-                    <input id="email" formControlName="email" type="email" required name='email' class="validate">
-                    <label class="white-text" for="email">Email</label>
+                <p class="flow-text white-text center-align">Iniciar Sesion</p>
+                <div class="row">
+
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix icon-white">account_circle</i>
+                        <input id="email" formControlName="email" type="email" required name='email' class="validate">
+                        <label class="white-text" for="email">Email</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix icon-white">lock_circle</i>
+                        <input id="password" formControlName="password" type="password" required name='password' class="validate">
+                        <label class="white-text" for="password">Password</label>
+                    </div>
+
+
+
+                    <div class="col s9 offset-s3 m8 offset-m4 l8 offset-l4">
+                        <a (click)="forgot()" class="white-text">¿Olvidaste tu Contraseña?</a>
+                    </div>
+
                 </div>
-                <div class="input-field col s12">
-                    <i class="material-icons prefix icon-white">lock_circle</i>
-                    <input id="password" formControlName="password" type="password" required name='password' class="validate">
-                    <label class="white-text" for="password">Password</label>
+
+                <br>
+
+                <div class="row">
+                    <div class="col s10 offset-s1 m7 offset-m3 l7 offset-l3">
+                        <re-captcha (resolved)="resolved($event)" siteKey="6Le-4OkUAAAAAMHSO4vcHcAbkfW2NOR6Rh7-PqkV"></re-captcha>
+                    </div>
                 </div>
-
-            
-
-                <div class="col s9 offset-s3 m8 offset-m4 l8 offset-l4">
-                    <a (click)="forgot()" class="white-text">¿Olvidaste tu Contraseña?</a>
-                </div>
-
-            </div>
-
-            <br>
-
-            <div class="row">
-                <div class="col s10 offset-s1 m7 offset-m3 l7 offset-l3">
-                    <re-captcha (resolved)="resolved($event)" siteKey="6Le-4OkUAAAAAMHSO4vcHcAbkfW2NOR6Rh7-PqkV"></re-captcha>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col s5 offset-s1 m4 offset-m3 l4 offset-l2">
-                    <button  type="submit" class="waves-effect waves-light btn red darken-3"> 
+                <br>
+                <div class="row">
+                    <div class="col s5 offset-s1 m4 offset-m3 l4 offset-l2">
+                        <button type="submit" class="waves-effect waves-light btn red darken-3"> 
         Ingresar <i class="material-icons right">send</i> </button>
 
-                </div>
-                <div class="col s4 m4 l4">
-                    <button routerLink="/home" class="waves-effect waves-light btn grey">Cancelar</button>
-                </div>
+                    </div>
+                    <div class="col s4 m4 l4">
+                        <button routerLink="/home" class="waves-effect waves-light btn grey">Cancelar</button>
+                    </div>
 
-            </div>
-        </form>
+                </div>
+            </form>
         </div>
         <br>
     </div>
@@ -58,15 +58,13 @@
             <p class="flow-text white-text center-align">Recuperar Contraseña</p>
             <div class="card-content">
                 <div class="row">
-                    
+
                     <div class="input-field col s12">
                         <i class="material-icons prefix icon-white">account_circle</i>
                         <input id="email" type="email" required name='email' class="validate">
                         <label class="white-text" for="email">Email</label>
                     </div>
-                    <div>
-                        <a (click)="forgot()" class="white-text">¿Olvidaste tu Contraseña?</a>
-                    </div>
+
                     <br>
                     <div class="row">
                         <div class="col s7 offset-s1 m6 offset-m1 l6 offset-l1">
@@ -79,7 +77,7 @@
 
 
                     </div>
-                    
+
                 </div>
 
             </div>
@@ -115,10 +113,13 @@
 
 <div id="modal1" class="modal">
     <div class="modal-content">
-        <h4>Solicitud de Cambio de Contraseña</h4>
+        <h4 class="ZZ">Solicitud de Cambio de Contraseña</h4>
         <p class="flow-text">Para continuar, revisa el correo que nos proporcionaste y encontraras las instrucciones para restablecer tu contraseña.</p>
     </div>
     <div class="modal-footer">
         <a routerLink="/login" class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>
+    </div>
+    <div class="footer-copyright teal darken-3">
+        <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
     </div>
 </div>
