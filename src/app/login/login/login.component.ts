@@ -56,21 +56,10 @@ this.router.navigate(["dashboard"]);
     document.getElementById("forgot").classList.remove("hide");
   }
 
-  recuperar(){
-    console.log("Recuperar");
-   // M.Modal.open(); //Abrir pop up de cambio de contraseña
-  }
 
-  cancel(){
-    console.log("cancelar");
-    document.getElementById("login").classList.remove("hide");
-    document.getElementById("forgot").classList.add("hide");
-  }
 
-  forgot(){
-    console.log("forgot");
-    document.getElementById("login").classList.add("hide");
-    document.getElementById("forgot").classList.remove("hide");
-  }
+
+
+
 
   }
