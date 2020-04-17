@@ -15,7 +15,7 @@
                     </div>
                     <div class="input-field col s12">
                         <i class="material-icons prefix icon-white">lock_circle</i>
-                        <input id="password" formControlName="password" type="password" required name='password' class="validate">
+                        <input id="password" formControlName="password" type="password" required name='password' class="validate" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$">
                         <label class="white-text" for="password">Password</label>
                     </div>
 

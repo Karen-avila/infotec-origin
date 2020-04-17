@@ -42,12 +42,12 @@
                             </div>
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">account_circle</i>
-                                <input formControlName="password" name='password' id="password" type="password" required class="validate">
+                                <input formControlName="password" name='password' id="password" type="password" required class="validate" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$">
                                 <label for="password">Clave</label>
                             </div>
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">account_circle</i>
-                                <input formControlName="rePassword" name='rePassword' id="passwordconfirm" type="password" required class="validate">
+                                <input formControlName="rePassword" name='rePassword' id="passwordconfirm" type="password" required class="validate" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$">
                                 <label for="passwordconfirm">Confirma clave</label>
                             </div>
                             <div class="red-text" *ngIf="form.errors?.isEqual && !form.pristine">
