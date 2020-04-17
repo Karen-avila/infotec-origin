@@ -46,6 +46,11 @@
                     <span>Regimen de Incorporación Fiscal</span></label>
                         </div>
                     </div>
+                    <div>
+                        <p class="white-text white">.</p>
+                        <p class="white-text white">.</p>
+                        <br><br>
+                    </div>
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
@@ -61,7 +66,7 @@
                         <input id="name2" type="text" name='name2' formControlName="name2" required class="validate">
                         <label for="name2">Segundo nombre</label>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
-                            <p>Palabra altisonante</p>
+                            <!--  <p>Palabra altisonante</p>-->
                         </div>
                     </div>
                     <div class="input-field col s12 m6 l6">
@@ -69,7 +74,7 @@
                         <input id="paterno" type="text" name='paterno' formControlName="paterno" required class="validate">
                         <label for="paterno">Apellido paterno</label>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
-                            <p>Palabra altisonante</p>
+                            <!--  <p>Palabra altisonante</p> -->
                         </div>
                     </div>
                     <div class="input-field col s12 m6 l6">
@@ -77,7 +82,7 @@
                         <input id="materno" type="text" name='materno' formControlName="materno" required class="validate">
                         <label for="materno">Apellido materno</label>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
-                            <p>Palabra antisonante</p>
+                            <!--  <p>Palabra altisonante</p> -->
                         </div>
                     </div>
                     <div class="input-field col s12 m6 l6">
@@ -269,41 +274,11 @@
         <div class="step-title waves-effect waves-dark">Descarga de Documentos</div>
         <div class="step-content">
             <div class="row">
-                <div class="file-field input-field">
-                    <div class="teal darken-4 btn">
-                        <span>Identificacion de Guia Certificado</span>
-                        <input type="file">
-                    </div>
-                    <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text">
-                    </div>
-                </div>
-                <div class="input-field col s12 m6 l6">
-                    <select multiple>
-                          <option value="" disabled>Selecciona uno o mas idiomas</option>
-                          <option value="1">Ingles</option>
-                          <option value="2">Frances</option>
-                          <option value="3">Aleman</option>
-                      </select>
-                    <label>Idiomas</label>
-                </div>
-                <div class="input-field col s12 m6 l6">
-                    <select multiple>
-                          <option value="" disabled >Selecciona una o mas opciones</option>
-                          <option value="1">Aventura</option>
-                          <option value="2">General</option>
-                      </select>
-                    <label>Tipo de Turismo</label>
-                </div>
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">account_balance</i>
-                    <textarea id="about" class="materialize-textarea"></textarea>
-                    <label for="about">Acerca de mis servicios que ofrezco</label>
-                </div>
+                <img class="responsive-img" src="../../../assets/contr.png">
             </div>
             <div class="step-actions">
                 <button class="waves-effect teal darken-4 btn ">Firmar</button>
-                <button class="waves-effect teal darken-4 btn ">Descargar</button>
+                <a class="waves-effect teal darken-4 btn " href="../../../assets/contr.pdf" download="contr.pdf">Descargar</a>
                 <li><a class="waves-effect teal darken-4 btn modal-trigger" href="#modal1">Enviar</a></li>
             </div>
         </div>
