@@ -11,8 +11,10 @@ import { format } from 'util';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  model="falso";
+  
+  model="pFisica";
   modal="falso";
+  instance
 
   form : FormGroup;
   dic = [
@@ -26,13 +28,13 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     var elems = document.querySelectorAll('.modal');
-    M.Modal.init(elems);
+    this.instance = M.Modal.init(elems);
 
     var elems = document.querySelectorAll('.datepicker');
-    var instances = M.Datepicker.init(elems, format);
+    M.Datepicker.init(elems, format);
 
     var select = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(select);
+    M.FormSelect.init(select);
 
     var stepperDiv = document.querySelector('.stepper');
     console.log(stepperDiv);
@@ -54,11 +56,14 @@ export class DashboardComponent implements OnInit {
    })
 
    this.form = new FormGroup({
+    personType: new FormControl(null,Validators.required),
     name: new FormControl(null,Validators.required),
     name2: new FormControl(null,Validators.required),
     paterno: new FormControl(null,Validators.required),
     materno: new FormControl(null,Validators.required),
-    domicilio: new FormControl(null,Validators.required)
+    domicilio: new FormControl(null,Validators.required),
+    curp: new FormControl(null,Validators.required),
+    rfc: new FormControl(null,Validators.required)
     
  }, { validators: this.pbaDict('name','paterno','name2','materno','domicilio') 
 
@@ -94,6 +99,7 @@ export class DashboardComponent implements OnInit {
     if(this.form.valid){
       console.log("form", this.form.value);
       //enviar datos a back
+      this.instance[0].open();
     } 
   }
 
