@@ -12,7 +12,7 @@ import { PagesComponent } from './pages.component';
 import { PAGES_ROUTES } from './pages.routes';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RecaptchaModule } from 'ng-recaptcha';
 
 
@@ -24,12 +24,14 @@ import { RecaptchaModule } from 'ng-recaptcha';
         DashboardComponent
     ],
     imports:[
+        FormsModule,
+        ReactiveFormsModule,
         SharedModule,
         Ng5SliderModule,
         BrowserAnimationsModule,
         PAGES_ROUTES,
         FormsModule,
-        RecaptchaModule 
+        RecaptchaModule
     ],
     exports:[
         HomeComponent,
