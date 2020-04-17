@@ -2,26 +2,29 @@
 <div class="bg"></div>
 <div class="container">
     <div id="login" class="col card s6 offset-s3 m6 offset-m3 l6 offset-l4 mycolor">
-
         <br>
         <div class="container">
+            <form ngNativeValidate [formGroup]="form" (ngSubmit)="login()">
             <p class="flow-text white-text center-align">Iniciar Sesion</p>
             <div class="row">
+                
                 <div class="input-field col s12">
                     <i class="material-icons prefix icon-white">account_circle</i>
-                    <input id="email" type="email" required name='email' class="validate">
+                    <input id="email" formControlName="email" type="email" required name='email' class="validate">
                     <label class="white-text" for="email">Email</label>
                 </div>
                 <div class="input-field col s12">
                     <i class="material-icons prefix icon-white">lock_circle</i>
-                    <input id="password" type="password" required name='password' class="validate">
+                    <input id="password" formControlName="password" type="password" required name='password' class="validate">
                     <label class="white-text" for="password">Password</label>
                 </div>
 
+            
 
                 <div class="col s9 offset-s3 m8 offset-m4 l8 offset-l4">
                     <a (click)="forgot()" class="white-text">¿Olvidaste tu Contraseña?</a>
                 </div>
+
             </div>
 
             <br>
@@ -34,7 +37,7 @@
             <br>
             <div class="row">
                 <div class="col s5 offset-s1 m4 offset-m3 l4 offset-l2">
-                    <button routerLink="/dashboard" class="waves-effect waves-light btn red darken-3"> 
+                    <button  type="submit" class="waves-effect waves-light btn red darken-3"> 
         Ingresar <i class="material-icons right">send</i> </button>
 
                 </div>
@@ -43,7 +46,7 @@
                 </div>
 
             </div>
-
+        </form>
         </div>
         <br>
     </div>
@@ -55,6 +58,7 @@
             <p class="flow-text white-text center-align">Recuperar Contraseña</p>
             <div class="card-content">
                 <div class="row">
+                    
                     <div class="input-field col s12">
                         <i class="material-icons prefix icon-white">account_circle</i>
                         <input id="email" type="email" required name='email' class="validate">
@@ -70,11 +74,12 @@
                     Recuperar <i class="material-icons right">send</i> </button>
                         </div>
                         <div class="col s4 m3 l3">
-                            <button (click)="cancel()" class="waves-effect waves-light btn grey  left">Cancelar</button>
+                            <button (click)="cancel()" class="waves-effect waves-light btn grey left">Cancelar</button>
                         </div>
 
 
                     </div>
+                    
                 </div>
 
             </div>
