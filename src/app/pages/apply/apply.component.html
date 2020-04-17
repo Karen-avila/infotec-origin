@@ -34,41 +34,53 @@
                 <div class="step-title waves-effect waves-dark">Crear Cuenta</div>
                 <div class="step-content">
                     <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">account_circle</i>
-                            <input id="email" type="email" required name='email' class="validate">
-                            <label for="email">Email</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">account_circle</i>
-                            <input id="password" type="password" required name='password' class="validate">
-                            <label for="password">Password</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">account_circle</i>
-                            <input id="passwordconfirm" type="password" required name='passwordconfirm' class="validate">
-                            <label for="passwordconfirm">Confirma el Password</label>
-                        </div>
+                        <form ngNativeValidate [formGroup]="form" (ngSubmit)="register()">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input formControlName="email" name='email' id="email" type="email" required class="validate">
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input formControlName="password" name='password' id="password" type="password" required class="validate">
+                                <label for="password">Password</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input formControlName="rePassword" name='rePassword' id="passwordconfirm" type="password" required class="validate">
+                                <label for="passwordconfirm">Confirma el Password</label>
+                            </div>
+                            <div class="red-text" *ngIf="form.errors?.isEqual && !form.pristine">
+                                <p>Las contraseñas deben de ser iguales.</p>
+                            </div>
+                            <div class="red-text" *ngIf="form.errors?.isMatch">
+                                <p>palabrota</p>
+                            </div>
+                            <div class="col s12">
+                                <li><a routerLink="/login">Si ya tienes cuenta, Inicia Sesión</a></li>
+                            </div>
 
-                        <div class="col s12">
-                            <li><a routerLink="/login">Si ya tienes cuenta, Inicia Sesión</a></li>
+                            <div class="row">
+                                <div class="col s12 offset-s3 m4 offset-m3 l3 offset-l6">
+                                    <!--<li><a class="waves-effect teal darken-4 btn modal-trigger" href="#modal1">Registrarse</a></li>-->
+                                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                                        <i class="material-icons right">send</i>
+                                      </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col s12 m6 offset-m3 l4 offset-l5">
+                            <div class="recaptcha">
+                                <re-captcha (resolved)="resolved($event)" siteKey="6Le-4OkUAAAAAMHSO4vcHcAbkfW2NOR6Rh7-PqkV"></re-captcha>
+                            </div>
                         </div>
                     </div>
                     <br>
-                <div class="row">
-                    <div class="col s12 m6 offset-m3 l4 offset-l5">
-                        <div class="recaptcha">
-                            <re-captcha (resolved)="resolved($event)" siteKey="6Le-4OkUAAAAAMHSO4vcHcAbkfW2NOR6Rh7-PqkV"></re-captcha>
-                        </div>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col s12 offset-s3 m4 offset-m3 l3 offset-l6">
-                        <li><a class="waves-effect teal darken-4 btn modal-trigger" href="#modal1">Registrarse</a></li>
-                    </div>
-                </div>
-                       
+
+
                 </div>
             </li>
             <li class="step">

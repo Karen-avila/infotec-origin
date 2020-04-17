@@ -9,9 +9,10 @@ import { PagesModule } from './pages/pages.module';
 
 import { LoginComponent } from './login/login/login.component';
 import { RegisterComponent } from './login/register/register.component';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
-import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
-import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
  
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -26,6 +27,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     RegisterComponent
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     PagesModule,
     BrowserModule,
     AppRoutingModule,
