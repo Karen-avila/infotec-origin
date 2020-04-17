@@ -38,17 +38,17 @@
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">account_circle</i>
                                 <input formControlName="email" name='email' id="email" type="email" required class="validate">
-                                <label for="email">Email</label>
+                                <label for="email">Correo electronico</label>
                             </div>
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">account_circle</i>
                                 <input formControlName="password" name='password' id="password" type="password" required class="validate">
-                                <label for="password">Password</label>
+                                <label for="password">Clave</label>
                             </div>
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">account_circle</i>
                                 <input formControlName="rePassword" name='rePassword' id="passwordconfirm" type="password" required class="validate">
-                                <label for="passwordconfirm">Confirma el Password</label>
+                                <label for="passwordconfirm">Confirma clave</label>
                             </div>
                             <div class="red-text" *ngIf="form.errors?.isEqual && !form.pristine">
                                 <p>Las contraseñas deben de ser iguales.</p>
