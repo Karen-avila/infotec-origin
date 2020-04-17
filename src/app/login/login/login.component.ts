@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -12,8 +12,8 @@ import * as M from 'materialize-css';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  instance:any;
+  form : FormGroup;
+  instance
   output: any;
   signInForm: NgForm;
   recaptcha: any[];
@@ -30,6 +30,13 @@ export class LoginComponent implements OnInit {
    // M.AutoInit();
     var elems = document.querySelectorAll('.modal');
     this.instance = M.Modal.init(elems);
+
+    this.form = new FormGroup({
+      email: new FormControl(null,[Validators.required, Validators.email]),
+      password: new FormControl(null, Validators.required)
+   });
+  
+  
   }
 
   onSignInSubmit() {
@@ -56,7 +63,15 @@ this.router.navigate(["dashboard"]);
     document.getElementById("forgot").classList.remove("hide");
   }
 
-
+  login(){
+    console.log("form is valid?", this.form.valid);
+    if(this.form.valid){
+      console.log("form", this.form.value);
+      //enviar datos a back
+      this.router.navigate(["dashboard"]);
+     
+    } 
+  }
 
 
 

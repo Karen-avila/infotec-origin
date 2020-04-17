@@ -11,7 +11,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./apply.component.css']
 })
 export class ApplyComponent implements OnInit {
-  
+  instance 
   recaptcha: any[];
   //-------
   form : FormGroup;
@@ -35,7 +35,7 @@ export class ApplyComponent implements OnInit {
   ngOnInit() {
 
     var elems = document.querySelectorAll('.modal');
-    M.Modal.init(elems);
+    this.instance = M.Modal.init(elems);
     
     var select = document.querySelectorAll('select');
     var instances = M.FormSelect.init(select);
@@ -111,6 +111,7 @@ pbaDict(p1:string){
     if(this.form.valid){
       console.log("form", this.form.value);
       //enviar datos a back
+      this.instance[0].open();
     } 
   }
   //-------------
