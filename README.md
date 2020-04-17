@@ -1,6 +1,5 @@
 # Status de la Contrucción en Ambiente de Desarrollo: 
-[![Build Status](http://207.249.109.33:8080/buildStatus/icon?config=orignacionbuilddesarrollo&job=desarrollo-infotec-bancodelbienestar-mifosio-ui-creditosimple%2Fdesarrollo)](http://207.249.109.33:8080/job/desarrollo-infotec-bancodelbienestar-mifosio-ui-creditosimple/)
-HTML
+[![Build Status](http://207.249.109.33:8080/view/UI/job/desarrollo-infotec-bancodelbienestar-mifosio-ui-creditosimple-se/badge/icon?config=orignacionbuilddesarrollo&subject=Dev%20build%20duration%20${duration})](http://207.249.109.33:8080/job/desarrollo-infotec-bancodelbienestar-mifosio-ui-creditosimple-se/)
 
 # originacion
 
