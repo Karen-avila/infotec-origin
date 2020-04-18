@@ -4,6 +4,8 @@ import * as M from 'materialize-css';
 
 //-------------
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { UserService } from '../../services/service.index';
+import { User } from '../../models/user.model';
 
 @Component({
   selector: 'app-apply',
@@ -28,7 +30,7 @@ export class ApplyComponent implements OnInit {
     console.log(this.recaptcha);
   }
 
-  constructor() {
+  constructor(public userService:UserService) {
     
   }
 
@@ -107,12 +109,26 @@ pbaDict(p1:string){
 
   //-------------
   register(){
+    let user = new User(this.form.value.email,this.form.value.password);
+
     console.log("form is valid?", this.form.valid);
+
     if(this.form.valid){
-      console.log("form", this.form.value);
+      console.log("form esto envio", this.form.value);
       //enviar datos a back
-      this.instance[0].open();
-    } 
+      /*this.userService.createUser(user)
+        .subscribe(res=>{
+          console.log(res); //revisar res.user p.ej y hacer un if(uid){openmodal}
+        });*/
+
+        this.userService.createUserL(user);
+
+
+      this.instance[0].open(); //revisar donde quedara
+    }else{
+      //algo esta mal revisa tus datos
+    }
+
   }
   //-------------
   

@@ -1,10 +1,16 @@
 export class User{
 
     constructor(
+        //evio
         public email:string,
         public password:string,
-        public id:string,
-        public isActive:boolean=false){}
+        //me responde
+        /*
+        email:test@test.com,
+        id = 034543mksfb0345,
+        isActive = false,
+        */
+        ){}
 
 
 }
