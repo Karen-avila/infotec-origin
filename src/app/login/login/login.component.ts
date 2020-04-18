@@ -13,6 +13,7 @@ import * as M from 'materialize-css';
 })
 export class LoginComponent implements OnInit {
   form : FormGroup;
+  form1 : FormGroup;
   instance
   output: any;
   signInForm: NgForm;
@@ -35,8 +36,20 @@ export class LoginComponent implements OnInit {
       email: new FormControl(null,[Validators.required, Validators.email]),
       password: new FormControl(null, Validators.required)
    });
-  
-  
+
+   this.form1 = new FormGroup({
+      email: new FormControl(null,[Validators.required, Validators.email])
+   });
+
+  }
+
+  recuperarpsw(){
+    console.log("form is valid?", this.form1.valid);
+    if(this.form1.valid){
+    console.log("form", this.form1.value);
+      //enviar datos a back
+    this.instance[0].open();
+    } 
   }
 
   onSignInSubmit() {
@@ -46,9 +59,11 @@ export class LoginComponent implements OnInit {
 console.log("login component")
 this.router.navigate(["dashboard"]);
   }
+
+  
   recuperar(){
     console.log("Recuperar");
-   // M.Modal.open(); //Abrir pop up de cambio de contraseña
+    //M.Modal.open(); //Abrir pop up de cambio de contraseña
   }
 
   cancel(){
@@ -72,9 +87,5 @@ this.router.navigate(["dashboard"]);
      
     } 
   }
-
-
-
-
 
   }
