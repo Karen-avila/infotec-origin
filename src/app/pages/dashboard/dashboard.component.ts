@@ -14,7 +14,8 @@ export class DashboardComponent implements OnInit {
   
   model="pFisica";
   modal="falso";
-  instance
+  popup;
+  calendar;
 
   form : FormGroup;
   dic = [
@@ -33,10 +34,12 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     var elems = document.querySelectorAll('.modal');
-    this.instance = M.Modal.init(elems);
+    this.popup = M.Modal.init(elems);
 
     var elems = document.querySelectorAll('.datepicker');
-    M.Datepicker.init(elems, format);
+    this.calendar = M.Datepicker.init(elems);
+    console.log("heyy",this.calendar)
+
 
     var select = document.querySelectorAll('select');
     M.FormSelect.init(select);
@@ -104,7 +107,7 @@ export class DashboardComponent implements OnInit {
     if(this.form.valid){
       console.log("form", this.form.value);
       //enviar datos a back
-      this.instance[0].open();
+      this.popup[0].open();
     } 
   }
 
