@@ -168,56 +168,10 @@
         <div class="step-title waves-effect waves-dark">Subir Documentos</div>
         <div class="step-content">
             <div class="row">
-                <div class="file-field input-field col s8">
-                    <div class="teal darken-4 btn">
-                        <span>Identificacion Oficial frontal</span>
-                        <input type="file">
+                    <div class="col s12 m2 l2">
+                        <span>Identificación Oficial Frontal</span>
                     </div>
-                    <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text">
-                    </div>
-                </div>
-
-                <div class="file-field input-field col s8">
-                    <div class="teal darken-4 btn">
-                        <span>Identificacion Oficial reverso</span>
-                        <input type="file" accept=".pdf">
-                    </div>
-                    <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text">
-                    </div>
-                </div>
-
-                <div class="file-field input-field col s8">
-                    <div class="teal darken-4 btn">
-                        <span>Comprobante de Domicilio</span>
-                        <input type="file">
-                    </div>
-                    <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text">
-                    </div>
-                </div>
-
-                <div class="file-field input-field col s10">
-                    <div class="teal darken-4 btn">
-                        <span>Estado de cuenta</span>
-                        <input type="file">
-                    </div>
-                    <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text">
-                    </div>
-                </div>
-
-                <div>
-                    <div class="col s3">
-                        <span>Comprobante de domicilio</span>
-                        <a (click)="sweetHome()"><i class="material-icons prefix icon-yellow">help_outline</i></a>
-
-                    </div>
-                    <div class="file-field input-field col s6">
-
-
-
+                    <div class="file-field input-field col s12 m4 l4">
                         <div class="teal darken-4 btn">
                             <i class="material-icons right">attach_file</i>cargar
                             <input type="file">
@@ -225,9 +179,107 @@
                         <div class="file-path-wrapper">
                             <input class="file-path validate" type="text">
                         </div>
+                    </div>
+               
 
+                <div>
+                    <div class="col s12 m2 offset-m1 l2">
+                        <span>Identificación Oficial Reverso</span>
+                    </div>
+                    <div class="file-field input-field col s12 m4 l4">
+                        <div class="teal darken-4 btn">
+                            <i class="material-icons right">attach_file</i>cargar
+                            <input type="file">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                        </div>
                     </div>
                 </div>
+
+                <div>
+                    <div class="col s12 m2 l2">
+                        <span>Comprobante de Domicilio</span>
+                    </div>
+                    <div class="file-field input-field col s12 m4 l4">
+                        <div class="teal darken-4 btn">
+                            <i class="material-icons right">attach_file</i>cargar
+                            <input type="file">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <div class="col s12 m2 l2">
+                        <span>Estado de Cuenta</span>
+                    </div>
+                    <div class="file-field input-field col s12 m4 l4">
+                        <div class="teal darken-4 btn">
+                            <i class="material-icons right">attach_file</i>cargar
+                            <input type="file">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                        </div>
+                    </div>
+                </div>
+                    <div class="col s12 m2 l2">
+                        <span>CURP</span>
+                        <a (click)="sweetHome('0')"><i class="material-icons prefix icon-yellow">help_outline</i></a>
+                    </div>
+                    <div class="file-field input-field col s12 m4 l4">
+                        <div class="teal darken-4 btn">
+                            <i class="material-icons right">attach_file</i>cargar
+                            <input type="file">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                        </div>
+                    </div>
+                    <div class="col s12 m2 l2">
+                        <span>Registro Federal de Contribuyente</span>
+                        <a (click)="sweetHome('1')"><i class="material-icons prefix icon-yellow">help_outline</i></a>
+                    </div>
+                    <div class="file-field input-field col s12 m4 l4">
+                        <div class="teal darken-4 btn">
+                            <i class="material-icons right">attach_file</i>cargar
+                            <input type="file">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                        </div>
+                    </div>
+                    <div class="col s12 m2 l2">
+                        <span>Score de Buro de Crédito </span>
+                        <a (click)="sweetHome('2')"><i class="material-icons prefix icon-yellow">help_outline</i></a>
+                    </div>
+                    <div class="file-field input-field col s12 m4 l4">
+                        <div class="teal darken-4 btn">
+                            <i class="material-icons right">attach_file</i>cargar
+                            <input type="file">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                        </div>
+                    </div>
+                    <div class="col s12 m2 l2">
+                        <span>Constancia de Situacion Fiscal </span>
+                        <a (click)="sweetHome('3')"><i class="material-icons prefix icon-yellow">help_outline</i></a>
+                    </div>
+                    <div class="file-field input-field col s12 m4 l4">
+                        <div class="teal darken-4 btn">
+                            <i class="material-icons right">attach_file</i>cargar
+                            <input type="file">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                        </div>
+                    </div>
+               
 
             </div>
             <div>
