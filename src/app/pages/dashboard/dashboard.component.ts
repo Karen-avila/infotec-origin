@@ -87,7 +87,7 @@ export class DashboardComponent implements OnInit {
     domicilio: new FormControl(null,[Validators.required,Validators.minLength(5), Validators.maxLength(120)]),
     curp: new FormControl(null,Validators.required),
     rfc: new FormControl(null,Validators.required),
-    phone: new FormControl (null,[Validators.required,Validators.pattern(/^-?(0|[1-9]\d*)?$/)])
+    phone: new FormControl (null,[Validators.required,Validators.pattern(/^(?=.{9,})/)])
     
  }, { validators: this.pbaDict('name','paterno','name2','materno','domicilio') 
 
