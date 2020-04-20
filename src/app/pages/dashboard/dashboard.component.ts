@@ -81,12 +81,13 @@ export class DashboardComponent implements OnInit {
    this.form = new FormGroup({
     personType: new FormControl(null,Validators.required),
     name: new FormControl(null,[Validators.required,Validators.minLength(3)]),
-    name2: new FormControl(null,Validators.required),
-    paterno: new FormControl(null,Validators.required),
-    materno: new FormControl(null,Validators.required),
-    domicilio: new FormControl(null,Validators.required),
+    name2: new FormControl(null,[Validators.required,Validators.minLength(3)]),
+    paterno: new FormControl(null,[Validators.required,Validators.minLength(3)]),
+    materno: new FormControl(null,[Validators.required,Validators.minLength(3)]),
+    domicilio: new FormControl(null,[Validators.required,Validators.minLength(5), Validators.maxLength(120)]),
     curp: new FormControl(null,Validators.required),
-    rfc: new FormControl(null,Validators.required)
+    rfc: new FormControl(null,Validators.required),
+    phone: new FormControl (null,[Validators.required,Validators.pattern(/^-?(0|[1-9]\d*)?$/)])
     
  }, { validators: this.pbaDict('name','paterno','name2','materno','domicilio') 
 
