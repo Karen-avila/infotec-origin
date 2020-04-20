@@ -35,7 +35,11 @@ export class DashboardComponent implements OnInit {
     {name:"Curp",
      url:"https://www.gob.mx/curp/"},
     {name:"Rfc",
-    url:"https://google.com/"}
+    url:"https://www.siat.sat.gob.mx/PTSC/"},
+    {name:"Buro de crédito",
+    url:"https://www.burodecredito.com.mx/score-info.html"},
+    {name:"Constancia de Situación Fiscal",
+    url:"https://www.sat.gob.mx/aplicacion/53027/genera-tu-constancia-de-situacion-fiscal"}
   ]
  
   constructor() { }
@@ -120,9 +124,10 @@ export class DashboardComponent implements OnInit {
       //enviar datos a back
       this.popup[0].open();
     } 
+
   }
 
-  sweetHome(){
+  sweetHome(id){
    /* swal('Importante',
     'Para obtener su CURP debera obtenerlo de https://www.gob.mx/curp/, puede acceder dando click en el boton de abajo',
     'info', 
@@ -132,7 +137,7 @@ export class DashboardComponent implements OnInit {
 
     swal({
       title: "Importante",
-      text: "Para obtener su CURP debera obtenerlo de https://www.gob.mx/curp/, puede acceder dando click en el boton de abajo",
+      text: "Para obtener su " + this.alrt[id].name + " debera obtenerlo de " + this.alrt[id].url + " puede acceder dando click en el boton de abajo",
       icon: "info",
       buttons: { 
         d:{
@@ -143,7 +148,7 @@ export class DashboardComponent implements OnInit {
         closeModal: true,
       },
         j:{
-          text: "Consultar " + this.alrt[0].name,
+          text: "Consultar " + this.alrt[id].name,
           value: true,
           visible: true,
           className: "red darken-4",
@@ -154,7 +159,7 @@ export class DashboardComponent implements OnInit {
      
         }).then((value)=>{
           if(value){
-            window.open('https://www.gob.mx/curp/', '_blank');
+            window.open(this.alrt[id].url, '_blank');
           }       
      });
 
