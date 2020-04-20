@@ -14,6 +14,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RecaptchaModule } from 'ng-recaptcha';
+import { ServiceModule } from '../services/service.module';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { RecaptchaModule } from 'ng-recaptcha';
         BrowserAnimationsModule,
         PAGES_ROUTES,
         FormsModule,
-        RecaptchaModule
+        RecaptchaModule,
+        ServiceModule
     ],
     exports:[
         HomeComponent,

@@ -82,7 +82,7 @@ this.router.navigate(["dashboard"]);
   }
 
   login(){
-    let user = new User(this.form.value.email,this.form.value.password);
+    let user = new User(this.form.value.email,this.form.value.password,this.form.value.rePassword);
     console.log("form is valid?", this.form.valid);
     if(this.form.valid){
       console.log("form esto envio", this.form.value);
