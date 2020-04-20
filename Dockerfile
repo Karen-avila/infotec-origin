@@ -34,8 +34,9 @@ ENV PATH /usr/src/app/node_modules/.bin:$PATH
 
 COPY . .
 
-
 RUN npm install 
+
+COPY sweetalert.d.ts.md node_modules/sweetalert/typings/sweetalert.d.ts
 
 RUN ng build --prod && \  
     cd dist/originacion/  && \  
