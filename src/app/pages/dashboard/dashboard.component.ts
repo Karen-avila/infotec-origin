@@ -63,7 +63,7 @@ export class DashboardComponent implements OnInit {
     console.log(stepperDiv);
     var stepper = new MStepper(stepperDiv, {
       // Default active step.
-      firstActive: 2, //api regresa paso a activar siempre debe empezar minimo en 1
+      firstActive: 1, //api regresa paso a activar siempre debe empezar minimo en 1
       // Allow navigation by clicking on the next and previous steps on linear steppers.
       linearStepsNavigation: true,
       // Auto focus on first input of each step.
@@ -80,7 +80,7 @@ export class DashboardComponent implements OnInit {
 
    this.form = new FormGroup({
     personType: new FormControl(null,Validators.required),
-    name: new FormControl(null,Validators.required),
+    name: new FormControl(null,[Validators.required,Validators.minLength(3)]),
     name2: new FormControl(null,Validators.required),
     paterno: new FormControl(null,Validators.required),
     materno: new FormControl(null,Validators.required),
@@ -94,6 +94,8 @@ export class DashboardComponent implements OnInit {
   
  
   }
+
+  get f() { return this.form.controls; }
 
   pbaDict(p1:string,p2:string,p3:string,p4:string,p5:string){
 
