@@ -3,7 +3,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 declare const MStepper: any;
 import * as M from 'materialize-css';
-import { format } from 'util';
+
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-dashboard',
@@ -48,7 +49,7 @@ export class DashboardComponent implements OnInit {
     console.log(stepperDiv);
     var stepper = new MStepper(stepperDiv, {
       // Default active step.
-      firstActive: 1, //api regresa paso a activar siempre debe empezar minimo en 1
+      firstActive: 2, //api regresa paso a activar siempre debe empezar minimo en 1
       // Allow navigation by clicking on the next and previous steps on linear steppers.
       linearStepsNavigation: true,
       // Auto focus on first input of each step.
@@ -109,6 +110,45 @@ export class DashboardComponent implements OnInit {
       //enviar datos a back
       this.popup[0].open();
     } 
+  }
+
+  sweetHome(){
+   /* swal('Importante',
+    'Para obtener su CURP debera obtenerlo de https://www.gob.mx/curp/, puede acceder dando click en el boton de abajo',
+    'info', 
+    {buttons: ["Cancelar", "Consultar Curp"]},
+    
+    );*/
+
+    swal({
+      title: "Importante",
+      text: "Para obtener su CURP debera obtenerlo de https://www.gob.mx/curp/, puede acceder dando click en el boton de abajo",
+      icon: "info",
+      buttons: { 
+        d:{
+        text: "Cancelar",
+        value: false,
+        visible: true,
+        className: "",
+        closeModal: true,
+      },
+        j:{
+          text: "Consultar Curp",
+          value: true,
+          visible: true,
+          className: "red darken-4",
+          closeModal: true,
+        }
+      }
+      
+     
+        }).then((value)=>{
+          if(value){
+            window.open('https://www.gob.mx/curp/', '_blank');
+          }       
+     });
+
+    
   }
 
 }

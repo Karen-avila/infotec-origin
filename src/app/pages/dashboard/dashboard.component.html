@@ -168,7 +168,7 @@
         <div class="step-title waves-effect waves-dark">Subir Documentos</div>
         <div class="step-content">
             <div class="row">
-                <div class="file-field input-field col s12 m6 l6">
+                <div class="file-field input-field col s8">
                     <div class="teal darken-4 btn">
                         <span>Identificacion Oficial frontal</span>
                         <input type="file">
@@ -178,17 +178,17 @@
                     </div>
                 </div>
 
-                <div class="file-field input-field col s12 m6 l6">
+                <div class="file-field input-field col s8">
                     <div class="teal darken-4 btn">
                         <span>Identificacion Oficial reverso</span>
-                        <input type="file">
+                        <input type="file" accept=".pdf">
                     </div>
                     <div class="file-path-wrapper">
                         <input class="file-path validate" type="text">
                     </div>
                 </div>
 
-                <div class="file-field input-field col s12 m6 l6">
+                <div class="file-field input-field col s8">
                     <div class="teal darken-4 btn">
                         <span>Comprobante de Domicilio</span>
                         <input type="file">
@@ -198,7 +198,7 @@
                     </div>
                 </div>
 
-                <div class="file-field input-field col s12 m6 l6">
+                <div class="file-field input-field col s10">
                     <div class="teal darken-4 btn">
                         <span>Estado de cuenta</span>
                         <input type="file">
@@ -208,9 +208,30 @@
                     </div>
                 </div>
 
+                <div>
+                    <div class="col s3">
+                        <span>Comprobante de domicilio</span>
+                        <a (click)="sweetHome()"><i class="material-icons prefix icon-yellow">help_outline</i></a>
+
+                    </div>
+                    <div class="file-field input-field col s6">
+
+
+
+                        <div class="teal darken-4 btn">
+                            <i class="material-icons right">attach_file</i>cargar
+                            <input type="file">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
             <div>
-                <li><a class="waves-effect teal darken-4 btn modal-trigger" href="#modal1">Enviar</a></li>
+                <a class="waves-effect red darken-4 btn modal-trigger" href="#modal1">Enviar</a>
             </div>
         </div>
     </li>

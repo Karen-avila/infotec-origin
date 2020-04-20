@@ -109,19 +109,19 @@ pbaDict(p1:string){
 
   //-------------
   register(){
-    let user = new User(this.form.value.email,this.form.value.password);
+    let user = new User(this.form.value.email,this.form.value.password,this.form.value.rePassword);
 
     console.log("form is valid?", this.form.valid);
 
     if(this.form.valid){
       console.log("form esto envio", this.form.value);
       //enviar datos a back
-      /*this.userService.createUser(user)
+      this.userService.createUser(user)
         .subscribe(res=>{
-          console.log(res); //revisar res.user p.ej y hacer un if(uid){openmodal}
-        });*/
+          console.log("esto responde el servicio register",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
+        });
 
-        this.userService.createUserL(user);
+        //this.userService.createUserL(user);
 
 
       this.instance[0].open(); //revisar donde quedara

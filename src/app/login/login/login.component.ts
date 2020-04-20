@@ -6,6 +6,9 @@ import { Router } from '@angular/router';
 
 import * as M from 'materialize-css';
 
+import { UserService } from '../../services/service.index';
+import { User } from '../../models/user.model';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -25,7 +28,7 @@ export class LoginComponent implements OnInit {
   }
 
 
-  constructor(private router: Router) { }
+  constructor(public userService:UserService, private router: Router) { }
 
   ngOnInit() {
    // M.AutoInit();
@@ -79,11 +82,16 @@ this.router.navigate(["dashboard"]);
   }
 
   login(){
+    let user = new User(this.form.value.email,this.form.value.password,this.form.value.rePassword);
     console.log("form is valid?", this.form.valid);
     if(this.form.valid){
-      console.log("form", this.form.value);
+      console.log("form esto envio", this.form.value);
       //enviar datos a back
-      this.router.navigate(["dashboard"]);
+      this.userService.login(user)
+        .subscribe(res=>{
+          console.log("esto responde el servicio login",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
+        });
+      this.router.navigate(["dashboard"]);//revisar donde quedara
      
     } 
   }
