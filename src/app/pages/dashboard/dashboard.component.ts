@@ -30,10 +30,20 @@ export class DashboardComponent implements OnInit {
     "ASESINO",
     "ASSHOLE",
   ]
+
+  alrt = [
+    {name:"Curp",
+     url:"https://www.gob.mx/curp/"},
+    {name:"Rfc",
+    url:"https://google.com/"}
+  ]
  
   constructor() { }
 
   ngOnInit() {
+
+    console.log("na",this.alrt);
+
     var elems = document.querySelectorAll('.modal');
     this.popup = M.Modal.init(elems);
 
@@ -133,7 +143,7 @@ export class DashboardComponent implements OnInit {
         closeModal: true,
       },
         j:{
-          text: "Consultar Curp",
+          text: "Consultar " + this.alrt[0].name,
           value: true,
           visible: true,
           className: "red darken-4",
