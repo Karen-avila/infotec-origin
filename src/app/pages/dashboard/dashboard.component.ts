@@ -63,7 +63,7 @@ export class DashboardComponent implements OnInit {
     console.log(stepperDiv);
     var stepper = new MStepper(stepperDiv, {
       // Default active step.
-      firstActive: 2, //api regresa paso a activar siempre debe empezar minimo en 1
+      firstActive: 1, //api regresa paso a activar siempre debe empezar minimo en 1
       // Allow navigation by clicking on the next and previous steps on linear steppers.
       linearStepsNavigation: true,
       // Auto focus on first input of each step.
