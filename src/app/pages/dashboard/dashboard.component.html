@@ -138,17 +138,18 @@
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">phone</i>
-                        <input id="phone" type="text" name="phone">
+                        <input id="phone" type="text" name="phone" maxlength="10" required autocomplete="off" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" min="1">
                         <label for="phone">Número de Telefono</label>
+                        <div class="blue-text"  *ngIf="f.phone.errors?.minlength">Solo 10 digitos</div>
                         
-                       
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">house</i>
                         <textarea id="domicilio" name='domicilio' formControlName="domicilio" required class="materialize-textarea"> </textarea>
                         <label for="domicilio">Domicilio particular</label>
 
-                        <div class="blue-text"  *ngIf="f.domicilio.errors?.minlength">Debe tener un min 5 y max 120 caracteres </div>
+                        <div class="blue-text"  *ngIf="f.domicilio.errors?.minlength ">Debe tener un mínimo 5 caracteres</div>
+                        <div class="blue-text"  *ngIf="f.domicilio.errors?.maxlength ">Máximo 120 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                           <!--  <p>Palabras altisonante</p> -->
                         </div>

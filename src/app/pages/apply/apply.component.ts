@@ -62,9 +62,11 @@ export class ApplyComponent implements OnInit {
    })
 
 //----------------------
+
+
    this.form = new FormGroup({
       email: new FormControl(null,[Validators.required, Validators.email]),
-      password: new FormControl(null, Validators.required),
+      password: new FormControl(null, [Validators.required, Validators.minLength(8)]),
       rePassword: new FormControl(null, Validators.required)
    }, { validators: this.equalPass('password','rePassword') });
 
@@ -73,7 +75,7 @@ export class ApplyComponent implements OnInit {
 //------------------------   
   }
 
-
+  get f() { return this.form.controls; }
 //------------
 
 equalPass(p1:string,p2:string){
