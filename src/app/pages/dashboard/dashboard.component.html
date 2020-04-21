@@ -23,9 +23,7 @@
                     </div>
                 </div>
                   <div class="step-actions">
-
                     <button class="waves-effect waves-dark btn next-step">Siguiente</button>
-
                 </div> 
             </div>-->
     </li>
@@ -68,7 +66,7 @@
                         <input id="name2" type="text" name='name2' formControlName="name2" required class="validate">
                         <label for="name2">Segundo nombre</label>
 
-                        <div class="blue-text"  *ngIf="f.name2.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
+                        <div class="blue-text" *ngIf="f.name2.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabra altisonante</p>-->
                         </div>
@@ -77,7 +75,7 @@
                         <i class="material-icons prefix">account_circle</i>
                         <input id="paterno" type="text" name='paterno' formControlName="paterno" required class="validate">
                         <label for="paterno">Apellido paterno</label>
-                        <div class="blue-text"  *ngIf="f.paterno.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
+                        <div class="blue-text" *ngIf="f.paterno.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabra altisonante</p> -->
                         </div>
@@ -86,7 +84,7 @@
                         <i class="material-icons prefix">account_circle</i>
                         <input id="materno" type="text" name='materno' formControlName="materno" required class="validate">
                         <label for="materno">Apellido materno</label>
-                        <div class="blue-text"  *ngIf="f.materno.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
+                        <div class="blue-text" *ngIf="f.materno.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabra altisonante</p> -->
                         </div>
@@ -140,18 +138,18 @@
                         <i class="material-icons prefix">phone</i>
                         <input id="phone" type="text" name="phone" maxlength="10" required autocomplete="off" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" min="1">
                         <label for="phone">Número de Telefono</label>
-                        <div class="blue-text"  *ngIf="f.phone.errors?.minlength">Solo 10 digitos</div>
-                        
+                        <div class="blue-text" *ngIf="f.phone.errors?.minlength">Solo 10 digitos</div>
+
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">house</i>
                         <textarea id="domicilio" name='domicilio' formControlName="domicilio" required class="materialize-textarea"> </textarea>
                         <label for="domicilio">Domicilio particular</label>
 
-                        <div class="blue-text"  *ngIf="f.domicilio.errors?.minlength ">Debe tener un mínimo 5 caracteres</div>
-                        <div class="blue-text"  *ngIf="f.domicilio.errors?.maxlength ">Máximo 120 caracteres</div>
+                        <div class="blue-text" *ngIf="f.domicilio.errors?.minlength ">Debe tener un mínimo 5 caracteres</div>
+                        <div class="blue-text" *ngIf="f.domicilio.errors?.maxlength ">Máximo 120 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
-                          <!--  <p>Palabras altisonante</p> -->
+                            <!--  <p>Palabras altisonante</p> -->
                         </div>
                     </div>
                     <div class="input-field col s12 m6 l6">
@@ -366,7 +364,8 @@
         <div class="step-title waves-effect waves-dark">Descarga de Documentos</div>
         <div class="step-content">
             <div class="row">
-                <img class="responsive-img" src="../../../assets/contr.png">
+                <!--<img class="responsive-img" src="../../../assets/contr.png">-->
+                <app-pdf></app-pdf>
             </div>
             <div class="step-actions">
                 <button class="waves-effect teal darken-4 btn ">Firmar</button>
