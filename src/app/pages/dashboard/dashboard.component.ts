@@ -77,7 +77,7 @@ export class DashboardComponent implements OnInit {
       // Preloader used when step is waiting for feedback function. If not defined, Materializecss spinner-blue-only will be used.
       feedbackPreloader: '<div class="spinner-layer spinner-blue-only">...</div>'
    })
-
+  
    this.form = new FormGroup({
     personType: new FormControl(null,Validators.required),
     name: new FormControl(null,[Validators.required,Validators.minLength(3)]),
@@ -86,7 +86,8 @@ export class DashboardComponent implements OnInit {
     materno: new FormControl(null,[Validators.required,Validators.minLength(3)]),
     domicilio: new FormControl(null,[Validators.required,Validators.minLength(5), Validators.maxLength(120)]),
     curp: new FormControl(null,Validators.required),
-    rfc: new FormControl(null,Validators.required)
+    rfc: new FormControl(null,Validators.required),
+    phone: new FormControl (null, [Validators.required, Validators.minLength(10)])
     
  }, { validators: this.pbaDict('name','paterno','name2','materno','domicilio') 
 

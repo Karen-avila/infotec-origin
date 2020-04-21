@@ -39,11 +39,14 @@
                                 <i class="material-icons prefix">account_circle</i>
                                 <input formControlName="email" name='email' id="email" type="email" required class="validate">
                                 <label for="email">Correo electronico</label>
+                                <div class="blue-text"  *ngIf="f.email.errors?.email">El correo electronico debe de ser valido</div>
                             </div>
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">account_circle</i>
                                 <input formControlName="password" name='password' id="password" type="password" required class="validate" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$">
                                 <label for="password">Clave</label>
+                                <div class="blue-text"  *ngIf="f.password.errors?.minlength">Debe tener un mínimo de 8 caracteres</div>
+                                
                             </div>
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">account_circle</i>
