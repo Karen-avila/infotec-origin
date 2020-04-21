@@ -56,3 +56,11 @@ ul.stepper.horizontal .step.done .step-title::before {
 [type="radio"].with-gap:checked+span:after {
     background-color: #9F2241;
 }
+
+.responsive-img0 {
+    transition: transform 0.2s;
+}
+
+.responsive-img0:hover {
+    transform: scale(1.5);
+}
