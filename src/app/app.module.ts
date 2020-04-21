@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { RecaptchaModule } from 'ng-recaptcha';
 
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { InlineSVGModule } from 'ng-inline-svg';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -33,6 +35,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   imports: [
     FormsModule,
     PdfViewerModule,
+    InlineSVGModule.forRoot(),
     ReactiveFormsModule,
     PagesModule,
     BrowserModule,
