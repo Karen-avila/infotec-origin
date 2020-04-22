@@ -288,10 +288,7 @@
                     </div>
                 </div>
 
-                <div class="input-field col s12 m4">
-                    <label><input class="with-gap teal darken-4" type="checkbox" />
-                    <span>Acepto Terminos y condiciones</span></label>
-                </div>
+
             </div>
             <br>
             <div>
@@ -365,12 +362,23 @@
         <div class="step-content">
             <div class="row">
                 <!--<img class="responsive-img" src="../../../assets/contr.png">-->
-                <app-pdf>loading</app-pdf>
+
+                <div class="input-field col s12 m2 offset-m2">
+                    <label><input class="with-gap teal darken-4" type="checkbox" [(ngModel)]="terms"/>
+                    <span>Acepto Terminos y condiciones</span></label>
+                </div>
+
+                <div class="input-field col s12 m1">
+                    <a class="waves-effect teal darken-4 btn modal-trigger" href="#modalContr">Ver</a>
+                </div>
+
             </div>
-            <div class="step-actions">
-                <button class="waves-effect teal darken-4 btn ">Firmar</button>
-                <a class="waves-effect teal darken-4 btn " href="../../../assets/original.pdf" download="contr.pdf">Descargar</a>
-                <li><a class="waves-effect teal darken-4 btn modal-trigger" href="#modal1">Enviar</a></li>
+            <div class="row" *ngIf="terms">
+                <div class="input-field col s12 m2 offset-m2">
+                    <div class="input-field col s12 m1 offset-m1">
+                        <a class="waves-effect teal darken-4 btn " href="../../../assets/original.pdf" download="contr.pdf">Descargar</a>
+                    </div>
+                </div>
             </div>
         </div>
     </li>
@@ -406,7 +414,17 @@
 
 
 
-
+<div id="modalContr" class="modal">
+    <div class="modal-content">
+        <app-pdf>loading</app-pdf>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>
+    </div>
+    <div class="footer-copyright teal darken-3">
+        <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
+    </div>
+</div>
 
 
 

@@ -18,6 +18,8 @@ export class DashboardComponent implements OnInit {
   popup;
   calendar;
 
+  terms=false;
+
   form : FormGroup;
   dic = [
     "apañar",

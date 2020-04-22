@@ -8731,7 +8731,7 @@ $jscomp.polyfill = function (e, r, p, m) {
     autoClose: false,
 
     // the default output format for the input field value
-    format: 'mmm dd, yyyy',
+    format: 'dd/mmm/yyyy',
 
     // Used to create date object from current input string
     parse: null,
@@ -8755,13 +8755,13 @@ $jscomp.polyfill = function (e, r, p, m) {
     maxDate: null,
 
     // Number of years either side, or array of upper/lower range
-    yearRange: 10,
+    yearRange: 60,
 
     // used internally (don't config outside)
-    minYear: 0,
-    maxYear: 9999,
-    minMonth: undefined,
-    maxMonth: undefined,
+    minYear: 1960,
+    maxYear: 2002,
+    minMonth: new Date(1960,0,1),
+    maxMonth: new Date(2002,12,31),
 
     startRange: null,
     endRange: null,
@@ -8792,6 +8792,7 @@ $jscomp.polyfill = function (e, r, p, m) {
       weekdays: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
       weekdaysShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
       weekdaysAbbrev: ['D', 'L', 'M', 'M', 'J', 'V', 'S']
+      
     },
 
     // events array
