@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PdfComponent implements OnInit {
 
+  src = "../../../assets/Caratula.pdf";
+
   constructor() { }
 
   ngOnInit() {
