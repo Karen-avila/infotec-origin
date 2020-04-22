@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+
 blockquote {
     border-left: 5px solid #BC955C;
 }
