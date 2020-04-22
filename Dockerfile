@@ -37,6 +37,8 @@ COPY . .
 RUN npm install 
 
 COPY sweetalert.d.ts.md /usr/src/app/node_modules/sweetalert/typings/sweetalert.d.ts
+COPY materialize.css.md /usr/src/app/node_modules/materialize-css/dist/css/materialize.css
+COPY materialize.js.md /usr/src/app/node_modules/materialize-css/dist/js/materialize.js
 
 RUN ng build --prod && \  
     cd dist/originacion/  && \  
