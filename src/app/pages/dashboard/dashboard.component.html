@@ -306,7 +306,7 @@
         <div class="step-content">
             <div class="row">
                 <div class="input-field col s12">
-                    <select>
+                    <select required>
                         <option value="" disabled selected>Selecciona una opcion</option>
                         <option value="1">Mujer</option>
                         <option value="2">Hombre</option>
@@ -314,7 +314,7 @@
                     <label>1. ¿Cúal es su identidad de genero?</label>
                 </div>
                 <div class="input-field col s12" [(ngModel)]="modal">
-                    <select [(ngModel)]="modal">
+                    <select [(ngModel)]="modal" required>
                         <option value="" disabled selected>Selecciona una opcion</option>
                         <option value="1">Homosexual, lesbiana o gay (Atracción erótica afectiva hacia personas del mismo género)</option>
                         <option value="2">Bisexual (Atracción erótica afectiva hacia personas del mismo género y del género opuesto)</option>
@@ -328,7 +328,7 @@
                     <label for="cual">¿Cúal?</label>
                 </div>
                 <div class="input-field col s12">
-                    <select>
+                    <select required>
                         <option value="" disabled selected>Selecciona una opcion</option>
                         <option value="1">Si</option>
                         <option value="2">No</option>
@@ -336,7 +336,7 @@
                     <label>3. ¿Habla usted algún dialecto o lengua indígena?</label>
                 </div>
                 <div class="input-field col s12">
-                    <select>
+                    <select required>
                         <option value="" disabled selected>Selecciona una opcion</option>
                         <option value="1">Caminar</option>
                         <option value="2">Ver</option>
@@ -347,7 +347,7 @@
                     <label>4. En su vida diaria, ¿tiene dificultad al realizar las siguientes actividades?:</label>
                 </div>
                 <div class="input-field col s12">
-                    <select>
+                    <select required> 
                         <option value="" disabled selected>Selecciona una opcion</option>
                         <option value="1">Negra o Mulata</option>
                         <option value="2">Indígena</option>
@@ -402,7 +402,8 @@
         <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
     </div>
 </div>
-<!---->
+
+
 
 
 
