@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+
 blockquote {
     border-left: 5px solid #BC955C;
 }
@@ -55,4 +59,12 @@ ul.stepper.horizontal .step.done .step-title::before {
 [type="radio"]:checked+span:after,
 [type="radio"].with-gap:checked+span:after {
     background-color: #9F2241;
+}
+
+.responsive-img0 {
+    transition: transform 0.2s;
+}
+
+.responsive-img0:hover {
+    transform: scale(1.5);
 }
