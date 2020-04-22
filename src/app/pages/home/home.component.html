@@ -2,11 +2,11 @@
 
 <!--Carrousel-->
 <div class="carousel carousel-slider">
-    <a class="carousel-item" href="#"><img class="responsive-img" src="../../assets/Banco-del-Bienestar-Gráficos---BANNER2.png"></a>
-    <a class="carousel-item" href="#"><img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/clanding3.png"></a>
-    <a class="carousel-item" href="#"><img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/clanding2.png"></a>
-    <a class="carousel-item" href="#"><img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/clanding1.png"></a>
-    <a class="carousel-item" href="#"><img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/clanding4.png"></a>
+    <a class="carousel-item" href="#"><img  src="../../assets/Banco-del-Bienestar-Gráficos---BANNER2.png" width="320" height="150"></a>
+    <a class="carousel-item" href="#"><img  src="https://framework-gb.cdn.gob.mx/landing/img/clanding3.png" width="320" height="150"></a>
+    <a class="carousel-item" href="#"><img  src="https://framework-gb.cdn.gob.mx/landing/img/clanding2.png" width="320" height="150"></a>
+    <a class="carousel-item" href="#"><img  src="https://framework-gb.cdn.gob.mx/landing/img/clanding1.png" width="320" height="150"></a>
+    <a class="carousel-item" href="#"><img  src="https://framework-gb.cdn.gob.mx/landing/img/clanding4.png" width="320" height="150"></a>
 </div>
 
 <!--
@@ -107,9 +107,10 @@
             <a routerLink="/apply" class="pulse waves-effect waves-light large red darken-3 btn"><i class="material-icons right">credit_card</i>Solicitalo Ahora</a>
         </div>
         <br><br>
+
     </div>
 
-    <div class="crono1 col m4 offset-m1 l3 offset-l1 xl2 offset-xl1 s10 offset-s1">
+    <div class="crono1 col m4 offset-m1 l3 offset-l1 xl2 offset-xl1 s10 offset-s1 hide-on-small-only">
         <div class="card crd teal darken-4 white-text z-depth-3">
             <div class="card-content">
                 <i class="medium material-icons icon-gold">monetization_on</i>
@@ -134,6 +135,28 @@
             </div>
         </div>
 
+    </div>
+
+    <div class="crono1 col m4 offset-m1 l3 offset-l1 xl2 offset-xl1 s10 offset-s1 hide-on-large-only">
+        <div class="center-align">
+            <p class="white-text flow-text teal darken-4"> 
+                <i class="small material-icons icon-gold left">monetization_on</i>
+                Monto  <b>  {{ valueMon | currency }}</b>
+            </p>
+        </div>
+        <br><br>
+        <div class="center-align">
+            <p class="white-text flow-text teal darken-4">
+                <i class="small material-icons icon-gold left">date_range</i>
+                Plazo  <b>     {{valuePlaz}}</b></p>
+        </div>
+        <br><br>
+        <div class="center-align">
+            <p class="white-text flow-text teal darken-4">
+                <i class="small material-icons icon-gold left">local_atm</i>
+                Parcialidad  <b>  {{ valueMon | currency }}</b></p>
+        </div>
+        <br><br>
     </div>
 
 </div>
