@@ -27,8 +27,13 @@ export class LoginComponent implements OnInit {
     console.log(this.recaptcha);
   }
 
-
-  constructor(public userService:UserService, private router: Router) { }
+re
+  constructor(public userService:UserService, private router: Router) { 
+    this.userService.localStep().subscribe(res=>{
+      
+      this.re = res[0].step;
+    });
+  }
 
   ngOnInit() {
    // M.AutoInit();
@@ -91,7 +96,8 @@ this.router.navigate(["dashboard"]);
         .subscribe(res=>{
           console.log("esto responde el servicio login",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
         });
-      this.router.navigate(["dashboard"]);//revisar donde quedara
+        console.log("waaa",this.re)
+      this.router.navigate(["dashboard",{id:this.re}]);//revisar donde quedara
      
     } 
   }
