@@ -360,25 +360,28 @@
     <li class="step">
         <div class="step-title waves-effect waves-dark">Descarga de Documentos</div>
         <div class="step-content">
+            <br><br>
             <div class="row">
                 <!--<img class="responsive-img" src="../../../assets/contr.png">-->
 
-                <div class="input-field col s12 m2 offset-m2">
+                <div class="input-field col s12 m3 offset-m3 l4 offset-l3">
                     <label><input class="with-gap teal darken-4" type="checkbox" [(ngModel)]="terms"/>
                     <span>Acepto Terminos y condiciones</span></label>
                 </div>
 
-                <div class="input-field col s12 m1">
-                    <a class="waves-effect teal darken-4 btn modal-trigger" href="#modalContr">Ver</a>
+                <div class="input-field col s12 m3 offset-m1">
+                    <a class="waves-effect teal darken-4 btn modal-trigger" href="#modalContr">Ver
+                        <i class="medium material-icons icon-gold right">visibility</i>
+                    </a>
                 </div>
 
             </div>
             <div class="row" *ngIf="terms">
-                <div class="input-field col s12 m2 offset-m2">
-                    <div class="input-field col s12 m1 offset-m1">
-                        <a class="waves-effect teal darken-4 btn " href="../../../assets/original.pdf" download="contr.pdf">Descargar</a>
+                    <div class="input-field col s12 m4 offset-m3">
+                        <a class="waves-effect teal darken-4 btn " href="../../../assets/original.pdf" download="contr.pdf">Descargar
+                            <i class="medium material-icons icon-gold right">save_alt</i>
+                        </a>
                     </div>
-                </div>
             </div>
         </div>
     </li>
