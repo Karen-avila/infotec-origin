@@ -21,6 +21,7 @@ export class DashboardComponent implements OnInit {
   terms=false;
 
   form : FormGroup;
+  formDocumentos : FormGroup;
   dic = [
     "apañar",
     "cagar",
@@ -83,30 +84,37 @@ export class DashboardComponent implements OnInit {
    this.form = new FormGroup({
     personType: new FormControl(null,Validators.required),
     name: new FormControl(null,[Validators.required,Validators.minLength(3)]),
-    name2: new FormControl(null,[Validators.required,Validators.minLength(3)]),
+    name2: new FormControl(null,[Validators.minLength(3)]),
     paterno: new FormControl(null,[Validators.required,Validators.minLength(3)]),
     materno: new FormControl(null,[Validators.required,Validators.minLength(3)]),
     domicilio: new FormControl(null,[Validators.required,Validators.minLength(5), Validators.maxLength(120)]),
     curp: new FormControl(null,Validators.required),
     rfc: new FormControl(null,Validators.required),
-    phone: new FormControl (null, [Validators.required, Validators.minLength(10)]),
-    frontal: new FormControl(null, Validators.required),
-    reverso: new FormControl(null, Validators.required),
-    comprobante: new FormControl(null, Validators.required),
-    estado: new FormControl(null, Validators.required),
-    curpd: new FormControl(null, Validators.required),
-    rfcd: new FormControl(null, Validators.required),
-    buro: new FormControl(null, Validators.required),
-    cfiscal: new FormControl(null, Validators.required)
+    genero : new FormControl(null, Validators.required)
+    //phone: new FormControl (null, [Validators.required, Validators.minLength(10)])
+   
     
  }, { validators: this.pbaDict('name','paterno','name2','materno','domicilio') 
 
+});
+
+this.formDocumentos = new FormGroup({
+  frontal: new FormControl(null, Validators.required),
+  reverso: new FormControl(null, Validators.required),
+  comprobante: new FormControl(null, Validators.required),
+  estado: new FormControl(null, Validators.required),
+  curpd: new FormControl(null, Validators.required),
+  rfcd: new FormControl(null, Validators.required),
+  buro: new FormControl(null, Validators.required),
+  cfiscal: new FormControl(null, Validators.required)
+  
 });
   
  
   }
 
   get f() { return this.form.controls; }
+  get doc() { return this.formDocumentos.controls; }
  
 
   pbaDict(p1:string,p2:string,p3:string,p4:string,p5:string){
@@ -135,6 +143,16 @@ export class DashboardComponent implements OnInit {
     console.log("form is valid?", this.form.valid);
     if(this.form.valid){
       console.log("form", this.form.value);
+      //enviar datos a back
+      this.popup[0].open();
+    } 
+
+  }
+
+  ddocumentos(){
+    console.log("formDocumentos is valid?", this.formDocumentos.valid);
+    if(this.formDocumentos.valid){
+      console.log("formDocumentos", this.formDocumentos.value);
       //enviar datos a back
       this.popup[0].open();
     } 
