@@ -1,10 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
+
+
 declare const MStepper: any;
 import * as M from 'materialize-css';
 
 import swal from 'sweetalert';
+
+import { UserService } from '../../services/service.index';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -44,12 +49,20 @@ export class DashboardComponent implements OnInit {
     {name:"Constancia de Situación Fiscal",
     url:"https://www.sat.gob.mx/aplicacion/53027/genera-tu-constancia-de-situacion-fiscal"}
   ]
- 
-  constructor() { }
+ re;
+  constructor(public userService:UserService,private route: ActivatedRoute) { 
+
+    this.route.params.subscribe( params => this.re=params);
+   
+
+  }
 
   ngOnInit() {
 
-    console.log("na",this.alrt);
+console.log("el step",this.re.id)
+
+    
+    console.log("comienza ngOnInit",this.alrt);
 
     var elems = document.querySelectorAll('.modal');
     this.popup = M.Modal.init(elems);
@@ -66,7 +79,7 @@ export class DashboardComponent implements OnInit {
     console.log(stepperDiv);
     var stepper = new MStepper(stepperDiv, {
       // Default active step.
-      firstActive: 4, //api regresa paso a activar siempre debe empezar minimo en 1
+      firstActive: this.re.id, //api regresa paso a activar siempre debe empezar minimo en 1
       // Allow navigation by clicking on the next and previous steps on linear steppers.
       linearStepsNavigation: true,
       // Auto focus on first input of each step.
@@ -76,7 +89,7 @@ export class DashboardComponent implements OnInit {
       // Auto generation of a form around the stepper.
       autoFormCreation: true,
       // Enable or disable navigation by clicking on step-titles
-      stepTitleNavigation: true,
+      stepTitleNavigation: false,
       // Preloader used when step is waiting for feedback function. If not defined, Materializecss spinner-blue-only will be used.
       feedbackPreloader: '<div class="spinner-layer spinner-blue-only">...</div>'
    })
