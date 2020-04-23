@@ -61,10 +61,10 @@ ul.stepper.horizontal .step.done .step-title::before {
     background-color: #9F2241;
 }
 
-.responsive-img0 {
+.img0 {
     transition: transform 0.2s;
 }
 
-.responsive-img0:hover {
-    transform: scale(1.5);
+.img0:hover {
+    transform: scale(1.2);
 }
