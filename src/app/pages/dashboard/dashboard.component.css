@@ -5,3 +5,7 @@ ul.stepper.horizontal {
 i.icon-red {
     color: rgb(243, 9, 9);
 }
+
+i.icon-black {
+    color: rgba(7, 3, 3, 0.979);
+}
