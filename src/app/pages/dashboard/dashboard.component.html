@@ -164,7 +164,9 @@
                         <label for="rfc">Registro Federal de Contribuyente</label>
                     </div>
                     <div class="col s12">
-                        <button class="waves-effect teal darken-4 btn" type="submit">Enviar</button>
+                        <button class="waves-effect teal darken-4 btn left" type="submit">Enviar
+                            <i class="material-icons prefix right">send</i>
+                        </button>
                     </div>
                 </form>
             </div>
@@ -182,7 +184,7 @@
                 </div>
                 <div class="file-field input-field col s12 m4 l4">
                     <div class="teal darken-4 btn">
-                        <i class="material-icons right">attach_file</i>cargar
+                        <i class="material-icons right">attachment</i>cargar
                         <input type="file" formControlName="frontal" id="frontal">
                     </div>
                         <div class="col s1 m1 l1" *ngIf="f.frontal.errors?.required">
@@ -200,7 +202,7 @@
                     </div>
                     <div class="file-field input-field col s12 m4 l4">
                         <div class="teal darken-4 btn">
-                            <i class="material-icons right">attach_file</i>cargar
+                            <i class="material-icons right">attachment</i>cargar
                             <input type="file" formControlName="reverso" id="reverso">
                         </div>
                         <div class="col s1 m1 l1" *ngIf="f.reverso.errors?.required">
@@ -218,7 +220,7 @@
                     </div>
                     <div class="file-field input-field col s12 m4 l4">
                         <div class="teal darken-4 btn">
-                            <i class="material-icons right">attach_file</i>cargar
+                            <i class="material-icons right">attachment</i>cargar
                             <input type="file" formControlName="comprobante" id="comprobante">
                         </div>
                         <div class="col s1 m1 l1" *ngIf="f.comprobante.errors?.required">
@@ -237,7 +239,7 @@
                     </div>
                     <div class="file-field input-field col s12 m4 l4">
                         <div class="teal darken-4 btn">
-                            <i class="material-icons right">attach_file</i>cargar
+                            <i class="material-icons right">attachment</i>cargar
                             <input type="file" formControlName="estado" id="estado">
                         </div>
                         <div class="col s1 m1 l1" *ngIf="f.estado.errors?.required">
@@ -250,11 +252,11 @@
                 </div>
                 <div class="col s12 m2 l2">
                     <span>CURP</span>
-                    <a (click)="sweetHome('0')"><i class="material-icons prefix icon-yellow">help_outline</i></a>
+                    <a (click)="sweetHome('0')"><i class="material-icons prefix icon-black">help_outline</i></a>
                 </div>
                 <div class="file-field input-field col s12 m4 l4">
                     <div class="teal darken-4 btn">
-                        <i class="material-icons right">attach_file</i>cargar
+                        <i class="material-icons right">attachment</i>cargar
                         <input type="file" formControlName="curpd" id="curpd">
                     </div>
                     <div class="col s1 m1 l1" *ngIf="f.curpd.errors?.required">
@@ -266,11 +268,11 @@
                 </div>
                 <div class="col s12 m2 l2">
                     <span>Registro Federal de Contribuyente</span>
-                    <a (click)="sweetHome('1')"><i class="material-icons prefix icon-yellow">help_outline</i></a>
+                    <a (click)="sweetHome('1')"><i class="material-icons prefix icon-black">help_outline</i></a>
                 </div>
                 <div class="file-field input-field col s12 m4 l4">
                     <div class="teal darken-4 btn">
-                        <i class="material-icons right">attach_file</i>cargar
+                        <i class="material-icons right">attachment</i>cargar
                         <input type="file" formControlName="rfcd" id="rfcd">
                     </div>
                     <div class="col s1 m1 l1" *ngIf="f.rfcd.errors?.required">
@@ -282,11 +284,11 @@
                 </div>
                 <div class="col s12 m2 l2">
                     <span>Score de Buro de Crédito </span>
-                    <a (click)="sweetHome('2')"><i class="material-icons prefix icon-yellow">help_outline</i></a>
+                    <a (click)="sweetHome('2')"><i class="material-icons prefix icon-black">help_outline</i></a>
                 </div>
                 <div class="file-field input-field col s12 m4 l4">
                     <div class="teal darken-4 btn">
-                        <i class="material-icons right">attach_file</i>cargar
+                        <i class="material-icons right">attachment</i>cargar
                         <input type="file" formControlName="buro" id="buro">
                     </div>
                     <div class="col s1 m1 l1" *ngIf="f.buro.errors?.required">
@@ -298,11 +300,11 @@
                 </div>
                 <div class="col s12 m2 l2">
                     <span>Constancia de Situacion Fiscal </span>
-                    <a (click)="sweetHome('3')"><i class="material-icons prefix icon-yellow">help_outline</i></a>
+                    <a (click)="sweetHome('3')"><i class="material-icons prefix icon-black">help_outline</i></a>
                 </div>
                 <div class="file-field input-field col s12 m4 l4">
                     <div class="teal darken-4 btn">
-                        <i class="material-icons right">attach_file</i>cargar
+                        <i class="material-icons right">attachment</i>cargar
                         <input type="file" formControlName="cfiscal" id="cfiscal">
                     </div>
                     <div class="col s1 m1 l1" *ngIf="f.cfiscal.errors?.required">
@@ -313,13 +315,17 @@
                     </div>
                 </div>
             </div>
+            <div class="ro">
             <div class="col s12">
-             ! Son requeridos todos los archivos para poder continuar con el proceso.
+                <i class="material-icons icon-red left">error_outline</i>
+                Son requeridos todos los archivos para poder continuar con el proceso.
             </div>
-            <br><br>
             <div class="col s12">
-                <button class="waves-effect teal darken-4 btn" type="submit">Enviar</button>
+                <button class="waves-effect teal darken-4 btn right" type="submit">Enviar
+                    <i class="material-icons prefix right">send</i>
+                </button>
             </div>
+        </div>
         </form>
 
         </div>
@@ -380,18 +386,22 @@
                     <label>5. En nuestro país viven personas de múltiples orígenes raciales, ¿se considera usted una persona…</label>
                 </div>
             </div>
-
-            <li><a class="waves-effect  teal darken-4 btn modal-trigger" href="#modal1">Enviar</a></li>
-
+            <div class="col s12">
+            <li><a class="waves-effect  teal darken-4 btn modal-trigger right" href="#modal1">
+                <i class="material-icons prefix right">send</i>
+                Enviar</a>
+            </li>
+        </div>
         </div>
     </li>
     <li class="step">
         <div class="step-title waves-effect waves-dark">Descarga de Documentos</div>
         <div class="step-content">
-            <br><br>
+            <br>
+            <div class="card">
+                <div class="card-content">
             <div class="row">
                 <!--<img class="responsive-img" src="../../../assets/contr.png">-->
-
                 <div class="input-field col s12 m3 offset-m3 l4 offset-l3">
                     <label><input class="with-gap teal darken-4" type="checkbox" [(ngModel)]="terms"/>
                     <span>Acepto Terminos y condiciones</span></label>
@@ -410,6 +420,8 @@
                             <i class="medium material-icons icon-gold right">save_alt</i>
                         </a>
                     </div>
+            </div>
+            </div>
             </div>
         </div>
     </li>
