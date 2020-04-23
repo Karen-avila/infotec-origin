@@ -1,3 +1,7 @@
 ul.stepper.horizontal {
     min-height: 100vh;
 }
+
+i.icon-red {
+    color: rgb(243, 9, 9);
+}

@@ -175,6 +175,7 @@
     <li class="step">
         <div class="step-title waves-effect waves-dark">Subir Documentos</div>
         <div class="step-content">
+            <form ngNativeValidate [formGroup]="form">
             <div class="row">
                 <div class="col s12 m2 l2">
                     <span>Identificación Oficial Frontal</span>
@@ -182,11 +183,14 @@
                 <div class="file-field input-field col s12 m4 l4">
                     <div class="teal darken-4 btn">
                         <i class="material-icons right">attach_file</i>cargar
-                        <input type="file">
+                        <input type="file" formControlName="frontal" id="frontal">
                     </div>
+                        <div class="col s1 m1 l1" *ngIf="f.frontal.errors?.required">
+                            <i class="material-icons icon-red">error_outline</i>
+                        </div>
                     <div class="file-path-wrapper">
                         <input class="file-path validate" type="text">
-                    </div>
+                    </div>  
                 </div>
 
 
@@ -197,7 +201,10 @@
                     <div class="file-field input-field col s12 m4 l4">
                         <div class="teal darken-4 btn">
                             <i class="material-icons right">attach_file</i>cargar
-                            <input type="file">
+                            <input type="file" formControlName="reverso" id="reverso">
+                        </div>
+                        <div class="col s1 m1 l1" *ngIf="f.reverso.errors?.required">
+                            <i class="material-icons icon-red">error_outline</i>
                         </div>
                         <div class="file-path-wrapper">
                             <input class="file-path validate" type="text">
@@ -212,7 +219,10 @@
                     <div class="file-field input-field col s12 m4 l4">
                         <div class="teal darken-4 btn">
                             <i class="material-icons right">attach_file</i>cargar
-                            <input type="file">
+                            <input type="file" formControlName="comprobante" id="comprobante">
+                        </div>
+                        <div class="col s1 m1 l1" *ngIf="f.comprobante.errors?.required">
+                            <i class="material-icons icon-red">error_outline</i>
                         </div>
                         <div class="file-path-wrapper">
                             <input class="file-path validate" type="text">
@@ -228,7 +238,10 @@
                     <div class="file-field input-field col s12 m4 l4">
                         <div class="teal darken-4 btn">
                             <i class="material-icons right">attach_file</i>cargar
-                            <input type="file">
+                            <input type="file" formControlName="estado" id="estado">
+                        </div>
+                        <div class="col s1 m1 l1" *ngIf="f.estado.errors?.required">
+                            <i class="material-icons icon-red">error_outline</i>
                         </div>
                         <div class="file-path-wrapper">
                             <input class="file-path validate" type="text">
@@ -242,7 +255,10 @@
                 <div class="file-field input-field col s12 m4 l4">
                     <div class="teal darken-4 btn">
                         <i class="material-icons right">attach_file</i>cargar
-                        <input type="file">
+                        <input type="file" formControlName="curpd" id="curpd">
+                    </div>
+                    <div class="col s1 m1 l1" *ngIf="f.curpd.errors?.required">
+                        <i class="material-icons icon-red">error_outline</i>
                     </div>
                     <div class="file-path-wrapper">
                         <input class="file-path validate" type="text">
@@ -255,7 +271,10 @@
                 <div class="file-field input-field col s12 m4 l4">
                     <div class="teal darken-4 btn">
                         <i class="material-icons right">attach_file</i>cargar
-                        <input type="file">
+                        <input type="file" formControlName="rfcd" id="rfcd">
+                    </div>
+                    <div class="col s1 m1 l1" *ngIf="f.rfcd.errors?.required">
+                        <i class="material-icons icon-red">error_outline</i>
                     </div>
                     <div class="file-path-wrapper">
                         <input class="file-path validate" type="text">
@@ -268,7 +287,10 @@
                 <div class="file-field input-field col s12 m4 l4">
                     <div class="teal darken-4 btn">
                         <i class="material-icons right">attach_file</i>cargar
-                        <input type="file">
+                        <input type="file" formControlName="buro" id="buro">
+                    </div>
+                    <div class="col s1 m1 l1" *ngIf="f.buro.errors?.required">
+                        <i class="material-icons icon-red">error_outline</i>
                     </div>
                     <div class="file-path-wrapper">
                         <input class="file-path validate" type="text">
@@ -281,19 +303,23 @@
                 <div class="file-field input-field col s12 m4 l4">
                     <div class="teal darken-4 btn">
                         <i class="material-icons right">attach_file</i>cargar
-                        <input type="file">
+                        <input type="file" formControlName="cfiscal" id="cfiscal">
+                    </div>
+                    <div class="col s1 m1 l1" *ngIf="f.cfiscal.errors?.required">
+                        <i class="material-icons icon-red">error_outline</i>
                     </div>
                     <div class="file-path-wrapper">
                         <input class="file-path validate" type="text">
                     </div>
                 </div>
-
-
             </div>
-            <br>
-            <div>
-                <a class="waves-effect red darken-4 btn modal-trigger" href="#modal1">Enviar</a>
+       <span>  ! Son requeridos todos los archivos para poder continuar con el proceso </span>
+            <br><br>
+            <div class="col s12">
+                <button class="waves-effect teal darken-4 btn" type="submit">Enviar</button>
             </div>
+        </form>
+
         </div>
     </li>
     <li class="step">

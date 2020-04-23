@@ -65,7 +65,7 @@ export class DashboardComponent implements OnInit {
     console.log(stepperDiv);
     var stepper = new MStepper(stepperDiv, {
       // Default active step.
-      firstActive: 4, //api regresa paso a activar siempre debe empezar minimo en 1
+      firstActive: 2, //api regresa paso a activar siempre debe empezar minimo en 1
       // Allow navigation by clicking on the next and previous steps on linear steppers.
       linearStepsNavigation: true,
       // Auto focus on first input of each step.
@@ -89,7 +89,15 @@ export class DashboardComponent implements OnInit {
     domicilio: new FormControl(null,[Validators.required,Validators.minLength(5), Validators.maxLength(120)]),
     curp: new FormControl(null,Validators.required),
     rfc: new FormControl(null,Validators.required),
-    phone: new FormControl (null, [Validators.required, Validators.minLength(10)])
+    phone: new FormControl (null, [Validators.required, Validators.minLength(10)]),
+    frontal: new FormControl(null, Validators.required),
+    reverso: new FormControl(null, Validators.required),
+    comprobante: new FormControl(null, Validators.required),
+    estado: new FormControl(null, Validators.required),
+    curpd: new FormControl(null, Validators.required),
+    rfcd: new FormControl(null, Validators.required),
+    buro: new FormControl(null, Validators.required),
+    cfiscal: new FormControl(null, Validators.required)
     
  }, { validators: this.pbaDict('name','paterno','name2','materno','domicilio') 
 
@@ -99,6 +107,7 @@ export class DashboardComponent implements OnInit {
   }
 
   get f() { return this.form.controls; }
+ 
 
   pbaDict(p1:string,p2:string,p3:string,p4:string,p5:string){
 
