@@ -62,12 +62,12 @@ export class DashboardComponent implements OnInit {
    translate: (value: number, label: LabelType): string => {
      switch (label) {
        case LabelType.Low:
-         return '<b>Si te Prestamos: </b>' +  value.toLocaleString('es-MX', {
+         return '<b>Si te Prestamos: </b>MX' +  value.toLocaleString('es-MX', {
            style: 'currency',
            currency: 'MXN',
          }); 
        case LabelType.Ceil:
-         return '<b>Monto Maximo: </b>' + value.toLocaleString('es-MX', {
+         return '<b>Monto Maximo: </b>MX' + value.toLocaleString('es-MX', {
            style: 'currency',
            currency: 'MXN',
          });
