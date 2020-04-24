@@ -83,7 +83,7 @@
 <div class="row">
     <div class="cono2 special col xl7 offset-xl1 l6 offset-l1 m6 offset-m1 s10 offset-s1">
 
-        <p class="flow-text center-align">MI PRÉSTAMO DE HASTA {{50000|currency:"MXN":"symbol"}}</p>
+        <p class="flow-text center-align">Crédito Directo Productivo desde {{20000|currency:"MXN":"symbol"}} hasta {{50000|currency:"MXN":"symbol"}}</p>
 
         <!--<div class="row">
             <div class="input-field col s12 m12">
@@ -110,9 +110,16 @@
             <ng5-slider [(value)]="valuePlaz" [options]="optionsPlaz"></ng5-slider>
         </div>
         <br><br>
-
+        <div>
+            <div class="chip">
+                GAT - 60.5%
+            </div>
+            <div class="chip">
+                CAT - 60.5%
+            </div>
+        </div>
         <div class="center-align">
-            <p class="white-text flow-text cr">Total a Pagar <b> {{((valuePlaz/12)*valueMon*0.065)+valueMon | currency}}</b></p>
+            <p class="white-text flow-text cr">Total a Pagar <b> {{((valuePlaz/12)*valueMon*0.15)+valueMon | currency}}</b></p>
         </div>
         <br><br>
         <!--
@@ -148,7 +155,7 @@
             <div class="card-content">
                 <i class="material-icons medium icon-gold">local_atm</i>
                 <p>Parcialidad</p>
-                <p>{{ ((((valuePlaz/12)*valueMon*0.065)+valueMon)/valuePlaz).toFixed(2) | currency }}</p>
+                <p>{{ ((((valuePlaz/12)*valueMon*0.15)+valueMon)/valuePlaz).toFixed(2) | currency }}</p>
             </div>
         </div>
 
