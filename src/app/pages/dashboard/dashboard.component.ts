@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
-
-
 declare const MStepper: any;
 import * as M from 'materialize-css';
 
@@ -10,6 +8,9 @@ import swal from 'sweetalert';
 
 import { UserService } from '../../services/service.index';
 import { ActivatedRoute } from '@angular/router';
+
+import { Options, LabelType } from 'ng5-slider';
+import { Finance } from 'financejs'
 
 @Component({
   selector: 'app-dashboard',
@@ -50,6 +51,53 @@ export class DashboardComponent implements OnInit {
     url:"https://www.sat.gob.mx/aplicacion/53027/genera-tu-constancia-de-situacion-fiscal"}
   ]
  re;
+
+ //-------------------
+ valueMon: number = 20000;
+ optionsMon: Options = {
+   floor: 0,
+   ceil: 50000,
+   step: 10000,
+   minLimit: 20000,
+   translate: (value: number, label: LabelType): string => {
+     switch (label) {
+       case LabelType.Low:
+         return '<b>Si te Prestamos: </b>' +  value.toLocaleString('es-MX', {
+           style: 'currency',
+           currency: 'MXN',
+         }); 
+       case LabelType.Ceil:
+         return '<b>Monto Maximo: </b>' + value.toLocaleString('es-MX', {
+           style: 'currency',
+           currency: 'MXN',
+         });
+       default:
+         return '<b>Monto</b>';
+     }
+         //return '<b>Si te Prestamos:</b> $' + value;
+   }
+ };
+ valuePlaz: number = 18;
+ optionsPlaz: Options = {
+   floor: 0,
+   ceil: 36,
+   step: 18,
+   minLimit: 18,
+   translate: (value: number, label: LabelType): string => {
+     switch (label) {
+       case LabelType.Low:
+         return '<b>' + value + ' Meses</b>';
+       case LabelType.Ceil:
+         return '<b>' + value + ' Meses</b>';
+       default:
+         return '<b>Plazo</b>';
+     }
+         //return '<b>Si te Prestamos:</b> $' + value;
+   }
+ };
+ 
+ finance = new Finance();
+ //-------------------
   constructor(public userService:UserService,private route: ActivatedRoute) { 
 
     this.route.params.subscribe( params => this.re=params);
