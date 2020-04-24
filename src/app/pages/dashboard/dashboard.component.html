@@ -33,27 +33,7 @@
             <div class="row">
 
                 <form ngNativeValidate [formGroup]="form" (ngSubmit)="dpersonales()">
-                    <div class="row">
 
-                        <div class="input-field col s12 m12">
-                            <label>
-                                <input class="with-gap teal darken-4"  name="credito"  type="radio" />
-                                <span>Crédito Directo Productivo en Colaboración con la Secretaría de Economía</span>
-                            </label>
-                        </div>
-                        <div class="input-field col s12 m12">
-                            <label>
-                                <input class="with-gap teal darken-4"  name="credito" type="radio" />
-                                <span>Crédito Directo Productivo para Reactivación Económica</span>
-                            </label>
-                        </div>
-                        <p class="white-text white">.</p>
-                        <div class="input-field col s12 m4 l4">
-                            <i class="material-icons prefix">monetization_on</i>
-                            <input type="number" required class="validate">
-                            <label>Monto</label>
-                        </div>
-                    </div>
 
                     <div class="row">
                         <div class="input-field col s12 m4">
@@ -199,8 +179,31 @@
     <li class="step">
         <div class="step-title waves-effect waves-dark">Datos de Prestamo</div>
         <div class="step-content">
+            <div class="row">
 
+                <div class="input-field col s12 m12">
+                    <label>
+                        <input class="with-gap teal darken-4"  name="credito"  type="radio" />
+                        <span>Crédito Directo Productivo en Colaboración con la Secretaría de Economía</span>
+                    </label>
+                </div>
+                <div class="input-field col s12 m12">
+                    <label>
+                        <input class="with-gap teal darken-4"  name="credito" type="radio" />
+                        <span>Crédito Directo Productivo para Reactivación Económica</span>
+                    </label>
+                </div>
+                <p class="white-text white">.</p>
+                <div class="input-field col s12 m4 l4">
+                    <i class="material-icons prefix">monetization_on</i>
+                    <input type="number" required class="validate">
+                    <label>Monto</label>
+                </div>
+            </div>
+            <!-- Here goes your actions buttons -->
+            <button class="waves-effect waves-dark teal darken-4 btn next-step">CONTINUAR</button>
         </div>
+
     </li>
     <li class="step">
         <div class="step-title waves-effect waves-dark">Subir Documentos</div>
