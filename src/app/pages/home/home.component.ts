@@ -13,12 +13,12 @@ export class HomeComponent implements OnInit {
 
 tim;
 car = this.carr();
-  valueMon: number = 10000;
+  valueMon: number = 20000;
   optionsMon: Options = {
     floor: 0,
     ceil: 50000,
     step: 10000,
-    minLimit: 10000,
+    minLimit: 20000,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
         case LabelType.Low:
@@ -37,12 +37,12 @@ car = this.carr();
           //return '<b>Si te Prestamos:</b> $' + value;
     }
   };
-  valuePlaz: number = 36;
+  valuePlaz: number = 18;
   optionsPlaz: Options = {
     floor: 0,
     ceil: 36,
-    step: 36,
-    minLimit: 36,
+    step: 18,
+    minLimit: 18,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
         case LabelType.Low:

@@ -110,8 +110,9 @@
             <ng5-slider [(value)]="valuePlaz" [options]="optionsPlaz"></ng5-slider>
         </div>
         <br><br>
+
         <div class="center-align">
-            <p class="white-text flow-text cr">Total a Pagar <b> {{valueMon+(valueMon*.50) | currency}}</b></p>
+            <p class="white-text flow-text cr">Total a Pagar <b> {{((valuePlaz/12)*valueMon*0.065)+valueMon | currency}}</b></p>
         </div>
         <br><br>
         <!--
@@ -147,7 +148,7 @@
             <div class="card-content">
                 <i class="material-icons medium icon-gold">local_atm</i>
                 <p>Parcialidad</p>
-                <p>{{ valueMon | currency }}</p>
+                <p>{{ ((((valuePlaz/12)*valueMon*0.065)+valueMon)/valuePlaz).toFixed(2) | currency }}</p>
             </div>
         </div>
 
