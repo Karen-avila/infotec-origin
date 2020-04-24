@@ -29,10 +29,11 @@ export class LoginComponent implements OnInit {
 
 re
   constructor(public userService:UserService, private router: Router) { 
-    this.userService.localStep().subscribe(res=>{
+    /*this.userService.localStep().subscribe(res=>{
       
       this.re = res[0].step;
-    });
+    });*/
+    this.re="1";
   }
 
   ngOnInit() {

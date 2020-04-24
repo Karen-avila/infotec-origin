@@ -62,12 +62,12 @@ export class DashboardComponent implements OnInit {
    translate: (value: number, label: LabelType): string => {
      switch (label) {
        case LabelType.Low:
-         return '<b>Si te Prestamos: </b>' +  value.toLocaleString('es-MX', {
+         return '<b>Si te Prestamos: </b>MX' +  value.toLocaleString('es-MX', {
            style: 'currency',
            currency: 'MXN',
          }); 
        case LabelType.Ceil:
-         return '<b>Monto Maximo: </b>' + value.toLocaleString('es-MX', {
+         return '<b>Monto Maximo: </b>MX' + value.toLocaleString('es-MX', {
            style: 'currency',
            currency: 'MXN',
          });
@@ -127,7 +127,7 @@ console.log("el step",this.re.id)
     console.log(stepperDiv);
     var stepper = new MStepper(stepperDiv, {
       // Default active step.
-      firstActive: 4, //api regresa paso a activar siempre debe empezar minimo en 1
+      firstActive: this.re.id, //api regresa paso a activar siempre debe empezar minimo en 1
       // Allow navigation by clicking on the next and previous steps on linear steppers.
       linearStepsNavigation: true,
       // Auto focus on first input of each step.

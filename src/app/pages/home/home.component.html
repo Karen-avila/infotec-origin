@@ -114,15 +114,13 @@
         </div>
         <br><br>
         <div>
-            <div class="chip">
-                GAT - 60.5%
-            </div>
+
             <div class="chip">
                 CAT - 60.5%
             </div>
         </div>
         <div class="center-align">
-            <p class="white-text flow-text cr">Total a Pagar <b> {{((finance.PMT(0.0125,valuePlaz,-valueMon))*valuePlaz).toFixed(2) | currency}}</b></p>
+            <p class="white-text flow-text cr">Total a Pagar <b> {{((finance.PMT(0.0125,valuePlaz,-valueMon))*valuePlaz).toFixed(2) | currency:"MXN":"symbol"}}</b></p>
         </div>
         <br><br>
         <!--
@@ -142,7 +140,7 @@
             <div class="card-content">
                 <i class="medium material-icons icon-gold">monetization_on</i>
                 <p>Monto</p>
-                <p>{{ valueMon | currency }}</p>
+                <p>{{ valueMon | currency:"MXN":"symbol" }}</p>
             </div>
         </div>
 
@@ -158,7 +156,7 @@
             <div class="card-content">
                 <i class="material-icons medium icon-gold">local_atm</i>
                 <p>Parcialidad</p>
-                <p>{{ finance.PMT(0.0125,valuePlaz,-valueMon).toFixed(2) | currency }}</p>
+                <p>{{ finance.PMT(0.0125,valuePlaz,-valueMon).toFixed(2) | currency:"MXN":"symbol" }}</p>
             </div>
         </div>
 
@@ -167,7 +165,7 @@
     <div class="crono1 col m4 offset-m1 l3 offset-l1 xl2 offset-xl1 s10 offset-s1 hide-on-large-only">
         <div class="center-align">
             <p class="white-text flow-text teal darken-4">
-                <i class="small material-icons icon-gold left">monetization_on</i> Monto <b>  {{ valueMon | currency }}</b>
+                <i class="small material-icons icon-gold left">monetization_on</i> Monto <b>  {{ valueMon | currency:"MXN":"symbol" }}</b>
             </p>
         </div>
         <br><br>
@@ -178,7 +176,7 @@
         <br><br>
         <div class="center-align">
             <p class="white-text flow-text teal darken-4">
-                <i class="small material-icons icon-gold left">local_atm</i> Parcialidad <b>  {{ valueMon | currency }}</b></p>
+                <i class="small material-icons icon-gold left">local_atm</i> Parcialidad <b>  {{ valueMon | currency:"MXN":"symbol" }}</b></p>
         </div>
         <br><br>
     </div>
