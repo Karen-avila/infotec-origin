@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import * as M from 'materialize-css';
 import { Options, LabelType } from 'ng5-slider';
+import { pipe } from 'rxjs';
+import { CurrencyPipe, formatCurrency } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -14,27 +16,33 @@ car = this.carr();
   valueMon: number = 10000;
   optionsMon: Options = {
     floor: 0,
-    ceil: 20000,
-    step: 5000,
-    minLimit: 5000,
+    ceil: 50000,
+    step: 10000,
+    minLimit: 10000,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
         case LabelType.Low:
-          return '<b>Si te Prestamos:</b> $' + value;
+          return '<b>Si te Prestamos: </b>' +  value.toLocaleString('es-MX', {
+            style: 'currency',
+            currency: 'MXN',
+          }); 
         case LabelType.Ceil:
-          return '<b>Monto Maximo:</b> $' + value;
+          return '<b>Monto Maximo: </b>' + value.toLocaleString('es-MX', {
+            style: 'currency',
+            currency: 'MXN',
+          });
         default:
           return '<b>Monto</b>';
       }
           //return '<b>Si te Prestamos:</b> $' + value;
     }
   };
-  valuePlaz: number = 6;
+  valuePlaz: number = 36;
   optionsPlaz: Options = {
     floor: 0,
     ceil: 36,
-    step: 6,
-    minLimit: 6,
+    step: 36,
+    minLimit: 36,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
         case LabelType.Low:

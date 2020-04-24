@@ -31,8 +31,9 @@
         <div class="step-title waves-effect waves-dark">Datos Personales</div>
         <div class="step-content">
             <div class="row">
-                
+
                 <form ngNativeValidate [formGroup]="form" (ngSubmit)="dpersonales()">
+<<<<<<< HEAD
                     <div class="row">
             
                         <div class="input-field col s12 m12">
@@ -54,8 +55,11 @@
                             <label>Monto</label>
                         </div>
                     </div>
+=======
+>>>>>>> bd6a30614f1e39d8d4a6860294a86049ad396512
 
-                   <div class="row">
+
+                    <div class="row">
                         <div class="input-field col s12 m4">
                             <label>
                     <input class="with-gap teal darken-4" formControlName="personType" name="personType" id="personType" type="radio" value="pFisica" [(ngModel)]="model"/>
@@ -66,13 +70,13 @@
                     <input class="with-gap teal darken-4" formControlName="personType"  name="personType" id="personType" type="radio" value="rFiscal" [(ngModel)]="model"/>
                     <span>Regimen de Incorporación Fiscal</span></label>
                         </div>
-                    
-                    <div>
-                        <p class="white-text white">.</p>
-                        <br><br>
-                        
+
+                        <div>
+                            <p class="white-text white">.</p>
+                            <br><br>
+
+                        </div>
                     </div>
-                </div>
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
@@ -87,7 +91,7 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="name2" type="text" name='name2'  required class="validate">
+                        <input id="name2" type="text" name='name2' required class="validate">
                         <label for="name2">Segundo nombre</label>
 
                         <div class="blue-text" *ngIf="f.name2.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
@@ -196,76 +200,169 @@
         </div>
 
     </li>
+    <li class="step">
+        <div class="step-title waves-effect waves-dark">Datos de Prestamo</div>
+        <div class="step-content">
+            <div class="row">
 
+                <div class="input-field col s12 m12">
+                    <label>
+                        <input class="with-gap teal darken-4"  name="credito"  type="radio" />
+                        <span>Crédito Directo Productivo en Colaboración con la Secretaría de Economía</span>
+                    </label>
+                </div>
+                <div class="input-field col s12 m12">
+                    <label>
+                        <input class="with-gap teal darken-4"  name="credito" type="radio" />
+                        <span>Crédito Directo Productivo para Reactivación Económica</span>
+                    </label>
+                </div>
+                <p class="white-text white">.</p>
+                <div class="input-field col s12 m4 l4">
+                    <i class="material-icons prefix">monetization_on</i>
+                    <input type="number" required class="validate">
+                    <label>Monto</label>
+                </div>
+            </div>
+            <!-- Here goes your actions buttons -->
+            <button class="waves-effect waves-dark teal darken-4 btn next-step">CONTINUAR</button>
+        </div>
+
+    </li>
     <li class="step">
         <div class="step-title waves-effect waves-dark">Subir Documentos</div>
         <div class="step-content">
-            <form ngNativeValidate [formGroup]="formDocumentos" (ngSubmit)="ddocumentos()" >
-            <div class="row">
-                <div class="col s12 m2 l2">
-                    <span>Identificación Oficial Frontal</span>
-                </div>
-                <div class="file-field input-field col s12 m4 l4">
-                    <div class="teal darken-4 btn">
-                        <i class="material-icons right">attachment</i>cargar
-                        <input type="file" formControlName="frontal" id="frontal" required class="validate">
+            <form ngNativeValidate [formGroup]="formDocumentos" (ngSubmit)="ddocumentos()">
+                <div class="row">
+                    <div class="col s12 m2 l2">
+                        <span>Identificación Oficial Frontal</span>
                     </div>
+                    <div class="file-field input-field col s12 m4 l4">
+                        <div class="teal darken-4 btn">
+                            <i class="material-icons right">attachment</i>cargar
+                            <input type="file" formControlName="frontal" id="frontal" required class="validate">
+                        </div>
                         <div class="col s1 m1 l1" *ngIf="doc.frontal.errors?.required">
                             <i class="material-icons icon-red">error_outline</i>
                         </div>
-                    <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text">
-                    </div>  
-                </div>
-
-
-                <div>
-                    <div class="col s12 m2 offset-m1 l2">
-                        <span>Identificación Oficial Reverso</span>
-                    </div>
-                    <div class="file-field input-field col s12 m4 l4">
-                        <div class="teal darken-4 btn">
-                            <i class="material-icons right">attachment</i>cargar
-                            <input type="file" formControlName="reverso" id="reverso" required class="validate">
-                        </div>
-                        <div class="col s1 m1 l1" *ngIf="doc.reverso.errors?.required">
-                            <i class="material-icons icon-red">error_outline</i>
-                        </div>
                         <div class="file-path-wrapper">
                             <input class="file-path validate" type="text">
                         </div>
                     </div>
-                </div>
 
-                <div>
+
+                    <div>
+                        <div class="col s12 m2 offset-m1 l2">
+                            <span>Identificación Oficial Reverso</span>
+                        </div>
+                        <div class="file-field input-field col s12 m4 l4">
+                            <div class="teal darken-4 btn">
+                                <i class="material-icons right">attachment</i>cargar
+                                <input type="file" formControlName="reverso" id="reverso" required class="validate">
+                            </div>
+                            <div class="col s1 m1 l1" *ngIf="doc.reverso.errors?.required">
+                                <i class="material-icons icon-red">error_outline</i>
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="col s12 m2 l2">
+                            <span>Comprobante de Domicilio</span>
+                        </div>
+                        <div class="file-field input-field col s12 m4 l4">
+                            <div class="teal darken-4 btn">
+                                <i class="material-icons right">attachment</i>cargar
+                                <input type="file" formControlName="comprobante" id="comprobante" required class="validate">
+                            </div>
+                            <div class="col s1 m1 l1" *ngIf="doc.comprobante.errors?.required">
+                                <i class="material-icons icon-red">error_outline</i>
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div>
+                        <div class="col s12 m2 l2">
+                            <span>Estado de Cuenta</span>
+                        </div>
+                        <div class="file-field input-field col s12 m4 l4">
+                            <div class="teal darken-4 btn">
+                                <i class="material-icons right">attachment</i>cargar
+                                <input type="file" formControlName="estado" id="estado" required class="validate">
+                            </div>
+                            <div class="col s1 m1 l1" *ngIf="doc.estado.errors?.required">
+                                <i class="material-icons icon-red">error_outline</i>
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text">
+                            </div>
+                        </div>
+                    </div>
                     <div class="col s12 m2 l2">
-                        <span>Comprobante de Domicilio</span>
+                        <span>CURP</span>
+                        <a (click)="sweetHome('0')"><i class="material-icons prefix icon-black">help_outline</i></a>
                     </div>
                     <div class="file-field input-field col s12 m4 l4">
                         <div class="teal darken-4 btn">
                             <i class="material-icons right">attachment</i>cargar
-                            <input type="file" formControlName="comprobante" id="comprobante" required class="validate">
+                            <input type="file" formControlName="curpd" id="curpd" required class="validate">
                         </div>
-                        <div class="col s1 m1 l1" *ngIf="doc.comprobante.errors?.required">
+                        <div class="col s1 m1 l1" *ngIf="doc.curpd.errors?.required">
                             <i class="material-icons icon-red">error_outline</i>
                         </div>
                         <div class="file-path-wrapper">
                             <input class="file-path validate" type="text">
                         </div>
                     </div>
-                </div>
-
-
-                <div>
                     <div class="col s12 m2 l2">
-                        <span>Estado de Cuenta</span>
+                        <span>Registro Federal de Contribuyente</span>
+                        <a (click)="sweetHome('1')"><i class="material-icons prefix icon-black">help_outline</i></a>
                     </div>
                     <div class="file-field input-field col s12 m4 l4">
                         <div class="teal darken-4 btn">
                             <i class="material-icons right">attachment</i>cargar
-                            <input type="file" formControlName="estado" id="estado" required class="validate">
+                            <input type="file" formControlName="rfcd" id="rfcd" required class="validate">
                         </div>
-                        <div class="col s1 m1 l1" *ngIf="doc.estado.errors?.required">
+                        <div class="col s1 m1 l1" *ngIf="doc.rfcd.errors?.required">
+                            <i class="material-icons icon-red">error_outline</i>
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                        </div>
+                    </div>
+                    <div class="col s12 m2 l2">
+                        <span>Score de Buro de Crédito </span>
+                        <a (click)="sweetHome('2')"><i class="material-icons prefix icon-black">help_outline</i></a>
+                    </div>
+                    <div class="file-field input-field col s12 m4 l4">
+                        <div class="teal darken-4 btn">
+                            <i class="material-icons right">attachment</i>cargar
+                            <input type="file" formControlName="buro" id="buro" required class="validate">
+                        </div>
+                        <div class="col s1 m1 l1" *ngIf="doc.buro.errors?.required">
+                            <i class="material-icons icon-red">error_outline</i>
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                        </div>
+                    </div>
+                    <div class="col s12 m2 l2">
+                        <span>Constancia de Situacion Fiscal </span>
+                        <a (click)="sweetHome('3')"><i class="material-icons prefix icon-black">help_outline</i></a>
+                    </div>
+                    <div class="file-field input-field col s12 m4 l4">
+                        <div class="teal darken-4 btn">
+                            <i class="material-icons right">attachment</i>cargar
+                            <input type="file" formControlName="cfiscal" id="cfiscal" required class="validate">
+                        </div>
+                        <div class="col s1 m1 l1" *ngIf="doc.cfiscal.errors?.required">
                             <i class="material-icons icon-red">error_outline</i>
                         </div>
                         <div class="file-path-wrapper">
@@ -273,83 +370,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="col s12 m2 l2">
-                    <span>CURP</span>
-                    <a (click)="sweetHome('0')"><i class="material-icons prefix icon-black">help_outline</i></a>
-                </div>
-                <div class="file-field input-field col s12 m4 l4">
-                    <div class="teal darken-4 btn">
-                        <i class="material-icons right">attachment</i>cargar
-                        <input type="file" formControlName="curpd" id="curpd" required class="validate">
+                <div class="ro">
+                    <div class="col s12">
+                        <i class="material-icons icon-red left">error_outline</i> Son requeridos todos los archivos para poder continuar con el proceso.
                     </div>
-                    <div class="col s1 m1 l1" *ngIf="doc.curpd.errors?.required">
-                        <i class="material-icons icon-red">error_outline</i>
-                    </div>
-                    <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text">
-                    </div>
-                </div>
-                <div class="col s12 m2 l2">
-                    <span>Registro Federal de Contribuyente</span>
-                    <a (click)="sweetHome('1')"><i class="material-icons prefix icon-black">help_outline</i></a>
-                </div>
-                <div class="file-field input-field col s12 m4 l4">
-                    <div class="teal darken-4 btn">
-                        <i class="material-icons right">attachment</i>cargar
-                        <input type="file" formControlName="rfcd" id="rfcd" required class="validate">
-                    </div>
-                    <div class="col s1 m1 l1" *ngIf="doc.rfcd.errors?.required">
-                        <i class="material-icons icon-red">error_outline</i>
-                    </div>
-                    <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text">
-                    </div>
-                </div>
-                <div class="col s12 m2 l2">
-                    <span>Score de Buro de Crédito </span>
-                    <a (click)="sweetHome('2')"><i class="material-icons prefix icon-black">help_outline</i></a>
-                </div>
-                <div class="file-field input-field col s12 m4 l4">
-                    <div class="teal darken-4 btn">
-                        <i class="material-icons right">attachment</i>cargar
-                        <input type="file" formControlName="buro" id="buro" required class="validate">
-                    </div>
-                    <div class="col s1 m1 l1" *ngIf="doc.buro.errors?.required">
-                        <i class="material-icons icon-red">error_outline</i>
-                    </div>
-                    <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text">
-                    </div>
-                </div>
-                <div class="col s12 m2 l2">
-                    <span>Constancia de Situacion Fiscal </span>
-                    <a (click)="sweetHome('3')"><i class="material-icons prefix icon-black">help_outline</i></a>
-                </div>
-                <div class="file-field input-field col s12 m4 l4">
-                    <div class="teal darken-4 btn">
-                        <i class="material-icons right">attachment</i>cargar
-                        <input type="file" formControlName="cfiscal" id="cfiscal" required class="validate">
-                    </div>
-                    <div class="col s1 m1 l1" *ngIf="doc.cfiscal.errors?.required">
-                        <i class="material-icons icon-red">error_outline</i>
-                    </div>
-                    <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text">
-                    </div>
-                </div>
-            </div>
-            <div class="ro">
-            <div class="col s12">
-                <i class="material-icons icon-red left">error_outline</i>
-                Son requeridos todos los archivos para poder continuar con el proceso.
-            </div>
-            <div class="col s12">
-                <button class="waves-effect teal darken-4 btn right" type="submit">Enviar
+                    <div class="col s12">
+                        <button class="waves-effect teal darken-4 btn right" type="submit">Enviar
                     <i class="material-icons prefix right">send</i>
                 </button>
-            </div>
-        </div>
-       </form>
+                    </div>
+                </div>
+            </form>
 
         </div>
     </li>
@@ -410,11 +441,12 @@
                 </div>
             </div>
             <div class="col s12">
-            <li><a class="waves-effect  teal darken-4 btn modal-trigger right" href="#modal1">
-                <i class="material-icons prefix right">send</i>
-                Enviar</a>
-            </li>
-        </div>
+                <li>
+                    <a class="waves-effect  teal darken-4 btn modal-trigger right" href="#modal1">
+                        <i class="material-icons prefix right">send</i> Enviar
+                    </a>
+                </li>
+            </div>
         </div>
     </li>
     <li class="step">
@@ -423,32 +455,32 @@
             <br>
             <div class="card">
                 <div class="card-content">
-            <div class="row">
-                <!--<img class="responsive-img" src="../../../assets/contr.png">-->
-                <div class="input-field col s12 m3 offset-m3 l4 offset-l3">
-                    <label><input class="with-gap teal darken-4" type="checkbox" [(ngModel)]="terms"/>
+                    <div class="row">
+                        <!--<img class="responsive-img" src="../../../assets/contr.png">-->
+                        <div class="input-field col s12 m3 offset-m3 l4 offset-l3">
+                            <label><input class="with-gap teal darken-4" type="checkbox" [(ngModel)]="terms"/>
                     <span>Acepto Terminos y condiciones</span></label>
-                </div>
+                        </div>
 
-                <div class="input-field col s12 m3 offset-m1">
-                    <a class="waves-effect teal darken-4 btn modal-trigger" href="#modalContr">Ver
+                        <div class="input-field col s12 m3 offset-m1">
+                            <a class="waves-effect teal darken-4 btn modal-trigger" href="#modalContr">Ver
                         <i class="medium material-icons icon-gold right">visibility</i>
                     </a>
-                </div>
+                        </div>
 
-            </div>
-            <div class="row" *ngIf="terms">
-                    <div class="input-field col s12 m4 offset-m3">
-                        <a class="waves-effect teal darken-4 btn " href="../../../assets/original.pdf" download="contr.pdf">Descargar
+                    </div>
+                    <div class="row" *ngIf="terms">
+                        <div class="input-field col s12 m4 offset-m3">
+                            <a class="waves-effect teal darken-4 btn " href="../../../assets/original.pdf" download="contr.pdf">Descargar
                             <i class="medium material-icons icon-gold right">save_alt</i>
                         </a>
+                        </div>
                     </div>
-            </div>
-            </div>
+                </div>
             </div>
         </div>
     </li>
-    <li class="step">
+    <!--   <li class="step">
         <div class="step-title waves-effect waves-dark">Felicidades!!!</div>
         <div class="step-content">
             <div class="row">
@@ -458,7 +490,7 @@
                 <button class="waves-effect teal darken-4 btn ">Finalizar</button>
             </div>
         </div>
-    </li>
+    </li>-->
 </ul>
 
 

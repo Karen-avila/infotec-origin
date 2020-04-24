@@ -9,6 +9,7 @@
     </div>
     <div class="row">
         <div class="col m3 s6">
+<<<<<<< HEAD
             <img class="responsive-img img0" src="../../../assets/Banco-del-Bienestar-Gráficos---RQ1.png">
         </div>
         <div class="col m3 s6">
@@ -19,6 +20,18 @@
         </div>
         <div class="col m3 s6">
             <img class="responsive-img img0" src="../../../assets/Banco-del-Bienestar-Gráficos---RQ4.png">
+=======
+            <img class="responsive-img img0" src="../../../assets/Banco-del-Bienestar-Gráficos---1.png">
+        </div>
+        <div class="col m3 s6">
+            <img class="responsive-img img0" src="../../../assets/Banco-del-Bienestar-Gráficos---2.png">
+        </div>
+        <div class="col m3 s6">
+            <img class="responsive-img img0" src="../../../assets/Banco-del-Bienestar-Gráficos---3.png">
+        </div>
+        <div class="col m3 s6">
+            <img class="responsive-img img0" src="../../../assets/Banco-del-Bienestar-Gráficos---4.png">
+>>>>>>> bd6a30614f1e39d8d4a6860294a86049ad396512
         </div>
     </div>
 </div>
@@ -39,14 +52,14 @@
                                 <i class="material-icons prefix">account_circle</i>
                                 <input formControlName="email" name='email' id="email" type="email" required class="validate">
                                 <label for="email">Correo electronico</label>
-                                <div class="blue-text"  *ngIf="f.email.errors?.email">El correo electronico debe de ser valido</div>
+                                <div class="blue-text" *ngIf="f.email.errors?.email">El correo electronico debe de ser valido</div>
                             </div>
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">account_circle</i>
                                 <input formControlName="password" name='password' id="password" type="password" required class="validate" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$">
                                 <label for="password">Clave</label>
-                                <div class="blue-text"  *ngIf="f.password.errors?.minlength">Debe tener un mínimo de 8 caracteres</div>
-                                
+                                <div class="blue-text" *ngIf="f.password.errors?.minlength">Debe tener un mínimo de 8 caracteres</div>
+
                             </div>
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">account_circle</i>
