@@ -1,8 +1,9 @@
 import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import * as M from 'materialize-css';
 import { Options, LabelType } from 'ng5-slider';
-import { pipe } from 'rxjs';
-import { CurrencyPipe, formatCurrency } from '@angular/common';
+
+import { Finance } from 'financejs'
+
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,7 @@ export class HomeComponent implements OnInit {
 
 tim;
 car = this.carr();
+
   valueMon: number = 20000;
   optionsMon: Options = {
     floor: 0,
@@ -22,12 +24,12 @@ car = this.carr();
     translate: (value: number, label: LabelType): string => {
       switch (label) {
         case LabelType.Low:
-          return '<b>Si te Prestamos: </b>' +  value.toLocaleString('es-MX', {
+          return '<b>Si te Prestamos: </b>MX' +  value.toLocaleString('es-MX', {
             style: 'currency',
             currency: 'MXN',
           }); 
         case LabelType.Ceil:
-          return '<b>Monto Maximo: </b>' + value.toLocaleString('es-MX', {
+          return '<b>Monto Maximo: </b>MX' + value.toLocaleString('es-MX', {
             style: 'currency',
             currency: 'MXN',
           });
@@ -55,9 +57,11 @@ car = this.carr();
           //return '<b>Si te Prestamos:</b> $' + value;
     }
   };
+  
+  finance = new Finance();
+
 
   constructor() { 
-    
   }
 
   ngOnInit() {
