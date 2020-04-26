@@ -97,6 +97,8 @@ export class DashboardComponent implements OnInit {
  };
  
  finance = new Finance();
+
+ catPorcentaje = 0;
  //-------------------
   constructor(public userService:UserService,private route: ActivatedRoute) { 
 
@@ -124,7 +126,7 @@ export class DashboardComponent implements OnInit {
     console.log("TIR ANUAL "+ tirAnual.toFixed(2)+"%");
     var cat = (Math.pow((1 + (tirMensual / 100)), 12)) - 1;
     console.log("CAT "+cat.toFixed(2)+"%");
-    var catPorcentaje = ((Math.pow((1 + (tirMensual / 100)), 12)) - 1) * 100;
+    this.catPorcentaje = ((Math.pow((1 + (tirMensual / 100)), 12)) - 1) * 100;
     console.log("CAT "+ catPorcentaje.toFixed(2)+"%");
    
 
