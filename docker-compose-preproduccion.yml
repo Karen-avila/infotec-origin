@@ -8,8 +8,8 @@ services:
     image: harbor.infotec.mx/mifosio/com.mx.infotec.fineract.cn.creditosimple.se.preproduccion
     mem_limit: 2048m
     volumes:
-      - /home/mifosio/certificates/bundle.crt:/etc/ssl/certs/fullchain.pem
-      - /home/mifosio/certificates/infotec_2019.key:/etc/ssl/private/privkey.pem
+      - /opt/mifosio/certificates/bundle.crt:/etc/ssl/certs/fullchain.pem
+      - /opt/mifosio/certificates/infotec_2019.key:/etc/ssl/private/privkey.pem
     restart: always
     extra_hosts:
       - "eureka:172.22.216.195"
@@ -22,6 +22,6 @@ services:
       timeout: 10s
       retries: 5
     ports:
-      - "61616:61616"
+      - "443:443"
     networks:
       - mifos   
