@@ -1,7 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+
 blockquote {
     border-left: 5px solid #BC955C;
+}
+
+.mycolor {
+    background-color: rgb(0, 0, 0, 0.65);
+}
+
+.mycolorr {
+    background-color: transparent;
+    margin-top: 40%;
+}
+
+i.icon-white {
+    color: rgb(255, 255, 255);
 }
 
 .bg {
@@ -19,68 +36,8 @@ blockquote {
 https://gacm.gob.mx/images/aguilaiori.png
 */
 
-.login-box {
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    padding-top: 10%;
-}
-
-.login-box .card {
-    background: rgba(0, 0, 0, 0.6);
-    box-shadow: none
-}
-
-.login-box h2 {
-    font-size: 5vw;
-    margin: 0 0 1.875rem;
-    padding: 0;
-    color: #fff;
-    text-align: center;
-}
-
-.login-box .card-title {
-    color: #fff;
-}
-
-.box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 45rem;
-    padding: 2.5rem;
-    box-sizing: border-box;
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 0.625rem;
-}
-
-.box h5 {
-    margin: 0 0 1.875rem;
-    padding: 0;
-    color: #fff;
-    text-align: center;
-}
-
-.login-box [type="checkbox"]+span:not(.lever) {
-    color: #1c9d4f;
-}
-
-.login-box textarea.materialize-textarea {
-    color: #fff;
-    background: transparent;
-}
-
-.login-box input {
-    color: #fff;
-    background: transparent;
-}
-
-.login-box label {
-    color: #fff;
-}
-
-.login-box .input-field {
-    color: #fff;
+.zz {
+    color: #9F2241;
 }
 
 ul.stepper .step.active::before,
@@ -102,4 +59,12 @@ ul.stepper.horizontal .step.done .step-title::before {
 [type="radio"]:checked+span:after,
 [type="radio"].with-gap:checked+span:after {
     background-color: #9F2241;
+}
+
+.img0 {
+    transition: transform 0.2s;
+}
+
+.img0:hover {
+    transform: scale(1.3);
 }

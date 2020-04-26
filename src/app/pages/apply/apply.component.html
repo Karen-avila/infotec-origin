@@ -1,5 +1,5 @@
 <app-header></app-header>
-
+<!--
 <div class="container">
     <blockquote>
         <p class="flow-text"><b>¿Cómo Funciona?</b></p>
@@ -8,24 +8,24 @@
         <p class="flow-text center-align">Solo sigue unos sencillos pasos, ten a la mano tu documentación, y estaras listo para poder <b>aplicar a un credito, ¡es facil!</b></p>
     </div>
     <div class="row">
-        <div class="col m3 s6">
-            <img class="responsive-img" src="../../assets/Banco-del-Bienestar-Gráficos---RQ1.png">
+        <div class="col m3 s6 offset-s2">
+            <img class="responsive-img img0" src="../../../assets/1.png">
         </div>
-        <div class="col m3 s6">
-            <img class="responsive-img" src="../../assets/Banco-del-Bienestar-Gráficos----RQ2.png">
+        <div class="col m3 s6 offset-s2">
+            <img class="responsive-img img0" src="../../../assets/2.png">
         </div>
-        <div class="col m3 s6">
-            <img class="responsive-img" src="../../assets/Banco-del-Bienestar-Gráficos---RQ3.png">
+        <div class="col m3 s6 offset-s2">
+            <img class="responsive-img img0" src="../../../assets/3.png">
         </div>
-        <div class="col m3 s6">
-            <img class="responsive-img" src="../../assets/Banco-del-Bienestar-Gráficos---RQ4.png">
+        <div class="col m3 s6 offset-s2">
+            <img class="responsive-img img0" src="../../../assets/4.png">
         </div>
     </div>
-</div>
+</div>-->
 
 <div class="row">
     <div class="col m2  s8 offset-s1">
-        <img class="responsive-img" src="../../assets/Banco-del-Bienestar-Gráficos---ENROLL.png">
+        <img class="responsive-img" src="../../../assets/PASOS-01.png">
     </div>
     <div class="col m9 ">
         <!---->
@@ -34,31 +34,56 @@
                 <div class="step-title waves-effect waves-dark">Crear Cuenta</div>
                 <div class="step-content">
                     <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">account_circle</i>
-                            <input id="email" type="email" required name='email' class="validate">
-                            <label for="email">Email</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">account_circle</i>
-                            <input id="password" type="password" required name='password' class="validate">
-                            <label for="password">Password</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">account_circle</i>
-                            <input id="passwordconfirm" type="password" required name='passwordconfirm' class="validate">
-                            <label for="passwordconfirm">Confirma el Password</label>
-                        </div>
-                        <div class="col s12 m6">
-                            <li><a routerLink="/login">Si ya tienes cuenta, Inicia Sesión</a></li>
-                        </div>
-                        <div class="col s12 m6">
-                            <li><a class="waves-effect teal darken-4 btn modal-trigger" href="#modal1">Registrarse</a></li>
-                        </div>
+                        <form ngNativeValidate [formGroup]="form" (ngSubmit)="register()">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input formControlName="email" name='email' id="email" type="email" required class="validate">
+                                <label for="email">Correo electrónico</label>
+                                <div class="blue-text" *ngIf="f.email.errors?.email">El correo electrónico debe de ser valido</div>
+                            </div>
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input formControlName="password" name='password' id="password" type="password" required class="validate" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$">
+                                <label for="password">Clave</label>
+                                <div class="blue-text" *ngIf="f.password.errors?.minlength">Debe tener un mínimo de 8 caracteres</div>
+
+                            </div>
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input formControlName="rePassword" name='rePassword' id="passwordconfirm" type="password" required class="validate" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$">
+                                <label for="passwordconfirm">Confirma clave</label>
+                            </div>
+                            <div class="red-text" *ngIf="form.errors?.isEqual && !form.pristine">
+                                <p>Las contraseñas deben de ser iguales.</p>
+                            </div>
+                            <div class="red-text" *ngIf="form.errors?.isMatch">
+                                <p>palabrota</p>
+                            </div>
+                            <div class="col s12">
+                                <li><a routerLink="/login">Si ya tienes cuenta, Inicia Sesión</a></li>
+                            </div>
+
+                            <div class="row">
+                                <div class="col s12 offset-s3 m4 offset-m3 l3 offset-l6">
+                                    <!--<li><a class="waves-effect teal darken-4 btn modal-trigger" href="#modal1">Registrarse</a></li>-->
+                                    <button class="waves-effect teal darken-4 btn" type="submit">Registrarse
+                                        <i class="material-icons right">send</i>
+                                      </button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                    <div class="step-actions">
-                        <!--       <button class="waves-effect waves-dark btn" type="submit">Registrarse</button> -->
-                    </div>
+                    <br>
+                    <!--<div class="row">
+                        <div class="col s12 m6 offset-m3 l4 offset-l5">
+                            <div class="recaptcha">
+                                <re-captcha (resolved)="resolved($event)" siteKey="6LfnpOoUAAAAAF9gp51kz68snL_6N1tOafUXn2XM"></re-captcha>
+                            </div>
+                        </div>
+                    </div>-->
+                    <br>
+
+
                 </div>
             </li>
             <li class="step">
@@ -73,9 +98,6 @@
             <li class="step">
                 <div class="step-title waves-effect waves-dark">Descarga de Documentos</div>
             </li>
-            <li class="step">
-                <div class="step-title waves-effect waves-dark">Felicidades!!!</div>
-            </li>
         </ul>
         <!---->
     </div>
@@ -84,12 +106,15 @@
 <!-- Modal Structure -->
 <div id="modal1" class="modal">
     <div class="modal-content">
-        <h4>Cuenta Creada</h4>
+        <h4 class="zz">¡Cuenta Creada!</h4>
         <p class="flow-text"><b>Ya casi: </b>Revisa tu correo.</p>
         <p class="flow-text">Para continuar activa tu cuenta, revisa el correo que nos proporcionaste y encontraras las instrucciones para continuar con tu solicitud.</p>
     </div>
-    <div class="modal-footer">
+    <div class="modal-footer darken-3">
         <a routerLink="/home" class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>
+    </div>
+    <div class="footer-copyright teal darken-3">
+        <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
     </div>
 </div>
 

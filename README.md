@@ -1,3 +1,6 @@
+# Status de la Contrucción en Ambiente de Desarrollo: 
+[![Build Status](http://207.249.109.33:8080/buildStatus/icon?job=desarrollo-infotec-bancodelbienestar-mifosio-ui-creditosimple-se&config=orignacionbuilddesarrollo&subject=Dev%20build%20duration%20${duration})](http://207.249.109.33:8080/job/desarrollo-infotec-bancodelbienestar-mifosio-ui-creditosimple-se/)
+
 # originacion
 
 ## Getting started
@@ -24,4 +27,4 @@ Deploy firebase web-server:
 
 View firebase web-server:
 
-    https://enrollment-822c6.web.app/
+    https://bancaporinternet.infotec.mx:61616/
