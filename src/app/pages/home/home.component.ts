@@ -24,12 +24,12 @@ car = this.carr();
     translate: (value: number, label: LabelType): string => {
       switch (label) {
         case LabelType.Low:
-          return '<b>Si te Prestamos: </b>MX' +  value.toLocaleString('es-MX', {
+          return '<b>Si te Prestamos: </b>MXN' +  value.toLocaleString('es-MX', {
             style: 'currency',
             currency: 'MXN',
           }); 
         case LabelType.Ceil:
-          return '<b>Monto Maximo: </b>MX' + value.toLocaleString('es-MX', {
+          return '<b>Monto Maximo: </b>MXN' + value.toLocaleString('es-MX', {
             style: 'currency',
             currency: 'MXN',
           });
@@ -85,7 +85,7 @@ car = this.carr();
     console.log("TIR ANUAL "+ tirAnual.toFixed(2)+"%");
     var cat = (Math.pow((1 + (tirMensual / 100)), 12)) - 1;
     console.log("CAT "+cat.toFixed(2)+"%");
-    this.catPorcentaje  = ((Math.pow((1 + (tirMensual / 100)), 12)) - 1) * 100;
+    this.catPorcentaje  = ((Math.pow((1 + (tirMensual / 100)), 12)) - 1) * 100;    
     console.log("CAT "+ this.catPorcentaje.toFixed(2)+"%");
   }
 
