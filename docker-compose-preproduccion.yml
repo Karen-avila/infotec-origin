@@ -17,7 +17,7 @@ services:
       - "tidb:172.22.216.197"
       - "activemq:172.22.216.196"    
     healthcheck:
-      test: ["CMD", "curl", "--fail", "https://127.0.0.1:443"]
+      test: ["CMD", "curl", "-k --fail", "https://127.0.0.1:443"]
       interval: 30s
       timeout: 10s
       retries: 5
