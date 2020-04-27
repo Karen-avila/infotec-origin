@@ -461,15 +461,124 @@
                 <div class="col s12 m8 ">
                     <ul class="collapsible popout">
                         <li>
-                            <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+                            <div class="collapsible-header"><i class="material-icons">filter_drama</i>Perfil del Negocio</div>
+                            <div class="collapsible-body">
+                                <ul class="collection">
+                                    <!--************-->
+                                    <li class="collection-item avatar" *ngFor="let pregsc1 of sec1; index as i;">
+                                        <span class="title">{{pregsc1.quest}}</span>
+
+                                        <p *ngFor="let resp of pregsc1.opts">
+                                            <label>
+                                                <input class="with-gap" name="{{'group'+[i]}}" type="radio"  />
+                                                <span>{{resp}}</span>
+                                              </label>
+                                        </p>
+
+                                        <a href="#!" class="secondary-content"><i class="material-icons">done</i></a>
+                                    </li>
+                                    <!--************-->
+                                    <li class="collection-item avatar">
+                                        <span class="title">¿Como se llama?</span>
+                                        <p>
+                                            <label>
+                                              <input class="with-gap" name="group1" type="radio" checked />
+                                              <span>Red</span>
+                                            </label>
+                                        </p>
+                                        <p>
+                                            <label>
+                                              <input class="with-gap" name="group1" type="radio" />
+                                              <span>Yellow</span>
+                                            </label>
+                                        </p>
+                                        <p>
+                                            <label>
+                                              <input class="with-gap" name="group1" type="radio"  />
+                                              <span>Green</span>
+                                            </label>
+                                        </p>
+                                        <a href="#!" class="secondary-content"><i class="material-icons">done</i></a>
+                                    </li>
+                                    <li class="collection-item avatar">
+                                        <span class="title">¿Cuantos años tiene?</span>
+                                        <select>
+                                            <option value="" disabled selected>Selecciona una opción</option>
+                                            <option value="1">10</option>
+                                            <option value="2">20</option>
+                                            <option value="3">30</option>
+                                          </select>
+                                        <a href="#!" class="secondary-content"><i class="material-icons">done</i></a>
+                                    </li>
+                                    <li class="collection-item avatar">
+                                        <span class="title">¿Como esta?</span>
+                                        <textarea id="textarea2" class="materialize-textarea" data-length="120"></textarea>
+                                        <label for="textarea2">Textarea</label>
+                                        <a href="#!" class="secondary-content"><i class="material-icons">indeterminate_check_box</i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">place</i>Perfil del Mercado</div>
+                            <div class="collapsible-body">
+                                <ul class="collection">
+                                    <li class="collection-item avatar">
+                                        <span class="title">¿Como se llama?</span>
+                                        <br>
+                                        <div class="dogs">
+
+                                            <label>
+                                                <input class="with-gap" name="group1" type="radio"  />
+                                                <span>Green</span>
+                                              </label>
+                                        </div>
+                                        <div class="dogs">
+                                            <label>
+                                                <input class="with-gap" name="group1" type="radio"  />
+                                                <span>Gray</span>
+                                              </label>
+                                        </div>
+                                        <div class="dogs">
+                                            <label>
+                                                <input class="with-gap" name="group1" type="radio"  />
+                                                <span>Red</span>
+                                              </label>
+                                        </div>
+                                        <div class="dogs">
+                                            <label>
+                                                <input class="with-gap" name="group1" type="radio"  />
+                                                <span>Blue</span>
+                                              </label>
+                                        </div>
+
+                                        <a href="#!" class="secondary-content"><i class="material-icons">done</i></a>
+                                    </li>
+                                    <li class="collection-item avatar">
+                                        <span class="title">¿Cuantos años tiene?</span>
+
+                                        <a href="#!" class="secondary-content"><i class="material-icons">done</i></a>
+                                    </li>
+                                    <li class="collection-item avatar">
+                                        <span class="title">¿Como esta?</span>
+
+                                        <a href="#!" class="secondary-content"><i class="material-icons">indeterminate_check_box</i></a>
+                                    </li>
+                                </ul>
+
+
+
+
+
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">whatshot</i>Reputación</div>
                             <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
                         </li>
                         <li>
-                            <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-                            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                        </li>
-                        <li>
-                            <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+                            <div class="collapsible-header"><i class="material-icons">whatshot</i>Dirección</div>
                             <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
                         </li>
                     </ul>
