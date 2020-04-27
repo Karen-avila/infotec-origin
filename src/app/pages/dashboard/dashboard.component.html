@@ -80,9 +80,9 @@
                             <ng5-slider [(value)]="valuePlaz" [options]="optionsPlaz"></ng5-slider>
                         </div>
                         <br><br>
-                        <div>                            
+                        <div>
                             <div class="chip">
-                                Costo Anual Total Informativo (CAT):  {{ catPorcentaje.toFixed(2) }} %
+                                Costo Anual Total Informativo (CAT): {{ catPorcentaje.toFixed(2) }} %
                             </div>
                         </div>
                         <div class="center-align">
@@ -306,7 +306,7 @@
                     <div class="file-field input-field col s12 m4 l4">
                         <div class="teal darken-4 btn">
                             <i class="material-icons right">attachment</i>cargar
-                            <input type="file" formControlName="frontal" id="frontal" required class="validate">
+                            <input type="file" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="frontal" id="frontal" required class="validate">
                         </div>
                         <div class="col s1 m1 l1" *ngIf="doc.frontal.errors?.required">
                             <i class="material-icons icon-red">error_outline</i>
@@ -324,7 +324,7 @@
                         <div class="file-field input-field col s12 m4 l4">
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>cargar
-                                <input type="file" formControlName="reverso" id="reverso" required class="validate">
+                                <input type="file" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="reverso" id="reverso" required class="validate">
                             </div>
                             <div class="col s1 m1 l1" *ngIf="doc.reverso.errors?.required">
                                 <i class="material-icons icon-red">error_outline</i>
@@ -342,7 +342,7 @@
                         <div class="file-field input-field col s12 m4 l4">
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>cargar
-                                <input type="file" formControlName="comprobante" id="comprobante" required class="validate">
+                                <input type="file" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="comprobante" id="comprobante" required class="validate">
                             </div>
                             <div class="col s1 m1 l1" *ngIf="doc.comprobante.errors?.required">
                                 <i class="material-icons icon-red">error_outline</i>
@@ -361,7 +361,7 @@
                         <div class="file-field input-field col s12 m4 l4">
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>cargar
-                                <input type="file" formControlName="estado" id="estado" required class="validate">
+                                <input type="file" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="estado" id="estado" required class="validate">
                             </div>
                             <div class="col s1 m1 l1" *ngIf="doc.estado.errors?.required">
                                 <i class="material-icons icon-red">error_outline</i>
@@ -378,7 +378,7 @@
                     <div class="file-field input-field col s12 m4 l4">
                         <div class="teal darken-4 btn">
                             <i class="material-icons right">attachment</i>cargar
-                            <input type="file" formControlName="curpd" id="curpd" required class="validate">
+                            <input type="file" accept="application/pdf" formControlName="curpd" id="curpd" required class="validate">
                         </div>
                         <div class="col s1 m1 l1" *ngIf="doc.curpd.errors?.required">
                             <i class="material-icons icon-red">error_outline</i>
@@ -394,7 +394,7 @@
                     <div class="file-field input-field col s12 m4 l4">
                         <div class="teal darken-4 btn">
                             <i class="material-icons right">attachment</i>cargar
-                            <input type="file" formControlName="rfcd" id="rfcd" required class="validate">
+                            <input accept="pplication/pdf" type="file" formControlName="rfcd" id="rfcd" required class="validate">
                         </div>
                         <div class="col s1 m1 l1" *ngIf="doc.rfcd.errors?.required">
                             <i class="material-icons icon-red">error_outline</i>
@@ -410,7 +410,7 @@
                     <div class="file-field input-field col s12 m4 l4">
                         <div class="teal darken-4 btn">
                             <i class="material-icons right">attachment</i>cargar
-                            <input type="file" formControlName="buro" id="buro" required class="validate">
+                            <input type="file" accept="application/pdf" formControlName="buro" id="buro" required class="validate">
                         </div>
                         <div class="col s1 m1 l1" *ngIf="doc.buro.errors?.required">
                             <i class="material-icons icon-red">error_outline</i>
@@ -426,7 +426,7 @@
                     <div class="file-field input-field col s12 m4 l4">
                         <div class="teal darken-4 btn">
                             <i class="material-icons right">attachment</i>cargar
-                            <input type="file" formControlName="cfiscal" id="cfiscal" required class="validate">
+                            <input type="file" accept="application/pdf" formControlName="cfiscal" id="cfiscal" required class="validate">
                         </div>
                         <div class="col s1 m1 l1" *ngIf="doc.cfiscal.errors?.required">
                             <i class="material-icons icon-red">error_outline</i>
@@ -543,7 +543,7 @@
                     </div>
                     <div class="row" *ngIf="terms">
                         <div class="input-field col s12 m4 offset-m3">
-                            <a class="waves-effect teal darken-4 btn " href="../../../assets/original.pdf" download="contr.pdf">Descargar
+                            <a class="waves-effect teal darken-4 btn " href="../../../assets/Caratula.pdf" download="contr.pdf">Descargar
                             <i class="medium material-icons icon-gold right">save_alt</i>
                         </a>
                         </div>
