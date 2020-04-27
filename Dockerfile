@@ -84,6 +84,6 @@ RUN chmod +x /opt/nginx.sh
 
 VOLUME ["/etc/ssl/certs"]
 
-EXPOSE 61616
+EXPOSE 61616 80 443
 
 CMD ["/opt/nginx.sh"]
