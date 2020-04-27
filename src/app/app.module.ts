@@ -27,8 +27,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent,
-    
+    RegisterComponent
   ],
   imports: [
     FormsModule,

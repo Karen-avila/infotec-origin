@@ -7,6 +7,7 @@ import {TranslateService} from '@ngx-translate/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title = 'Banco del Bienestar';
 
   constructor(public translate: TranslateService) {
@@ -14,6 +15,6 @@ export class AppComponent {
     translate.setDefaultLang('es');
 
     const browserLang = translate.getBrowserLang();
-    translate.use(browserLang.match(/en|es/) ? browserLang : 'en');
+    translate.use(browserLang.match(/en|es/) ? browserLang : 'en');    
   }
 }

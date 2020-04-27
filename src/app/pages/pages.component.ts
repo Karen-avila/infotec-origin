@@ -7,7 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PagesComponent implements OnInit {
 
-  constructor() { }
+  public markers: {lat: number, long: number}[];   // Map markers (relevance depends on map center)
+
+  constructor() { 
+    // some map markers
+    this.markers = [
+      { lat: 19.4032, long: -99.1698   }
+    ];
+  }
 
   ngOnInit() {
   }
