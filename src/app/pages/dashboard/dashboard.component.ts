@@ -18,6 +18,53 @@ import { Finance } from 'financejs'
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+
+  //********************* */
+  sec1=[
+    {
+      quest:"ANTIGÜEDAD DEL NEGOCIO",
+      opts:["MENOS DE 12 MESES","DE 1 A 2 AÑOS","DE 3 A 5 AÑOS","DE 6 A 10 AÑOS","MÁS DE 10 AÑOS"],
+      resp:"",
+      value:""
+    },
+    {
+      quest:"¿PRINCIPALMENTE A QUÉ PLAZO SE PAGAN LAS COMPRAS?",
+      opts:["MENOS DE 12 MESES","DE 1 A 2 AÑOS","DE 3 A 5 AÑOS","DE 6 A 10 AÑOS","MÁS DE 10 AÑOS"],
+      resp:"",
+      value:""
+    },
+    {
+      quest:"¿PRINCIPALMENTE A QUÉ PLAZO SE COBRAN LAS VENTAS?",
+      opts:["MENOS DE 12 MESES","DE 1 A 2 AÑOS","DE 3 A 5 AÑOS","DE 6 A 10 AÑOS","MÁS DE 10 AÑOS"],
+      resp:"",
+      value:""
+    },
+    {
+      quest:"¿NORMALMENTE CÓMO SE COMPONE EL INVENTARIO DEL NEGOCIO?",
+      opts:["MENOS DE 12 MESES","DE 1 A 2 AÑOS","DE 3 A 5 AÑOS","DE 6 A 10 AÑOS","MÁS DE 10 AÑOS"],
+      resp:"",
+      value:""
+    },
+    {
+      quest:"¿DESDE HACE CUÁNTO TIEMPO EL NEGOCIO ES FORMAL?",
+      opts:["MENOS DE 12 MESES","DE 1 A 2 AÑOS","DE 3 A 5 AÑOS","DE 6 A 10 AÑOS","MÁS DE 10 AÑOS"],
+      resp:"",
+      value:""
+    },
+    {
+      quest:"TIPO DE NEGOCIO",
+      opts:["MENOS DE 12 MESES","DE 1 A 2 AÑOS","DE 3 A 5 AÑOS","DE 6 A 10 AÑOS","MÁS DE 10 AÑOS"],
+      resp:"",
+      value:""
+    },
+    {
+      quest:"SELECCIONE LA OPCIÓN QUE DESCRIBA MEJOR A LOS PROPIETARIOS ACTUALES DEL NEGOCIO.",
+      opts:["MENOS DE 12 MESES","DE 1 A 2 AÑOS","DE 3 A 5 AÑOS","DE 6 A 10 AÑOS","MÁS DE 10 AÑOS"],
+      resp:"",
+      value:""
+    }
+  ]
+  //********************* */
   
   model="pFisica";
   modal="falso";

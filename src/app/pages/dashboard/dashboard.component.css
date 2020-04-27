@@ -28,3 +28,8 @@ i.icon-gold {
 ::ng-deep .custom-slider .ng5-slider .ng5-slider-pointer-min {
     background: #235B4E;
 }
+
+.radios {
+    display: inline;
+    margin-right: 10px;
+}
