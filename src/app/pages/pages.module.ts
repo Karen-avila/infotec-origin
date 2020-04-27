@@ -16,13 +16,19 @@ import { ServiceModule } from '../services/service.module';
 import { Ng5SliderModule } from 'ng5-slider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { MapComponent        } from './map/map.component';
+import { MapControlComponent } from './map/map-control/map-control.component';
+
+import { INIT_COORDS } from '../tokens';
 
 @NgModule({
     declarations:[
         HomeComponent,
         ApplyComponent,
         PagesComponent,
-        DashboardComponent
+        DashboardComponent,
+        MapComponent,
+        MapControlComponent
     ],
     imports:[
         FormsModule,
@@ -39,8 +45,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         HomeComponent,
         ApplyComponent,
         PagesComponent,
-        SharedModule      
-    ]
+        SharedModule
+    ],
+    providers: [{ provide: INIT_COORDS, useValue: {lat: 21.118, long: -101.041} }]
 })
 
 export class PagesModule {}
