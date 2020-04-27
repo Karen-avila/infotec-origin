@@ -131,18 +131,18 @@
                         <br><br>
                         <div class="center-align">
                             <p class="white-text flow-text teal darken-4">
-                                <i class="small material-icons icon-gold left">date_range</i> Plazo <b>     {{valuePlaz}}</b></p>
+                                <i class="small material-icons icon-gold left">date_range</i> Plazo <b>     {{valuePlaz}} Meses</b></p>
                         </div>
                         <br><br>
                         <div class="center-align">
                             <p class="white-text flow-text teal darken-4">
-                                <i class="small material-icons icon-gold left">local_atm</i> Parcialidad <b>  {{ valueMon | currency:"MXN":"symbol" }}</b></p>
+                                <i class="small material-icons icon-gold left">local_atm</i> Parcialidad <b>  {{ finance.PMT(0.0125,valuePlaz,-valueMon).toFixed(2) | currency:"MXN":"symbol" }}</b></p>
                         </div>
                         <br><br>
                     </div>
 
                     <button class="waves-effect waves-dark teal darken-4 btn next-step">CONTINUAR</button>
-                    
+
                 </div>
             </div>
             <!-- Here goes your actions buttons -->
