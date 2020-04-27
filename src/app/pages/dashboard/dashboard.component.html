@@ -54,19 +54,26 @@
                     <div class="cono2 special col xl6 offset-xl1 l5 offset-l1 m5 offset-m1 s9 offset-s1">
 
                         <p class="flow-text center-align">Crédito Directo Productivo desde {{20000|currency:"MXN":"symbol"}} hasta {{50000|currency:"MXN":"symbol"}}</p>
-
-                        <!--<div class="row">
-                            <div class="input-field col s12 m12">
-                                <label>
-                        <input class="with-gap teal darken-4"  name="credito" type="radio"/>
-                        <span>Crédito Directo Productivo en colaboración con la Secretaría de Economía</span></label>
+<!--Radio Button Credito Directo Productivo
+                        <div class="row">
+                            <div class="input-field col s12 m12 l6">
+                            <label>
+                                <input class="with-gap teal darken-4"  name="credito" type="radio"/>
+                                <span>Crédito Directo Productivo en colaboración con la Secretaría de Economía</span>
+                            </label>
                             </div>
-                            <div class="input-field col s12 m12">
-                                <label>
-                        <input class="with-gap teal darken-4" name="credito" type="radio"/>
-                        <span>Crédito Directo Productivo para la Reactivación Económica</span></label>
+                            <div>
+                                <p class="white-text white">.</p>
+                                
                             </div>
-                        </div>-->
+                            <div class="input-field col s12 m12 l6">
+                            <label>
+                                <input class="with-gap teal darken-4" name="credito" type="radio"/>
+                                <span>Crédito Directo Productivo para la Reactivación Económica</span>
+                            </label>
+                            </div>
+                        </div>
+-->
                         <div>
                             <p class="white-text white">.</p>
                             <br><br>
@@ -482,109 +489,79 @@
                                         <a href="#!" class="secondary-content"><i class="material-icons">done</i></a>
                                     </li>
                                     <!--************-->
-                                    <li class="collection-item avatar">
-                                        <span class="title">¿Como se llama?</span>
-                                        <p>
-                                            <label>
-                                              <input class="with-gap" name="group1" type="radio" checked />
-                                              <span>Red</span>
-                                            </label>
-                                        </p>
-                                        <p>
-                                            <label>
-                                              <input class="with-gap" name="group1" type="radio" />
-                                              <span>Yellow</span>
-                                            </label>
-                                        </p>
-                                        <p>
-                                            <label>
-                                              <input class="with-gap" name="group1" type="radio"  />
-                                              <span>Green</span>
-                                            </label>
-                                        </p>
-                                        <a href="#!" class="secondary-content"><i class="material-icons">done</i></a>
-                                    </li>
-                                    <li class="collection-item avatar">
-                                        <span class="title">¿Cuantos años tiene?</span>
-                                        <select>
-                                            <option value="" disabled selected>Selecciona una opción</option>
-                                            <option value="1">10</option>
-                                            <option value="2">20</option>
-                                            <option value="3">30</option>
-                                          </select>
-                                        <a href="#!" class="secondary-content"><i class="material-icons">done</i></a>
-                                    </li>
-                                    <li class="collection-item avatar">
-                                        <span class="title">¿Como esta?</span>
-                                        <textarea id="textarea2" class="materialize-textarea" data-length="120"></textarea>
-                                        <label for="textarea2">Textarea</label>
-                                        <a href="#!" class="secondary-content"><i class="material-icons">indeterminate_check_box</i></a>
-                                    </li>
                                 </ul>
                             </div>
                         </li>
+
                         <li>
-                            <div class="collapsible-header"><i class="material-icons">place</i>Perfil del Mercado</div>
+                            <div class="collapsible-header"><i class="material-icons">place</i>Perfil de Mercado</div>
                             <div class="collapsible-body">
                                 <ul class="collection">
-                                    <li class="collection-item avatar">
-                                        <span class="title">¿Como se llama?</span>
-                                        <br>
-                                        <div class="dogs">
+                                    <!--************-->
+                                    <li class="collection-item avatar" *ngFor="let pregsc2 of sec2; index as i;">
+                                        <span class="title">{{pregsc2.quest}}</span>
 
+                                        <p *ngFor="let resp of pregsc2.opts">
                                             <label>
-                                                <input class="with-gap" name="group1" type="radio"  />
-                                                <span>Green</span>
+                                                <input class="with-gap" name="{{'group'+[i]}}" type="radio"  />
+                                                <span>{{resp}}</span>
                                               </label>
-                                        </div>
-                                        <div class="dogs">
-                                            <label>
-                                                <input class="with-gap" name="group1" type="radio"  />
-                                                <span>Gray</span>
-                                              </label>
-                                        </div>
-                                        <div class="dogs">
-                                            <label>
-                                                <input class="with-gap" name="group1" type="radio"  />
-                                                <span>Red</span>
-                                              </label>
-                                        </div>
-                                        <div class="dogs">
-                                            <label>
-                                                <input class="with-gap" name="group1" type="radio"  />
-                                                <span>Blue</span>
-                                              </label>
-                                        </div>
+                                        </p>
 
                                         <a href="#!" class="secondary-content"><i class="material-icons">done</i></a>
                                     </li>
-                                    <li class="collection-item avatar">
-                                        <span class="title">¿Cuantos años tiene?</span>
-
-                                        <a href="#!" class="secondary-content"><i class="material-icons">done</i></a>
-                                    </li>
-                                    <li class="collection-item avatar">
-                                        <span class="title">¿Como esta?</span>
-
-                                        <a href="#!" class="secondary-content"><i class="material-icons">indeterminate_check_box</i></a>
-                                    </li>
+                                    <!--************-->
                                 </ul>
-
-
-
-
-
-
                             </div>
                         </li>
+
                         <li>
                             <div class="collapsible-header"><i class="material-icons">whatshot</i>Reputación</div>
-                            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                            <div class="collapsible-body">
+                                <ul class="collection">
+                                    <!--************-->
+                                    <li class="collection-item avatar" *ngFor="let pregsc3 of sec3; index as i;">
+                                        <span class="title">{{pregsc3.quest}}</span>
+
+                                        <p *ngFor="let resp of pregsc3.opts">
+                                            <label>
+                                                <input class="with-gap" name="{{'group'+[i]}}" type="radio"  />
+                                                <span>{{resp}}</span>
+                                              </label>
+                                        </p>
+
+                                        <a href="#!" class="secondary-content"><i class="material-icons">done</i></a>
+                                    </li>
+                                    <!--************-->
+                                </ul>
+                            </div>
                         </li>
+
                         <li>
                             <div class="collapsible-header"><i class="material-icons">whatshot</i>Dirección</div>
-                            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                            <div class="collapsible-body">
+                                <ul class="collection">
+                                    <!--************-->
+                                    <li class="collection-item avatar" *ngFor="let pregsc4 of sec4; index as i;">
+                                        <span class="title">{{pregsc4.quest}}</span>
+
+                                        <p *ngFor="let resp of pregsc4.opts">
+                                            <label>
+                                                <input class="with-gap" name="{{'group'+[i]}}" type="radio"  />
+                                                <span>{{resp}}</span>
+                                              </label>
+                                        </p>
+
+                                        <a href="#!" class="secondary-content"><i class="material-icons">done</i></a>
+                                    </li>
+                                    <!--************-->
+                                </ul>
+                            </div>
                         </li>
+
+
+
+                      
                     </ul>
                 </div>
                 <div class="col s12">
