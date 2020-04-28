@@ -35,28 +35,31 @@
                 <div class="step-content">
                     <div class="row">
                         <form ngNativeValidate [formGroup]="form" (ngSubmit)="register()">
-                            <div class="input-field col s12">
-                                <i class="material-icons prefix">account_circle</i>
+                            <div class="input-field col s8">
+                                <i class="material-icons prefix">email</i>
                                 <input formControlName="email" name='email' id="email" type="email" required class="validate">
                                 <label for="email">Correo electrónico</label>
                                 <div class="blue-text" *ngIf="f.email.errors?.email">El correo electrónico debe de ser valido</div>
                             </div>
-                            <div class="input-field col s12">
-                                <i class="material-icons prefix">account_circle</i>
-                                <input formControlName="password" name='password' id="password" type="password" required class="validate" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$">
+                            <div class="input-field col s8">
+                                <i class="material-icons prefix">https</i>
+                                <input formControlName="password" name='password' id="password" [type]="passType" required class="validate" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$">
                                 <label for="password">Contraseña</label>
-                                <div class="blue-text" *ngIf="f.password.errors?.minlength">Debe tener un mínimo de 8 caracteres</div>
-
+                                <div class="blue-text col s12" *ngIf="f.password.errors?.minlength">Debe tener un mínimo de 8 caracteres</div>
+                                <i class="material-icons prefix" *ngIf="icon" (click)="viewPassword()">visibility_off</i>
+                                <i class="material-icons prefix" *ngIf="!icon" (click)="viewPassword()">visibility</i>
                             </div>
-                            <div class="input-field col s12">
-                                <i class="material-icons prefix">account_circle</i>
-                                <input formControlName="rePassword" name='rePassword' id="passwordconfirm" type="password" required class="validate" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$">
-                                <label for="passwordconfirm">Confirmar Contraseña</label>
+                            <div class="input-field col s8">
+                                <i class="material-icons prefix">https</i>
+                                <input formControlName="rePassword" name='rePassword' id="rePassword" [type]="rePassType" required class="validate" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$">
+                                <label for="rePassword">Confirmar Contraseña</label>
+                                <i class="material-icons prefix" *ngIf="reIcon" (click)="viewRePassword()">visibility_off</i>
+                                <i class="material-icons prefix" *ngIf="!reIcon" (click)="viewRePassword()">visibility</i>
                             </div>
-                            <div class="red-text" *ngIf="form.errors?.isEqual && !form.pristine">
+                            <div class="red-text col s12" *ngIf="form.errors?.isEqual && !form.pristine">
                                 <p>Las contraseñas deben de ser iguales.</p>
                             </div>
-                            <div class="red-text" *ngIf="form.errors?.isMatch">
+                            <div class="red-text col s12" *ngIf="form.errors?.isMatch">
                                 <p>palabrota</p>
                             </div>
                             <div class="col s12">
