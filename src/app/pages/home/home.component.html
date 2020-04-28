@@ -1,11 +1,15 @@
 <app-header></app-header>
 
 <!--Carrousel-->
-<div class="carousel carousel-slider">
+<div class="carousel carousel-slider hide-on-small-only">
     <a class="carousel-item" href="#"><img src="../../../assets/Banner1.png"></a>
     <a class="carousel-item" href="#"><img src="../../../assets/Banner2.png"></a>
     <a class="carousel-item" href="#"><img src="../../../assets/Banner3.png"></a>
 
+</div>
+
+<div class="hide-on-med-and-up">
+    <a href="#"><img class="responsive-img" src="../../../assets/Banner1.png"></a>
 </div>
 
 <!--
@@ -115,8 +119,11 @@
         <br><br>
         <div>
 
-            <div class="chip">
+            <div class="chip hide-on-small-only">
                 Costo Anual Total Informativo (CAT): {{ catPorcentaje.toFixed(2) }} %
+            </div>
+            <div class="chip hide-on-med-and-up">
+                CAT: {{ catPorcentaje.toFixed(2) }} %
             </div>
         </div>
         <div class="center-align">
@@ -168,22 +175,24 @@
                 <i class="small material-icons icon-gold left">monetization_on</i> Monto <b>  {{ valueMon | currency:"MXN":"symbol" }}</b>
             </p>
         </div>
-        <br><br>
+
         <div class="center-align">
             <p class="white-text flow-text teal darken-4">
                 <i class="small material-icons icon-gold left">date_range</i> Plazo <b>     {{valuePlaz}} Meses</b></p>
         </div>
-        <br><br>
+
         <div class="center-align">
             <p class="white-text flow-text teal darken-4">
                 <i class="small material-icons icon-gold left">local_atm</i> Parcialidad <b>  {{ valueMon | currency:"MXN":"symbol" }}</b></p>
         </div>
-        <br><br>
+
     </div>
 
 </div>
 
-
+<div class="hide-on-med-and-up">
+    <a href="#"><img class="responsive-img" src="../../../assets/Banner3.png"></a>
+</div>
 
 <div class="container">
     <blockquote>

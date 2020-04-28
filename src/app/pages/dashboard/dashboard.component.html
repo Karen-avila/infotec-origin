@@ -54,21 +54,20 @@
                     <div class="cono2 special col xl6 offset-xl1 l5 offset-l1 m5 offset-m1 s9 offset-s1">
 
                         <p class="flow-text center-align">Crédito Directo Productivo desde {{20000|currency:"MXN":"symbol"}} hasta {{50000|currency:"MXN":"symbol"}}</p>
-<!--Radio Button Credito Directo Productivo-->
+                        <!--Radio Button Credito Directo Productivo-->
                         <div class="row">
-                            <div class="input-field col s12 m12 l12 ">
-                            <label>
+                            <div class="input-field col s12 m12 l6">
+                                <label>
                                 <input class="with-gap teal darken-4"  name="credito" type="radio"/>
                                 <span>Crédito Directo Productivo en colaboración con la Secretaría de Economía</span>
                             </label>
                             </div>
                             <div>
                                 <p class="white-text white">.</p>
-                                
-                                
+
                             </div>
-                            <div class="input-field col s12 m12 l12 ">
-                            <label>
+                            <div class="input-field col s12 m12 l6">
+                                <label>
                                 <input class="with-gap teal darken-4" name="credito" type="radio"/>
                                 <span>Crédito Directo Productivo para la Reactivación Económica</span>
                             </label>
@@ -96,10 +95,10 @@
                         <div class="center-align">
                             <p class="white-text flow-text cr">Total a Pagar <b> {{((finance.PMT(0.0125,valuePlaz,-valueMon))*valuePlaz).toFixed(2) | currency:"MXN":"symbol"}}</b></p>
                         </div>
-                        
+
 
                         <br><br>
-                        
+
                     </div>
 
 
@@ -111,7 +110,7 @@
                                 <p>{{ valueMon | currency:"MXN":"symbol" }}</p>
                             </div>
                         </div>
-                
+
                         <div class="card crd teal darken-4 white-text z-depth-3">
                             <div class="card-content">
                                 <i class="material-icons medium icon-gold">date_range</i>
@@ -119,7 +118,7 @@
                                 <p>{{valuePlaz}} Meses</p>
                             </div>
                         </div>
-                
+
                         <div class="card crd teal darken-4 white-text z-depth-3">
                             <div class="card-content">
                                 <i class="material-icons medium icon-gold">local_atm</i>
@@ -127,9 +126,9 @@
                                 <p>{{ finance.PMT(0.0125,valuePlaz,-valueMon).toFixed(2) | currency:"MXN":"symbol" }}</p>
                             </div>
                         </div>
-                
+
                     </div>
-                
+
                     <div class="crono1 col s10 offset-s1 hide-on-med-and-up">
                         <div class="center-align">
                             <p class="white-text flow-text teal darken-4">
@@ -487,7 +486,7 @@
                                               </label>
                                         </p>
 
-                                        <a href="#!" class="secondary-content"><i class="material-icons">done</i></a>
+
                                     </li>
                                     <!--************-->
                                 </ul>
@@ -509,7 +508,7 @@
                                               </label>
                                         </p>
 
-                                        <a href="#!" class="secondary-content"><i class="material-icons">done</i></a>
+
                                     </li>
                                     <!--************-->
                                 </ul>
@@ -531,7 +530,7 @@
                                               </label>
                                         </p>
 
-                                        <a href="#!" class="secondary-content"><i class="material-icons">done</i></a>
+
                                     </li>
                                     <!--************-->
                                 </ul>
@@ -553,7 +552,7 @@
                                               </label>
                                         </p>
 
-                                        <a href="#!" class="secondary-content"><i class="material-icons">done</i></a>
+
                                     </li>
                                     <!--************-->
                                 </ul>
@@ -562,7 +561,7 @@
 
 
 
-                      
+
                     </ul>
                 </div>
                 <div class="col s12">
