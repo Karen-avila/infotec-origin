@@ -186,6 +186,191 @@ export class QuestionComponent implements OnInit {
       value:""
     }
   ]
+
+  sec5=[
+    {
+      quest:"Estado civil",
+      opts:["Soltero","Casado","Viudo","Divorciado","Unión Libre","Separado"],
+      resp:"",
+      value:""
+    },
+    {
+        quest:"Nivel de Estudios del Solicitante",
+        opts:["Ninguna","Primaria incompleta","Primaria completa","Secuendaria incompleta","Secundaria completa","Preparatoria o bachillerato incompleto","Preparatoria o bachillerato completo","Técnica o comercial incompleta","Técnica o comercial completa","Licenciatura incompleta","Licenciatura incompleta","Posgrado"],
+        resp:"",
+        value:""
+      },
+      {
+        quest:"¿Habla usted alguna lengua indígena?",
+        opts:["Sí","No"],
+        resp:"",
+        value:""
+      },
+      {
+        quest:"En su vida diaria, ¿tiene dificultad al realizar las siguientes actividades? (Seleccionar una o varias opciones)",
+        opts:["Caminar, moverse subir o bajar","Ver, aun usando lentes","Hablar, comunicarse o conversar","Oir, aun usando aparato auditivo","Vestirse, bañarse o comer","Poner atención o aprender cosas sencillas","Tiene alguna limitación mental","No tiene dificultad física o mental"],
+        resp:"",
+        value:""
+      },
+      {
+        quest:"¿Usa usted internet habitualmente?",
+        opts:["Sí","No"],
+        resp:"",
+        value:""
+      },
+      {
+        quest:"¿Cuál es su papel en el hogar?",
+        opts:["Es jefe(a) de familia","Es esposo(a) del jefe(a) de familia","Es hijo(a) del jefe(a) de familia","Otra relación con el jefe(a) de familia"],
+        resp:"",
+        value:""
+      },
+      {
+        quest:"Su vivienda es:",
+        opts:["Rentada","Prestada","Propia pero la están pagando","Es propia","Está intestada o en litigio","Otra situación"],
+        resp:"",
+        value:""
+      },
+      {
+        quest:"Número de dependientes económicos",
+        opts:[""],
+        resp:"",
+        value:""
+      }
+    ]
+
+    sec6=[
+        {
+          quest:"¿Cuántas personas trabajan en su negocio?",
+          opts:[""],
+          resp:"",
+          value:""
+        }, 
+        {
+            quest:"¿Participó en la convocatoria 2.1 Desarrollo y Fortalecimiento Empresarial de la SE?",
+            opts:["Sí","No"],
+            resp:"",
+            value:""
+          }, 
+          {
+            quest:"¿Recibió capacitación vinculada a su crédito proveniente de alguna organización?",
+            opts:["Sí","No"],
+            resp:"",
+            value:""
+          }, 
+          {
+            quest:"¿Ha solicitado crédito anteriormente?",
+            opts:["Sí","No"],
+            resp:"",
+            value:""
+          }, 
+          {
+            quest:"¿Sus ingresos han mejorado después de recibir un crédito?",
+            opts:["Sí","No","No aplica"],
+            resp:"",
+            value:""
+          }, 
+          {
+            quest:"Fecha en que inició su actividad productiva",
+            opts:[""],
+            resp:"",
+            value:""
+          }, 
+          {
+            quest:"¿Cuál es el destino del crédito?",
+            opts:[""],
+            resp:"",
+            value:""
+          }, 
+          {
+            quest:"¿Cuál es el propósito del proyecto?",
+            opts:[""],
+            resp:"",
+            value:""
+          }, 
+          {
+            quest:"Registre el total de ingresos que obtuvo el negocio durante el ejercicio fiscal anterior. Por favor incluya tanto los ingresos derivados como los no derivados de la actividad, además de los apoyos del gobierno que haya recibido.",
+            opts:["No sé","**monto**","Si sé, pero prefiero no  declararlo"],
+            resp:"",
+            value:""
+          }, 
+          {
+            quest:"Registre la cantidad que pagó la empresa por los siguientes conceptos durante el ejercicio fiscal anterior:",
+            opts:[""],
+            resp:"",
+            value:""
+          }, 
+          {
+            quest:"Además de su oficina, comercio, o local principal, ¿tiene otra(s) oficina(s), comercio(s), local(es) o sucursal(es)?",
+            opts:["Sí","No"],
+            resp:"",
+            value:""
+          }, 
+          {
+            quest:"¿Cómo se lleva la contabilidad de la empresa?",
+            opts:["Se utiliza un cuaderno o una libreta de apuntes para llevar la contabilidad","Se utiliza los servicios de un contador o profesional para llevar la contabilidad","Se utiliza el “Portal Mis Cuentas” del SAT","Se utiliza un paquete de contabilidad por parte de la empresa","No se lleva la contabilidad de la empresa","Otro"],
+            resp:"",
+            value:""
+          }, 
+          {
+            quest:"¿En la empresa se realizan actualmente algunas de las siguientes actividades? (seleccionar una o más de las siguientes opciones)",
+            opts:["Se lleva registros escritos del negocio. Es decir, se tiene un lugar, cuaderno, archivo o computadora donde se concentra la información de las operaciones diarias del negocio","Se sabe cuánto dinero en efectivo tiene el negocio en un momento determinado","Se sabe si las ventas de un producto (bien o servicio) en particular están subiendo o bajando de un mes a otro","Se sabe cuánto le cuesta al negocio generar cada uno de sus principales productos (bienes o servicios). Por ejemplo, si tiene que calcular cuánto le cuesta producir una galleta, se hacen las cuentas de cuánto gasta en comprar harina, azúcar, leche, luz para usar la batidora, gas para el horno, renta del local, etcétera; otro ejemplo: si se ofrece un servicio de transporte, se hacen las cuentas de cuánto se gasta en el consumo de gasolina, casetas de peaje, etcétera","Se sabe de qué productos (bienes o servicios) se obtienen más ganancias por cada uno que vende","El negocio no lleva registros y no cuenta con información que permita conocer a detalle su operación"],
+            resp:"",
+            value:""
+          }, 
+          {
+            quest:"¿La empresa tiene cuenta bancaria exclusiva para el manejo del dinero del negocio?",
+            opts:["Sí","No"],
+            resp:"",
+            value:""
+          }, 
+          {
+            quest:"Indique el monto de financiamiento que haya recibido de cada una de estas fuentes durante el ejercicio fiscal anterior (seleccionar una o más de las siguientes opciones)",
+            opts:["No contó con ningún financiamiento","Recursos propios (dueños, herencia, familia y amigos) o utilidades reinvertidas","Préstamos de familiares y amigos que no tienen participación en la empresa","Sistema ﬁnanciero formal ( bancos  privados, Banco del Bienestar, antes Bansefi, o ﬁnancieras)","Prestamistas particulares (personas que prestan dinero)","Crédito de proveedores","Recursos de inversionistas privados","Otro"],
+            resp:"",
+            value:""
+          }, 
+          {
+            quest:"Durante el ejercicio fiscal anterior, ¿la empresa tuvo necesidad de invertir en equipo, vehículos, inmuebles, capacitación, etcétera y no pudo por falta de dinero?",
+            opts:["Sí","No"],
+            resp:"",
+            value:""
+          }, 
+          {
+            quest:"¿Durante el ejercicio fiscal anterior se otorgó capacitación al personal de la empresa (usando capacitadores internos o externos)?",
+            opts:["Sí","No"],
+            resp:"",
+            value:""
+          }, 
+          {
+            quest:"¿Cuál fue la principal causa por la que durante el ejercicio fiscal anterior no se otorgó capacitación al personal de la empresa?",
+            opts:["Capacitar interrumpe la producción","Capacitar hace que el personal demande un salario mayor, busque otro trabajo o se independice","No se encontró capacitador conforme a las necesidades de la empresa","Se tenía la intención de capacitar pero es muy caro","Se consideró que el conocimiento y las habilidades técnicas del personal son adecuadas","No vale la pena porque la empresa tiene muy alta rotación de personal","En años previos se impartió la capacitación necesaria","Se solicitó la capacitación a instituciones públicas, pero no se pudo obtener","No hay beneﬁcios palpables como resultado de la capacitación","Se utiliza gente externa que ya viene capacitada","El horario de la empresa no lo permite","Otra"],
+            resp:"",
+            value:""
+          }, 
+          {
+            quest:"¿Cuál es el motivo principal por el que se inició en este negocio o actividad? (Seleccionar una o varias opciones)",
+            opts:["Por tradición familiar o lo heredó","Para complementar el ingreso familiar","Para mejorar el ingreso","Tenía dinero y encontró una buena oportuindad","Para ejercer su oficio, carrera o profesión","Fue la única manera que tuvo para obtener un ingreso","No tenía la experiencia requerida para un empleo","No tenía la escolaridad o capacitación requerida para un empleo","Estaba sobrecapacitado para un empleo","Los empleos que encontró estaban mal pagados","Requería un horario flexible","No había oportunidades de empleo","Otra razón"],
+            resp:"",
+            value:""
+          }, 
+          {
+            quest:"En su negocio o actividad, ¿cuenta con un local para trabajar sea o no de su propiedad? (Seleccione una opción o más de una si tiene varios locales)",
+            opts:["Sí, es un local independiente","Sí, es un local o instalación que forma parte de un conjunto de locales","No"],
+            resp:"",
+            value:""
+          }, 
+          {
+            quest:"En caso de ser local independiente (fuera de un techo común), ¿éste es? (Seleccionar una o varias opciones)",
+            opts:["Tienda, accesoria o tendajón","Taller (de servicios o de reparación)","Fábrica, tortillería, panadería","Oficina, despacho, consultorio"],
+            resp:"",
+            value:""
+          }, 
+          {
+            quest:"Si no cuenta con un local, ¿en dónde se realizan las actividades de su negocio? (Seleccionar una o varias opciones)",
+            opts:["Vehículo con o sin motor","Puesto fijo fuera de un techo común","Puesto semifijo bajo un techo común en pasillos de un centro comercial","Puesto semifijo en un tianguis","En un domicilio particular con una instalación especial","En un domicilio particular sin una instalación especial","Otro lugar"],
+            resp:"",
+            value:""
+          }]
   constructor() { }
 
   ngOnInit() {
