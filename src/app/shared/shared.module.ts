@@ -4,20 +4,25 @@ import { HeaderComponent } from './header/header.component';
 import { PdfComponent } from './pdf/pdf.component';
 
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { QuestionComponent } from './question/question/question.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
     declarations:[
         HeaderComponent,
         FooterComponent,
-        PdfComponent
+        PdfComponent,
+        QuestionComponent
     ],
     exports:[
         HeaderComponent,
         FooterComponent,
-        PdfComponent    
+        PdfComponent,
+        QuestionComponent   
     ],
     imports:[
-        PdfViewerModule
+        PdfViewerModule,
+        BrowserModule
     ]
 })
 
