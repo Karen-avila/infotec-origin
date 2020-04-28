@@ -24,6 +24,10 @@ export class ApplyComponent implements OnInit {
     "chingada"
   ]
   //-------
+  passType = "password";
+  rePassType = "password";
+  icon:boolean=true;
+  reIcon:boolean=true;
 
   resolved(captchaResponse: any[]) {
     this.recaptcha = captchaResponse;
@@ -133,6 +137,28 @@ pbaDict(p1:string){
 
   }
   //-------------
-  
+  viewRePassword(){
+    if(this.reIcon){
+      console.log("view repassword");
+      this.reIcon=false;
+      this.rePassType="text";
+    }else{
+      console.log("not view repassword");
+      this.reIcon=true;
+      this.rePassType="password";
+    }
+  }
+
+  viewPassword(){
+    if(this.icon){
+      console.log("view password");
+      this.icon=false;
+      this.passType="text";
+    }else{
+      console.log("not view password");
+      this.icon=true;
+      this.passType="password";
+    }
+  }
 
 }
