@@ -1,0 +1,305 @@
+<div class="col s12 m9">
+    <ul class="collection with-header collapsible popout">
+        <li>
+            <div class="collection-header collapsible-header">
+                <h5>Cuestionario 1</h5>
+            </div>
+            <div class="collapsible-body">
+                <ul class="collapsible popout">
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">work</i>Perfil del Negocio</div>
+                        <div class="collapsible-body">
+                            <ul class="collection">
+                                <!--************-->
+                                <li class="collection-item avatar" *ngFor="let pregsc1 of sec1; index as i;">
+                                    <span class="title">{{pregsc1.quest}}</span>
+
+                                    <p *ngFor="let resp of pregsc1.opts; index as j;">
+                                        <label>
+                                            <input class="with-gap" name="{{'group'+[i][j]}}" type="radio"  />
+                                            <span>{{resp}}</span>
+                                          </label>
+                                    </p>
+
+
+                                </li>
+                                <!--************-->
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">card_travel</i>Perfil de Mercado</div>
+                        <div class="collapsible-body">
+                            <ul class="collection">
+                                <!--************-->
+                                <li class="collection-item avatar" *ngFor="let pregsc2 of sec2; index as i;">
+                                    <span class="title">{{pregsc2.quest}}</span>
+
+                                    <p *ngFor="let resp of pregsc2.opts; index as j;">
+                                        <label>
+                                            <input class="with-gap" name="{{'group'+[i][j]}}" type="radio"  />
+                                            <span>{{resp}}</span>
+                                          </label>
+                                    </p>
+
+
+                                </li>
+                                <!--************-->
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">star_border</i>Reputación</div>
+                        <div class="collapsible-body">
+                            <ul class="collection">
+                                <!--************-->
+                                <li class="collection-item avatar" *ngFor="let pregsc3 of sec3; index as i;">
+                                    <span class="title">{{pregsc3.quest}}</span>
+
+                                    <p *ngFor="let resp of pregsc3.opts">
+                                        <label>
+                                            <input class="with-gap" name="{{'group'+[i]}}" type="radio"  />
+                                            <span>{{resp}}</span>
+                                          </label>
+                                    </p>
+
+
+                                </li>
+                                <!--************-->
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">place</i>Dirección</div>
+                        <div class="collapsible-body">
+                            <ul class="collection">
+                                <!--************-->
+                                <li class="collection-item avatar" *ngFor="let pregsc4 of sec4; index as i;">
+                                    <span class="title">{{pregsc4.quest}}</span>
+
+                                    <p *ngFor="let resp of pregsc4.opts">
+                                        <label>
+                                            <input class="with-gap" name="{{'group'+[i]}}" type="radio"  />
+                                            <span>{{resp}}</span>
+                                          </label>
+                                    </p>
+
+
+                                </li>
+                                <!--************-->
+                            </ul>
+                        </div>
+                    </li>
+
+
+
+
+                </ul>
+            </div>
+        </li>
+        <li>
+            <div class="collection-header collapsible-header">
+                <h5>Cuestionario 2</h5>
+            </div>
+            <div class="collapsible-body">
+                <ul class="collapsible popout">
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">work</i>Perfil del Negocio</div>
+                        <div class="collapsible-body">
+                            <ul class="collection">
+                                <!--************-->
+                                <li class="collection-item avatar" *ngFor="let pregsc1 of sec1; index as i;">
+                                    <span class="title">{{pregsc1.quest}}</span>
+
+                                    <p *ngFor="let resp of pregsc1.opts">
+                                        <label>
+                                            <input class="with-gap" name="{{'group'+[i]}}" type="radio"  />
+                                            <span>{{resp}}</span>
+                                          </label>
+                                    </p>
+
+
+                                </li>
+                                <!--************-->
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">card_travel</i>Perfil de Mercado</div>
+                        <div class="collapsible-body">
+                            <ul class="collection">
+                                <!--************-->
+                                <li class="collection-item avatar" *ngFor="let pregsc2 of sec2; index as i;">
+                                    <span class="title">{{pregsc2.quest}}</span>
+
+                                    <p *ngFor="let resp of pregsc2.opts">
+                                        <label>
+                                            <input class="with-gap" name="{{'group'+[i]}}" type="radio"  />
+                                            <span>{{resp}}</span>
+                                          </label>
+                                    </p>
+
+
+                                </li>
+                                <!--************-->
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">star_border</i>Reputación</div>
+                        <div class="collapsible-body">
+                            <ul class="collection">
+                                <!--************-->
+                                <li class="collection-item avatar" *ngFor="let pregsc3 of sec3; index as i;">
+                                    <span class="title">{{pregsc3.quest}}</span>
+
+                                    <p *ngFor="let resp of pregsc3.opts">
+                                        <label>
+                                            <input class="with-gap" name="{{'group'+[i]}}" type="radio"  />
+                                            <span>{{resp}}</span>
+                                          </label>
+                                    </p>
+
+
+                                </li>
+                                <!--************-->
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">place</i>Dirección</div>
+                        <div class="collapsible-body">
+                            <ul class="collection">
+                                <!--************-->
+                                <li class="collection-item avatar" *ngFor="let pregsc4 of sec4; index as i;">
+                                    <span class="title">{{pregsc4.quest}}</span>
+
+                                    <p *ngFor="let resp of pregsc4.opts">
+                                        <label>
+                                            <input class="with-gap" name="{{'group'+[i]}}" type="radio"  />
+                                            <span>{{resp}}</span>
+                                          </label>
+                                    </p>
+
+
+                                </li>
+                                <!--************-->
+                            </ul>
+                        </div>
+                    </li>
+
+
+
+
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!--original
+
+                <div class="col s12 m9">
+                    <ul class="collapsible popout">
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">work</i>Perfil del Negocio</div>
+                            <div class="collapsible-body">
+                                <ul class="collection">
+                                    <li class="collection-item avatar" *ngFor="let pregsc1 of sec1; index as i;">
+                                        <span class="title">{{pregsc1.quest}}</span>
+
+                                        <p *ngFor="let resp of pregsc1.opts">
+                                            <label>
+                                                <input class="with-gap" name="{{'group'+[i]}}" type="radio"  />
+                                                <span>{{resp}}</span>
+                                              </label>
+                                        </p>
+
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">card_travel</i>Perfil de Mercado</div>
+                            <div class="collapsible-body">
+                                <ul class="collection">
+                                    <li class="collection-item avatar" *ngFor="let pregsc2 of sec2; index as i;">
+                                        <span class="title">{{pregsc2.quest}}</span>
+
+                                        <p *ngFor="let resp of pregsc2.opts">
+                                            <label>
+                                                <input class="with-gap" name="{{'group'+[i]}}" type="radio"  />
+                                                <span>{{resp}}</span>
+                                              </label>
+                                        </p>
+
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">star_border</i>Reputación</div>
+                            <div class="collapsible-body">
+                                <ul class="collection">
+                                    <li class="collection-item avatar" *ngFor="let pregsc3 of sec3; index as i;">
+                                        <span class="title">{{pregsc3.quest}}</span>
+
+                                        <p *ngFor="let resp of pregsc3.opts">
+                                            <label>
+                                                <input class="with-gap" name="{{'group'+[i]}}" type="radio"  />
+                                                <span>{{resp}}</span>
+                                              </label>
+                                        </p>
+
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">place</i>Dirección</div>
+                            <div class="collapsible-body">
+                                <ul class="collection">
+                                    <li class="collection-item avatar" *ngFor="let pregsc4 of sec4; index as i;">
+                                        <span class="title">{{pregsc4.quest}}</span>
+
+                                        <p *ngFor="let resp of pregsc4.opts">
+                                            <label>
+                                                <input class="with-gap" name="{{'group'+[i]}}" type="radio"  />
+                                                <span>{{resp}}</span>
+                                              </label>
+                                        </p>
+
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+
+
+
+                    </ul>
+                </div>
+
+-->
