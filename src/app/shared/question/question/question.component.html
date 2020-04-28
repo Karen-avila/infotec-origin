@@ -14,9 +14,9 @@
                                 <li class="collection-item avatar" *ngFor="let pregsc1 of sec1; index as i;">
                                     <span class="title">{{pregsc1.quest}}</span>
 
-                                    <p *ngFor="let resp of pregsc1.opts">
+                                    <p *ngFor="let resp of pregsc1.opts; index as j;">
                                         <label>
-                                            <input class="with-gap" name="{{'group'+[i]}}" type="radio"  />
+                                            <input class="with-gap" name="{{'group'+[i][j]}}" type="radio"  />
                                             <span>{{resp}}</span>
                                           </label>
                                     </p>
@@ -36,9 +36,9 @@
                                 <li class="collection-item avatar" *ngFor="let pregsc2 of sec2; index as i;">
                                     <span class="title">{{pregsc2.quest}}</span>
 
-                                    <p *ngFor="let resp of pregsc2.opts">
+                                    <p *ngFor="let resp of pregsc2.opts; index as j;">
                                         <label>
-                                            <input class="with-gap" name="{{'group'+[i]}}" type="radio"  />
+                                            <input class="with-gap" name="{{'group'+[i][j]}}" type="radio"  />
                                             <span>{{resp}}</span>
                                           </label>
                                     </p>
