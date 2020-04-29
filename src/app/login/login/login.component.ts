@@ -22,6 +22,9 @@ export class LoginComponent implements OnInit {
   signInForm: NgForm;
   recaptcha: any[];
 
+  passType = "password";
+  icon:boolean=true;
+
   resolved(captchaResponse: any[]) {
     this.recaptcha = captchaResponse;
     console.log(this.recaptcha);
@@ -101,6 +104,18 @@ this.router.navigate(["dashboard"]);
       this.router.navigate(["dashboard",{id:this.re}]);//revisar donde quedara
      
     } 
+  }
+
+  viewPassword(){
+    if(this.icon){
+      console.log("view password");
+      this.icon=false;
+      this.passType="text";
+    }else{
+      console.log("not view password");
+      this.icon=true;
+      this.passType="password";
+    }
   }
 
   }
