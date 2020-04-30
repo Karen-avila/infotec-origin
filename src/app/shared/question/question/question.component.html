@@ -35,7 +35,7 @@
                                         </div>
                                     </li>-->
                                     <!--INNPUT's-->
-
+                                    <br>
                                     <div class="col s12">
                                         <button class="waves-effect teal darken-4 btn left" type="submit">Enviar
                                         <i class="material-icons prefix right">send</i>
@@ -61,10 +61,11 @@
                                           </label>
                                         </p>
                                     </li>
+                                    <br>
                                     <div class="col s12">
                                         <button class="waves-effect teal darken-4 btn left" type="submit">Enviar
-                                    <i class="material-icons prefix right">send</i>
-                                </button>
+                                        <i class="material-icons prefix right">send</i>
+                                    </button>
                                     </div>
                                 </form>
                             </ul>
@@ -86,10 +87,11 @@
                                           </label>
                                         </p>
                                     </li>
+                                    <br>
                                     <div class="col s12">
                                         <button class="waves-effect teal darken-4 btn left" type="submit">Enviar
-                                    <i class="material-icons prefix right">send</i>
-                                </button>
+                                        <i class="material-icons prefix right">send</i>
+                                    </button>
                                     </div>
                                 </form>
                             </ul>
@@ -113,10 +115,11 @@
 
 
                                     </li>
+                                    <br>
                                     <div class="col s12">
                                         <button class="waves-effect teal darken-4 btn left" type="submit">Enviar
-                                    <i class="material-icons prefix right">send</i>
-                                </button>
+                                        <i class="material-icons prefix right">send</i>
+                                    </button>
                                     </div>
                                 </form>
                             </ul>
@@ -139,20 +142,35 @@
                         <div class="collapsible-header"><i class="material-icons">sentiment_satisfied_alt</i>Queremos conocerte</div>
                         <div class="collapsible-body">
                             <ul class="collection">
-                                <!--************-->
-                                <li class="collection-item avatar" *ngFor="let pregsc5 of sec5; index as i;">
-                                    <span class="title">{{pregsc5.quest}}</span>
+                                <form ngNativeValidate [formGroup]="formQcQc" (ngSubmit)="qcQcSend()">
 
-                                    <p *ngFor="let resp of pregsc5.opts">
+                                <li class="collection-item avatar" *ngFor="let qcQc of qcQc; index as i;">
+                                    <span class="title">{{qcQc.quest}}</span>
+
+                                    <p *ngFor="let resp of qcQc.opts">
                                         <label>
-                                            <input class="with-gap" name="{{'group'+[i]}}" type="radio"  />
+                                            <input class="with-gap" formControlName="{{'qcQc'+i}}" name="{{'qcQc'+i}}" id="{{'qcQc'+i}}" value="{{resp}}" type="radio"  />
                                             <span>{{resp}}</span>
                                           </label>
                                     </p>
-
-
                                 </li>
-                                <!--************-->
+                                    
+                                    <li class="collection-item avatar">
+                                            <div class="input-field col s12 m12 l12" *ngFor="let qcQcI of qcQc1; index as i;">
+                                        <span class="title" >{{qcQcI.quest}}</span>
+                                        <label>
+                                        <input  formControlName="{{'qcQcI'+i}}" name="{{'qcQcI'+i}}" id="{{'qcQcI'+i}}" maxlength="2" type="number" value="{{resp}}" min="1">
+                                        </label>
+                                            </div>
+                                    </li>
+                                <br>                               
+                                <br>
+                                    <div class="col s12">
+                                        <button class="waves-effect teal darken-4 btn left" type="submit">Enviar
+                                        <i class="material-icons prefix right">send</i>
+                                    </button>
+                                    </div>
+                               </form>
                             </ul>
                         </div>
                     </li>
@@ -161,20 +179,64 @@
                         <div class="collapsible-header"><i class="material-icons">work</i>Queremos conocer tu negocio</div>
                         <div class="collapsible-body">
                             <ul class="collection">
-                                <!--************-->
-                                <li class="collection-item avatar" *ngFor="let pregsc6 of sec6; index as i;">
-                                    <span class="title">{{pregsc6.quest}}</span>
+                                <form ngNativeValidate [formGroup]="formQcQcn" (ngSubmit)="qcQcnSend()">
+                                    
+                                   <!-- <li class="collection-item avatar">
+                                        <div class="input-field col s12 m12 l12" >
+                                    <span class="title" >{{qcqcn0.quest}}</span>
+                                    <label>
+                                        <input class="datepicker" formControlName="qcQcnI0" name="qcQcnI0" id="qcQcnI0" type="text">
+                                    </label>
+                                        </div>
+                                    </li>-->
 
-                                    <p *ngFor="let resp of pregsc6.opts">
+                                    <li class="collection-item avatar">
+                                        <div *ngFor="let qcQcn01 of qcqn1; index as i;">
+                                            <label for="{{'qcQcn01'+i}}"><span class="title">{{qcQcn01.quest}}</span></label>
+                                            <input formControlName="{{'qcQcn01'+i}}" name="{{'qcQcn01'+i}}" id="{{'qcQcn01'+i}}" type="text">
+                                            
+                                        </div>
+                                    </li>
+
+                                    <li class="collection-item avatar">
+                                        <div *ngFor="let qcQcn02 of qcqn2; index as i;">
+                                            <label for="{{'qcQcn02'+i}}"><span class="title">{{qcQcn02.quest}}</span></label>
+                                            <input formControlName="{{'qcQcn02'+i}}" name="{{'qcQcn02'+i}}"  id="{{'qcQcn02'+i}}" type="number">
+                                           <span>{{resp}}</span>
+                                        </div>
+                                    </li>
+
+                                    <li class="collection-item avatar" *ngFor="let qcQcn03 of qcqcn3; index as i;">
+                                        <span class="title">{{qcQcn03.quest}}</span>
+    
+                                        <p *ngFor="let resp of qcQcn03.opts">
+                                            <label>
+                                                <input class="with-gap" formControlName="{{'qcQcn03'+i}}" name="{{'qcQcn03'+i}}" id="{{'qcQcn03'+i}}" value="{{resp}}" type="radio"  />
+                                                <span>{{resp }}</span>
+                                              </label>
+                                        </p>
+                                    </li>
+
+                                <li class="collection-item avatar" *ngFor="let qcQcn of qcQcn; index as i;">
+                                    <span class="title">{{qcQcn.quest}}</span>
+
+                                    <p *ngFor="let resp of qcQcn.opts">
                                         <label>
-                                            <input class="with-gap" name="{{'group'+[i]}}" type="radio"  />
+                                            <input class="with-gap" formControlName="{{'qcQcn'+i}}" name="{{'qcQcn'+i}}" id="{{'qcQcn'+i}}" value="{{resp}}" type="radio"  />
                                             <span>{{resp}}</span>
                                           </label>
                                     </p>
-
-
                                 </li>
-                                <!--************-->
+
+                                <br>                               
+                                <br>
+                                    <div class="col s12">
+                                        <button class="waves-effect teal darken-4 btn left" type="submit">Enviar
+                                        <i class="material-icons prefix right">send</i>
+                                    </button>
+                                    </div>
+
+                                </form>
                             </ul>
                         </div>
                     </li>
