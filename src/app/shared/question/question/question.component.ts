@@ -10,6 +10,7 @@ import * as M from 'materialize-css';
 })
 export class QuestionComponent implements OnInit {
   calendar;
+  model="qcQcn00";
 
   scrPn=[
     {
@@ -517,7 +518,8 @@ this.formQcQcn = new FormGroup({
   qcQcn025: new FormControl(null, [Validators.required]),
   qcQcn026: new FormControl(null, [Validators.required]),
   qcQcn030: new FormControl(null, [Validators.required]),
-  qcQcn031: new FormControl(null, [Validators.required])
+  qcQcn031: new FormControl(null, [Validators.required]),
+  qcQcn00: new FormControl(null,[Validators.required])
  //qcQcnI0: new FormControl(null, [Validators.required])
 });
 
