@@ -159,7 +159,7 @@
                                             <div class="input-field col s12 m12 l12" *ngFor="let qcQcI of qcQc1; index as i;">
                                         <span class="title" >{{qcQcI.quest}}</span>
                                         <label>
-                                        <input  formControlName="{{'qcQcI'+i}}" name="{{'qcQcI'+i}}" id="{{'qcQcI'+i}}" maxlength="2" type="number" value="{{resp}}" min="1">
+                                        <input  formControlName="{{'qcQcI'+i}}" name="{{'qcQcI'+i}}" id="{{'qcQcI'+i}}" maxlength="2" type="number"  min="1">
                                         </label>
                                             </div>
                                     </li>
@@ -190,6 +190,8 @@
                                         </div>
                                     </li>-->
 
+                    
+
                                     <li class="collection-item avatar">
                                         <div *ngFor="let qcQcn01 of qcqn1; index as i;">
                                             <label for="{{'qcQcn01'+i}}"><span class="title">{{qcQcn01.quest}}</span></label>
@@ -202,7 +204,6 @@
                                         <div *ngFor="let qcQcn02 of qcqn2; index as i;">
                                             <label for="{{'qcQcn02'+i}}"><span class="title">{{qcQcn02.quest}}</span></label>
                                             <input formControlName="{{'qcQcn02'+i}}" name="{{'qcQcn02'+i}}"  id="{{'qcQcn02'+i}}" type="number">
-                                           <span>{{resp}}</span>
                                         </div>
                                     </li>
 
