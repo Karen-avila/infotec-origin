@@ -101,7 +101,7 @@ this.router.navigate(["dashboard"]);
           console.log("esto responde el servicio login",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
         });
         console.log("waaa",this.re)
-      this.router.navigate(["dashboard",{id:this.re}]);//revisar donde quedara
+      this.router.navigate(["dashboard",{id:this.re,un:"un",do:"do"}]);//revisar donde quedara
      
     } 
   }

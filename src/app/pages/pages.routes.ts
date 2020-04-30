@@ -13,12 +13,12 @@ const pagesRoutes: Routes = [
     {
         path: '', 
         component: PagesComponent,
-        canActivate: [LoginGuardGuard],
+       
         children: [
           {path: 'home', component: HomeComponent},
           {path: 'map', component: MapComponent},
           {path: 'apply', component: ApplyComponent},
-          {path: 'dashboard', component: DashboardComponent},
+          {path: 'dashboard', component: DashboardComponent, canActivate: [LoginGuardGuard]},
           {path: '', redirectTo: '/home', pathMatch: 'full' },
         ]
       },

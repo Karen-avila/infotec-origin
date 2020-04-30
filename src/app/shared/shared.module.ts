@@ -7,6 +7,8 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { QuestionComponent } from './question/question/question.component';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
     declarations:[
         HeaderComponent,
@@ -22,7 +24,9 @@ import { BrowserModule } from '@angular/platform-browser';
     ],
     imports:[
         PdfViewerModule,
-        BrowserModule
+        BrowserModule,
+        FormsModule, 
+        ReactiveFormsModule
     ]
 })
 
