@@ -1,27 +1,47 @@
 <div class="col s12 m9">
     <ul class="collection with-header collapsible popout">
+
         <li>
+
             <div class="collection-header collapsible-header"><i class="material-icons medium left">keyboard_arrow_down</i>Evaluación de tu negocio</div>
             <div class="collapsible-body">
                 <ul class="collapsible popout">
+
                     <li>
                         <div class="collapsible-header"><i class="material-icons">work</i>Perfil del Negocio</div>
                         <div class="collapsible-body">
                             <ul class="collection">
-                                <!--************-->
-                                <li class="collection-item avatar" *ngFor="let pregsc1 of sec1; index as i;">
-                                    <span class="title">{{pregsc1.quest}}</span>
+                                <form ngNativeValidate [formGroup]="formScrPn" (ngSubmit)="scrPnSend()">
 
-                                    <p *ngFor="let resp of pregsc1.opts; index as j;">
-                                        <label>
-                                            <input class="with-gap" name="{{'group'+[i][j]}}" type="radio"  />
+                                    <li class="collection-item avatar" *ngFor="let scrPn of scrPn; index as i;">
+                                        <span class="title">{{scrPn.quest}}</span>
+
+                                        <p *ngFor="let resp of scrPn.opts; index as j;">
+                                            <label>
+                                            <input class="with-gap" formControlName="{{'scrPn'+i}}" name="{{'scrPn'+i}}" id="{{'scrPn'+i}}" value="{{resp}}" type="radio"  />
                                             <span>{{resp}}</span>
                                           </label>
-                                    </p>
+                                        </p>
 
 
-                                </li>
-                                <!--************-->
+                                    </li>
+
+                                    <!--INNPUT's-->
+                                    <!--<li class="collection-item avatar">
+                                        <div class="input-field col s12 l6" *ngFor="let pregsc12 of sec12; index as i;">
+                                            <i class="material-icons prefix">phone</i>
+                                            <input formControlName="{{'pregsc12'+i}}" name="{{'pregsc12'+i}}" id="{{'pregsc12'+i}}" type="number">
+                                            <label for="{{'phone'+i}}">{{pregsc12.quest}}</label>
+                                        </div>
+                                    </li>-->
+                                    <!--INNPUT's-->
+
+                                    <div class="col s12">
+                                        <button class="waves-effect teal darken-4 btn left" type="submit">Enviar
+                                        <i class="material-icons prefix right">send</i>
+                                    </button>
+                                    </div>
+                                </form>
                             </ul>
                         </div>
                     </li>
@@ -30,20 +50,23 @@
                         <div class="collapsible-header"><i class="material-icons">card_travel</i>Perfil de Mercado</div>
                         <div class="collapsible-body">
                             <ul class="collection">
-                                <!--************-->
-                                <li class="collection-item avatar" *ngFor="let pregsc2 of sec2; index as i;">
-                                    <span class="title">{{pregsc2.quest}}</span>
+                                <form ngNativeValidate [formGroup]="formScrPm" (ngSubmit)="scrPmSend()">
+                                    <li class="collection-item avatar" *ngFor="let scrPm of scrPm; index as i;">
+                                        <span class="title">{{scrPm.quest}}</span>
 
-                                    <p *ngFor="let resp of pregsc2.opts; index as j;">
-                                        <label>
-                                            <input class="with-gap" name="{{'group'+[i][j]}}" type="radio"  />
+                                        <p *ngFor="let resp of scrPm.opts; index as j;">
+                                            <label>
+                                            <input class="with-gap" formControlName="{{'scrPm'+i}}" name="{{'scrPm'+i}}" id="{{'scrPm'+i}}" value="{{resp}}" type="radio"  />
                                             <span>{{resp}}</span>
                                           </label>
-                                    </p>
-
-
-                                </li>
-                                <!--************-->
+                                        </p>
+                                    </li>
+                                    <div class="col s12">
+                                        <button class="waves-effect teal darken-4 btn left" type="submit">Enviar
+                                    <i class="material-icons prefix right">send</i>
+                                </button>
+                                    </div>
+                                </form>
                             </ul>
                         </div>
                     </li>
@@ -52,20 +75,23 @@
                         <div class="collapsible-header"><i class="material-icons">star_border</i>Reputación</div>
                         <div class="collapsible-body">
                             <ul class="collection">
-                                <!--************-->
-                                <li class="collection-item avatar" *ngFor="let pregsc3 of sec3; index as i;">
-                                    <span class="title">{{pregsc3.quest}}</span>
+                                <form ngNativeValidate [formGroup]="formScrRep" (ngSubmit)="scrRepSend()">
+                                    <li class="collection-item avatar" *ngFor="let scrRep of scrRep; index as i;">
+                                        <span class="title">{{scrRep.quest}}</span>
 
-                                    <p *ngFor="let resp of pregsc3.opts">
-                                        <label>
-                                            <input class="with-gap" name="{{'group'+[i]}}" type="radio"  />
+                                        <p *ngFor="let resp of scrRep.opts; index as j;">
+                                            <label>
+                                            <input class="with-gap" formControlName="{{'scrRep'+i}}" name="{{'scrRep'+i}}" id="{{'scrRep'+i}}" value="{{resp}}" type="radio"  />
                                             <span>{{resp}}</span>
                                           </label>
-                                    </p>
-
-
-                                </li>
-                                <!--************-->
+                                        </p>
+                                    </li>
+                                    <div class="col s12">
+                                        <button class="waves-effect teal darken-4 btn left" type="submit">Enviar
+                                    <i class="material-icons prefix right">send</i>
+                                </button>
+                                    </div>
+                                </form>
                             </ul>
                         </div>
                     </li>
@@ -74,20 +100,25 @@
                         <div class="collapsible-header"><i class="material-icons">place</i>Dirección</div>
                         <div class="collapsible-body">
                             <ul class="collection">
-                                <!--************-->
-                                <li class="collection-item avatar" *ngFor="let pregsc4 of sec4; index as i;">
-                                    <span class="title">{{pregsc4.quest}}</span>
+                                <form ngNativeValidate [formGroup]="formScrDir" (ngSubmit)="scrDirSend()">
+                                    <li class="collection-item avatar" *ngFor="let scrDir of scrDir; index as i;">
+                                        <span class="title">{{scrDir.quest}}</span>
 
-                                    <p *ngFor="let resp of pregsc4.opts">
-                                        <label>
-                                            <input class="with-gap" name="{{'group'+[i]}}" type="radio"  />
+                                        <p *ngFor="let resp of scrDir.opts; index as j;">
+                                            <label>
+                                            <input class="with-gap" formControlName="{{'scrDir'+i}}" name="{{'scrDir'+i}}" id="{{'scrDir'+i}}" value="{{resp}}" type="radio"  />
                                             <span>{{resp}}</span>
                                           </label>
-                                    </p>
+                                        </p>
 
 
-                                </li>
-                                <!--************-->
+                                    </li>
+                                    <div class="col s12">
+                                        <button class="waves-effect teal darken-4 btn left" type="submit">Enviar
+                                    <i class="material-icons prefix right">send</i>
+                                </button>
+                                    </div>
+                                </form>
                             </ul>
                         </div>
                     </li>
@@ -97,10 +128,11 @@
 
                 </ul>
             </div>
+
         </li>
 
         <li>
-                <div class="collection-header collapsible-header"><i class="material-icons medium left">keyboard_arrow_down</i>Queremos conocerte</div>
+            <div class="collection-header collapsible-header"><i class="material-icons medium left">keyboard_arrow_down</i>Queremos conocerte</div>
             <div class="collapsible-body">
                 <ul class="collapsible popout">
                     <li>
