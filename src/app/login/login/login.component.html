@@ -8,12 +8,12 @@
                 <p class="flow-text white-text center-align">Iniciar Sesion</p>
                 <div class="row">
 
-                    <div class="input-field col s12">
+                    <div class="input-field col s10 l12">
                         <i class="material-icons prefix icon-white">account_circle</i>
                         <input id="email" formControlName="email" type="email" required name='email' class="validate">
                         <label class="white-text" for="email">Email</label>
                     </div>
-                    <div class="input-field col s12">
+                    <div class="input-field col s10 l12">
                         <i class="material-icons prefix icon-white">lock_circle</i>
                         <input id="password" formControlName="password" [type]="passType" required name='password' class="validate" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$">
                         <label class="white-text" for="password">Password</label>
@@ -23,7 +23,7 @@
 
 
 
-                    <div class="col s9 offset-s3 m8 offset-m4 l8 offset-l4">
+                    <div class="col s12 m8 offset-m4 l8 offset-l4">
                         <a (click)="forgot()" class="white-text">¿Olvidaste tu Contraseña?</a>
                     </div>
 
@@ -70,14 +70,14 @@
 
                         <br>
                         <div class="row">
-                            <div class="col s7 offset-s1 m6 offset-m1 l6 offset-l1">
+                            <div class="col s6 m6 offset-m3 l6 offset-l1 ">
                                 <!--<button (click)="recuperar()" type="submit" ng-click=”recuperar()” class="waves-effect waves-light btn red darken-3 right"> 
                     Recuperar <i class="material-icons right">send</i> </button>-->
                                 <button class="waves-effect red darken-3 btn right" type="submit">Recuperar
                         <i class="material-icons right">send</i>
                       </button>
                             </div>
-                            <div class="col s4 m3 l3">
+                            <div class="col s6  m6 offset-m3 l3 ">
                                 <button (click)="cancel()" class="waves-effect waves-light btn grey left">Cancelar</button>
                             </div>
 

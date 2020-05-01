@@ -197,7 +197,7 @@ this.formDocumentos = new FormGroup({
   estado: new FormControl(null, Validators.required),
   curpd: new FormControl(null, Validators.required),
   rfcd: new FormControl(null, Validators.required),
-  buro: new FormControl(null, Validators.required),
+ // buro: new FormControl(null, Validators.required),
   cfiscal: new FormControl(null, Validators.required)
   
 });

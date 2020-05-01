@@ -55,7 +55,7 @@
 
                         <p class="flow-text center-align">Crédito Directo Productivo desde {{20000|currency:"MXN":"symbol"}} hasta {{50000|currency:"MXN":"symbol"}}</p>
                         <!--Radio Button Credito Directo Productivo-->
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="input-field col s12 m12 l6">
                                 <label>
                                 <input class="with-gap teal darken-4"  name="credito" type="radio"/>
@@ -72,7 +72,7 @@
                                 <span>Crédito Directo Productivo para la Reactivación Económica</span>
                             </label>
                             </div>
-                        </div>
+                        </div>-->
 
                         <div>
                             <p class="white-text white">.</p>
@@ -88,8 +88,12 @@
                         </div>
                         <br><br>
                         <div>
-                            <div class="chip">
+
+                            <div class="chip hide-on-small-only">
                                 Costo Anual Total Informativo (CAT): {{ catPorcentaje.toFixed(2) }} %
+                            </div>
+                            <div class="chip hide-on-med-and-up">
+                                CAT: {{ catPorcentaje.toFixed(2) }} %
                             </div>
                         </div>
                         <div class="center-align">
@@ -97,7 +101,7 @@
                         </div>
 
 
-                        <br><br>
+                        <br>
 
                     </div>
 
@@ -129,23 +133,20 @@
 
                     </div>
 
-                    <div class="crono1 col s10 offset-s1 hide-on-med-and-up">
+                    <div class="crono1 col s12 hide-on-med-and-up">
                         <div class="center-align">
                             <p class="white-text flow-text teal darken-4">
                                 <i class="small material-icons icon-gold left">monetization_on</i> Monto <b>  {{ valueMon | currency:"MXN":"symbol" }}</b>
                             </p>
                         </div>
-                        <br><br>
                         <div class="center-align">
                             <p class="white-text flow-text teal darken-4">
                                 <i class="small material-icons icon-gold left">date_range</i> Plazo <b>     {{valuePlaz}} Meses</b></p>
                         </div>
-                        <br><br>
                         <div class="center-align">
                             <p class="white-text flow-text teal darken-4">
                                 <i class="small material-icons icon-gold left">local_atm</i> Parcialidad <b>  {{ finance.PMT(0.0125,valuePlaz,-valueMon).toFixed(2) | currency:"MXN":"symbol" }}</b></p>
                         </div>
-                        <br><br>
                     </div>
 
                     <button class="waves-effect waves-dark teal darken-4 btn next-step">CONTINUAR</button>
@@ -165,23 +166,22 @@
                 <form ngNativeValidate [formGroup]="form" (ngSubmit)="dpersonales()">
 
 
-                    <div class="row">
-                        <div class="input-field col s12 m4">
-                            <label>
-                    <input class="with-gap teal darken-4" formControlName="personType" name="personType" id="personType" type="radio" value="pFisica" [(ngModel)]="model"/>
-                    <span>Persona Fisica con Actividad Empresarial</span></label>
-                        </div>
-                        <div class="input-field col s12 m4">
-                            <label>
-                    <input class="with-gap teal darken-4" formControlName="personType"  name="personType" id="personType" type="radio" value="rFiscal" [(ngModel)]="model"/>
-                    <span>Regimen de Incorporación Fiscal</span></label>
-                        </div>
 
-                        <div>
-                            <p class="white-text white">.</p>
-                            <br><br>
+                    <div class="input-field col s12 m4">
 
-                        </div>
+                        <input class="with-gap teal darken-4" formControlName="personType" name="personType" id="personType" type="radio" value="pFisica" [(ngModel)]="model" />
+                        <span>Persona Fisica con Actividad Empresarial</span>
+                    </div>
+                    <div class="input-field col s12 m4">
+
+                        <input class="with-gap teal darken-4" formControlName="personType" name="personType" id="personType" type="radio" value="rFiscal" [(ngModel)]="model" />
+                        <span>Regimen de Incorporación Fiscal</span>
+                    </div>
+
+                    <div>
+                        <p class="white-text white">.</p>
+                        <br><br>
+
                     </div>
 
                     <div class="input-field col s12 m6 l6">
@@ -294,7 +294,7 @@
                     <div class="input-field col s12 m6 l6" *ngIf="model=='pFisica'">
                         <i class="material-icons prefix">aspect_ratio</i>
                         <input id="rfc" type="text" formControlName="rfc" pattern="^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$" required class="validate" name="rfc" />
-                        <label for="rfc">Registro Federal de Contribuyente</label>
+                        <label for="rfc">RFC</label>
                     </div>
                     <div class="col s12">
                         <button class="waves-effect teal darken-4 btn left" type="submit">Enviar
@@ -414,22 +414,22 @@
                             <input class="file-path validate" type="text">
                         </div>
                     </div>
-                    <div class="col s12 m2 l2">
+                    <!--   <div class="col s12 m2 l2">
                         <span>Score de Buro de Crédito </span>
                         <a (click)="sweetHome('2')"><i class="material-icons prefix icon-black">help_outline</i></a>
-                    </div>
+                    </div>  
                     <div class="file-field input-field col s12 m4 l4">
                         <div class="teal darken-4 btn">
                             <i class="material-icons right">attachment</i>cargar
                             <input type="file" accept="application/pdf" formControlName="buro" id="buro" required class="validate">
-                        </div>
+                        </div> 
                         <div class="col s1 m1 l1" *ngIf="doc.buro.errors?.required">
                             <i class="material-icons icon-red">error_outline</i>
                         </div>
                         <div class="file-path-wrapper">
                             <input class="file-path validate" type="text">
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col s12 m2 l2">
                         <span>Constancia de Situacion Fiscal </span>
                         <a (click)="sweetHome('3')"><i class="material-icons prefix icon-black">help_outline</i></a>
