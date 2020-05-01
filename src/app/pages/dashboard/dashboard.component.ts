@@ -20,7 +20,7 @@ import { Finance } from 'financejs'
 export class DashboardComponent implements OnInit {
 
   //********************* */
-  
+
   //********************* */
   
   model="pFisica";
@@ -146,8 +146,10 @@ console.log("el step",this.re.id)
     var elems = document.querySelectorAll('.modal');
     this.popup = M.Modal.init(elems);
 
+
     var elems = document.querySelectorAll('.datepicker');
     this.calendar = M.Datepicker.init(elems);
+
     console.log("heyy",this.calendar)
 
 
@@ -176,14 +178,20 @@ console.log("el step",this.re.id)
    this.form = new FormGroup({
     personType: new FormControl(null,Validators.required),
     name: new FormControl(null,[Validators.required,Validators.minLength(3)]),
-    name2: new FormControl(null,[Validators.minLength(3)]),
+    name2: new FormControl(null,[Validators.minLength(0)]),
     paterno: new FormControl(null,[Validators.required,Validators.minLength(3)]),
     materno: new FormControl(null,[Validators.required,Validators.minLength(3)]),
+    genero : new FormControl(null, Validators.required),
+    birthDate : new FormControl(null, Validators.required),
+    //entidad
+    //pais
+    //ocupacion
+    //telefono
+    tel: new FormControl(null,[Validators.required,Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
     domicilio: new FormControl(null,[Validators.required,Validators.minLength(5), Validators.maxLength(120)]),
     curp: new FormControl(null,Validators.required),
     rfc: new FormControl(null,Validators.required),
-    genero : new FormControl(null, Validators.required)
-    //phone: new FormControl (null, [Validators.required, Validators.minLength(10)])
+    
    
     
  }, { validators: this.pbaDict('name','paterno','name2','materno','domicilio') 

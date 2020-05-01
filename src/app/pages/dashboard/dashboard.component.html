@@ -168,14 +168,20 @@
 
 
                     <div class="input-field col s12 m4">
-
+                        <p>
+                            <label>
                         <input class="with-gap teal darken-4" formControlName="personType" name="personType" id="personType" type="radio" value="pFisica" [(ngModel)]="model" />
                         <span>Persona Fisica con Actividad Empresarial</span>
+                    </label>
+                        </p>
                     </div>
                     <div class="input-field col s12 m4">
-
+                        <p>
+                            <label>
                         <input class="with-gap teal darken-4" formControlName="personType" name="personType" id="personType" type="radio" value="rFiscal" [(ngModel)]="model" />
                         <span>Regimen de Incorporación Fiscal</span>
+                    </label>
+                        </p>
                     </div>
 
                     <div>
@@ -186,7 +192,7 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="name" type="text" formControlName="name" name='name' required class="validate">
+                        <input id="name" type="text" formControlName="name" name="name" required class="validate">
                         <label for="name">Nombre</label>
 
                         <div class="blue-text" *ngIf="f.name.errors?.minlength">Debe tener un mínimo de 3 caracteres</div>
@@ -197,7 +203,7 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="name2" type="text" name='name2' required class="validate">
+                        <input id="name2" type="text" formControlName="name2" name="name2" class="validate">
                         <label for="name2">Segundo nombre</label>
 
                         <div class="blue-text" *ngIf="f.name2.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
@@ -207,7 +213,7 @@
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="paterno" type="text" name='paterno' formControlName="paterno" required class="validate">
+                        <input id="paterno" type="text" name="paterno" formControlName="paterno" required class="validate">
                         <label for="paterno">Apellido paterno</label>
                         <div class="blue-text" *ngIf="f.paterno.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
@@ -216,7 +222,7 @@
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="materno" type="text" name='materno' formControlName="materno" required class="validate">
+                        <input id="materno" type="text" name="materno" formControlName="materno" required class="validate">
                         <label for="materno">Apellido materno</label>
                         <div class="blue-text" *ngIf="f.materno.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
@@ -224,10 +230,10 @@
                         </div>
                     </div>
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="genero" required class="validate">
+                        <select formControlName="genero" name="genero" id="genero" required class="validate">
                             <option value="" disabled selected>Selecciona una opcion</option>
-                            <option value="1">Femenino</option>
-                            <option value="2">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Masculino">Masculino</option>
                         </select>
                         <label>Genero</label>
                     </div>
@@ -238,7 +244,7 @@
                     </div>-->
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">calendar_today</i>
-                        <input type="text" class="datepicker">
+                        <input type="text" class="datepicker" formControlName="birthDate" name="birthDate" id="birthDate" required class="validate">
                         <label>Fecha de Nacimiento</label>
                     </div>
                     <div class="input-field col s12 m6 l6">
@@ -270,13 +276,13 @@
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">phone</i>
-                        <input id="phone" type="text" name="phone" maxlength="10" required autocomplete="off" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" min="1">
-                        <label for="phone">Número de Telefono</label>
-
+                        <input class="validate" id="tel" type="tel" formControlName="tel" name="tel" minlength="10" maxlength="10" required>
+                        <label for="text">Número de Teléfono</label>
+                        <div class="blue-text" *ngIf="f.tel.errors">El teléfono debe ser de 10 digitos</div>
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">house</i>
-                        <textarea id="domicilio" name='domicilio' formControlName="domicilio" required class="materialize-textarea"> </textarea>
+                        <textarea id="domicilio" name="domicilio" formControlName="domicilio" required class="materialize-textarea"> </textarea>
                         <label for="domicilio">Domicilio particular</label>
 
                         <div class="blue-text" *ngIf="f.domicilio.errors?.minlength ">Debe tener un mínimo 5 caracteres</div>
@@ -399,7 +405,7 @@
                         </div>
                     </div>
                     <div class="col s12 m2 l2">
-                        <span>Registro Federal de Contribuyente</span>
+                        <span>RFC</span>
                         <a (click)="sweetHome('1')"><i class="material-icons prefix icon-black">help_outline</i></a>
                     </div>
                     <div class="file-field input-field col s12 m4 l4">
