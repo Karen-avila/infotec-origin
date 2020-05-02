@@ -146,13 +146,6 @@ console.log("el step",this.re.id)
     var elems = document.querySelectorAll('.modal');
     this.popup = M.Modal.init(elems);
 
-
-    var elems = document.querySelectorAll('.datepicker');
-    this.calendar = M.Datepicker.init(elems);
-
-    console.log("heyy",this.calendar)
-
-
     var select = document.querySelectorAll('select');
     M.FormSelect.init(select);
 
@@ -183,10 +176,9 @@ console.log("el step",this.re.id)
     materno: new FormControl(null,[Validators.required,Validators.minLength(3)]),
     genero : new FormControl(null, Validators.required),
     birthDate : new FormControl(null, Validators.required),
-    //entidad
-    //pais
-    //ocupacion
-    //telefono
+    entidad : new FormControl(null, Validators.required),
+    pais : new FormControl(null, Validators.required),
+    ocupacion : new FormControl(null, Validators.required),
     tel: new FormControl(null,[Validators.required,Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
     domicilio: new FormControl(null,[Validators.required,Validators.minLength(5), Validators.maxLength(120)]),
     curp: new FormControl(null,Validators.required),

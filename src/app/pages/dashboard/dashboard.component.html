@@ -230,42 +230,45 @@
                         </div>
                     </div>
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="genero" name="genero" id="genero" required class="validate">
+                        <select formControlName="genero" name="genero" id="genero" class="validate">
                             <option value="" disabled selected>Selecciona una opcion</option>
                             <option value="Femenino">Femenino</option>
                             <option value="Masculino">Masculino</option>
                         </select>
                         <label>Genero</label>
+                        <div class="blue-text" *ngIf="f.genero.errors">Debes seleccionar una opción.</div>
                     </div>
-                    <!-- <div class="input-field col s12 m6 l6">
+                    <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">calendar_today</i>
-                        <input type="date" class="fecha">
+                        <input type="date" class="fecha validate" formControlName="birthDate" name="birthDate" id="birthDate" min="1960-12-31" max="2002-01-01" required>
+                        <label>Fecha de Nacimiento</label>
+                    </div>
+                    <!--  <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">calendar_today</i>
+                        <input type="text" class="datepicker" formControlName="birthDate" value="">
                         <label>Fecha de Nacimiento</label>
                     </div>-->
                     <div class="input-field col s12 m6 l6">
-                        <i class="material-icons prefix">calendar_today</i>
-                        <input type="text" class="datepicker" formControlName="birthDate" name="birthDate" id="birthDate" required class="validate">
-                        <label>Fecha de Nacimiento</label>
-                    </div>
-                    <div class="input-field col s12 m6 l6">
-                        <select>
+                        <select formControlName="entidad" name="entidad" id="entidad" class="validate">
                         <option value="" disabled selected>Selecciona una opcion</option>
                         <option value="1">Ciudad de México</option>
                         <option value="2">Pachuca, Hgo.</option>
                         <option value="3">Guadalajara, Jal.</option>
                     </select>
                         <label>Entidad federativa</label>
+                        <div class="blue-text" *ngIf="f.entidad.errors">Debes seleccionar una opción.</div>
                     </div>
                     <div class="input-field col s12 m6 l6">
-                        <select>
+                        <select formControlName="pais" name="pais" id="pais" class="validate">
                             <option value="" disabled selected>Selecciona una opcion</option>
                             <option value="1">México</option>
                             <option value="2">Estados Unidos</option>
                         </select>
                         <label>País de nacimiento</label>
+                        <div class="blue-text" *ngIf="f.pais.errors">Debes seleccionar una opción.</div>
                     </div>
                     <div class="input-field col s12 m6 l6">
-                        <select>
+                        <select formControlName="ocupacion" name="ocupacion" id="ocupacion" class="validate">
                             <option value="" disabled selected>Selecciona una opcion</option>
                             <option value="1">Agricultor</option>
                             <option value="2">Chofer</option>
@@ -273,10 +276,11 @@
                             <option value="4">Empleado</option>
                         </select>
                         <label>Ocupación</label>
+                        <div class="blue-text" *ngIf="f.ocupacion.errors">Debes seleccionar una opción.</div>
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">phone</i>
-                        <input class="validate" id="tel" type="tel" formControlName="tel" name="tel" minlength="10" maxlength="10" required>
+                        <input class="validate" id="tel" type="number" formControlName="tel" name="tel" minlength="10" maxlength="10" required>
                         <label for="text">Número de Teléfono</label>
                         <div class="blue-text" *ngIf="f.tel.errors">El teléfono debe ser de 10 digitos</div>
                     </div>
