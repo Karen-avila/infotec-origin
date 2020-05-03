@@ -252,7 +252,9 @@ this.formDocumentos = new FormGroup({
       console.log("form", this.form.value);
       //enviar datos a back
       this.popup[0].open();
-    } 
+    } else{
+      swal("¡Cuidado!", "Completa todos los campos para continuar.", "error");
+    }
 
   }
 
@@ -262,7 +264,9 @@ this.formDocumentos = new FormGroup({
       console.log("formDocumentos", this.formDocumentos.value);
       //enviar datos a back
       this.popup[0].open();
-    } 
+    } else{
+      swal("¡Cuidado!", "Completa todos los campos para continuar.", "error");
+    }
 
   }
 
