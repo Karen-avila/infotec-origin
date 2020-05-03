@@ -20,7 +20,7 @@ import { Finance } from 'financejs'
 export class DashboardComponent implements OnInit {
 
   //********************* */
-
+monte;
   //********************* */
   
   model="pFisica";
@@ -66,10 +66,11 @@ export class DashboardComponent implements OnInit {
    translate: (value: number, label: LabelType): string => {
      switch (label) {
        case LabelType.Low:
-         return '<b>Si te Prestamos: </b>MX' +  value.toLocaleString('es-MX', {
-           style: 'currency',
-           currency: 'MXN',
-         }); 
+         this.monte = value.toLocaleString('es-MX', {
+                  style: 'currency',
+                  currency: 'MXN',
+                }); 
+         return '<b>Si te Prestamos: </b>MX' +  this.monte;
        case LabelType.Ceil:
          return '<b>Monto Maximo: </b>MX' + value.toLocaleString('es-MX', {
            style: 'currency',
@@ -146,13 +147,6 @@ console.log("el step",this.re.id)
     var elems = document.querySelectorAll('.modal');
     this.popup = M.Modal.init(elems);
 
-
-    var elems = document.querySelectorAll('.datepicker');
-    this.calendar = M.Datepicker.init(elems);
-
-    console.log("heyy",this.calendar)
-
-
     var select = document.querySelectorAll('select');
     M.FormSelect.init(select);
 
@@ -183,17 +177,16 @@ console.log("el step",this.re.id)
     materno: new FormControl(null,[Validators.required,Validators.minLength(3)]),
     genero : new FormControl(null, Validators.required),
     birthDate : new FormControl(null, Validators.required),
-    //entidad
-    //pais
-    //ocupacion
-    //telefono
+    entidad : new FormControl(null, Validators.required),
+    pais : new FormControl(null, Validators.required),
+    ocupacion : new FormControl(null, Validators.required),
     tel: new FormControl(null,[Validators.required,Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
     domicilio: new FormControl(null,[Validators.required,Validators.minLength(5), Validators.maxLength(120)]),
     curp: new FormControl(null,Validators.required),
     rfc: new FormControl(null,Validators.required),
-    
-   
-    
+    monto: new FormControl(),
+    plazo: new FormControl()
+            
  }, { validators: this.pbaDict('name','paterno','name2','materno','domicilio') 
 
 });
@@ -239,13 +232,29 @@ this.formDocumentos = new FormGroup({
     
   }
 
+  ValidateSize(file) {
+    console.log("onchanges")
+    let fl = (<HTMLInputElement>document.getElementById(file));
+    let FileSize = fl.files[0].size / 1024 / 1024; // in MB
+    if (FileSize > 2) {
+        //alert('File size exceeds 2 MB');
+        swal("¡Cuidado!", "Tu archivo debe ser menor a 2Mb", "warning");
+        fl.value = null;
+       // $(file).val(''); //for clearing with Jquery
+    } else {
+
+    }
+}
+
   dpersonales(){
     console.log("form is valid?", this.form.valid);
     if(this.form.valid){
       console.log("form", this.form.value);
       //enviar datos a back
       this.popup[0].open();
-    } 
+    } else{
+      swal("¡Cuidado!", "Completa todos los campos para continuar.", "error");
+    }
 
   }
 
@@ -255,7 +264,9 @@ this.formDocumentos = new FormGroup({
       console.log("formDocumentos", this.formDocumentos.value);
       //enviar datos a back
       this.popup[0].open();
-    } 
+    } else{
+      swal("¡Cuidado!", "Completa todos los campos para continuar.", "error");
+    }
 
   }
 
