@@ -228,7 +228,7 @@
                     <div class="blue-text" *ngIf="f.tel.errors">El teléfono debe ser de 10 digitos</div>
                 </div>
                 <div class="input-field col s12 m6 l6">
-                    <i class="material-icons prefix">house</i>
+                    <a class="waves-effect teal darken-4 btn modal-trigger" href="#modalMap"><i class="material-icons prefix">house</i></a>
                     <textarea id="domicilio" name="domicilio" formControlName="domicilio" required class="materialize-textarea"> </textarea>
                     <label for="domicilio">Domicilio particular</label>
 
@@ -521,6 +521,15 @@
     </div>
 </div>
 
+
+<div id="modalMap" class="modal ma">
+    <div class="modal-content co">
+        <app-map></app-map>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>
+    </div>
+</div>
 
 
 
