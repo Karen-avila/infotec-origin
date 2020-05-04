@@ -51,7 +51,7 @@ export class MapComponent implements OnInit {
 
   private initializeDefaultMapPoint () {
     this.mapPoint = {
-      name: 'Hello',
+      name: 'Dirección',
       latitude: DEFAULT_LATITUDE,
       longitude: DEFAULT_LONGITUDE
     };
