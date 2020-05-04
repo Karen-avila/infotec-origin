@@ -181,14 +181,15 @@
                             <ul class="collection">
                                 <form ngNativeValidate [formGroup]="formQcQcn" (ngSubmit)="qcQcnSend()">
                                     
-                                   <!-- <li class="collection-item avatar">
-                                        <div class="input-field col s12 m12 l12" >
-                                    <span class="title" >{{qcqcn0.quest}}</span>
+                                   <li class="collection-item avatar">
+                                        <div *ngFor="let qcQcn0 of qcqcn0; index as i;">
+                                    <span class="title" >{{qcQcn0.quest}}</span>
                                     <label>
-                                        <input class="datepicker" formControlName="qcQcnI0" name="qcQcnI0" id="qcQcnI0" type="text">
+                                        <i class="material-icons prefix">calendar_today
+                                        <input type="date"  formControlName="qcQcn0" name="qcQcn0" id="qcQcn0" min="1960-12-31" max="2002-01-01"></i>
                                     </label>
                                         </div>
-                                    </li>-->
+                                    </li>
 
                     
 
@@ -218,6 +219,50 @@
                                         </p>
                                     </li>
 
+                                    <!-- Inputs con montos-->
+                                    
+                                    <li class="collection-item avatar">
+                                        <span class="title">Pensando en los últimos 6 meses, en promedio, indique cuánto paga cada mes por los siguientes conceptos:</span>
+                                        <p>
+                                            <label>
+                                            <input class="with-gap teal darken-4"  formControlName="qcQcnr04" name="qcQcnr04" id="qcQcnr04" type="radio" value="qcQcnr04" [(ngModel)]="model" />
+                                            <span>No contó con ningún financiamiento</span>
+                                        </label>
+                                        </p>
+                                        <div *ngFor="let qcQcn04 of qcqcn4; index as i;">
+                                            <label for="{{'qcQcn04'+i}}"><span class="title">{{qcQcn04.quest}}</span></label>
+                                            <input formControlName="{{'qcQcn04'+i}}" name="{{'qcQcn04'+i}}" id="{{'qcQcn04'+i}}" type="number"> 
+                                        </div>
+                                    </li>
+                                    <li class="collection-item avatar">
+                                        <span class="title">Indique el monto de financiamiento que haya recibido de cada una de estas fuentes durante el ejercicio fiscal anterior:</span>
+                                        <div *ngFor="let qcQcn05 of qcqcn5; index as i;">
+                                            <label for="{{'qcQcn05'+i}}"><span class="title">{{qcQcn05.quest}}</span></label>
+                                            <input formControlName="{{'qcQcn05'+i}}" name="{{'qcQcn05'+i}}" id="{{'qcQcn05'+i}}" type="number"> 
+                                        </div>
+                                    </li>
+                                    <li class="collection-item avatar">
+                                        <span class="title">¿Cuánto debe al día de hoy por los conceptos siguientes?</span>
+                                        <div *ngFor="let qcQcn06 of qcqcn6; index as i;">
+                                            <label for="{{'qcQcn06'+i}}"><span class="title">{{qcQcn06.quest}}</span></label>
+                                            <input formControlName="{{'qcQcn06'+i}}" name="{{'qcQcn06'+i}}" id="{{'qcQcn06'+i}}" type="number"> 
+                                        </div>
+                                    </li>
+                                    <li class="collection-item avatar">
+                                        <span class="title">En promedio, ¿cuánto paga cada mes por los conceptos siguientes?</span>
+                                        <div *ngFor="let qcQcn07 of qcqcn7; index as i;">
+                                            <label for="{{'qcQcn07'+i}}"><span class="title">{{qcQcn07.quest}}</span></label>
+                                            <input formControlName="{{'qcQcn07'+i}}" name="{{'qcQcn07'+i}}" id="{{'qcQcn07'+i}}" type="number"> 
+                                        </div>
+                                    </li>
+                                    <li class="collection-item avatar">
+                                        <span class="title">Registre la cantidad que pagó la empresa por los siguientes conceptos durante el ejercicio fiscal anterior:</span>
+                                        <div *ngFor="let qcQcn08 of qcqcn8; index as i;">
+                                            <label for="{{'qcQcn08'+i}}"><span class="title">{{qcQcn08.quest}}</span></label>
+                                            <input formControlName="{{'qcQcn08'+i}}" name="{{'qcQcn08'+i}}" id="{{'qcQcn08'+i}}" type="number"> 
+                                        </div>
+                                    </li>
+
                                 <li class="collection-item avatar" *ngFor="let qcQcn of qcQcn; index as i;">
                                     <span class="title">{{qcQcn.quest}}</span>
 
@@ -228,7 +273,40 @@
                                           </label>
                                     </p>
                                 </li>
+                                
 
+                                   <!-- <p *ngFor="let resp of qcQcnm.opts">
+                                        <label>
+                                            <input class="with-gap" formControlName="{{'qcQcnm'+i}}" name="{{'qcQcnm'+i}}" id="{{'qcQcnm'+i}}" value="{{resp}}" type="radio"  />
+                                            <span>{{resp}}</span>
+                                          </label>
+                                    </p>
+                                    <div class="input-field col s12" *ngFor="let qcQcnm of qcQcnm; index as i;">
+                                        <span class="title">{{qcQcnm.quest}}</span>
+                                        <select multiple >
+                                          <option value="" disabled selected>Choose your option</option>
+                                          <option value="1" *ngFor="let resp of qcQcnm.opts">{{resp}}</option>
+                        
+                                        </select>
+                                        <label>Materialize Multiple Select</label>
+                                      </div>
+                                
+                                <li class="collection-item avatar" *ngFor="let qcQcnm of qcQcnm; index as i;">
+                                    <div >
+                                    <div class="input-field col s12">
+                                        <select multiple>
+                                          <option value="" disabled selected>Choose your option</option>
+                                          <option value="1">Option 1</option>
+                                          <option value="2">Option 2</option>
+                                          <option value="3">Option 3</option>
+                                        </select>
+                                        <label>Materialize Multiple Select</label>
+                                      </div>
+                                    </div>
+                                </li>-->
+
+
+                                
                                 <br>                               
                                 <br>
                                     <div class="col s12">

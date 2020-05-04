@@ -408,16 +408,19 @@
                             </div>
                         </div>
                     </div>
-                    <div class="ro">
+
+
+                    <div class="row">
                         <div class="col s12">
                             <i class="material-icons icon-red left">error_outline</i> Son requeridos todos los archivos para poder continuar con el proceso.
                         </div>
                         <div class="col s12">
-                            <button class="waves-effect teal darken-4 btn right" type="submit">Enviar
-                    <i class="material-icons prefix right">send</i>
-                </button>
+                            <a class="waves-effect  teal darken-4 btn modal-trigger right" href="#fiel">
+                                <i class="material-icons prefix right">send</i> Enviar
+                            </a>
                         </div>
                     </div>
+
                 </form>
 
             </div>
@@ -508,30 +511,87 @@
     </div>
 </div>
 
-
-
-
-
-<div id="modalContr" class="modal">
+<div id="fiel" class="modal">
     <div class="modal-content">
-        <app-pdf>loading</app-pdf>
+
+        <h4>Selecciona los archivos de tu firma electrónica avanzada (FIEL)</h4>
+        <form ngNativeValidate [formGroup]="formFiel" (ngSubmit)="dfiel()">
+            <div>
+
+                <div class="file-field input-field col s12 m4 offset-m1 l4 offset-l1">
+                    <div class="teal darken-4 btn">
+                        <i class="material-icons right">attachment</i>Archivo .key
+                        <input type="file" (change)="ValidateSize('fiel')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="fiel" id="fiel" required class="validate">
+
+                        <div class="red-text" *ngIf="fi.fiel.errors?.required">Archivo requerido
+                        </div>
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div>
+
+                <div class="file-field input-field col s12 m4 offset-m1 l4 offset-l1">
+                    <div class="teal darken-4 btn">
+                        <i class="material-icons right">attachment</i>Archivo .cer
+                        <input type="file" (change)="ValidateSize('cer')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="cer" id="cer" required class="validate">
+
+                        <div class="red-text" *ngIf="fi.cer.errors?.required">Archivo requerido
+                        </div>
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="input-field col s12 m4 l4">
+                <i class="material-icons prefix">lock_circle</i>
+                <input id="password" type="password" name="password" formControlName="password" required class="validate">
+                <label for="password">Contraseña de tu FIEL</label>
+                <div class="col s1 m1 l1" *ngIf="fi.password.errors?.required"></div>
+            </div>
+
+
+
+            <div class="modal-footer">
+                <a routerLink="/home" class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>
+            </div>
+
+        </form>
+        <div class="footer-copyright teal darken-3">
+            <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
+        </div>
+
     </div>
-    <div class="modal-footer">
-        <a class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>
+
+
+
+
+
+    <div id="modalContr" class="modal">
+        <div class="modal-content">
+            <app-pdf>loading</app-pdf>
+        </div>
+        <div class="modal-footer">
+            <a class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>
+        </div>
+        <div class="footer-copyright teal darken-3">
+            <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
+        </div>
     </div>
-    <div class="footer-copyright teal darken-3">
-        <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
+
+
+    <div id="modalMap" class="iframe-container hide">
+        <!--<app-map></app-map>-->
+        <a (click)="mapOk()" class="waves-effect teal darken-4 btn">Aceptar</a>
+        <iframe src="/map"></iframe>
+
     </div>
-</div>
-
-
-<div id="modalMap" class="iframe-container hide">
-    <!--<app-map></app-map>-->
-    <a (click)="mapOk()" class="waves-effect teal darken-4 btn">Aceptar</a>
-    <iframe src="/map"></iframe>
-
-</div>
 
 
 
-<app-footer></app-footer>
+    <app-footer></app-footer>
