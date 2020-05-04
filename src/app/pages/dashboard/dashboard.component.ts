@@ -31,6 +31,7 @@ monte;
   calendar;
 
   terms=false;
+  bc=false;
 
   form : FormGroup;
   formDocumentos : FormGroup;
