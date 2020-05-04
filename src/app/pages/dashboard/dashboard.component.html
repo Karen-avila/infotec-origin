@@ -407,13 +407,22 @@
                                 <input class="file-path validate" type="text">
                             </div>
                         </div>
+
+                        <div class="input-field col s12 m7 l7">
+                            <i class="material-icons icon-red left">error_outline</i> Son requeridos todos los archivos para poder continuar con el proceso.
+                        </div>  
+
                     </div>
 
 
                     <div class="row">
-                        <div class="col s12">
-                            <i class="material-icons icon-red left">error_outline</i> Son requeridos todos los archivos para poder continuar con el proceso.
-                        </div>
+                        
+                        <div class="input-field col s12 m12 l12">
+                            <label><input class="with-gap teal darken-4" type="checkbox" [(ngModel)]="bc"/>
+                            <span>Acepto la consulta de Buró de Crédito</span></label>
+                        </div> 
+                    
+
                         <div class="col s12">
                             <a class="waves-effect  teal darken-4 btn modal-trigger right" href="#fiel">
                                 <i class="material-icons prefix right">send</i> Enviar
