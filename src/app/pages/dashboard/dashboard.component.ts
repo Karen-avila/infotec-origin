@@ -6,6 +6,8 @@ import * as M from 'materialize-css';
 
 import swal from 'sweetalert';
 
+import { Router } from '@angular/router';
+
 import { UserService } from '../../services/service.index';
 import { ActivatedRoute } from '@angular/router';
 
@@ -105,7 +107,7 @@ monte;
 
  catPorcentaje = 0;
  //-------------------
-  constructor(public userService:UserService,private route: ActivatedRoute) { 
+  constructor(public userService:UserService,private route: ActivatedRoute, private router: Router) { 
 
     this.route.params.subscribe( params => this.re=params);
 
@@ -181,7 +183,7 @@ console.log("el step",this.re.id)
     pais : new FormControl(null, Validators.required),
     ocupacion : new FormControl(null, Validators.required),
     tel: new FormControl(null,[Validators.required,Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
-    domicilio: new FormControl(null,[Validators.required,Validators.minLength(5), Validators.maxLength(120)]),
+    domicilio: new FormControl(" ",[Validators.required]),
     curp: new FormControl(null,Validators.required),
     rfc: new FormControl(null,Validators.required),
     monto: new FormControl(),
@@ -307,6 +309,20 @@ this.formDocumentos = new FormGroup({
      });
 
     
+  }
+
+  viewMap(){
+    console.log("map")
+    document.getElementById("steps").classList.add("hide");
+    document.getElementById("modalMap").classList.remove("hide");
+    //this.router.navigate(["map"]);
+  }
+
+  mapOk(){
+    console.log("map")
+    document.getElementById("steps").classList.remove("hide");
+    document.getElementById("modalMap").classList.add("hide");
+    //this.router.navigate(["map"]);
   }
 
 }
