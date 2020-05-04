@@ -207,6 +207,7 @@ this.formDocumentos = new FormGroup({
 this.formFiel = new FormGroup({
   
   fiel: new FormControl(null, Validators.required),
+  cer: new FormControl(null, Validators.required),
   password: new FormControl(null, Validators.required)
   
   
