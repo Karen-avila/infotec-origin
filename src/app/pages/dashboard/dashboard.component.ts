@@ -32,6 +32,7 @@ monte;
 
   form : FormGroup;
   formDocumentos : FormGroup;
+  formFiel: FormGroup;
   dic = [
     "apañar",
     "cagar",
@@ -201,13 +202,26 @@ this.formDocumentos = new FormGroup({
  // buro: new FormControl(null, Validators.required),
   cfiscal: new FormControl(null, Validators.required)
   
+  
 });
+this.formFiel = new FormGroup({
+  
+  fiel: new FormControl(null, Validators.required),
+  cer: new FormControl(null, Validators.required),
+  password: new FormControl(null, Validators.required)
+  
+  
+});
+
+
   
  
   }
 
   get f() { return this.form.controls; }
   get doc() { return this.formDocumentos.controls; }
+  get fi() { return this.formFiel.controls; }
+  
  
 
   pbaDict(p1:string,p2:string,p3:string,p4:string,p5:string){
@@ -250,6 +264,17 @@ this.formDocumentos = new FormGroup({
     console.log("form is valid?", this.form.valid);
     if(this.form.valid){
       console.log("form", this.form.value);
+      //enviar datos a back
+      this.popup[0].open();
+    } else{
+      swal("¡Cuidado!", "Completa todos los campos para continuar.", "error");
+    }
+
+  }
+  dfiel(){
+    console.log("formFiel is valid?", this.formFiel.valid);
+    if(this.formFiel.valid){
+      console.log("formFiel", this.formFiel.value);
       //enviar datos a back
       this.popup[0].open();
     } else{
