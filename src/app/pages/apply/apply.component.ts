@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 declare const MStepper: any;
 import * as M from 'materialize-css';
 
+import swal from 'sweetalert';
+
 //-------------
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from '../../services/service.index';
@@ -70,8 +72,8 @@ export class ApplyComponent implements OnInit {
 
    this.form = new FormGroup({
       email: new FormControl(null,[Validators.required, Validators.email]),
-      password: new FormControl(null, [Validators.required, Validators.minLength(8)]),
-      rePassword: new FormControl(null, Validators.required)
+      password: new FormControl(null, [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')]),
+      rePassword: new FormControl(null, [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')])
    }, { validators: this.equalPass('password','rePassword') });
 
    //validators: this.pbaDict('password') 
@@ -133,6 +135,7 @@ pbaDict(p1:string){
       this.instance[0].open(); //revisar donde quedara
     }else{
       //algo esta mal revisa tus datos
+      swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
     }
 
   }

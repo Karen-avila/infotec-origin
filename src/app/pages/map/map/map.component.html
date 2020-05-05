@@ -1,0 +1,14 @@
+<div>
+    <div id="map" leaflet (leafletMapReady)="initializeMap($event)" [leafletOptions]="options" (leafletClick)="onMapClick($event)">
+
+    </div>
+</div>
+<div id="details-panel">
+    <div class="row">
+        <div class="col s6 leaflet-left">
+            <app-geocoding (onSearch)="refreshSearchList($event)"></app-geocoding>
+        </div>
+    </div>
+    <app-results-list [results]="results" (locationSelected)="getAddress($event)"></app-results-list>
+    <app-map-point-form [mapPoint]="mapPoint"></app-map-point-form>
+</div>

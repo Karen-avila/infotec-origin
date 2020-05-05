@@ -10,13 +10,15 @@
 
                     <div class="input-field col s10 l12">
                         <i class="material-icons prefix icon-white">account_circle</i>
-                        <input id="email" formControlName="email" type="email" required name='email' class="validate">
+                        <input id="email" formControlName="email" type="email" name='email' class="validate">
                         <label class="white-text" for="email">Email</label>
+                        <div class="red-text" *ngIf="f.email.errors?.email">El correo electrónico debe de ser valido</div>
                     </div>
                     <div class="input-field col s10 l12">
                         <i class="material-icons prefix icon-white">lock_circle</i>
-                        <input id="password" formControlName="password" [type]="passType" required name='password' class="validate" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$">
+                        <input id="password" formControlName="password" [type]="passType" name='password' class="validate">
                         <label class="white-text" for="password">Password</label>
+                        <div class="red-text col s12" *ngIf="f.password.errors && !form.pristine">Debe tener un mínimo de 8 caracteres 1 Mayuscula 1 minuscula 1 numero</div>
                         <i class="material-icons prefix" *ngIf="icon" (click)="viewPassword()">visibility_off</i>
                         <i class="material-icons prefix" *ngIf="!icon" (click)="viewPassword()">visibility</i>
                     </div>
@@ -64,8 +66,10 @@
                     <form ngNativeValidate [formGroup]="form1" (ngSubmit)="recuperarpsw()">
                         <div class="input-field col s12">
                             <i class="material-icons prefix icon-white">account_circle</i>
-                            <input id="email" type="email" formControlName="email" required name='email' class="validate">
+                            <input id="email" type="email" formControlName="email" name='email' class="validate">
                             <label class="white-text" for="email">Email</label>
+                            <div class="red-text" *ngIf="fgt.email.errors?.email">El correo electrónico debe de ser valido</div>
+
                         </div>
 
                         <br>

@@ -281,12 +281,6 @@ export class QuestionComponent implements OnInit {
       value:""
     }, 
     {
-      quest:"¿En la empresa se realizan actualmente algunas de las siguientes actividades? (seleccionar una o más de las siguientes opciones)",
-      opts:["Se lleva registros escritos del negocio. Es decir, se tiene un lugar, cuaderno, archivo o computadora donde se concentra la información de las operaciones diarias del negocio","Se sabe cuánto dinero en efectivo tiene el negocio en un momento determinado","Se sabe si las ventas de un producto (bien o servicio) en particular están subiendo o bajando de un mes a otro","Se sabe cuánto le cuesta al negocio generar cada uno de sus principales productos (bienes o servicios). Por ejemplo, si tiene que calcular cuánto le cuesta producir una galleta, se hacen las cuentas de cuánto gasta en comprar harina, azúcar, leche, luz para usar la batidora, gas para el horno, renta del local, etcétera; otro ejemplo: si se ofrece un servicio de transporte, se hacen las cuentas de cuánto se gasta en el consumo de gasolina, casetas de peaje, etcétera","Se sabe de qué productos (bienes o servicios) se obtienen más ganancias por cada uno que vende","El negocio no lleva registros y no cuenta con información que permita conocer a detalle su operación"],
-      resp:"",
-      value:""
-    }, 
-    {
       quest:"¿La empresa tiene cuenta bancaria exclusiva para el manejo del dinero del negocio?",
       opts:["Sí","No"],
       resp:"",
@@ -309,33 +303,43 @@ export class QuestionComponent implements OnInit {
       opts:["Capacitar interrumpe la producción","Capacitar hace que el personal demande un salario mayor, busque otro trabajo o se independice","No se encontró capacitador conforme a las necesidades de la empresa","Se tenía la intención de capacitar pero es muy caro","Se consideró que el conocimiento y las habilidades técnicas del personal son adecuadas","No vale la pena porque la empresa tiene muy alta rotación de personal","En años previos se impartió la capacitación necesaria","Se solicitó la capacitación a instituciones públicas, pero no se pudo obtener","No hay beneﬁcios palpables como resultado de la capacitación","Se utiliza gente externa que ya viene capacitada","El horario de la empresa no lo permite","Otra"],
       resp:"",
       value:""
-    }, 
-    {
-      quest:"¿Cuál es el motivo principal por el que se inició en este negocio o actividad? (Seleccionar una o varias opciones)",
-      opts:["Por tradición familiar o lo heredó","Para complementar el ingreso familiar","Para mejorar el ingreso","Tenía dinero y encontró una buena oportuindad","Para ejercer su oficio, carrera o profesión","Fue la única manera que tuvo para obtener un ingreso","No tenía la experiencia requerida para un empleo","No tenía la escolaridad o capacitación requerida para un empleo","Estaba sobrecapacitado para un empleo","Los empleos que encontró estaban mal pagados","Requería un horario flexible","No había oportunidades de empleo","Otra razón"],
-      resp:"",
-      value:""
-    }, 
-    {
+    }
+
+  ];
+  qcQcnm=[
+  {
+    quest:"¿En la empresa se realizan actualmente algunas de las siguientes actividades? (seleccionar una o más de las siguientes opciones)",
+    
+    opts:["Se lleva registros escritos del negocio. Es decir, se tiene un lugar, cuaderno, archivo o computadora donde se concentra la información de las operaciones diarias del negocio","Se sabe cuánto dinero en efectivo tiene el negocio en un momento determinado","Se sabe si las ventas de un producto (bien o servicio) en particular están subiendo o bajando de un mes a otro","Se sabe cuánto le cuesta al negocio generar cada uno de sus principales productos (bienes o servicios). Por ejemplo, si tiene que calcular cuánto le cuesta producir una galleta, se hacen las cuentas de cuánto gasta en comprar harina, azúcar, leche, luz para usar la batidora, gas para el horno, renta del local, etcétera; otro ejemplo: si se ofrece un servicio de transporte, se hacen las cuentas de cuánto se gasta en el consumo de gasolina, casetas de peaje, etcétera","Se sabe de qué productos (bienes o servicios) se obtienen más ganancias por cada uno que vende","El negocio no lleva registros y no cuenta con información que permita conocer a detalle su operación"],
+    resp:"",
+    value:""
+  },
+  {
+    quest:"¿Cuál es el motivo principal por el que se inició en este negocio o actividad? (Seleccionar una o varias opciones)",
+    opts:["Por tradición familiar o lo heredó","Para complementar el ingreso familiar","Para mejorar el ingreso","Tenía dinero y encontró una buena oportuindad","Para ejercer su oficio, carrera o profesión","Fue la única manera que tuvo para obtener un ingreso","No tenía la experiencia requerida para un empleo","No tenía la escolaridad o capacitación requerida para un empleo","Estaba sobrecapacitado para un empleo","Los empleos que encontró estaban mal pagados","Requería un horario flexible","No había oportunidades de empleo","Otra razón"],
+    resp:"",
+    value:""
+  }, 
+  {
       quest:"En su negocio o actividad, ¿cuenta con un local para trabajar sea o no de su propiedad? (Seleccione una opción o más de una si tiene varios locales)",
       opts:["Sí, es un local independiente","Sí, es un local o instalación que forma parte de un conjunto de locales","No"],
       resp:"",
       value:""
-    }, 
-    {
+  }, 
+  {
       quest:"En caso de ser local independiente (fuera de un techo común), ¿éste es? (Seleccionar una o varias opciones)",
       opts:["Tienda, accesoria o tendajón","Taller (de servicios o de reparación)","Fábrica, tortillería, panadería","Oficina, despacho, consultorio"],
       resp:"",
       value:""
-    }, 
-    {
+  }, 
+  {
       quest:"Si no cuenta con un local, ¿en dónde se realizan las actividades de su negocio? (Seleccionar una o varias opciones)",
       opts:["Vehículo con o sin motor","Puesto fijo fuera de un techo común","Puesto semifijo bajo un techo común en pasillos de un centro comercial","Puesto semifijo en un tianguis","En un domicilio particular con una instalación especial","En un domicilio particular sin una instalación especial","Otro lugar"],
       resp:"",
       value:""
-    }
+  }
+];
 
-  ];
   qcqn1=[
   {
     quest:"¿Cuál es el destino del crédito; es decir, específicamente para qué va a usar el crédito en su negocio? Por ejemplo, comprar un vehículo para repartir a domicilio.",
@@ -407,14 +411,249 @@ export class QuestionComponent implements OnInit {
         resp:"",
         value:""
       }];
-
-      qcqcn4=[
+      qcqcn5=[
         {
-          quest:"Pensando en los últimos 6 meses, en promedio, indique cuánto paga cada mes por los siguientes conceptos:",
-          opts:["Sueldos, salarios o cualquier otro pago a los trabajadores del negocio","Renta de locales o espacios comerciales","Servicios públicos","Transporte para actividades del negocio","Pago por franquicias","Promoción y publicidad","Pago de servicios contables o legales","Mantenimiento del negocio","Licencias de software","Impuestos","Otros gastos no incluidos en la lista pero que son necesarios para la operación de su negocio"],
+          quest:"Recursos propios (dueños, herencia, familia y amigos) o utilidades reinvertidas",
+          opts:[""],
           resp:"",
           value:""
-        }];
+        },
+        {
+          quest:"Préstamos de familiares y amigos que no tienen participación en la empresa. ",
+          opts:[""],
+          resp:"",
+          value:""
+        },
+        {
+          quest:"Sistema ﬁnanciero formal (bancos  privados, Banco del Bienestar, antes Bansefi, o ﬁnancieras)",
+          opts:[""],
+          resp:"",
+          value:""
+        },
+        {
+          quest:"Prestamistas particulares (personas que prestan dinero)",
+          opts:[""],
+          resp:"",
+          value:""
+        },
+        {
+          quest:"Crédito de proveedores",
+          opts:[""],
+          resp:"",
+          value:""
+        },
+        {
+          quest:"Recursos de inversionistas privados",
+          opts:[""],
+          resp:"",
+          value:""
+        },
+        {
+          quest:"Otras",
+          opts:[""],
+          resp:"",
+          value:""
+        }
+
+      ];
+      
+      qcqcn4=[
+        {
+          quest:"Sueldos, salarios o cualquier otro pago a los trabajadores del negocio",
+          opts:[""],
+          resp:"",
+          value:""
+        },
+        {
+          quest:"Renta de locales o espacios comerciales",
+          opts:[""],
+          resp:"",
+          value:""
+        },
+        {
+          quest:"Servicios públicos",
+          opts:[""],
+          resp:"",
+          value:""
+        },
+        {
+          quest:"Transporte para actividades del negocio",
+          opts:[""],
+          resp:"",
+          value:""
+        },
+        {
+          quest:"Pago por franquicias",
+          opts:[""],
+          resp:"",
+          value:""
+        },
+        {
+          quest:"Promoción y publicidad",
+          opts:[""],
+          resp:"",
+          value:""
+        },
+        {
+          quest:"Pago de servicios contables o legales",
+          opts:[""],
+          resp:"",
+          value:""
+        },
+        {
+          quest:"Mantenimiento del negocio",
+          opts:[""],
+          resp:"",
+          value:""
+        },
+        {
+          quest:"Licencias de software",
+          opts:[""],
+          resp:"",
+          value:""
+        },
+        {
+          quest:"Impuestos",
+          opts:[""],
+          resp:"",
+          value:""
+        },
+        {
+          quest:"Otros gastos no incluidos en la lista pero que son necesarios para la operación de su negocio",
+          opts:[""],
+          resp:"",
+          value:""
+        }
+
+      ];
+      qcqcn6=[
+        {
+          quest:"Recursos propios (dueños, herencia, familia y amigos) o utilidades reinvertidas",
+          opts:[""],
+          resp:"",
+          value:""
+        },
+        {
+          quest:"Préstamos de familiares y amigos que no tienen participación en la empresa",
+          opts:[""],
+          resp:"",
+          value:""
+        },
+        {
+          quest:"Sistema ﬁnanciero formal (bancos  privados, Banco del Bienestar, antes Bansefi, o ﬁnancieras)",
+          opts:[""],
+          resp:"",
+          value:""
+        },
+        {
+          quest:"Prestamistas particulares (personas que prestan dinero)",
+          opts:[""],
+          resp:"",
+          value:""
+        },
+        {
+          quest:"Crédito de proveedores ",
+          opts:[""],
+          resp:"",
+          value:""
+        },
+        {
+          quest:"Recursos de inversionistas privados",
+          opts:[""],
+          resp:"",
+          value:""
+        },
+        {
+          quest:"Otras",
+          opts:[""],
+          resp:"",
+          value:""
+        }
+    ];
+
+    qcqcn7=[
+      {
+        quest:"Préstamos de familiares y amigos que no tienen participación en la empresa",
+        opts:[""],
+        resp:"",
+        value:""
+      },
+      {
+        quest:"Sistema ﬁnanciero formal (bancos  privados, Banco del Bienestar, antes Bansefi, o ﬁnancieras)",
+        opts:[""],
+        resp:"",
+        value:""
+      },
+      {
+        quest:"Prestamistas particulares (personas que prestan dinero)",
+        opts:[""],
+        resp:"",
+        value:""
+      },
+      {
+        quest:"Crédito de proveedores",
+        opts:[""],
+        resp:"",
+        value:""
+      },
+      {
+        quest:"Recursos de inversionistas privados",
+        opts:[""],
+        resp:"",
+        value:""
+      },
+      {
+        quest:"Otras",
+        opts:[""],
+        resp:"",
+        value:""
+      }
+    ];
+
+    qcqcn8=[
+      {
+        quest:"Luz",
+        opts:[""],
+        resp:"",
+        value:""
+      },
+      {
+        quest:"Gas o algún combustible",
+        opts:[""],
+        resp:"",
+        value:""
+      },
+      {
+        quest:"Telecomunicaciones (teléfono fijo o celular para el negocio e internet)",
+        opts:[""],
+        resp:"",
+        value:""
+      },
+      {
+        quest:"Materias primas consumidas (a costo de adquisición)",
+        opts:[""],
+        resp:"",
+        value:""
+      },
+      {
+        quest:"Mercancías compradas para reventa",
+        opts:[""],
+        resp:"",
+        value:""
+      },
+      {
+        quest:"Materiales consumidos para la prestación del servicio",
+        opts:[""],
+        resp:"",
+        value:""
+      },
+      {
+        quest:"Otros",
+        opts:[""],
+        resp:"",
+        value:""
+      }
+    ];
 
         qcqcn0=[
           {
@@ -503,11 +742,11 @@ this.formQcQcn = new FormGroup({
   qcQcn7: new FormControl(null, [Validators.required]),
   qcQcn8: new FormControl(null, [Validators.required]),
   qcQcn9: new FormControl(null, [Validators.required]),
-  qcQcn10: new FormControl(null, [Validators.required]),
-  qcQcn11: new FormControl(null, [Validators.required]),
-  qcQcn12: new FormControl(null, [Validators.required]),
-  qcQcn13: new FormControl(null, [Validators.required]),
-  qcQcn14: new FormControl(null, [Validators.required]),
+  qcQcnm0: new FormControl(null, [Validators.required]),
+  qcQcnm1: new FormControl(null, [Validators.required]),
+  qcQcnm2: new FormControl(null, [Validators.required]),
+  qcQcnm3: new FormControl(null, [Validators.required]),
+  qcQcnm4: new FormControl(null, [Validators.required]),
   qcQcn010: new FormControl(null, [Validators.required]),
   qcQcn011: new FormControl(null, [Validators.required]),
   qcQcn020: new FormControl(null, [Validators.required]),
@@ -519,8 +758,48 @@ this.formQcQcn = new FormGroup({
   qcQcn026: new FormControl(null, [Validators.required]),
   qcQcn030: new FormControl(null, [Validators.required]),
   qcQcn031: new FormControl(null, [Validators.required]),
-  qcQcn00: new FormControl(null,[Validators.required])
- //qcQcnI0: new FormControl(null, [Validators.required])
+  qcQcn00: new FormControl(null,[Validators.required]),
+  qcQcn040: new FormControl(null,[Validators.required]),
+  qcQcn041: new FormControl(null,[Validators.required]),
+  qcQcn042: new FormControl(null,[Validators.required]),
+  qcQcn043: new FormControl(null,[Validators.required]),
+  qcQcn044: new FormControl(null,[Validators.required]),
+  qcQcn045: new FormControl(null,[Validators.required]),
+  qcQcn046: new FormControl(null,[Validators.required]),
+  qcQcn047: new FormControl(null,[Validators.required]),
+  qcQcn048: new FormControl(null,[Validators.required]),
+  qcQcn049: new FormControl(null,[Validators.required]),
+  qcQcn0410: new FormControl(null,[Validators.required]),
+  qcQcn050: new FormControl(null,[Validators.required]),
+  qcQcn051: new FormControl(null,[Validators.required]),
+  qcQcn052: new FormControl(null,[Validators.required]),
+  qcQcn053: new FormControl(null,[Validators.required]),
+  qcQcn054: new FormControl(null,[Validators.required]),
+  qcQcn055: new FormControl(null,[Validators.required]),
+  qcQcn056: new FormControl(null,[Validators.required]),
+  qcQcn060: new FormControl(null,[Validators.required]),
+  qcQcn061: new FormControl(null,[Validators.required]),
+  qcQcn062: new FormControl(null,[Validators.required]),
+  qcQcn063: new FormControl(null,[Validators.required]),
+  qcQcn064: new FormControl(null,[Validators.required]),
+  qcQcn065: new FormControl(null,[Validators.required]),
+  qcQcn066: new FormControl(null,[Validators.required]),
+  qcQcn070: new FormControl(null,[Validators.required]),
+  qcQcn071: new FormControl(null,[Validators.required]),
+  qcQcn072: new FormControl(null,[Validators.required]),
+  qcQcn073: new FormControl(null,[Validators.required]),
+  qcQcn074: new FormControl(null,[Validators.required]),
+  qcQcn075: new FormControl(null,[Validators.required]),
+  qcQcn080: new FormControl(null,[Validators.required]),
+  qcQcn081: new FormControl(null,[Validators.required]),
+  qcQcn082: new FormControl(null,[Validators.required]),
+  qcQcn083: new FormControl(null,[Validators.required]),
+  qcQcn084: new FormControl(null,[Validators.required]),
+  qcQcn085: new FormControl(null,[Validators.required]),
+  qcQcn086: new FormControl(null,[Validators.required]),
+  qcQcnr04: new FormControl(null,[Validators.required])
+
+
 });
 
 

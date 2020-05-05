@@ -6,6 +6,8 @@ import * as M from 'materialize-css';
 
 import swal from 'sweetalert';
 
+import { Router } from '@angular/router';
+
 import { UserService } from '../../services/service.index';
 import { ActivatedRoute } from '@angular/router';
 
@@ -29,9 +31,11 @@ monte;
   calendar;
 
   terms=false;
+  bc=false;
 
   form : FormGroup;
   formDocumentos : FormGroup;
+  formFiel: FormGroup;
   dic = [
     "apañar",
     "cagar",
@@ -105,7 +109,7 @@ monte;
 
  catPorcentaje = 0;
  //-------------------
-  constructor(public userService:UserService,private route: ActivatedRoute) { 
+  constructor(public userService:UserService,private route: ActivatedRoute, private router: Router) { 
 
     this.route.params.subscribe( params => this.re=params);
 
@@ -181,7 +185,7 @@ console.log("el step",this.re.id)
     pais : new FormControl(null, Validators.required),
     ocupacion : new FormControl(null, Validators.required),
     tel: new FormControl(null,[Validators.required,Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
-    domicilio: new FormControl(null,[Validators.required,Validators.minLength(5), Validators.maxLength(120)]),
+    domicilio: new FormControl(" ",[Validators.required]),
     curp: new FormControl(null,Validators.required),
     rfc: new FormControl(null,Validators.required),
     monto: new FormControl(),
@@ -201,13 +205,26 @@ this.formDocumentos = new FormGroup({
  // buro: new FormControl(null, Validators.required),
   cfiscal: new FormControl(null, Validators.required)
   
+  
 });
+this.formFiel = new FormGroup({
+  
+  fiel: new FormControl(null, Validators.required),
+  cer: new FormControl(null, Validators.required),
+  password: new FormControl(null, Validators.required)
+  
+  
+});
+
+
   
  
   }
 
   get f() { return this.form.controls; }
   get doc() { return this.formDocumentos.controls; }
+  get fi() { return this.formFiel.controls; }
+  
  
 
   pbaDict(p1:string,p2:string,p3:string,p4:string,p5:string){
@@ -251,9 +268,20 @@ this.formDocumentos = new FormGroup({
     if(this.form.valid){
       console.log("form", this.form.value);
       //enviar datos a back
+      //this.popup[0].open();
+    } else{
+      swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
+    }
+
+  }
+  dfiel(){
+    console.log("formFiel is valid?", this.formFiel.valid);
+    if(this.formFiel.valid){
+      console.log("formFiel", this.formFiel.value);
+      //enviar datos a back
       this.popup[0].open();
     } else{
-      swal("¡Cuidado!", "Completa todos los campos para continuar.", "error");
+      swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
     }
 
   }
@@ -265,7 +293,7 @@ this.formDocumentos = new FormGroup({
       //enviar datos a back
       this.popup[0].open();
     } else{
-      swal("¡Cuidado!", "Completa todos los campos para continuar.", "error");
+      swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
     }
 
   }
@@ -307,6 +335,20 @@ this.formDocumentos = new FormGroup({
      });
 
     
+  }
+
+  viewMap(){
+    console.log("map")
+    document.getElementById("steps").classList.add("hide");
+    document.getElementById("modalMap").classList.remove("hide");
+    //this.router.navigate(["map"]);
+  }
+
+  mapOk(){
+    console.log("map")
+    document.getElementById("steps").classList.remove("hide");
+    document.getElementById("modalMap").classList.add("hide");
+    //this.router.navigate(["map"]);
   }
 
 }

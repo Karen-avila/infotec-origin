@@ -15,11 +15,11 @@ import { RecaptchaModule } from 'ng-recaptcha';
 import { ServiceModule } from '../services/service.module';
 import { Ng5SliderModule } from 'ng5-slider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { MapComponent        } from './map/map.component';
-import { MapControlComponent } from './map/map-control/map-control.component';
-
-import { INIT_COORDS } from '../tokens';
+import { MapComponent } from './map/map/map.component';
+import { GeocodingComponent } from './map/geocoding/geocoding.component';
+import { MapPointFormComponent } from './map/map-point-form/map-point-form.component';
+import { ResultsListComponent } from './map/results-list/results-list.component';
+import {LeafletModule} from '@asymmetrik/ngx-leaflet';
 
 @NgModule({
     declarations:[
@@ -28,7 +28,9 @@ import { INIT_COORDS } from '../tokens';
         PagesComponent,
         DashboardComponent,
         MapComponent,
-        MapControlComponent
+        GeocodingComponent,
+        MapPointFormComponent,
+        ResultsListComponent
     ],
     imports:[
         FormsModule,
@@ -39,15 +41,15 @@ import { INIT_COORDS } from '../tokens';
         PAGES_ROUTES,
         FormsModule,
         RecaptchaModule,
-        ServiceModule
+        ServiceModule,
+        LeafletModule
     ],
     exports:[
         HomeComponent,
         ApplyComponent,
         PagesComponent,
         SharedModule
-    ],
-    providers: [{ provide: INIT_COORDS, useValue: {lat: 21.118, long: -101.041} }]
+    ]
 })
 
 export class PagesModule {}
