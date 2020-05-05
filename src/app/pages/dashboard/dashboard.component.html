@@ -258,7 +258,7 @@
                             <button class="waves-effect teal darken-4 btn previous-step left">Atras
                             <i class="material-icons prefix left">arrow_back_ios</i>
                         </button>
-                            <button class="waves-effect teal darken-4 btn right" type="submit">Enviar
+                            <button class="waves-effect teal darken-4 btn right next-step" type="submit">Enviar <!--revisar nextstep igual en ts-->
                             <i class="material-icons prefix right">arrow_forward_ios</i>
                         </button>
                         </div>
@@ -388,7 +388,7 @@
                             <i class="material-icons icon-red">error_outline</i>
                         </div>
                         <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text">
+                            <input class="file-path validate" type="text" >
                         </div>
                     </div> -->
                         <div class="col s12 m2 l2">
@@ -410,23 +410,22 @@
 
                         <div class="input-field col s12 m7 l7">
                             <i class="material-icons icon-red left">error_outline</i> Son requeridos todos los archivos para poder continuar con el proceso.
-                        </div>  
+                        </div>
 
                     </div>
 
 
                     <div class="row">
-                        
+
                         <div class="input-field col s12 m12 l12">
                             <label><input class="with-gap teal darken-4" type="checkbox" [(ngModel)]="bc"/>
                             <span>Acepto la consulta de Buró de Crédito</span></label>
-                        </div> 
-
-                        <div class="input-field col s12 m12 l12">
-                            <label><input class="with-gap teal darken-4" type="checkbox" [(ngModel)]="terms"/>
-                <span>Acepto Terminos y condiciones</span></label>
                         </div>
-                    
+                        <div class="input-field col s12 ">
+                            <label><input class="with-gap teal darken-4" type="checkbox" [(ngModel)]="terms"/>
+                    <span>Acepto Terminos y condiciones</span>
+                </label>
+                        </div>
 
                         <div class="col s12">
                             <a class="waves-effect  teal darken-4 btn modal-trigger right" href="#fiel">
@@ -456,7 +455,7 @@
 
                     <div class="col s12">
                         <li>
-                            <a class="waves-effect  teal darken-4 btn modal-trigger right" href="#modal1">
+                            <a class="waves-effect  teal darken-4 btn modal-trigger right next-step">
                                 <i class="material-icons prefix right">send</i> Enviar
                             </a>
                         </li>
@@ -474,10 +473,7 @@
                     <div class="card-content">
                         <div class="row">
                             <!--<img class="responsive-img" src="../../../assets/contr.png">-->
-                            <div class="input-field col s12 m3 offset-m3 l4 offset-l3">
-                                <label><input class="with-gap teal darken-4" type="checkbox" [(ngModel)]="terms"/>
-                    <span>Acepto Terminos y condiciones</span></label>
-                            </div>
+
 
                             <div class="input-field col s12 m3 offset-m1">
                                 <a class="waves-effect teal darken-4 btn modal-trigger" href="#modalContr">Ver
@@ -591,6 +587,20 @@
 <div id="modalContr" class="modal">
     <div class="modal-content">
         <app-pdf>loading</app-pdf>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>
+    </div>
+    <div class="footer-copyright teal darken-3">
+        <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
+    </div>
+</div>
+
+<div id="termsCond" class="modal">
+    <div class="modal-content">
+        <p class="flow-text center-align">
+            terms
+        </p>
     </div>
     <div class="modal-footer">
         <a class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>
