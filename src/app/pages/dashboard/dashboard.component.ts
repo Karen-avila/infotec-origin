@@ -270,7 +270,7 @@ this.formFiel = new FormGroup({
       //enviar datos a back
       //this.popup[0].open();
     } else{
-      swal("¡Cuidado!", "Completa todos los campos para continuar.", "error");
+      swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
     }
 
   }
@@ -281,7 +281,7 @@ this.formFiel = new FormGroup({
       //enviar datos a back
       this.popup[0].open();
     } else{
-      swal("¡Cuidado!", "Completa todos los campos para continuar.", "error");
+      swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
     }
 
   }
@@ -293,7 +293,7 @@ this.formFiel = new FormGroup({
       //enviar datos a back
       this.popup[0].open();
     } else{
-      swal("¡Cuidado!", "Completa todos los campos para continuar.", "error");
+      swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
     }
 
   }

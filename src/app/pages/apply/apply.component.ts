@@ -135,7 +135,7 @@ pbaDict(p1:string){
       this.instance[0].open(); //revisar donde quedara
     }else{
       //algo esta mal revisa tus datos
-      swal("¡Cuidado!", "Completa correctamente todos los campos para continuar.", "error");
+      swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
     }
 
   }
