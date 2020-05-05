@@ -268,7 +268,7 @@ this.formFiel = new FormGroup({
     if(this.form.valid){
       console.log("form", this.form.value);
       //enviar datos a back
-      this.popup[0].open();
+      //this.popup[0].open();
     } else{
       swal("¡Cuidado!", "Completa todos los campos para continuar.", "error");
     }
