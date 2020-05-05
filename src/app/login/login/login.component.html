@@ -66,8 +66,10 @@
                     <form ngNativeValidate [formGroup]="form1" (ngSubmit)="recuperarpsw()">
                         <div class="input-field col s12">
                             <i class="material-icons prefix icon-white">account_circle</i>
-                            <input id="email" type="email" formControlName="email" required name='email' class="validate">
+                            <input id="email" type="email" formControlName="email" name='email' class="validate">
                             <label class="white-text" for="email">Email</label>
+                            <div class="red-text" *ngIf="fgt.email.errors?.email">El correo electrónico debe de ser valido</div>
+
                         </div>
 
                         <br>

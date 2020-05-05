@@ -58,6 +58,7 @@ re
   }
 
   get f() { return this.form.controls; }
+  get fgt() { return this.form1.controls; }
 
   recuperarpsw(){
     console.log("form is valid?", this.form1.valid);
@@ -65,7 +66,9 @@ re
     console.log("form", this.form1.value);
       //enviar datos a back
     this.instance[0].open();
-    } 
+    } else{
+      swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
+    }
   }
 
   onSignInSubmit() {
@@ -95,7 +98,7 @@ this.router.navigate(["dashboard"]);
   }
 
   login(){
-    let user = new User(this.form.value.email,this.form.value.password,this.form.value.rePassword);
+    let user = new User(this.form.value.email,this.form.value.password,this.form.value.password);
     console.log("form is valid?", this.form.valid);
     if(this.form.valid){
       console.log("form esto envio", this.form.value);
