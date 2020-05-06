@@ -10,7 +10,7 @@
             <div class="step-title waves-effect waves-dark">Datos de Prestamo</div>
             <div class="step-content">
                 <div class="row">
-                    <div class="cono2 special col xl6 offset-xl1 l5 offset-l1 m5 offset-m1 s9 offset-s1">
+                    <div class="cono2 special col xl5 offset-xl1 l5 offset-l1 m5 offset-m1 s9 offset-s1">
 
                         <p class="flow-text center-align">Crédito Directo Productivo desde {{20000|currency:"MXN":"symbol"}} hasta {{50000|currency:"MXN":"symbol"}}</p>
 
@@ -47,12 +47,12 @@
                     </div>
 
 
-                    <div class="crono1 col m4 offset-m1 l4 offset-l1 s10 offset-s1 hide-on-small-only">
+                    <div class="crono1 col m5 offset-m1 l5 offset-l1 s10 offset-s1 hide-on-small-only">
                         <div class="card crd teal darken-4 white-text z-depth-3">
                             <div class="card-content">
-                                <i class="medium material-icons icon-gold">monetization_on</i>
+                                <i class="material-icons medium icon-gold">monetization_on</i>
                                 <p>Monto</p>
-                                <p>{{ valueMon | currency:"MXN":"symbol" }}</p>
+                                <p>{{valueMon | currency:"MXN":"symbol" }}</p>
                             </div>
                         </div>
 
@@ -114,7 +114,7 @@
                     <div class="input-field col s12 m4">
                         <p>
                             <label>
-                        <input class="with-gap teal darken-4"  formControlName="personType" name="personType" id="personType" type="radio" value="pFisica" [(ngModel)]="model" />
+                        <input class="with-gap teal darken-4"  (change)="rFiscal()" formControlName="personType" name="personType" id="personType" type="radio" value="pFisica" [(ngModel)]="model" />
                         <span>Persona Fisica con Actividad Empresarial</span>
                     </label>
                         </p>
@@ -173,6 +173,13 @@
                             <!--  <p>Palabra altisonante</p> -->
                         </div>
                     </div>
+
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">calendar_today</i>
+                        <input type="date" class="fecha validate" formControlName="birthDate" name="birthDate" id="birthDate" min="1960-12-31" max="2002-01-01" required>
+                        <label>Fecha de Nacimiento</label>
+                    </div>
+
                     <div class="input-field col s12 m6 l6">
                         <select formControlName="genero" name="genero" id="genero" class="validate">
                             <option value="" disabled selected>Selecciona una opcion</option>
@@ -182,16 +189,8 @@
                         <label>Genero</label>
                         <div class="blue-text" *ngIf="f.genero.errors">Debes seleccionar una opción.</div>
                     </div>
-                    <div class="input-field col s12 m6 l6">
-                        <i class="material-icons prefix">calendar_today</i>
-                        <input type="date" class="fecha validate" formControlName="birthDate" name="birthDate" id="birthDate" min="1960-12-31" max="2002-01-01" required>
-                        <label>Fecha de Nacimiento</label>
-                    </div>
-                    <!--  <div class="input-field col s12 m6 l6">
-                        <i class="material-icons prefix">calendar_today</i>
-                        <input type="text" class="datepicker" formControlName="birthDate" value="">
-                        <label>Fecha de Nacimiento</label>
-                    </div>-->
+                    
+    
                     <div class="input-field col s12 m6 l6">
                         <select formControlName="entidad" name="entidad" id="entidad" class="validate">
                         <option value="" disabled selected>Selecciona una opcion</option>

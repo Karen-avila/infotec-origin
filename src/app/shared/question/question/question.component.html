@@ -158,10 +158,11 @@
                                     <li class="collection-item avatar">
                                             <div class="input-field col s12 m12 l12" *ngFor="let qcQcI of qcQc1; index as i;">
                                         <span class="title" >{{qcQcI.quest}}</span>
+                                       
                                         <label>
                                         <input  formControlName="{{'qcQcI'+i}}" name="{{'qcQcI'+i}}" id="{{'qcQcI'+i}}" maxlength="2" type="number"  min="1">
                                         </label>
-                                            </div>
+                                    </div>
                                     </li>
                                 <br>                               
                                 <br>
@@ -181,30 +182,57 @@
                             <ul class="collection">
                                 <form ngNativeValidate [formGroup]="formQcQcn" (ngSubmit)="qcQcnSend()">
                                     
+
                                    <li class="collection-item avatar">
                                         <div *ngFor="let qcQcn0 of qcqcn0; index as i;">
                                     <span class="title" >{{qcQcn0.quest}}</span>
                                     <label>
                                         <i class="material-icons prefix">calendar_today
-                                        <input type="date"  formControlName="qcQcn0" name="qcQcn0" id="qcQcn0" min="1960-12-31" max="2002-01-01"></i>
+                                        <input type="date"  formControlName="qcQcn0" name="qcQcn0" id="qcQcn0"  max="2020-01-01"></i>
                                     </label>
                                         </div>
                                     </li>
 
-                    
-
                                     <li class="collection-item avatar">
-                                        <div *ngFor="let qcQcn01 of qcqn1; index as i;">
-                                            <label for="{{'qcQcn01'+i}}"><span class="title">{{qcQcn01.quest}}</span></label>
-                                            <input formControlName="{{'qcQcn01'+i}}" name="{{'qcQcn01'+i}}" id="{{'qcQcn01'+i}}" type="text">
-                                            
+                                        <span class="title">Registre el total de ingresos que obtuvo el negocio durante el ejercicio fiscal anterior. Por favor incluya tanto los ingresos derivados como los no derivados de la actividad, además de los apoyos del gobierno que haya recibido.</span>
+                                        <p>
+                                            <label>
+                                        <input class="with-gap teal darken-4"  (change)="monto()" formControlName="qcqcn10" name="qcqcn10" id="qcqcn10" type="checkbox" value="qcqcn10" [(ngModel)]="sfina8" />
+                                        <span>No sé</span>
+                                    </label>
+                                        </p>
+                                        <p>
+                                            <label>
+                                        <input class="with-gap teal darken-4"  (change)="monto()" formControlName="qcqcn11" name="qcqcn11" id="qcqcn11" type="checkbox" value="qcqcn11" [(ngModel)]="sfina9"/>
+                                        <span>Si sé, pero prefiero no  declararlo</span>
+                                    </label>
+                                        </p>
+                                    
+                                        <div *ngIf= "!(sfina8 || sfina9)" >
+                                            <label><span class="title">Monto</span></label>
+                                            <input formControlName="qcqcnmo"  name="qcqcnmo" id="qcqcnmo" type="number" min='0' max='1' step='0.01' placeholder='$'> 
+                                        </div>
+                                       
+                                    </li>
+                                    <li class="collection-item avatar">
+                                        <div *ngFor="let qcQcn22 of qcqn22; index as i;">
+                                            <label class="title black-text" for="{{'qcQcn22'+i}}">{{qcQcn22.quest}}</label>
+                                            <input formControlName="{{'qcQcn22'+i}}" name="{{'qcQcn22'+i}}"  id="{{'qcQcn22'+i}}" type="number" min='0' maxlength='3'>
                                         </div>
                                     </li>
 
                                     <li class="collection-item avatar">
+                                        <div *ngFor="let qcQcn01 of qcqn1; index as i;">
+                                            <label class="title black-text" for="{{'qcQcn01'+i}}">{{qcQcn01.quest}}</label>
+                                            <input formControlName="{{'qcQcn01'+i}}" name="{{'qcQcn01'+i}}" id="{{'qcQcn01'+i}}" type="text">
+                                            
+                                        </div>
+                                    </li>
+                                    
+                                    <li class="collection-item avatar">
                                         <div *ngFor="let qcQcn02 of qcqn2; index as i;">
-                                            <label for="{{'qcQcn02'+i}}"><span class="title">{{qcQcn02.quest}}</span></label>
-                                            <input formControlName="{{'qcQcn02'+i}}" name="{{'qcQcn02'+i}}"  id="{{'qcQcn02'+i}}" type="number">
+                                            <label class="title black-text" for="{{'qcQcn02'+i}}">{{qcQcn02.quest}}</label>
+                                            <input formControlName="{{'qcQcn02'+i}}" name="{{'qcQcn02'+i}}"  id="{{'qcQcn02'+i}}" type="number" min='0' max='1' step='0.01' placeholder='$'>
                                         </div>
                                     </li>
 
@@ -223,43 +251,67 @@
                                     
                                     <li class="collection-item avatar">
                                         <span class="title">Pensando en los últimos 6 meses, en promedio, indique cuánto paga cada mes por los siguientes conceptos:</span>
-                                        <p>
-                                            <label>
-                                            <input class="with-gap teal darken-4"  formControlName="qcQcnr04" name="qcQcnr04" id="qcQcnr04" type="radio" value="qcQcnr04" [(ngModel)]="model" />
-                                            <span>No contó con ningún financiamiento</span>
-                                        </label>
-                                        </p>
+                                        
                                         <div *ngFor="let qcQcn04 of qcqcn4; index as i;">
                                             <label for="{{'qcQcn04'+i}}"><span class="title">{{qcQcn04.quest}}</span></label>
-                                            <input formControlName="{{'qcQcn04'+i}}" name="{{'qcQcn04'+i}}" id="{{'qcQcn04'+i}}" type="number"> 
+                                            <input formControlName="{{'qcQcn04'+i}}" name="{{'qcQcn04'+i}}" id="{{'qcQcn04'+i}}" type="number" min='0' max='1' step='0.01' placeholder='$'> 
                                         </div>
+                                    
                                     </li>
                                     <li class="collection-item avatar">
                                         <span class="title">Indique el monto de financiamiento que haya recibido de cada una de estas fuentes durante el ejercicio fiscal anterior:</span>
+                                       
+                                        <p>
+                                            <label>
+                                            <input class="with-gap teal darken-4"  (change)="b5()" formControlName="qcQcnr05" name="qcQcnr05" id="qcQcnr05" type="checkbox" value="qcQcnr05" [(ngModel)]="sfina5" />
+                                            <span>No contó con ningún financiamiento</span>
+                                        </label>
+                                        </p>
+                            
+                                        <div *ngIf= "!sfina5">
                                         <div *ngFor="let qcQcn05 of qcqcn5; index as i;">
                                             <label for="{{'qcQcn05'+i}}"><span class="title">{{qcQcn05.quest}}</span></label>
-                                            <input formControlName="{{'qcQcn05'+i}}" name="{{'qcQcn05'+i}}" id="{{'qcQcn05'+i}}" type="number"> 
+                                            <input formControlName="{{'qcQcn05'+i}}" name="{{'qcQcn05'+i}}" id="{{'qcQcn05'+i}}" type="number" min='0' max='1' step='0.01' placeholder='$'> 
+                                        </div>
                                         </div>
                                     </li>
                                     <li class="collection-item avatar">
                                         <span class="title">¿Cuánto debe al día de hoy por los conceptos siguientes?</span>
+                                        <br>
+                                        <p>
+                                            <label>
+                                            <input class="with-gap teal darken-4"  (change)="b6()" formControlName="qcQcnr06" name="qcQcnr06" id="qcQcnr06" type="checkbox" value="qcQcnr06" [(ngModel)]="sfina6" />
+                                            <span>No contó con ningún financiamiento</span>
+                                        </label>
+                                        </p>
+                                        <div *ngIf= "!sfina6">
                                         <div *ngFor="let qcQcn06 of qcqcn6; index as i;">
                                             <label for="{{'qcQcn06'+i}}"><span class="title">{{qcQcn06.quest}}</span></label>
-                                            <input formControlName="{{'qcQcn06'+i}}" name="{{'qcQcn06'+i}}" id="{{'qcQcn06'+i}}" type="number"> 
+                                            <input formControlName="{{'qcQcn06'+i}}" name="{{'qcQcn06'+i}}" id="{{'qcQcn06'+i}}" type="number" min='0' max='1' step='0.01' placeholder='$'> 
+                                        </div>
                                         </div>
                                     </li>
                                     <li class="collection-item avatar">
                                         <span class="title">En promedio, ¿cuánto paga cada mes por los conceptos siguientes?</span>
+                                        <br>
+                                        <p>
+                                            <label>
+                                            <input class="with-gap teal darken-4"  (change)="b7()" formControlName="qcQcnr07" name="qcQcnr07" id="qcQcnr07" type="checkbox" value="qcQcnr07" [(ngModel)]="sfina7" />
+                                            <span>No contó con ningún financiamiento</span>
+                                        </label>
+                                        </p>
+                                        <div *ngIf= "!sfina7">
                                         <div *ngFor="let qcQcn07 of qcqcn7; index as i;">
                                             <label for="{{'qcQcn07'+i}}"><span class="title">{{qcQcn07.quest}}</span></label>
-                                            <input formControlName="{{'qcQcn07'+i}}" name="{{'qcQcn07'+i}}" id="{{'qcQcn07'+i}}" type="number"> 
+                                            <input formControlName="{{'qcQcn07'+i}}" name="{{'qcQcn07'+i}}" id="{{'qcQcn07'+i}}" type="number" min='0' max='1' step='0.01' placeholder='$'> 
+                                        </div>
                                         </div>
                                     </li>
                                     <li class="collection-item avatar">
                                         <span class="title">Registre la cantidad que pagó la empresa por los siguientes conceptos durante el ejercicio fiscal anterior:</span>
                                         <div *ngFor="let qcQcn08 of qcqcn8; index as i;">
                                             <label for="{{'qcQcn08'+i}}"><span class="title">{{qcQcn08.quest}}</span></label>
-                                            <input formControlName="{{'qcQcn08'+i}}" name="{{'qcQcn08'+i}}" id="{{'qcQcn08'+i}}" type="number"> 
+                                            <input formControlName="{{'qcQcn08'+i}}" name="{{'qcQcn08'+i}}" id="{{'qcQcn08'+i}}" type="number" min='0' max='1' step='0.01' placeholder='$'> 
                                         </div>
                                     </li>
 
@@ -273,6 +325,112 @@
                                           </label>
                                     </p>
                                 </li>
+                                <li class="collection-item avatar">
+                                    <label class="title black-text">¿En la empresa se realizan actualmente algunas de las siguientes actividades?</label>
+                              <p>
+                                    <select multiple formControlName="qcQcnm110">
+                                      <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
+                                      <option  value="A">Se lleva registros escritos del negocio. Es decir, se tiene un lugar, cuaderno, archivo o computadora donde se concentra la información de las operaciones diarias del negocio</option>
+                                      <option  value="B">Se sabe cuánto dinero en efectivo tiene el negocio en un momento determinado</option>
+                                      <option  value="C">Se sabe si las ventas de un producto (bien o servicio) en particular están subiendo o bajando de un mes a otro</option>
+                                      <option value="D">Se sabe cuánto le cuesta al negocio generar cada uno de sus principales productos (bienes o servicios). Por ejemplo, si tiene que calcular cuánto le cuesta producir una galleta, se hacen las cuentas de cuánto gasta en comprar harina, azúcar, leche, luz para usar la batidora, gas para el horno, renta del local, etcétera; otro ejemplo: si se ofrece un servicio de transporte, se hacen las cuentas de cuánto se gasta en el consumo de gasolina, casetas de peaje, etcétera.</option>
+                                      <option value="E">Se sabe de qué productos (bienes o servicios) se obtienen más ganancias por cada uno que vende</option>
+                                      <option value="F">El negocio no lleva registros y no cuenta con información que permita conocer a detalle su operación</option>
+                                    </select>
+                              </p>
+                                </li>
+
+                                <li class="collection-item avatar">
+                                    <label class="title black-text">¿Cuál es el motivo principal por el que se inició en este negocio o actividad?</label>
+                              <p>
+                                    <select multiple formControlName="qcQcnm111">
+                                      <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
+                                      <option  value="A">Por tradición familiar o lo heredó</option>
+                                      <option  value="B">Para complementar el ingreso familiar</option>
+                                      <option  value="C">Para mejorar el ingreso</option>
+                                      <option value="D">Tenía dinero y encontró una buena oportuindad</option>
+                                      <option value="E">Para ejercer su oficio, carrera o profesión</option>
+                                      <option value="F">Fue la única manera que tuvo para obtener un ingreso</option>
+                                      <option  value="G">No tenía la experiencia requerida para un empleo</option>
+                                      <option  value="H">No tenía la escolaridad o capacitación requerida para un empleo</option>
+                                      <option  value="I">Estaba sobrecapacitado para un empleo</option>
+                                      <option value="J">Los empleos que encontró estaban mal pagados</option>
+                                      <option value="K">Requería un horario flexible</option>
+                                      <option value="L">No había oportunidades de empleo</option>
+                                      <option value="M">Otra razón</option>
+                                    </select>
+                              </p>
+                                </li>
+
+                                <li class="collection-item avatar">
+                                    <label class="title black-text">En su negocio o actividad, ¿cuenta con un local para trabajar sea o no de su propiedad?</label>
+                              <p>
+                                    <select multiple formControlName="qcQcnm112">
+                                      <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
+                                      <option  value="A">Sí, es un local independiente</option>
+                                      <option  value="B">Sí, es un local o instalación que forma parte de un conjunto de locales</option>
+                                      <option  value="C">No</option>
+                                    </select>
+                              </p>
+                                </li>
+
+                                <li class="collection-item avatar">
+                                    <label class="title black-text">En caso de ser local independiente (fuera de un techo común), ¿éste es?</label>
+                              <p>
+                                    <select multiple formControlName="qcQcnm113">
+                                      <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
+                                      <option  value="A">Tienda, accesoria o tendajón</option>
+                                      <option  value="B">Taller (de servicios o de reparación)</option>
+                                      <option  value="C">Fábrica, tortillería, panadería</option>
+                                      <option  value="D">Oficina, despacho, consultorio</option>
+                                    </select>
+                              </p>
+                                </li>
+
+                                <li class="collection-item avatar">
+                                    <label class="title black-text">Si no cuenta con un local, ¿en dónde se realizan las actividades de su negocio?</label>
+                              <p>
+                                    <select multiple formControlName="qcQcnm114">
+                                      <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
+                                      <option  value="A">Vehículo con o sin motor</option>
+                                      <option  value="B">Puesto fijo fuera de un techo común</option>
+                                      <option  value="C">Puesto semifijo bajo un techo común en pasillos de un centro comercial</option>
+                                      <option  value="D">Puesto semifijo en un tianguis</option>
+                                      <option value="E">En un domicilio particular con una instalación especial</option>
+                                      <option value="F">En un domicilio particular sin una instalación especial</option>
+                                      <option  value="G">Otro lugar</option>
+                                    </select>
+                              </p>
+                                </li>
+
+                                <li class="collection-item avatar">
+                                    <label class="title black-text">¿En la empresa se realizan actualmente algunas de las siguientes actividades?</label>
+                              <p>
+                                    <select multiple formControlName="qcQcnm115">
+                                      <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
+                                      <option  value="A">Se lleva registros escritos del negocio. Es decir, se tiene un lugar, cuaderno, archivo o computadora donde se concentra la información de las operaciones diarias del negocio</option>
+                                      <option  value="B">Se sabe cuánto dinero en efectivo tiene el negocio en un momento determinado</option>
+                                      <option  value="C">Se sabe si las ventas de un producto (bien o servicio) en particular están subiendo o bajando de un mes a otro</option>
+                                      <option  value="D">Se sabe cuánto le cuesta al negocio generar cada uno de sus principales productos (bienes o servicios). Por ejemplo, si tiene que calcular cuánto le cuesta producir una galleta, se hacen las cuentas de cuánto gasta en comprar harina, azúcar, leche, luz para usar la batidora, gas para el horno, renta del local, etcétera; otro ejemplo: si se ofrece un servicio de transporte, se hacen las cuentas de cuánto se gasta en el consumo de gasolina, casetas de peaje, etcétera. </option>
+                                      <option value="E">Se sabe de qué productos (bienes o servicios) se obtienen más ganancias por cada uno que vende</option>
+                                      <option value="F">El negocio no lleva registros y no cuenta con información que permita conocer a detalle su operación</option>
+                                      
+                                    </select>
+                              </p>
+                                </li>
+
+                                <!--<li class="collection-item avatar" *ngFor="let qcQcnm11 of qcQcnm; index as i;">
+                                    <span class="title">{{qcQcnm11.quest}}</span>
+
+                                    <p *ngFor="let resp of qcQcnm11.opts">
+                                        <label>
+                                            <select multiple class="with-gap" formControlName="{{'qcQcnm11'+i}}" name="{{'qcQcnm11'+i}}" id="{{'qcQcnm11'+i}}"  >
+                                            <option formControlName="{{'qcQcnm11'+i}}" ></option>
+                                        </select>
+                                            <span>{{resp}}</span>
+                                          </label>
+                                    </p>
+                                </li>-->
                                 
 
                                    <!-- <p *ngFor="let resp of qcQcnm.opts">

@@ -10,7 +10,11 @@ import * as M from 'materialize-css';
 })
 export class QuestionComponent implements OnInit {
   calendar;
-  model="qcQcn00";
+  sfina5 = false;
+  sfina6 = false;
+  sfina7 = false;
+  sfina8 = false;
+  sfina9 = false;
 
   scrPn=[
     {
@@ -309,7 +313,6 @@ export class QuestionComponent implements OnInit {
   qcQcnm=[
   {
     quest:"¿En la empresa se realizan actualmente algunas de las siguientes actividades? (seleccionar una o más de las siguientes opciones)",
-    
     opts:["Se lleva registros escritos del negocio. Es decir, se tiene un lugar, cuaderno, archivo o computadora donde se concentra la información de las operaciones diarias del negocio","Se sabe cuánto dinero en efectivo tiene el negocio en un momento determinado","Se sabe si las ventas de un producto (bien o servicio) en particular están subiendo o bajando de un mes a otro","Se sabe cuánto le cuesta al negocio generar cada uno de sus principales productos (bienes o servicios). Por ejemplo, si tiene que calcular cuánto le cuesta producir una galleta, se hacen las cuentas de cuánto gasta en comprar harina, azúcar, leche, luz para usar la batidora, gas para el horno, renta del local, etcétera; otro ejemplo: si se ofrece un servicio de transporte, se hacen las cuentas de cuánto se gasta en el consumo de gasolina, casetas de peaje, etcétera","Se sabe de qué productos (bienes o servicios) se obtienen más ganancias por cada uno que vende","El negocio no lleva registros y no cuenta con información que permita conocer a detalle su operación"],
     resp:"",
     value:""
@@ -354,13 +357,15 @@ export class QuestionComponent implements OnInit {
     value:""
   }];
 
-  qcqn2=[
+  qcqn22=[
     {
       quest:"¿Cuántas personas trabajan en su negocio?",
       opts:[""],
       resp:"",
       value:""
-    }, 
+    }];
+  qcqn2=[
+   
     {
       quest:"¿De cuánto efectivo dispone actualmente para cubrir las operaciones del negocios? Incluya lo que guarda en su casa, en el banco o en el negocio.",
       opts:[""],
@@ -661,7 +666,14 @@ export class QuestionComponent implements OnInit {
             opts:[""],
             resp:"",
             value:""
-          }
+          }  ];
+      qcqcn1=[
+        {
+          quest:"Registre el total de ingresos que obtuvo el negocio durante el ejercicio fiscal anterior. Por favor incluya tanto los ingresos derivados como los no derivados de la actividad, además de los apoyos del gobierno que haya recibido",
+          opts:["No sé","Si sé, pero prefiero no  declararlo"],
+          resp:"",
+          value:""
+        }
       ];
 
 formScrPn : FormGroup;
@@ -755,7 +767,7 @@ this.formQcQcn = new FormGroup({
   qcQcn023: new FormControl(null, [Validators.required]),
   qcQcn024: new FormControl(null, [Validators.required]),
   qcQcn025: new FormControl(null, [Validators.required]),
-  qcQcn026: new FormControl(null, [Validators.required]),
+  qcQcn220: new FormControl(null, [Validators.required]),
   qcQcn030: new FormControl(null, [Validators.required]),
   qcQcn031: new FormControl(null, [Validators.required]),
   qcQcn00: new FormControl(null,[Validators.required]),
@@ -797,7 +809,18 @@ this.formQcQcn = new FormGroup({
   qcQcn084: new FormControl(null,[Validators.required]),
   qcQcn085: new FormControl(null,[Validators.required]),
   qcQcn086: new FormControl(null,[Validators.required]),
-  qcQcnr04: new FormControl(null,[Validators.required])
+  qcQcnr05: new FormControl(null,[Validators.required]),
+  qcQcnr06: new FormControl(null,[Validators.required]),
+  qcQcnr07: new FormControl(null,[Validators.required]),
+  qcqcn10: new FormControl(null,[Validators.required]),
+  qcqcn11: new FormControl(null,[Validators.required]),
+  qcqcnmo: new FormControl(null,[Validators.required]),
+  qcQcnm110: new FormControl(null,[Validators.required]),
+  qcQcnm111: new FormControl(null,[Validators.required]),
+  qcQcnm112: new FormControl(null,[Validators.required]),
+  qcQcnm113: new FormControl(null,[Validators.required]),
+  qcQcnm114: new FormControl(null,[Validators.required]),
+  qcQcnm115: new FormControl(null,[Validators.required])
 
 
 });
@@ -847,10 +870,37 @@ this.formQcQcn = new FormGroup({
 
   qcQcnSend(){
     console.log("form is valid?", this.formQcQcn.valid);
+    console.log("form", this.formQcQcn.value);
     if(this.formQcQcn.valid){
       console.log("form", this.formQcQcn.value);
       //enviar datos a back
     } 
+  }
+
+  b5(){
+    console.log("Reviso valor de check", this.sfina5);
+    if(this.sfina5){
+      this.formQcQcn.get("qcQcnr05").setValue(" ") 
+    }
+
+  }
+  b6(){
+    console.log("Reviso valor de check", this.sfina6);
+    if(this.sfina6){
+      this.formQcQcn.get("qcQcnr06").setValue(" ") 
+    }
+  }
+  b7(){
+    console.log("Reviso valor de check", this.sfina7);
+    if(this.sfina7){
+      this.formQcQcn.get("qcQcnr07").setValue(" ") 
+    }
+  }
+  monto(){
+    console.log("Reviso valor de check", this.sfina8);
+    if(this.sfina8){
+      this.formQcQcn.get("qcqcnmo").setValue(" ") 
+    }
   }
 
 }

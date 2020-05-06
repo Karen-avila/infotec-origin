@@ -353,4 +353,14 @@ this.formFiel = new FormGroup({
     //this.router.navigate(["map"]);
   }
 
+
+
+  rFiscal(){
+  console.log("Reviso valor de check", this.model);
+  if(this.model){
+    this.form.get("pFisica").setValue(" ") 
+  }
+
+}
+
 }
