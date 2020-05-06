@@ -23,6 +23,7 @@ export class DashboardComponent implements OnInit {
 
   //********************* */
 monte;
+hugo = "666";
   //********************* */
   
   model="pFisica";
@@ -145,7 +146,7 @@ monte;
 
 console.log("el step",this.re.id)
 
-    
+
     console.log("comienza ngOnInit",this.alrt);
 
     var elems = document.querySelectorAll('.modal');
@@ -264,6 +265,7 @@ this.formFiel = new FormGroup({
 }
 
   dpersonales(){
+
     console.log("form is valid?", this.form.valid);
     if(this.form.valid){
       console.log("form", this.form.value);
