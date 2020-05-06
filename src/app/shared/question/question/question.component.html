@@ -158,10 +158,11 @@
                                     <li class="collection-item avatar">
                                             <div class="input-field col s12 m12 l12" *ngFor="let qcQcI of qcQc1; index as i;">
                                         <span class="title" >{{qcQcI.quest}}</span>
+                                       
                                         <label>
                                         <input  formControlName="{{'qcQcI'+i}}" name="{{'qcQcI'+i}}" id="{{'qcQcI'+i}}" maxlength="2" type="number"  min="1">
                                         </label>
-                                            </div>
+                                    </div>
                                     </li>
                                 <br>                               
                                 <br>
@@ -186,12 +187,32 @@
                                     <span class="title" >{{qcQcn0.quest}}</span>
                                     <label>
                                         <i class="material-icons prefix">calendar_today
-                                        <input type="date"  formControlName="qcQcn0" name="qcQcn0" id="qcQcn0" min="1960-12-31" max="2002-01-01"></i>
+                                        <input type="date"  formControlName="qcQcn0" name="qcQcn0" id="qcQcn0"  max="2020-01-01"></i>
                                     </label>
                                         </div>
                                     </li>
 
-                    
+
+                                    <li class="collection-item avatar" *ngFor="let qcqcn1 of qcqcn1; index as i;">
+                                        <span class="title">{{qcqcn1.quest}}</span>
+                                           <p *ngFor="let resp of qcqcn1.opts">
+                                            <label>
+                                            <input class="with-gap"  (change)="monto()" formControlName="{{'qcqcn1'+i}}" name="{{'qcqcn1'+i}}" id="{{'qcqcn1'+i}}" type="checkbox" value="{{resp}}" [(ngModel)]="sfina8" />
+                                            <span>{{resp}}</span>
+                                        </label>
+                                        </p>
+                                        <div *ngIf= "!sfina8">
+                                            <label><span class="title">Monto</span></label>
+                                            <input formControlName="qcqcnmo"  name="qcqcnmo" id="qcqcnmo" type="number" min='0' max='1' step='0.01' placeholder='$'> 
+                                        </div>
+                                       
+                                    </li>
+                                    <li class="collection-item avatar">
+                                        <div *ngFor="let qcQcn22 of qcqn22; index as i;">
+                                            <label for="{{'qcQcn22'+i}}"><span class="title">{{qcQcn22.quest}}</span></label>
+                                            <input formControlName="{{'qcQcn22'+i}}" name="{{'qcQcn22'+i}}"  id="{{'qcQcn22'+i}}" type="number" min='0' maxlength='3'>
+                                        </div>
+                                    </li>
 
                                     <li class="collection-item avatar">
                                         <div *ngFor="let qcQcn01 of qcqn1; index as i;">
@@ -200,11 +221,11 @@
                                             
                                         </div>
                                     </li>
-
+                                    
                                     <li class="collection-item avatar">
                                         <div *ngFor="let qcQcn02 of qcqn2; index as i;">
                                             <label for="{{'qcQcn02'+i}}"><span class="title">{{qcQcn02.quest}}</span></label>
-                                            <input formControlName="{{'qcQcn02'+i}}" name="{{'qcQcn02'+i}}"  id="{{'qcQcn02'+i}}" type="number">
+                                            <input formControlName="{{'qcQcn02'+i}}" name="{{'qcQcn02'+i}}"  id="{{'qcQcn02'+i}}" type="number" min='0' max='1' step='0.01' placeholder='$'>
                                         </div>
                                     </li>
 
@@ -223,43 +244,67 @@
                                     
                                     <li class="collection-item avatar">
                                         <span class="title">Pensando en los últimos 6 meses, en promedio, indique cuánto paga cada mes por los siguientes conceptos:</span>
-                                        <p>
-                                            <label>
-                                            <input class="with-gap teal darken-4"  formControlName="qcQcnr04" name="qcQcnr04" id="qcQcnr04" type="radio" value="qcQcnr04" [(ngModel)]="model" />
-                                            <span>No contó con ningún financiamiento</span>
-                                        </label>
-                                        </p>
+                                        
                                         <div *ngFor="let qcQcn04 of qcqcn4; index as i;">
                                             <label for="{{'qcQcn04'+i}}"><span class="title">{{qcQcn04.quest}}</span></label>
-                                            <input formControlName="{{'qcQcn04'+i}}" name="{{'qcQcn04'+i}}" id="{{'qcQcn04'+i}}" type="number"> 
+                                            <input formControlName="{{'qcQcn04'+i}}" name="{{'qcQcn04'+i}}" id="{{'qcQcn04'+i}}" type="number" min='0' max='1' step='0.01' placeholder='$'> 
                                         </div>
+                                    
                                     </li>
                                     <li class="collection-item avatar">
                                         <span class="title">Indique el monto de financiamiento que haya recibido de cada una de estas fuentes durante el ejercicio fiscal anterior:</span>
+                                       
+                                        <p>
+                                            <label>
+                                            <input class="with-gap teal darken-4"  (change)="b5()" formControlName="qcQcnr05" name="qcQcnr05" id="qcQcnr05" type="checkbox" value="qcQcnr05" [(ngModel)]="sfina5" />
+                                            <span>No contó con ningún financiamiento</span>
+                                        </label>
+                                        </p>
+                            
+                                        <div *ngIf= "!sfina5">
                                         <div *ngFor="let qcQcn05 of qcqcn5; index as i;">
                                             <label for="{{'qcQcn05'+i}}"><span class="title">{{qcQcn05.quest}}</span></label>
-                                            <input formControlName="{{'qcQcn05'+i}}" name="{{'qcQcn05'+i}}" id="{{'qcQcn05'+i}}" type="number"> 
+                                            <input formControlName="{{'qcQcn05'+i}}" name="{{'qcQcn05'+i}}" id="{{'qcQcn05'+i}}" type="number" min='0' max='1' step='0.01' placeholder='$'> 
+                                        </div>
                                         </div>
                                     </li>
                                     <li class="collection-item avatar">
                                         <span class="title">¿Cuánto debe al día de hoy por los conceptos siguientes?</span>
+                                        <br>
+                                        <p>
+                                            <label>
+                                            <input class="with-gap teal darken-4"  (change)="b6()" formControlName="qcQcnr06" name="qcQcnr06" id="qcQcnr06" type="checkbox" value="qcQcnr06" [(ngModel)]="sfina6" />
+                                            <span>No contó con ningún financiamiento</span>
+                                        </label>
+                                        </p>
+                                        <div *ngIf= "!sfina6">
                                         <div *ngFor="let qcQcn06 of qcqcn6; index as i;">
                                             <label for="{{'qcQcn06'+i}}"><span class="title">{{qcQcn06.quest}}</span></label>
-                                            <input formControlName="{{'qcQcn06'+i}}" name="{{'qcQcn06'+i}}" id="{{'qcQcn06'+i}}" type="number"> 
+                                            <input formControlName="{{'qcQcn06'+i}}" name="{{'qcQcn06'+i}}" id="{{'qcQcn06'+i}}" type="number" min='0' max='1' step='0.01' placeholder='$'> 
+                                        </div>
                                         </div>
                                     </li>
                                     <li class="collection-item avatar">
                                         <span class="title">En promedio, ¿cuánto paga cada mes por los conceptos siguientes?</span>
+                                        <br>
+                                        <p>
+                                            <label>
+                                            <input class="with-gap teal darken-4"  (change)="b7()" formControlName="qcQcnr07" name="qcQcnr07" id="qcQcnr07" type="checkbox" value="qcQcnr07" [(ngModel)]="sfina7" />
+                                            <span>No contó con ningún financiamiento</span>
+                                        </label>
+                                        </p>
+                                        <div *ngIf= "!sfina7">
                                         <div *ngFor="let qcQcn07 of qcqcn7; index as i;">
                                             <label for="{{'qcQcn07'+i}}"><span class="title">{{qcQcn07.quest}}</span></label>
-                                            <input formControlName="{{'qcQcn07'+i}}" name="{{'qcQcn07'+i}}" id="{{'qcQcn07'+i}}" type="number"> 
+                                            <input formControlName="{{'qcQcn07'+i}}" name="{{'qcQcn07'+i}}" id="{{'qcQcn07'+i}}" type="number" min='0' max='1' step='0.01' placeholder='$'> 
+                                        </div>
                                         </div>
                                     </li>
                                     <li class="collection-item avatar">
                                         <span class="title">Registre la cantidad que pagó la empresa por los siguientes conceptos durante el ejercicio fiscal anterior:</span>
                                         <div *ngFor="let qcQcn08 of qcqcn8; index as i;">
                                             <label for="{{'qcQcn08'+i}}"><span class="title">{{qcQcn08.quest}}</span></label>
-                                            <input formControlName="{{'qcQcn08'+i}}" name="{{'qcQcn08'+i}}" id="{{'qcQcn08'+i}}" type="number"> 
+                                            <input formControlName="{{'qcQcn08'+i}}" name="{{'qcQcn08'+i}}" id="{{'qcQcn08'+i}}" type="number" min='0' max='1' step='0.01' placeholder='$'> 
                                         </div>
                                     </li>
 
@@ -269,6 +314,19 @@
                                     <p *ngFor="let resp of qcQcn.opts">
                                         <label>
                                             <input class="with-gap" formControlName="{{'qcQcn'+i}}" name="{{'qcQcn'+i}}" id="{{'qcQcn'+i}}" value="{{resp}}" type="radio"  />
+                                            <span>{{resp}}</span>
+                                          </label>
+                                    </p>
+                                </li>
+
+                                <li class="collection-item avatar" *ngFor="let qcQcnm11 of qcQcnm; index as i;">
+                                    <span class="title">{{qcQcnm11.quest}}</span>
+
+                                    <p *ngFor="let resp of qcQcnm11.opts">
+                                        <label>
+                                            <select multiple class="with-gap" formControlName="{{'qcQcnm11'+i}}" name="{{'qcQcnm11'+i}}" id="{{'qcQcnm11'+i}}"  >
+                                            <option value="{{'qcQcnm11'+i}}" ></option>
+                                        </select>
                                             <span>{{resp}}</span>
                                           </label>
                                     </p>
