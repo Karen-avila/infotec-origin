@@ -581,12 +581,134 @@
     </div>
 </div>
 
-
-
-
 <div id="modalContr" class="modal">
     <div class="modal-content">
-        <app-pdf>loading</app-pdf>
+
+        <!-- Aqui va -->
+
+        <table id="convert" style='width:980px;'>
+            <tr>
+                <td style='padding: 0px 8px 8px;'>
+                    <div style='font-family: Arial,Helvetica,sans-serif; font-size: 12px; color: rgb(0, 0, 0);'>
+
+                        <img class="img" src="https://www.cetesdirecto.com/imagenes/shcp1.jpg">
+                        <img class="img2" src="https://www.bancodelbienestar.com.mx/Banca/_imagenes/BansefiNew/logo_bancodelbienestar_2.png">
+                        <table width='100%' style='width:100%;' cellspacing='0' cellpadding='2' align='center' border='0'>
+                            <tbody>
+
+                                <table class="table" style='width:980px'>
+                                    <tr class="primero">
+                                        <th colspan="5" class="titulos">CARÁTULA INFORMATIVA</th>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="3" class="titulo">Número de Crédito: {{ hugo }}</td>
+                                        <td colspan="3"> </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="5">
+                                            <p>Nombre comercial del Producto:</p>
+                                            <p>Tipo de Crédito: Crédito Simple en Moneda Nacional.</p>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="1">Tasa de interés anualordinaria</td>
+                                        <td colspan="1">CAT (Costo Anual Total / SinIVA)</td>
+                                        <td colspan="1">CAT (Costo Anual Total)</td>
+                                        <td colspan="1">MONTO O LÍNEA DE CRÉDITO</td>
+                                        <td colspan="1">MONTO MENSUAL A PAGAR</td>
+                                    </tr>
+
+                                    <tr class="espacio">
+                                        <td> {{ catPorcentaje }} </td>
+                                        <td> {{ catPorcentaje }} </td>
+                                        <td> {{ tasaInteresMensual }} </td>
+                                        <td> {{ valueMon }} </td>
+                                        <td> {{ finance }} </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="5" class="titulo">COMISIONES RELEVANTES</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="2">
+                                            <ul>
+                                                <li>Apertura: $0.00</li>
+                                                <li>Anualidad: $0.00</li>
+                                                <li>Prepago: $0.00</li>
+                                                <li>Pago tardío (mora): 1.5 veces la tasa de interés anual ordinaria</li>
+                                            </ul>
+                                        </td>
+
+                                        <td colspan="3">
+                                            <ul>
+                                                <li>Reclamación improcedente: $0.00</li>
+                                                <li>Cobranza:</li>
+                                                Para otras comisiones consulte: Contrato de Crédito
+                                            </ul>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="2" class="titulo">PLAZO DEL CRÉDITO:
+                                            <p>___{{valuePlaz}}___meses</p>
+                                        </td>
+                                        <td colspan="3">Fecha límite de primer pago: _____________________ y las subsecuentes, en términos de la Tabla de Amortización:</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="5">ADVERTENCIAS:
+                                            <p>Contratar créditos que excedan tu capacidad de pago afecta tu historial crediticio.</p>
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="5">ESTADO DE CUENTA:
+                                            <li>Consulta: vía internet X</li>
+                                            <li>Envío por correo electrónico: X</li>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="5">ACLARACIONES Y RECLAMACIONES:
+                                            <p>Unidad Especializada de Atención a Usuarios:</p>
+                                            <p>Domicilio: Avenida Río Magdalena #115, Colonia Tizapán San Ángel, Delegación Álvaro Obregón, C.P. 01090, México, Distrito Federal.</p>
+                                            <p>Teléfono (01 55) 54813300 extensión 3578 en el horario de 9:00 a.m. a 18:00 p.m. Correo electrónico: ueau@bansefi.gob.mx</p>
+                                            <p>Página de Internet: www.bancodelbienestar.gob.mx</p>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="5">REGISTRO DE CONTRATOS DE ADHESIÓN NÚM:
+                                            <p>Comisión Nacional para la Protección y Defensa de los Usuarios de Servicios Financieros (CONDUSEF):</p>
+                                            <p>Teléfono: 01 800 999 8080 y 53400999. Página de Internet. www.condusef.gob.mx Correo electrónico: opinion@condusef.gob.mx.</p>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="titulo" colspan="2">
+                                            <p>___________________________________________</p>Nombre y firma de consentimiento del Acreditado</td>
+                                        <td class="titulo" colspan="3">
+                                            <p>_______________________________</p>Por "Banco del Bienetar"</td>
+                                    </tr>
+
+                                </table>
+
+                            </tbody>
+                        </table>
+                        <br/>
+                        <br/>
+
+                    </div>
+                    </td>
+            </tr>
+
+        </table>
+        <!-- Aqui cierra -->
+
     </div>
     <div class="modal-footer">
         <a class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>
