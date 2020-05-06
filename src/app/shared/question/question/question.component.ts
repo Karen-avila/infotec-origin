@@ -14,6 +14,7 @@ export class QuestionComponent implements OnInit {
   sfina6 = false;
   sfina7 = false;
   sfina8 = false;
+  sfina9 = false;
 
   scrPn=[
     {
@@ -869,6 +870,7 @@ this.formQcQcn = new FormGroup({
 
   qcQcnSend(){
     console.log("form is valid?", this.formQcQcn.valid);
+    console.log("form", this.formQcQcn.value);
     if(this.formQcQcn.valid){
       console.log("form", this.formQcQcn.value);
       //enviar datos a back
