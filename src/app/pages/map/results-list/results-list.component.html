@@ -1,6 +1,6 @@
 <div id="results-list">
-    <h4>Resultados</h4>
-    <div id="results">
+    <span class="black-text title"><b>Resultados</b></span>
+    <div class="col s12 m12 l12" id="results">
         <ul>
             <li *ngFor="let result of results" (click)="selectResult(result)">
                 {{ result.displayName }}
