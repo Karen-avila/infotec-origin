@@ -10,3 +10,8 @@
 .leaflet-left {
     pointer-events: auto;
 }
+
+#map-point-form {
+    float: left;
+    width: 100%;
+}

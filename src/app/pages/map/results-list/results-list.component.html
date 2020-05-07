@@ -1,6 +1,15 @@
-<div id="results-list">
-    <h4>Resultados</h4>
-    <div id="results">
+
+        <ul>
+            <li *ngFor="let result of results" (click)="selectResult(result)">
+                {{ result.displayName }}
+            </li>
+        </ul>
+ 
+
+<!--
+    <div id="results-list">
+    <span class="black-text title"><b>Resultados</b></span>
+    <div class="col s12 m12 l12" id="results">
         <ul>
             <li *ngFor="let result of results" (click)="selectResult(result)">
                 {{ result.displayName }}
@@ -8,3 +17,4 @@
         </ul>
     </div>
 </div>
+-->
