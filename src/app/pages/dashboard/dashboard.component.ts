@@ -54,8 +54,8 @@ hugo = "666";
      url:"https://www.gob.mx/curp/"},
     {name:"Rfc",
     url:"https://www.siat.sat.gob.mx/PTSC/"},
-    {name:"Buro de crédito",
-    url:"https://www.burodecredito.com.mx/score-info.html"},
+    //{name:"Buro de crédito",
+    //url:"https://www.burodecredito.com.mx/score-info.html"},
     {name:"Constancia de Situación Fiscal",
     url:"https://www.sat.gob.mx/aplicacion/53027/genera-tu-constancia-de-situacion-fiscal"}
   ]
@@ -203,8 +203,8 @@ this.formDocumentos = new FormGroup({
   estado: new FormControl(null, Validators.required),
   curpd: new FormControl(null, Validators.required),
   rfcd: new FormControl(null, Validators.required),
- // buro: new FormControl(null, Validators.required),
-  cfiscal: new FormControl(null, Validators.required)
+  fiscal: new FormControl(null, Validators.required)
+  // buro: new FormControl(null, Validators.required)
   
   
 });

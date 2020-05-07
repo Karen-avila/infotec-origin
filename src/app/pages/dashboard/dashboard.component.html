@@ -289,7 +289,7 @@
 
 
                         <div>
-                            <div class="col s12 m2 offset-m1 l2">
+                            <div class="col s12 m2 l2">
                                 <span>Identificación Oficial Reverso</span>
                             </div>
                             <div class="file-field input-field col s12 m4 l4">
@@ -374,6 +374,8 @@
                                 <input class="file-path validate" type="text">
                             </div>
                         </div>
+                       
+                          
                         <!--   <div class="col s12 m2 l2">
                         <span>Score de Buro de Crédito </span>
                         <a (click)="sweetHome('2')"><i class="material-icons prefix icon-black">help_outline</i></a>
@@ -392,14 +394,14 @@
                     </div> -->
                         <div class="col s12 m2 l2">
                             <span>Constancia de Situacion Fiscal </span>
-                            <a (click)="sweetHome('3')"><i class="material-icons prefix icon-black">help_outline</i></a>
+                            <a (click)="sweetHome('2')"><i class="material-icons prefix icon-black">help_outline</i></a>
                         </div>
                         <div class="file-field input-field col s12 m4 l4">
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>cargar
-                                <input type="file" (change)="ValidateSize('cfiscal')" accept="application/pdf" formControlName="cfiscal" id="cfiscal" required class="validate">
+                                <input type="file" (change)="ValidateSize('fiscal')" accept="application/pdf" formControlName="fiscal" id="fiscal" name="fiscal" required class="validate">
                             </div>
-                            <div class="col s1 m1 l1" *ngIf="doc.cfiscal.errors?.required">
+                            <div class="col s1 m1 l1" *ngIf="doc.fiscal.errors?.required">
                                 <i class="material-icons icon-red">error_outline</i>
                             </div>
                             <div class="file-path-wrapper">
@@ -407,25 +409,41 @@
                             </div>
                         </div>
 
-                        <div class="input-field col s12 m7 l7">
-                            <i class="material-icons icon-red left">error_outline</i> Son requeridos todos los archivos para poder continuar con el proceso.
+                        <div class="input-field col s12 m12 l12">
+                            <label><span><i class="material-icons icon-red left">error_outline</i>
+                                Son requeridos todos los archivos para poder continuar con el proceso.
+                            </span></label>
                         </div>
 
                     </div>
+                    <br><br>
 
-
+                    <div class="row">
                     <div class="row">
 
                         <div class="input-field col s12 m12 l12">
                             <label><input class="with-gap teal darken-4" type="checkbox" [(ngModel)]="bc"/>
-                            <span>Acepto la consulta de Buró de Crédito</span></label>
+                            <span>
+                                <label>
+                                    <span class="black-text">  Acepto la consulta de Buró de Crédito</span>
+                                </label>
+                            </span></label>
                         </div>
-                        <div class="input-field col m12 s12">
-                            <a class="waves-effect modal-trigger" href="#terminos">
-                                <p class="blue-text">Acepto Terminos y condiciones</p>
-                            </a>
-                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="input-field col s12 m12 l12">
+                            <label><input class="with-gap teal darken-4" type="checkbox" [(ngModel)]="term"/>
+                            <span>
                         
+                        <label class="waves-effect modal-trigger subrayar" href="#terminos">
+                            <span class="blue-text text-darken-4">Acepto Terminos y condiciones</span>
+                        </label>
+                    </span></label>
+                        </div>
+                    </div>
+                    
+                        <br><br>
 
                         <div class="col s12">
                             <a class="waves-effect  teal darken-4 btn modal-trigger right" href="#fiel">
@@ -582,14 +600,13 @@
 </div>
 
 
-
 <div id="terminos" class="modal">
-    <div class="modal-content">
-        <table class="table" style='width:600px'>
+    <div class="modal-content justificacion">
+        <table class="table" style='width:590px;'>
             <tr>
-              <p><b>Por el solo hecho de acceder y hacer uso de este sitio, usted se adhiere de forma inmediata a todos y cada uno de los siguientes:
-              </b></p>
-              <p><b>TÉRMINOS Y CONDICIONES DE USO DEL SITIO.</b></p>
+              <b>Por el solo hecho de acceder y hacer uso de este sitio, usted se adhiere de forma inmediata a todos y cada uno de los siguientes:
+              </b>
+              <b>TÉRMINOS Y CONDICIONES DE USO DEL SITIO.</b>
               <p>La utilización del sitio <a class="blue-text" target="_blank" href="https://www.bancodelbienestar.com.mx/BsfPortalMovil/index">https://www.bancodelbienestar.com.mx/BsfPortalMovil/index</a>, en adelante “el sitio”, y de cualquiera de las aplicaciones del mismo constituye el pleno y expreso consentimiento por parte del usuario para observar y sujetarse respecto de cada uno de los términos y condiciones que aquí se contienen, así como respecto de las políticas de privacidad, políticas de seguridad y, en su caso, cualquier otro documento que regule la participación del usuario en este sitio. </p>
               <p>En el supuesto que cualquiera de los términos a los que habrá de sujetarse el usuario cuando acceda a este sitio sean contrarios a sus intereses, deberá abstenerse de hacer uso del mismo.</p>
             
@@ -707,7 +724,7 @@
         </table>
     </div>
     <div class="modal-footer">
-        <a class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>
+        <a class="modal-close waves-effect teal darken-4 white-text btn-flat">Cerrar</a>
     </div>
     <div class="footer-copyright teal darken-3">
         <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">

@@ -98,3 +98,12 @@ th {
 .modalF {
     width: 980px;
 }
+
+.justificacion{
+    text-align: justify;
+}
+
+.subrayar{
+    text-decoration: underline;
+}
+
