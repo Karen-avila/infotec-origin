@@ -70,4 +70,8 @@ ul.stepper.horizontal .step.done .step-title::before {
     transform: scale(1.3);
 }
 
+.modal {
+    width: 1050px;
+}
+
 

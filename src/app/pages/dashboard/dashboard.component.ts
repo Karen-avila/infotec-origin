@@ -33,6 +33,7 @@ hugo = "666";
 
   terms=false;
   bc=false;
+  aviso = false;
 
   form : FormGroup;
   formDocumentos : FormGroup;
@@ -189,10 +190,42 @@ console.log("el step",this.re.id)
     domicilio: new FormControl(" ",[Validators.required]),
     curp: new FormControl(null,Validators.required),
     rfc: new FormControl(null,Validators.required),
+    civil: new FormControl(null,Validators.required),
+    clave: new FormControl(null,Validators.required),
+    calle: new FormControl(null,Validators.required),
+    ext: new FormControl(null,Validators.required),
+    int: new FormControl(null,[Validators.minLength(0)]),
+    mun: new FormControl(null,Validators.required),
+    asentamiento: new FormControl(null,Validators.required),
+    tase: new FormControl(null,Validators.required),
+    callen: new FormControl(null,Validators.required),
+    extn: new FormControl(null,Validators.required),
+    intn: new FormControl(null,[Validators.minLength(0)]),
+    munn: new FormControl(null,Validators.required),
+    asentamienton: new FormControl(null,Validators.required),
+    tasen: new FormControl(null,Validators.required),
+    sector: new FormControl(null,Validators.required),
+    ssector: new FormControl(null,Validators.required),
+    rama: new FormControl(null,Validators.required),
+    srama: new FormControl(null,Validators.required),
+    giro: new FormControl(null,Validators.required),
+    namerp1: new FormControl(null,[Validators.required,Validators.minLength(3)]),
+    name2rp1: new FormControl(null,[Validators.minLength(0)]),
+    paternorp1: new FormControl(null,[Validators.required,Validators.minLength(3)]),
+    maternorp1: new FormControl(null,[Validators.required,Validators.minLength(3)]),
+    telrp1: new FormControl(null,[Validators.required,Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
+    relacionrp1: new FormControl(null,Validators.required),
+    namerp2: new FormControl(null,[Validators.required,Validators.minLength(3)]),
+    name2rp2: new FormControl(null,[Validators.minLength(0)]),
+    paternorp2: new FormControl(null,[Validators.required,Validators.minLength(3)]),
+    maternorp2: new FormControl(null,[Validators.required,Validators.minLength(3)]),
+    telrp2: new FormControl(null,[Validators.required,Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
+    relacionrp2: new FormControl(null,Validators.required),
     monto: new FormControl(),
     plazo: new FormControl()
             
- }, { validators: this.pbaDict('name','paterno','name2','materno','domicilio') 
+ }, { validators: this.pbaDict('name','paterno','name2','materno','domicilio','calle','ext','int','mun','asentamiento','callen','extn','intn','munn','asentamienton',
+ 'namerp1','paternorp1','name2rp1','maternorp1', 'namerp2','paternorp2','name2rp2','maternorp2') 
 
 });
 
@@ -200,7 +233,9 @@ this.formDocumentos = new FormGroup({
   frontal: new FormControl(null, Validators.required),
   reverso: new FormControl(null, Validators.required),
   comprobante: new FormControl(null, Validators.required),
+  comprobanten: new FormControl(null, Validators.required),
   estado: new FormControl(null, Validators.required),
+  declaracion: new FormControl(null, Validators.required),
   curpd: new FormControl(null, Validators.required),
   rfcd: new FormControl(null, Validators.required),
   fiscal: new FormControl(null, Validators.required)
@@ -228,7 +263,11 @@ this.formFiel = new FormGroup({
   
  
 
-  pbaDict(p1:string,p2:string,p3:string,p4:string,p5:string){
+  pbaDict(p1:string,p2:string,p3:string,p4:string,p5:string,
+    p6:string,p7:string,p8:string,p9:string,p10:string,
+    p11:string,p12:string,p13:string,p14:string,p15:string,
+    p16:string,p17:string,p18:string,p19:string,
+    p20:string,p21:string,p22:string,p23:string){
 
     return ( group:FormGroup)=>{
       let val1 = group.controls[p1].value;
@@ -236,10 +275,30 @@ this.formFiel = new FormGroup({
       let val3 = group.controls[p3].value;
       let val4 = group.controls[p4].value;
       let val5 = group.controls[p5].value;
+      let val6 = group.controls[p6].value;
+      let val7 = group.controls[p7].value;
+      let val8 = group.controls[p8].value;
+      let val9 = group.controls[p9].value;
+      let val10 = group.controls[p10].value;
+      let val11 = group.controls[p11].value;
+      let val12 = group.controls[p12].value;
+      let val13 = group.controls[p13].value;
+      let val14 = group.controls[p14].value;
+      let val15 = group.controls[p15].value;
+      let val16 = group.controls[p16].value;
+      let val17 = group.controls[p17].value;
+      let val18 = group.controls[p18].value;
+      let val19 = group.controls[p19].value;
+      let val20 = group.controls[p20].value;
+      let val21 = group.controls[p21].value;
+      let val22 = group.controls[p22].value;
+      let val23 = group.controls[p23].value;
       
       for(let i of this.dic){
         console.log("compare",val1,"vs",i)
-      if(val1  === i || val2 === i || val3 === i || val4 === i || val5 === i){
+      if(val1  === i || val2 === i || val3 === i || val4 === i || val5 === i || val6  === i || val7 === i 
+        || val8 === i || val9 === i || val10 === i || val11  === i || val12 === i || val13 === i || val4 === i 
+        || val15 === i || val16  === i || val17 === i || val18 === i || val9 === i || val20  === i || val21 === i || val22 === i || val23 === i){
         return {isMatch:true};
       }
       
