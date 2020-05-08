@@ -189,6 +189,14 @@ console.log("el step",this.re.id)
     domicilio: new FormControl(" ",[Validators.required]),
     curp: new FormControl(null,Validators.required),
     rfc: new FormControl(null,Validators.required),
+    civil: new FormControl(null,Validators.required),
+    clave: new FormControl(null,Validators.required),
+    calle: new FormControl(null,Validators.required),
+    ext: new FormControl(null,Validators.required),
+    int: new FormControl(null,[Validators.minLength(0)]),
+    mun: new FormControl(null,Validators.required),
+    asentamiento: new FormControl(null,Validators.required),
+    tase: new FormControl(null,Validators.required),
     monto: new FormControl(),
     plazo: new FormControl()
             

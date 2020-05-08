@@ -107,9 +107,14 @@
                 <div class="row" [formGroup]="form">
 
 
+
                     <input formControlName="plazo" class="hide" value="{{valuePlaz}}" [(ngModel)]="valuePlaz">
                     <input formControlName="monto" class="hide" value="{{valueMon}}" [(ngModel)]="valueMon">
 
+
+                    <label class="title">
+                        <i class="material-icons prefix icon-gold">person</i>
+                        Información Personal</label>
 
                     <div class="input-field col s12 m4">
                         <p>
@@ -129,7 +134,7 @@
                     </div>
 
                     <div>
-                        <p class="white-text white">.</p>
+                        <p class="white-text white hide">.</p>
                         <br><br>
 
                     </div>
@@ -181,6 +186,20 @@
                     </div>
 
                     <div class="input-field col s12 m6 l6">
+                        <select formControlName="civil" name="civil" id="civil" class="validate">
+                            <option value="" disabled selected>Selecciona una opcion</option>
+                            <option value="Soltero">Soltero</option>
+                            <option value="Casado">Casado</option>
+                            <option value="Viudo">Viudo</option>
+                            <option value="Divorciado">Divorciado</option>
+                            <option value="Union_libre">Unión libre</option>
+                            <option value="Separado">Separado</option>
+                        </select>
+                        <label>Estado civil</label>
+                        <div class="blue-text" *ngIf="f.genero.errors">Debes seleccionar una opción.</div>
+                    </div>
+
+                    <div class="input-field col s12 m6 l6">
                         <select formControlName="genero" name="genero" id="genero" class="validate">
                             <option value="" disabled selected>Selecciona una opcion</option>
                             <option value="Femenino">Femenino</option>
@@ -198,7 +217,7 @@
                         <option value="2">Pachuca, Hgo.</option>
                         <option value="3">Guadalajara, Jal.</option>
                     </select>
-                        <label>Entidad federativa</label>
+                        <label>Entidad federativa de Nacimiento</label>
                         <div class="blue-text" *ngIf="f.entidad.errors">Debes seleccionar una opción.</div>
                     </div>
                     <div class="input-field col s12 m6 l6">
@@ -221,17 +240,14 @@
                         <label>Ocupación</label>
                         <div class="blue-text" *ngIf="f.ocupacion.errors">Debes seleccionar una opción.</div>
                     </div>
-                    <div class="input-field col s12 m6 l6">
-                        <i class="material-icons prefix">phone</i>
-                        <input class="validate" id="tel" type="number" formControlName="tel" name="tel" minlength="10" maxlength="10" required>
-                        <label for="text">Número de Teléfono</label>
-                        <div class="blue-text" *ngIf="f.tel.errors">El teléfono debe ser de 10 digitos</div>
-                    </div>
+
+                    
+
                     <div class="input-field col s12 m6 l6" (click)="viewMap()">
 
-                        <i class="material-icons prefix">house</i>
+                        <i class="material-icons prefix">near_me</i>
                         <textarea id="domicilio" name="domicilio" formControlName="domicilio" required class="materialize-textarea"> </textarea>
-                        <label for="domicilio">Domicilio particular</label>
+                        <label for="domicilio">Localiza tu domicilio particular</label>
 
                         <div class="blue-text" *ngIf="f.domicilio.errors?.minlength ">Debe tener un mínimo 5 caracteres</div>
                         <div class="blue-text" *ngIf="f.domicilio.errors?.maxlength ">Máximo 120 caracteres</div>
@@ -240,6 +256,64 @@
                         </div>
 
                     </div>
+
+
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">phone</i>
+                        <input class="validate" id="tel" type="number" formControlName="tel" name="tel" minlength="10" maxlength="10" required>
+                        <label for="text">Número de Teléfono</label>
+                        <div class="blue-text" *ngIf="f.tel.errors">El teléfono debe ser de 10 digitos</div>
+                    </div>
+
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">house</i>
+                        <input id="calle" type="text" formControlName="calle" required class="validate" name="calle" />
+                        <label for="calle">Calle</label>
+                    </div>
+
+                    <div class="input-field col s12 m3 l3">
+                     
+                        <input id="ext" type="text" formControlName="ext" required class="validate" name="ext" />
+                        <label for="ext">Número exterior</label>
+                    </div>
+
+                    <div class="input-field col s12 m3 l3">
+                       
+                        <input id="int" type="text" formControlName="int" name="int" />
+                        <label for="int">Número interior</label>
+                    </div>
+
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">house</i>
+                        <input id="mun" type="text" formControlName="mun" name="mun" required class="validate"/>
+                        <label for="mun">Municipio</label>
+                    </div>
+
+                    <div class="input-field col s12 m6 l6">
+                        <select formControlName="tase" name="tase" id="tase" class="validate">
+                            <option value="" disabled selected>Selecciona una opcion</option>
+                            <option value="Barrio">Barrio</option>
+                            <option value="Colonia">Colonia</option>
+                            <option value="Equipamiento">Equipamiento</option>
+                            <option value="Pueblo">Pueblo</option>
+                        </select>
+                        <label>Tipo de asentamiento</label>
+                        <div class="blue-text" *ngIf="f.tase.errors">Debes seleccionar una opción.</div>
+                    </div>
+
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">house</i>
+                        <input id="asentamiento" type="text" formControlName="asentamiento" name="asentamiento" required class="validate"/>
+                        <label for="asentamiento">Asentamiento</label>
+                    </div>
+
+
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">aspect_ratio</i>
+                        <input id="clave" type="text" formControlName="clave" required class="validate" name="clave" />
+                        <label for="clave">Clave de Lector</label>
+                    </div>
+
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">aspect_ratio</i>
                         <input id="curp" type="text" formControlName="curp" pattern="^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$"
@@ -251,6 +325,11 @@
                         <input id="rfc" type="text" formControlName="rfc" pattern="^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$" required class="validate" name="rfc" />
                         <label for="rfc">RFC</label>
                     </div>
+
+
+                    <h4>
+                        <i class="material-icons prefix icon-gold">work</i>
+                        Información del Negocio</h4>
 
                     <form ngNativeValidate [formGroup]="form" (ngSubmit)="dpersonales()">
                         <div class="col s12">
