@@ -2,7 +2,7 @@
 
 <!---->
 <div id="steps">
-    <ul class="stepper linear parallel horizontal">
+    <ul class="stepper linear parallel horizontal" id="api_nav_demo">
         <li class="step">
             <div class="step-title waves-effect waves-dark">Cuenta</div>
         </li>
@@ -617,7 +617,7 @@
                                 <option value="1">Familiar</option>
                                 <option value="2">Amistad</option>
                                 <option value="3">Laboral o profesional</option>
-                            </select>
+                        </select>
                         <label>Relación</label>
                         <div class="blue-text" *ngIf="f.relacionrp2.errors">Debes seleccionar una opción.</div>
                     </div>
@@ -651,10 +651,10 @@
 
                     <form ngNativeValidate [formGroup]="form" (ngSubmit)="dpersonales()">
                         <div class="col s12">
-                            <button class="waves-effect teal darken-4 btn previous-step left">Atras
+                            <a class="waves-effect teal darken-4 btn previous-step left">Atras
                             <i class="material-icons prefix left">arrow_back_ios</i>
-                        </button>
-                            <button class="waves-effect teal darken-4 btn right next-step" type="submit">Enviar <!--revisar nextstep igual en ts-->
+                            </a>
+                            <button class="waves-effect teal darken-4 btn right " type="submit">Enviar <!--revisar nextstep igual en ts-->
                             <i class="material-icons prefix right">arrow_forward_ios</i>
                         </button>
                         </div>
@@ -1095,11 +1095,13 @@
 
                 <p>El Banco del Bienestar puede proporcionar enlaces con otros sitios de Internet para la conveniencia del usuario, sin embargo, el Banco del Bienestar no es responsable en relación con tales sitios, en consecuencia, el Banco del Bienestar
                     no tiene control sobre tales productos, servicios, materiales o cualquier otra información contenida en o disponible a través de los sitios de dichos terceros. El acceso a cualquier otro sitio enlazado es bajo el propio riesgo del
-                    usuario.</p>
+                    usuario.
+                </p>
                 <p>En virtud de lo anterior, el Banco del Bienestar no garantiza ni asume ningún tipo de responsabilidad por: a) los daños y perjuicios que se puedan ocasionar por el funcionamiento, disponibilidad, accesibilidad o continuidad de los sitios
                     enlazados; b) el mantenimiento de los servicios, información, datos, archivos, productos y cualquier clase de material existente en los sitios enlazados; c) la prestación o transmisión de los servicios, información, datos, archivos,
                     productos y cualquier clase de material existente en los sitios enlazados; d) la calidad, licitud, fiabilidad y utilidad de los servicios, información, datos, archivos, productos y cualquier clase de material existente en los sitios
-                    enlazados.</p>
+                    enlazados.
+                </p>
 
                 <p><b>Seguridad de la información.</b></p>
 

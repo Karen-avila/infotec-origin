@@ -49,7 +49,7 @@ export class ApplyComponent implements OnInit {
     var instances = M.FormSelect.init(select);
 
     var stepperDiv = document.querySelector('.stepper');
-    console.log(stepperDiv);
+    //console.log(stepperDiv);
     var stepper = new MStepper(stepperDiv, {
       // Default active step.
       firstActive: 0,
@@ -102,7 +102,7 @@ pbaDict(p1:string){
     let val1 = group.controls[p1].value;
     
     for(let i of this.dic){
-      console.log("compare",val1,"vs",i)
+      //console.log("compare",val1,"vs",i)
     if(val1 === i){
       return {isMatch:true};
     }
@@ -142,11 +142,11 @@ pbaDict(p1:string){
   //-------------
   viewRePassword(){
     if(this.reIcon){
-      console.log("view repassword");
+      //console.log("view repassword");
       this.reIcon=false;
       this.rePassType="text";
     }else{
-      console.log("not view repassword");
+      //console.log("not view repassword");
       this.reIcon=true;
       this.rePassType="password";
     }
@@ -154,11 +154,11 @@ pbaDict(p1:string){
 
   viewPassword(){
     if(this.icon){
-      console.log("view password");
+      //console.log("view password");
       this.icon=false;
       this.passType="text";
     }else{
-      console.log("not view password");
+      //console.log("not view password");
       this.icon=true;
       this.passType="password";
     }
