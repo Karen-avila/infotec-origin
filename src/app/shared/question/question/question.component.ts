@@ -683,6 +683,8 @@ formScrDir : FormGroup;
 formQcQc : FormGroup;
 formQcQcn : FormGroup;
 instPefNeg;
+instQrmCnct;
+prins;
 
   constructor() { }
 
@@ -696,9 +698,10 @@ instPefNeg;
    let select = document.querySelectorAll('select');
     M.FormSelect.init(select);
 
-    let collPn = document.getElementById('perfilNegocio');
-    //console.log(stepperDiv);
-    this.instPefNeg = M.Collapsible.init(collPn);
+
+    this.instPefNeg = M.Collapsible.init(document.getElementById('perfilNegocio'));
+    this.instQrmCnct = M.Collapsible.init(document.getElementById('queremosConocerte'));
+    this.prins = M.Collapsible.init(document.getElementById('prins'));
 
     this.formScrPn = new FormGroup({
               scrPn0: new FormControl(null, [Validators.required]),
@@ -841,9 +844,9 @@ this.formQcQcn = new FormGroup({
     if(this.formScrPn.valid){
       console.log("form", this.formScrPn.value);
       //enviar datos a back
-      this.instPefNeg.open(1);
+      this.instPefNeg.open(1); //aqui ira
     } else{
-      this.instPefNeg.open(1);
+      this.instPefNeg.open(1); // no ira aqui solo para no completar form
     }
   }
 
@@ -852,6 +855,9 @@ this.formQcQcn = new FormGroup({
     if(this.formScrPm.valid){
       console.log("form", this.formScrPm.value);
       //enviar datos a back
+      this.instPefNeg.open(2); //aqui ira
+    } else{
+      this.instPefNeg.open(2); // no ira aqui solo para no completar form
     } 
   }
 
@@ -860,7 +866,10 @@ this.formQcQcn = new FormGroup({
     if(this.formScrRep.valid){
       console.log("form", this.formScrRep.value);
       //enviar datos a back
-    } 
+      this.instPefNeg.open(3); //aqui ira
+    } else{
+      this.instPefNeg.open(3); // no ira aqui solo para no completar form
+    }  
   }
 
   scrDirSend(){
@@ -868,6 +877,9 @@ this.formQcQcn = new FormGroup({
     if(this.formScrDir.valid){
       console.log("form", this.formScrDir.value);
       //enviar datos a back
+      this.prins.open(1); //aqui ira
+    } else{
+      this.prins.open(1); // no ira aqui solo para no completar form  CHECAR ESTE SALTO
     } 
   }
 
@@ -876,6 +888,9 @@ this.formQcQcn = new FormGroup({
     if(this.formQcQc.valid){
       console.log("form", this.formQcQc.value);
       //enviar datos a back
+      this.instQrmCnct.open(1); //aqui ira
+    } else{
+      this.instQrmCnct.open(1); // no ira aqui solo para no completar form
     } 
   }
 
