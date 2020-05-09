@@ -682,6 +682,7 @@ formScrRep : FormGroup;
 formScrDir : FormGroup;
 formQcQc : FormGroup;
 formQcQcn : FormGroup;
+instPefNeg;
 
   constructor() { }
 
@@ -692,6 +693,13 @@ formQcQcn : FormGroup;
     console.log("heyy",this.calendar)
 */
    M.AutoInit();
+   let select = document.querySelectorAll('select');
+    M.FormSelect.init(select);
+
+    let collPn = document.getElementById('perfilNegocio');
+    //console.log(stepperDiv);
+    this.instPefNeg = M.Collapsible.init(collPn);
+
     this.formScrPn = new FormGroup({
               scrPn0: new FormControl(null, [Validators.required]),
               scrPn1: new FormControl(null, [Validators.required]),
@@ -833,7 +841,10 @@ this.formQcQcn = new FormGroup({
     if(this.formScrPn.valid){
       console.log("form", this.formScrPn.value);
       //enviar datos a back
-    } 
+      this.instPefNeg.open(1);
+    } else{
+      this.instPefNeg.open(1);
+    }
   }
 
   scrPmSend(){
