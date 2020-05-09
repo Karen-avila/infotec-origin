@@ -674,7 +674,7 @@
                         <div class="file-field input-field col s12 m4 l4">
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>cargar
-                                <input type="file" (change)="ValidateSize('frontal')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="frontal" id="frontal" required class="validate">
+                                <input type="file" (change)="ValidateSize('frontal')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="frontal" id="frontal" class="validate">
                             </div>
                             <div class="col s1 m1 l1" *ngIf="doc.frontal.errors?.required">
                                 <i class="material-icons icon-red">error_outline</i>
@@ -692,7 +692,7 @@
                             <div class="file-field input-field col s12 m4 l4">
                                 <div class="teal darken-4 btn">
                                     <i class="material-icons right">attachment</i>cargar
-                                    <input type="file" (change)="ValidateSize('reverso')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="reverso" id="reverso" required class="validate">
+                                    <input type="file" (change)="ValidateSize('reverso')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="reverso" id="reverso" class="validate">
                                 </div>
                                 <div class="col s1 m1 l1" *ngIf="doc.reverso.errors?.required">
                                     <i class="material-icons icon-red">error_outline</i>
@@ -709,7 +709,7 @@
                         <div class="file-field input-field col s12 m4 l4">
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>cargar
-                                <input type="file" (change)="ValidateSize('estado')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="estado" id="estado" required class="validate">
+                                <input type="file" (change)="ValidateSize('estado')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="estado" id="estado" class="validate">
                             </div>
                             <div class="col s1 m1 l1" *ngIf="doc.estado.errors?.required">
                                 <i class="material-icons icon-red">error_outline</i>
@@ -727,7 +727,7 @@
                         <div class="file-field input-field col s12 m4 l4">
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>cargar
-                                <input type="file" (change)="ValidateSize('declaracion')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="declaracion" id="declaracion" required class="validate">
+                                <input type="file" (change)="ValidateSize('declaracion')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="declaracion" id="declaracion" class="validate">
                             </div>
                             <div class="col s1 m1 l1" *ngIf="doc.declaracion.errors?.required">
                                 <i class="material-icons icon-red">error_outline</i>
@@ -746,7 +746,7 @@
                         <div class="file-field input-field col s12 m4 l4">
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>cargar
-                                <input type="file" (change)="ValidateSize('curpd')" accept="application/pdf" formControlName="curpd" id="curpd" required class="validate">
+                                <input type="file" (change)="ValidateSize('curpd')" accept="application/pdf" formControlName="curpd" id="curpd" class="validate">
                             </div>
                             <div class="col s1 m1 l1" *ngIf="doc.curpd.errors?.required">
                                 <i class="material-icons icon-red">error_outline</i>
@@ -762,7 +762,7 @@
                         <div class="file-field input-field col s12 m4 l4">
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>cargar
-                                <input accept="pplication/pdf" (change)="ValidateSize('rfcd')" type="file" formControlName="rfcd" id="rfcd" required class="validate">
+                                <input accept="pplication/pdf" (change)="ValidateSize('rfcd')" type="file" formControlName="rfcd" id="rfcd" class="validate">
                             </div>
                             <div class="col s1 m1 l1" *ngIf="doc.rfcd.errors?.required">
                                 <i class="material-icons icon-red">error_outline</i>
@@ -798,7 +798,7 @@
                             <div class="file-field input-field col s12 m4 l4">
                                 <div class="teal darken-4 btn">
                                     <i class="material-icons right">attachment</i>cargar
-                                    <input type="file" (change)="ValidateSize('comprobante')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="comprobante" id="comprobante" required class="validate">
+                                    <input type="file" (change)="ValidateSize('comprobante')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="comprobante" id="comprobante" class="validate">
                                 </div>
                                 <div class="col s1 m1 l1" *ngIf="doc.comprobante.errors?.required">
                                     <i class="material-icons icon-red">error_outline</i>
@@ -817,7 +817,7 @@
                             <div class="file-field input-field col s12 m4 l4">
                                 <div class="teal darken-4 btn">
                                     <i class="material-icons right">attachment</i>cargar
-                                    <input type="file" (change)="ValidateSize('comprobanten')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="comprobanten" id="comprobanten" required class="validate">
+                                    <input type="file" (change)="ValidateSize('comprobanten')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="comprobanten" id="comprobanten" class="validate">
                                 </div>
                                 <div class="col s1 m1 l1" *ngIf="doc.comprobanten.errors?.required">
                                     <i class="material-icons icon-red">error_outline</i>
@@ -835,7 +835,7 @@
                         <div class="file-field input-field col s12 m4 l4">
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>cargar
-                                <input type="file" (change)="ValidateSize('fiscal')" accept="application/pdf" formControlName="fiscal" id="fiscal" name="fiscal" required class="validate">
+                                <input type="file" (change)="ValidateSize('fiscal')" accept="application/pdf" formControlName="fiscal" id="fiscal" name="fiscal" class="validate">
                             </div>
                             <div class="col s1 m1 l1" *ngIf="doc.fiscal.errors?.required">
                                 <i class="material-icons icon-red">error_outline</i>
@@ -856,7 +856,11 @@
 
                     </div>
                     <br><br>
-
+                    <!--  -->
+                    <a class="waves-effect  teal darken-4 btn modal-trigger right" href="#fiel">
+                        <i class="material-icons prefix right">send</i> Firmar Documentos
+                    </a>
+                    <!--  -->
                     <div class="row">
                         <div class="row">
 
@@ -887,9 +891,12 @@
                         <br><br>
 
                         <div class="col s12">
-                            <a class="waves-effect  teal darken-4 btn modal-trigger right" href="#fiel">
-                                <i class="material-icons prefix right">send</i> Enviar
-                            </a>
+                            <a class="waves-effect teal darken-4 btn previous-step left">Atras
+                                <i class="material-icons prefix left">arrow_back_ios</i>
+                                </a>
+                            <button class="waves-effect teal darken-4 btn right " type="submit">Enviar <!--revisar nextstep igual en ts-->
+                                    <i class="material-icons prefix right">arrow_forward_ios</i>
+                                </button>
                         </div>
                     </div>
 
@@ -913,11 +920,13 @@
                     <!--pruebas-->
 
                     <div class="col s12">
-                        <li>
-                            <a class="waves-effect  teal darken-4 btn modal-trigger right next-step">
-                                <i class="material-icons prefix right">send</i> Enviar
+                        <a class="waves-effect teal darken-4 btn previous-step left">Atras
+                            <i class="material-icons prefix left">arrow_back_ios</i>
                             </a>
-                        </li>
+                        <a class="waves-effect  teal darken-4 btn modal-trigger right" href="#modal1">
+                            <i class="material-icons prefix right">send</i> Aceptar
+                        </a>
+
                     </div>
                 </div>
             </div>
@@ -948,6 +957,13 @@
                         </a>
                             </div>
                         </div>
+                    </div>
+                    <div class="col s12">
+
+                        <a routerLink="/home" class="waves-effect  teal darken-4 btn right ">
+                            <i class="material-icons prefix right">send</i> Terminar
+                        </a>
+
                     </div>
                 </div>
             </div>
@@ -1027,9 +1043,10 @@
 
 
             <div class="modal-footer">
-                <a class="waves-effect  teal darken-4 btn modal-trigger right" href="#modal1">
-                    <i class="material-icons prefix right">send</i> Aceptar
-                </a>
+
+                <a class="modal-close waves-effect teal darken-4 white-text btn-flat">Cerrar</a>
+
+
             </div>
 
         </form>

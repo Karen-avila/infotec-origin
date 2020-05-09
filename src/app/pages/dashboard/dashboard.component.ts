@@ -354,7 +354,8 @@ this.formFiel = new FormGroup({
     if(this.formDocumentos.valid){
       console.log("formDocumentos", this.formDocumentos.value);
       //enviar datos a back
-      this.popup[0].open();
+      //this.popup[0].open();
+      this.stepper.openStep(4);
     } else{
       swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
     }
