@@ -24,6 +24,7 @@ export class DashboardComponent implements OnInit {
   //********************* */
 monte;
 hugo = "666";
+stepper;
   //********************* */
   
   model="pFisica";
@@ -125,20 +126,20 @@ hugo = "666";
     var plazoCredito = 18;
     // Monto del Pago Mensual
     var pmt = this.finance.PMT(tasaInteresMensual, plazoCredito, montoCapital);
-    console.log("PAGO MENSUAL ", pmt.toFixed(2));
+    //console.log("PAGO MENSUAL ", pmt.toFixed(2));
     var pagos = [];
     pagos.push(montoCapital);
     for (var i = 0; i < plazoCredito; i++) {
         pagos.push(pmt);
     }
     var tirMensual = this.finance.IRR.apply(this, pagos);
-    console.log("TIR MENSUAL " +tirMensual.toFixed(2) +"%");
+    //console.log("TIR MENSUAL " +tirMensual.toFixed(2) +"%");
     var tirAnual = tirMensual * 12;
-    console.log("TIR ANUAL "+ tirAnual.toFixed(2)+"%");
+    //console.log("TIR ANUAL "+ tirAnual.toFixed(2)+"%");
     var cat = (Math.pow((1 + (tirMensual / 100)), 12)) - 1;
-    console.log("CAT "+cat.toFixed(2)+"%");
+    //console.log("CAT "+cat.toFixed(2)+"%");
     this.catPorcentaje = ((Math.pow((1 + (tirMensual / 100)), 12)) - 1) * 100;
-    console.log("CAT "+ this.catPorcentaje.toFixed(2)+"%");
+    //console.log("CAT "+ this.catPorcentaje.toFixed(2)+"%");
    
 
   }
@@ -148,17 +149,17 @@ hugo = "666";
 console.log("el step",this.re.id)
 
 
-    console.log("comienza ngOnInit",this.alrt);
+    //console.log("comienza ngOnInit",this.alrt);
 
-    var elems = document.querySelectorAll('.modal');
+    let elems = document.querySelectorAll('.modal');
     this.popup = M.Modal.init(elems);
 
-    var select = document.querySelectorAll('select');
+    let select = document.querySelectorAll('select');
     M.FormSelect.init(select);
 
-    var stepperDiv = document.querySelector('.stepper');
-    console.log(stepperDiv);
-    var stepper = new MStepper(stepperDiv, {
+    let stepperDiv = document.getElementById('api_nav_demo');
+    //console.log(stepperDiv);
+    this.stepper = new MStepper(stepperDiv, {
       // Default active step.
       firstActive: this.re.id, //api regresa paso a activar siempre debe empezar minimo en 1
       // Allow navigation by clicking on the next and previous steps on linear steppers.
@@ -295,7 +296,7 @@ this.formFiel = new FormGroup({
       let val23 = group.controls[p23].value;
       
       for(let i of this.dic){
-        console.log("compare",val1,"vs",i)
+        //console.log("compare",val1,"vs",i)
       if(val1  === i || val2 === i || val3 === i || val4 === i || val5 === i || val6  === i || val7 === i 
         || val8 === i || val9 === i || val10 === i || val11  === i || val12 === i || val13 === i || val4 === i 
         || val15 === i || val16  === i || val17 === i || val18 === i || val9 === i || val20  === i || val21 === i || val22 === i || val23 === i){
@@ -310,7 +311,7 @@ this.formFiel = new FormGroup({
   }
 
   ValidateSize(file) {
-    console.log("onchanges")
+    //console.log("onchanges")
     let fl = (<HTMLInputElement>document.getElementById(file));
     let FileSize = fl.files[0].size / 1024 / 1024; // in MB
     if (FileSize > 2) {
@@ -330,6 +331,7 @@ this.formFiel = new FormGroup({
       console.log("form", this.form.value);
       //enviar datos a back
       //this.popup[0].open();
+      this.stepper.openStep(3);
     } else{
       swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
     }
@@ -352,7 +354,8 @@ this.formFiel = new FormGroup({
     if(this.formDocumentos.valid){
       console.log("formDocumentos", this.formDocumentos.value);
       //enviar datos a back
-      this.popup[0].open();
+      //this.popup[0].open();
+      this.stepper.openStep(4);
     } else{
       swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
     }
@@ -399,14 +402,14 @@ this.formFiel = new FormGroup({
   }
 
   viewMap(){
-    console.log("map")
+    //console.log("map")
     document.getElementById("steps").classList.add("hide");
     document.getElementById("modalMap").classList.remove("hide");
     //this.router.navigate(["map"]);
   }
 
   mapOk(){
-    console.log("map")
+    //console.log("map")
     document.getElementById("steps").classList.remove("hide");
     document.getElementById("modalMap").classList.add("hide");
     //this.router.navigate(["map"]);
@@ -415,7 +418,7 @@ this.formFiel = new FormGroup({
 
 
   rFiscal(){
-  console.log("Reviso valor de check", this.model);
+  //console.log("Reviso valor de check", this.model);
   if(this.model){
     this.form.get("pFisica").setValue(" ") 
   }
