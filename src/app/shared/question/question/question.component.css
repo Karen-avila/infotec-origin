@@ -1,0 +1,8 @@
+@media screen and ( max-width: 420px) {
+    .collapsible-body {
+        padding: 0;
+    }
+    .collection.with-header .collection-item.avatar {
+        padding: 0;
+    }
+}
