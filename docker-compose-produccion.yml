@@ -1,0 +1,28 @@
+version: "2.2"
+
+networks:
+  mifos:
+    driver: bridge
+services:
+  mifos-credito-simple-se:
+    image: harbor.infotec.mx/mifosio/com.mx.infotec.fineract.cn.creditosimple.se.produccion
+    mem_limit: 2048m
+    volumes:
+      - /opt/mifosio/certificates/bambi.pem:/etc/ssl/certs/fullchain.pem
+      - /opt/mifosio/certificates/bambi.key:/etc/ssl/private/privkey.pem
+    restart: always
+    extra_hosts:
+      - "eureka:172.22.216.195"
+      - "cassandra:172.22.216.198"
+      - "tidb:172.22.216.197"
+      - "activemq:172.22.216.196"    
+    healthcheck:
+      test: ["CMD", "curl", "-k --fail", "https://127.0.0.1:443"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    ports:
+      - "443:443"
+      - "80:80"
+    networks:
+      - mifos   
