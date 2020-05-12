@@ -35,6 +35,7 @@ stepper;
   terms=false;
   bc=false;
   aviso = false;
+  prueba = false;
 
   form : FormGroup;
   formDocumentos : FormGroup;
