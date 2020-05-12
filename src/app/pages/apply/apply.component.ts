@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 declare const MStepper: any;
 import * as M from 'materialize-css';
 
+import swal from 'sweetalert';
+
 //-------------
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from '../../services/service.index';
@@ -24,6 +26,10 @@ export class ApplyComponent implements OnInit {
     "chingada"
   ]
   //-------
+  passType = "password";
+  rePassType = "password";
+  icon:boolean=true;
+  reIcon:boolean=true;
 
   resolved(captchaResponse: any[]) {
     this.recaptcha = captchaResponse;
@@ -43,7 +49,7 @@ export class ApplyComponent implements OnInit {
     var instances = M.FormSelect.init(select);
 
     var stepperDiv = document.querySelector('.stepper');
-    console.log(stepperDiv);
+    //console.log(stepperDiv);
     var stepper = new MStepper(stepperDiv, {
       // Default active step.
       firstActive: 0,
@@ -66,8 +72,8 @@ export class ApplyComponent implements OnInit {
 
    this.form = new FormGroup({
       email: new FormControl(null,[Validators.required, Validators.email]),
-      password: new FormControl(null, [Validators.required, Validators.minLength(8)]),
-      rePassword: new FormControl(null, Validators.required)
+      password: new FormControl(null, [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')]),
+      rePassword: new FormControl(null, [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')])
    }, { validators: this.equalPass('password','rePassword') });
 
    //validators: this.pbaDict('password') 
@@ -96,7 +102,7 @@ pbaDict(p1:string){
     let val1 = group.controls[p1].value;
     
     for(let i of this.dic){
-      console.log("compare",val1,"vs",i)
+      //console.log("compare",val1,"vs",i)
     if(val1 === i){
       return {isMatch:true};
     }
@@ -129,10 +135,33 @@ pbaDict(p1:string){
       this.instance[0].open(); //revisar donde quedara
     }else{
       //algo esta mal revisa tus datos
+      swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
     }
 
   }
   //-------------
-  
+  viewRePassword(){
+    if(this.reIcon){
+      //console.log("view repassword");
+      this.reIcon=false;
+      this.rePassType="text";
+    }else{
+      //console.log("not view repassword");
+      this.reIcon=true;
+      this.rePassType="password";
+    }
+  }
+
+  viewPassword(){
+    if(this.icon){
+      //console.log("view password");
+      this.icon=false;
+      this.passType="text";
+    }else{
+      //console.log("not view password");
+      this.icon=true;
+      this.passType="password";
+    }
+  }
 
 }

@@ -8,20 +8,24 @@
                 <p class="flow-text white-text center-align">Iniciar Sesion</p>
                 <div class="row">
 
-                    <div class="input-field col s12">
+                    <div class="input-field col s10 l12">
                         <i class="material-icons prefix icon-white">account_circle</i>
-                        <input id="email" formControlName="email" type="email" required name='email' class="validate">
+                        <input id="email" formControlName="email" type="email" name='email' class="validate">
                         <label class="white-text" for="email">Email</label>
+                        <div class="red-text" *ngIf="f.email.errors?.email">El correo electrónico debe de ser valido</div>
                     </div>
-                    <div class="input-field col s12">
+                    <div class="input-field col s10 l12">
                         <i class="material-icons prefix icon-white">lock_circle</i>
-                        <input id="password" formControlName="password" type="password" required name='password' class="validate" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$">
+                        <input id="password" formControlName="password" [type]="passType" name='password' class="validate">
                         <label class="white-text" for="password">Password</label>
+                        <div class="red-text col s12" *ngIf="f.password.errors && !form.pristine">Debe tener un mínimo de 8 caracteres 1 Mayuscula 1 minuscula 1 numero</div>
+                        <i class="material-icons prefix" *ngIf="icon" (click)="viewPassword()">visibility_off</i>
+                        <i class="material-icons prefix" *ngIf="!icon" (click)="viewPassword()">visibility</i>
                     </div>
 
 
 
-                    <div class="col s9 offset-s3 m8 offset-m4 l8 offset-l4">
+                    <div class="col s12 m8 offset-m4 l8 offset-l4">
                         <a (click)="forgot()" class="white-text">¿Olvidaste tu Contraseña?</a>
                     </div>
 
@@ -31,9 +35,10 @@
 
                 <!--<div class="row">
                     <div class="col s10 offset-s1 m7 offset-m3 l7 offset-l3">
-                        <re-captcha (resolved)="resolved($event)" siteKey="6LfnpOoUAAAAAF9gp51kz68snL_6N1tOafUXn2XM"></re-captcha>
+                        <re-captcha (resolved)="resolved($event)" siteKey="6LfDz-8UAAAAABFwd5rlLAdW2pW-TOQScfX6q_6n"></re-captcha>
                     </div>
                 </div>-->
+
                 <br>
                 <div class="row">
                     <div class="col s5 offset-s1 m4 offset-m3 l4 offset-l2">
@@ -61,21 +66,23 @@
                     <form ngNativeValidate [formGroup]="form1" (ngSubmit)="recuperarpsw()">
                         <div class="input-field col s12">
                             <i class="material-icons prefix icon-white">account_circle</i>
-                            <input id="email" type="email" formControlName="email" required name='email' class="validate">
+                            <input id="email" type="email" formControlName="email" name='email' class="validate">
                             <label class="white-text" for="email">Email</label>
+                            <div class="red-text" *ngIf="fgt.email.errors?.email">El correo electrónico debe de ser valido</div>
+
                         </div>
 
                         <br>
                         <div class="row">
-                            <div class="col s7 offset-s1 m6 offset-m1 l6 offset-l1">
+                            <div class="col s6 m6 offset-m3 l6 offset-l1 ">
                                 <!--<button (click)="recuperar()" type="submit" ng-click=”recuperar()” class="waves-effect waves-light btn red darken-3 right"> 
                     Recuperar <i class="material-icons right">send</i> </button>-->
                                 <button class="waves-effect red darken-3 btn right" type="submit">Recuperar
                         <i class="material-icons right">send</i>
                       </button>
                             </div>
-                            <div class="col s4 m3 l3">
-                                <button (click)="cancel()" class="waves-effect waves-light btn grey left">Cancelar</button>
+                            <div class="col s6  m6 offset-m3 l3 ">
+                                <a (click)="cancel()" class="waves-effect waves-light btn grey left">Cancelar</a>
                             </div>
 
 

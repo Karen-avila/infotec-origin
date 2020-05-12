@@ -1,11 +1,15 @@
 <app-header></app-header>
 
 <!--Carrousel-->
-<div class="carousel carousel-slider">
+<div class="carousel carousel-slider hide-on-small-only">
     <a class="carousel-item" href="#"><img src="../../../assets/Banner1.png"></a>
     <a class="carousel-item" href="#"><img src="../../../assets/Banner2.png"></a>
     <a class="carousel-item" href="#"><img src="../../../assets/Banner3.png"></a>
 
+</div>
+
+<div class="hide-on-med-and-up">
+    <a href="#"><img class="responsive-img" src="../../../assets/Banner1.png"></a>
 </div>
 
 <!--
@@ -64,7 +68,7 @@
         <p class="flow-text"><b>¿Cómo Funciona?</b></p>
     </blockquote>
     <div class="col s10 offset-s1">
-        <p class="flow-text center-align">Los Créditos Directos Productivos operan con cuotas fijas y en pesos mexicanos. Selecciona el mejor de acuerdo a tu perfil y sigue estos sencillos pasos para solicitarlo: <b>3 meses</b> de gracia. </p>
+        <p class="flow-text center-align">Los Créditos Directos Productivos operan con cuotas fijas y en pesos mexicanos. Selecciona el mejor de acuerdo a tu perfil y sigue estos sencillos pasos para solicitarlo: <b></b> </p>
     </div>
     <div class="row">
         <div class="col m4 s6 offset-s2">
@@ -84,58 +88,8 @@
 
 
 <div class="row">
-    <div class="cono2 special col xl7 offset-xl1 l6 offset-l1 m6 offset-m1 s10 offset-s1">
 
-        <p class="flow-text center-align">Crédito Directo Productivo desde {{20000|currency:"MXN":"symbol"}} hasta {{50000|currency:"MXN":"symbol"}}</p>
-
-        <!--<div class="row">
-            <div class="input-field col s12 m12">
-                <label>
-        <input class="with-gap teal darken-4"  name="credito" type="radio"/>
-        <span>Crédito Directo Productivo en colaboración con la Secretaría de Economía</span></label>
-            </div>
-            <div class="input-field col s12 m12">
-                <label>
-        <input class="with-gap teal darken-4" name="credito" type="radio"/>
-        <span>Crédito Directo Productivo para la Reactivación Económica</span></label>
-            </div>
-        </div>-->
-        <div>
-            <p class="white-text white">.</p>
-            <br><br>
-        </div>
-
-        <div class="custom-slider">
-            <ng5-slider [(value)]="valueMon" [options]="optionsMon"></ng5-slider>
-        </div>
-        <br><br>
-        <div class="custom-slider">
-            <ng5-slider [(value)]="valuePlaz" [options]="optionsPlaz"></ng5-slider>
-        </div>
-        <br><br>
-        <div>
-
-            <div class="chip">
-                Costo Anual Total Informativo (CAT): {{ catPorcentaje.toFixed(2) }} %
-            </div>
-        </div>
-        <div class="center-align">
-            <p class="white-text flow-text cr">Total a Pagar <b> {{((finance.PMT(0.0125,valuePlaz,-valueMon))*valuePlaz).toFixed(2) | currency:"MXN":"symbol"}}</b></p>
-        </div>
-        <br><br>
-        <!--
-                    <div class="card-panel crd ">
-                        <h3 class="black-text">Total a Pagar <b>{{valueMon+(valueMon*.50)}}</b></h3>
-                    </div>
-                    -->
-        <div class="center-align">
-            <a routerLink="/apply" class="pulse waves-effect waves-light large red darken-3 btn"><i class="material-icons right">credit_card</i>SolicÍtalo Ahora</a>
-        </div>
-        <br><br>
-
-    </div>
-
-    <div class="crono1 col m4 offset-m1 l3 offset-l1 xl2 offset-xl1 s10 offset-s1 hide-on-small-only">
+    <div class="crono1 col m4 offset-m1 l3 offset-l1 s10 offset-s1 hide-on-small-only">
         <div class="card crd teal darken-4 white-text z-depth-3">
             <div class="card-content">
                 <i class="medium material-icons icon-gold">monetization_on</i>
@@ -162,35 +116,95 @@
 
     </div>
 
-    <div class="crono1 col m4 offset-m1 l3 offset-l1 xl2 offset-xl1 s10 offset-s1 hide-on-large-only">
+    <div class="crono1 col s10 offset-s1 m5 offset-m1 hide-on-med-and-up">
         <div class="center-align">
             <p class="white-text flow-text teal darken-4">
                 <i class="small material-icons icon-gold left">monetization_on</i> Monto <b>  {{ valueMon | currency:"MXN":"symbol" }}</b>
             </p>
         </div>
-        <br><br>
+
         <div class="center-align">
             <p class="white-text flow-text teal darken-4">
-                <i class="small material-icons icon-gold left">date_range</i> Plazo <b>     {{valuePlaz}}</b></p>
+                <i class="small material-icons icon-gold left">date_range</i> Plazo <b>     {{valuePlaz}} Meses</b></p>
         </div>
-        <br><br>
+
         <div class="center-align">
             <p class="white-text flow-text teal darken-4">
                 <i class="small material-icons icon-gold left">local_atm</i> Parcialidad <b>  {{ valueMon | currency:"MXN":"symbol" }}</b></p>
         </div>
-        <br><br>
+
     </div>
+
+  
+
+    <div class="cono2 special col m7 l6 offset-l1 s10 offset-s1">
+
+        <p class="flow-text center-align">Crédito Directo Productivo desde {{20000|currency:"MXN":"symbol"}} hasta {{50000|currency:"MXN":"symbol"}}</p>
+
+        <!--<div class="row">
+            <div class="input-field col s12 m12">
+                <label>
+        <input class="with-gap teal darken-4"  name="credito" type="radio"/>
+        <span>Crédito Directo Productivo en colaboración con la Secretaría de Economía</span></label>
+            </div>
+            <div class="input-field col s12 m12">
+                <label>
+        <input class="with-gap teal darken-4" name="credito" type="radio"/>
+        <span>Crédito Directo Productivo para la Reactivación Económica</span></label>
+            </div>
+        </div>-->
+        <div>
+            <p class="white-text white hide">.</p>
+            <br><br>
+        </div>
+
+        <div class="custom-slider">
+            <ng5-slider [(value)]="valueMon" [options]="optionsMon"></ng5-slider>
+        </div>
+        <br><br>
+        <div class="custom-slider">
+            <ng5-slider [(value)]="valuePlaz" [options]="optionsPlaz"></ng5-slider>
+        </div>
+        <br><br>
+        <div>
+
+            <div class="chip hide-on-small-only">
+                Costo Anual Total Informativo (CAT): {{ catPorcentaje.toFixed(2) }} %
+            </div>
+            <div class="chip hide-on-med-and-up">
+                CAT: {{ catPorcentaje.toFixed(2) }} %
+            </div>
+        </div>
+        <div class="center-align">
+            <p class="white-text flow-text cr">Total a Pagar <b> {{((finance.PMT(0.0125,valuePlaz,-valueMon))*valuePlaz).toFixed(2) | currency:"MXN":"symbol"}}</b></p>
+        </div>
+        <br><br>
+        <!--
+                    <div class="card-panel crd ">
+                        <h3 class="black-text">Total a Pagar <b>{{valueMon+(valueMon*.50)}}</b></h3>
+                    </div>
+                    -->
+        <div class="center-align">
+            <a routerLink="/apply" class="pulse waves-effect waves-light large red darken-3 btn"><i class="material-icons right">credit_card</i>SolicÍtalo Ahora</a>
+        </div>
+        <br><br>
+
+    </div>
+
+
 
 </div>
 
-
+<div class="hide-on-med-and-up">
+    <a href="#"><img class="responsive-img" src="../../../assets/Banner3.png"></a>
+</div>
 
 <div class="container">
     <blockquote>
         <p class="flow-text"><b>Crédito Directo Productivo en colaboración con la Secretaría de Economía</b></p>
     </blockquote>
     <div class="col s10 offset-s1">
-        <p class="flow-text center-align">El Crédito Directo Productivo opera con cuotas fijas y en pesos mexicanos. Con un mínimo de <b>3 meses</b> de gracia. </p>
+        <p class="flow-text center-align">El Crédito Directo Productivo opera con cuotas fijas y en pesos mexicanos. Con un mínimo de <b></b> </p>
     </div>
     <div class="row">
         <div class="col m4 s6 offset-s2">
@@ -220,7 +234,7 @@
         <p class="flow-text"><b>Crédito Directo Productivo para la Reactivación Económica</b></p>
     </blockquote>
     <div class="col s10 offset-s1">
-        <p class="flow-text center-align">El Crédito Directo Productivo opera con cuotas fijas y en pesos mexicanos. Con un mínimo de <b>3 meses</b> de gracia. </p>
+        <p class="flow-text center-align">El Crédito Directo Productivo opera con cuotas fijas y en pesos mexicanos. Con un mínimo de <b></b> </p>
     </div>
     <div class="row">
         <div class="col m4 s6 offset-s2">
@@ -242,16 +256,16 @@
 <div class="container">
     <div class="row">
         <div class="col s6 m3">
-            <a href="#"><img class="responsive-img" src="https://pbs.twimg.com/media/ESOOTfqVUAEDs61?format=jpg&name=medium"></a>
+            <a href="https://www.facebook.com/bancobienestar/photos/a.10154441537749918/10159186807514918/?type=3&theater"><img class="responsive-img" src="https://pbs.twimg.com/media/ESOOTfqVUAEDs61?format=jpg&name=medium"></a>
         </div>
         <div class="col s6 m3">
-            <a href="#"><img class="responsive-img" src="https://pbs.twimg.com/media/ERVkMC_U8AAKEZb?format=jpg&name=small"></a>
+            <a href="https://www.facebook.com/bancobienestar/photos/a.10154441537749918/10158868447184918/?type=3&theater"><img class="responsive-img" src="https://pbs.twimg.com/media/ERVkMC_U8AAKEZb?format=jpg&name=small"></a>
         </div>
         <div class="col s6 m3">
-            <a href="#"><img class="responsive-img" src="https://pbs.twimg.com/media/ER0aN8iUYAE8u_J?format=jpg&name=medium"></a>
+            <a href="https://www.facebook.com/bancobienestar/photos/a.10150357448174918/10159168664409918/?type=3&theater"><img class="responsive-img" src="https://pbs.twimg.com/media/ER0aN8iUYAE8u_J?format=jpg&name=medium"></a>
         </div>
         <div class="col s6 m3">
-            <a href="#"><img class="responsive-img" src="https://pbs.twimg.com/media/ERqLRb1VAAAe_0Q?format=jpg&name=medium"></a>
+            <a href="https://www.facebook.com/bancobienestar/photos/a.10154441537749918/10159251973614918/?type=3&theater"><img class="responsive-img" src="https://pbs.twimg.com/media/ERqLRb1VAAAe_0Q?format=jpg&name=medium"></a>
         </div>
     </div>
 </div>

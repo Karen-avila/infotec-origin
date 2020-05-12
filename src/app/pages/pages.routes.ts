@@ -6,17 +6,19 @@ import { HomeComponent } from './home/home.component';
 import { ApplyComponent } from './apply/apply.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginGuardGuard } from '../services/guards/login-guard.guard';
+import { MapComponent } from './map/map/map.component';
 
 
 const pagesRoutes: Routes = [
     {
         path: '', 
         component: PagesComponent,
-        canActivate: [LoginGuardGuard],
+       
         children: [
           {path: 'home', component: HomeComponent},
           {path: 'apply', component: ApplyComponent},
-          {path: 'dashboard', component: DashboardComponent},
+          {path: 'map', component: MapComponent},
+          {path: 'dashboard', component: DashboardComponent, canActivate: [LoginGuardGuard]},
           {path: '', redirectTo: '/home', pathMatch: 'full' },
         ]
       },

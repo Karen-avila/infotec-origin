@@ -1,74 +1,22 @@
 <app-header></app-header>
 
 <!---->
-<ul class="stepper linear parallel horizontal">
-    <li class="step">
-        <div class="step-title waves-effect waves-dark">Cuenta</div>
-        <!-- <div class="step-content">
+<div id="steps">
+    <ul class="stepper linear parallel horizontal" id="api_nav_demo">
+        <li class="step">
+            <div class="step-title waves-effect waves-dark">Cuenta</div>
+        </li>
+        <li class="step">
+            <div class="step-title waves-effect waves-dark">Datos de Prestamo</div>
+            <div class="step-content">
                 <div class="row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">account_circle</i>
-                        <input id="email" type="email" required name='email' class="validate">
-                        <label for="email">Email</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">account_circle</i>
-                        <input id="password" type="password" required name='password' class="validate">
-                        <label for="password">Password</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">account_circle</i>
-                        <input id="passwordconfirm" type="password" required name='passwordconfirm' class="validate">
-                        <label for="passwordconfirm">Confirma el Password</label>
-                    </div>
-                </div>
-                  <div class="step-actions">
-                    <button class="waves-effect waves-dark btn next-step">Siguiente</button>
-                </div> 
-            </div>-->
-    </li>
-    <li class="step">
-        <div class="step-title waves-effect waves-dark">Datos de Prestamo</div>
-        <div class="step-content">
-            <div class="row">
-
-                <!-- <div class="input-field col s12 m12">
-                    <label>
-                        <input class="with-gap teal darken-4"  name="credito"  type="radio" />
-                        <span>Crédito Directo Productivo en Colaboración con la Secretaría de Economía</span>
-                    </label>
-                </div>
-                <div class="input-field col s12 m12">
-                    <label>
-                        <input class="with-gap teal darken-4"  name="credito" type="radio" />
-                        <span>Crédito Directo Productivo para Reactivación Económica</span>
-                    </label>
-                </div>
-                <p class="white-text white">.</p>
-                <div class="input-field col s12 m4 l4">
-                    <i class="material-icons prefix">monetization_on</i>
-                    <input type="number" required class="validate">
-                    <label>Monto</label>
-                </div>-->
-                <div class="row">
-                    <div class="cono2 special col xl6 offset-xl1 l5 offset-l1 m5 offset-m1 s9 offset-s1">
+                    <div class="cono2 special col xl5 offset-xl1 l5 offset-l1 m5 offset-m1 s9 offset-s1">
 
                         <p class="flow-text center-align">Crédito Directo Productivo desde {{20000|currency:"MXN":"symbol"}} hasta {{50000|currency:"MXN":"symbol"}}</p>
 
-                        <!--<div class="row">
-                            <div class="input-field col s12 m12">
-                                <label>
-                        <input class="with-gap teal darken-4"  name="credito" type="radio"/>
-                        <span>Crédito Directo Productivo en colaboración con la Secretaría de Economía</span></label>
-                            </div>
-                            <div class="input-field col s12 m12">
-                                <label>
-                        <input class="with-gap teal darken-4" name="credito" type="radio"/>
-                        <span>Crédito Directo Productivo para la Reactivación Económica</span></label>
-                            </div>
-                        </div>-->
+
                         <div>
-                            <p class="white-text white">.</p>
+                            <p class="white-text white hide">.</p>
                             <br><br>
                         </div>
 
@@ -81,29 +29,33 @@
                         </div>
                         <br><br>
                         <div>
-                            <div class="chip">
+
+                            <div class="chip hide-on-small-only">
                                 Costo Anual Total Informativo (CAT): {{ catPorcentaje.toFixed(2) }} %
+                            </div>
+                            <div class="chip hide-on-med-and-up">
+                                CAT: {{ catPorcentaje.toFixed(2) }} %
                             </div>
                         </div>
                         <div class="center-align">
                             <p class="white-text flow-text cr">Total a Pagar <b> {{((finance.PMT(0.0125,valuePlaz,-valueMon))*valuePlaz).toFixed(2) | currency:"MXN":"symbol"}}</b></p>
                         </div>
-                        
 
-                        <br><br>
-                        
+
+                        <br>
+
                     </div>
 
 
-                    <div class="crono1 col m4 offset-m1 l4 offset-l1 s10 offset-s1 hide-on-small-only">
+                    <div class="crono1 col m5 offset-m1 l5 offset-l1 s10 offset-s1 hide-on-small-only">
                         <div class="card crd teal darken-4 white-text z-depth-3">
                             <div class="card-content">
-                                <i class="medium material-icons icon-gold">monetization_on</i>
+                                <i class="material-icons medium icon-gold">monetization_on</i>
                                 <p>Monto</p>
-                                <p>{{ valueMon | currency:"MXN":"symbol" }}</p>
+                                <p>{{valueMon | currency:"MXN":"symbol" }}</p>
                             </div>
                         </div>
-                
+
                         <div class="card crd teal darken-4 white-text z-depth-3">
                             <div class="card-content">
                                 <i class="material-icons medium icon-gold">date_range</i>
@@ -111,7 +63,7 @@
                                 <p>{{valuePlaz}} Meses</p>
                             </div>
                         </div>
-                
+
                         <div class="card crd teal darken-4 white-text z-depth-3">
                             <div class="card-content">
                                 <i class="material-icons medium icon-gold">local_atm</i>
@@ -119,67 +71,80 @@
                                 <p>{{ finance.PMT(0.0125,valuePlaz,-valueMon).toFixed(2) | currency:"MXN":"symbol" }}</p>
                             </div>
                         </div>
-                
+
                     </div>
-                
-                    <div class="crono1 col s10 offset-s1 hide-on-med-and-up">
+
+                    <div class="crono1 col s12 hide-on-med-and-up">
                         <div class="center-align">
                             <p class="white-text flow-text teal darken-4">
                                 <i class="small material-icons icon-gold left">monetization_on</i> Monto <b>  {{ valueMon | currency:"MXN":"symbol" }}</b>
                             </p>
+
                         </div>
-                        <br><br>
                         <div class="center-align">
                             <p class="white-text flow-text teal darken-4">
                                 <i class="small material-icons icon-gold left">date_range</i> Plazo <b>     {{valuePlaz}} Meses</b></p>
+
                         </div>
-                        <br><br>
                         <div class="center-align">
                             <p class="white-text flow-text teal darken-4">
                                 <i class="small material-icons icon-gold left">local_atm</i> Parcialidad <b>  {{ finance.PMT(0.0125,valuePlaz,-valueMon).toFixed(2) | currency:"MXN":"symbol" }}</b></p>
                         </div>
-                        <br><br>
                     </div>
 
-                    <button class="waves-effect waves-dark teal darken-4 btn next-step">CONTINUAR</button>
+
+                    <button class="waves-effect waves-dark teal darken-4 btn next-step">Continuar</button>
 
                 </div>
+                <!-- Here goes your actions buttons -->
+
             </div>
-            <!-- Here goes your actions buttons -->
 
-        </div>
-
-    </li>
-    <li class="step">
-        <div class="step-title waves-effect waves-dark">Datos Personales</div>
-        <div class="step-content">
-            <div class="row">
-
-                <form ngNativeValidate [formGroup]="form" (ngSubmit)="dpersonales()">
+        </li>
+        <li class="step">
+            <div class="step-title waves-effect waves-dark">Datos Personales</div>
+            <div class="step-content">
+                <div class="row" [formGroup]="form">
 
 
-                    <div class="row">
-                        <div class="input-field col s12 m4">
+
+                    <input formControlName="plazo" class="hide" value="{{valuePlaz}}" [(ngModel)]="valuePlaz">
+                    <input formControlName="monto" class="hide" value="{{valueMon}}" [(ngModel)]="valueMon">
+
+
+
+                    <div class="input-field col s12 m12 l12">
+                        <i class="material-icons prefix icon-gold">person</i>
+                        <label class="title black-text"><b class="title col s12 m12 l12">Información Personal</b></label>
+                        <p><br></p>
+                    </div>
+
+                    <div class="input-field col s12 m4">
+                        <p>
                             <label>
-                    <input class="with-gap teal darken-4" formControlName="personType" name="personType" id="personType" type="radio" value="pFisica" [(ngModel)]="model"/>
-                    <span>Persona Fisica con Actividad Empresarial</span></label>
-                        </div>
-                        <div class="input-field col s12 m4">
+                        <input class="with-gap teal darken-4"  (change)="rFiscal()" formControlName="personType" name="personType" id="personType" type="radio" value="pFisica" [(ngModel)]="model" />
+                        <span>Persona Fisica con Actividad Empresarial</span>
+                    </label>
+                        </p>
+                    </div>
+                    <div class="input-field col s12 m4">
+                        <p>
                             <label>
-                    <input class="with-gap teal darken-4" formControlName="personType"  name="personType" id="personType" type="radio" value="rFiscal" [(ngModel)]="model"/>
-                    <span>Regimen de Incorporación Fiscal</span></label>
-                        </div>
+                        <input class="with-gap teal darken-4"  formControlName="personType" name="personType" id="personType" type="radio" value="rFiscal" [(ngModel)]="model" />
+                        <span>Regimen de Incorporación Fiscal</span>
+                    </label>
+                        </p>
+                    </div>
 
-                        <div>
-                            <p class="white-text white">.</p>
-                            <br><br>
+                    <div>
+                        <p class="white-text white hide">.</p>
+                        <br><br>
 
-                        </div>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="name" type="text" formControlName="name" name='name' required class="validate">
+                        <input id="name" type="text" formControlName="name" name="name" required class="validate">
                         <label for="name">Nombre</label>
 
                         <div class="blue-text" *ngIf="f.name.errors?.minlength">Debe tener un mínimo de 3 caracteres</div>
@@ -190,7 +155,7 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="name2" type="text" name='name2' required class="validate">
+                        <input id="name2" type="text" formControlName="name2" name="name2" class="validate">
                         <label for="name2">Segundo nombre</label>
 
                         <div class="blue-text" *ngIf="f.name2.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
@@ -200,7 +165,7 @@
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="paterno" type="text" name='paterno' formControlName="paterno" required class="validate">
+                        <input id="paterno" type="text" name="paterno" formControlName="paterno" required class="validate">
                         <label for="paterno">Apellido paterno</label>
                         <div class="blue-text" *ngIf="f.paterno.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
@@ -209,50 +174,63 @@
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="materno" type="text" name='materno' formControlName="materno" required class="validate">
+                        <input id="materno" type="text" name="materno" formControlName="materno" required class="validate">
                         <label for="materno">Apellido materno</label>
                         <div class="blue-text" *ngIf="f.materno.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabra altisonante</p> -->
                         </div>
                     </div>
+
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="genero" required class="validate">
+                        <i class="material-icons prefix">calendar_today</i>
+                        <input type="date" class="fecha validate" formControlName="birthDate" name="birthDate" id="birthDate" min="1960-12-31" max="2002-01-01" required>
+                        <label>Fecha de Nacimiento</label>
+                    </div>
+
+                    <div class="input-field col s12 m6 l6">
+                        <select formControlName="civil" name="civil" id="civil" class="validate">
                             <option value="" disabled selected>Selecciona una opcion</option>
-                            <option value="1">Femenino</option>
-                            <option value="2">Masculino</option>
+                            <option value="Soltero">Soltero</option>
+                            <option value="Casado">Casado</option>
+                            <option value="Viudo">Viudo</option>
+                            <option value="Divorciado">Divorciado</option>
+                            <option value="Union_libre">Unión libre</option>
+                            <option value="Separado">Separado</option>
+                        </select>
+                        <label>Estado civil</label>
+                        <div class="blue-text" *ngIf="f.genero.errors">Debes seleccionar una opción.</div>
+                    </div>
+
+                    <div class="input-field col s12 m6 l6">
+                        <select formControlName="genero" name="genero" id="genero" class="validate">
+                            <option value="" disabled selected>Selecciona una opcion</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Masculino">Masculino</option>
                         </select>
                         <label>Genero</label>
+                        <div class="blue-text" *ngIf="f.genero.errors">Debes seleccionar una opción.</div>
                     </div>
-                    <!-- <div class="input-field col s12 m6 l6">
-                        <i class="material-icons prefix">calendar_today</i>
-                        <input type="date" class="fecha">
-                        <label>Fecha de Nacimiento</label>
-                    </div>-->
+
                     <div class="input-field col s12 m6 l6">
-                        <i class="material-icons prefix">calendar_today</i>
-                        <input type="text" class="datepicker">
-                        <label>Fecha de Nacimiento</label>
+                        <i class="material-icons prefix">phone</i>
+                        <input class="validate" id="tel" type="number" formControlName="tel" name="tel" minlength="10" maxlength="10" required>
+                        <label for="text">Número de Teléfono</label>
+                        <div class="blue-text" *ngIf="f.tel.errors">El teléfono debe ser de 10 digitos</div>
                     </div>
+
                     <div class="input-field col s12 m6 l6">
-                        <select>
-                        <option value="" disabled selected>Selecciona una opcion</option>
-                        <option value="1">Ciudad de México</option>
-                        <option value="2">Pachuca, Hgo.</option>
-                        <option value="3">Guadalajara, Jal.</option>
-                    </select>
-                        <label>Entidad federativa</label>
-                    </div>
-                    <div class="input-field col s12 m6 l6">
-                        <select>
+                        <select formControlName="pais" name="pais" id="pais" class="validate">
                             <option value="" disabled selected>Selecciona una opcion</option>
                             <option value="1">México</option>
                             <option value="2">Estados Unidos</option>
                         </select>
                         <label>País de nacimiento</label>
+                        <div class="blue-text" *ngIf="f.pais.errors">Debes seleccionar una opción.</div>
                     </div>
+
                     <div class="input-field col s12 m6 l6">
-                        <select>
+                        <select formControlName="ocupacion" name="ocupacion" id="ocupacion" class="validate">
                             <option value="" disabled selected>Selecciona una opcion</option>
                             <option value="1">Agricultor</option>
                             <option value="2">Chofer</option>
@@ -260,24 +238,91 @@
                             <option value="4">Empleado</option>
                         </select>
                         <label>Ocupación</label>
+                        <div class="blue-text" *ngIf="f.ocupacion.errors">Debes seleccionar una opción.</div>
                     </div>
-                    <div class="input-field col s12 m6 l6">
-                        <i class="material-icons prefix">phone</i>
-                        <input id="phone" type="text" name="phone" maxlength="10" required autocomplete="off" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" min="1">
-                        <label for="phone">Número de Telefono</label>
 
-                    </div>
-                    <div class="input-field col s12 m6 l6">
-                        <i class="material-icons prefix">house</i>
-                        <textarea id="domicilio" name='domicilio' formControlName="domicilio" required class="materialize-textarea"> </textarea>
-                        <label for="domicilio">Domicilio particular</label>
+
+
+                    <div class="input-field col s12 m6 l6" (click)="viewMap()">
+
+                        <i class="material-icons prefix">near_me</i>
+                        <textarea id="domicilio" name="domicilio" formControlName="domicilio" required class="materialize-textarea"> </textarea>
+                        <label for="domicilio">Localiza tu domicilio particular</label>
 
                         <div class="blue-text" *ngIf="f.domicilio.errors?.minlength ">Debe tener un mínimo 5 caracteres</div>
                         <div class="blue-text" *ngIf="f.domicilio.errors?.maxlength ">Máximo 120 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabras altisonante</p> -->
                         </div>
+
                     </div>
+
+                    <div class="input-field col s12 m6 l6">
+                        <select formControlName="entidad" name="entidad" id="entidad" class="validate">
+                        <option value="" disabled selected>Selecciona una opcion</option>
+                        <option value="1">Ciudad de México</option>
+                        <option value="2">Pachuca, Hgo.</option>
+                        <option value="3">Guadalajara, Jal.</option>
+                    </select>
+                        <label>Entidad federativa de Nacimiento</label>
+                        <div class="blue-text" *ngIf="f.entidad.errors">Debes seleccionar una opción.</div>
+                    </div>
+
+
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">house</i>
+                        <input id="calle" type="text" formControlName="calle" required class="validate" name="calle" />
+                        <label for="calle">Calle</label>
+                        <div class="red-text" *ngIf="form.errors?.isMatch"></div>
+                    </div>
+
+                    <div class="input-field col s12 m3 l3">
+
+                        <input id="ext" type="text" formControlName="ext" required class="validate" name="ext" />
+                        <label for="ext">Número exterior</label>
+                        <div class="red-text" *ngIf="form.errors?.isMatch"></div>
+                    </div>
+
+                    <div class="input-field col s12 m3 l3">
+
+                        <input id="int" type="text" formControlName="int" name="int" />
+                        <label for="int">Número interior</label>
+                        <div class="red-text" *ngIf="form.errors?.isMatch"></div>
+                    </div>
+
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">house</i>
+                        <input id="mun" type="text" formControlName="mun" name="mun" required class="validate" />
+                        <label for="mun">Municipio</label>
+                        <div class="red-text" *ngIf="form.errors?.isMatch"></div>
+                    </div>
+
+                    <div class="input-field col s12 m6 l6">
+                        <select formControlName="tase" name="tase" id="tase" class="validate">
+                            <option value="" disabled selected>Selecciona una opcion</option>
+                            <option value="Barrio">Barrio</option>
+                            <option value="Colonia">Colonia</option>
+                            <option value="Equipamiento">Equipamiento</option>
+                            <option value="Pueblo">Pueblo</option>
+                        </select>
+                        <label>Tipo de asentamiento</label>
+                        <div class="blue-text" *ngIf="f.tase.errors">Debes seleccionar una opción.</div>
+                    </div>
+
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">house</i>
+                        <input id="asentamiento" type="text" formControlName="asentamiento" name="asentamiento" required class="validate" />
+                        <label for="asentamiento">Asentamiento</label>
+                        <div class="red-text" *ngIf="form.errors?.isMatch"></div>
+                    </div>
+
+
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">aspect_ratio</i>
+                        <input id="clave" type="text" formControlName="clave" required class="validate" name="clave" />
+                        <label for="clave">Clave de Lector</label>
+                    </div>
+
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">aspect_ratio</i>
                         <input id="curp" type="text" formControlName="curp" pattern="^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$"
@@ -287,85 +332,384 @@
                     <div class="input-field col s12 m6 l6" *ngIf="model=='pFisica'">
                         <i class="material-icons prefix">aspect_ratio</i>
                         <input id="rfc" type="text" formControlName="rfc" pattern="^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$" required class="validate" name="rfc" />
-                        <label for="rfc">Registro Federal de Contribuyente</label>
+                        <label for="rfc">RFC</label>
                     </div>
-                    <div class="col s12">
-                        <button class="waves-effect teal darken-4 btn left" type="submit">Enviar
-                            <i class="material-icons prefix right">send</i>
+
+                    <div class="input-field col s12 m12 l12">
+                        <i class="material-icons prefix icon-gold">work</i>
+                        <label class="title black-text"><b class="title col s12 m12 l12">Información del Negocio</b></label>
+                        <p><br></p>
+                    </div>
+
+
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">house</i>
+                        <input id="callen" type="text" formControlName="callen" required class="validate" name="callen" />
+                        <label for="callen">Calle</label>
+                        <div class="red-text" *ngIf="form.errors?.isMatch"></div>
+                    </div>
+
+                    <div class="input-field col s12 m3 l3">
+
+                        <input id="extn" type="text" formControlName="extn" required class="validate" name="extn" />
+                        <label for="extn">Número exterior</label>
+                        <div class="red-text" *ngIf="form.errors?.isMatch"></div>
+                    </div>
+
+                    <div class="input-field col s12 m3 l3">
+
+                        <input id="intn" type="text" formControlName="intn" name="intn" />
+                        <label for="intn">Número interior</label>
+                        <div class="red-text" *ngIf="form.errors?.isMatch"></div>
+                    </div>
+
+                    <div class="input-field col s12 m6 l6">
+                        <select formControlName="entidad" name="entidad" id="entidad" class="validate">
+                            <option value="" disabled selected>Selecciona una opcion</option>
+                            <option value="1">Ciudad de México</option>
+                            <option value="2">Pachuca, Hgo.</option>
+                            <option value="3">Guadalajara, Jal.</option>
+                        </select>
+                        <label>Entidad federativa</label>
+                        <div class="blue-text" *ngIf="f.entidad.errors">Debes seleccionar una opción.</div>
+                    </div>
+
+                    <div class="input-field col s12 m6 l6">
+                        <select formControlName="tasen" name="tasen" id="tasen" class="validate">
+                                <option value="" disabled selected>Selecciona una opcion</option>
+                                <option value="Barrio">Barrio</option>
+                                <option value="Colonia">Colonia</option>
+                                <option value="Equipamiento">Equipamiento</option>
+                                <option value="Pueblo">Pueblo</option>
+                            </select>
+                        <label>Tipo de asentamiento</label>
+                        <div class="blue-text" *ngIf="f.tasen.errors">Debes seleccionar una opción.</div>
+                    </div>
+
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">house</i>
+                        <input id="munn" type="text" formControlName="munn" name="munn" required class="validate" />
+                        <label for="munn">Municipio</label>
+                        <div class="red-text" *ngIf="form.errors?.isMatch"></div>
+                    </div>
+
+
+
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">house</i>
+                        <input id="asentamienton" type="text" formControlName="asentamienton" name="asentamienton" required class="validate" />
+                        <label for="asentamienton">Asentamiento</label>
+                        <div class="red-text" *ngIf="form.errors?.isMatch"></div>
+                    </div>
+
+
+                    <div class="input-field col s12 m12 l12">
+                        <i class="material-icons prefix icon-gold">work_outline</i>
+                        <label class="title black-text"><b class="title col s12 m12 l12">Actividad del Negocio</b></label>
+                        <p><br></p>
+                    </div>
+
+
+                    <div class="input-field col s12 m6 l6">
+                        <select formControlName="sector" name="sector" id="sector" class="validate">
+                                <option value="" disabled selected>Selecciona una opcion</option>
+                                <option value="1">Minería</option>
+                                <option value="2">Construcción</option>
+                                <option value="3">Agricultura, cría y exportación de animales, aprovechamiento forestal, pezca y caza  </option>
+                            </select>
+                        <label>Sector</label>
+                        <div class="blue-text" *ngIf="f.sector.errors">Debes seleccionar una opción.</div>
+                    </div>
+
+                    <div class="input-field col s12 m6 l6">
+                        <select formControlName="ssector" name="ssector" id="ssector" class="validate">
+                                <option value="" disabled selected>Selecciona una opcion</option>
+                                <option value="1">Extracción de petróleo y gas</option>
+                                <option value="2">Minería de minerales metálicos y no metálicos, excepto petroléo y gas</option>
+                                <option value="3">Servicios relacionados con la míneria</option>
+                                <option value="4">Construcción de obras de ingeniería civil</option>
+                                <option value="5">Edificación</option>
+                                <option value="6">Agricultura</option>
+                                <option value="7">Aprovechamiento forestal</option>
+                                <option value="8">Pesca, caza y captura</option>
+                            </select>
+                        <label>Subsector</label>
+                        <div class="blue-text" *ngIf="f.ssector.errors">Debes seleccionar una opción.</div>
+                    </div>
+
+                    <div class="input-field col s12 m6 l6">
+                        <select formControlName="rama" name="rama" id="rama" class="validate">
+                                <option value="" disabled selected>Selecciona una opcion</option>
+                                <option value="1">Caza y captura</option>
+                                <option value="2">Pesca</option>
+                                <option value="3">Extracción de petróleo y gas</option>
+                                <option value="4">Edificación no residencial</option>
+                                <option value="5">Edificación residencial</option>
+                                <option value="6">Construcción de vías de comunicación</option>
+                                <option value="7">Servicios relacionados con la minería</option>
+                            </select>
+                        <label>Rama</label>
+                        <div class="blue-text" *ngIf="f.rama.errors">Debes seleccionar una opción.</div>
+                    </div>
+
+                    <div class="input-field col s12 m6 l6">
+                        <select formControlName="srama" name="srama" id="srama" class="validate">
+                                <option value="" disabled selected>Selecciona una opcion</option>
+                                <option value="1">Minería de otros minerales no metálicos</option>
+                                <option value="2">Servicios relacionados con la agricultura</option>
+                                <option value="3">Acuicultura</option>
+                                <option value="4">Cunicultura y explotación de animales con pelaje fino</option>
+                                <option value="5">Explotación de équidos</option>
+                                <option value="6">Captación, tratamiento y suministro de agua</option>
+                                <option value="7">Suministro de gas natural por ductos al consumidor final</option>
+                                <option value="8">Transmisión, distribución y comercialización de energía eléctrica</option>
+                            </select>
+                        <label>Subrama</label>
+                        <div class="blue-text" *ngIf="f.srama.errors">Debes seleccionar una opción.</div>
+                    </div>
+
+                    <div class="input-field col s12 m6 l6">
+                        <select formControlName="giro" name="giro" id="giro" class="validate">
+                                <option value="" disabled selected>Selecciona una opcion</option>
+                                <option value="1">Construcción de obras para telecomunicaciones</option>
+                                <option value="2">Construcción de plantas de refinería y petroquímica</option>
+                                <option value="3">Construcción de sistemas de riego agrícola</option>
+                                <option value="4">Extracción de petróleo y gas</option>
+                                <option value="5">Minería de carbón mineral</option>
+                                <option value="6">Minería de oro</option>
+                                <option value="7">Minería de plata</option>
+                                <option value="8">Explotación de gallinas para la producción de huevo fértil</option>
+                                <option value="9">Explotación de guajolotes o pavos</option>
+                                <option value="10">Explotación de pollos para la producción de carne</option>
+                            </select>
+                        <label>Giro</label>
+                        <div class="blue-text" *ngIf="f.giro.errors">Debes seleccionar una opción.</div>
+                    </div>
+
+                    <div class="input-field col s12 m12 l12">
+                        <i class="material-icons prefix icon-gold">people_outline</i>
+                        <label class="title black-text"><b class="title col s12 m12 l12">Referencias Personales</b></label>
+                        <p><br></p>
+                    </div>
+
+
+
+                    <div class="input-field col s12 m12 l12">
+                        <i class="material-icons prefix icon-gold">local_offer</i>
+                        <label class="title"><b class="title col s12 m12 l12">Referencia 1</b></label>
+                        <p><br></p>
+                    </div>
+
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="namerp1" type="text" formControlName="namerp1" name="namerp1" required class="validate">
+                        <label for="namerp1">Nombre</label>
+
+                        <div class="blue-text" *ngIf="f.namerp1.errors?.minlength">Debe tener un mínimo de 3 caracteres</div>
+                        <div class="red-text" *ngIf="form.errors?.isMatch">
+                        </div>
+                    </div>
+
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="name2rp1" type="text" formControlName="name2rp1" name="name2rp1" class="validate">
+                        <label for="name2rp1">Segundo nombre</label>
+
+                        <div class="blue-text" *ngIf="f.name2rp1.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
+                        <div class="red-text" *ngIf="form.errors?.isMatch">
+                            <!--  <p>Palabra altisonante</p>-->
+                        </div>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="paternorp1" type="text" name="paternorp1" formControlName="paternorp1" required class="validate">
+                        <label for="paternorp1">Apellido paterno</label>
+                        <div class="blue-text" *ngIf="f.paternorp1.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
+                        <div class="red-text" *ngIf="form.errors?.isMatch">
+                            <!--  <p>Palabra altisonante</p> -->
+                        </div>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="maternorp1" type="text" name="maternorp1" formControlName="maternorp1" required class="validate">
+                        <label for="maternorp1">Apellido materno</label>
+                        <div class="blue-text" *ngIf="f.maternorp1.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
+                        <div class="red-text" *ngIf="form.errors?.isMatch">
+                            <!--  <p>Palabra altisonante</p> -->
+                        </div>
+                    </div>
+
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">phone</i>
+                        <input class="validate" id="telrp1" type="number" formControlName="telrp1" name="telrp1" minlength="10" maxlength="10" required>
+                        <label for="text">Número de Teléfono</label>
+                        <div class="blue-text" *ngIf="f.telrp1.errors">El teléfono debe ser de 10 digitos</div>
+                    </div>
+
+                    <div class="input-field col s12 m6 l6">
+                        <select formControlName="relacionrp1" name="relacionrp1" id="relacionrp1" class="validate">
+                                <option value="" disabled selected>Selecciona una opcion</option>
+                                <option value="1">Familiar</option>
+                                <option value="2">Amistad</option>
+                                <option value="3">Laboral o profesional</option>
+                            </select>
+                        <label>Relación</label>
+                        <div class="blue-text" *ngIf="f.relacionrp1.errors">Debes seleccionar una opción.</div>
+                    </div>
+
+
+
+                    <div class="input-field col s12 m12 l12">
+                        <i class="material-icons prefix icon-gold">local_offer</i>
+                        <label class="title"><b class="title col s12 m12 l12">Referencia 2</b></label>
+                        <p><br></p>
+                    </div>
+
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="namerp2" type="text" formControlName="namerp2" name="namerp2" required class="validate">
+                        <label for="namerp2">Nombre</label>
+
+                        <div class="blue-text" *ngIf="f.namerp2.errors?.minlength">Debe tener un mínimo de 3 caracteres</div>
+                        <div class="red-text" *ngIf="form.errors?.isMatch">
+                        </div>
+                    </div>
+
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="name2rp2" type="text" formControlName="name2rp2" name="name2rp2" class="validate">
+                        <label for="name2rp1">Segundo nombre</label>
+
+                        <div class="blue-text" *ngIf="f.name2rp2.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
+                        <div class="red-text" *ngIf="form.errors?.isMatch">
+                            <!--  <p>Palabra altisonante</p>-->
+                        </div>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="paternorp2" type="text" name="paternorp2" formControlName="paternorp2" required class="validate">
+                        <label for="paternorp2">Apellido paterno</label>
+                        <div class="blue-text" *ngIf="f.paternorp2.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
+                        <div class="red-text" *ngIf="form.errors?.isMatch">
+                            <!--  <p>Palabra altisonante</p> -->
+                        </div>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="maternorp2" type="text" name="maternorp2" formControlName="maternorp2" required class="validate">
+                        <label for="maternorp2">Apellido materno</label>
+                        <div class="blue-text" *ngIf="f.maternorp2.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
+                        <div class="red-text" *ngIf="form.errors?.isMatch">
+                            <!--  <p>Palabra altisonante</p> -->
+                        </div>
+                    </div>
+
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">phone</i>
+                        <input class="validate" id="telrp2" type="number" formControlName="telrp2" name="telrp2" minlength="10" maxlength="10" required>
+                        <label for="text">Número de Teléfono</label>
+                        <div class="blue-text" *ngIf="f.telrp2.errors">El teléfono debe ser de 10 digitos</div>
+                    </div>
+
+                    <div class="input-field col s12 m6 l6">
+                        <select formControlName="relacionrp2" name="relacionrp2" id="relacionrp2" class="validate">
+                                <option value="" disabled selected>Selecciona una opcion</option>
+                                <option value="1">Familiar</option>
+                                <option value="2">Amistad</option>
+                                <option value="3">Laboral o profesional</option>
+                        </select>
+                        <label>Relación</label>
+                        <div class="blue-text" *ngIf="f.relacionrp2.errors">Debes seleccionar una opción.</div>
+                    </div>
+
+
+                    <div class="input-field col s12 m12 l12">
+                        <p><br></p>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12 m12 l12">
+                            <label><input class="with-gap teal darken-4" type="checkbox" [(ngModel)]="aviso"/>
+                            <span>
+                        
+                        <label class="waves-effect modal-trigger subrayar" href="#aviso">
+                            <span class="blue-text text-darken-4">Acepto Aviso de Privacidad</span>
+                        </label>
+                            </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="input-field col s12 m12 l12">
+                        <p><br></p>
+                    </div>
+
+
+
+
+
+
+                    <form ngNativeValidate [formGroup]="form" (ngSubmit)="dpersonales()">
+                        <div class="col s12">
+                            <a class="waves-effect teal darken-4 btn previous-step left">Atras
+                            <i class="material-icons prefix left">arrow_back_ios</i>
+                            </a>
+                            <button class="waves-effect teal darken-4 btn right " type="submit">Continuar <!--revisar nextstep igual en ts-->
+                            <i class="material-icons prefix right">arrow_forward_ios</i>
                         </button>
-                    </div>
-                </form>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
 
-    </li>
-    <li class="step">
-        <div class="step-title waves-effect waves-dark">Subir Documentos</div>
-        <div class="step-content">
-            <form ngNativeValidate [formGroup]="formDocumentos" (ngSubmit)="ddocumentos()">
-                <div class="row">
-                    <div class="col s12 m2 l2">
-                        <span>Identificación Oficial Frontal</span>
-                    </div>
-                    <div class="file-field input-field col s12 m4 l4">
-                        <div class="teal darken-4 btn">
-                            <i class="material-icons right">attachment</i>cargar
-                            <input type="file" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="frontal" id="frontal" required class="validate">
-                        </div>
-                        <div class="col s1 m1 l1" *ngIf="doc.frontal.errors?.required">
-                            <i class="material-icons icon-red">error_outline</i>
-                        </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text">
-                        </div>
-                    </div>
-
-
-                    <div>
-                        <div class="col s12 m2 offset-m1 l2">
-                            <span>Identificación Oficial Reverso</span>
-                        </div>
-                        <div class="file-field input-field col s12 m4 l4">
-                            <div class="teal darken-4 btn">
-                                <i class="material-icons right">attachment</i>cargar
-                                <input type="file" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="reverso" id="reverso" required class="validate">
-                            </div>
-                            <div class="col s1 m1 l1" *ngIf="doc.reverso.errors?.required">
-                                <i class="material-icons icon-red">error_outline</i>
-                            </div>
-                            <div class="file-path-wrapper">
-                                <input class="file-path validate" type="text">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
+        </li>
+        <li class="step">
+            <div class="step-title waves-effect waves-dark">Subir Documentos</div>
+            <div class="step-content">
+                <form ngNativeValidate [formGroup]="formDocumentos" (ngSubmit)="ddocumentos()">
+                    <div class="row">
                         <div class="col s12 m2 l2">
-                            <span>Comprobante de Domicilio</span>
+                            <span>Identificación Oficial Frontal</span>
                         </div>
                         <div class="file-field input-field col s12 m4 l4">
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>cargar
-                                <input type="file" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="comprobante" id="comprobante" required class="validate">
+                                <input type="file" (change)="ValidateSize('frontal')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="frontal" id="frontal" class="validate">
                             </div>
-                            <div class="col s1 m1 l1" *ngIf="doc.comprobante.errors?.required">
+                            <div class="col s1 m1 l1" *ngIf="doc.frontal.errors?.required">
                                 <i class="material-icons icon-red">error_outline</i>
                             </div>
                             <div class="file-path-wrapper">
                                 <input class="file-path validate" type="text">
                             </div>
                         </div>
-                    </div>
 
 
-                    <div>
+                        <div>
+                            <div class="col s12 m2 l2">
+                                <span>Identificación Oficial Reverso</span>
+                            </div>
+                            <div class="file-field input-field col s12 m4 l4">
+                                <div class="teal darken-4 btn">
+                                    <i class="material-icons right">attachment</i>cargar
+                                    <input type="file" (change)="ValidateSize('reverso')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="reverso" id="reverso" class="validate">
+                                </div>
+                                <div class="col s1 m1 l1" *ngIf="doc.reverso.errors?.required">
+                                    <i class="material-icons icon-red">error_outline</i>
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text">
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="col s12 m2 l2">
                             <span>Estado de Cuenta</span>
                         </div>
                         <div class="file-field input-field col s12 m4 l4">
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>cargar
-                                <input type="file" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="estado" id="estado" required class="validate">
+                                <input type="file" (change)="ValidateSize('estado')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="estado" id="estado" class="validate">
                             </div>
                             <div class="col s1 m1 l1" *ngIf="doc.estado.errors?.required">
                                 <i class="material-icons icon-red">error_outline</i>
@@ -374,261 +718,257 @@
                                 <input class="file-path validate" type="text">
                             </div>
                         </div>
-                    </div>
-                    <div class="col s12 m2 l2">
-                        <span>CURP</span>
-                        <a (click)="sweetHome('0')"><i class="material-icons prefix icon-black">help_outline</i></a>
-                    </div>
-                    <div class="file-field input-field col s12 m4 l4">
-                        <div class="teal darken-4 btn">
-                            <i class="material-icons right">attachment</i>cargar
-                            <input type="file" accept="application/pdf" formControlName="curpd" id="curpd" required class="validate">
+
+
+
+                        <div class="col s12 m2 l2">
+                            <span>Última declaración anual</span>
                         </div>
-                        <div class="col s1 m1 l1" *ngIf="doc.curpd.errors?.required">
-                            <i class="material-icons icon-red">error_outline</i>
+                        <div class="file-field input-field col s12 m4 l4">
+                            <div class="teal darken-4 btn">
+                                <i class="material-icons right">attachment</i>cargar
+                                <input type="file" (change)="ValidateSize('declaracion')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="declaracion" id="declaracion" class="validate">
+                            </div>
+                            <div class="col s1 m1 l1" *ngIf="doc.declaracion.errors?.required">
+                                <i class="material-icons icon-red">error_outline</i>
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text">
+                            </div>
                         </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text">
+
+
+
+                        <div class="col s12 m2 l2">
+                            <span>CURP</span>
+                            <a (click)="sweetHome('0')"><i class="material-icons prefix icon-black">help_outline</i></a>
                         </div>
-                    </div>
-                    <div class="col s12 m2 l2">
-                        <span>Registro Federal de Contribuyente</span>
-                        <a (click)="sweetHome('1')"><i class="material-icons prefix icon-black">help_outline</i></a>
-                    </div>
-                    <div class="file-field input-field col s12 m4 l4">
-                        <div class="teal darken-4 btn">
-                            <i class="material-icons right">attachment</i>cargar
-                            <input accept="pplication/pdf" type="file" formControlName="rfcd" id="rfcd" required class="validate">
+                        <div class="file-field input-field col s12 m4 l4">
+                            <div class="teal darken-4 btn">
+                                <i class="material-icons right">attachment</i>cargar
+                                <input type="file" (change)="ValidateSize('curpd')" accept="application/pdf" formControlName="curpd" id="curpd" class="validate">
+                            </div>
+                            <div class="col s1 m1 l1" *ngIf="doc.curpd.errors?.required">
+                                <i class="material-icons icon-red">error_outline</i>
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text">
+                            </div>
                         </div>
-                        <div class="col s1 m1 l1" *ngIf="doc.rfcd.errors?.required">
-                            <i class="material-icons icon-red">error_outline</i>
+                        <div class="col s12 m2 l2">
+                            <span>RFC</span>
+                            <a (click)="sweetHome('1')"><i class="material-icons prefix icon-black">help_outline</i></a>
                         </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text">
+                        <div class="file-field input-field col s12 m4 l4">
+                            <div class="teal darken-4 btn">
+                                <i class="material-icons right">attachment</i>cargar
+                                <input accept="pplication/pdf" (change)="ValidateSize('rfcd')" type="file" formControlName="rfcd" id="rfcd" class="validate">
+                            </div>
+                            <div class="col s1 m1 l1" *ngIf="doc.rfcd.errors?.required">
+                                <i class="material-icons icon-red">error_outline</i>
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col s12 m2 l2">
+
+
+                        <!--   <div class="col s12 m2 l2">
                         <span>Score de Buro de Crédito </span>
                         <a (click)="sweetHome('2')"><i class="material-icons prefix icon-black">help_outline</i></a>
-                    </div>
+                    </div>  
                     <div class="file-field input-field col s12 m4 l4">
                         <div class="teal darken-4 btn">
                             <i class="material-icons right">attachment</i>cargar
                             <input type="file" accept="application/pdf" formControlName="buro" id="buro" required class="validate">
-                        </div>
+                        </div> 
                         <div class="col s1 m1 l1" *ngIf="doc.buro.errors?.required">
                             <i class="material-icons icon-red">error_outline</i>
                         </div>
                         <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text">
+                            <input class="file-path validate" type="text" >
                         </div>
-                    </div>
-                    <div class="col s12 m2 l2">
-                        <span>Constancia de Situacion Fiscal </span>
-                        <a (click)="sweetHome('3')"><i class="material-icons prefix icon-black">help_outline</i></a>
-                    </div>
-                    <div class="file-field input-field col s12 m4 l4">
-                        <div class="teal darken-4 btn">
-                            <i class="material-icons right">attachment</i>cargar
-                            <input type="file" accept="application/pdf" formControlName="cfiscal" id="cfiscal" required class="validate">
-                        </div>
-                        <div class="col s1 m1 l1" *ngIf="doc.cfiscal.errors?.required">
-                            <i class="material-icons icon-red">error_outline</i>
-                        </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text">
-                        </div>
-                    </div>
-                </div>
-                <div class="ro">
-                    <div class="col s12">
-                        <i class="material-icons icon-red left">error_outline</i> Son requeridos todos los archivos para poder continuar con el proceso.
-                    </div>
-                    <div class="col s12">
-                        <button class="waves-effect teal darken-4 btn right" type="submit">Enviar
-                    <i class="material-icons prefix right">send</i>
-                </button>
-                    </div>
-                </div>
-            </form>
+                    </div> -->
 
-        </div>
-    </li>
-    <li class="step">
-        <div class="step-title waves-effect waves-dark">Datos Socioeconómicos</div>
-        <div class="step-content">
-            <div class="row">
-                <div class="col m3 s8 offset-s1">
-                    <img class="responsive-img img0" src="../../../assets/5.png">
-                </div>
 
-                <div class="col s12 m8 ">
-                    <ul class="collapsible popout">
-                        <li>
-                            <div class="collapsible-header"><i class="material-icons">filter_drama</i>Perfil del Negocio</div>
-                            <div class="collapsible-body">
-                                <ul class="collection">
-                                    <!--************-->
-                                    <li class="collection-item avatar" *ngFor="let pregsc1 of sec1; index as i;">
-                                        <span class="title">{{pregsc1.quest}}</span>
-
-                                        <p *ngFor="let resp of pregsc1.opts">
-                                            <label>
-                                                <input class="with-gap" name="{{'group'+[i]}}" type="radio"  />
-                                                <span>{{resp}}</span>
-                                              </label>
-                                        </p>
-
-                                        <a href="#!" class="secondary-content"><i class="material-icons">done</i></a>
-                                    </li>
-                                    <!--************-->
-                                    <li class="collection-item avatar">
-                                        <span class="title">¿Como se llama?</span>
-                                        <p>
-                                            <label>
-                                              <input class="with-gap" name="group1" type="radio" checked />
-                                              <span>Red</span>
-                                            </label>
-                                        </p>
-                                        <p>
-                                            <label>
-                                              <input class="with-gap" name="group1" type="radio" />
-                                              <span>Yellow</span>
-                                            </label>
-                                        </p>
-                                        <p>
-                                            <label>
-                                              <input class="with-gap" name="group1" type="radio"  />
-                                              <span>Green</span>
-                                            </label>
-                                        </p>
-                                        <a href="#!" class="secondary-content"><i class="material-icons">done</i></a>
-                                    </li>
-                                    <li class="collection-item avatar">
-                                        <span class="title">¿Cuantos años tiene?</span>
-                                        <select>
-                                            <option value="" disabled selected>Selecciona una opción</option>
-                                            <option value="1">10</option>
-                                            <option value="2">20</option>
-                                            <option value="3">30</option>
-                                          </select>
-                                        <a href="#!" class="secondary-content"><i class="material-icons">done</i></a>
-                                    </li>
-                                    <li class="collection-item avatar">
-                                        <span class="title">¿Como esta?</span>
-                                        <textarea id="textarea2" class="materialize-textarea" data-length="120"></textarea>
-                                        <label for="textarea2">Textarea</label>
-                                        <a href="#!" class="secondary-content"><i class="material-icons">indeterminate_check_box</i></a>
-                                    </li>
-                                </ul>
+                        <div>
+                            <div class="col s12 m2 l2">
+                                <span>Comprobante de Domicilio Personal</span>
                             </div>
-                        </li>
-                        <li>
-                            <div class="collapsible-header"><i class="material-icons">place</i>Perfil del Mercado</div>
-                            <div class="collapsible-body">
-                                <ul class="collection">
-                                    <li class="collection-item avatar">
-                                        <span class="title">¿Como se llama?</span>
-                                        <br>
-                                        <div class="dogs">
-
-                                            <label>
-                                                <input class="with-gap" name="group1" type="radio"  />
-                                                <span>Green</span>
-                                              </label>
-                                        </div>
-                                        <div class="dogs">
-                                            <label>
-                                                <input class="with-gap" name="group1" type="radio"  />
-                                                <span>Gray</span>
-                                              </label>
-                                        </div>
-                                        <div class="dogs">
-                                            <label>
-                                                <input class="with-gap" name="group1" type="radio"  />
-                                                <span>Red</span>
-                                              </label>
-                                        </div>
-                                        <div class="dogs">
-                                            <label>
-                                                <input class="with-gap" name="group1" type="radio"  />
-                                                <span>Blue</span>
-                                              </label>
-                                        </div>
-
-                                        <a href="#!" class="secondary-content"><i class="material-icons">done</i></a>
-                                    </li>
-                                    <li class="collection-item avatar">
-                                        <span class="title">¿Cuantos años tiene?</span>
-
-                                        <a href="#!" class="secondary-content"><i class="material-icons">done</i></a>
-                                    </li>
-                                    <li class="collection-item avatar">
-                                        <span class="title">¿Como esta?</span>
-
-                                        <a href="#!" class="secondary-content"><i class="material-icons">indeterminate_check_box</i></a>
-                                    </li>
-                                </ul>
-
-
-
-
-
-
+                            <div class="file-field input-field col s12 m4 l4">
+                                <div class="teal darken-4 btn">
+                                    <i class="material-icons right">attachment</i>cargar
+                                    <input type="file" (change)="ValidateSize('comprobante')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="comprobante" id="comprobante" class="validate">
+                                </div>
+                                <div class="col s1 m1 l1" *ngIf="doc.comprobante.errors?.required">
+                                    <i class="material-icons icon-red">error_outline</i>
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text">
+                                </div>
                             </div>
-                        </li>
-                        <li>
-                            <div class="collapsible-header"><i class="material-icons">whatshot</i>Reputación</div>
-                            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                        </li>
-                        <li>
-                            <div class="collapsible-header"><i class="material-icons">whatshot</i>Dirección</div>
-                            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col s12">
-                    <li>
+                        </div>
+
+
+                        <div>
+                            <div class="col s12 m2 l2">
+                                <span>Comprobante de Domicilio del Negocio</span>
+                            </div>
+                            <div class="file-field input-field col s12 m4 l4">
+                                <div class="teal darken-4 btn">
+                                    <i class="material-icons right">attachment</i>cargar
+                                    <input type="file" (change)="ValidateSize('comprobanten')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="comprobanten" id="comprobanten" class="validate">
+                                </div>
+                                <div class="col s1 m1 l1" *ngIf="doc.comprobanten.errors?.required">
+                                    <i class="material-icons icon-red">error_outline</i>
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col s12 m2 l2">
+                            <span>Constancia de Situacion Fiscal (32D)</span>
+                            <a (click)="sweetHome('2')"><i class="material-icons prefix icon-black">help_outline</i></a>
+                        </div>
+                        <div class="file-field input-field col s12 m4 l4">
+                            <div class="teal darken-4 btn">
+                                <i class="material-icons right">attachment</i>cargar
+                                <input type="file" (change)="ValidateSize('fiscal')" accept="application/pdf" formControlName="fiscal" id="fiscal" name="fiscal" class="validate">
+                            </div>
+                            <div class="col s1 m1 l1" *ngIf="doc.fiscal.errors?.required">
+                                <i class="material-icons icon-red">error_outline</i>
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text">
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="input-field col s12 m12 l12">
+                            <label><span><i class="material-icons icon-red left">error_outline</i>
+                                Son requeridos todos los archivos para poder continuar con el proceso.
+                            </span></label>
+                        </div>
+
+                    </div>
+                    <br><br>
+                    <!--  -->
+                    <a class="waves-effect  teal darken-4 btn modal-trigger right" href="#fiel">
+                        <i class="material-icons prefix right">send</i> Firmar Documentos
+                    </a>
+                    <!--  -->
+                    <div class="row">
+                        <div class="row">
+
+                            <div class="input-field col s12 m12 l12">
+                                <label><input class="with-gap teal darken-4" type="checkbox" [(ngModel)]="bc"/>
+                            <span>
+                                <label>
+                                    <span class="black-text">  Acepto la consulta de Buró de Crédito</span>
+                                </label>
+                                </span>
+                                </label>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="input-field col s12 m12 l12">
+                                <label> <input class="with-gap teal darken-4" type="checkbox" [(ngModel)]="prueba"/> 
+                            <span>
+                        
+                        <label class="waves-effect modal-trigger subrayar" href="#terminos">
+                            <span class="blue-text text-darken-4">Acepto Terminos y condiciones</span>
+                        </label>
+                                </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <br><br>
+
+                        <div class="col s12">
+                            <a class="waves-effect teal darken-4 btn previous-step left">Atras
+                                <i class="material-icons prefix left">arrow_back_ios</i>
+                                </a>
+                            <button class="waves-effect teal darken-4 btn right " type="submit">Continuar <!--revisar nextstep igual en ts-->
+                                    <i class="material-icons prefix right">arrow_forward_ios</i>
+                                </button>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </li>
+        <li class="step">
+
+
+
+            <div class="step-title waves-effect waves-dark">Datos Socioeconómicos</div>
+            <div class="step-content">
+                <div class="row">
+                    <div class="col m2 s8 offset-s1">
+                        <img class="responsive-img img0" src="../../../assets/5.png">
+                    </div>
+
+                    <!--pruebas-->
+                    <app-question></app-question>
+                    <!--pruebas-->
+
+                    <div class="col s12">
+                        <a class="waves-effect teal darken-4 btn previous-step left">Atras
+                            <i class="material-icons prefix left">arrow_back_ios</i>
+                            </a>
                         <a class="waves-effect  teal darken-4 btn modal-trigger right" href="#modal1">
-                            <i class="material-icons prefix right">send</i> Enviar
+                            <i class="material-icons prefix right">send</i> Continuar
                         </a>
-                    </li>
+
+                    </div>
                 </div>
             </div>
-        </div>
-    </li>
-    <li class="step">
-        <div class="step-title waves-effect waves-dark">Descarga de Documentos</div>
-        <div class="step-content">
-            <br>
-            <div class="card">
-                <div class="card-content">
-                    <div class="row">
-                        <!--<img class="responsive-img" src="../../../assets/contr.png">-->
-                        <div class="input-field col s12 m3 offset-m3 l4 offset-l3">
-                            <label><input class="with-gap teal darken-4" type="checkbox" [(ngModel)]="terms"/>
-                    <span>Acepto Terminos y condiciones</span></label>
-                        </div>
 
-                        <div class="input-field col s12 m3 offset-m1">
-                            <a class="waves-effect teal darken-4 btn modal-trigger" href="#modalContr">Ver
+
+        </li>
+        <li class="step">
+            <div class="step-title waves-effect waves-dark">Descarga de Documentos</div>
+            <div class="step-content">
+                <br>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="row">
+                            <!--<img class="responsive-img" src="../../../assets/contr.png">-->
+
+
+                            <div class="input-field col s12 m3 offset-m1">
+                                <a class="waves-effect teal darken-4 btn modal-trigger" href="#modalContr">Ver
                         <i class="medium material-icons icon-gold right">visibility</i>
                     </a>
-                        </div>
+                            </div>
 
-                    </div>
-                    <div class="row" *ngIf="terms">
-                        <div class="input-field col s12 m4 offset-m3">
-                            <a class="waves-effect teal darken-4 btn " href="../../../assets/Caratula.pdf" download="contr.pdf">Descargar
+                        </div>
+                        <div class="row" *ngIf="terms">
+                            <div class="input-field col s12 m4 offset-m3">
+                                <a class="waves-effect teal darken-4 btn " href="../../../assets/Caratula.pdf" download="contr.pdf">Descargar
                             <i class="medium material-icons icon-gold right">save_alt</i>
                         </a>
+                            </div>
                         </div>
+                    </div>
+                    <div class="col s12">
+
+                        <a routerLink="/home" class="waves-effect  teal darken-4 btn right ">
+                            <i class="material-icons prefix right">send</i> Terminar
+                        </a>
+
                     </div>
                 </div>
             </div>
-        </div>
-    </li>
-    <!--   <li class="step">
+        </li>
+        <!--   <li class="step">
         <div class="step-title waves-effect waves-dark">Felicidades!!!</div>
         <div class="step-content">
             <div class="row">
@@ -639,8 +979,8 @@
             </div>
         </div>
     </li>-->
-</ul>
-
+    </ul>
+</div>
 
 <div id="modal1" class="modal">
     <div class="modal-content">
@@ -656,13 +996,561 @@
     </div>
 </div>
 
+<div id="fiel" class="modal">
+    <div class="modal-content">
+
+        <h4>Selecciona los archivos de tu firma electrónica avanzada (FIEL)</h4>
+        <form ngNativeValidate [formGroup]="formFiel" (ngSubmit)="dfiel()">
+            <div>
+
+                <div class="file-field input-field col s12 m4 offset-m1 l4 offset-l1">
+                    <div class="teal darken-4 btn">
+                        <i class="material-icons right">attachment</i>Archivo .key
+                        <input type="file" (change)="ValidateSize('fiel')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="fiel" id="fiel" required class="validate">
+
+                        <div class="red-text" *ngIf="fi.fiel.errors?.required">Archivo requerido
+                        </div>
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div>
+
+                <div class="file-field input-field col s12 m4 offset-m1 l4 offset-l1">
+                    <div class="teal darken-4 btn">
+                        <i class="material-icons right">attachment</i>Archivo .cer
+                        <input type="file" (change)="ValidateSize('cer')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="cer" id="cer" required class="validate">
+
+                        <div class="red-text" *ngIf="fi.cer.errors?.required">Archivo requerido
+                        </div>
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="input-field col s12 m4 l4">
+                <i class="material-icons prefix">lock_circle</i>
+                <input id="password" type="password" name="password" formControlName="password" required class="validate">
+                <label for="password">Contraseña de tu FIEL</label>
+                <div class="col s1 m1 l1" *ngIf="fi.password.errors?.required"></div>
+            </div>
+
+
+
+            <div class="modal-footer">
+
+                <a class="modal-close waves-effect teal darken-4 white-text btn-flat">Firmar</a>
+
+
+            </div>
+
+        </form>
+        <div class="footer-copyright teal darken-3">
+            <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
+        </div>
+
+    </div>
+</div>
+
+
+<div id="aviso" class="modal">
+    <div class="modal-content justificacion">
+        <p>En cumplimiento de lo dispuesto en los artículos 68 fracciones II, III, IV y VI, de la Ley General de Transparencia y Acceso a la Información Pública (LGTAIP), 3º, fracción II, 16, 17, 18, 21, 25, 26, 27, 28, 67, 68, 69 y 70,  de la Ley General de Protección de Datos Personales en Posesión de Sujetos Obligados (LGPDPPSO) y los numerales 9 fracción II, 11, fracción II, 15 y 26 al 45 de los Lineamientos Generales de Protección de Datos Personales para el Sector Público (en lo sucesivo los "Lineamientos"), se pone a disposición de los usuarios el siguiente:
+        </p>
+        <div style="text-align: center;">
+            <p><b >AVISO DE PRIVACIDAD INTEGRAL</b></p>
+        </div>
+        <p>Mediante el presente aviso de privacidad integral (aviso de privacidad), el Banco del Bienestar, S.N.C., I.B.D., (Banco del Bienestar), informan a usted los términos en que serán tratados los datos personales que se recaben, para lo cual le recomendamos que lea atentamente la siguiente información:
+        </p>
+
+        <table class="table" style='width:980px'>
+          
+        
+            <tr>
+                <td class="justificacion" colspan="1"><b>1. Definiciones.</b></td>
+                <td class="justificacion" colspan="1"> 
+                    <p>Para efectos del presente aviso de privacidad, los términos que se indican a continuación, tendrán los significados que en este documento se señalan, ya sea que estén redactados en singular o en plural: </p>
+                    <p>1.1.“Datos Personales”: Cualquier información concerniente a una persona física identificada o identificable.</p>
+                    <p>1.2. “Datos patrimoniales o financieros”: Es la información sobre la capacidad económica de las personas físicas que hace referencia a los recursos que posee y a su capacidad para hacer frente a sus deudas, como pueden ser: dinero, bienes muebles e inmuebles; información fiscal; historial crediticio; ingresos y egresos; cuentas bancarias; seguros; afores; fianzas, número de tarjeta de crédito, número de seguridad, entre otros.</p>
+                    <p>1.3. “Datos Personales Sensibles”: Aquellos datos personales que afecten a la esfera íntima del Titular, o cuya utilización indebida pueda dar origen a cualquier tipo de discriminación o conlleve un riesgo grave para el Titular. Están considerados dentro de esta categoría aquellos datos que puedan revelar aspectos personales del Titular, como origen racial, étnico, estado de salud presente y futuro, información genética, creencias religiosas, filosóficas y morales, afiliación sindical, opiniones políticas, preferencia sexual o situación financiera.</p>
+                    <p>1.4. “Dato Biométrico”: Datos personales obtenidos a partir de un tratamiento técnico específico, relativos a las características físicas, fisiológicas o conductuales de una persona física que permitan o confirmen la identificación única de dicha persona, como imágenes faciales o datos dactiloscópicos. </p>
+                    <p>1.5. “Derechos ARCO”: Derecho del Titular de los datos personales al solicitar al Responsable el Acceso, Rectificación, Cancelación u Oposición respecto de dichos datos, conforme a lo previsto en la LGPDPPSO.</p>
+                    <p>1.6. “Disociación”: El procedimiento mediante el cual los datos personales no pueden asociarse al Titular ni permitir, por su estructura, contenido o grado de desagregación, la identificación del mismo. </p>
+                    <p>1.7. “Encargado”: La persona física o moral que sola o conjuntamente con otras personas físicas o morales trate datos personales a nombre y mediante instrucción del Responsable, conforme a los procesos, términos y condiciones que este le señale. </p>
+                    <p>1.8. “Entidad Comercial: a las sociedades que de manera habitual otorguen créditos, préstamos o financiamientos al público.</p>
+                    <p>1.9. “Entidad Financiera”: a las instituciones o sociedades de crédito, a las sociedades financieras de objeto múltiple reguladas y no reguladas, a las sociedades financieras populares, a las sociedades financieras comunitarias, a las sociedades cooperativas de ahorro y préstamo, a las entidades financieras que actúen como fiduciarias en fideicomisos que otorguen crédito, préstamo o financiamiento al público, las uniones de crédito y las instituciones de tecnología financiera. </p>
+                    <p>1.10. “Instituto”: Instituto Nacional Electoral.</p>
+                    <p>1.11. “Responsable”: Banco del Bienestar</p>
+                    <p>1.12. “Titular”: La persona física a quien corresponden los datos personales.</p>
+                    <p>1.13. “Transferencia”: La comunicación de datos personales dentro o fuera del territorio nacional, realizada a persona distinta del Titular o del Responsable.</p>
+                    <p>1.14. “Usuario”: a cualquier persona física, moral o Fideicomiso que, directamente o a través de algún comisionista contratado por la Entidad respectiva al amparo del artículo 46 Bis-1 de la Ley de Instituciones de Crédito y demás disposiciones aplicables, realice Operaciones con la Entidad de que se trate, o utilice los servicios que le ofrezca dicha Entidad, sin tener una relación comercial permanente con esta.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="justificacion" colspan="1"><b>2. ¿Quiénes somos?</b></td>
+                <td class="justificacion" colspan="1"> 
+                    <p>El Banco del Bienestar, antes Banco del Ahorro Nacional y Servicios Financieros, Sociedad Nacional de Crédito, Institución de Banca de Desarrollo (BANSEFI), es una entidad de la Administración Pública Federal, con personalidad jurídica y patrimonio propios, constituido con el carácter de sociedad nacional de crédito, en términos de su Ley Orgánica, y con domicilio en Av. Río Magdalena, número 115, Colonia Tizapán San Ángel, Alcaldía Álvaro Obregón, C.P. 01090, Ciudad de México. </p>
+                    <p>Esta Institución es el Responsable del tratamiento de los datos personales que nos proporcione, los cuales serán protegidos conforme a lo dispuesto por la LGPDPPSO y demás normatividad que resulte aplicable.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="justificacion" colspan="1"><b>3. ¿Qué Datos Personales se resguardan y tratan?</b></td>
+                <td class="justificacion" colspan="1"> 
+                    <p>Para el cumplimiento de las finalidades señaladas en el numeral 5 del presente aviso de privacidad, el Responsable le informa que podrá recabar las siguientes categorías de datos personales: </p>
+                    <p>(a) Datos de Identificación;<br>(b) Datos de Contacto;<br>(c) Información sobre sus características físicas, mejor conocidos como datos biométricos, tales como el reconocimiento de voz, la (s) huella (s) dactilar (es);
+                    <br>(d) Datos laborales; <br>(e) Datos académicos o profesionales; <br> (f) Datos migratorios;
+                    <br>(g) Datos patrimoniales y/o financieros; <br>(h) Datos Personales Sensibles tales como: padecimientos o enfermedades pasadas y presentes, enfermedades patológicas relevantes u operaciones. </p>
+                    <p>Con el registro de su(s) huella(s) dactilar(es), o del usuario y contraseña que se le proporcionen, se entenderá que el Titular autoriza en forma expresa y comprobable al Responsable a verificar su identidad contra los registros administrados por el Instituto o cualquier otra autoridad emisora de documentos oficiales, según corresponda; a integrar el resultado de la autenticación en el expediente de identificación y a resguardar en una base de datos su información para contratación de servicios financieros o la realización de operaciones futuras con el Responsable. </p>
+                    <p>Le informamos que los datos personales a que se refieren los numerales:</p>
+                    <p>c) y h) que se recaben del Titular serán obtenidos únicamente en forma directa; es decir en forma personal o a través de los medios electrónicos que el Responsable ponga a su disposición, quedando el Responsable obligado a recabar su consentimiento a los términos del presente aviso de privacidad previamente a su tratamiento, y en forma expresa y comprobable, así como explicar los beneficios que le conlleva al Titular el servicio de verificación de los datos que contiene su credencial para votar, en los casos que así corresponda.</p>
+                    <p>En la obtención de la información personal de menores de edad, se estará a lo dispuesto en las reglas de representación previstas en la legislación civil que resulte aplicable.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="justificacion" colspan="1"><b>4. Fundamento para el tratamiento de datos personales.</b></td>
+                <td class="justificacion" colspan="1"> 
+                   <p>Las disposiciones normativas que facultan al Responsable a tratar los datos personales para las finalidades señaladas en el presente aviso de privacidad, se establecen en los artículos 1, 2, 3, 6, 7, 8 y 8 Bis de la Ley Orgánica del Banco del Bienestar, así como en lo señalado en los artículos 2 fracción II, 3, 30, 46, 46 Bis 1, 47, 56, 57, 59 y 115 de la Ley de Instituciones de Crédito.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="justificacion" colspan="1"><b>5. Principios y Deberes que rigen el tratamiento de sus datos personales.</b></td>
+                <td class="justificacion" colspan="1"> 
+                    <p>El Responsable se compromete a resguardar y tratar sus datos personales conforme a los principios de licitud, lealtad, información, consentimiento, finalidad, proporcionalidad, calidad y responsabilidad, así a los deberes de seguridad y confidencialidad, en términos de lo establecido en la LGPDPPSO y en la Circular 078/2019/DGAJ/DJACC, emitida por el Banco del Bienestar.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="justificacion" colspan="1"><b>6. ¿Para qué fines utilizaremos sus datos personales?</b></td>
+                <td class="jurisdicción" colspan="1"> 
+                    <p>Los datos personales que recabamos de usted, los utilizaremos para administrar y operar los servicios y productos bancarios que solicita o contrata con el Responsable, los cuales de manera enunciativa consisten en lo siguiente:</p>
+                    
+                        <li>Apertura(s) y cancelación de Cuenta(s): (Debicuenta, Debicuenta Básica, Nómina Básica BANSEFI, Cuentahorro, Tandahorro, Cuentahorro Infantil, Cuentahorro INFONAVIT, AhorraSIF, Cuentahorro CONAVI, Viviendahorro).</li>
+                        <li>Operaciones de Depósito y Retiro.</li>
+                        <li>Pagaré con Rendimiento Liquidable al Vencimiento (PRLV).</li>
+                        <li>Expedición, administración y pago de Billetes de Depósito (BIDES).</li>
+                        <li>misión y pago de Certificados de Depósito (CODES).</li>
+
+                    <p>Otra finalidad principal para lo que se emplearían sus datos personales, es para la contratación de servicios, los cuales de manera enunciativa pueden ser los siguientes:</p>
+
+                        <li>Liquidación de remesas nacionales e internacionales.</li>
+                        <li>Compra - venta de divisas.</li>
+                        <li>Dispersión y recepción de pagos por cuenta de terceros.</li>
+                        <li>Fiduciarios.</li>
+                        <li>Operaciones de Crédito.</li>
+                        <li>Promoción y venta de seguros bajo la modalidad de microseguros.</li>
+                        <li>CETES Directo.</li>
+                    
+                    <p>Asimismo, en el marco del Servicio de Verificación de Datos de la Credencial para Votar que lleva a cabo el Instituto Nacional Electoral (INE), el Banco del Bienestar podrá realizar una consulta a la base de datos personales del INE, exclusivamente para la verificación de la validez y legitimidad de los datos contenidos en su Credencial para Votar.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="justificacion" colspan="1"><b>7. Otros usos de su información personal.</b></td>
+                <td class="justificacion" colspan="1"> 
+                    <p>De manera adicional, se podrá utilizar su información personal para fines de mercadotecnia, publicidad, comercialización de productos o servicios, sorteos y/o promociones, a efecto de brindarle una mejor atención.</p>
+                    <p>En caso de que no desee que sus datos personales sean tratados para estos fines adicionales, usted puede presentar un escrito en cualquier sucursal bancaria de esta Institución, manifestando lo anterior.</p>
+                    <p>La negativa para el uso de sus datos personales para estas finalidades no podrá ser un motivo para que le neguemos los servicios y productos que solicita o contrata con nosotros.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="justificacion" colspan="1"><b>8. Transferencia de datos personales.</b></td>
+                <td class="justificacion" colspan="1"> 
+                    <p>Le informamos que sus datos personales podrán ser compartidos con otros sujetos obligados de acuerdo a lo establecido en la LGPDPPSO.</p>    
+                    
+                    <p><li>Las transferencias que se realicen serán sobre datos personales que se utilicen para el ejercicio de facultades propias, compatibles o análogas con la finalidad que motivó el tratamiento de los datos personales.</li></p>
+                    <p><li>Cuando exista una orden judicial, resolución o mandato fundado y motivado de autoridad competente.</li></p>
+                    <p><li>Cuando los datos personales se requieran para ejercer un derecho o cumplir obligaciones derivadas de una relación jurídica entre el titular y el responsable.</li></p>
+
+                </td>
+            </tr>
+            <tr>
+                <td class="justificacion" colspan="1"><b>9. Medios para ejercer los derechos de acceso, rectificación, cancelación u oposición (Derechos Arco).</b></td>
+                <td class="justificacion" colspan="1"> 
+                    <p>El Titular, por sí o mediante representante legal debidamente acreditado, tiene reconocidos y podrá ejercitar los Derechos ARCO que le otorga la LGPDPPSO.</p>
+                
+                    <p><li>ACCESO: conocer información específica que el Responsable tiene en su posesión; </li></p>
+                    <p><li>RECTIFICACIÓN: solicitar la rectificación de datos personales en caso de que no estén actualizados, sean inexactos o incompletos, para ejercer este derecho se deberá entregar la documentación que acredite la rectificación solicitada de acuerdo a los datos personales;</li></p>
+                    <p><li>CANCELACIÓN: bloqueo y posterior eliminación de datos personales de nuestras bases de datos cuando considere que la misma no está siendo utilizada adecuadamente o para los fines que dieron origen a la relación jurídica;</li></p>
+                    <p><li>OPOSICIÓN: oponerse al uso para fines específicos de sus datos personales.</li></p>
+
+                    <p>El ejercicio de cualquiera de los Derechos ARCO no impide el ejercicio de alguno otro derecho.</p>
+                    <p>Para el ejercicio de cualquiera de los derechos ARCO, el Titular o su representante legal podrán solicitar un formato de ejercicio de Derechos ARCO a la dirección de correo electrónico unidaddetransparencia@bancodelbienestar.gob.mx.</p>
+                    <p>Dicho formato se deberá llenar, firmar y devolver a la misma dirección de correo electrónico acompañado la siguiente documentación, escaneada y legible, con objeto de que el Responsable pueda llevar a cabo la autenticación del Titular que requiera ejercer sus Derechos ARCO:</p>
+                
+                    <li>Identificación oficial vigente del Titular.<br>Será válido alguno de los siguientes documentos: Credencial del Instituto Nacional Electoral, Pasaporte emitido por la Secretaría de Relaciones Exteriores, Cartilla del servicio Militar Nacional o Cédula Profesional.</li>
+                    <li>En los casos en que el Titular ejerza sus Derechos ARCO a través de un representante legal, además de acreditar la identidad de ambos (Titular y el Representante legal), se deberá enviar a la citada dirección de correo, una copia legible del poder notarial otorgado al representante legal, o en su caso carta poder firmada ante dos testigos o declaración en comparecencia del Titular por el cual se otorgan facultades para llevar a cabo este trámite ante el Responsable.</li>
+                    <li>En caso de que se quiera ejercer el derecho de rectificación, el Titular o su representante legal deberán enviar a la dirección de correo electrónico antes mencionada, la documentación que sustente su petición.</li>
+                
+                    <p>Recibida la solicitud y documentación correspondiente, el Responsable comunicará al Titular en un plazo máximo de 20 (veinte) días hábiles la respuesta a su solicitud de acceso, rectificación, cancelación u oposición.</p>
+                    <p>Si la solicitud resulta procedente, el resultado de la resolución se hará efectiva dentro de los 15 (quince) días hábiles siguientes a la fecha en que se comunique la respuesta. El Responsable podrá ampliar éste plazo hasta por 10 (diez) días hábiles más, cuando el caso lo amerite, previa notificación de dicha situación al Titular.</p>
+                    <p>En los casos en que el Titular desee revocar la autorización otorgada al Responsable respecto de los datos personales proporcionados, deberá realizar la solicitud correspondiente en los mismos términos establecidos en el presente aviso de privacidad para ejercer sus derechos ARCO.</p>
+                    <p>La entrega de los datos personales será gratuita previa acreditación de su identidad ante el Responsable. Por excepción, en aquellos casos en los que derivado de la solicitud particular del Titular, se genere al Responsable gastos de envío; y en su caso costos por la de reproducción o por la generación de copias u otros formatos que tengan como finalidad atender la solicitud del Titular, los mismos deberán ser cubiertos por este último.</p>
+                    <p>En aquellos casos en los que el Titular desee ejercer el derecho de acceso a sus datos personales, la información solicitada será proporcionada a través del medio que este haya elegido en la solicitud de ejercicio de Derechos ARCO. En el supuesto en el que el Responsable no cuente con datos personales del Titular requirente, se lo informarán por los medios a través de los cuáles realizó la solicitud.</p>
+                    <p>Para cualquier duda o aclaración respecto del procedimiento y medios para ejercer sus Derechos Arco, favor de enviar un correo a la Unidad de Transparencia del Banco del Bienestar, unidaddetransparencia@bancodelbienestar.gob.mx</p>
+                    <p>En caso de que el Titular revoque la autorización otorgada al Responsable para el tratamiento de sus datos personales bajo alguna de las finalidades identificadas como primarias en el numeral 5 del presente aviso de privacidad, dicha revocación podrá implicar la suspensión de los servicios prestados por el Responsable a fin de dar cumplimiento a las disposiciones legales vigentes o a las políticas internas del Responsable.</p>
+                    <p>Para el ejercicio de datos personales de menores de edad, se deberá privilegiar el interés superior de la niña, el niño y el adolescente, en términos de las disposiciones legales aplicables.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="justificacion" colspan="1"><b>10. Cambios del Aviso de Privacidad.</b></td>
+                <td class="justificacion" colspan="1"> 
+                   <p>El Responsable se reserva el derecho a realizar cambios en el presente aviso de privacidad, los cuales serán dados a conocer mediante su publicación en la página  <a class="blue-text" target="_blank" href="https://www.bancodelbienestar.com.mx/BsfPortalMovil/index ">https://www.bancodelbienestar.com.mx/BsfPortalMovil/index </a> o aquella que la llegara a sustituir.</p>
+                    <p>Asimismo, se informa al Titular que cuenta con el derecho a oponerse al tratamiento de sus datos personales en caso de no estar de acuerdo con las modificaciones que pudiera presentar este aviso de privacidad, para ello, deberá enviar una solicitud a la dirección de correo electrónico unidaddetransparencia@bancodelbienestar.gob.mx</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="justificacion" colspan="1"><b>11. Atención de quejas y denuncias.</b></td>
+                <td class="justificacion" colspan="1"> 
+                   <p>Les informamos que la autoridad competente para resolver cualquier conflicto derivado de la aplicación a la LGPDPPSO es el Instituto Nacional de Acceso a la Información y Datos Personales (INAI), cuya página es www.inai.org.mx</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="justificacion" colspan="1"><b>12. Cookies y Web beacons.</b></td>
+                <td class="justificacion" colspan="1"> 
+                    <p>En caso de que el Titular haga uso de plataformas, sitios, aplicaciones o solicite los servicios del Responsable mediante el uso de dispositivos electrónicos o proporcione sus datos personales por cualquiera de dichos canales (en adelante y en su conjunto los “Medios Electrónicos”), el Titular se sujetará los términos y condiciones que para tal efecto se establezcan en el sitio correspondiente.</p>
+                    <p>Asimismo, el Titular entiende, acepta y reconoce que: </p>
+                    <p>1. Los Medios Electrónicos pueden incluir enlaces a sitios web de terceros ajenos al Responsable, respecto de los cuales, este último no asume ninguna titularidad, obligación o responsabilidad alguna.</p>
+                    <p>2. Los servicios que presta el Responsable a través de los Medios Electrónicos podrán recopilar información del Titular tales como tipo de navegador, sistema operativo, visitas a otros sitios de internet o llevar a cabo su identificación como Usuario, a través "cookies" o "web beacons".</p>
+                    <p>Para que el Titular pueda deshabilitar estos programas, deberá de acceder a las "opciones de internet" ubicadas en la sección de las "Herramientas", o funciones similares, del navegador que utilice.</p>
+                    <p>El sitio web del Responsable <a class="blue-text" target="_blank" href="https://www.bancodelbienestar.com.mx/BsfPortalMovil/index">https://www.bancodelbienestar.com.mx/BsfPortalMovil/index </a> y sus aplicaciones utilizan "Cookies" que el Responsable podrá colocar en su dispositivo de acceso y hacer uso ellas.</p>
+                    <p>El uso de “Cookies” tiene como finalidad agilizar el inicio de una nueva sesión; guardar la configuración del usuario del sitio y/o sus aplicaciones; agilizar la inter-actuación con los contenidos; mejorar la experiencia del usuario del sitio y/o sus aplicaciones almacenando sus preferencias en el dispositivo de acceso, eliminando la necesidad de especificar repetidamente la misma información y solo mostrar contenido personalizado y publicidad de acuerdo a sus preferencias en sus posteriores visitas, así como facilitar al Responsable el análisis de dicha información con el objetivo de mejorar el rendimiento del sitio y/o sus aplicaciones.</p>
+                    <p>Con el uso de los Medios Electrónicos, Usted reconoce y autoriza al Responsable al uso de "cookies" y "web beacons"</p>
+                    <p><b>Definición de Cookie:</b>Es un archivo de datos que se almacena en el disco duro del equipo de cómputo o del dispositivo de comunicaciones electrónicas de un usuario al navegar en un sitio de internet específico, el cual permite intercambiar información de estado entre dicho sitio y el navegador del usuario. La información de estado puede revelar medios de identificación de sesión, autenticación o preferencias del usuario, así como cualquier dato almacenado por el navegador respecto al sitio de internet.</p>
+                    <p><b>Definición de Web Beacons:</b>Imagen visible u oculta insertada dentro de un sitio web o correo electrónico, que se utiliza para monitorear el comportamiento del usuario en estos medios. A través de éstos se puede obtener información como la dirección IP de origen, navegador utilizado, sistema operativo, momento en que se accedió a la página, y en el caso del correo electrónico, la asociación de los datos anteriores con el destinatario.</p>
+                    <p>El Responsable podrá ampliar el contenido del sitio y/o sus aplicaciones o crear nuevos medios electrónicos en cuyo caso estos se regirán por el presente aviso de privacidad.</p>
+
+                </td>
+            </tr> 
+            </table>
+
+
+            <p>Ultima fecha de actualización Abril 2020.</p>
+
+            <tr></tr>
+            
+            <tr class="justificacion" style='font-size: 11px;'>
+                <p><b>1</b> Decreto por el que se reforman y adicionan diversas disposiciones de la Ley Orgánica del Banco del Ahorro Nacional y Servicios Financieros, publicado en el Diario Oficial de la Federación, el 19 de julio de 2019. Disponible en: <a class="blue-text" target="_blank" href="https://dof.gob.mx/nota_detalle.php?codigo=5566165&fecha=19/07/2019">https://dof.gob.mx/nota_detalle.php?codigo=5566165&fecha=19/07/2019. </a>
+                Artículo 4o. transitorio: cuando éste u otros decretos, códigos, leyes, reglamentos o disposiciones jurídicas emitidas con anterioridad al presente Decreto, así como todos los contratos, convenios y demás actos jurídicos celebrados por la Institución, hagan referencia al Banco del Ahorro Nacional y Servicios Financieros, se entenderá la remisión al Banco del Bienestar.</p>
+            </tr>
+        
+          
+
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect teal darken-4 white-text btn-flat">Cerrar</a>
+    </div>
+    <div class="footer-copyright teal darken-3">
+        <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
+    </div>
+</div>
+
+
+<div id="terminos" class="modal">
+    <div class="modal-content justificacion">
+        <table class="table" style='width:980px;'>
+            <tr>
+                <b>Por el solo hecho de acceder y hacer uso de este sitio, usted se adhiere de forma inmediata a todos y cada uno de los siguientes:
+              </b>
+                <b>TÉRMINOS Y CONDICIONES DE USO DEL SITIO.</b>
+                <p>La utilización del sitio <a class="blue-text" target="_blank" href="https://www.bancodelbienestar.com.mx/BsfPortalMovil/index">https://www.bancodelbienestar.com.mx/BsfPortalMovil/index</a>, en adelante “el sitio”, y de cualquiera de las
+                    aplicaciones del mismo constituye el pleno y expreso consentimiento por parte del usuario para observar y sujetarse respecto de cada uno de los términos y condiciones que aquí se contienen, así como respecto de las políticas de privacidad,
+                    políticas de seguridad y, en su caso, cualquier otro documento que regule la participación del usuario en este sitio. </p>
+                <p>En el supuesto que cualquiera de los términos a los que habrá de sujetarse el usuario cuando acceda a este sitio sean contrarios a sus intereses, deberá abstenerse de hacer uso del mismo.</p>
+
+                <p><b>Obligaciones del usuario.</b></p>
+
+                <p>Al utilizar el sitio me obligo a cumplir con los términos y condiciones de su uso, establecidos en el presente documento, reconozco haber leído, entendido y estar de acuerdo en sujetarme a los mismos, por lo que, al acceder estoy de acuerdo
+                    en acatar lo anterior.</p>
+                <p>La información y los servicios que ofrece el Banco del Bienestar, S.N.C., I.B.D. (Banco del Bienestar), a través de su sitio, hacen referencia exclusivamente, a la normatividad que los rige en los Estados Unidos Mexicanos y son formulados
+                    para las operaciones que se realicen en su territorio.</p>
+                <p>Por el hecho de hacer uso de la información y hacer uso de los servicios, el usuario expresa su aceptación y está de acuerdo con los términos y condiciones del uso del sitio de Internet del Banco del Bienestar, así como con las modificaciones
+                    que al mismo, en su caso, se realicen. </p>
+                <p>Este sitio, la información, los materiales descritos en él y el software que se proporciona, son presentados “como son”, “en el estado en que se encuentran” y están disponibles sin garantía alguna, ya sea expresa o tácita, incluyendo sin
+                    limitación, cualquier garantía de comerciabilidad, idoneidad de los materiales para un fin particular, o de no cumplimiento.</p>
+                <p>Los usuarios no residentes en los Estados Unidos Mexicanos que deseen acceder al sitio, deberán asegurarse que el acceso y uso del mismo, de su contenido y/o de los servicios, les esté permitido de conformidad con su propia legislación.</p>
+                <p>El usuario que utilice este sitio fuera de la República Mexicana, se hará responsable del cumplimiento de todas las leyes de dicha jurisdicción.</p>
+                <p>La utilización del sitio, así como el acceso y uso de los servicios supondrá la aceptación plena por parte del usuario de (i) los términos y condiciones vigentes en cada momento en que el usuario acceda y/o utilice los mismos y (ii) cualesquiera
+                    modificaciones de los mismos que hayan sido comunicados al usuario.</p>
+                <p>El Banco del Bienestar se reserva el derecho de suspender, interrumpir o dejar de operar el sitio y los servicios, en cualquier momento.</p>
+
+                <p><b>Usos permitidos.</b></p>
+
+                <P>El uso del sitio es bajo la exclusiva responsabilidad del usuario.</P>
+                <p>El Banco del Bienestar autoriza al usuario a visualizar y descargar los materiales contenidos en el sitio solamente para su uso personal y no para un uso comercial.</p>
+                <p>1) El Usuario deberá conservar en todas las copias de los materiales descargados, todos los avisos sobre derechos de autor y propiedad intelectual de los materiales, contenidos en los mismos;</p>
+                <p>2) El usuario no deberá modificar, reproducir o mostrar pública o comercialmente los materiales, ni podrá distribuir o utilizarlos con algún propósito público o comercial;</p>
+                <p>3) El usuario no deberá transferir los materiales a ningún tercero.</p>
+                <p>Este sitio, incluyendo todos los materiales contenidos en el mismo, se encuentran protegidos por la Ley Federal del Derecho de Autor de los Estados Unidos Mexicanos. El Banco del Bienestar no le concede al usuario derecho expreso o implícito
+                    sobre alguna patente, marca registrada, nombre comercial, aviso comercial, secreto industrial o derecho de autor.</p>
+                <p>Queda terminantemente prohibida la utilización de tales elementos, su reproducción, comunicación y/o distribución con fines comerciales o lucrativos, así como su modificación, alteración, o descompilación. </p>
+                <p>El usuario no podrá modificar, copiar, reproducir, volver a publicar, cargar, exponer, transmitir o distribuir de cualquier forma el contenido disponible a través del servicio y los sitios asociados, incluidos el código y el software.</p>
+
+                <p><b>Marcas y derechos de autor.</b></p>
+
+                <p>Las marcas, logotipos, nombres comerciales, patentes, diseños industriales y contenidos del sitio de Internet del Banco del Bienestar, y demás derechos de propiedad intelectual exhibidos en este sitio, son propiedad del mismo y de terceros
+                    según sea el caso, por lo que se prohíbe a los usuarios usarlos sin el permiso por escrito del Banco del Bienestar o del tercero a quien pertenezca la propiedad intelectual.</p>
+                <p>odo el contenido exhibido o disponible a través de este sitio está protegido por la legislación vigente en materia de derechos de autor.</p>
+                <p>El usuario no adquiere ningún derecho de propiedad por tener carácter de usuario y en ningún momento dicho uso será considerado como una autorización ni licencia para utilizar los servicios propios del sitio con fines distintos a aquellos
+                    para los cuales fueron creados.</p>
+                <p>Los derechos de propiedad intelectual del sitio del Banco del Bienestar, las pantallas que se muestran, la información y material que aparecen en las mismas, pertenecen a esta Institución salvo que se indique lo contrario.</p>
+                <p>Las marcas denominativas y mixtas de servicios y nombres comerciales que aparezcan en el sitio, son marcas registradas propiedad de esta Institución.</p>
+
+                <p><b>Enlaces con sitios de Internet.</b></p>
+
+                <p>El Banco del Bienestar puede proporcionar enlaces con otros sitios de Internet para la conveniencia del usuario, sin embargo, el Banco del Bienestar no es responsable en relación con tales sitios, en consecuencia, el Banco del Bienestar
+                    no tiene control sobre tales productos, servicios, materiales o cualquier otra información contenida en o disponible a través de los sitios de dichos terceros. El acceso a cualquier otro sitio enlazado es bajo el propio riesgo del
+                    usuario.
+                </p>
+                <p>En virtud de lo anterior, el Banco del Bienestar no garantiza ni asume ningún tipo de responsabilidad por: a) los daños y perjuicios que se puedan ocasionar por el funcionamiento, disponibilidad, accesibilidad o continuidad de los sitios
+                    enlazados; b) el mantenimiento de los servicios, información, datos, archivos, productos y cualquier clase de material existente en los sitios enlazados; c) la prestación o transmisión de los servicios, información, datos, archivos,
+                    productos y cualquier clase de material existente en los sitios enlazados; d) la calidad, licitud, fiabilidad y utilidad de los servicios, información, datos, archivos, productos y cualquier clase de material existente en los sitios
+                    enlazados.
+                </p>
+
+                <p><b>Seguridad de la información.</b></p>
+
+                <p>El Banco del Bienestar mantiene procedimientos diseñados para proteger la información confidencial sobre el usuario y el uso por parte del usuario de cualquiera de los productos y servicios proporcionados a través del sitio.</p>
+                <p>La seguridad de la información que se transmite entre el usuario y las páginas de terceros enlazados al sitio del Banco del Bienestar en Internet será responsabilidad exclusiva de dichos terceros y del usuario.</p>
+                <p>El usuario entiende y acepta que no obstante que el Banco del Bienestar protege la información transmitida a través del sitio, dada la naturaleza de Internet, no se garantiza que toda transacción electrónica se encuentre libre de riesgo,
+                    por lo que el usuario libera de manera absoluta y sin limitación alguna al Banco del Bienestar de cualquier tipo de responsabilidad, civil, penal, administrativa, así como de los daños y perjuicios o cualquier otra que pudiera ser
+                    ocasionados por el mal uso, por terceras personas de la información generada, transmitida, recibida o archivada en el sitio.</p>
+
+                <p><b>Autorización para divulgar información.</b></p>
+
+                <p>El usuario acepta expresamente que al proporcionar la información requerida para acceder al área denominada como servicios en línea dentro del sitio, autoriza al Banco del Bienestar a que toda la información que ingrese al sistema pueda
+                    ser proporcionada a un tercero, por lo que en ningún caso se entenderá que se está violando derecho alguno del usuario.</p>
+
+                <p><b>Integridad, autenticidad y archivo de los mensajes de datos.</b></p>
+
+                <p>La clave de usuario y la contraseña, servirán para realizar las operaciones propias del sitio a fin de:</p>
+                <p>a) Verificar la identidad del emisor de un mensaje de datos.</p>
+                <p>b) Determinar que un mensaje de datos no ha sido alterado y ha permanecido íntegro durante su generación, comunicación, transmisión, recepción o archivo, y </p>
+                <p>c) Atribuir tal mensaje de datos de manera fehaciente al usuario que lo haya generado.</p>
+                <p>Al ingresar al sitio y proporcionar cualquier tipo de datos, el usuario faculta al Banco del Bienestar para utilizarlos de acuerdo con la finalidad que se establezca, en términos de lo establecido en Ley General de Transparencia y Acceso
+                    a la Información Pública, a la Ley General de Protección de Datos Personales en Posesión de sujetos Obligados, así como a la Ley para la Transparencia y Ordenamiento de los Servicios Financieros.</p>
+                <p>Lo anterior incluye el otorgar autorización al Banco del Bienestar para realizar investigaciones sobre el comportamiento crediticio del usuario en las sociedades de información crediticia, en término de lo establecido en la Ley para regular
+                    a las Sociedades de Información Crediticia y en las Disposiciones de carácter general aplicables a las instituciones de crédito (Circular Única de Bancos).</p>
+                <p>En caso que, el Banco del Bienestar detecte distintas cuentas que contengan datos coincidentes o relacionados, podrá de manera discrecional cancelar, suspender o inhabilitarlas las mismas.</p>
+                <p>Los mensajes de datos recibidos y/o archivados en medios electrónicos, identificados con la clave de usuario y la contraseña, serán atribuibles al usuario respectivo y servirán para evidenciar su origen. Por consiguiente, el usuario es
+                    responsable de todos los actos, disposiciones, cesión de derechos, autorizaciones, transferencias, operaciones financieras, información proporcionada, etcétera, que se realicen con su clave de usuario y con su contraseña, ya sea que
+                    el uso de los mismos haya sido autorizado o no por el mismo.</p>
+
+                <p><b>Claves de acceso y claves de identificación.</b></p>
+
+                <p>Con el fin de cumplir con las disposiciones que rigen la protección de datos personales, es necesario que el usuario realice el alta de su cuenta; de la cual el usuario es responsable único y final, debiendo tomar todas las medidas que
+                    resulten necesarias para mantener en secreto, tanto la clave de usuario como la contraseña con las cuales tenga acceso a los servicios que ofrece el Banco del Bienestar a través del sitio.</p>
+                <p>El usuario se compromete a hacer un uso diligente y a mantener en secreto la clave de usuario y la contraseña mediante las cuales puede realizar operaciones en el sitio.</p>
+                <p>El usuario libera de manera absoluta y sin limitación alguna al Banco del Bienestar de cualquier tipo de responsabilidad, civil, penal, administrativa, así como de los daños y perjuicios o cualquier otra que pudiera ser ocasionados por
+                    el mal uso que le dé a su cuenta y contraseña, o que se generen por no haber adoptado todas las medidas necesarias para su resguardo y confidencialidad.</p>
+
+                <p><b>Responsabilidad limitada.</b></p>
+
+                <p>El usuario acepta que el Banco del Bienestar no tendrá responsabilidad alguna, por la interrupción o demora de cualquier información, material o cualquier otro aspecto de los servicios que ofrece el sitio, incluyendo sin limitación, responsabilidad
+                    asociada con cualesquier virus, que pudiera infectar el equipo de cómputo o software del usuario, ni por los daños y/o perjuicios que puedan ocasionarse por la falta de veracidad, vigencia, exhaustividad y/o autenticidad de la información
+                    que un tercero dé de alta en el sitio.</p>
+
+                <p><b>Responsabilidad por daños y perjuicios.</b></p>
+
+                <p>El usuario responderá de los daños y perjuicios que el Banco del Bienestar sufra como consecuencia del incumplimiento de cualquiera de las obligaciones a las que queda sometido el usuario.</p>
+
+                <p><b>Contingencia.</b></p>
+
+                <p>El usuario acepta expresamente que el Banco del Bienestar no será responsable de los daños y perjuicios que se le pudiera causar si por caso fortuito, fuerza mayor o por cualquier otro acontecimiento o circunstancia inevitable, más allá
+                    del control razonable del Banco del Bienestar, no pudiera hacer uso del sitio o realizar alguna de las operaciones que el mismo ofrece.</p>
+
+                <p><b>Exclusión de garantías y de responsabilidad por el funcionamiento del sitio.</b></p>
+
+                <p>El Banco del Bienestar no garantiza la disponibilidad y continuidad del funcionamiento del sitio, de los servicios y/o de aquellos otros sitios con los que se haya establecido un link, ni la idoneidad de los mismos para las necesidades
+                    de los usuarios.</p>
+                <p>El Banco del Bienestar no será en ningún caso responsable por cualesquiera daños y perjuicios que puedan derivarse de (i) la falta de disponibilidad o accesibilidad del sitio, de los servicios y/o de aquellos otros sitios con los que se
+                    haya establecido un link; (ii) la interrupción en el funcionamiento del sitio y/o de los servicios o fallos informáticos producidos en el curso de su funcionamiento; (iii) la falta de idoneidad del sitio, de los contenidos y/o de los
+                    servicios para responder a las necesidades de los usuarios.</p>
+                <p>Los materiales pueden contener inexactitudes y/o errores tipográficos, por lo que el Banco del Bienestar no garantiza la exactitud o perfección de los materiales, ni la confiabilidad de algún aviso, opinión, declaración o cualquier otra
+                    información visualizada o distribuida a través del sitio.</p>
+                <p>El usuario reconoce que el confiar en cualquier aviso, opinión, declaración o información será bajo su propio riesgo.</p>
+                <p>El Banco del Bienestar se reserva el derecho, bajo su propia discreción, de corregir cualesquier errores u omisiones que se encuentren en cualquier parte del sitio. </p>
+                <p>Asimismo, podrá realizar cualquier cambio al sitio, así como a cualquier material, productos, programas, servicios o precios (si existieran) descritos en el sitio en cualquier momento y sin necesidad de aviso previo.</p>
+                <p>Con el fin de disminuir el riesgo de introducción de virus en el sitio, el Banco del Bienestar utiliza programas de detección de virus, no obstante, no garantiza la ausencia de virus ni de otros elementos en el sitio introducidos por terceros
+                    ajenos al Banco del Bienestar que puedan producir alteraciones en los sistemas físicos o lógicos de los usuarios o en los documentos electrónicos y ficheros almacenados en sus sistemas.</p>
+                <p>En consecuencia, el Banco del Bienestar no será en ningún caso responsable de cualesquiera daños y perjuicios de toda naturaleza que pudieran derivarse de la presencia de virus u otros elementos que puedan producir alteraciones en los
+                    sistemas físicos o lógicos, documentos electrónicos o ficheros de los usuarios.</p>
+
+
+                <p><b>Exclusión de garantías y de responsabilidad por la utilización del sitio.</b></p>
+
+                <p>El Banco del Bienestar no será responsable en ningún caso del uso que los usuarios y/o terceros pudieran hacer del sitio, de los contenidos y/o de los servicios, ni de los daños y perjuicios que pudieran derivarse del mismo.</p>
+
+                <p><b>Exclusión de garantías y de responsabilidad por los contenidos.</b></p>
+
+                <p>Con la inclusión en el sitio de contenidos provenientes de terceros, no se convierte en editor de los mismos; y en consecuencia, no garantiza ni se hace responsable de la licitud, fiabilidad, utilidad, veracidad, exactitud, exhaustividad
+                    y actualidad de dichos contenidos.</p>
+
+                <p><b>Exclusión de garantías y de responsabilidad en relación con los links.</b></p>
+
+                <p>Si en el sitio se pone a disposición de los usuarios dispositivos técnicos de enlace, directorio​s y herramientas de búsqueda que permiten a los usuarios acceder a páginas web pertenecientes a y/o gestionados por terceros, en ningún caso,
+                    el Banco del Bienestar se hace responsable, aprueba, ni hace propios los productos, servicios, contenidos, información, datos, archivos y cualquier clase de material existente en tales páginas web y no controla ni se hace responsable,
+                    aprueba o hace propias las sucesivas modificaciones de dichos materiales. </p>
+                <p>En consecuencia, el Banco del Bienestar en ningún caso responderá del acceso a otras páginas web o contenidos de terceros a través de las conexiones y links existentes.</p>
+
+                <p><b>Cambios a los términos y condiciones de uso del sitio.</b></p>
+
+                <p>El uso del sitio constituirá la aceptación del usuario de las disposiciones aplicables al sitio.</p>
+                <p>El Banco del Bienestar se reserva el derecho de modificar el presente aviso legal en cualquier tiempo, mediante simple publicación de las nuevas disposiciones aplicables, siendo el usuario responsable de revisar el aviso legal periódicamente.</p>
+
+                <p><b>Legislación y normatividad aplicable.</b></p>
+                <p>El servicio del sitio es controlado por el Banco del Bienestar desde sus oficinas corporativas en la Ciudad de México, dentro de los Estados Unidos Mexicanos. Al ingresar al sitio, el usuario y el Banco del Bienestar aceptan someterse
+                    a la legislación aplicable en los Estados Unidos Mexicanos, sin tomar en cuenta los principios de conflictos de leyes que pudieran surgir.</p>
+                <p>Para la interpretación, ejecución y cumplimiento del presente aviso legal, las partes están de acuerdo en someterse a la jurisdicción de los Tribunales Federales con sede en la Ciudad de México, renunciando expresamente a cualquier otro
+                    fuero que por sus domicilios presentes o futuros pudiera corresponderles.</p>
+                <p><b>El usuario declara haber leído y aceptar íntegramente los presentes términos y condiciones vigentes en el momento de acceder al sitio y/o usar los servicios.</b></p>
+                <p><b>En el caso de que el usuario no esté de acuerdo con las disposiciones del presente aviso legal deberá abstenerse de utilizar el sitio y/o de realizar operaciones a través del sitio.</b></p>
+            </tr>
+
+        </table>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect teal darken-4 white-text btn-flat">Cerrar</a>
+    </div>
+    <div class="footer-copyright teal darken-3">
+        <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
+    </div>
+</div>
+
 
 
 
 
 <div id="modalContr" class="modal">
     <div class="modal-content">
-        <app-pdf>loading</app-pdf>
+
+        <!-- Aqui va -->
+
+        <table id="convert" style='width:980px;'>
+            <tr>
+                <td style='padding: 0px 8px 8px;'>
+                    <div style='font-family: Arial,Helvetica,sans-serif; font-size: 12px; color: rgb(0, 0, 0);'>
+
+                        <img class="img" src="https://www.cetesdirecto.com/imagenes/shcp1.jpg">
+                        <img class="img2" src="https://www.bancodelbienestar.com.mx/Banca/_imagenes/BansefiNew/logo_bancodelbienestar_2.png">
+                        <table width='100%' style='width:100%;' cellspacing='0' cellpadding='2' align='center' border='0'>
+                            <tbody>
+
+                                <table class="table" style='width:980px'>
+                                    <tr class="primero">
+                                        <th colspan="5" class="titulos">CARÁTULA INFORMATIVA</th>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="3" class="titulo">Número de Crédito: {{ hugo }}</td>
+                                        <td colspan="3"> </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="5">
+                                            <p>Nombre comercial del Producto:</p>
+                                            <p>Tipo de Crédito: Crédito Simple en Moneda Nacional.</p>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="1">Tasa de interés anualordinaria</td>
+                                        <td colspan="1">CAT (Costo Anual Total / SinIVA)</td>
+                                        <td colspan="1">CAT (Costo Anual Total)</td>
+                                        <td colspan="1">MONTO O LÍNEA DE CRÉDITO</td>
+                                        <td colspan="1">MONTO MENSUAL A PAGAR</td>
+                                    </tr>
+
+                                    <tr class="espacio">
+                                        <td> {{ catPorcentaje }} </td>
+                                        <td> {{ catPorcentaje }} </td>
+                                        <!-- <td> {{ tasaInteresMensual }} </td> -->
+                                        <td> {{ valueMon }} </td>
+                                        <td> {{ finance }} </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="5" class="titulo">COMISIONES RELEVANTES</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="2">
+                                            <ul>
+                                                <li>Apertura: $0.00</li>
+                                                <li>Anualidad: $0.00</li>
+                                                <li>Prepago: $0.00</li>
+                                                <li>Pago tardío (mora): 1.5 veces la tasa de interés anual ordinaria</li>
+                                            </ul>
+                                        </td>
+
+                                        <td colspan="3">
+                                            <ul>
+                                                <li>Reclamación improcedente: $0.00</li>
+                                                <li>Cobranza:</li>
+                                                Para otras comisiones consulte: Contrato de Crédito
+                                            </ul>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="2" class="titulo">PLAZO DEL CRÉDITO:
+                                            <p>___{{valuePlaz}}___meses</p>
+                                        </td>
+                                        <td colspan="3">Fecha límite de primer pago: _____________________ y las subsecuentes, en términos de la Tabla de Amortización:</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="5">ADVERTENCIAS:
+                                            <p>Contratar créditos que excedan tu capacidad de pago afecta tu historial crediticio.</p>
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="5">ESTADO DE CUENTA:
+                                            <li>Consulta: vía internet X</li>
+                                            <li>Envío por correo electrónico: X</li>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="5">ACLARACIONES Y RECLAMACIONES:
+                                            <p>Unidad Especializada de Atención a Usuarios:</p>
+                                            <p>Domicilio: Avenida Río Magdalena #115, Colonia Tizapán San Ángel, Delegación Álvaro Obregón, C.P. 01090, México, Distrito Federal.</p>
+                                            <p>Teléfono (01 55) 54813300 extensión 3578 en el horario de 9:00 a.m. a 18:00 p.m. Correo electrónico: ueau@bansefi.gob.mx</p>
+                                            <p>Página de Internet: www.bancodelbienestar.gob.mx</p>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="5">REGISTRO DE CONTRATOS DE ADHESIÓN NÚM:
+                                            <p>Comisión Nacional para la Protección y Defensa de los Usuarios de Servicios Financieros (CONDUSEF):</p>
+                                            <p>Teléfono: 01 800 999 8080 y 53400999. Página de Internet. www.condusef.gob.mx Correo electrónico: opinion@condusef.gob.mx.</p>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="titulo" colspan="2">
+                                            <p>___________________________________________</p>Nombre y firma de consentimiento del Acreditado</td>
+                                        <td class="titulo" colspan="3">
+                                            <p>_______________________________</p>Por "Banco del Bienetar"</td>
+                                    </tr>
+
+                                </table>
+
+                            </tbody>
+                        </table>
+                        <br/>
+                        <br/>
+
+                    </div>
+                    </td>
+            </tr>
+
+        </table>
+        <!-- Aqui cierra -->
+
     </div>
     <div class="modal-footer">
         <a class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>
@@ -672,6 +1560,27 @@
     </div>
 </div>
 
+<div id="termsCond" class="modal">
+    <div class="modal-content">
+        <p class="flow-text center-align">
+            terms
+        </p>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>
+    </div>
+    <div class="footer-copyright teal darken-3">
+        <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
+    </div>
+</div>
+
+
+<div id="modalMap" class="iframe-container hide">
+    <!--<app-map></app-map>-->
+    <a (click)="mapOk()" class="waves-effect teal darken-4 btn">Aceptar</a>
+    <iframe src="/map"></iframe>
+
+</div>
 
 
 

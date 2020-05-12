@@ -15,14 +15,22 @@ import { RecaptchaModule } from 'ng-recaptcha';
 import { ServiceModule } from '../services/service.module';
 import { Ng5SliderModule } from 'ng5-slider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { MapComponent } from './map/map/map.component';
+import { GeocodingComponent } from './map/geocoding/geocoding.component';
+import { MapPointFormComponent } from './map/map-point-form/map-point-form.component';
+import { ResultsListComponent } from './map/results-list/results-list.component';
+import {LeafletModule} from '@asymmetrik/ngx-leaflet';
 
 @NgModule({
     declarations:[
         HomeComponent,
         ApplyComponent,
         PagesComponent,
-        DashboardComponent
+        DashboardComponent,
+        MapComponent,
+        GeocodingComponent,
+        MapPointFormComponent,
+        ResultsListComponent
     ],
     imports:[
         FormsModule,
@@ -33,13 +41,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         PAGES_ROUTES,
         FormsModule,
         RecaptchaModule,
-        ServiceModule
+        ServiceModule,
+        LeafletModule
     ],
     exports:[
         HomeComponent,
         ApplyComponent,
         PagesComponent,
-        SharedModule      
+        SharedModule
     ]
 })
 

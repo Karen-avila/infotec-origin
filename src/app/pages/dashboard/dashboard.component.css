@@ -33,3 +33,77 @@ i.icon-gold {
     display: inline;
     margin-right: 10px;
 }
+
+.iframe-container {
+    overflow: hidden;
+    padding-top: 56.25%;
+    position: relative;
+}
+
+.iframe-container iframe {
+    border: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    width: 25%;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    padding: 0.3em;
+    caption-side: bottom;
+}
+
+caption {
+    padding: 0.3em;
+    color: #fff;
+    background: #000;
+}
+
+th {
+    background: #eee;
+}
+
+.titulos {
+    text-align: center;
+}
+
+.titulo {
+    text-align: center;
+}
+
+.espacio {
+    height: 60px;
+}
+
+.img {
+    width: 250px;
+}
+
+.img2 {
+    width: 400px;
+}
+
+.modalF {
+    width: 980px;
+}
+
+.justificacion{
+    text-align: justify;
+}
+
+.subrayar{
+    text-decoration: underline;
+}
+

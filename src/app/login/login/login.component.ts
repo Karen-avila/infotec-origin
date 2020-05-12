@@ -9,6 +9,8 @@ import * as M from 'materialize-css';
 import { UserService } from '../../services/service.index';
 import { User } from '../../models/user.model';
 
+import swal from 'sweetalert';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -21,6 +23,9 @@ export class LoginComponent implements OnInit {
   output: any;
   signInForm: NgForm;
   recaptcha: any[];
+
+  passType = "password";
+  icon:boolean=true;
 
   resolved(captchaResponse: any[]) {
     this.recaptcha = captchaResponse;
@@ -43,7 +48,7 @@ re
 
     this.form = new FormGroup({
       email: new FormControl(null,[Validators.required, Validators.email]),
-      password: new FormControl(null, Validators.required)
+      password: new FormControl(null, [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')])
    });
 
    this.form1 = new FormGroup({
@@ -52,13 +57,18 @@ re
 
   }
 
+  get f() { return this.form.controls; }
+  get fgt() { return this.form1.controls; }
+
   recuperarpsw(){
     console.log("form is valid?", this.form1.valid);
     if(this.form1.valid){
     console.log("form", this.form1.value);
       //enviar datos a back
     this.instance[0].open();
-    } 
+    } else{
+      swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
+    }
   }
 
   onSignInSubmit() {
@@ -88,7 +98,7 @@ this.router.navigate(["dashboard"]);
   }
 
   login(){
-    let user = new User(this.form.value.email,this.form.value.password,this.form.value.rePassword);
+    let user = new User(this.form.value.email,this.form.value.password,this.form.value.password);
     console.log("form is valid?", this.form.valid);
     if(this.form.valid){
       console.log("form esto envio", this.form.value);
@@ -98,9 +108,23 @@ this.router.navigate(["dashboard"]);
           console.log("esto responde el servicio login",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
         });
         console.log("waaa",this.re)
-      this.router.navigate(["dashboard",{id:this.re}]);//revisar donde quedara
+      this.router.navigate(["dashboard",{id:this.re,un:"un",do:"do"}]);//revisar donde quedara
      
-    } 
+    } else{
+      swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
+    }
+  }
+
+  viewPassword(){
+    if(this.icon){
+      console.log("view password");
+      this.icon=false;
+      this.passType="text";
+    }else{
+      console.log("not view password");
+      this.icon=true;
+      this.passType="password";
+    }
   }
 
   }
