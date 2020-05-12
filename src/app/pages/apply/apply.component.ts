@@ -3,6 +3,7 @@ declare const MStepper: any;
 import * as M from 'materialize-css';
 
 import swal from 'sweetalert';
+import { Router } from '@angular/router';
 
 //-------------
 import { FormGroup, FormControl, Validators } from '@angular/forms';
@@ -39,7 +40,7 @@ export class ApplyComponent implements OnInit {
     console.log(this.recaptcha);
   }
 
-  constructor(public userService:UserService) {
+  constructor(public userService:UserService, private router: Router) {
     
   }
 
@@ -83,8 +84,8 @@ export class ApplyComponent implements OnInit {
 
 //------------------------   
    this.formval = new FormGroup({
-    codigo: new FormControl(null,[Validators.required]),
-    token: new FormControl(null, [Validators.required])
+    codigo: new FormControl(null,[Validators.required, Validators.minLength(3),  Validators.maxLength(3), Validators.pattern('[0-9]{3}')]),
+    token: new FormControl(null, [Validators.required, Validators.minLength(3),  Validators.maxLength(3), Validators.pattern('[0-9]{3}')])
  }
  );
 
@@ -178,6 +179,7 @@ pbaDict(p1:string){
     console.log("formval is valid?", this.formval.valid);
     if(this.formval.valid){
       console.log("formval", this.formval.value);
+      this.router.navigate(["login"]);
       //enviar datos a back
       //this.popup[0].open();
     } else{
