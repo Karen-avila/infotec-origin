@@ -72,11 +72,13 @@
                             </div>
 
                             <div class="col s12  m4 offset-m3 l3 offset-l6 center">
-                                <!--<li><a class="waves-effect teal darken-4 btn modal-trigger" href="#modal1">Registrarse</a></li>-->
                                 <br>
-                                <button class="waves-effect teal darken-4 btn right" type="submit">Registrarse
+                                <a class="waves-effect  teal darken-4 btn modal-trigger right" href="#token">
+                                   Registrarse
+                                </a>
+                                <!--<button class="waves-effect teal darken-4 btn right" type="submit">Registrarse
                                         <i class="material-icons right">send</i>
-                                      </button>
+                                      </button>-->
 
                             </div>
                         </form>
@@ -111,6 +113,44 @@
     </div>
 </div>
 
+
+
+
+
+<!--Modal de token -->
+<div id="token" class="modal">
+    <div class="modal-content">
+        <form ngNativeValidate [formGroup]="formval" (ngSubmit)="validacion()">
+            <div class="input-field col s10">
+                <i class="material-icons prefix">no_encryption</i>
+                <input formControlName="codigo" name='codigo' id="codigo" type="text" class="validate">
+                <label for="codigo">Código de activación</label>
+                <div class="grey-text text-darken-3" *ngIf="fo.codigo.errors?.required">El código de activación fue enviado a su correo electrónico</div>
+            </div>
+
+            <div class="input-field col s10">
+                <i class="material-icons prefix">no_encryption</i>
+                <input formControlName="token" name='token' id="token" type="text" class="validate">
+                <label for="token">Token</label>
+                <div class="grey-text text-darken-3" *ngIf="fo.token.errors?.required">Es requerido para poder continuar</div>
+            </div>
+        
+            
+            <div class="input-field col s12 m3 offset-m1 l3 offset-l1">
+                <a class="waves-effect  teal darken-4 btn modal-trigger right" href="#modal1">Aceptar</a>
+            </div>
+
+        </form>
+    </div>
+
+    <br>
+    <br>
+    
+    <div class="footer-copyright teal darken-3">
+        <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
+    </div>
+</div>
+
 <!-- Modal Structure -->
 <div id="modal1" class="modal">
     <div class="modal-content">
@@ -125,5 +165,6 @@
         <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
     </div>
 </div>
+
 
 <app-footer></app-footer>

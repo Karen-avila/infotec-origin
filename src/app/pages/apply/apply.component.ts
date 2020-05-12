@@ -16,9 +16,11 @@ import { User } from '../../models/user.model';
 })
 export class ApplyComponent implements OnInit {
   instance 
+  popup;
   recaptcha: any[];
   //-------
   form : FormGroup;
+  formval: FormGroup;
   dic = [
     "apañar",
     "cagar",
@@ -30,6 +32,7 @@ export class ApplyComponent implements OnInit {
   rePassType = "password";
   icon:boolean=true;
   reIcon:boolean=true;
+
 
   resolved(captchaResponse: any[]) {
     this.recaptcha = captchaResponse;
@@ -79,9 +82,16 @@ export class ApplyComponent implements OnInit {
    //validators: this.pbaDict('password') 
 
 //------------------------   
+   this.formval = new FormGroup({
+    codigo: new FormControl(null,[Validators.required]),
+    token: new FormControl(null, [Validators.required])
+ }
+ );
+
   }
 
   get f() { return this.form.controls; }
+  get fo() { return this.formval.controls; }
 //------------
 
 equalPass(p1:string,p2:string){
@@ -162,6 +172,18 @@ pbaDict(p1:string){
       this.icon=true;
       this.passType="password";
     }
+  }
+
+  validacion(){
+    console.log("formval is valid?", this.formval.valid);
+    if(this.formval.valid){
+      console.log("formval", this.formval.value);
+      //enviar datos a back
+      //this.popup[0].open();
+    } else{
+      swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
+    }
+
   }
 
 }

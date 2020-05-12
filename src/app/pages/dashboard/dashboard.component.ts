@@ -40,6 +40,7 @@ stepper;
   form : FormGroup;
   formDocumentos : FormGroup;
   formFiel: FormGroup;
+  
   dic = [
     "apañar",
     "cagar",
