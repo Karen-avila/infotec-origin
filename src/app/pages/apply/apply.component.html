@@ -73,12 +73,12 @@
 
                             <div class="col s12  m4 offset-m3 l3 offset-l6 center">
                                 <br>
-                                <a class="waves-effect  teal darken-4 btn modal-trigger right" href="#token">
+                                <!--<a class="waves-effect  teal darken-4 btn modal-trigger right" href="#token">
                                    Registrarse
-                                </a>
-                                <!--<button class="waves-effect teal darken-4 btn right" type="submit">Registrarse
+                                </a>-->
+                                <button class="waves-effect teal darken-4 btn right" type="submit">Registrarse
                                         <i class="material-icons right">send</i>
-                                      </button>-->
+                                      </button>
 
                             </div>
                         </form>
@@ -117,27 +117,52 @@
 
 
 
+
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <h4 class="zz">¡Cuenta Creada!</h4>
+        <p class="flow-text"><b>Ya casi: </b>Revisa tu correo.</p>
+        <p class="flow-text">Para continuar activa tu cuenta, revisa el correo que nos proporcionaste y encontraras las instrucciones para continuar con tu solicitud.</p>
+    </div>
+    <div class="modal-footer darken-3">
+        <!--<a routerLink="/home" class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>-->
+        <a class="waves-effect modal-close teal darken-4 btn modal-trigger right" href="#token">Aceptar</a>
+    </div>
+    <div class="footer-copyright teal darken-3">
+        <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
+    </div>
+</div>
+
 <!--Modal de token -->
 <div id="token" class="modal">
     <div class="modal-content">
         <form ngNativeValidate [formGroup]="formval" (ngSubmit)="validacion()">
+           
+                <p class="flow-text">El código de activación y token fueron enviados al correo electrónico ingresado.</p>
+          
+            <br><br>
             <div class="input-field col s10">
                 <i class="material-icons prefix">no_encryption</i>
-                <input formControlName="codigo" name='codigo' id="codigo" type="text" class="validate">
+                <input class="validate" id="codigo" type="number" formControlName="codigo" name="codigo" minlength="3" maxlength="3" required>
                 <label for="codigo">Código de activación</label>
-                <div class="grey-text text-darken-3" *ngIf="fo.codigo.errors?.required">El código de activación fue enviado a su correo electrónico</div>
+                <div class="blue-text" *ngIf="fo.codigo.errors?.required">Máximo 3 caracteres</div>
             </div>
 
             <div class="input-field col s10">
                 <i class="material-icons prefix">no_encryption</i>
-                <input formControlName="token" name='token' id="token" type="text" class="validate">
+                <input class="validate" id="token" type="number" formControlName="token" name="token" minlength="3" maxlength="3" required>
                 <label for="token">Token</label>
-                <div class="grey-text text-darken-3" *ngIf="fo.token.errors?.required">Es requerido para poder continuar</div>
+                <div class="blue-text" *ngIf="fo.token.errors?.required">Máximo 3 caracteres</div>
             </div>
         
             
             <div class="input-field col s12 m3 offset-m1 l3 offset-l1">
-                <a class="waves-effect  teal darken-4 btn modal-trigger right" href="#modal1">Aceptar</a>
+                <button class="waves-effect teal darken-4 btn right" type="submit">Aceptar
+                    <i class="material-icons right">send</i>
+                  </button>
+                <!--<a class="modal-close waves-effect teal darken-4 white-text btn-flat" type>Aceptar</a>-->
             </div>
 
         </form>
@@ -150,21 +175,5 @@
         <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
     </div>
 </div>
-
-<!-- Modal Structure -->
-<div id="modal1" class="modal">
-    <div class="modal-content">
-        <h4 class="zz">¡Cuenta Creada!</h4>
-        <p class="flow-text"><b>Ya casi: </b>Revisa tu correo.</p>
-        <p class="flow-text">Para continuar activa tu cuenta, revisa el correo que nos proporcionaste y encontraras las instrucciones para continuar con tu solicitud.</p>
-    </div>
-    <div class="modal-footer darken-3">
-        <a routerLink="/home" class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>
-    </div>
-    <div class="footer-copyright teal darken-3">
-        <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
-    </div>
-</div>
-
 
 <app-footer></app-footer>
