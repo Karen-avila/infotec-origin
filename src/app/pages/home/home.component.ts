@@ -45,12 +45,13 @@ car = this.carr();
     ceil: 36,
     step: 18,
     minLimit: 18,
+    maxLimit: 18,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
         case LabelType.Low:
-          return '<b>' + value + ' Meses</b>';
+          return '<b>' + value + ' Meses + 3 meses de gracia</b>';
         case LabelType.Ceil:
-          return '<b>' + value + ' Meses</b>';
+          return '<b> Total 21 Meses </b>';
         default:
           return '<b>Plazo</b>';
       }
@@ -66,7 +67,7 @@ car = this.carr();
     // Monto del Prestamo
     var montoCapital = 20000 * -1;
     // Tasa de Interes Anual
-    var tasaInteresAnual = 0.15;
+    var tasaInteresAnual = 0.12; //cambie a 12
     // Tasa de Interes Mensual
     var tasaInteresMensual = tasaInteresAnual / 12;
     // Plazo del Credito

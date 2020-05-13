@@ -97,12 +97,13 @@ stepper;
    ceil: 36,
    step: 18,
    minLimit: 18,
+   maxLimit: 18,
    translate: (value: number, label: LabelType): string => {
      switch (label) {
        case LabelType.Low:
-         return '<b>' + value + ' Meses</b>';
+        return '<b>' + value + ' Meses + 3 meses de gracia</b>';
        case LabelType.Ceil:
-         return '<b>' + value + ' Meses</b>';
+        return '<b> Total 21 Meses </b>';
        default:
          return '<b>Plazo</b>';
      }
