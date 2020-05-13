@@ -110,7 +110,7 @@
             <div class="card-content">
                 <i class="material-icons medium icon-gold">local_atm</i>
                 <p>Parcialidad</p>
-                <p>{{ finance.PMT(0.0125,valuePlaz,-valueMon).toFixed(2) | currency:"MXN":"symbol" }}</p>
+                <p>{{ finance.PMT(0.01,valuePlaz,-valueMon).toFixed(2) | currency:"MXN":"symbol" }}</p>
             </div>
         </div>
 
@@ -176,7 +176,7 @@
             </div>
         </div>
         <div class="center-align">
-            <p class="white-text flow-text cr">Total a Pagar <b> {{((finance.PMT(0.0125,valuePlaz,-valueMon))*valuePlaz).toFixed(2) | currency:"MXN":"symbol"}}</b></p>
+            <p class="white-text flow-text cr">Total a Pagar <b> {{((finance.PMT(0.01,valuePlaz,-valueMon))*valuePlaz).toFixed(2) | currency:"MXN":"symbol"}}</b></p>
         </div>
         <br><br>
         <!--
