@@ -122,7 +122,7 @@ stepper;
     // Monto del Prestamo
     var montoCapital = 20000 * -1;
     // Tasa de Interes Anual
-    var tasaInteresAnual = 0.15;
+    var tasaInteresAnual = 0.12; // cambio a 12
     // Tasa de Interes Mensual
     var tasaInteresMensual = tasaInteresAnual / 12;
     // Plazo del Credito
