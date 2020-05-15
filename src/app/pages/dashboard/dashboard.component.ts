@@ -190,6 +190,7 @@ console.log("el step",this.re.id)
     entidad : new FormControl(null, Validators.required),
     pais : new FormControl(null, Validators.required),
     ocupacion : new FormControl(null, Validators.required),
+    clabe: new FormControl(null,[Validators.required,Validators.minLength(18), Validators.maxLength(18), Validators.pattern('[0-9]{18}')]),
     tel: new FormControl(null,[Validators.required,Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
     domicilio: new FormControl(" ",[Validators.required]),
     curp: new FormControl(null,Validators.required),
