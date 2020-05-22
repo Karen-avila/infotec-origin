@@ -10,18 +10,13 @@ services:
     volumes:
       - /home/dads/certificates/bundle.crt:/etc/ssl/certs/fullchain.pem
       - /home/dads/certificates/infotec_2019.key:/etc/ssl/private/privkey.pem
-    restart: always
-    extra_hosts:
-      - "eureka:172.22.216.195"
-      - "cassandra:172.22.216.198"
-      - "tidb:172.22.216.197"
-      - "activemq:172.22.216.196"    
+    restart: always    
     healthcheck:
-      test: ["CMD", "curl", "-k --fail", "https://127.0.0.1:61616"]
+      test: ["CMD", "curl", "-k --fail", "https://127.0.0.1:443"]
       interval: 30s
       timeout: 10s
       retries: 5
     ports:
-      - "61616:61616"
+      - "443:443"
     networks:
       - mifos     
