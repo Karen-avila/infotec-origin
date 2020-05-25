@@ -38,10 +38,8 @@
                             </div>
                         </div>
                         <div class="center-align">
-                            <p class="white-text flow-text cr">Total a Pagar <b> {{((finance.PMT(0.0125,valuePlaz,-valueMon))*valuePlaz).toFixed(2) | currency:"MXN":"symbol"}}</b></p>
+                            <p class="white-text flow-text cr">Total a Pagar <b> {{((finance.PMT(0.01,valuePlaz,-valueMon))*valuePlaz).toFixed(2) | currency:"MXN":"symbol"}}</b></p>
                         </div>
-
-
                         <br>
 
                     </div>
@@ -68,7 +66,7 @@
                             <div class="card-content">
                                 <i class="material-icons medium icon-gold">local_atm</i>
                                 <p>Parcialidad</p>
-                                <p>{{ finance.PMT(0.0125,valuePlaz,-valueMon).toFixed(2) | currency:"MXN":"symbol" }}</p>
+                                <p>{{ finance.PMT(0.01,valuePlaz,-valueMon).toFixed(2) | currency:"MXN":"symbol" }}</p>
                             </div>
                         </div>
 
@@ -88,7 +86,7 @@
                         </div>
                         <div class="center-align">
                             <p class="white-text flow-text teal darken-4">
-                                <i class="small material-icons icon-gold left">local_atm</i> Parcialidad <b>  {{ finance.PMT(0.0125,valuePlaz,-valueMon).toFixed(2) | currency:"MXN":"symbol" }}</b></p>
+                                <i class="small material-icons icon-gold left">local_atm</i> Parcialidad <b>  {{ finance.PMT(0.01,valuePlaz,-valueMon).toFixed(2) | currency:"MXN":"symbol" }}</b></p>
                         </div>
                     </div>
 
@@ -328,6 +326,7 @@
                         <i class="material-icons prefix">aspect_ratio</i>
                         <input id="clave" type="text" formControlName="clave" required class="validate" name="clave" />
                         <label for="clave">Clave de Elector</label>
+                        <a class="modal-trigger" href="#helpIne"><i class="material-icons prefix icon-black">help_outline</i></a>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
@@ -1003,6 +1002,20 @@
     </div>
 </div>
 
+<div id="helpIne" class="modal">
+    <div class="modal-content center">
+        <h4 class="zz">Aquí podrás encontrar tu Clave de Elector</h4>
+        <br>
+        <img class="responsive-img" src="../../../assets/ineHelp.png">
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>
+    </div>
+    <div class="footer-copyright teal darken-3">
+        <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
+    </div>
+</div>
+
 <div id="fiel" class="modal">
     <div class="modal-content">
 
@@ -1067,96 +1080,116 @@
 
 <div id="aviso" class="modal">
     <div class="modal-content justificacion">
-        <p>En cumplimiento de lo dispuesto en los artículos 68 fracciones II, III, IV y VI, de la Ley General de Transparencia y Acceso a la Información Pública (LGTAIP), 3º, fracción II, 16, 17, 18, 21, 25, 26, 27, 28, 67, 68, 69 y 70,  de la Ley General de Protección de Datos Personales en Posesión de Sujetos Obligados (LGPDPPSO) y los numerales 9 fracción II, 11, fracción II, 15 y 26 al 45 de los Lineamientos Generales de Protección de Datos Personales para el Sector Público (en lo sucesivo los "Lineamientos"), se pone a disposición de los usuarios el siguiente:
+        <p>En cumplimiento de lo dispuesto en los artículos 68 fracciones II, III, IV y VI, de la Ley General de Transparencia y Acceso a la Información Pública (LGTAIP), 3º, fracción II, 16, 17, 18, 21, 25, 26, 27, 28, 67, 68, 69 y 70,  de la Ley General
+            de Protección de Datos Personales en Posesión de Sujetos Obligados (LGPDPPSO) y los numerales 9 fracción II, 11, fracción II, 15 y 26 al 45 de los Lineamientos Generales de Protección de Datos Personales para el Sector Público (en lo sucesivo
+            los "Lineamientos"), se pone a disposición de los usuarios el siguiente:
         </p>
         <div style="text-align: center;">
-            <p><b >AVISO DE PRIVACIDAD INTEGRAL</b></p>
+            <p><b>AVISO DE PRIVACIDAD INTEGRAL</b></p>
         </div>
-        <p>Mediante el presente aviso de privacidad integral (aviso de privacidad), el Banco del Bienestar, S.N.C., I.B.D., (Banco del Bienestar), informan a usted los términos en que serán tratados los datos personales que se recaben, para lo cual le recomendamos que lea atentamente la siguiente información:
+        <p>Mediante el presente aviso de privacidad integral (aviso de privacidad), el Banco del Bienestar, S.N.C., I.B.D., (Banco del Bienestar), informan a usted los términos en que serán tratados los datos personales que se recaben, para lo cual le recomendamos
+            que lea atentamente la siguiente información:
         </p>
 
         <table class="table" style='width:980px'>
-          
-        
+
+
             <tr>
                 <td class="justificacion" colspan="1"><b>1. Definiciones.</b></td>
-                <td class="justificacion" colspan="1"> 
+                <td class="justificacion" colspan="1">
                     <p>Para efectos del presente aviso de privacidad, los términos que se indican a continuación, tendrán los significados que en este documento se señalan, ya sea que estén redactados en singular o en plural: </p>
                     <p>1.1.“Datos Personales”: Cualquier información concerniente a una persona física identificada o identificable.</p>
-                    <p>1.2. “Datos patrimoniales o financieros”: Es la información sobre la capacidad económica de las personas físicas que hace referencia a los recursos que posee y a su capacidad para hacer frente a sus deudas, como pueden ser: dinero, bienes muebles e inmuebles; información fiscal; historial crediticio; ingresos y egresos; cuentas bancarias; seguros; afores; fianzas, número de tarjeta de crédito, número de seguridad, entre otros.</p>
-                    <p>1.3. “Datos Personales Sensibles”: Aquellos datos personales que afecten a la esfera íntima del Titular, o cuya utilización indebida pueda dar origen a cualquier tipo de discriminación o conlleve un riesgo grave para el Titular. Están considerados dentro de esta categoría aquellos datos que puedan revelar aspectos personales del Titular, como origen racial, étnico, estado de salud presente y futuro, información genética, creencias religiosas, filosóficas y morales, afiliación sindical, opiniones políticas, preferencia sexual o situación financiera.</p>
-                    <p>1.4. “Dato Biométrico”: Datos personales obtenidos a partir de un tratamiento técnico específico, relativos a las características físicas, fisiológicas o conductuales de una persona física que permitan o confirmen la identificación única de dicha persona, como imágenes faciales o datos dactiloscópicos. </p>
+                    <p>1.2. “Datos patrimoniales o financieros”: Es la información sobre la capacidad económica de las personas físicas que hace referencia a los recursos que posee y a su capacidad para hacer frente a sus deudas, como pueden ser: dinero,
+                        bienes muebles e inmuebles; información fiscal; historial crediticio; ingresos y egresos; cuentas bancarias; seguros; afores; fianzas, número de tarjeta de crédito, número de seguridad, entre otros.</p>
+                    <p>1.3. “Datos Personales Sensibles”: Aquellos datos personales que afecten a la esfera íntima del Titular, o cuya utilización indebida pueda dar origen a cualquier tipo de discriminación o conlleve un riesgo grave para el Titular. Están
+                        considerados dentro de esta categoría aquellos datos que puedan revelar aspectos personales del Titular, como origen racial, étnico, estado de salud presente y futuro, información genética, creencias religiosas, filosóficas y morales,
+                        afiliación sindical, opiniones políticas, preferencia sexual o situación financiera.</p>
+                    <p>1.4. “Dato Biométrico”: Datos personales obtenidos a partir de un tratamiento técnico específico, relativos a las características físicas, fisiológicas o conductuales de una persona física que permitan o confirmen la identificación
+                        única de dicha persona, como imágenes faciales o datos dactiloscópicos. </p>
                     <p>1.5. “Derechos ARCO”: Derecho del Titular de los datos personales al solicitar al Responsable el Acceso, Rectificación, Cancelación u Oposición respecto de dichos datos, conforme a lo previsto en la LGPDPPSO.</p>
                     <p>1.6. “Disociación”: El procedimiento mediante el cual los datos personales no pueden asociarse al Titular ni permitir, por su estructura, contenido o grado de desagregación, la identificación del mismo. </p>
-                    <p>1.7. “Encargado”: La persona física o moral que sola o conjuntamente con otras personas físicas o morales trate datos personales a nombre y mediante instrucción del Responsable, conforme a los procesos, términos y condiciones que este le señale. </p>
+                    <p>1.7. “Encargado”: La persona física o moral que sola o conjuntamente con otras personas físicas o morales trate datos personales a nombre y mediante instrucción del Responsable, conforme a los procesos, términos y condiciones que este
+                        le señale. </p>
                     <p>1.8. “Entidad Comercial: a las sociedades que de manera habitual otorguen créditos, préstamos o financiamientos al público.</p>
-                    <p>1.9. “Entidad Financiera”: a las instituciones o sociedades de crédito, a las sociedades financieras de objeto múltiple reguladas y no reguladas, a las sociedades financieras populares, a las sociedades financieras comunitarias, a las sociedades cooperativas de ahorro y préstamo, a las entidades financieras que actúen como fiduciarias en fideicomisos que otorguen crédito, préstamo o financiamiento al público, las uniones de crédito y las instituciones de tecnología financiera. </p>
+                    <p>1.9. “Entidad Financiera”: a las instituciones o sociedades de crédito, a las sociedades financieras de objeto múltiple reguladas y no reguladas, a las sociedades financieras populares, a las sociedades financieras comunitarias, a
+                        las sociedades cooperativas de ahorro y préstamo, a las entidades financieras que actúen como fiduciarias en fideicomisos que otorguen crédito, préstamo o financiamiento al público, las uniones de crédito y las instituciones de
+                        tecnología financiera. </p>
                     <p>1.10. “Instituto”: Instituto Nacional Electoral.</p>
                     <p>1.11. “Responsable”: Banco del Bienestar</p>
                     <p>1.12. “Titular”: La persona física a quien corresponden los datos personales.</p>
                     <p>1.13. “Transferencia”: La comunicación de datos personales dentro o fuera del territorio nacional, realizada a persona distinta del Titular o del Responsable.</p>
-                    <p>1.14. “Usuario”: a cualquier persona física, moral o Fideicomiso que, directamente o a través de algún comisionista contratado por la Entidad respectiva al amparo del artículo 46 Bis-1 de la Ley de Instituciones de Crédito y demás disposiciones aplicables, realice Operaciones con la Entidad de que se trate, o utilice los servicios que le ofrezca dicha Entidad, sin tener una relación comercial permanente con esta.</p>
+                    <p>1.14. “Usuario”: a cualquier persona física, moral o Fideicomiso que, directamente o a través de algún comisionista contratado por la Entidad respectiva al amparo del artículo 46 Bis-1 de la Ley de Instituciones de Crédito y demás
+                        disposiciones aplicables, realice Operaciones con la Entidad de que se trate, o utilice los servicios que le ofrezca dicha Entidad, sin tener una relación comercial permanente con esta.</p>
                 </td>
             </tr>
             <tr>
                 <td class="justificacion" colspan="1"><b>2. ¿Quiénes somos?</b></td>
-                <td class="justificacion" colspan="1"> 
-                    <p>El Banco del Bienestar, antes Banco del Ahorro Nacional y Servicios Financieros, Sociedad Nacional de Crédito, Institución de Banca de Desarrollo (BANSEFI), es una entidad de la Administración Pública Federal, con personalidad jurídica y patrimonio propios, constituido con el carácter de sociedad nacional de crédito, en términos de su Ley Orgánica, y con domicilio en Av. Río Magdalena, número 115, Colonia Tizapán San Ángel, Alcaldía Álvaro Obregón, C.P. 01090, Ciudad de México. </p>
+                <td class="justificacion" colspan="1">
+                    <p>El Banco del Bienestar, antes Banco del Ahorro Nacional y Servicios Financieros, Sociedad Nacional de Crédito, Institución de Banca de Desarrollo (BANSEFI), es una entidad de la Administración Pública Federal, con personalidad jurídica
+                        y patrimonio propios, constituido con el carácter de sociedad nacional de crédito, en términos de su Ley Orgánica, y con domicilio en Av. Río Magdalena, número 115, Colonia Tizapán San Ángel, Alcaldía Álvaro Obregón, C.P. 01090,
+                        Ciudad de México. </p>
                     <p>Esta Institución es el Responsable del tratamiento de los datos personales que nos proporcione, los cuales serán protegidos conforme a lo dispuesto por la LGPDPPSO y demás normatividad que resulte aplicable.</p>
                 </td>
             </tr>
             <tr>
                 <td class="justificacion" colspan="1"><b>3. ¿Qué Datos Personales se resguardan y tratan?</b></td>
-                <td class="justificacion" colspan="1"> 
+                <td class="justificacion" colspan="1">
                     <p>Para el cumplimiento de las finalidades señaladas en el numeral 5 del presente aviso de privacidad, el Responsable le informa que podrá recabar las siguientes categorías de datos personales: </p>
                     <p>(a) Datos de Identificación;<br>(b) Datos de Contacto;<br>(c) Información sobre sus características físicas, mejor conocidos como datos biométricos, tales como el reconocimiento de voz, la (s) huella (s) dactilar (es);
-                    <br>(d) Datos laborales; <br>(e) Datos académicos o profesionales; <br> (f) Datos migratorios;
-                    <br>(g) Datos patrimoniales y/o financieros; <br>(h) Datos Personales Sensibles tales como: padecimientos o enfermedades pasadas y presentes, enfermedades patológicas relevantes u operaciones. </p>
-                    <p>Con el registro de su(s) huella(s) dactilar(es), o del usuario y contraseña que se le proporcionen, se entenderá que el Titular autoriza en forma expresa y comprobable al Responsable a verificar su identidad contra los registros administrados por el Instituto o cualquier otra autoridad emisora de documentos oficiales, según corresponda; a integrar el resultado de la autenticación en el expediente de identificación y a resguardar en una base de datos su información para contratación de servicios financieros o la realización de operaciones futuras con el Responsable. </p>
+                        <br>(d) Datos laborales; <br>(e) Datos académicos o profesionales; <br> (f) Datos migratorios;
+                        <br>(g) Datos patrimoniales y/o financieros; <br>(h) Datos Personales Sensibles tales como: padecimientos o enfermedades pasadas y presentes, enfermedades patológicas relevantes u operaciones. </p>
+                    <p>Con el registro de su(s) huella(s) dactilar(es), o del usuario y contraseña que se le proporcionen, se entenderá que el Titular autoriza en forma expresa y comprobable al Responsable a verificar su identidad contra los registros administrados
+                        por el Instituto o cualquier otra autoridad emisora de documentos oficiales, según corresponda; a integrar el resultado de la autenticación en el expediente de identificación y a resguardar en una base de datos su información para
+                        contratación de servicios financieros o la realización de operaciones futuras con el Responsable. </p>
                     <p>Le informamos que los datos personales a que se refieren los numerales:</p>
-                    <p>c) y h) que se recaben del Titular serán obtenidos únicamente en forma directa; es decir en forma personal o a través de los medios electrónicos que el Responsable ponga a su disposición, quedando el Responsable obligado a recabar su consentimiento a los términos del presente aviso de privacidad previamente a su tratamiento, y en forma expresa y comprobable, así como explicar los beneficios que le conlleva al Titular el servicio de verificación de los datos que contiene su credencial para votar, en los casos que así corresponda.</p>
+                    <p>c) y h) que se recaben del Titular serán obtenidos únicamente en forma directa; es decir en forma personal o a través de los medios electrónicos que el Responsable ponga a su disposición, quedando el Responsable obligado a recabar
+                        su consentimiento a los términos del presente aviso de privacidad previamente a su tratamiento, y en forma expresa y comprobable, así como explicar los beneficios que le conlleva al Titular el servicio de verificación de los datos
+                        que contiene su credencial para votar, en los casos que así corresponda.</p>
                     <p>En la obtención de la información personal de menores de edad, se estará a lo dispuesto en las reglas de representación previstas en la legislación civil que resulte aplicable.</p>
                 </td>
             </tr>
             <tr>
                 <td class="justificacion" colspan="1"><b>4. Fundamento para el tratamiento de datos personales.</b></td>
-                <td class="justificacion" colspan="1"> 
-                   <p>Las disposiciones normativas que facultan al Responsable a tratar los datos personales para las finalidades señaladas en el presente aviso de privacidad, se establecen en los artículos 1, 2, 3, 6, 7, 8 y 8 Bis de la Ley Orgánica del Banco del Bienestar, así como en lo señalado en los artículos 2 fracción II, 3, 30, 46, 46 Bis 1, 47, 56, 57, 59 y 115 de la Ley de Instituciones de Crédito.</p>
+                <td class="justificacion" colspan="1">
+                    <p>Las disposiciones normativas que facultan al Responsable a tratar los datos personales para las finalidades señaladas en el presente aviso de privacidad, se establecen en los artículos 1, 2, 3, 6, 7, 8 y 8 Bis de la Ley Orgánica del
+                        Banco del Bienestar, así como en lo señalado en los artículos 2 fracción II, 3, 30, 46, 46 Bis 1, 47, 56, 57, 59 y 115 de la Ley de Instituciones de Crédito.</p>
                 </td>
             </tr>
             <tr>
                 <td class="justificacion" colspan="1"><b>5. Principios y Deberes que rigen el tratamiento de sus datos personales.</b></td>
-                <td class="justificacion" colspan="1"> 
-                    <p>El Responsable se compromete a resguardar y tratar sus datos personales conforme a los principios de licitud, lealtad, información, consentimiento, finalidad, proporcionalidad, calidad y responsabilidad, así a los deberes de seguridad y confidencialidad, en términos de lo establecido en la LGPDPPSO y en la Circular 078/2019/DGAJ/DJACC, emitida por el Banco del Bienestar.</p>
+                <td class="justificacion" colspan="1">
+                    <p>El Responsable se compromete a resguardar y tratar sus datos personales conforme a los principios de licitud, lealtad, información, consentimiento, finalidad, proporcionalidad, calidad y responsabilidad, así a los deberes de seguridad
+                        y confidencialidad, en términos de lo establecido en la LGPDPPSO y en la Circular 078/2019/DGAJ/DJACC, emitida por el Banco del Bienestar.</p>
                 </td>
             </tr>
             <tr>
                 <td class="justificacion" colspan="1"><b>6. ¿Para qué fines utilizaremos sus datos personales?</b></td>
-                <td class="jurisdicción" colspan="1"> 
+                <td class="jurisdicción" colspan="1">
                     <p>Los datos personales que recabamos de usted, los utilizaremos para administrar y operar los servicios y productos bancarios que solicita o contrata con el Responsable, los cuales de manera enunciativa consisten en lo siguiente:</p>
-                    
-                        <li>Apertura(s) y cancelación de Cuenta(s): (Debicuenta, Debicuenta Básica, Nómina Básica BANSEFI, Cuentahorro, Tandahorro, Cuentahorro Infantil, Cuentahorro INFONAVIT, AhorraSIF, Cuentahorro CONAVI, Viviendahorro).</li>
-                        <li>Operaciones de Depósito y Retiro.</li>
-                        <li>Pagaré con Rendimiento Liquidable al Vencimiento (PRLV).</li>
-                        <li>Expedición, administración y pago de Billetes de Depósito (BIDES).</li>
-                        <li>misión y pago de Certificados de Depósito (CODES).</li>
+
+                    <li>Apertura(s) y cancelación de Cuenta(s): (Debicuenta, Debicuenta Básica, Nómina Básica BANSEFI, Cuentahorro, Tandahorro, Cuentahorro Infantil, Cuentahorro INFONAVIT, AhorraSIF, Cuentahorro CONAVI, Viviendahorro).</li>
+                    <li>Operaciones de Depósito y Retiro.</li>
+                    <li>Pagaré con Rendimiento Liquidable al Vencimiento (PRLV).</li>
+                    <li>Expedición, administración y pago de Billetes de Depósito (BIDES).</li>
+                    <li>misión y pago de Certificados de Depósito (CODES).</li>
 
                     <p>Otra finalidad principal para lo que se emplearían sus datos personales, es para la contratación de servicios, los cuales de manera enunciativa pueden ser los siguientes:</p>
 
-                        <li>Liquidación de remesas nacionales e internacionales.</li>
-                        <li>Compra - venta de divisas.</li>
-                        <li>Dispersión y recepción de pagos por cuenta de terceros.</li>
-                        <li>Fiduciarios.</li>
-                        <li>Operaciones de Crédito.</li>
-                        <li>Promoción y venta de seguros bajo la modalidad de microseguros.</li>
-                        <li>CETES Directo.</li>
-                    
-                    <p>Asimismo, en el marco del Servicio de Verificación de Datos de la Credencial para Votar que lleva a cabo el Instituto Nacional Electoral (INE), el Banco del Bienestar podrá realizar una consulta a la base de datos personales del INE, exclusivamente para la verificación de la validez y legitimidad de los datos contenidos en su Credencial para Votar.</p>
+                    <li>Liquidación de remesas nacionales e internacionales.</li>
+                    <li>Compra - venta de divisas.</li>
+                    <li>Dispersión y recepción de pagos por cuenta de terceros.</li>
+                    <li>Fiduciarios.</li>
+                    <li>Operaciones de Crédito.</li>
+                    <li>Promoción y venta de seguros bajo la modalidad de microseguros.</li>
+                    <li>CETES Directo.</li>
+
+                    <p>Asimismo, en el marco del Servicio de Verificación de Datos de la Credencial para Votar que lleva a cabo el Instituto Nacional Electoral (INE), el Banco del Bienestar podrá realizar una consulta a la base de datos personales del INE,
+                        exclusivamente para la verificación de la validez y legitimidad de los datos contenidos en su Credencial para Votar.</p>
                 </td>
             </tr>
             <tr>
                 <td class="justificacion" colspan="1"><b>7. Otros usos de su información personal.</b></td>
-                <td class="justificacion" colspan="1"> 
+                <td class="justificacion" colspan="1">
                     <p>De manera adicional, se podrá utilizar su información personal para fines de mercadotecnia, publicidad, comercialización de productos o servicios, sorteos y/o promociones, a efecto de brindarle una mejor atención.</p>
                     <p>En caso de que no desee que sus datos personales sean tratados para estos fines adicionales, usted puede presentar un escrito en cualquier sucursal bancaria de esta Institución, manifestando lo anterior.</p>
                     <p>La negativa para el uso de sus datos personales para estas finalidades no podrá ser un motivo para que le neguemos los servicios y productos que solicita o contrata con nosotros.</p>
@@ -1164,86 +1197,120 @@
             </tr>
             <tr>
                 <td class="justificacion" colspan="1"><b>8. Transferencia de datos personales.</b></td>
-                <td class="justificacion" colspan="1"> 
-                    <p>Le informamos que sus datos personales podrán ser compartidos con otros sujetos obligados de acuerdo a lo establecido en la LGPDPPSO.</p>    
-                    
-                    <p><li>Las transferencias que se realicen serán sobre datos personales que se utilicen para el ejercicio de facultades propias, compatibles o análogas con la finalidad que motivó el tratamiento de los datos personales.</li></p>
-                    <p><li>Cuando exista una orden judicial, resolución o mandato fundado y motivado de autoridad competente.</li></p>
-                    <p><li>Cuando los datos personales se requieran para ejercer un derecho o cumplir obligaciones derivadas de una relación jurídica entre el titular y el responsable.</li></p>
+                <td class="justificacion" colspan="1">
+                    <p>Le informamos que sus datos personales podrán ser compartidos con otros sujetos obligados de acuerdo a lo establecido en la LGPDPPSO.</p>
+
+                    <p>
+                        <li>Las transferencias que se realicen serán sobre datos personales que se utilicen para el ejercicio de facultades propias, compatibles o análogas con la finalidad que motivó el tratamiento de los datos personales.</li>
+                    </p>
+                    <p>
+                        <li>Cuando exista una orden judicial, resolución o mandato fundado y motivado de autoridad competente.</li>
+                    </p>
+                    <p>
+                        <li>Cuando los datos personales se requieran para ejercer un derecho o cumplir obligaciones derivadas de una relación jurídica entre el titular y el responsable.</li>
+                    </p>
 
                 </td>
             </tr>
             <tr>
                 <td class="justificacion" colspan="1"><b>9. Medios para ejercer los derechos de acceso, rectificación, cancelación u oposición (Derechos Arco).</b></td>
-                <td class="justificacion" colspan="1"> 
+                <td class="justificacion" colspan="1">
                     <p>El Titular, por sí o mediante representante legal debidamente acreditado, tiene reconocidos y podrá ejercitar los Derechos ARCO que le otorga la LGPDPPSO.</p>
-                
-                    <p><li>ACCESO: conocer información específica que el Responsable tiene en su posesión; </li></p>
-                    <p><li>RECTIFICACIÓN: solicitar la rectificación de datos personales en caso de que no estén actualizados, sean inexactos o incompletos, para ejercer este derecho se deberá entregar la documentación que acredite la rectificación solicitada de acuerdo a los datos personales;</li></p>
-                    <p><li>CANCELACIÓN: bloqueo y posterior eliminación de datos personales de nuestras bases de datos cuando considere que la misma no está siendo utilizada adecuadamente o para los fines que dieron origen a la relación jurídica;</li></p>
-                    <p><li>OPOSICIÓN: oponerse al uso para fines específicos de sus datos personales.</li></p>
+
+                    <p>
+                        <li>ACCESO: conocer información específica que el Responsable tiene en su posesión; </li>
+                    </p>
+                    <p>
+                        <li>RECTIFICACIÓN: solicitar la rectificación de datos personales en caso de que no estén actualizados, sean inexactos o incompletos, para ejercer este derecho se deberá entregar la documentación que acredite la rectificación solicitada
+                            de acuerdo a los datos personales;</li>
+                    </p>
+                    <p>
+                        <li>CANCELACIÓN: bloqueo y posterior eliminación de datos personales de nuestras bases de datos cuando considere que la misma no está siendo utilizada adecuadamente o para los fines que dieron origen a la relación jurídica;</li>
+                    </p>
+                    <p>
+                        <li>OPOSICIÓN: oponerse al uso para fines específicos de sus datos personales.</li>
+                    </p>
 
                     <p>El ejercicio de cualquiera de los Derechos ARCO no impide el ejercicio de alguno otro derecho.</p>
                     <p>Para el ejercicio de cualquiera de los derechos ARCO, el Titular o su representante legal podrán solicitar un formato de ejercicio de Derechos ARCO a la dirección de correo electrónico unidaddetransparencia@bancodelbienestar.gob.mx.</p>
-                    <p>Dicho formato se deberá llenar, firmar y devolver a la misma dirección de correo electrónico acompañado la siguiente documentación, escaneada y legible, con objeto de que el Responsable pueda llevar a cabo la autenticación del Titular que requiera ejercer sus Derechos ARCO:</p>
-                
-                    <li>Identificación oficial vigente del Titular.<br>Será válido alguno de los siguientes documentos: Credencial del Instituto Nacional Electoral, Pasaporte emitido por la Secretaría de Relaciones Exteriores, Cartilla del servicio Militar Nacional o Cédula Profesional.</li>
-                    <li>En los casos en que el Titular ejerza sus Derechos ARCO a través de un representante legal, además de acreditar la identidad de ambos (Titular y el Representante legal), se deberá enviar a la citada dirección de correo, una copia legible del poder notarial otorgado al representante legal, o en su caso carta poder firmada ante dos testigos o declaración en comparecencia del Titular por el cual se otorgan facultades para llevar a cabo este trámite ante el Responsable.</li>
+                    <p>Dicho formato se deberá llenar, firmar y devolver a la misma dirección de correo electrónico acompañado la siguiente documentación, escaneada y legible, con objeto de que el Responsable pueda llevar a cabo la autenticación del Titular
+                        que requiera ejercer sus Derechos ARCO:</p>
+
+                    <li>Identificación oficial vigente del Titular.<br>Será válido alguno de los siguientes documentos: Credencial del Instituto Nacional Electoral, Pasaporte emitido por la Secretaría de Relaciones Exteriores, Cartilla del servicio Militar
+                        Nacional o Cédula Profesional.</li>
+                    <li>En los casos en que el Titular ejerza sus Derechos ARCO a través de un representante legal, además de acreditar la identidad de ambos (Titular y el Representante legal), se deberá enviar a la citada dirección de correo, una copia legible
+                        del poder notarial otorgado al representante legal, o en su caso carta poder firmada ante dos testigos o declaración en comparecencia del Titular por el cual se otorgan facultades para llevar a cabo este trámite ante el Responsable.</li>
                     <li>En caso de que se quiera ejercer el derecho de rectificación, el Titular o su representante legal deberán enviar a la dirección de correo electrónico antes mencionada, la documentación que sustente su petición.</li>
-                
+
                     <p>Recibida la solicitud y documentación correspondiente, el Responsable comunicará al Titular en un plazo máximo de 20 (veinte) días hábiles la respuesta a su solicitud de acceso, rectificación, cancelación u oposición.</p>
-                    <p>Si la solicitud resulta procedente, el resultado de la resolución se hará efectiva dentro de los 15 (quince) días hábiles siguientes a la fecha en que se comunique la respuesta. El Responsable podrá ampliar éste plazo hasta por 10 (diez) días hábiles más, cuando el caso lo amerite, previa notificación de dicha situación al Titular.</p>
-                    <p>En los casos en que el Titular desee revocar la autorización otorgada al Responsable respecto de los datos personales proporcionados, deberá realizar la solicitud correspondiente en los mismos términos establecidos en el presente aviso de privacidad para ejercer sus derechos ARCO.</p>
-                    <p>La entrega de los datos personales será gratuita previa acreditación de su identidad ante el Responsable. Por excepción, en aquellos casos en los que derivado de la solicitud particular del Titular, se genere al Responsable gastos de envío; y en su caso costos por la de reproducción o por la generación de copias u otros formatos que tengan como finalidad atender la solicitud del Titular, los mismos deberán ser cubiertos por este último.</p>
-                    <p>En aquellos casos en los que el Titular desee ejercer el derecho de acceso a sus datos personales, la información solicitada será proporcionada a través del medio que este haya elegido en la solicitud de ejercicio de Derechos ARCO. En el supuesto en el que el Responsable no cuente con datos personales del Titular requirente, se lo informarán por los medios a través de los cuáles realizó la solicitud.</p>
+                    <p>Si la solicitud resulta procedente, el resultado de la resolución se hará efectiva dentro de los 15 (quince) días hábiles siguientes a la fecha en que se comunique la respuesta. El Responsable podrá ampliar éste plazo hasta por 10
+                        (diez) días hábiles más, cuando el caso lo amerite, previa notificación de dicha situación al Titular.</p>
+                    <p>En los casos en que el Titular desee revocar la autorización otorgada al Responsable respecto de los datos personales proporcionados, deberá realizar la solicitud correspondiente en los mismos términos establecidos en el presente aviso
+                        de privacidad para ejercer sus derechos ARCO.</p>
+                    <p>La entrega de los datos personales será gratuita previa acreditación de su identidad ante el Responsable. Por excepción, en aquellos casos en los que derivado de la solicitud particular del Titular, se genere al Responsable gastos
+                        de envío; y en su caso costos por la de reproducción o por la generación de copias u otros formatos que tengan como finalidad atender la solicitud del Titular, los mismos deberán ser cubiertos por este último.</p>
+                    <p>En aquellos casos en los que el Titular desee ejercer el derecho de acceso a sus datos personales, la información solicitada será proporcionada a través del medio que este haya elegido en la solicitud de ejercicio de Derechos ARCO.
+                        En el supuesto en el que el Responsable no cuente con datos personales del Titular requirente, se lo informarán por los medios a través de los cuáles realizó la solicitud.</p>
                     <p>Para cualquier duda o aclaración respecto del procedimiento y medios para ejercer sus Derechos Arco, favor de enviar un correo a la Unidad de Transparencia del Banco del Bienestar, unidaddetransparencia@bancodelbienestar.gob.mx</p>
-                    <p>En caso de que el Titular revoque la autorización otorgada al Responsable para el tratamiento de sus datos personales bajo alguna de las finalidades identificadas como primarias en el numeral 5 del presente aviso de privacidad, dicha revocación podrá implicar la suspensión de los servicios prestados por el Responsable a fin de dar cumplimiento a las disposiciones legales vigentes o a las políticas internas del Responsable.</p>
+                    <p>En caso de que el Titular revoque la autorización otorgada al Responsable para el tratamiento de sus datos personales bajo alguna de las finalidades identificadas como primarias en el numeral 5 del presente aviso de privacidad, dicha
+                        revocación podrá implicar la suspensión de los servicios prestados por el Responsable a fin de dar cumplimiento a las disposiciones legales vigentes o a las políticas internas del Responsable.</p>
                     <p>Para el ejercicio de datos personales de menores de edad, se deberá privilegiar el interés superior de la niña, el niño y el adolescente, en términos de las disposiciones legales aplicables.</p>
                 </td>
             </tr>
             <tr>
                 <td class="justificacion" colspan="1"><b>10. Cambios del Aviso de Privacidad.</b></td>
-                <td class="justificacion" colspan="1"> 
-                   <p>El Responsable se reserva el derecho a realizar cambios en el presente aviso de privacidad, los cuales serán dados a conocer mediante su publicación en la página  <a class="blue-text" target="_blank" href="https://www.bancodelbienestar.com.mx/BsfPortalMovil/index ">https://www.bancodelbienestar.com.mx/BsfPortalMovil/index </a> o aquella que la llegara a sustituir.</p>
-                    <p>Asimismo, se informa al Titular que cuenta con el derecho a oponerse al tratamiento de sus datos personales en caso de no estar de acuerdo con las modificaciones que pudiera presentar este aviso de privacidad, para ello, deberá enviar una solicitud a la dirección de correo electrónico unidaddetransparencia@bancodelbienestar.gob.mx</p>
+                <td class="justificacion" colspan="1">
+                    <p>El Responsable se reserva el derecho a realizar cambios en el presente aviso de privacidad, los cuales serán dados a conocer mediante su publicación en la página <a class="blue-text" target="_blank" href="https://www.bancodelbienestar.com.mx/BsfPortalMovil/index ">https://www.bancodelbienestar.com.mx/BsfPortalMovil/index </a>                        o aquella que la llegara a sustituir.</p>
+                    <p>Asimismo, se informa al Titular que cuenta con el derecho a oponerse al tratamiento de sus datos personales en caso de no estar de acuerdo con las modificaciones que pudiera presentar este aviso de privacidad, para ello, deberá enviar
+                        una solicitud a la dirección de correo electrónico unidaddetransparencia@bancodelbienestar.gob.mx</p>
                 </td>
             </tr>
             <tr>
                 <td class="justificacion" colspan="1"><b>11. Atención de quejas y denuncias.</b></td>
-                <td class="justificacion" colspan="1"> 
-                   <p>Les informamos que la autoridad competente para resolver cualquier conflicto derivado de la aplicación a la LGPDPPSO es el Instituto Nacional de Acceso a la Información y Datos Personales (INAI), cuya página es www.inai.org.mx</p>
+                <td class="justificacion" colspan="1">
+                    <p>Les informamos que la autoridad competente para resolver cualquier conflicto derivado de la aplicación a la LGPDPPSO es el Instituto Nacional de Acceso a la Información y Datos Personales (INAI), cuya página es www.inai.org.mx</p>
                 </td>
             </tr>
             <tr>
                 <td class="justificacion" colspan="1"><b>12. Cookies y Web beacons.</b></td>
-                <td class="justificacion" colspan="1"> 
-                    <p>En caso de que el Titular haga uso de plataformas, sitios, aplicaciones o solicite los servicios del Responsable mediante el uso de dispositivos electrónicos o proporcione sus datos personales por cualquiera de dichos canales (en adelante y en su conjunto los “Medios Electrónicos”), el Titular se sujetará los términos y condiciones que para tal efecto se establezcan en el sitio correspondiente.</p>
+                <td class="justificacion" colspan="1">
+                    <p>En caso de que el Titular haga uso de plataformas, sitios, aplicaciones o solicite los servicios del Responsable mediante el uso de dispositivos electrónicos o proporcione sus datos personales por cualquiera de dichos canales (en adelante
+                        y en su conjunto los “Medios Electrónicos”), el Titular se sujetará los términos y condiciones que para tal efecto se establezcan en el sitio correspondiente.</p>
                     <p>Asimismo, el Titular entiende, acepta y reconoce que: </p>
                     <p>1. Los Medios Electrónicos pueden incluir enlaces a sitios web de terceros ajenos al Responsable, respecto de los cuales, este último no asume ninguna titularidad, obligación o responsabilidad alguna.</p>
-                    <p>2. Los servicios que presta el Responsable a través de los Medios Electrónicos podrán recopilar información del Titular tales como tipo de navegador, sistema operativo, visitas a otros sitios de internet o llevar a cabo su identificación como Usuario, a través "cookies" o "web beacons".</p>
+                    <p>2. Los servicios que presta el Responsable a través de los Medios Electrónicos podrán recopilar información del Titular tales como tipo de navegador, sistema operativo, visitas a otros sitios de internet o llevar a cabo su identificación
+                        como Usuario, a través "cookies" o "web beacons".</p>
                     <p>Para que el Titular pueda deshabilitar estos programas, deberá de acceder a las "opciones de internet" ubicadas en la sección de las "Herramientas", o funciones similares, del navegador que utilice.</p>
-                    <p>El sitio web del Responsable <a class="blue-text" target="_blank" href="https://www.bancodelbienestar.com.mx/BsfPortalMovil/index">https://www.bancodelbienestar.com.mx/BsfPortalMovil/index </a> y sus aplicaciones utilizan "Cookies" que el Responsable podrá colocar en su dispositivo de acceso y hacer uso ellas.</p>
-                    <p>El uso de “Cookies” tiene como finalidad agilizar el inicio de una nueva sesión; guardar la configuración del usuario del sitio y/o sus aplicaciones; agilizar la inter-actuación con los contenidos; mejorar la experiencia del usuario del sitio y/o sus aplicaciones almacenando sus preferencias en el dispositivo de acceso, eliminando la necesidad de especificar repetidamente la misma información y solo mostrar contenido personalizado y publicidad de acuerdo a sus preferencias en sus posteriores visitas, así como facilitar al Responsable el análisis de dicha información con el objetivo de mejorar el rendimiento del sitio y/o sus aplicaciones.</p>
+                    <p>El sitio web del Responsable <a class="blue-text" target="_blank" href="https://www.bancodelbienestar.com.mx/BsfPortalMovil/index">https://www.bancodelbienestar.com.mx/BsfPortalMovil/index </a> y sus aplicaciones utilizan "Cookies"
+                        que el Responsable podrá colocar en su dispositivo de acceso y hacer uso ellas.</p>
+                    <p>El uso de “Cookies” tiene como finalidad agilizar el inicio de una nueva sesión; guardar la configuración del usuario del sitio y/o sus aplicaciones; agilizar la inter-actuación con los contenidos; mejorar la experiencia del usuario
+                        del sitio y/o sus aplicaciones almacenando sus preferencias en el dispositivo de acceso, eliminando la necesidad de especificar repetidamente la misma información y solo mostrar contenido personalizado y publicidad de acuerdo a
+                        sus preferencias en sus posteriores visitas, así como facilitar al Responsable el análisis de dicha información con el objetivo de mejorar el rendimiento del sitio y/o sus aplicaciones.</p>
                     <p>Con el uso de los Medios Electrónicos, Usted reconoce y autoriza al Responsable al uso de "cookies" y "web beacons"</p>
-                    <p><b>Definición de Cookie:</b>Es un archivo de datos que se almacena en el disco duro del equipo de cómputo o del dispositivo de comunicaciones electrónicas de un usuario al navegar en un sitio de internet específico, el cual permite intercambiar información de estado entre dicho sitio y el navegador del usuario. La información de estado puede revelar medios de identificación de sesión, autenticación o preferencias del usuario, así como cualquier dato almacenado por el navegador respecto al sitio de internet.</p>
-                    <p><b>Definición de Web Beacons:</b>Imagen visible u oculta insertada dentro de un sitio web o correo electrónico, que se utiliza para monitorear el comportamiento del usuario en estos medios. A través de éstos se puede obtener información como la dirección IP de origen, navegador utilizado, sistema operativo, momento en que se accedió a la página, y en el caso del correo electrónico, la asociación de los datos anteriores con el destinatario.</p>
+                    <p><b>Definición de Cookie:</b>Es un archivo de datos que se almacena en el disco duro del equipo de cómputo o del dispositivo de comunicaciones electrónicas de un usuario al navegar en un sitio de internet específico, el cual permite
+                        intercambiar información de estado entre dicho sitio y el navegador del usuario. La información de estado puede revelar medios de identificación de sesión, autenticación o preferencias del usuario, así como cualquier dato almacenado
+                        por el navegador respecto al sitio de internet.</p>
+                    <p><b>Definición de Web Beacons:</b>Imagen visible u oculta insertada dentro de un sitio web o correo electrónico, que se utiliza para monitorear el comportamiento del usuario en estos medios. A través de éstos se puede obtener información
+                        como la dirección IP de origen, navegador utilizado, sistema operativo, momento en que se accedió a la página, y en el caso del correo electrónico, la asociación de los datos anteriores con el destinatario.</p>
                     <p>El Responsable podrá ampliar el contenido del sitio y/o sus aplicaciones o crear nuevos medios electrónicos en cuyo caso estos se regirán por el presente aviso de privacidad.</p>
 
                 </td>
-            </tr> 
-            </table>
-
-
-            <p>Ultima fecha de actualización Abril 2020.</p>
-
-            <tr></tr>
-            
-            <tr class="justificacion" style='font-size: 11px;'>
-                <p><b>1</b> Decreto por el que se reforman y adicionan diversas disposiciones de la Ley Orgánica del Banco del Ahorro Nacional y Servicios Financieros, publicado en el Diario Oficial de la Federación, el 19 de julio de 2019. Disponible en: <a class="blue-text" target="_blank" href="https://dof.gob.mx/nota_detalle.php?codigo=5566165&fecha=19/07/2019">https://dof.gob.mx/nota_detalle.php?codigo=5566165&fecha=19/07/2019. </a>
-                Artículo 4o. transitorio: cuando éste u otros decretos, códigos, leyes, reglamentos o disposiciones jurídicas emitidas con anterioridad al presente Decreto, así como todos los contratos, convenios y demás actos jurídicos celebrados por la Institución, hagan referencia al Banco del Ahorro Nacional y Servicios Financieros, se entenderá la remisión al Banco del Bienestar.</p>
             </tr>
-        
-          
+        </table>
+
+
+        <p>Ultima fecha de actualización Abril 2020.</p>
+
+        <tr></tr>
+
+        <tr class="justificacion" style='font-size: 11px;'>
+            <p><b>1</b> Decreto por el que se reforman y adicionan diversas disposiciones de la Ley Orgánica del Banco del Ahorro Nacional y Servicios Financieros, publicado en el Diario Oficial de la Federación, el 19 de julio de 2019. Disponible en:
+                <a class="blue-text" target="_blank" href="https://dof.gob.mx/nota_detalle.php?codigo=5566165&fecha=19/07/2019">https://dof.gob.mx/nota_detalle.php?codigo=5566165&fecha=19/07/2019. </a> Artículo 4o. transitorio: cuando éste u otros decretos,
+                códigos, leyes, reglamentos o disposiciones jurídicas emitidas con anterioridad al presente Decreto, así como todos los contratos, convenios y demás actos jurídicos celebrados por la Institución, hagan referencia al Banco del Ahorro
+                Nacional y Servicios Financieros, se entenderá la remisión al Banco del Bienestar.</p>
+        </tr>
+
+
 
     </div>
     <div class="modal-footer">
