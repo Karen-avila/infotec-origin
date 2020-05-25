@@ -40,7 +40,7 @@ export class UserService {
   }
 
   login(user:User){
-    console.log("Service login");
+    //console.log("Service login");
     let url = URL_SERVICES + '/login';
 
     return this.http.post(url,user).map((res:any)=>{

@@ -99,17 +99,17 @@ this.router.navigate(["dashboard"]);
 
   login(){
     
-    console.log("form is valid?", this.form.valid);
+    console.log("form login is valid?", this.form.valid);
     if(this.form.valid){
       let user = new User(this.form.value.email,this.form.value.password);
       //enviar datos a back
       this.userService.login(user)
         .subscribe(res=>{
-          console.log("esto responde el servicio login",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
+          console.log("Is logged?",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
+          this.router.navigate(["dashboard",{id:this.step}]); ///revisar donde quedara
+          console.log("Entro al step",this.step)
+
         });
-    /*     console.log("waaa",this.step)
-      this.router.navigate(["dashboard",{id:this.step}]); *///revisar donde quedara
-     
     } else{
       swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
     }
