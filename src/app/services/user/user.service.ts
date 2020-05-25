@@ -16,15 +16,11 @@ export class UserService {
 
   token:string;
   email:string;
-  id:string;
+  id:string; 
 
   constructor(public http:HttpClient, private router: Router) { 
-    console.log("user service is run");
+    this.getStorage();
   }
-
-  /*isLogged(){
-    return (this.token.length > 5 )? true : false;
-  }*/
 
   createUser(user:User){
     console.log("Service create user");
@@ -40,6 +36,14 @@ export class UserService {
     console.log("Esto es lo que enviare a donde lo tenga que enviar",user);
     
     return {as: user};
+  }
+
+  getStorage(){
+    if(localStorage.getItem('token')){
+      this.token = localStorage.getItem('token');
+    }else{
+      this.token = '';
+    }
   }
 
   isLogged(){
@@ -59,11 +63,16 @@ export class UserService {
     let url = URL_SERVICES + '/login';
 
     return this.http.post(url,user).map((res:any)=>{
-        localStorage.setItem('id',res._id);
-        localStorage.setItem('id',res.email);
+        localStorage.setItem('id',res.id);
+        localStorage.setItem('email',res.email);
         localStorage.setItem('token',res.token);
+        localStorage.setItem('step','1');
+        this.token = res.token;
+        this.email = res.email;
+        this.id = res.id;
         swal("¡Felicidades!", "Inicio de sesión exitoso.", "success");
-
+        //this.router.navigate(["dashboard",{id:this.step}]); ///revisar donde quedara
+        this.router.navigate(["dashboard"]);
       return true;
     })  
   }

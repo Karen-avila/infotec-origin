@@ -105,9 +105,9 @@ this.router.navigate(["dashboard"]);
       //enviar datos a back
       this.userService.login(user)
         .subscribe(res=>{
-          console.log("Is logged?",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
-            this.router.navigate(["dashboard",{id:this.step}]); ///revisar donde quedara
-          console.log("Entro al step",this.step)
+          console.log("Is logged?",res); 
+         /*  console.log("Entro al step",this.step)
+          this.router.navigate(["dashboard",{id:this.step}]); ///revisar donde quedara */
 
         });
     } else{
