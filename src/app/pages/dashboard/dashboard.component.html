@@ -863,11 +863,11 @@
 
                     </div>
                     <br><br>
-                    <!--  -->
+                    <!--  
                     <a class="waves-effect  teal darken-4 btn modal-trigger right" href="#fiel">
                         <i class="material-icons prefix right">send</i> Firmar Documentos
                     </a>
-                    <!--  -->
+                    -->
                     <div class="row">
                         <div class="row">
 
@@ -949,14 +949,59 @@
                         <div class="row">
                             <!--<img class="responsive-img" src="../../../assets/contr.png">-->
 
+                            <p>Selecciona los archivos de tu firma electrónica avanzada (FIEL)</p>
+                            <br>
+                    <form ngNativeValidate [formGroup]="formFiel" (ngSubmit)="dfiel()">
+                    
+                            <div class="file-field input-field col s12 m4 l4">
+                                <div class="teal darken-4 btn">
+                                    <i class="material-icons right">attachment</i>Archivo .key
+                                    <input type="file" (change)="ValidateSize('fiel')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="fiel" id="fiel" required class="validate">
 
-                            <div class="input-field col s12 m3 offset-m1">
-                                <a class="waves-effect teal darken-4 btn modal-trigger" href="#modalContr">Ver
+                                <div class="red-text" *ngIf="fi.fiel.errors?.required">Archivo requerido</div>
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text">
+                                </div>
+                            </div>
+                    
+                            <div class="file-field input-field col s12 m4 l4">
+                                <div class="teal darken-4 btn">
+                                    <i class="material-icons right">attachment</i>Archivo .cer
+                                    <input type="file" (change)="ValidateSize('cer')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="cer" id="cer" required class="validate">
+                                
+                                <div class="red-text" *ngIf="fi.cer.errors?.required">Archivo requerido</div>
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text">
+                                </div>
+                            </div>
+                     
+                            <div class="input-field col s12 m4 l4">
+                                <i class="material-icons prefix">lock_circle</i>
+                                <input id="password" type="password" name="password" formControlName="password" required class="validate">
+                                <label for="password">Contraseña de tu FIEL</label>
+                                <div class="col s1 m1 l1" *ngIf="fi.password.errors?.required"></div>
+                            </div>
+       
+
+                            <div class="input-field col s12 m4 l4">
+                                <a class="waves-effect teal darken-4 btn modal-trigger" href="#modalContr">Ver Carátula Informativa
                         <i class="medium material-icons icon-gold right">visibility</i>
                     </a>
                             </div>
 
+                            <div class="col s12">
+
+                                <a routerLink="/home" class="waves-effect  teal darken-4 btn right ">
+                                    <i class="material-icons prefix right">send</i> Terminar
+                                </a>
+        
+                            </div>
+                    </form>
                         </div>
+                   
+
                         <div class="row" *ngIf="terms">
                             <div class="input-field col s12 m4 offset-m3">
                                 <a class="waves-effect teal darken-4 btn " href="../../../assets/Caratula.pdf" download="contr.pdf">Descargar
@@ -965,13 +1010,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col s12">
+                   <!--<div class="col s12">
 
                         <a routerLink="/home" class="waves-effect  teal darken-4 btn right ">
                             <i class="material-icons prefix right">send</i> Terminar
                         </a>
 
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </li>
@@ -1003,7 +1048,7 @@
     </div>
 </div>
 
-<div id="fiel" class="modal">
+<!--<div id="fiel" class="modal">
     <div class="modal-content">
 
         <h4>Selecciona los archivos de tu firma electrónica avanzada (FIEL)</h4>
@@ -1062,7 +1107,7 @@
         </div>
 
     </div>
-</div>
+</div>-->
 
 
 <div id="aviso" class="modal">
