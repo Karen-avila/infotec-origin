@@ -19,7 +19,7 @@ export class ApplyComponent implements OnInit {
   instance 
   popup;
   recaptcha: any[];
-  //-------
+  //-----
   form : FormGroup;
   formval: FormGroup;
   dic = [
