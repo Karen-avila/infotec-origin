@@ -11,14 +11,14 @@
                         <div class="collapsible-header"><i class="material-icons">work</i>Perfil del Negocio</div>
                         <div class="collapsible-body">
                             <ul class="collection">
-                                <form ngNativeValidate [formGroup]="formScrPn" (ngSubmit)="scrPnSend()">
+                                <form ngNativeValidate [formGroup]="formScrPerNeg" (ngSubmit)="scrPerNegSend()">
 
-                                    <li class="collection-item avatar" *ngFor="let scrPn of scrPn; index as i;">
-                                        <span class="title">{{scrPn.quest}}</span>
+                                    <li class="collection-item avatar" *ngFor="let scrPerNeg of scrPerNeg; index as i;">
+                                        <span class="title">{{scrPerNeg.quest}}</span>
 
-                                        <p *ngFor="let resp of scrPn.opts; index as j;">
+                                        <p *ngFor="let resp of scrPerNeg.opts; index as j;">
                                             <label>
-                                            <input class="with-gap" formControlName="{{'scrPn'+i}}" name="{{'scrPn'+i}}" id="{{'scrPn'+i}}" value="{{resp}}" type="radio"  />
+                                            <input class="with-gap" formControlName="{{'scrPerNeg'+i}}" name="{{'scrPerNeg'+i}}" id="{{'scrPerNeg'+i}}" value="{{resp}}" type="radio"  />
                                             <span>{{resp}}</span>
                                           </label>
                                         </p>
@@ -50,13 +50,13 @@
                         <div class="collapsible-header"><i class="material-icons">card_travel</i>Perfil de Mercado</div>
                         <div class="collapsible-body">
                             <ul class="collection">
-                                <form ngNativeValidate [formGroup]="formScrPm" (ngSubmit)="scrPmSend()">
-                                    <li class="collection-item avatar" *ngFor="let scrPm of scrPm; index as i;">
-                                        <span class="title">{{scrPm.quest}}</span>
+                                <form ngNativeValidate [formGroup]="formScrPerMer" (ngSubmit)="scrPerMerSend()">
+                                    <li class="collection-item avatar" *ngFor="let scrPerMer of scrPerMer; index as i;">
+                                        <span class="title">{{scrPerMer.quest}}</span>
 
-                                        <p *ngFor="let resp of scrPm.opts; index as j;">
+                                        <p *ngFor="let resp of scrPerMer.opts; index as j;">
                                             <label>
-                                            <input class="with-gap" formControlName="{{'scrPm'+i}}" name="{{'scrPm'+i}}" id="{{'scrPm'+i}}" value="{{resp}}" type="radio"  />
+                                            <input class="with-gap" formControlName="{{'scrPerMer'+i}}" name="{{'scrPerMer'+i}}" id="{{'scrPerMer'+i}}" value="{{resp}}" type="radio"  />
                                             <span>{{resp}}</span>
                                           </label>
                                         </p>
