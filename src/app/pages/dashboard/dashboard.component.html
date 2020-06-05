@@ -38,8 +38,10 @@
                             </div>
                         </div>
                         <div class="center-align">
-                            <p class="white-text flow-text cr">Total a Pagar <b> {{((finance.PMT(0.01,valuePlaz,-valueMon))*valuePlaz).toFixed(2) | currency:"MXN":"symbol"}}</b></p>
+                            <p class="white-text flow-text cr">Total a Pagar <b> {{((finance.PMT(0.0125,valuePlaz,-valueMon))*valuePlaz).toFixed(2) | currency:"MXN":"symbol"}}</b></p>
                         </div>
+
+
                         <br>
 
                     </div>
@@ -66,7 +68,7 @@
                             <div class="card-content">
                                 <i class="material-icons medium icon-gold">local_atm</i>
                                 <p>Parcialidad</p>
-                                <p>{{ finance.PMT(0.01,valuePlaz,-valueMon).toFixed(2) | currency:"MXN":"symbol" }}</p>
+                                <p>{{ finance.PMT(0.0125,valuePlaz,-valueMon).toFixed(2) | currency:"MXN":"symbol" }}</p>
                             </div>
                         </div>
 
@@ -86,7 +88,7 @@
                         </div>
                         <div class="center-align">
                             <p class="white-text flow-text teal darken-4">
-                                <i class="small material-icons icon-gold left">local_atm</i> Parcialidad <b>  {{ finance.PMT(0.01,valuePlaz,-valueMon).toFixed(2) | currency:"MXN":"symbol" }}</b></p>
+                                <i class="small material-icons icon-gold left">local_atm</i> Parcialidad <b>  {{ finance.PMT(0.0125,valuePlaz,-valueMon).toFixed(2) | currency:"MXN":"symbol" }}</b></p>
                         </div>
                     </div>
 
@@ -142,9 +144,9 @@
 
                     <div class="input-field col s12 m12 l12">
                         <i class="material-icons prefix">payment</i>
-                        <input class="validate" id="clabe" type="number" formControlName="clabe" name="clabe" minlength="18" maxlength="18" required>
+                        <input class="validate" id="clabe_inter" type="number" formControlName="clabe_inter" name="clabe_inter" minlength="18" maxlength="18" required>
                         <label for="text">Clabe interbancaria</label>
-                        <div class="blue-text" *ngIf="f.clabe.errors">La clabe interbancaria consta de 18 dígitos</div>
+                        <div class="blue-text" *ngIf="f.clabe_inter.errors">La clabe interbancaria consta de 18 dígitos</div>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
@@ -170,18 +172,18 @@
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="paterno" type="text" name="paterno" formControlName="paterno" required class="validate">
-                        <label for="paterno">Apellido paterno</label>
-                        <div class="blue-text" *ngIf="f.paterno.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
+                        <input id="a_paterno" type="text" name="a_paterno" formControlName="a_paterno" required class="validate">
+                        <label for="a_paterno">Apellido paterno</label>
+                        <div class="blue-text" *ngIf="f.a_paterno.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabra altisonante</p> -->
                         </div>
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="materno" type="text" name="materno" formControlName="materno" required class="validate">
-                        <label for="materno">Apellido materno</label>
-                        <div class="blue-text" *ngIf="f.materno.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
+                        <input id="a_materno" type="text" name="a_materno" formControlName="a_materno" required class="validate">
+                        <label for="a_materno">Apellido materno</label>
+                        <div class="blue-text" *ngIf="f.a_materno.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabra altisonante</p> -->
                         </div>
@@ -263,14 +265,14 @@
                     </div>
 
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="entidad" name="entidad" id="entidad" class="validate">
+                        <select formControlName="entidadfed" name="entidadfed" id="entidadfed" class="validate">
                         <option value="" disabled selected>Selecciona una opcion</option>
                         <option value="1">Ciudad de México</option>
                         <option value="2">Pachuca, Hgo.</option>
                         <option value="3">Guadalajara, Jal.</option>
                     </select>
                         <label>Entidad federativa de Nacimiento</label>
-                        <div class="blue-text" *ngIf="f.entidad.errors">Debes seleccionar una opción.</div>
+                        <div class="blue-text" *ngIf="f.entidadfed.errors">Debes seleccionar una opción.</div>
                     </div>
 
 
@@ -297,13 +299,13 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">house</i>
-                        <input id="mun" type="text" formControlName="mun" name="mun" required class="validate" />
-                        <label for="mun">Municipio</label>
+                        <input id="municipio" type="text" formControlName="municipio" name="municipio" required class="validate" />
+                        <label for="municipio">Municipio</label>
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="tase" name="tase" id="tase" class="validate">
+                        <select formControlName="asentamientoType" name="asentamientoType" id="asentamientoType" class="validate">
                             <option value="" disabled selected>Selecciona una opcion</option>
                             <option value="Barrio">Barrio</option>
                             <option value="Colonia">Colonia</option>
@@ -311,7 +313,7 @@
                             <option value="Pueblo">Pueblo</option>
                         </select>
                         <label>Tipo de asentamiento</label>
-                        <div class="blue-text" *ngIf="f.tase.errors">Debes seleccionar una opción.</div>
+                        <div class="blue-text" *ngIf="f.asentamientoType.errors">Debes seleccionar una opción.</div>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
@@ -324,9 +326,8 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">aspect_ratio</i>
-                        <input id="clave" type="text" formControlName="clave" required class="validate" name="clave" />
-                        <label for="clave">Clave de Elector</label>
-                        <a class="modal-trigger" href="#helpIne"><i class="material-icons prefix icon-black">help_outline</i></a>
+                        <input id="clave_elector" type="text" formControlName="clave_elector" required class="validate" name="clave_elector" />
+                        <label for="clave_elector">Clave de Elector</label>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
@@ -350,38 +351,38 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">house</i>
-                        <input id="callen" type="text" formControlName="callen" required class="validate" name="callen" />
-                        <label for="callen">Calle</label>
+                        <input id="calleNeg" type="text" formControlName="calleNeg" required class="validate" name="calleNeg" />
+                        <label for="calleNeg">Calle</label>
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
 
                     <div class="input-field col s12 m3 l3">
 
-                        <input id="extn" type="text" formControlName="extn" required class="validate" name="extn" />
-                        <label for="extn">Número exterior</label>
+                        <input id="extNeg" type="text" formControlName="extNeg" required class="validate" name="extNeg" />
+                        <label for="extNeg">Número exterior</label>
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
 
                     <div class="input-field col s12 m3 l3">
 
-                        <input id="intn" type="text" formControlName="intn" name="intn" />
-                        <label for="intn">Número interior</label>
+                        <input id="intNeg" type="text" formControlName="intNeg" name="intNeg" />
+                        <label for="intNeg">Número interior</label>
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="entidad" name="entidad" id="entidad" class="validate">
+                        <select formControlName="entidadfedNeg" name="entidadfedNeg" id="entidadfedNeg" class="validate">
                             <option value="" disabled selected>Selecciona una opcion</option>
                             <option value="1">Ciudad de México</option>
                             <option value="2">Pachuca, Hgo.</option>
                             <option value="3">Guadalajara, Jal.</option>
                         </select>
                         <label>Entidad federativa</label>
-                        <div class="blue-text" *ngIf="f.entidad.errors">Debes seleccionar una opción.</div>
+                        <div class="blue-text" *ngIf="f.entidadfedNeg.errors">Debes seleccionar una opción.</div>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="tasen" name="tasen" id="tasen" class="validate">
+                        <select formControlName="asentamientoTypeNeg" name="asentamientoTypeNeg" id="asentamientoTypeNeg" class="validate">
                                 <option value="" disabled selected>Selecciona una opcion</option>
                                 <option value="Barrio">Barrio</option>
                                 <option value="Colonia">Colonia</option>
@@ -389,13 +390,13 @@
                                 <option value="Pueblo">Pueblo</option>
                             </select>
                         <label>Tipo de asentamiento</label>
-                        <div class="blue-text" *ngIf="f.tasen.errors">Debes seleccionar una opción.</div>
+                        <div class="blue-text" *ngIf="f.asentamientoTypeNeg.errors">Debes seleccionar una opción.</div>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">house</i>
-                        <input id="munn" type="text" formControlName="munn" name="munn" required class="validate" />
-                        <label for="munn">Municipio</label>
+                        <input id="municipioNeg" type="text" formControlName="municipioNeg" name="municipioNeg" required class="validate" />
+                        <label for="municipioNeg">Municipio</label>
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
 
@@ -403,8 +404,8 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">house</i>
-                        <input id="asentamienton" type="text" formControlName="asentamienton" name="asentamienton" required class="validate" />
-                        <label for="asentamienton">Asentamiento</label>
+                        <input id="asentamientoNeg" type="text" formControlName="asentamientoNeg" name="asentamientoNeg" required class="validate" />
+                        <label for="asentamientoNeg">Asentamiento</label>
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
 
@@ -428,7 +429,7 @@
                     </div>
 
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="ssector" name="ssector" id="ssector" class="validate">
+                        <select formControlName="subsector" name="subsector" id="subsector" class="validate">
                                 <option value="" disabled selected>Selecciona una opcion</option>
                                 <option value="1">Extracción de petróleo y gas</option>
                                 <option value="2">Minería de minerales metálicos y no metálicos, excepto petroléo y gas</option>
@@ -440,7 +441,7 @@
                                 <option value="8">Pesca, caza y captura</option>
                             </select>
                         <label>Subsector</label>
-                        <div class="blue-text" *ngIf="f.ssector.errors">Debes seleccionar una opción.</div>
+                        <div class="blue-text" *ngIf="f.subsector.errors">Debes seleccionar una opción.</div>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
@@ -459,7 +460,7 @@
                     </div>
 
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="srama" name="srama" id="srama" class="validate">
+                        <select formControlName="subrama" name="subrama" id="subrama" class="validate">
                                 <option value="" disabled selected>Selecciona una opcion</option>
                                 <option value="1">Minería de otros minerales no metálicos</option>
                                 <option value="2">Servicios relacionados con la agricultura</option>
@@ -471,7 +472,7 @@
                                 <option value="8">Transmisión, distribución y comercialización de energía eléctrica</option>
                             </select>
                         <label>Subrama</label>
-                        <div class="blue-text" *ngIf="f.srama.errors">Debes seleccionar una opción.</div>
+                        <div class="blue-text" *ngIf="f.subrama.errors">Debes seleccionar una opción.</div>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
@@ -508,38 +509,38 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="namerp1" type="text" formControlName="namerp1" name="namerp1" required class="validate">
-                        <label for="namerp1">Nombre</label>
+                        <input id="ref1_name" type="text" formControlName="ref1_name" name="ref1_name" required class="validate">
+                        <label for="ref1_name">Nombre</label>
 
-                        <div class="blue-text" *ngIf="f.namerp1.errors?.minlength">Debe tener un mínimo de 3 caracteres</div>
+                        <div class="blue-text" *ngIf="f.ref1_name.errors?.minlength">Debe tener un mínimo de 3 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                         </div>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="name2rp1" type="text" formControlName="name2rp1" name="name2rp1" class="validate">
-                        <label for="name2rp1">Segundo nombre</label>
+                        <input id="ref1_name2" type="text" formControlName="ref1_name2" name="ref1_name2" class="validate">
+                        <label for="ref1_name2">Segundo nombre</label>
 
-                        <div class="blue-text" *ngIf="f.name2rp1.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
+                        <div class="blue-text" *ngIf="f.ref1_name2.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabra altisonante</p>-->
                         </div>
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="paternorp1" type="text" name="paternorp1" formControlName="paternorp1" required class="validate">
-                        <label for="paternorp1">Apellido paterno</label>
-                        <div class="blue-text" *ngIf="f.paternorp1.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
+                        <input id="ref1_paterno" type="text" name="ref1_paterno" formControlName="ref1_paterno" required class="validate">
+                        <label for="ref1_paterno">Apellido paterno</label>
+                        <div class="blue-text" *ngIf="f.ref1_paterno.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabra altisonante</p> -->
                         </div>
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="maternorp1" type="text" name="maternorp1" formControlName="maternorp1" required class="validate">
-                        <label for="maternorp1">Apellido materno</label>
-                        <div class="blue-text" *ngIf="f.maternorp1.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
+                        <input id="ref1_materno" type="text" name="ref1_materno" formControlName="ref1_materno" required class="validate">
+                        <label for="ref1_materno">Apellido materno</label>
+                        <div class="blue-text" *ngIf="f.ref1_materno.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabra altisonante</p> -->
                         </div>
@@ -547,20 +548,20 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">phone</i>
-                        <input class="validate" id="telrp1" type="number" formControlName="telrp1" name="telrp1" minlength="10" maxlength="10" required>
+                        <input class="validate" id="ref1_tel" type="number" formControlName="ref1_tel" name="ref1_tel" minlength="10" maxlength="10" required>
                         <label for="text">Número de Teléfono</label>
-                        <div class="blue-text" *ngIf="f.telrp1.errors">El teléfono debe ser de 10 digitos</div>
+                        <div class="blue-text" *ngIf="f.ref1_tel.errors">El teléfono debe ser de 10 digitos</div>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="relacionrp1" name="relacionrp1" id="relacionrp1" class="validate">
+                        <select formControlName="ref1_relacion" name="ref1_relacion" id="ref1_relacion" class="validate">
                                 <option value="" disabled selected>Selecciona una opcion</option>
                                 <option value="1">Familiar</option>
                                 <option value="2">Amistad</option>
                                 <option value="3">Laboral o profesional</option>
                             </select>
                         <label>Relación</label>
-                        <div class="blue-text" *ngIf="f.relacionrp1.errors">Debes seleccionar una opción.</div>
+                        <div class="blue-text" *ngIf="f.ref1_relacion.errors">Debes seleccionar una opción.</div>
                     </div>
 
 
@@ -573,38 +574,38 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="namerp2" type="text" formControlName="namerp2" name="namerp2" required class="validate">
-                        <label for="namerp2">Nombre</label>
+                        <input id="ref2_name" type="text" formControlName="ref2_name" name="ref2_name" required class="validate">
+                        <label for="ref2_name">Nombre</label>
 
-                        <div class="blue-text" *ngIf="f.namerp2.errors?.minlength">Debe tener un mínimo de 3 caracteres</div>
+                        <div class="blue-text" *ngIf="f.ref2_name.errors?.minlength">Debe tener un mínimo de 3 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                         </div>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="name2rp2" type="text" formControlName="name2rp2" name="name2rp2" class="validate">
-                        <label for="name2rp1">Segundo nombre</label>
+                        <input id="ref2_name2" type="text" formControlName="ref2_name2" name="ref2_name2" class="validate">
+                        <label for="ref2_name2">Segundo nombre</label>
 
-                        <div class="blue-text" *ngIf="f.name2rp2.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
+                        <div class="blue-text" *ngIf="f.ref2_name2.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabra altisonante</p>-->
                         </div>
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="paternorp2" type="text" name="paternorp2" formControlName="paternorp2" required class="validate">
-                        <label for="paternorp2">Apellido paterno</label>
-                        <div class="blue-text" *ngIf="f.paternorp2.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
+                        <input id="ref2_paterno" type="text" name="ref2_paterno" formControlName="ref2_paterno" required class="validate">
+                        <label for="ref2_paterno">Apellido paterno</label>
+                        <div class="blue-text" *ngIf="f.ref2_paterno.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabra altisonante</p> -->
                         </div>
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="maternorp2" type="text" name="maternorp2" formControlName="maternorp2" required class="validate">
-                        <label for="maternorp2">Apellido materno</label>
-                        <div class="blue-text" *ngIf="f.maternorp2.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
+                        <input id="ref2_materno" type="text" name="ref2_materno" formControlName="ref2_materno" required class="validate">
+                        <label for="ref2_materno">Apellido materno</label>
+                        <div class="blue-text" *ngIf="f.ref2_materno.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabra altisonante</p> -->
                         </div>
@@ -612,20 +613,20 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">phone</i>
-                        <input class="validate" id="telrp2" type="number" formControlName="telrp2" name="telrp2" minlength="10" maxlength="10" required>
+                        <input class="validate" id="ref2_tel" type="number" formControlName="ref2_tel" name="ref2_tel" minlength="10" maxlength="10" required>
                         <label for="text">Número de Teléfono</label>
-                        <div class="blue-text" *ngIf="f.telrp2.errors">El teléfono debe ser de 10 digitos</div>
+                        <div class="blue-text" *ngIf="f.ref2_tel.errors">El teléfono debe ser de 10 digitos</div>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="relacionrp2" name="relacionrp2" id="relacionrp2" class="validate">
+                        <select formControlName="ref2_relacion" name="ref2_relacion" id="ref2_relacion" class="validate">
                                 <option value="" disabled selected>Selecciona una opcion</option>
                                 <option value="1">Familiar</option>
                                 <option value="2">Amistad</option>
                                 <option value="3">Laboral o profesional</option>
                         </select>
                         <label>Relación</label>
-                        <div class="blue-text" *ngIf="f.relacionrp2.errors">Debes seleccionar una opción.</div>
+                        <div class="blue-text" *ngIf="f.ref2_relacion.errors">Debes seleccionar una opción.</div>
                     </div>
 
 
@@ -635,7 +636,7 @@
 
                     <div class="row">
                         <div class="input-field col s12 m12 l12">
-                            <label><input class="with-gap teal darken-4" type="checkbox" [(ngModel)]="aviso"/>
+                            <label><input class="with-gap teal darken-4" formControlName="aprivacidad" name="aprivacidad" type="checkbox" [(ngModel)]="aviso"/>
                             <span>
                         
                         <label class="waves-effect modal-trigger subrayar" href="#aviso">
@@ -862,16 +863,22 @@
 
                     </div>
                     <br><br>
-                    <!--  
-                    <a class="waves-effect  teal darken-4 btn modal-trigger right" href="#fiel">
+
+                    <!--<a class="waves-effect  teal darken-4 btn modal-trigger right" href="#fiel">
                         <i class="material-icons prefix right">send</i> Firmar Documentos
-                    </a>
-                    -->
+                    </a>-->
+
+                    <div class="input-field col s12 m4 offset-m6 l4 offset-l6">
+                        <a class="waves-effect teal darken-4 btn modal-trigger" href="#sat">
+                            <i class="material-icons right">send</i>Firmar Documentos</a>
+                    </div>
+
                     <div class="row">
+
                         <div class="row">
 
                             <div class="input-field col s12 m12 l12">
-                                <label><input class="with-gap teal darken-4" type="checkbox" [(ngModel)]="bc"/>
+                                <label><input class="with-gap teal darken-4" formControlName="autorizobc" name="autorizobc" type="checkbox" [(ngModel)]="bc"/>
                             <span>
                                 <label>
                                     <span class="black-text" style = "font-size: 14px;">Autorizó la consulta a sociedades de información crediticia</span>
@@ -883,7 +890,7 @@
                         <br>
                         <div class="row">
                             <div class="input-field col s12 m12 l12">
-                                <label> <input class="with-gap teal darken-4" type="checkbox" [(ngModel)]="prueba"/> 
+                                <label> <input class="with-gap teal darken-4" formControlName="termcond" name="termcond" type="checkbox" [(ngModel)]="term"/> 
                             <span>
                         
                         <label class="waves-effect modal-trigger subrayar" href="#terminos">
@@ -977,7 +984,7 @@
                                 </div>
 
                                 <div class="input-field col s12 m4 l4">
-                                    <i class="material-icons prefix">lock_circle</i>
+                                    <i class="material-icons prefix">lock</i>
                                     <input id="password" type="password" name="password" formControlName="password" required class="validate">
                                     <label for="password">Contraseña de tu FIEL</label>
                                     <div class="col s1 m1 l1" *ngIf="fi.password.errors?.required"></div>
@@ -1010,11 +1017,9 @@
                         </div>
                     </div>
                     <!--<div class="col s12">
-
                         <a routerLink="/home" class="waves-effect  teal darken-4 btn right ">
                             <i class="material-icons prefix right">send</i> Terminar
                         </a>
-
                     </div>-->
                 </div>
             </div>
@@ -1047,22 +1052,7 @@
     </div>
 </div>
 
-<div id="helpIne" class="modal">
-    <div class="modal-content center">
-        <h4 class="zz">Aquí podrás encontrar tu Clave de Elector</h4>
-        <br>
-        <img class="responsive-img" src="../../../assets/ineHelp.png">
-    </div>
-    <div class="modal-footer">
-        <a class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>
-    </div>
-    <div class="footer-copyright teal darken-3">
-        <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
-    </div>
-</div>
-
-
-<!--<div id="fiel" class="modal">
+<div id="sat" class="modal">
     <div class="modal-content">
 
         <h4>Selecciona los archivos de tu firma electrónica avanzada (FIEL)</h4>
@@ -1100,7 +1090,7 @@
             </div>
             <br>
             <div class="input-field col s12 m4 l4">
-                <i class="material-icons prefix">lock_circle</i>
+                <i class="material-icons prefix">lock</i>
                 <input id="password" type="password" name="password" formControlName="password" required class="validate">
                 <label for="password">Contraseña de tu FIEL</label>
                 <div class="col s1 m1 l1" *ngIf="fi.password.errors?.required"></div>
@@ -1121,12 +1111,12 @@
         </div>
 
     </div>
-</div>-->
+</div>
 
 
 <div id="aviso" class="modal">
     <div class="modal-content justificacion">
-        <p>En cumplimiento de lo dispuesto en los artículos 68 fracciones II, III, IV y VI, de la Ley General de Transparencia y Acceso a la Información Pública (LGTAIP), 3º, fracción II, 16, 17, 18, 21, 25, 26, 27, 28, 67, 68, 69 y 70,  de la Ley General
+        <p>En cumplimiento de lo dispuesto en los artículos 68 fracciones II, III, IV y VI, de la Ley General de Transparencia y Acceso a la Información Pública (LGTAIP), 3º, fracción II, 16, 17, 18, 21, 25, 26, 27, 28, 67, 68, 69 y 70, de la Ley General
             de Protección de Datos Personales en Posesión de Sujetos Obligados (LGPDPPSO) y los numerales 9 fracción II, 11, fracción II, 15 y 26 al 45 de los Lineamientos Generales de Protección de Datos Personales para el Sector Público (en lo sucesivo
             los "Lineamientos"), se pone a disposición de los usuarios el siguiente:
         </p>
@@ -1385,7 +1375,7 @@
                 <p>Al utilizar el sitio me obligo a cumplir con los términos y condiciones de su uso, establecidos en el presente documento, reconozco haber leído, entendido y estar de acuerdo en sujetarme a los mismos, por lo que, al acceder estoy de acuerdo
                     en acatar lo anterior.</p>
                 <p>La información y los servicios que ofrece el Banco del Bienestar, S.N.C., I.B.D. (Banco del Bienestar), a través de su sitio, hacen referencia exclusivamente, a la normatividad que los rige en los Estados Unidos Mexicanos y son formulados
-                    para las operaciones que se realicen en su territorio.</p>
+                    para las operaciones que se realicen en su territorio.</p>
                 <p>Por el hecho de hacer uso de la información y hacer uso de los servicios, el usuario expresa su aceptación y está de acuerdo con los términos y condiciones del uso del sitio de Internet del Banco del Bienestar, así como con las modificaciones
                     que al mismo, en su caso, se realicen. </p>
                 <p>Este sitio, la información, los materiales descritos en él y el software que se proporciona, son presentados “como son”, “en el estado en que se encuentran” y están disponibles sin garantía alguna, ya sea expresa o tácita, incluyendo sin
@@ -1399,13 +1389,13 @@
                 <p><b>Usos permitidos.</b></p>
 
                 <P>El uso del sitio es bajo la exclusiva responsabilidad del usuario.</P>
-                <p>El Banco del Bienestar autoriza al usuario a visualizar y descargar los materiales contenidos en el sitio solamente para su uso personal y no para un uso comercial.</p>
+                <p>El Banco del Bienestar autoriza al usuario a visualizar y descargar los materiales contenidos en el sitio solamente para su uso personal y no para un uso comercial.</p>
                 <p>1) El Usuario deberá conservar en todas las copias de los materiales descargados, todos los avisos sobre derechos de autor y propiedad intelectual de los materiales, contenidos en los mismos;</p>
                 <p>2) El usuario no deberá modificar, reproducir o mostrar pública o comercialmente los materiales, ni podrá distribuir o utilizarlos con algún propósito público o comercial;</p>
                 <p>3) El usuario no deberá transferir los materiales a ningún tercero.</p>
-                <p>Este sitio, incluyendo todos los materiales contenidos en el mismo, se encuentran protegidos por la Ley Federal del Derecho de Autor de los Estados Unidos Mexicanos. El Banco del Bienestar no le concede al usuario derecho expreso o implícito
+                <p>Este sitio, incluyendo todos los materiales contenidos en el mismo, se encuentran protegidos por la Ley Federal del Derecho de Autor de los Estados Unidos Mexicanos. El Banco del Bienestar no le concede al usuario derecho expreso o implícito
                     sobre alguna patente, marca registrada, nombre comercial, aviso comercial, secreto industrial o derecho de autor.</p>
-                <p>Queda terminantemente prohibida la utilización de tales elementos, su reproducción, comunicación y/o distribución con fines comerciales o lucrativos, así como su modificación, alteración, o descompilación. </p>
+                <p>Queda terminantemente prohibida la utilización de tales elementos, su reproducción, comunicación y/o distribución con fines comerciales o lucrativos, así como su modificación, alteración, o descompilación. </p>
                 <p>El usuario no podrá modificar, copiar, reproducir, volver a publicar, cargar, exponer, transmitir o distribuir de cualquier forma el contenido disponible a través del servicio y los sitios asociados, incluidos el código y el software.</p>
 
                 <p><b>Marcas y derechos de autor.</b></p>
@@ -1460,8 +1450,8 @@
 
                 <p><b>Claves de acceso y claves de identificación.</b></p>
 
-                <p>Con el fin de cumplir con las disposiciones que rigen la protección de datos personales, es necesario que el usuario realice el alta de su cuenta; de la cual el usuario es responsable único y final, debiendo tomar todas las medidas que
-                    resulten necesarias para mantener en secreto, tanto la clave de usuario como la contraseña con las cuales tenga acceso a los servicios que ofrece el Banco del Bienestar a través del sitio.</p>
+                <p>Con el fin de cumplir con las disposiciones que rigen la protección de datos personales, es necesario que el usuario realice el alta de su cuenta; de la cual el usuario es responsable único y final, debiendo tomar todas las medidas que
+                    resulten necesarias para mantener en secreto, tanto la clave de usuario como la contraseña con las cuales tenga acceso a los servicios que ofrece el Banco del Bienestar a través del sitio.</p>
                 <p>El usuario se compromete a hacer un uso diligente y a mantener en secreto la clave de usuario y la contraseña mediante las cuales puede realizar operaciones en el sitio.</p>
                 <p>El usuario libera de manera absoluta y sin limitación alguna al Banco del Bienestar de cualquier tipo de responsabilidad, civil, penal, administrativa, así como de los daños y perjuicios o cualquier otra que pudiera ser ocasionados por
                     el mal uso que le dé a su cuenta y contraseña, o que se generen por no haber adoptado todas las medidas necesarias para su resguardo y confidencialidad.</p>
@@ -1520,10 +1510,10 @@
                 <p>El uso del sitio constituirá la aceptación del usuario de las disposiciones aplicables al sitio.</p>
                 <p>El Banco del Bienestar se reserva el derecho de modificar el presente aviso legal en cualquier tiempo, mediante simple publicación de las nuevas disposiciones aplicables, siendo el usuario responsable de revisar el aviso legal periódicamente.</p>
 
-                <p><b>Legislación y normatividad aplicable.</b></p>
+                <p><b>Legislación y normatividad aplicable.</b></p>
                 <p>El servicio del sitio es controlado por el Banco del Bienestar desde sus oficinas corporativas en la Ciudad de México, dentro de los Estados Unidos Mexicanos. Al ingresar al sitio, el usuario y el Banco del Bienestar aceptan someterse
                     a la legislación aplicable en los Estados Unidos Mexicanos, sin tomar en cuenta los principios de conflictos de leyes que pudieran surgir.</p>
-                <p>Para la interpretación, ejecución y cumplimiento del presente aviso legal, las partes están de acuerdo en someterse a la jurisdicción de los Tribunales Federales con sede en la Ciudad de México, renunciando expresamente a cualquier otro
+                <p>Para la interpretación, ejecución y cumplimiento del presente aviso legal, las partes están de acuerdo en someterse a la jurisdicción de los Tribunales Federales con sede en la Ciudad de México, renunciando expresamente a cualquier otro
                     fuero que por sus domicilios presentes o futuros pudiera corresponderles.</p>
                 <p><b>El usuario declara haber leído y aceptar íntegramente los presentes términos y condiciones vigentes en el momento de acceder al sitio y/o usar los servicios.</b></p>
                 <p><b>En el caso de que el usuario no esté de acuerdo con las disposiciones del presente aviso legal deberá abstenerse de utilizar el sitio y/o de realizar operaciones a través del sitio.</b></p>

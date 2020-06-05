@@ -16,7 +16,7 @@ export class QuestionComponent implements OnInit {
   sfina8 = false;
   sfina9 = false;
 
-  scrPn=[
+  scrPerNeg=[
     {
       quest:"Antigüedad de negocio.",
       opts:["Menos de 12 meses","De 1 a 2 años","De 3 a 5 años","De 6 a 10 años","Más de 10 años"],
@@ -61,7 +61,7 @@ export class QuestionComponent implements OnInit {
     }
   ];
 
-  scrPm=[
+  scrPerMer=[
     {
       quest:"¿El negocio ofrece varios productos o servicios?",
       opts:["Un solo producto o marca","Un solo producto de diferentes marcas","Múltiples productos"],
@@ -676,8 +676,8 @@ export class QuestionComponent implements OnInit {
         }
       ];
 
-formScrPn : FormGroup;
-formScrPm : FormGroup;
+formScrPerNeg : FormGroup;
+formScrPerMer : FormGroup;
 formScrRep : FormGroup;
 formScrDir : FormGroup;
 formQcQc : FormGroup;
@@ -703,28 +703,28 @@ prins;
     this.instQrmCnct = M.Collapsible.init(document.getElementById('queremosConocerte'));
     this.prins = M.Collapsible.init(document.getElementById('prins'));
 
-    this.formScrPn = new FormGroup({
-              scrPn0: new FormControl(null, [Validators.required]),
-              scrPn1: new FormControl(null, [Validators.required]),
-              scrPn2: new FormControl(null, [Validators.required]),
-              scrPn3: new FormControl(null, [Validators.required]),
-              scrPn4: new FormControl(null, [Validators.required]),
-              scrPn5: new FormControl(null, [Validators.required]),
-              scrPn6: new FormControl(null, [Validators.required])
+    this.formScrPerNeg = new FormGroup({
+              scrPerNeg0: new FormControl(null, [Validators.required]),
+              scrPerNeg1: new FormControl(null, [Validators.required]),
+              scrPerNeg2: new FormControl(null, [Validators.required]),
+              scrPerNeg3: new FormControl(null, [Validators.required]),
+              scrPerNeg4: new FormControl(null, [Validators.required]),
+              scrPerNeg5: new FormControl(null, [Validators.required]),
+              scrPerNeg6: new FormControl(null, [Validators.required])
     });
 
-    this.formScrPm = new FormGroup({
-      scrPm0: new FormControl(null, [Validators.required]),
-      scrPm1: new FormControl(null, [Validators.required]),
-      scrPm2: new FormControl(null, [Validators.required]),
-      scrPm3: new FormControl(null, [Validators.required]),
-      scrPm4: new FormControl(null, [Validators.required]),
-      scrPm5: new FormControl(null, [Validators.required]),
-      scrPm6: new FormControl(null, [Validators.required]),
-      scrPm7: new FormControl(null, [Validators.required]),
-      scrPm8: new FormControl(null, [Validators.required]),
-      scrPm9: new FormControl(null, [Validators.required]),
-      scrPm10: new FormControl(null, [Validators.required])
+    this.formScrPerMer = new FormGroup({
+      scrPerMer0: new FormControl(null, [Validators.required]),
+      scrPerMer1: new FormControl(null, [Validators.required]),
+      scrPerMer2: new FormControl(null, [Validators.required]),
+      scrPerMer3: new FormControl(null, [Validators.required]),
+      scrPerMer4: new FormControl(null, [Validators.required]),
+      scrPerMer5: new FormControl(null, [Validators.required]),
+      scrPerMer6: new FormControl(null, [Validators.required]),
+      scrPerMer7: new FormControl(null, [Validators.required]),
+      scrPerMer8: new FormControl(null, [Validators.required]),
+      scrPerMer9: new FormControl(null, [Validators.required]),
+      scrPerMer10: new FormControl(null, [Validators.required])
 });
 
 this.formScrRep = new FormGroup({
@@ -839,10 +839,10 @@ this.formQcQcn = new FormGroup({
 
   }
 
-  scrPnSend(){
-    console.log("form is valid?", this.formScrPn.valid);
-    if(this.formScrPn.valid){
-      console.log("form", this.formScrPn.value);
+  scrPerNegSend(){
+    console.log("form is valid?", this.formScrPerNeg.valid);
+    if(this.formScrPerNeg.valid){
+      console.log("form", this.formScrPerNeg.value);
       //enviar datos a back
       this.instPefNeg.open(1); //aqui ira
     } else{
@@ -850,10 +850,10 @@ this.formQcQcn = new FormGroup({
     }
   }
 
-  scrPmSend(){
-    console.log("form is valid?", this.formScrPm.valid);
-    if(this.formScrPm.valid){
-      console.log("form", this.formScrPm.value);
+  scrPerMerSend(){
+    console.log("form is valid?", this.formScrPerMer.valid);
+    if(this.formScrPerMer.valid){
+      console.log("form", this.formScrPerMer.value);
       //enviar datos a back
       this.instPefNeg.open(2); //aqui ira
     } else{
