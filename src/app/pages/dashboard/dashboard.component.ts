@@ -230,6 +230,8 @@ console.log("el step",this.re.id)
     monto: new FormControl(),
     plazo: new FormControl(),
     aprivacidad: new FormControl(null,Validators.required)
+
+    
             
  }, { validators: this.pbaDict('name','a_paterno','name2','a_materno','domicilio','calle','ext','int','municipio','asentamiento','calleNeg','extNeg','intNeg','municipioNeg','asentamientoNeg',
  'ref1_name','ref1_paterno','ref1_name2','ref1_materno', 'ref2_name','ref2_paterno','ref2_name2','ref2_materno') 
