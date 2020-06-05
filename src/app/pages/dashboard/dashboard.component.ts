@@ -33,9 +33,9 @@ stepper;
   calendar;
 
   terms=false;
-  bc=false;
-  aviso = false;
-  prueba = false;
+  autorizobc=false;
+  aprivacidad = false;
+  termcond = false;
 
   form : FormGroup;
   formDocumentos : FormGroup;
@@ -183,54 +183,56 @@ console.log("el step",this.re.id)
     personType: new FormControl(null,Validators.required),
     name: new FormControl(null,[Validators.required,Validators.minLength(3)]),
     name2: new FormControl(null,[Validators.minLength(0)]),
-    paterno: new FormControl(null,[Validators.required,Validators.minLength(3)]),
-    materno: new FormControl(null,[Validators.required,Validators.minLength(3)]),
+    a_paterno: new FormControl(null,[Validators.required,Validators.minLength(3)]),
+    a_materno: new FormControl(null,[Validators.required,Validators.minLength(3)]),
     genero : new FormControl(null, Validators.required),
     birthDate : new FormControl(null, Validators.required),
-    entidad : new FormControl(null, Validators.required),
+    entidadfed : new FormControl(null, Validators.required),
+    entidadfedNeg : new FormControl(null, Validators.required),
     pais : new FormControl(null, Validators.required),
     ocupacion : new FormControl(null, Validators.required),
-    clabe: new FormControl(null,[Validators.required,Validators.minLength(18), Validators.maxLength(18), Validators.pattern('[0-9]{18}')]),
+    clabe_inter: new FormControl(null,[Validators.required,Validators.minLength(18), Validators.maxLength(18), Validators.pattern('[0-9]{18}')]),
     tel: new FormControl(null,[Validators.required,Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
     domicilio: new FormControl(" ",[Validators.required]),
     curp: new FormControl(null,Validators.required),
     rfc: new FormControl(null,Validators.required),
     civil: new FormControl(null,Validators.required),
-    clave: new FormControl(null,Validators.required),
+    clave_elector: new FormControl(null,Validators.required),
     calle: new FormControl(null,Validators.required),
     ext: new FormControl(null,Validators.required),
     int: new FormControl(null,[Validators.minLength(0)]),
-    mun: new FormControl(null,Validators.required),
+    municipio: new FormControl(null,Validators.required),
     asentamiento: new FormControl(null,Validators.required),
-    tase: new FormControl(null,Validators.required),
-    callen: new FormControl(null,Validators.required),
-    extn: new FormControl(null,Validators.required),
-    intn: new FormControl(null,[Validators.minLength(0)]),
-    munn: new FormControl(null,Validators.required),
-    asentamienton: new FormControl(null,Validators.required),
-    tasen: new FormControl(null,Validators.required),
+    asentamientoType: new FormControl(null,Validators.required),
+    calleNeg: new FormControl(null,Validators.required),
+    extNeg: new FormControl(null,Validators.required),
+    intNeg: new FormControl(null,[Validators.minLength(0)]),
+    municipioNeg: new FormControl(null,Validators.required),
+    asentamientoNeg: new FormControl(null,Validators.required),
+    asentamientoTypeNeg: new FormControl(null,Validators.required),
     sector: new FormControl(null,Validators.required),
-    ssector: new FormControl(null,Validators.required),
+    subsector: new FormControl(null,Validators.required),
     rama: new FormControl(null,Validators.required),
-    srama: new FormControl(null,Validators.required),
+    subrama: new FormControl(null,Validators.required),
     giro: new FormControl(null,Validators.required),
-    namerp1: new FormControl(null,[Validators.required,Validators.minLength(3)]),
-    name2rp1: new FormControl(null,[Validators.minLength(0)]),
-    paternorp1: new FormControl(null,[Validators.required,Validators.minLength(3)]),
-    maternorp1: new FormControl(null,[Validators.required,Validators.minLength(3)]),
-    telrp1: new FormControl(null,[Validators.required,Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
-    relacionrp1: new FormControl(null,Validators.required),
-    namerp2: new FormControl(null,[Validators.required,Validators.minLength(3)]),
-    name2rp2: new FormControl(null,[Validators.minLength(0)]),
-    paternorp2: new FormControl(null,[Validators.required,Validators.minLength(3)]),
-    maternorp2: new FormControl(null,[Validators.required,Validators.minLength(3)]),
-    telrp2: new FormControl(null,[Validators.required,Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
-    relacionrp2: new FormControl(null,Validators.required),
+    ref1_name: new FormControl(null,[Validators.required,Validators.minLength(3)]),
+    ref1_name2: new FormControl(null,[Validators.minLength(0)]),
+    ref1_paterno: new FormControl(null,[Validators.required,Validators.minLength(3)]),
+    ref1_materno: new FormControl(null,[Validators.required,Validators.minLength(3)]),
+    ref1_tel: new FormControl(null,[Validators.required,Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
+    ref1_relacion: new FormControl(null,Validators.required),
+    ref2_name: new FormControl(null,[Validators.required,Validators.minLength(3)]),
+    ref2_name2: new FormControl(null,[Validators.minLength(0)]),
+    ref2_paterno: new FormControl(null,[Validators.required,Validators.minLength(3)]),
+    ref2_materno: new FormControl(null,[Validators.required,Validators.minLength(3)]),
+    ref2_tel: new FormControl(null,[Validators.required,Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
+    ref2_relacion: new FormControl(null,Validators.required),
     monto: new FormControl(),
-    plazo: new FormControl()
+    plazo: new FormControl(),
+    aprivacidad: new FormControl(null,Validators.required)
             
- }, { validators: this.pbaDict('name','paterno','name2','materno','domicilio','calle','ext','int','mun','asentamiento','callen','extn','intn','munn','asentamienton',
- 'namerp1','paternorp1','name2rp1','maternorp1', 'namerp2','paternorp2','name2rp2','maternorp2') 
+ }, { validators: this.pbaDict('name','a_paterno','name2','a_materno','domicilio','calle','ext','int','municipio','asentamiento','calleNeg','extNeg','intNeg','municipioNeg','asentamientoNeg',
+ 'ref1_name','ref1_paterno','ref1_name2','ref1_materno', 'ref2_name','ref2_paterno','ref2_name2','ref2_materno') 
 
 });
 
@@ -243,7 +245,9 @@ this.formDocumentos = new FormGroup({
   declaracion: new FormControl(null, Validators.required),
   curpd: new FormControl(null, Validators.required),
   rfcd: new FormControl(null, Validators.required),
-  fiscal: new FormControl(null, Validators.required)
+  fiscal: new FormControl(null, Validators.required),
+  autorizobc: new FormControl(false,Validators.required),
+  termcond: new FormControl(false,Validators.required)
   // buro: new FormControl(null, Validators.required)
   
   
