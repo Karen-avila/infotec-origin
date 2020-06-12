@@ -36,6 +36,7 @@ COPY . .
 
 RUN npm install 
 RUN npm update
+RUN npm audit fix
 
 COPY sweetalert.d.ts.md /usr/src/app/node_modules/sweetalert/typings/sweetalert.d.ts
 COPY materialize.css.md /usr/src/app/node_modules/materialize-css/dist/css/materialize.css
