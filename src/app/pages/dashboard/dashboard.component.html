@@ -1062,7 +1062,7 @@
                 <div class="file-field input-field col s12 m4 offset-m1 l4 offset-l1">
                     <div class="teal darken-4 btn">
                         <i class="material-icons right">attachment</i>Archivo .key
-                        <input type="file" (change)="ValidateSize('fiel')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="fiel" id="fiel" required class="validate">
+                        <input type="file" (change)="ValidateSize('fiel')" accept=".key" formControlName="fiel" id="fiel" required class="validate">
 
                         <div class="red-text" *ngIf="fi.fiel.errors?.required">Archivo requerido
                         </div>
@@ -1078,7 +1078,7 @@
                 <div class="file-field input-field col s12 m4 offset-m1 l4 offset-l1">
                     <div class="teal darken-4 btn">
                         <i class="material-icons right">attachment</i>Archivo .cer
-                        <input type="file" (change)="ValidateSize('cer')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="cer" id="cer" required class="validate">
+                        <input type="file" (change)="ValidateSize('cer')" accept=".cer" formControlName="cer" id="cer" required class="validate">
 
                         <div class="red-text" *ngIf="fi.cer.errors?.required">Archivo requerido
                         </div>
