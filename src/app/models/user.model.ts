@@ -4,7 +4,7 @@ export class User{
         //evio
         public email:string,
         public password:string,
-        public rePassword:string
+        public rePassword?:string
         //me responde
         /*
         email:test@test.com,

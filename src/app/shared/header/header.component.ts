@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as M from 'materialize-css';
+import { UserService } from '../../services/user/user.service';
 
 @Component({
   selector: 'app-header',
@@ -7,13 +8,13 @@ import * as M from 'materialize-css';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  
+  isLogged = false;
 
-  constructor() { }
+  constructor(public userService:UserService) { }
 
   ngOnInit() {
     M.AutoInit();
-
-    
   }
 
 }

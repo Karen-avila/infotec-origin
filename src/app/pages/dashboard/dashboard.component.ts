@@ -23,7 +23,6 @@ export class DashboardComponent implements OnInit {
 
   //********************* */
 monte;
-hugo = "666";
 stepper;
   //********************* */
   
@@ -117,7 +116,7 @@ stepper;
  //-------------------
   constructor(public userService:UserService,private route: ActivatedRoute, private router: Router) { 
 
-    this.route.params.subscribe( params => this.re=params);
+    this.re = localStorage.getItem('step');
 
     // Monto del Prestamo
     var montoCapital = 20000 * -1;
@@ -149,7 +148,7 @@ stepper;
 
   ngOnInit() {
 
-console.log("el step",this.re.id)
+console.log("el step",this.re)
 
 
     //console.log("comienza ngOnInit",this.alrt);
@@ -164,7 +163,7 @@ console.log("el step",this.re.id)
     //console.log(stepperDiv);
     this.stepper = new MStepper(stepperDiv, {
       // Default active step.
-      firstActive: this.re.id, //api regresa paso a activar siempre debe empezar minimo en 1
+      firstActive: this.re, //api regresa paso a activar siempre debe empezar minimo en 1
       // Allow navigation by clicking on the next and previous steps on linear steppers.
       linearStepsNavigation: true,
       // Auto focus on first input of each step.

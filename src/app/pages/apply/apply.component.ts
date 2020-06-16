@@ -19,7 +19,7 @@ export class ApplyComponent implements OnInit {
   instance 
   popup;
   recaptcha: any[];
-  //-------
+  //-----
   form : FormGroup;
   formval: FormGroup;
   dic = [
@@ -127,7 +127,7 @@ pbaDict(p1:string){
 //------------
 
   //-------------
-  register(){
+  register() {
     let user = new User(this.form.value.email,this.form.value.password,this.form.value.rePassword);
 
     console.log("form is valid?", this.form.valid);
