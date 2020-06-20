@@ -344,11 +344,11 @@ constructor(public userService: UserService, private route: ActivatedRoute, priv
   }
 
   async activitieChange(value, type, sector= null, subsector= null, rama= null, subrama= null) {
-    if (type === 'sector' &&  value === undefined) { this.sectorList = activitiesService.init(); }
-    if (type === 'sector' &&  value !== undefined) { this.subsectorList = activitiesService.getSubsector(sector); }
-    if (type === 'subsector' &&  value !== undefined) { this.ramaList = activitiesService.getRama(sector, subsector); }
-    if (type === 'rama' &&  value !== undefined) { this.subramaList = activitiesService.getSubrama(sector, subsector, rama); }
-    if (type === 'subrama' &&  value !== undefined) { this.giroList = activitiesService.getGiro(sector, subsector, rama, subrama); }
+    if (type === 'sector' &&  value === undefined) { this.sectorList = await activitiesService.init(); }
+    if (type === 'sector' &&  value !== undefined) { this.subsectorList = await activitiesService.getSubsector(sector); }
+    if (type === 'subsector' &&  value !== undefined) { this.ramaList = await activitiesService.getRama(sector, subsector); }
+    if (type === 'rama' &&  value !== undefined) { this.subramaList = await activitiesService.getSubrama(sector, subsector, rama); }
+    if (type === 'subrama' &&  value !== undefined) { this.giroList = await activitiesService.getGiro(sector, subsector, rama, subrama); }
     setTimeout(() => { M.FormSelect.init(document.querySelectorAll('select')); }, 200);
   }
   ValidateSize(file) {
