@@ -299,7 +299,7 @@
                         <option value="30">Veracruz de Ignacio de la Llave</option>
                         <option value="31">Yucatán</option>
                         <option value="32">Zacatecas</option>
-                        
+
                     </select>
                         <label>Entidad federativa de Nacimiento</label>
                         <div class="blue-text" *ngIf="f.entidadfed.errors">Debes seleccionar una opción.</div>
@@ -475,82 +475,49 @@
                         <p><br></p>
                     </div>
 
-
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="sector" name="sector" id="sector" class="validate">
-                                <option value="" disabled selected>Selecciona una opcion</option>
-                                <option value="1">Minería</option>
-                                <option value="2">Construcción</option>
-                                <option value="3">Agricultura, cría y exportación de animales, aprovechamiento forestal, pezca y caza  </option>
-                            </select>
-                        <label>Sector</label>
+                        <select formControlName="sector" name="sector" id="sector" class="validate" [(ngModel)]="sector" (ngModelChange)="activitieChange($event, 'sector', sector=sector)">
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option [ngValue]="item.codigo" *ngFor="let item of activities.sectorList">{{item.titulo}}</option>
+                      </select>
+                        <label>Sector: {{sector}}</label>
+                        <div class="blue-text" *ngIf="f.sector.errors">Debes seleccionar una opción.</div>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <select formControlName="subsector" name="subsector" id="subsector" class="validate" [(ngModel)]="subsector" (ngModelChange)="activitieChange($event, 'subsector', sector=sector, subsector=subsector)">
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option [ngValue]="item.codigo" *ngFor="let item of activities.subsectorList">{{item.titulo}}</option>
+                      </select>
+                        <label>Subsector: {{subsector}}</label>
+                        <div class="blue-text" *ngIf="f.sector.errors">Debes seleccionar una opción.</div>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <select formControlName="rama" name="rama" id="rama" class="validate" [(ngModel)]="rama" (ngModelChange)="activitieChange($event, 'rama', sector=sector, subsector=subsector, rama=rama)">
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option [ngValue]="item.codigo" *ngFor="let item of activities.ramaList">{{item.titulo}}</option>
+                      </select>
+                        <label>Rama: {{rama}}</label>
+                        <div class="blue-text" *ngIf="f.sector.errors">Debes seleccionar una opción.</div>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <select formControlName="subrama" name="subrama" id="subrama" class="validate" [(ngModel)]="subrama" (ngModelChange)="activitieChange($event, 'subrama', sector=sector, subsector=subsector, rama=rama, subrama=subrama)">
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option [ngValue]="item.codigo" *ngFor="let item of activities.subramaList">{{item.titulo}}</option>
+                      </select>
+                        <label>Subrama: {{subrama}}</label>
+                        <div class="blue-text" *ngIf="f.sector.errors">Debes seleccionar una opción.</div>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <select formControlName="giro" name="giro" id="giro" class="validate" [(ngModel)]="giro">
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option [ngValue]="item.codigo" *ngFor="let item of activities.giroList">{{item.titulo}}</option>
+                      </select>
+                        <label>Giro: {{giro}}</label>
                         <div class="blue-text" *ngIf="f.sector.errors">Debes seleccionar una opción.</div>
                     </div>
 
-                    <div class="input-field col s12 m6 l6">
-                        <select formControlName="subsector" name="subsector" id="subsector" class="validate">
-                                <option value="" disabled selected>Selecciona una opcion</option>
-                                <option value="1">Extracción de petróleo y gas</option>
-                                <option value="2">Minería de minerales metálicos y no metálicos, excepto petroléo y gas</option>
-                                <option value="3">Servicios relacionados con la míneria</option>
-                                <option value="4">Construcción de obras de ingeniería civil</option>
-                                <option value="5">Edificación</option>
-                                <option value="6">Agricultura</option>
-                                <option value="7">Aprovechamiento forestal</option>
-                                <option value="8">Pesca, caza y captura</option>
-                            </select>
-                        <label>Subsector</label>
-                        <div class="blue-text" *ngIf="f.subsector.errors">Debes seleccionar una opción.</div>
-                    </div>
 
-                    <div class="input-field col s12 m6 l6">
-                        <select formControlName="rama" name="rama" id="rama" class="validate">
-                                <option value="" disabled selected>Selecciona una opcion</option>
-                                <option value="1">Caza y captura</option>
-                                <option value="2">Pesca</option>
-                                <option value="3">Extracción de petróleo y gas</option>
-                                <option value="4">Edificación no residencial</option>
-                                <option value="5">Edificación residencial</option>
-                                <option value="6">Construcción de vías de comunicación</option>
-                                <option value="7">Servicios relacionados con la minería</option>
-                            </select>
-                        <label>Rama</label>
-                        <div class="blue-text" *ngIf="f.rama.errors">Debes seleccionar una opción.</div>
-                    </div>
 
-                    <div class="input-field col s12 m6 l6">
-                        <select formControlName="subrama" name="subrama" id="subrama" class="validate">
-                                <option value="" disabled selected>Selecciona una opcion</option>
-                                <option value="1">Minería de otros minerales no metálicos</option>
-                                <option value="2">Servicios relacionados con la agricultura</option>
-                                <option value="3">Acuicultura</option>
-                                <option value="4">Cunicultura y explotación de animales con pelaje fino</option>
-                                <option value="5">Explotación de équidos</option>
-                                <option value="6">Captación, tratamiento y suministro de agua</option>
-                                <option value="7">Suministro de gas natural por ductos al consumidor final</option>
-                                <option value="8">Transmisión, distribución y comercialización de energía eléctrica</option>
-                            </select>
-                        <label>Subrama</label>
-                        <div class="blue-text" *ngIf="f.subrama.errors">Debes seleccionar una opción.</div>
-                    </div>
-
-                    <div class="input-field col s12 m6 l6">
-                        <select formControlName="giro" name="giro" id="giro" class="validate">
-                                <option value="" disabled selected>Selecciona una opcion</option>
-                                <option value="1">Construcción de obras para telecomunicaciones</option>
-                                <option value="2">Construcción de plantas de refinería y petroquímica</option>
-                                <option value="3">Construcción de sistemas de riego agrícola</option>
-                                <option value="4">Extracción de petróleo y gas</option>
-                                <option value="5">Minería de carbón mineral</option>
-                                <option value="6">Minería de oro</option>
-                                <option value="7">Minería de plata</option>
-                                <option value="8">Explotación de gallinas para la producción de huevo fértil</option>
-                                <option value="9">Explotación de guajolotes o pavos</option>
-                                <option value="10">Explotación de pollos para la producción de carne</option>
-                            </select>
-                        <label>Giro</label>
-                        <div class="blue-text" *ngIf="f.giro.errors">Debes seleccionar una opción.</div>
-                    </div>
 
                     <div class="input-field col s12 m12 l12">
                         <i class="material-icons prefix icon-gold">people_outline</i>
@@ -697,7 +664,7 @@
                         <div class="input-field col s12 m12 l12">
                             <label><input class="with-gap teal darken-4" formControlName="aprivacidad" name="aprivacidad" type="checkbox" [(ngModel)]="aviso"/>
                             <span>
-                        
+
                         <label class="waves-effect modal-trigger subrayar" href="#aviso">
                             <span class="blue-text text-darken-4" style = "font-size: 14px;">Acepto Aviso de Privacidad</span>
                         </label>
@@ -842,12 +809,12 @@
                         <!--   <div class="col s12 m2 l2">
                         <span>Score de Buro de Crédito </span>
                         <a (click)="sweetHome('2')"><i class="material-icons prefix icon-black">help_outline</i></a>
-                    </div>  
+                    </div>
                     <div class="file-field input-field col s12 m4 l4">
                         <div class="teal darken-4 btn">
                             <i class="material-icons right">attachment</i>cargar
                             <input type="file" accept="application/pdf" formControlName="buro" id="buro" required class="validate">
-                        </div> 
+                        </div>
                         <div class="col s1 m1 l1" *ngIf="doc.buro.errors?.required">
                             <i class="material-icons icon-red">error_outline</i>
                         </div>
@@ -949,9 +916,9 @@
                         <br>
                         <div class="row">
                             <div class="input-field col s12 m12 l12">
-                                <label> <input class="with-gap teal darken-4" formControlName="termcond" name="termcond" type="checkbox" [(ngModel)]="term"/> 
+                                <label> <input class="with-gap teal darken-4" formControlName="termcond" name="termcond" type="checkbox" [(ngModel)]="term"/>
                             <span>
-                        
+
                         <label class="waves-effect modal-trigger subrayar" href="#terminos">
                             <span class="blue-text text-darken-4" style = "font-size: 14px;">Acepto Terminos y condiciones</span>
                         </label>
@@ -1021,7 +988,7 @@
                                 <div class="file-field input-field col s12 m4 l4">
                                     <div class="teal darken-4 btn">
                                         <i class="material-icons right">attachment</i>Archivo .key
-                                        <input type="file" (change)="ValidateSize('fiel')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="fiel" id="fiel" required class="validate">
+                                        <input type="file" (change)="ValidateSize('fiel')" accept=".key" formControlName="fiel" id="fiel" required class="validate">
 
                                         <div class="red-text" *ngIf="fi.fiel.errors?.required">Archivo requerido</div>
                                     </div>
@@ -1033,12 +1000,16 @@
                                 <div class="file-field input-field col s12 m4 l4">
                                     <div class="teal darken-4 btn">
                                         <i class="material-icons right">attachment</i>Archivo .cer
-                                        <input type="file" (change)="ValidateSize('cer')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="cer" id="cer" required class="validate">
+                                        <input type="file" (change)="ValidateSize('cer')" accept=".cer" formControlName="cer" id="cer" required class="validate">
 
                                         <div class="red-text" *ngIf="fi.cer.errors?.required">Archivo requerido</div>
                                     </div>
-                                    <div class="file-path-wrapper">
-                                        <input class="file-path validate" type="text">
+
+                                    <div class="input-field col s12 m4 l4">
+                                        <i class="material-icons prefix">lock</i>
+                                        <input id="password" type="password" name="password" formControlName="password" required class="validate">
+                                        <label for="password">Contraseña de tu FIEL</label>
+                                        <div class="col s1 m1 l1" *ngIf="fi.password.errors?.required"></div>
                                     </div>
                                 </div>
 
@@ -1048,6 +1019,7 @@
                                     <label for="password">Contraseña de tu FIEL</label>
                                     <div class="col s1 m1 l1" *ngIf="fi.password.errors?.required"></div>
                                 </div>
+
 
 
                                 <div class="input-field col s12 m4 l4">
@@ -1395,6 +1367,16 @@
 
 
         <p>Ultima fecha de actualización Abril 2020.</p>
+
+        <tr></tr>
+
+        <tr class="justificacion" style='font-size: 11px;'>
+            <p><b>1</b> Decreto por el que se reforman y adicionan diversas disposiciones de la Ley Orgánica del Banco del Ahorro Nacional y Servicios Financieros, publicado en el Diario Oficial de la Federación, el 19 de julio de 2019. Disponible en:
+                <a class="blue-text" target="_blank" href="https://dof.gob.mx/nota_detalle.php?codigo=5566165&fecha=19/07/2019">https://dof.gob.mx/nota_detalle.php?codigo=5566165&fecha=19/07/2019. </a> Artículo 4o. transitorio: cuando éste u otros decretos,
+                códigos, leyes, reglamentos o disposiciones jurídicas emitidas con anterioridad al presente Decreto, así como todos los contratos, convenios y demás actos jurídicos celebrados por la Institución, hagan referencia al Banco del Ahorro
+                Nacional y Servicios Financieros, se entenderá la remisión al Banco del Bienestar.</p>
+        </tr>
+
 
         <tr></tr>
 
