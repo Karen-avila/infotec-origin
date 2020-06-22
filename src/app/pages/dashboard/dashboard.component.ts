@@ -16,11 +16,13 @@ declare const MStepper: any;
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-sectorList = [];
-subsectorList = [];
-ramaList = [];
-subramaList = [];
-giroList = [];
+activities = {
+  sectorList: [],
+  subsectorList: [],
+  ramaList: [],
+  subramaList: [],
+  giroList: []
+};
 monte;
 hugo = '666';
 stepper;
@@ -344,11 +346,11 @@ constructor(public userService: UserService, private route: ActivatedRoute, priv
   }
 
   async activitieChange(value, type, sector= null, subsector= null, rama= null, subrama= null) {
-    if (type === 'sector' &&  value === undefined) { this.sectorList = await activitiesService.init(); }
-    if (type === 'sector' &&  value !== undefined) { this.subsectorList = await activitiesService.getSubsector(sector); }
-    if (type === 'subsector' &&  value !== undefined) { this.ramaList = await activitiesService.getRama(sector, subsector); }
-    if (type === 'rama' &&  value !== undefined) { this.subramaList = await activitiesService.getSubrama(sector, subsector, rama); }
-    if (type === 'subrama' &&  value !== undefined) { this.giroList = await activitiesService.getGiro(sector, subsector, rama, subrama); }
+    if (type === 'sector' &&  value === undefined) { this.activities = await activitiesService.init(this.activities); }
+    if (type === 'sector' &&  value !== undefined) { this.activities = await activitiesService.getSubsector(this.activities, sector); }
+    if (type === 'subsector' &&  value !== undefined) { this.activities = await activitiesService.getRama(this.activities, sector, subsector); }
+    if (type === 'rama' &&  value !== undefined) { this.activities = await activitiesService.getSubrama(this.activities, sector, subsector, rama); }
+    if (type === 'subrama' &&  value !== undefined) { this.activities = await activitiesService.getGiro(this.activities, sector, subsector, rama, subrama); }
     setTimeout(() => { M.FormSelect.init(document.querySelectorAll('select')); }, 200);
   }
   ValidateSize(file) {

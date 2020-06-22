@@ -484,7 +484,8 @@
                         [(ngModel)]="sector"
                         (ngModelChange)="activitieChange($event, 'sector', sector=sector)"
                       >
-                        <option [ngValue]="item.codigo" *ngFor="let item of sectorList">{{item.titulo}}</option>
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option [ngValue]="item.codigo" *ngFor="let item of activities.sectorList">{{item.titulo}}</option>
                       </select>
                       <label>Sector: {{sector}}</label>
                       <div class="blue-text" *ngIf="f.sector.errors">Debes seleccionar una opción.</div>
@@ -498,7 +499,8 @@
                         [(ngModel)]="subsector"
                         (ngModelChange)="activitieChange($event, 'subsector', sector=sector, subsector=subsector)"
                       >
-                        <option [ngValue]="item.codigo" *ngFor="let item of subsectorList">{{item.titulo}}</option>
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option [ngValue]="item.codigo" *ngFor="let item of activities.subsectorList">{{item.titulo}}</option>
                       </select>
                       <label>Subsector: {{subsector}}</label>
                       <div class="blue-text" *ngIf="f.sector.errors">Debes seleccionar una opción.</div>
@@ -512,7 +514,8 @@
                         [(ngModel)]="rama"
                         (ngModelChange)="activitieChange($event, 'rama', sector=sector, subsector=subsector, rama=rama)"
                       >
-                        <option [ngValue]="item.codigo" *ngFor="let item of ramaList">{{item.titulo}}</option>
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option [ngValue]="item.codigo" *ngFor="let item of activities.ramaList">{{item.titulo}}</option>
                       </select>
                       <label>Rama: {{rama}}</label>
                       <div class="blue-text" *ngIf="f.sector.errors">Debes seleccionar una opción.</div>
@@ -526,7 +529,8 @@
                         [(ngModel)]="subrama"
                         (ngModelChange)="activitieChange($event, 'subrama', sector=sector, subsector=subsector, rama=rama, subrama=subrama)"
                       >
-                        <option [ngValue]="item.codigo" *ngFor="let item of subramaList">{{item.titulo}}</option>
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option [ngValue]="item.codigo" *ngFor="let item of activities.subramaList">{{item.titulo}}</option>
                       </select>
                       <label>Subrama: {{subrama}}</label>
                       <div class="blue-text" *ngIf="f.sector.errors">Debes seleccionar una opción.</div>
@@ -539,7 +543,8 @@
                         class="validate"
                         [(ngModel)]="giro"
                       >
-                        <option [ngValue]="item.codigo" *ngFor="let item of giroList">{{item.titulo}}</option>
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option [ngValue]="item.codigo" *ngFor="let item of activities.giroList">{{item.titulo}}</option>
                       </select>
                       <label>Giro: {{giro}}</label>
                       <div class="blue-text" *ngIf="f.sector.errors">Debes seleccionar una opción.</div>
