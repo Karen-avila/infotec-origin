@@ -299,7 +299,7 @@
                         <option value="30">Veracruz de Ignacio de la Llave</option>
                         <option value="31">Yucatán</option>
                         <option value="32">Zacatecas</option>
-                        
+
                     </select>
                         <label>Entidad federativa de Nacimiento</label>
                         <div class="blue-text" *ngIf="f.entidadfed.errors">Debes seleccionar una opción.</div>
@@ -475,82 +475,83 @@
                         <p><br></p>
                     </div>
 
-
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="sector" name="sector" id="sector" class="validate">
-                                <option value="" disabled selected>Selecciona una opcion</option>
-                                <option value="1">Minería</option>
-                                <option value="2">Construcción</option>
-                                <option value="3">Agricultura, cría y exportación de animales, aprovechamiento forestal, pezca y caza  </option>
-                            </select>
-                        <label>Sector</label>
-                        <div class="blue-text" *ngIf="f.sector.errors">Debes seleccionar una opción.</div>
+                      <select
+                        formControlName="sector"
+                        name="sector"
+                        id="sector"
+                        class="validate"
+                        [(ngModel)]="sector"
+                        (ngModelChange)="activitieChange($event, 'sector', sector=sector)"
+                      >
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option [ngValue]="item.codigo" *ngFor="let item of activities.sectorList">{{item.titulo}}</option>
+                      </select>
+                      <label>Sector: {{sector}}</label>
+                      <div class="blue-text" *ngIf="f.sector.errors">Debes seleccionar una opción.</div>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                      <select
+                        formControlName="subsector"
+                        name="subsector"
+                        id="subsector"
+                        class="validate"
+                        [(ngModel)]="subsector"
+                        (ngModelChange)="activitieChange($event, 'subsector', sector=sector, subsector=subsector)"
+                      >
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option [ngValue]="item.codigo" *ngFor="let item of activities.subsectorList">{{item.titulo}}</option>
+                      </select>
+                      <label>Subsector: {{subsector}}</label>
+                      <div class="blue-text" *ngIf="f.sector.errors">Debes seleccionar una opción.</div>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                      <select
+                        formControlName="rama"
+                        name="rama"
+                        id="rama"
+                        class="validate"
+                        [(ngModel)]="rama"
+                        (ngModelChange)="activitieChange($event, 'rama', sector=sector, subsector=subsector, rama=rama)"
+                      >
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option [ngValue]="item.codigo" *ngFor="let item of activities.ramaList">{{item.titulo}}</option>
+                      </select>
+                      <label>Rama: {{rama}}</label>
+                      <div class="blue-text" *ngIf="f.sector.errors">Debes seleccionar una opción.</div>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                      <select
+                        formControlName="subrama"
+                        name="subrama"
+                        id="subrama"
+                        class="validate"
+                        [(ngModel)]="subrama"
+                        (ngModelChange)="activitieChange($event, 'subrama', sector=sector, subsector=subsector, rama=rama, subrama=subrama)"
+                      >
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option [ngValue]="item.codigo" *ngFor="let item of activities.subramaList">{{item.titulo}}</option>
+                      </select>
+                      <label>Subrama: {{subrama}}</label>
+                      <div class="blue-text" *ngIf="f.sector.errors">Debes seleccionar una opción.</div>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                      <select
+                        formControlName="giro"
+                        name="giro"
+                        id="giro"
+                        class="validate"
+                        [(ngModel)]="giro"
+                      >
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option [ngValue]="item.codigo" *ngFor="let item of activities.giroList">{{item.titulo}}</option>
+                      </select>
+                      <label>Giro: {{giro}}</label>
+                      <div class="blue-text" *ngIf="f.sector.errors">Debes seleccionar una opción.</div>
                     </div>
 
-                    <div class="input-field col s12 m6 l6">
-                        <select formControlName="subsector" name="subsector" id="subsector" class="validate">
-                                <option value="" disabled selected>Selecciona una opcion</option>
-                                <option value="1">Extracción de petróleo y gas</option>
-                                <option value="2">Minería de minerales metálicos y no metálicos, excepto petroléo y gas</option>
-                                <option value="3">Servicios relacionados con la míneria</option>
-                                <option value="4">Construcción de obras de ingeniería civil</option>
-                                <option value="5">Edificación</option>
-                                <option value="6">Agricultura</option>
-                                <option value="7">Aprovechamiento forestal</option>
-                                <option value="8">Pesca, caza y captura</option>
-                            </select>
-                        <label>Subsector</label>
-                        <div class="blue-text" *ngIf="f.subsector.errors">Debes seleccionar una opción.</div>
-                    </div>
 
-                    <div class="input-field col s12 m6 l6">
-                        <select formControlName="rama" name="rama" id="rama" class="validate">
-                                <option value="" disabled selected>Selecciona una opcion</option>
-                                <option value="1">Caza y captura</option>
-                                <option value="2">Pesca</option>
-                                <option value="3">Extracción de petróleo y gas</option>
-                                <option value="4">Edificación no residencial</option>
-                                <option value="5">Edificación residencial</option>
-                                <option value="6">Construcción de vías de comunicación</option>
-                                <option value="7">Servicios relacionados con la minería</option>
-                            </select>
-                        <label>Rama</label>
-                        <div class="blue-text" *ngIf="f.rama.errors">Debes seleccionar una opción.</div>
-                    </div>
 
-                    <div class="input-field col s12 m6 l6">
-                        <select formControlName="subrama" name="subrama" id="subrama" class="validate">
-                                <option value="" disabled selected>Selecciona una opcion</option>
-                                <option value="1">Minería de otros minerales no metálicos</option>
-                                <option value="2">Servicios relacionados con la agricultura</option>
-                                <option value="3">Acuicultura</option>
-                                <option value="4">Cunicultura y explotación de animales con pelaje fino</option>
-                                <option value="5">Explotación de équidos</option>
-                                <option value="6">Captación, tratamiento y suministro de agua</option>
-                                <option value="7">Suministro de gas natural por ductos al consumidor final</option>
-                                <option value="8">Transmisión, distribución y comercialización de energía eléctrica</option>
-                            </select>
-                        <label>Subrama</label>
-                        <div class="blue-text" *ngIf="f.subrama.errors">Debes seleccionar una opción.</div>
-                    </div>
-
-                    <div class="input-field col s12 m6 l6">
-                        <select formControlName="giro" name="giro" id="giro" class="validate">
-                                <option value="" disabled selected>Selecciona una opcion</option>
-                                <option value="1">Construcción de obras para telecomunicaciones</option>
-                                <option value="2">Construcción de plantas de refinería y petroquímica</option>
-                                <option value="3">Construcción de sistemas de riego agrícola</option>
-                                <option value="4">Extracción de petróleo y gas</option>
-                                <option value="5">Minería de carbón mineral</option>
-                                <option value="6">Minería de oro</option>
-                                <option value="7">Minería de plata</option>
-                                <option value="8">Explotación de gallinas para la producción de huevo fértil</option>
-                                <option value="9">Explotación de guajolotes o pavos</option>
-                                <option value="10">Explotación de pollos para la producción de carne</option>
-                            </select>
-                        <label>Giro</label>
-                        <div class="blue-text" *ngIf="f.giro.errors">Debes seleccionar una opción.</div>
-                    </div>
 
                     <div class="input-field col s12 m12 l12">
                         <i class="material-icons prefix icon-gold">people_outline</i>
@@ -697,7 +698,7 @@
                         <div class="input-field col s12 m12 l12">
                             <label><input class="with-gap teal darken-4" formControlName="aprivacidad" name="aprivacidad" type="checkbox" [(ngModel)]="aviso"/>
                             <span>
-                        
+
                         <label class="waves-effect modal-trigger subrayar" href="#aviso">
                             <span class="blue-text text-darken-4" style = "font-size: 14px;">Acepto Aviso de Privacidad</span>
                         </label>
@@ -842,12 +843,12 @@
                         <!--   <div class="col s12 m2 l2">
                         <span>Score de Buro de Crédito </span>
                         <a (click)="sweetHome('2')"><i class="material-icons prefix icon-black">help_outline</i></a>
-                    </div>  
+                    </div>
                     <div class="file-field input-field col s12 m4 l4">
                         <div class="teal darken-4 btn">
                             <i class="material-icons right">attachment</i>cargar
                             <input type="file" accept="application/pdf" formControlName="buro" id="buro" required class="validate">
-                        </div> 
+                        </div>
                         <div class="col s1 m1 l1" *ngIf="doc.buro.errors?.required">
                             <i class="material-icons icon-red">error_outline</i>
                         </div>
@@ -922,7 +923,7 @@
 
                     </div>
                     <br><br>
-                     
+
                     <!--<a class="waves-effect  teal darken-4 btn modal-trigger right" href="#fiel">
                         <i class="material-icons prefix right">send</i> Firmar Documentos
                     </a>-->
@@ -931,9 +932,9 @@
                         <a class="waves-effect teal darken-4 btn modal-trigger" href="#sat">
                 <i class="material-icons right">send</i>Firmar Documentos</a>
                     </div>
-                    
+
                     <div class="row">
-                        
+
                         <div class="row">
 
                             <div class="input-field col s12 m12 l12">
@@ -949,9 +950,9 @@
                         <br>
                         <div class="row">
                             <div class="input-field col s12 m12 l12">
-                                <label> <input class="with-gap teal darken-4" formControlName="termcond" name="termcond" type="checkbox" [(ngModel)]="term"/> 
+                                <label> <input class="with-gap teal darken-4" formControlName="termcond" name="termcond" type="checkbox" [(ngModel)]="term"/>
                             <span>
-                        
+
                         <label class="waves-effect modal-trigger subrayar" href="#terminos">
                             <span class="blue-text text-darken-4" style = "font-size: 14px;">Acepto Terminos y condiciones</span>
                         </label>
@@ -1017,7 +1018,7 @@
                             <p>Selecciona los archivos de tu firma electrónica avanzada (FIEL)</p>
                             <br>
                     <form ngNativeValidate [formGroup]="formFiel" (ngSubmit)="dfiel()">
-                    
+
                             <div class="file-field input-field col s12 m4 l4">
                                 <div class="teal darken-4 btn">
                                     <i class="material-icons right">attachment</i>Archivo .key
@@ -1029,26 +1030,26 @@
                                     <input class="file-path validate" type="text">
                                 </div>
                             </div>
-                    
+
                             <div class="file-field input-field col s12 m4 l4">
                                 <div class="teal darken-4 btn">
                                     <i class="material-icons right">attachment</i>Archivo .cer
                                     <input type="file" (change)="ValidateSize('cer')" accept=".cer" formControlName="cer" id="cer" required class="validate">
-                                
+
                                 <div class="red-text" *ngIf="fi.cer.errors?.required">Archivo requerido</div>
                                 </div>
                                 <div class="file-path-wrapper">
                                     <input class="file-path validate" type="text">
                                 </div>
                             </div>
-                     
+
                             <div class="input-field col s12 m4 l4">
                                 <i class="material-icons prefix">lock</i>
                                 <input id="password" type="password" name="password" formControlName="password" required class="validate">
                                 <label for="password">Contraseña de tu FIEL</label>
                                 <div class="col s1 m1 l1" *ngIf="fi.password.errors?.required"></div>
                             </div>
-       
+
 
                             <div class="input-field col s12 m4 l4">
                                 <a class="waves-effect teal darken-4 btn modal-trigger" href="#modalContr">Ver Carátula Informativa
@@ -1061,11 +1062,11 @@
                                 <a routerLink="/home" class="waves-effect  teal darken-4 btn right ">
                                     <i class="material-icons prefix right">send</i> Terminar
                                 </a>
-        
+
                             </div>
                     </form>
                         </div>
-                   
+
 
                         <div class="row" *ngIf="terms">
                             <div class="input-field col s12 m4 offset-m3">
@@ -1186,11 +1187,11 @@
         </p>
 
         <table class="table" style='width:980px'>
-          
-        
+
+
             <tr>
                 <td class="justificacion" colspan="1"><b>1. Definiciones.</b></td>
-                <td class="justificacion" colspan="1"> 
+                <td class="justificacion" colspan="1">
                     <p>Para efectos del presente aviso de privacidad, los términos que se indican a continuación, tendrán los significados que en este documento se señalan, ya sea que estén redactados en singular o en plural: </p>
                     <p>1.1.“Datos Personales”: Cualquier información concerniente a una persona física identificada o identificable.</p>
                     <p>1.2. “Datos patrimoniales o financieros”: Es la información sobre la capacidad económica de las personas físicas que hace referencia a los recursos que posee y a su capacidad para hacer frente a sus deudas, como pueden ser: dinero, bienes muebles e inmuebles; información fiscal; historial crediticio; ingresos y egresos; cuentas bancarias; seguros; afores; fianzas, número de tarjeta de crédito, número de seguridad, entre otros.</p>
@@ -1210,14 +1211,14 @@
             </tr>
             <tr>
                 <td class="justificacion" colspan="1"><b>2. ¿Quiénes somos?</b></td>
-                <td class="justificacion" colspan="1"> 
+                <td class="justificacion" colspan="1">
                     <p>El Banco del Bienestar, antes Banco del Ahorro Nacional y Servicios Financieros, Sociedad Nacional de Crédito, Institución de Banca de Desarrollo (BANSEFI), es una entidad de la Administración Pública Federal, con personalidad jurídica y patrimonio propios, constituido con el carácter de sociedad nacional de crédito, en términos de su Ley Orgánica, y con domicilio en Av. Río Magdalena, número 115, Colonia Tizapán San Ángel, Alcaldía Álvaro Obregón, C.P. 01090, Ciudad de México. </p>
                     <p>Esta Institución es el Responsable del tratamiento de los datos personales que nos proporcione, los cuales serán protegidos conforme a lo dispuesto por la LGPDPPSO y demás normatividad que resulte aplicable.</p>
                 </td>
             </tr>
             <tr>
                 <td class="justificacion" colspan="1"><b>3. ¿Qué Datos Personales se resguardan y tratan?</b></td>
-                <td class="justificacion" colspan="1"> 
+                <td class="justificacion" colspan="1">
                     <p>Para el cumplimiento de las finalidades señaladas en el numeral 5 del presente aviso de privacidad, el Responsable le informa que podrá recabar las siguientes categorías de datos personales: </p>
                     <p>(a) Datos de Identificación;<br>(b) Datos de Contacto;<br>(c) Información sobre sus características físicas, mejor conocidos como datos biométricos, tales como el reconocimiento de voz, la (s) huella (s) dactilar (es);
                     <br>(d) Datos laborales; <br>(e) Datos académicos o profesionales; <br> (f) Datos migratorios;
@@ -1230,21 +1231,21 @@
             </tr>
             <tr>
                 <td class="justificacion" colspan="1"><b>4. Fundamento para el tratamiento de datos personales.</b></td>
-                <td class="justificacion" colspan="1"> 
+                <td class="justificacion" colspan="1">
                    <p>Las disposiciones normativas que facultan al Responsable a tratar los datos personales para las finalidades señaladas en el presente aviso de privacidad, se establecen en los artículos 1, 2, 3, 6, 7, 8 y 8 Bis de la Ley Orgánica del Banco del Bienestar, así como en lo señalado en los artículos 2 fracción II, 3, 30, 46, 46 Bis 1, 47, 56, 57, 59 y 115 de la Ley de Instituciones de Crédito.</p>
                 </td>
             </tr>
             <tr>
                 <td class="justificacion" colspan="1"><b>5. Principios y Deberes que rigen el tratamiento de sus datos personales.</b></td>
-                <td class="justificacion" colspan="1"> 
+                <td class="justificacion" colspan="1">
                     <p>El Responsable se compromete a resguardar y tratar sus datos personales conforme a los principios de licitud, lealtad, información, consentimiento, finalidad, proporcionalidad, calidad y responsabilidad, así a los deberes de seguridad y confidencialidad, en términos de lo establecido en la LGPDPPSO y en la Circular 078/2019/DGAJ/DJACC, emitida por el Banco del Bienestar.</p>
                 </td>
             </tr>
             <tr>
                 <td class="justificacion" colspan="1"><b>6. ¿Para qué fines utilizaremos sus datos personales?</b></td>
-                <td class="jurisdicción" colspan="1"> 
+                <td class="jurisdicción" colspan="1">
                     <p>Los datos personales que recabamos de usted, los utilizaremos para administrar y operar los servicios y productos bancarios que solicita o contrata con el Responsable, los cuales de manera enunciativa consisten en lo siguiente:</p>
-                    
+
                         <li>Apertura(s) y cancelación de Cuenta(s): (Debicuenta, Debicuenta Básica, Nómina Básica BANSEFI, Cuentahorro, Tandahorro, Cuentahorro Infantil, Cuentahorro INFONAVIT, AhorraSIF, Cuentahorro CONAVI, Viviendahorro).</li>
                         <li>Operaciones de Depósito y Retiro.</li>
                         <li>Pagaré con Rendimiento Liquidable al Vencimiento (PRLV).</li>
@@ -1260,13 +1261,13 @@
                         <li>Operaciones de Crédito.</li>
                         <li>Promoción y venta de seguros bajo la modalidad de microseguros.</li>
                         <li>CETES Directo.</li>
-                    
+
                     <p>Asimismo, en el marco del Servicio de Verificación de Datos de la Credencial para Votar que lleva a cabo el Instituto Nacional Electoral (INE), el Banco del Bienestar podrá realizar una consulta a la base de datos personales del INE, exclusivamente para la verificación de la validez y legitimidad de los datos contenidos en su Credencial para Votar.</p>
                 </td>
             </tr>
             <tr>
                 <td class="justificacion" colspan="1"><b>7. Otros usos de su información personal.</b></td>
-                <td class="justificacion" colspan="1"> 
+                <td class="justificacion" colspan="1">
                     <p>De manera adicional, se podrá utilizar su información personal para fines de mercadotecnia, publicidad, comercialización de productos o servicios, sorteos y/o promociones, a efecto de brindarle una mejor atención.</p>
                     <p>En caso de que no desee que sus datos personales sean tratados para estos fines adicionales, usted puede presentar un escrito en cualquier sucursal bancaria de esta Institución, manifestando lo anterior.</p>
                     <p>La negativa para el uso de sus datos personales para estas finalidades no podrá ser un motivo para que le neguemos los servicios y productos que solicita o contrata con nosotros.</p>
@@ -1274,9 +1275,9 @@
             </tr>
             <tr>
                 <td class="justificacion" colspan="1"><b>8. Transferencia de datos personales.</b></td>
-                <td class="justificacion" colspan="1"> 
-                    <p>Le informamos que sus datos personales podrán ser compartidos con otros sujetos obligados de acuerdo a lo establecido en la LGPDPPSO.</p>    
-                    
+                <td class="justificacion" colspan="1">
+                    <p>Le informamos que sus datos personales podrán ser compartidos con otros sujetos obligados de acuerdo a lo establecido en la LGPDPPSO.</p>
+
                     <p><li>Las transferencias que se realicen serán sobre datos personales que se utilicen para el ejercicio de facultades propias, compatibles o análogas con la finalidad que motivó el tratamiento de los datos personales.</li></p>
                     <p><li>Cuando exista una orden judicial, resolución o mandato fundado y motivado de autoridad competente.</li></p>
                     <p><li>Cuando los datos personales se requieran para ejercer un derecho o cumplir obligaciones derivadas de una relación jurídica entre el titular y el responsable.</li></p>
@@ -1285,9 +1286,9 @@
             </tr>
             <tr>
                 <td class="justificacion" colspan="1"><b>9. Medios para ejercer los derechos de acceso, rectificación, cancelación u oposición (Derechos Arco).</b></td>
-                <td class="justificacion" colspan="1"> 
+                <td class="justificacion" colspan="1">
                     <p>El Titular, por sí o mediante representante legal debidamente acreditado, tiene reconocidos y podrá ejercitar los Derechos ARCO que le otorga la LGPDPPSO.</p>
-                
+
                     <p><li>ACCESO: conocer información específica que el Responsable tiene en su posesión; </li></p>
                     <p><li>RECTIFICACIÓN: solicitar la rectificación de datos personales en caso de que no estén actualizados, sean inexactos o incompletos, para ejercer este derecho se deberá entregar la documentación que acredite la rectificación solicitada de acuerdo a los datos personales;</li></p>
                     <p><li>CANCELACIÓN: bloqueo y posterior eliminación de datos personales de nuestras bases de datos cuando considere que la misma no está siendo utilizada adecuadamente o para los fines que dieron origen a la relación jurídica;</li></p>
@@ -1296,11 +1297,11 @@
                     <p>El ejercicio de cualquiera de los Derechos ARCO no impide el ejercicio de alguno otro derecho.</p>
                     <p>Para el ejercicio de cualquiera de los derechos ARCO, el Titular o su representante legal podrán solicitar un formato de ejercicio de Derechos ARCO a la dirección de correo electrónico unidaddetransparencia@bancodelbienestar.gob.mx.</p>
                     <p>Dicho formato se deberá llenar, firmar y devolver a la misma dirección de correo electrónico acompañado la siguiente documentación, escaneada y legible, con objeto de que el Responsable pueda llevar a cabo la autenticación del Titular que requiera ejercer sus Derechos ARCO:</p>
-                
+
                     <li>Identificación oficial vigente del Titular.<br>Será válido alguno de los siguientes documentos: Credencial del Instituto Nacional Electoral, Pasaporte emitido por la Secretaría de Relaciones Exteriores, Cartilla del servicio Militar Nacional o Cédula Profesional.</li>
                     <li>En los casos en que el Titular ejerza sus Derechos ARCO a través de un representante legal, además de acreditar la identidad de ambos (Titular y el Representante legal), se deberá enviar a la citada dirección de correo, una copia legible del poder notarial otorgado al representante legal, o en su caso carta poder firmada ante dos testigos o declaración en comparecencia del Titular por el cual se otorgan facultades para llevar a cabo este trámite ante el Responsable.</li>
                     <li>En caso de que se quiera ejercer el derecho de rectificación, el Titular o su representante legal deberán enviar a la dirección de correo electrónico antes mencionada, la documentación que sustente su petición.</li>
-                
+
                     <p>Recibida la solicitud y documentación correspondiente, el Responsable comunicará al Titular en un plazo máximo de 20 (veinte) días hábiles la respuesta a su solicitud de acceso, rectificación, cancelación u oposición.</p>
                     <p>Si la solicitud resulta procedente, el resultado de la resolución se hará efectiva dentro de los 15 (quince) días hábiles siguientes a la fecha en que se comunique la respuesta. El Responsable podrá ampliar éste plazo hasta por 10 (diez) días hábiles más, cuando el caso lo amerite, previa notificación de dicha situación al Titular.</p>
                     <p>En los casos en que el Titular desee revocar la autorización otorgada al Responsable respecto de los datos personales proporcionados, deberá realizar la solicitud correspondiente en los mismos términos establecidos en el presente aviso de privacidad para ejercer sus derechos ARCO.</p>
@@ -1313,20 +1314,20 @@
             </tr>
             <tr>
                 <td class="justificacion" colspan="1"><b>10. Cambios del Aviso de Privacidad.</b></td>
-                <td class="justificacion" colspan="1"> 
+                <td class="justificacion" colspan="1">
                    <p>El Responsable se reserva el derecho a realizar cambios en el presente aviso de privacidad, los cuales serán dados a conocer mediante su publicación en la página  <a class="blue-text" target="_blank" href="https://www.bancodelbienestar.com.mx/BsfPortalMovil/index ">https://www.bancodelbienestar.com.mx/BsfPortalMovil/index </a> o aquella que la llegara a sustituir.</p>
                     <p>Asimismo, se informa al Titular que cuenta con el derecho a oponerse al tratamiento de sus datos personales en caso de no estar de acuerdo con las modificaciones que pudiera presentar este aviso de privacidad, para ello, deberá enviar una solicitud a la dirección de correo electrónico unidaddetransparencia@bancodelbienestar.gob.mx</p>
                 </td>
             </tr>
             <tr>
                 <td class="justificacion" colspan="1"><b>11. Atención de quejas y denuncias.</b></td>
-                <td class="justificacion" colspan="1"> 
+                <td class="justificacion" colspan="1">
                    <p>Les informamos que la autoridad competente para resolver cualquier conflicto derivado de la aplicación a la LGPDPPSO es el Instituto Nacional de Acceso a la Información y Datos Personales (INAI), cuya página es www.inai.org.mx</p>
                 </td>
             </tr>
             <tr>
                 <td class="justificacion" colspan="1"><b>12. Cookies y Web beacons.</b></td>
-                <td class="justificacion" colspan="1"> 
+                <td class="justificacion" colspan="1">
                     <p>En caso de que el Titular haga uso de plataformas, sitios, aplicaciones o solicite los servicios del Responsable mediante el uso de dispositivos electrónicos o proporcione sus datos personales por cualquiera de dichos canales (en adelante y en su conjunto los “Medios Electrónicos”), el Titular se sujetará los términos y condiciones que para tal efecto se establezcan en el sitio correspondiente.</p>
                     <p>Asimismo, el Titular entiende, acepta y reconoce que: </p>
                     <p>1. Los Medios Electrónicos pueden incluir enlaces a sitios web de terceros ajenos al Responsable, respecto de los cuales, este último no asume ninguna titularidad, obligación o responsabilidad alguna.</p>
@@ -1340,20 +1341,20 @@
                     <p>El Responsable podrá ampliar el contenido del sitio y/o sus aplicaciones o crear nuevos medios electrónicos en cuyo caso estos se regirán por el presente aviso de privacidad.</p>
 
                 </td>
-            </tr> 
+            </tr>
             </table>
 
 
             <p>Ultima fecha de actualización Abril 2020.</p>
 
             <tr></tr>
-            
+
             <tr class="justificacion" style='font-size: 11px;'>
                 <p><b>1</b> Decreto por el que se reforman y adicionan diversas disposiciones de la Ley Orgánica del Banco del Ahorro Nacional y Servicios Financieros, publicado en el Diario Oficial de la Federación, el 19 de julio de 2019. Disponible en: <a class="blue-text" target="_blank" href="https://dof.gob.mx/nota_detalle.php?codigo=5566165&fecha=19/07/2019">https://dof.gob.mx/nota_detalle.php?codigo=5566165&fecha=19/07/2019. </a>
                 Artículo 4o. transitorio: cuando éste u otros decretos, códigos, leyes, reglamentos o disposiciones jurídicas emitidas con anterioridad al presente Decreto, así como todos los contratos, convenios y demás actos jurídicos celebrados por la Institución, hagan referencia al Banco del Ahorro Nacional y Servicios Financieros, se entenderá la remisión al Banco del Bienestar.</p>
             </tr>
-        
-          
+
+
 
     </div>
     <div class="modal-footer">

@@ -7,7 +7,7 @@ import { Options, LabelType } from 'ng5-slider';
 import { Finance } from 'financejs';
 import * as M from 'materialize-css';
 import swal from 'sweetalert';
-
+import activitiesService from './service/activities.service';
 declare const MStepper: any;
 
 @Component({
@@ -16,7 +16,13 @@ declare const MStepper: any;
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
+activities = {
+  sectorList: [],
+  subsectorList: [],
+  ramaList: [],
+  subramaList: [],
+  giroList: []
+};
 monte;
 hugo = '666';
 stepper;
@@ -126,7 +132,6 @@ constructor(public userService: UserService, private route: ActivatedRoute, priv
 }
 
   ngOnInit() {
-    console.log('el step', this.re.id);
     // console.log("comienza ngOnInit",this.alrt);
     const elems = document.querySelectorAll('.modal');
     this.popup = M.Modal.init(elems);
@@ -339,6 +344,15 @@ constructor(public userService: UserService, private route: ActivatedRoute, priv
       }
     };
   }
+
+  async activitieChange(value, type, sector= null, subsector= null, rama= null, subrama= null) {
+    if (type === 'sector' &&  value === undefined) { this.activities = await activitiesService.init(this.activities); }
+    if (type === 'sector' &&  value !== undefined) { this.activities = await activitiesService.getSubsector(this.activities, sector); }
+    if (type === 'subsector' &&  value !== undefined) { this.activities = await activitiesService.getRama(this.activities, sector, subsector); }
+    if (type === 'rama' &&  value !== undefined) { this.activities = await activitiesService.getSubrama(this.activities, sector, subsector, rama); }
+    if (type === 'subrama' &&  value !== undefined) { this.activities = await activitiesService.getGiro(this.activities, sector, subsector, rama, subrama); }
+    setTimeout(() => { M.FormSelect.init(document.querySelectorAll('select')); }, 200);
+  }
   ValidateSize(file) {
     // console.log("onchanges")
     const fl = ( document.getElementById(file) as HTMLInputElement);
@@ -433,5 +447,4 @@ constructor(public userService: UserService, private route: ActivatedRoute, priv
       this.form.get('pFisica').setValue(' ');
     }
   }
-
 }
