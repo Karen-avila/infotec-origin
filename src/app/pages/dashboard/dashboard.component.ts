@@ -8,6 +8,7 @@ import { Finance } from 'financejs';
 import * as M from 'materialize-css';
 import swal from 'sweetalert';
 import activitiesService from './service/activities.service';
+import searchCPService from './service/searchCP.service';
 declare const MStepper: any;
 
 @Component({
@@ -22,6 +23,20 @@ activities = {
   ramaList: [],
   subramaList: [],
   giroList: []
+};
+negocio = {
+  cp: '',
+  estado: '',
+  tipo_asentamiento: '',
+  municipio: '',
+  asentamiento: [],
+};
+personal = {
+  cp: '',
+  estado: '',
+  tipo_asentamiento: '',
+  municipio: '',
+  asentamiento: [],
 };
 monte;
 hugo = '666';
@@ -178,10 +193,12 @@ constructor(public userService: UserService, private route: ActivatedRoute, priv
       calle: new FormControl(null, Validators.required),
       ext: new FormControl(null, Validators.required),
       int: new FormControl(null, [Validators.minLength(0)]),
+      cp: new FormControl(null, Validators.required),
       municipio: new FormControl(null, Validators.required),
       asentamiento: new FormControl(null, Validators.required),
       asentamientoType: new FormControl(null, Validators.required),
       calleNeg: new FormControl(null, Validators.required),
+      cpNeg: new FormControl(null, Validators.required),
       extNeg: new FormControl(null, Validators.required),
       intNeg: new FormControl(null, [Validators.minLength(0)]),
       municipioNeg: new FormControl(null, Validators.required),
@@ -344,7 +361,23 @@ constructor(public userService: UserService, private route: ActivatedRoute, priv
       }
     };
   }
-
+  async searchCP(value, target) {
+    if (value.length === 5) {
+      await fetch(`https://api-sepomex.hckdrk.mx/query/info_cp/${value}?type=simplified`)
+      .then(( response ) => {
+        return response.json();
+      }).then((json) => {
+        console.log(json.response);
+        if (target === 'negocio') {
+          this.negocio = json.response;
+        } else if (target === 'personal') {
+          this.personal = json.response;
+        }
+        setTimeout(() => { M.FormSelect.init(document.querySelectorAll('select')); }, 200);
+        return;
+      });
+    }
+  }
   async activitieChange(value, type, sector= null, subsector= null, rama= null, subrama= null) {
     if (type === 'sector' &&  value === undefined) { this.activities = await activitiesService.init(this.activities); }
     if (type === 'sector' &&  value !== undefined) { this.activities = await activitiesService.getSubsector(this.activities, sector); }
