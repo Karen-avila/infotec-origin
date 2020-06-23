@@ -1,5 +1,4 @@
 import { scian } from '../models/scian2018.min';
-import { Options } from 'ng5-slider';
 
 const activitiesService = {
   init(activities) {
