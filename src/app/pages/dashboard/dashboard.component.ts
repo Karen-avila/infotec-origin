@@ -8,6 +8,7 @@ import { Finance } from 'financejs';
 import * as M from 'materialize-css';
 import swal from 'sweetalert';
 import activitiesService from './service/activities.service';
+import searchCPService from './service/searchCP.service';
 declare const MStepper: any;
 
 @Component({
@@ -16,18 +17,27 @@ declare const MStepper: any;
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
-  activities = {
-    sectorList: [],
-    subsectorList: [],
-    ramaList: [],
-    subramaList: [],
-    giroList: []
-  };
-
-
-
-
+activities = {
+  sectorList: [],
+  subsectorList: [],
+  ramaList: [],
+  subramaList: [],
+  giroList: []
+};
+negocio = {
+  cp: '',
+  estado: '',
+  tipo_asentamiento: '',
+  municipio: '',
+  asentamiento: [],
+};
+personal = {
+  cp: '',
+  estado: '',
+  tipo_asentamiento: '',
+  municipio: '',
+  asentamiento: [],
+};
 monte;
 stepper;
   
@@ -181,95 +191,111 @@ console.log("el step",this.re)
       stepTitleNavigation: false,
       // Preloader used when step is waiting for feedback function. If not defined, Materializecss spinner-blue-only will be used.
       feedbackPreloader: '<div class="spinner-layer spinner-blue-only">...</div>'
-   })
-  
-   this.form = new FormGroup({
-    personType: new FormControl(null,Validators.required),
-    name: new FormControl(null,[Validators.required,Validators.minLength(3)]),
-    name2: new FormControl(null,[Validators.minLength(0)]),
-    a_paterno: new FormControl(null,[Validators.required,Validators.minLength(3)]),
-    a_materno: new FormControl(null,[Validators.required,Validators.minLength(3)]),
-    genero : new FormControl(null, Validators.required),
-    birthDate : new FormControl(null, Validators.required),
-    entidadfed : new FormControl(null, Validators.required),
-    entidadfedNeg : new FormControl(null, Validators.required),
-    pais : new FormControl(null, Validators.required),
-    ocupacion : new FormControl(null, Validators.required),
-    clabe_inter: new FormControl(null,[Validators.required,Validators.minLength(18), Validators.maxLength(18), Validators.pattern('[0-9]{18}')]),
-    tel: new FormControl(null,[Validators.required,Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
-    domicilio: new FormControl(" ",[Validators.required]),
-    curp: new FormControl(null,Validators.required),
-    rfc: new FormControl(null,Validators.required),
-    civil: new FormControl(null,Validators.required),
-    clave_elector: new FormControl(null,Validators.required),
-    calle: new FormControl(null,Validators.required),
-    ext: new FormControl(null,Validators.required),
-    int: new FormControl(null,[Validators.minLength(0)]),
-    municipio: new FormControl(null,Validators.required),
-    asentamiento: new FormControl(null,Validators.required),
-    asentamientoType: new FormControl(null,Validators.required),
-    calleNeg: new FormControl(null,Validators.required),
-    extNeg: new FormControl(null,Validators.required),
-    intNeg: new FormControl(null,[Validators.minLength(0)]),
-    municipioNeg: new FormControl(null,Validators.required),
-    asentamientoNeg: new FormControl(null,Validators.required),
-    asentamientoTypeNeg: new FormControl(null,Validators.required),
-    sector: new FormControl(null,Validators.required),
-    subsector: new FormControl(null,Validators.required),
-    rama: new FormControl(null,Validators.required),
-    subrama: new FormControl(null,Validators.required),
-    giro: new FormControl(null,Validators.required),
-    ref1_name: new FormControl(null,[Validators.required,Validators.minLength(3)]),
-    ref1_name2: new FormControl(null,[Validators.minLength(0)]),
-    ref1_paterno: new FormControl(null,[Validators.required,Validators.minLength(3)]),
-    ref1_materno: new FormControl(null,[Validators.required,Validators.minLength(3)]),
-    ref1_tel: new FormControl(null,[Validators.required,Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
-    ref1_relacion: new FormControl(null,Validators.required),
-    ref2_name: new FormControl(null,[Validators.required,Validators.minLength(3)]),
-    ref2_name2: new FormControl(null,[Validators.minLength(0)]),
-    ref2_paterno: new FormControl(null,[Validators.required,Validators.minLength(3)]),
-    ref2_materno: new FormControl(null,[Validators.required,Validators.minLength(3)]),
-    ref2_tel: new FormControl(null,[Validators.required,Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
-    ref2_relacion: new FormControl(null,Validators.required),
-    monto: new FormControl(),
-    plazo: new FormControl(),
-    aprivacidad: new FormControl(null,Validators.required)
-
-    
-            
- }, { validators: this.pbaDict('name','a_paterno','name2','a_materno','domicilio','calle','ext','int','municipio','asentamiento','calleNeg','extNeg','intNeg','municipioNeg','asentamientoNeg',
- 'ref1_name','ref1_paterno','ref1_name2','ref1_materno', 'ref2_name','ref2_paterno','ref2_name2','ref2_materno') 
-
-});
-
-this.formDocumentos = new FormGroup({
-  frontal: new FormControl(null, Validators.required),
-  reverso: new FormControl(null, Validators.required),
-  comprobante: new FormControl(null, Validators.required),
-  comprobanten: new FormControl(null, Validators.required),
-  estado: new FormControl(null, Validators.required),
-  declaracion: new FormControl(null, Validators.required),
-  curpd: new FormControl(null, Validators.required),
-  rfcd: new FormControl(null, Validators.required),
-  fiscal: new FormControl(null, Validators.required),
-  autorizobc: new FormControl(false,Validators.required),
-  termcond: new FormControl(false,Validators.required)
-  // buro: new FormControl(null, Validators.required)
-  
-  
-});
-this.formFiel = new FormGroup({
-  
-  fiel: new FormControl(null, Validators.required),
-  cer: new FormControl(null, Validators.required),
-  password: new FormControl(null, Validators.required)
-  
-  
-});
-
-
-  
- 
+    });
+    this.form = new FormGroup({
+      personType: new FormControl(null, Validators.required),
+      name: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      name2: new FormControl(null, [Validators.minLength(0)]),
+      a_paterno: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      a_materno: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      genero : new FormControl(null, Validators.required),
+      birthDate : new FormControl(null, Validators.required),
+      entidadfed : new FormControl(null, Validators.required),
+      entidadfedNeg : new FormControl(null, Validators.required),
+      pais : new FormControl(null, Validators.required),
+      ocupacion : new FormControl(null, Validators.required),
+      // tslint:disable-next-line: max-line-length
+      clabe_inter: new FormControl(null, [Validators.required, Validators.minLength(18), Validators.maxLength(18), Validators.pattern('[0-9]{18}')]),
+      tel: new FormControl(null, [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
+      domicilio: new FormControl(' ', [Validators.required]),
+      curp: new FormControl(null, Validators.required),
+      rfc: new FormControl(null, Validators.required),
+      civil: new FormControl(null, Validators.required),
+      clave_elector: new FormControl(null, Validators.required),
+      calle: new FormControl(null, Validators.required),
+      ext: new FormControl(null, Validators.required),
+      int: new FormControl(null, [Validators.minLength(0)]),
+      cp: new FormControl(null, Validators.required),
+      municipio: new FormControl(null, Validators.required),
+      asentamiento: new FormControl(null, Validators.required),
+      asentamientoType: new FormControl(null, Validators.required),
+      calleNeg: new FormControl(null, Validators.required),
+      cpNeg: new FormControl(null, Validators.required),
+      extNeg: new FormControl(null, Validators.required),
+      intNeg: new FormControl(null, [Validators.minLength(0)]),
+      municipioNeg: new FormControl(null, Validators.required),
+      asentamientoNeg: new FormControl(null, Validators.required),
+      asentamientoTypeNeg: new FormControl(null, Validators.required),
+      sector: new FormControl(null, Validators.required),
+      subsector: new FormControl(null, Validators.required),
+      rama: new FormControl(null, Validators.required),
+      subrama: new FormControl(null, Validators.required),
+      giro: new FormControl(null, Validators.required),
+      ref1_name: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      ref1_name2: new FormControl(null, [Validators.minLength(0)]),
+      ref1_paterno: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      ref1_materno: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      // tslint:disable-next-line: max-line-length
+      ref1_tel: new FormControl(null, [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
+      ref1_relacion: new FormControl(null, Validators.required),
+      ref2_name: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      ref2_name2: new FormControl(null, [Validators.minLength(0)]),
+      ref2_paterno: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      ref2_materno: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      // tslint:disable-next-line: max-line-length
+      ref2_tel: new FormControl(null, [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
+      ref2_relacion: new FormControl(null, Validators.required),
+      monto: new FormControl(),
+      plazo: new FormControl(),
+      aprivacidad: new FormControl(null, Validators.required)
+    },
+    {
+      validators:
+        this.pbaDict(
+          'name',
+          'a_paterno',
+          'name2',
+          'a_materno',
+          'domicilio',
+          'calle',
+          'ext',
+          'int',
+          'municipio',
+          'asentamiento',
+          'calleNeg',
+          'extNeg',
+          'intNeg',
+          'municipioNeg',
+          'asentamientoNeg',
+          'ref1_name',
+          'ref1_paterno',
+          'ref1_name2',
+          'ref1_materno',
+          'ref2_name',
+          'ref2_paterno',
+          'ref2_name2',
+          'ref2_materno'
+        )
+    });
+    this.formDocumentos = new FormGroup({
+      frontal: new FormControl(null, Validators.required),
+      reverso: new FormControl(null, Validators.required),
+      comprobante: new FormControl(null, Validators.required),
+      comprobanten: new FormControl(null, Validators.required),
+      estado: new FormControl(null, Validators.required),
+      declaracion: new FormControl(null, Validators.required),
+      curpd: new FormControl(null, Validators.required),
+      rfcd: new FormControl(null, Validators.required),
+      fiscal: new FormControl(null, Validators.required),
+      autorizobc: new FormControl(false, Validators.required),
+      termcond: new FormControl(false, Validators.required)
+      // buro: new FormControl(null, Validators.required)
+    });
+    this.formFiel = new FormGroup({
+      fiel: new FormControl(null, Validators.required),
+      cer: new FormControl(null, Validators.required),
+      password: new FormControl(null, Validators.required)
+    });
   }
 
   get f() { return this.form.controls; }
@@ -323,7 +349,23 @@ this.formFiel = new FormGroup({
     }
     
   }
-
+  async searchCP(value, target) {
+    if (value.length === 5) {
+      await fetch(`https://api-sepomex.hckdrk.mx/query/info_cp/${value}?type=simplified`)
+      .then(( response ) => {
+        return response.json();
+      }).then((json) => {
+        console.log(json.response);
+        if (target === 'negocio') {
+          this.negocio = json.response;
+        } else if (target === 'personal') {
+          this.personal = json.response;
+        }
+        setTimeout(() => { M.FormSelect.init(document.querySelectorAll('select')); }, 200);
+        return;
+      });
+    }
+  }
   async activitieChange(value, type, sector= null, subsector= null, rama= null, subrama= null) {
     if (type === 'sector' &&  value === undefined) { this.activities = await activitiesService.init(this.activities); }
     if (type === 'sector' &&  value !== undefined) { this.activities = await activitiesService.getSubsector(this.activities, sector); }

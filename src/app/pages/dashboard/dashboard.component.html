@@ -251,106 +251,102 @@
 
 
                     <div class="input-field col s12 m6 l6" (click)="viewMap()">
-
                         <i class="material-icons prefix">near_me</i>
                         <textarea id="domicilio" name="domicilio" formControlName="domicilio" required class="materialize-textarea"> </textarea>
                         <label for="domicilio">Localiza tu domicilio particular</label>
-
                         <div class="blue-text" *ngIf="f.domicilio.errors?.minlength ">Debe tener un mínimo 5 caracteres</div>
                         <div class="blue-text" *ngIf="f.domicilio.errors?.maxlength ">Máximo 120 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
-                            <!--  <p>Palabras altisonante</p> -->
                         </div>
-
-                    </div>
-
-                    <div class="input-field col s12 m6 l6">
-                        <select formControlName="entidadfed" name="entidadfed" id="entidadfed" class="validate">
-                        <option value="" disabled selected>Selecciona una opcion</option>
-                        <option value="01">Aguascalientes</option>
-                        <option value="02">Baja California</option>
-                        <option value="03">Baja California Sur</option>
-                        <option value="04">Campeche</option>
-                        <option value="05">Coahuila de Zaragoza</option>
-                        <option value="06">Colima</option>
-                        <option value="07">Chiapas</option>
-                        <option value="08">Chihuahua</option>
-                        <option value="09">Ciudad de México</option>
-                        <option value="10">Durango</option>
-                        <option value="11">Guanajuato</option>
-                        <option value="12">Guerrero</option>
-                        <option value="13">Hidalgo</option>
-                        <option value="14">Jalisco</option>
-                        <option value="15">México</option>
-                        <option value="16">Michoacán de Ocampo</option>
-                        <option value="17">Morelos</option>
-                        <option value="18">Nayarit</option>
-                        <option value="19">Nuevo León</option>
-                        <option value="20">Oaxaca</option>
-                        <option value="21">Puebla</option>
-                        <option value="22">Querétaro</option>
-                        <option value="23">Quintana Roo</option>
-                        <option value="24">San Luis Potosí</option>
-                        <option value="25">Sinaloa</option>
-                        <option value="26">Sonora</option>
-                        <option value="27">Tabasco</option>
-                        <option value="28">Tamaulipas</option>
-                        <option value="29">Tlaxcala</option>
-                        <option value="30">Veracruz de Ignacio de la Llave</option>
-                        <option value="31">Yucatán</option>
-                        <option value="32">Zacatecas</option>
-
-                    </select>
-                        <label>Entidad federativa de Nacimiento</label>
-                        <div class="blue-text" *ngIf="f.entidadfed.errors">Debes seleccionar una opción.</div>
                     </div>
 
 
-                    <div class="input-field col s12 m6 l6">
+
+
+                    <div class="input-field col s12 m8 l8">
                         <i class="material-icons prefix">house</i>
                         <input id="calle" type="text" formControlName="calle" required class="validate" name="calle" />
                         <label for="calle">Calle</label>
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
-
-                    <div class="input-field col s12 m3 l3">
-
+                    <div class="input-field col s12 m2 l2">
                         <input id="ext" type="text" formControlName="ext" required class="validate" name="ext" />
                         <label for="ext">Número exterior</label>
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
-
-                    <div class="input-field col s12 m3 l3">
-
+                    <div class="input-field col s12 m2 l2">
                         <input id="int" type="text" formControlName="int" name="int" />
                         <label for="int">Número interior</label>
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
-
-                    <div class="input-field col s12 m6 l6">
-                        <i class="material-icons prefix">house</i>
-                        <input id="municipio" type="text" formControlName="municipio" name="municipio" required class="validate" />
+                    <div class="input-field col s12 m2 l2">
+                        <input #cp (keyup)="searchCP(cp.value, 'personal')" id="cp" type="text" formControlName="cp" required class="validate" name="cp" maxlength="5" [(ngModel)]="personal.cp" />
+                        <label for="cp">Codigo Postal</label>
+                        <div class="red-text" *ngIf="form.errors?.isMatch"></div>
+                    </div>
+                    <div class="input-field col s12 m5 l5">
+                        <select [(ngModel)]="personal.estado" formControlName="entidadfed" name="entidadfed" id="entidadfed" class="validate">
+                        <option value="" disabled selected>Selecciona una opcion</option>
+                        <option value="Aguascalientes">Aguascalientes</option>
+                        <option value="Baja California">Baja California</option>
+                        <option value="Baja California Sur">Baja California Sur</option>
+                        <option value="Campeche">Campeche</option>
+                        <option value="Coahuila de Zaragoza">Coahuila de Zaragoza</option>
+                        <option value="Colima">Colima</option>
+                        <option value="Chiapas">Chiapas</option>
+                        <option value="Chihuahua">Chihuahua</option>
+                        <option value="Ciudad de México">Ciudad de México</option>
+                        <option value="Durango">Durango</option>
+                        <option value="Guanajuato">Guanajuato</option>
+                        <option value="Guerrero">Guerrero</option>
+                        <option value="Hidalgo">Hidalgo</option>
+                        <option value="Jalisco">Jalisco</option>
+                        <option value="México">México</option>
+                        <option value="Michoacán de Ocampo">Michoacán de Ocampo</option>
+                        <option value="Morelos">Morelos</option>
+                        <option value="Nayarit">Nayarit</option>
+                        <option value="Nuevo León">Nuevo León</option>
+                        <option value="Oaxaca">Oaxaca</option>
+                        <option value="Puebla">Puebla</option>
+                        <option value="Querétaro">Querétaro</option>
+                        <option value="Quintana Roo">Quintana Roo</option>
+                        <option value="San Luis Potosí">San Luis Potosí</option>
+                        <option value="Sinaloa">Sinaloa</option>
+                        <option value="Sonora">Sonora</option>
+                        <option value="Tabasco">Tabasco</option>
+                        <option value="Tamaulipas">Tamaulipas</option>
+                        <option value="Tlaxcala">Tlaxcala</option>
+                        <option value="Veracruz de Ignacio de la Llave">Veracruz de Ignacio de la Llave</option>
+                        <option value="Yucatán">Yucatán</option>
+                        <option value="Zacatecas">Zacatecas</option>
+                      </select>
+                        <label>Entidad federativa de Nacimiento</label>
+                        <div class="blue-text" *ngIf="f.entidadfed.errors">Debes seleccionar una opción.</div>
+                    </div>
+                    <div class="input-field col s12 m5 l5">
+                        <input [(ngModel)]="personal.municipio" id="municipio" type="text" formControlName="municipio" name="municipio" required class="validate" />
                         <label for="municipio">Municipio</label>
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
-
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="asentamientoType" name="asentamientoType" id="asentamientoType" class="validate">
+                        <select [(ngModel)]="personal.tipo_asentamiento" formControlName="asentamientoType" name="asentamientoType" id="asentamientoType" class="validate">
                             <option value="" disabled selected>Selecciona una opcion</option>
                             <option value="Barrio">Barrio</option>
                             <option value="Colonia">Colonia</option>
                             <option value="Equipamiento">Equipamiento</option>
                             <option value="Pueblo">Pueblo</option>
+                            <option value="Fraccionamiento">Fraccionamiento</option>
                         </select>
                         <label>Tipo de asentamiento</label>
                         <div class="blue-text" *ngIf="f.asentamientoType.errors">Debes seleccionar una opción.</div>
                     </div>
-
                     <div class="input-field col s12 m6 l6">
-                        <i class="material-icons prefix">house</i>
-                        <input id="asentamiento" type="text" formControlName="asentamiento" name="asentamiento" required class="validate" />
-                        <label for="asentamiento">Asentamiento</label>
-                        <div class="red-text" *ngIf="form.errors?.isMatch"></div>
+                        <select [(ngModel)]="personal.asentamiento" formControlName="asentamiento" name="asentamiento" id="asentamiento" class="validate">
+                        <option value="" disabled selected>Selecciona una opcion</option>
+                        <option [ngValue]="personal.asentamiento" *ngFor="let item of personal.asentamiento">{{item}}</option>
+                      </select>
+                        <label>Asentamiento</label>
+                        <div class="blue-text" *ngIf="f.asentamiento.errors">Debes seleccionar una opción.</div>
                     </div>
 
 
@@ -372,115 +368,110 @@
                         <label for="rfc">RFC</label>
                     </div>
 
+
+
+
                     <div class="input-field col s12 m12 l12">
                         <i class="material-icons prefix icon-gold">work</i>
                         <label class="title black-text"><b class="title col s12 m12 l12">Información del Negocio</b></label>
                         <p><br></p>
                     </div>
-
-
-                    <div class="input-field col s12 m6 l6">
+                    <div class="input-field col s12 m8 l8">
                         <i class="material-icons prefix">house</i>
                         <input id="calleNeg" type="text" formControlName="calleNeg" required class="validate" name="calleNeg" />
                         <label for="calleNeg">Calle</label>
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
-
-                    <div class="input-field col s12 m3 l3">
-
+                    <div class="input-field col s12 m2 l2">
                         <input id="extNeg" type="text" formControlName="extNeg" required class="validate" name="extNeg" />
                         <label for="extNeg">Número exterior</label>
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
-
-                    <div class="input-field col s12 m3 l3">
-
+                    <div class="input-field col s12 m2 l2">
                         <input id="intNeg" type="text" formControlName="intNeg" name="intNeg" />
                         <label for="intNeg">Número interior</label>
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
-
-                    <div class="input-field col s12 m6 l6">
-                        <select formControlName="entidadfedNeg" name="entidadfedNeg" id="entidadfedNeg" class="validate">
+                    <div class="input-field col s12 m2 l2">
+                        <input #cpNeg (keyup)="searchCP(cpNeg.value, 'negocio')" id="cpNeg" type="text" formControlName="cpNeg" required class="validate" name="cpNeg" maxlength="5" [(ngModel)]="negocio.cp" />
+                        <label for="cpNeg">Codigo Postal</label>
+                        <div class="red-text" *ngIf="form.errors?.isMatch"></div>
+                    </div>
+                    <div class="input-field col s12 m5 l5">
+                        <select [(ngModel)]="negocio.estado" formControlName="entidadfedNeg" name="entidadfedNeg" id="entidadfedNeg" class="negocio validate">
                         <option value="" disabled selected>Selecciona una opcion</option>
-                        <option value="01">Aguascalientes</option>
-                        <option value="02">Baja California</option>
-                        <option value="03">Baja California Sur</option>
-                        <option value="04">Campeche</option>
-                        <option value="05">Coahuila de Zaragoza</option>
-                        <option value="06">Colima</option>
-                        <option value="07">Chiapas</option>
-                        <option value="08">Chihuahua</option>
-                        <option value="09">Ciudad de México</option>
-                        <option value="10">Durango</option>
-                        <option value="11">Guanajuato</option>
-                        <option value="12">Guerrero</option>
-                        <option value="13">Hidalgo</option>
-                        <option value="14">Jalisco</option>
-                        <option value="15">México</option>
-                        <option value="16">Michoacán de Ocampo</option>
-                        <option value="17">Morelos</option>
-                        <option value="18">Nayarit</option>
-                        <option value="19">Nuevo León</option>
-                        <option value="20">Oaxaca</option>
-                        <option value="21">Puebla</option>
-                        <option value="22">Querétaro</option>
-                        <option value="23">Quintana Roo</option>
-                        <option value="24">San Luis Potosí</option>
-                        <option value="25">Sinaloa</option>
-                        <option value="26">Sonora</option>
-                        <option value="27">Tabasco</option>
-                        <option value="28">Tamaulipas</option>
-                        <option value="29">Tlaxcala</option>
-                        <option value="30">Veracruz de Ignacio de la Llave</option>
-                        <option value="31">Yucatán</option>
-                        <option value="32">Zacatecas</option>
-                        </select>
+                        <option value="Aguascalientes">Aguascalientes</option>
+                        <option value="Baja California">Baja California</option>
+                        <option value="Baja California Sur">Baja California Sur</option>
+                        <option value="Campeche">Campeche</option>
+                        <option value="Coahuila de Zaragoza">Coahuila de Zaragoza</option>
+                        <option value="Colima">Colima</option>
+                        <option value="Chiapas">Chiapas</option>
+                        <option value="Chihuahua">Chihuahua</option>
+                        <option value="Ciudad de México">Ciudad de México</option>
+                        <option value="Durango">Durango</option>
+                        <option value="Guanajuato">Guanajuato</option>
+                        <option value="Guerrero">Guerrero</option>
+                        <option value="Hidalgo">Hidalgo</option>
+                        <option value="Jalisco">Jalisco</option>
+                        <option value="México">México</option>
+                        <option value="Michoacán de Ocampo">Michoacán de Ocampo</option>
+                        <option value="Morelos">Morelos</option>
+                        <option value="Nayarit">Nayarit</option>
+                        <option value="Nuevo León">Nuevo León</option>
+                        <option value="Oaxaca">Oaxaca</option>
+                        <option value="Puebla">Puebla</option>
+                        <option value="Querétaro">Querétaro</option>
+                        <option value="Quintana Roo">Quintana Roo</option>
+                        <option value="San Luis Potosí">San Luis Potosí</option>
+                        <option value="Sinaloa">Sinaloa</option>
+                        <option value="Sonora">Sonora</option>
+                        <option value="Tabasco">Tabasco</option>
+                        <option value="Tamaulipas">Tamaulipas</option>
+                        <option value="Tlaxcala">Tlaxcala</option>
+                        <option value="Veracruz de Ignacio de la Llave">Veracruz de Ignacio de la Llave</option>
+                        <option value="Yucatán">Yucatán</option>
+                        <option value="Zacatecas">Zacatecas</option>
+                      </select>
                         <label>Entidad federativa</label>
                         <div class="blue-text" *ngIf="f.entidadfedNeg.errors">Debes seleccionar una opción.</div>
                     </div>
-
-                    <div class="input-field col s12 m6 l6">
-                        <select formControlName="asentamientoTypeNeg" name="asentamientoTypeNeg" id="asentamientoTypeNeg" class="validate">
-                                <option value="" disabled selected>Selecciona una opcion</option>
-                                <option value="Barrio">Barrio</option>
-                                <option value="Colonia">Colonia</option>
-                                <option value="Equipamiento">Equipamiento</option>
-                                <option value="Pueblo">Pueblo</option>
-                            </select>
-                        <label>Tipo de asentamiento</label>
-                        <div class="blue-text" *ngIf="f.asentamientoTypeNeg.errors">Debes seleccionar una opción.</div>
-                    </div>
-
-                    <div class="input-field col s12 m6 l6">
-                        <i class="material-icons prefix">house</i>
-                        <input id="municipioNeg" type="text" formControlName="municipioNeg" name="municipioNeg" required class="validate" />
+                    <div class="input-field col s12 m5 l5">
+                        <input [(ngModel)]="negocio.municipio" id="municipioNeg" type="text" formControlName="municipioNeg" name="municipioNeg" required class="negocio validate" />
                         <label for="municipioNeg">Municipio</label>
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
-
-
-
                     <div class="input-field col s12 m6 l6">
-                        <i class="material-icons prefix">house</i>
-                        <input id="asentamientoNeg" type="text" formControlName="asentamientoNeg" name="asentamientoNeg" required class="validate" />
-                        <label for="asentamientoNeg">Asentamiento</label>
-                        <div class="red-text" *ngIf="form.errors?.isMatch"></div>
+                        <select [(ngModel)]="negocio.tipo_asentamiento" formControlName="asentamientoTypeNeg" name="asentamientoTypeNeg" id="asentamientoTypeNeg" class="negocio validate">
+                          <option value="" disabled selected>Selecciona una opcion</option>
+                          <option value="Barrio">Barrio</option>
+                          <option value="Colonia">Colonia</option>
+                          <option value="Equipamiento">Equipamiento</option>
+                          <option value="Pueblo">Pueblo</option>
+                          <option value="Fraccionamiento">Fraccionamiento</option>
+                        </select>
+                        <label>Tipo de asentamiento</label>
+                        <div class="blue-text" *ngIf="f.asentamientoTypeNeg.errors">Debes seleccionar una opción.</div>
                     </div>
-
-
+                    <div class="input-field col s12 m6 l6">
+                        <select [(ngModel)]="negocio.asentamiento" formControlName="asentamientoNeg" name="asentamientoNeg" id="asentamientoNeg" class="negocio validate">
+                        <option value="" disabled selected>Selecciona una opcion</option>
+                        <option [ngValue]="negocio.asentamiento" *ngFor="let item of negocio.asentamiento">{{item}}</option>
+                      </select>
+                        <label>Asentamiento</label>
+                        <div class="blue-text" *ngIf="f.asentamientoNeg.errors">Debes seleccionar una opción.</div>
+                    </div>
                     <div class="input-field col s12 m12 l12">
                         <i class="material-icons prefix icon-gold">work_outline</i>
                         <label class="title black-text"><b class="title col s12 m12 l12">Actividad del Negocio</b></label>
                         <p><br></p>
                     </div>
-
                     <div class="input-field col s12 m6 l6">
                         <select formControlName="sector" name="sector" id="sector" class="validate" [(ngModel)]="sector" (ngModelChange)="activitieChange($event, 'sector', sector=sector)">
                         <option value="" disabled selected>Selecciona una opción</option>
                         <option [ngValue]="item.codigo" *ngFor="let item of activities.sectorList">{{item.titulo}}</option>
                       </select>
-                        <label>Sector: {{sector}}</label>
+                        <label>Sector: <!--{{sector}}--></label>
                         <div class="blue-text" *ngIf="f.sector.errors">Debes seleccionar una opción.</div>
                     </div>
                     <div class="input-field col s12 m6 l6">
@@ -488,7 +479,7 @@
                         <option value="" disabled selected>Selecciona una opción</option>
                         <option [ngValue]="item.codigo" *ngFor="let item of activities.subsectorList">{{item.titulo}}</option>
                       </select>
-                        <label>Subsector: {{subsector}}</label>
+                        <label>Subsector: <!--{{subsector}}--></label>
                         <div class="blue-text" *ngIf="f.sector.errors">Debes seleccionar una opción.</div>
                     </div>
                     <div class="input-field col s12 m6 l6">
@@ -496,7 +487,7 @@
                         <option value="" disabled selected>Selecciona una opción</option>
                         <option [ngValue]="item.codigo" *ngFor="let item of activities.ramaList">{{item.titulo}}</option>
                       </select>
-                        <label>Rama: {{rama}}</label>
+                        <label>Rama: <!--{{rama}}--></label>
                         <div class="blue-text" *ngIf="f.sector.errors">Debes seleccionar una opción.</div>
                     </div>
                     <div class="input-field col s12 m6 l6">
@@ -504,7 +495,7 @@
                         <option value="" disabled selected>Selecciona una opción</option>
                         <option [ngValue]="item.codigo" *ngFor="let item of activities.subramaList">{{item.titulo}}</option>
                       </select>
-                        <label>Subrama: {{subrama}}</label>
+                        <label>Subrama: <!--{{subrama}}--></label>
                         <div class="blue-text" *ngIf="f.sector.errors">Debes seleccionar una opción.</div>
                     </div>
                     <div class="input-field col s12 m6 l6">
@@ -512,7 +503,7 @@
                         <option value="" disabled selected>Selecciona una opción</option>
                         <option [ngValue]="item.codigo" *ngFor="let item of activities.giroList">{{item.titulo}}</option>
                       </select>
-                        <label>Giro: {{giro}}</label>
+                        <label>Giro: <!--{{giro}}--></label>
                         <div class="blue-text" *ngIf="f.sector.errors">Debes seleccionar una opción.</div>
                     </div>
 
