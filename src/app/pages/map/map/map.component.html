@@ -18,7 +18,7 @@
     <app-map-point-form [mapPoint]="mapPoint"></app-map-point-form>
 </div>
     </div>
-    
+
 
     <div class="col s12 m6 l6">
         <div class="card">
@@ -27,51 +27,49 @@
           </div>
         </div>
     </div>
-    
+
 </div>-->
 
 <br><br>
 <div class="row">
     <div class="col s12 m6 l6">
         <div class="card">
-            <div class="card-body">
-                <div id="details-panel">
-            <div class="row">
+          <div class="card-body">
+            <div id="details-panel">
+              <div class="row">
                 <div class="col s12 leaflet-left">
-            <app-geocoding (onSearch)="refreshSearchList($event)"></app-geocoding>
+                  <a (click)="sendData(mapPoint, mapPoint.longitude, mapPoint.latitude, mapPoint.name)" class="waves-effect teal darken-4 btn">Aceptar</a>
+                  <app-geocoding (onSearch)="refreshSearchList($event)"></app-geocoding>
                 </div>
+              </div>
             </div>
-            </div>
-            </div>
+          </div>
         </div>
         <div class="col s12 m12 l12">
             <div id="results-list">
-                <span class="black-text title"><b>Resultados</b></span>
-                <div class="col s12 m12 l12" id="results">
-                    <app-results-list [results]="results" (locationSelected)="getAddress($event)"></app-results-list>
-                </div>
-            </div>    
+              <span class="black-text title"><b>Elige una dirección</b></span>
+              <div class="col s12 m12 l12" id="results">
+                <app-results-list [results]="results" (locationSelected)="getAddress($event)"></app-results-list>
+              </div>
+            </div>
         </div>
-
         <div class="col s12 m12 l12">
             <div id="map-point-form">
                 <label class="title black-text">Mi Dirección</label>
-                    <input type="text" id="name" name="name" disabled="true" [(ngModel)]="mapPoint.name" />
-                    <!--Latitud y Longitud-->
-                    <div class="row hide">
-                        <div class="col s6"><label for="longitude">Longitud: </label>
-                            <input type="text" id="longitude" name="longitude" disabled="true" [ngModel]="mapPoint.longitude" />
-                        </div>
-                        <div class="col s6"><label for="latitude">Latitud: </label>
-                            <input type="text" id="latitude" name="latitude" disabled="true" [ngModel]="mapPoint.latitude" />
-                        </div>
-                    </div>
-                    <!---->
+                  <input type="text" id="name" name="name" disabled="true" [(ngModel)]="mapPoint.name" />
+                  <!--Latitud y Longitud-->
+                  <div class="row hide">
+                      <div class="col s6"><label for="longitude">Longitud: </label>
+                          <input type="text" id="longitude" name="longitude" disabled="true" [ngModel]="mapPoint.longitude" />
+                      </div>
+                      <div class="col s6"><label for="latitude">Latitud: </label>
+                          <input type="text" id="latitude" name="latitude" disabled="true" [ngModel]="mapPoint.latitude" />
+                      </div>
+                  </div>
+                  <!---->
             </div>
         </div>
     </div>
-    
-
     <div class="col s12 m6 l6">
         <div class="card">
           <div class="card-body">
@@ -79,5 +77,5 @@
           </div>
         </div>
     </div>
-    
+
 </div>

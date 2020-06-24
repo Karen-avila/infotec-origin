@@ -8,7 +8,7 @@ import { Finance } from 'financejs';
 import * as M from 'materialize-css';
 import swal from 'sweetalert';
 import activitiesService from './service/activities.service';
-import searchCPService from './service/searchCP.service';
+import { EventManager } from '@angular/platform-browser';
 declare const MStepper: any;
 
 @Component({
@@ -31,6 +31,11 @@ negocio = {
   municipio: '',
   asentamiento: [],
 };
+infoPersonal = {
+  calle: '',
+  latitude: 0,
+  longitude: 0,
+};
 personal = {
   cp: '',
   estado: '',
@@ -45,16 +50,13 @@ stepper;
   modal="falso";
   popup;
   calendar;
-
   terms=false;
   autorizobc=false;
   aprivacidad = false;
   termcond = false;
-
   form : FormGroup;
   formDocumentos : FormGroup;
   formFiel: FormGroup;
-  
   dic = [
     "apañar",
     "cagar",
@@ -66,19 +68,13 @@ stepper;
     "ASESINO",
     "ASSHOLE",
   ]
-
   alrt = [
-    {name:"Curp",
-     url:"https://www.gob.mx/curp/"},
-    {name:"Rfc",
-    url:"https://www.siat.sat.gob.mx/PTSC/"},
-    //{name:"Buro de crédito",
-    //url:"https://www.burodecredito.com.mx/score-info.html"},
-    {name:"Constancia de Situación Fiscal",
-    url:"https://www.sat.gob.mx/aplicacion/53027/genera-tu-constancia-de-situacion-fiscal"}
+    {name:"Curp", url:"https://www.gob.mx/curp/"},
+    {name:"Rfc", url:"https://www.siat.sat.gob.mx/PTSC/"},
+    {name:"Constancia de Situación Fiscal", url:"https://www.sat.gob.mx/aplicacion/53027/genera-tu-constancia-de-situacion-fiscal"}
+    //{name:"Buro de crédito", url:"https://www.burodecredito.com.mx/score-info.html"},
   ]
  re;
-
  //-------------------
  valueMon: number = 20000;
  optionsMon: Options = {
@@ -124,43 +120,48 @@ stepper;
          //return '<b>Si te Prestamos:</b> $' + value;
    }
  };
- 
- finance = new Finance();
 
- catPorcentaje = 0;
- //-------------------
-  constructor(public userService:UserService,private route: ActivatedRoute, private router: Router) { 
+finance = new Finance();
+catPorcentaje = 0;
+ // -------------------
+constructor(
+    public userService: UserService,
+    private route: ActivatedRoute,
+    private router: Router,
+    private eventManager: EventManager
+  ) {
+  this.re = localStorage.getItem('step');
+  this.eventManager.addGlobalEventListener(
+    'window',
+    'message',
+    (msg) => {
+      if (msg.data.latitude && msg.data.longitude) {
+        console.log('eventManager: ', msg.data);
+        this.infoPersonal.calle = msg.data.name;
+        this.infoPersonal.latitude = msg.data.latitude;
+        this.infoPersonal.longitude = msg.data.longitude;
+      }
+      this.mapOk();
+    } 
+  );
 
-    this.re = localStorage.getItem('step');
-
-    // Monto del Prestamo
-    var montoCapital = 20000 * -1;
-    // Tasa de Interes Anual
-    var tasaInteresAnual = 0.12; // cambio a 12
-    // Tasa de Interes Mensual
-    var tasaInteresMensual = tasaInteresAnual / 12;
-    // Plazo del Credito
-    var plazoCredito = 18;
-    // Monto del Pago Mensual
-    var pmt = this.finance.PMT(tasaInteresMensual, plazoCredito, montoCapital);
-    //console.log("PAGO MENSUAL ", pmt.toFixed(2));
-    var pagos = [];
-    pagos.push(montoCapital);
-    for (var i = 0; i < plazoCredito; i++) {
-        pagos.push(pmt);
-    }
-    var tirMensual = this.finance.IRR.apply(this, pagos);
-    //console.log("TIR MENSUAL " +tirMensual.toFixed(2) +"%");
-    var tirAnual = tirMensual * 12;
-    //console.log("TIR ANUAL "+ tirAnual.toFixed(2)+"%");
-    var cat = (Math.pow((1 + (tirMensual / 100)), 12)) - 1;
-    //console.log("CAT "+cat.toFixed(2)+"%");
-    this.catPorcentaje = ((Math.pow((1 + (tirMensual / 100)), 12)) - 1) * 100;
-    //console.log("CAT "+ this.catPorcentaje.toFixed(2)+"%");
-   
-
+  // Monto del Prestamo
+  const montoCapital = 20000 * -1;
+  // Tasa de Interes Anual
+  const tasaInteresAnual = 0.12; // cambio a 12
+  // Tasa de Interes Mensual
+  const tasaInteresMensual = tasaInteresAnual / 12;
+  // Plazo del Credito
+  const plazoCredito = 18;
+  // Monto del Pago Mensual
+  const pmt = this.finance.PMT(tasaInteresMensual, plazoCredito, montoCapital);
+  // console.log("PAGO MENSUAL ", pmt.toFixed(2));
+  const pagos = [];
+  pagos.push(montoCapital);
+  for (let i = 0; i < plazoCredito; i++) {
+      pagos.push(pmt);
   }
-
+}
   ngOnInit() {
 
 console.log("el step",this.re)

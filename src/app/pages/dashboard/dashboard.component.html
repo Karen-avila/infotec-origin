@@ -265,7 +265,7 @@
 
                     <div class="input-field col s12 m8 l8">
                         <i class="material-icons prefix">house</i>
-                        <input id="calle" type="text" formControlName="calle" required class="validate" name="calle" />
+                        <input [(ngModel)]="infoPersonal.calle" id="calle" type="text" formControlName="calle" required class="validate" name="calle" />
                         <label for="calle">Calle</label>
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
@@ -1703,10 +1703,8 @@
 
 
 <div id="modalMap" class="iframe-container hide">
-    <!--<app-map></app-map>-->
     <a (click)="mapOk()" class="waves-effect teal darken-4 btn">Aceptar</a>
-    <iframe src="/map"></iframe>
-
+    <iframe id="mapFrame" src="/map"></iframe>
 </div>
 
 
