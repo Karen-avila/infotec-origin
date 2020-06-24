@@ -8,7 +8,7 @@ import { Finance } from 'financejs';
 import * as M from 'materialize-css';
 import swal from 'sweetalert';
 import activitiesService from './service/activities.service';
-import searchCPService from './service/searchCP.service';
+import { EventManager } from '@angular/platform-browser';
 declare const MStepper: any;
 
 @Component({
@@ -30,6 +30,11 @@ negocio = {
   tipo_asentamiento: '',
   municipio: '',
   asentamiento: [],
+};
+infoPersonal = {
+  calle: '',
+  latitude: 0,
+  longitude: 0,
 };
 personal = {
   cp: '',
@@ -118,7 +123,25 @@ optionsPlaz: Options = {
 finance = new Finance();
 catPorcentaje = 0;
  // -------------------
-constructor(public userService: UserService, private route: ActivatedRoute, private router: Router) {
+constructor(
+    public userService: UserService,
+    private route: ActivatedRoute,
+    private router: Router,
+    private eventManager: EventManager
+  ) {
+  this.eventManager.addGlobalEventListener(
+    'window',
+    'message',
+    (msg) => {
+      if (msg.data.latitude && msg.data.longitude) {
+        console.log('eventManager: ', msg.data);
+        this.infoPersonal.calle = msg.data.name;
+        this.infoPersonal.latitude = msg.data.latitude;
+        this.infoPersonal.longitude = msg.data.longitude;
+      }
+      this.mapOk();
+    }
+  );
   this.route.params.subscribe( params => this.re = params);
   // Monto del Prestamo
   const montoCapital = 20000 * -1;
