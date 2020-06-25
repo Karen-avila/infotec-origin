@@ -6,8 +6,10 @@ import { User } from '../../models/user.model';
 import { URL_SERVICES } from '../../config/config';
 
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 import swal from 'sweetalert';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable({
   providedIn: 'root'
@@ -25,10 +27,18 @@ export class UserService {
   createUser(user:User){
     console.log("Service create user");
     //let url = URL_SERVICES + '/create';
-    let url = URL_SERVICES + '/create';
+    let url = URL_SERVICES + '/user';
     console.log("Esto es lo que enviare a donde lo tenga que enviar",user);
       
-    return this.http.post(url,user);
+    return this.http.post(url,user).map((res:any)=>{
+      console.log("creado",res)
+      swal("¡Felicidades!", "felicidades", "success");
+      
+    return true;
+  }).catch(err=>{
+    console.log(err.status);
+    return Observable.throw(err);
+  });
   }
 
   createUserL(user:User) {
@@ -66,7 +76,7 @@ export class UserService {
         localStorage.setItem('id',res.id);
         localStorage.setItem('email',res.email);
         localStorage.setItem('token',res.token);
-        localStorage.setItem('step','3');
+        localStorage.setItem('step','4');
         this.token = res.token;
         this.email = res.email;
         this.id = res.id;

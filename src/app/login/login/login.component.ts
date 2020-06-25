@@ -38,7 +38,7 @@ step
       
       this.re = res[0].step;
     });*/
-    this.step="1";
+    this.step="5";
   }
 
   ngOnInit() {
