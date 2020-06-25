@@ -414,7 +414,7 @@
                                       <option  value="D">Se sabe cuánto le cuesta al negocio generar cada uno de sus principales productos (bienes o servicios). Por ejemplo, si tiene que calcular cuánto le cuesta producir una galleta, se hacen las cuentas de cuánto gasta en comprar harina, azúcar, leche, luz para usar la batidora, gas para el horno, renta del local, etcétera; otro ejemplo: si se ofrece un servicio de transporte, se hacen las cuentas de cuánto se gasta en el consumo de gasolina, casetas de peaje, etcétera. </option>
                                       <option value="E">Se sabe de qué productos (bienes o servicios) se obtienen más ganancias por cada uno que vende</option>
                                       <option value="F">El negocio no lleva registros y no cuenta con información que permita conocer a detalle su operación</option>
-                                      
+
                                     </select>
                                         </p>
                                     </li>
@@ -444,11 +444,11 @@
                                         <select multiple >
                                           <option value="" disabled selected>Choose your option</option>
                                           <option value="1" *ngFor="let resp of qcQcnm.opts">{{resp}}</option>
-                        
+
                                         </select>
                                         <label>Materialize Multiple Select</label>
                                       </div>
-                                
+
                                 <li class="collection-item avatar" *ngFor="let qcQcnm of qcQcnm; index as i;">
                                     <div >
                                     <div class="input-field col s12">
@@ -480,9 +480,19 @@
 
 
                 </ul>
+
             </div>
         </li>
     </ul>
+    <!--pruebas-->
+    <div class="col s12">
+      <a class="waves-effect teal darken-4 btn previous-step left">Atras
+        <i class="material-icons prefix left">arrow_back_ios</i>
+      </a>
+      <a class="waves-effect  teal darken-4 btn modal-trigger right" (click)="sendQuestions()">
+          <i class="material-icons prefix right">send</i> Continuar
+      </a>
+    </div>
 </div>
 
 
