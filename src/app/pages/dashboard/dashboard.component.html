@@ -117,6 +117,7 @@
                         <i class="material-icons prefix icon-gold">person</i>
                         <label class="title black-text"><b class="title col s12 m12 l12">Información Personal</b></label>
                         <p><br></p>
+                        
                     </div>
 
                     <div class="input-field col s12 m4">
@@ -237,6 +238,65 @@
                     </div>
 
                     <div class="input-field col s12 m6 l6">
+                    <select formControlName="entidadfedn" name="entidadfedn" id="entidadfedn" class="validate">
+                        <option value="" disabled selected>Selecciona una opcion</option>
+                        <option value="Aguascalientes">Aguascalientes</option>
+                        <option value="Baja California">Baja California</option>
+                        <option value="Baja California Sur">Baja California Sur</option>
+                        <option value="Campeche">Campeche</option>
+                        <option value="Coahuila de Zaragoza">Coahuila de Zaragoza</option>
+                        <option value="Colima">Colima</option>
+                        <option value="Chiapas">Chiapas</option>
+                        <option value="Chihuahua">Chihuahua</option>
+                        <option value="Ciudad de México">Ciudad de México</option>
+                        <option value="Durango">Durango</option>
+                        <option value="Guanajuato">Guanajuato</option>
+                        <option value="Guerrero">Guerrero</option>
+                        <option value="Hidalgo">Hidalgo</option>
+                        <option value="Jalisco">Jalisco</option>
+                        <option value="México">México</option>
+                        <option value="Michoacán de Ocampo">Michoacán de Ocampo</option>
+                        <option value="Morelos">Morelos</option>
+                        <option value="Nayarit">Nayarit</option>
+                        <option value="Nuevo León">Nuevo León</option>
+                        <option value="Oaxaca">Oaxaca</option>
+                        <option value="Puebla">Puebla</option>
+                        <option value="Querétaro">Querétaro</option>
+                        <option value="Quintana Roo">Quintana Roo</option>
+                        <option value="San Luis Potosí">San Luis Potosí</option>
+                        <option value="Sinaloa">Sinaloa</option>
+                        <option value="Sonora">Sonora</option>
+                        <option value="Tabasco">Tabasco</option>
+                        <option value="Tamaulipas">Tamaulipas</option>
+                        <option value="Tlaxcala">Tlaxcala</option>
+                        <option value="Veracruz de Ignacio de la Llave">Veracruz de Ignacio de la Llave</option>
+                        <option value="Yucatán">Yucatán</option>
+                        <option value="Zacatecas">Zacatecas</option>
+                      </select>
+                      <label>Entidad federativa de Nacimiento</label>
+                      <div class="blue-text" *ngIf="f.entidadfedn.errors"></div>
+                    </div>
+
+                    <div class="input-field col s12 m7 l7">
+                        <i class="material-icons prefix">aspect_ratio</i>
+                        <input id="clave_elector" type="text" formControlName="clave_elector" required class="validate" name="clave_elector" />
+                        <label for="clave_elector">Clave de Elector</label>
+                    </div>
+
+                    <div class="input-field col s12 m5 l5">
+                        <i class="material-icons prefix">aspect_ratio</i>
+                        <input id="curp" type="text" formControlName="curp" pattern="^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$"
+                            required class="validate" name="curp" />
+                        <label for="curp">CURP</label>
+                    </div>
+                    <!--<div class="input-field col s12 m6 l6" *ngIf="model=='pFisica'">-->
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">aspect_ratio</i>
+                        <input id="rfc" type="text" formControlName="rfc" pattern="^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$" required class="validate" name="rfc" />
+                        <label for="rfc">RFC</label>
+                    </div>
+
+                    <!--<div class="input-field col s12 m6 l6">
                         <select formControlName="ocupacion" name="ocupacion" id="ocupacion" class="validate">
                             <option value="" disabled selected>Selecciona una opcion</option>
                             <option value="1">Agricultor</option>
@@ -246,6 +306,11 @@
                         </select>
                         <label>Ocupación</label>
                         <div class="blue-text" *ngIf="f.ocupacion.errors">Debes seleccionar una opción.</div>
+                    </div>-->
+                    <div class="input-field col s12 m12 l12">
+                    <i class="material-icons prefix icon-gold">roofing</i>
+                    <label class="title black-text"><b class="title col s12 m12 l12">Dirección</b></label>
+                    <p><br></p>
                     </div>
 
                     <div class="input-field col s12 m8 l8">
@@ -270,7 +335,7 @@
                         #cp
                         (keyup)="searchCP(cp.value, 'personal')"
                         id="cp"
-                        type="text"
+                        type="number"
                         formControlName="cp"
                         required
                         class="validate"
@@ -320,7 +385,7 @@
                       </select>
                       <label>Entidad federativa de Nacimiento</label>-->
 
-                      <span class="grey-text in">Entidad federativa de Nacimiento</span>
+                      <span class="grey-text in">Entidad federativa</span>
                         <input type="text" [(ngModel)]="personal.estado" formControlName="entidadfed" name="entidadfed" id="entidadfed" class="validate" placeholder="Entidad federativa de Nacimiento" disabled>
                       <div class="blue-text" *ngIf="f.entidadfed.errors"></div>
                     </div>
@@ -363,27 +428,6 @@
                         </div>
                     </div>
 
-                    <div class="input-field col s12 m6 l6">
-                        <i class="material-icons prefix">aspect_ratio</i>
-                        <input id="clave_elector" type="text" formControlName="clave_elector" required class="validate" name="clave_elector" />
-                        <label for="clave_elector">Clave de Elector</label>
-                    </div>
-
-                    <div class="input-field col s12 m6 l6">
-                        <i class="material-icons prefix">aspect_ratio</i>
-                        <input id="curp" type="text" formControlName="curp" pattern="^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$"
-                            required class="validate" name="curp" />
-                        <label for="curp">CURP</label>
-                    </div>
-                    <div class="input-field col s12 m6 l6" *ngIf="model=='pFisica'">
-                        <i class="material-icons prefix">aspect_ratio</i>
-                        <input id="rfc" type="text" formControlName="rfc" pattern="^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$" required class="validate" name="rfc" />
-                        <label for="rfc">RFC</label>
-                    </div>
-
-
-
-
                     <div class="input-field col s12 m12 l12">
                         <i class="material-icons prefix icon-gold">work</i>
                         <label class="title black-text"><b class="title col s12 m12 l12">Información del Negocio</b></label>
@@ -411,7 +455,7 @@
                         #cpNeg
                         (keyup)="searchCP(cpNeg.value, 'negocio')"
                         id="cpNeg"
-                        type="text"
+                        type="number"
                         formControlName="cpNeg"
                         required
                         class="validate"
@@ -935,26 +979,59 @@
                             </div>
                         </div>
 
-
+                        <br><br>
 
 
                         <div class="input-field col s12 m12 l12">
-                            <label><span><i class="material-icons icon-red left">error_outline</i>
-                                Son requeridos todos los archivos para poder continuar con el proceso.
-                            </span></label>
+                            <i class="material-icons prefix icon-gold">vpn_key</i>
+                            <label class="title black-text"><b class="title col s12 m12 l12">Firma de Documentos</b></label>
+                            <p><br></p>
+                            <p>Selecciona los archivos de tu firma electrónica avanzada (FIEL)</p>
                         </div>
+                
+                                <div class="file-field input-field col s12 m6 l6">
+                                    <div class="teal darken-4 btn">
+                                        <i class="material-icons right">attachment</i>Archivo .key
+                                        <input type="file" (change)="ValidateSize('fiel')" accept=".key" formControlName="fiel" id="fiel" required class="validate">
+                
+                                        <div class="red-text" *ngIf="fi.fiel.errors?.required">
+                                        </div>
+                                    </div>
+                                    <div class="file-path-wrapper">
+                                        <input class="file-path validate" type="text">
+                                    </div>
+                                </div>
+                            <div>
+                
+                                <div class="file-field input-field col s12 m6 l6">
+                                    <div class="teal darken-4 btn">
+                                        <i class="material-icons right">attachment</i>Archivo .cer
+                                        <input type="file" (change)="ValidateSize('cer')" accept=".cer" formControlName="cer" id="cer" required class="validate">
+                
+                                        <div class="red-text" *ngIf="fi.cer.errors?.required">
+                                        </div>
+                                    </div>
+                                    <div class="file-path-wrapper">
+                                        <input class="file-path validate" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="input-field col s12 m12 l12">
+                                <i class="material-icons prefix">lock</i>
+                                <input id="password" type="password" name="password" formControlName="password" required class="validate">
+                                <label for="password">Contraseña de tu FIEL</label>
+                                <div class="col s1 m1 l1" *ngIf="fi.password.errors?.required"></div>
+                            </div>
 
                     </div>
-                    <br><br>
 
-                    <!--<a class="waves-effect  teal darken-4 btn modal-trigger right" href="#fiel">
-                        <i class="material-icons prefix right">send</i> Firmar Documentos
-                    </a>-->
+                    <div class="input-field col s12 m12 l12">
+                        <label><span><i class="material-icons icon-red left">error_outline</i>
+                            Son requeridos todos los archivos para poder continuar con el proceso.
+                        </span></label>
+                    </div><br><br>
 
-                    <div class="input-field col s12 m4 offset-m6 l4 offset-l6">
-                        <a class="waves-effect teal darken-4 btn modal-trigger" href="#sat">
-                <i class="material-icons right">send</i>Firmar Documentos</a>
-                    </div>
 
                     <div class="row">
 
@@ -992,7 +1069,7 @@
                                 </a>
                             <button class="waves-effect teal darken-4 btn right " type="submit">Continuar <!--revisar nextstep igual en ts-->
                                     <i class="material-icons prefix right">arrow_forward_ios</i>
-                                </button>
+                            </button>
                         </div>
                     </div>
 
@@ -1075,10 +1152,12 @@
                             </div>
 
                             <div class="col s12">
-
-                                <a routerLink="/home" class="waves-effect  teal darken-4 btn right ">
+                                <button class="waves-effect teal darken-4 btn right" type="submit">Terminar <!--revisar nextstep igual en ts-->
+                                    <i class="material-icons prefix right">arrow_forward_ios</i>
+                                </button>
+                                <!--<a routerLink="/home" class="waves-effect  teal darken-4 btn right ">
                                     <i class="material-icons prefix right">send</i> Terminar
-                                </a>
+                                </a>-->
 
                             </div>
                     </form>
@@ -1131,7 +1210,7 @@
     </div>
 </div>
 
-<div id="sat" class="modal">
+<!--<div id="sat" class="modal">
     <div class="modal-content">
 
         <h4>Selecciona los archivos de tu firma electrónica avanzada (FIEL)</h4>
@@ -1190,7 +1269,7 @@
         </div>
 
     </div>
-</div>
+</div>-->
 
 
 <div id="aviso" class="modal">
