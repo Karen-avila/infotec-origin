@@ -239,7 +239,7 @@ export class QuestionComponent implements OnInit {
         value:""
       }
     ];
-    qcQc1=[
+  qcQc1=[
       {
         quest:"Número de dependientes económicos",
         opts:[""],
@@ -253,49 +253,49 @@ export class QuestionComponent implements OnInit {
       opts:["Sí","No"],
       resp:"",
       value:""
-    }, 
+    },
     {
       quest:"¿Recibió capacitación vinculada a su crédito proveniente de alguna organización?",
       opts:["Sí","No"],
       resp:"",
       value:""
-    }, 
+    },
     {
       quest:"¿Ha solicitado crédito anteriormente?",
       opts:["Sí","No"],
       resp:"",
       value:""
-    }, 
+    },
     {
       quest:"¿Sus ingresos han mejorado después de recibir un crédito?",
       opts:["Sí","No","No aplica"],
       resp:"",
       value:""
-    }, 
+    },
     {
       quest:"Además de su oficina, comercio, o local principal, ¿tiene otra(s) oficina(s), comercio(s), local(es) o sucursal(es)?",
       opts:["Sí","No"],
       resp:"",
       value:""
-    }, 
+    },
     {
       quest:"¿Cómo se lleva la contabilidad de la empresa?",
       opts:["Se utiliza un cuaderno o una libreta de apuntes para llevar la contabilidad","Se utiliza los servicios de un contador o profesional para llevar la contabilidad","Se utiliza el “Portal Mis Cuentas” del SAT","Se utiliza un paquete de contabilidad por parte de la empresa","No se lleva la contabilidad de la empresa","Otro"],
       resp:"",
       value:""
-    }, 
+    },
     {
       quest:"¿La empresa tiene cuenta bancaria exclusiva para el manejo del dinero del negocio?",
       opts:["Sí","No"],
       resp:"",
       value:""
-    }, 
+    },
     {
       quest:"Durante el ejercicio fiscal anterior, ¿la empresa tuvo necesidad de invertir en equipo, vehículos, inmuebles, capacitación, etcétera y no pudo por falta de dinero?",
       opts:["Sí","No"],
       resp:"",
       value:""
-    }, 
+    },
     {
       quest:"¿Durante el ejercicio fiscal anterior se otorgó capacitación al personal de la empresa (usando capacitadores internos o externos)?",
       opts:["Sí","No"],
@@ -322,19 +322,19 @@ export class QuestionComponent implements OnInit {
     opts:["Por tradición familiar o lo heredó","Para complementar el ingreso familiar","Para mejorar el ingreso","Tenía dinero y encontró una buena oportuindad","Para ejercer su oficio, carrera o profesión","Fue la única manera que tuvo para obtener un ingreso","No tenía la experiencia requerida para un empleo","No tenía la escolaridad o capacitación requerida para un empleo","Estaba sobrecapacitado para un empleo","Los empleos que encontró estaban mal pagados","Requería un horario flexible","No había oportunidades de empleo","Otra razón"],
     resp:"",
     value:""
-  }, 
+  },
   {
       quest:"En su negocio o actividad, ¿cuenta con un local para trabajar sea o no de su propiedad? (Seleccione una opción o más de una si tiene varios locales)",
       opts:["Sí, es un local independiente","Sí, es un local o instalación que forma parte de un conjunto de locales","No"],
       resp:"",
       value:""
-  }, 
+  },
   {
       quest:"En caso de ser local independiente (fuera de un techo común), ¿éste es? (Seleccionar una o varias opciones)",
       opts:["Tienda, accesoria o tendajón","Taller (de servicios o de reparación)","Fábrica, tortillería, panadería","Oficina, despacho, consultorio"],
       resp:"",
       value:""
-  }, 
+  },
   {
       quest:"Si no cuenta con un local, ¿en dónde se realizan las actividades de su negocio? (Seleccionar una o varias opciones)",
       opts:["Vehículo con o sin motor","Puesto fijo fuera de un techo común","Puesto semifijo bajo un techo común en pasillos de un centro comercial","Puesto semifijo en un tianguis","En un domicilio particular con una instalación especial","En un domicilio particular sin una instalación especial","Otro lugar"],
@@ -349,7 +349,7 @@ export class QuestionComponent implements OnInit {
     opts:[""],
     resp:"",
     value:""
-  }, 
+  },
   {
     quest:"¿Cuál es el propósito del proyecto; es decir, en qué espera que mejore su negocio debido al crédito que solicita? Por ejemplo, incrementar las ventas con la entrega a domicilio.",
     opts:[""],
@@ -365,31 +365,31 @@ export class QuestionComponent implements OnInit {
       value:""
     }];
   qcqn2=[
-   
+
     {
       quest:"¿De cuánto efectivo dispone actualmente para cubrir las operaciones del negocios? Incluya lo que guarda en su casa, en el banco o en el negocio.",
       opts:[""],
       resp:"",
       value:""
-    }, 
+    },
     {
       quest:"¿Al día de hoy cuánto le deben por venta de bienes a crédito o servicios realizados y que aún no le hayan terminado de pagar? ",
       opts:[""],
       resp:"",
       value:""
-    }, 
+    },
     {
       quest:"Cuánto obtendría si vendiera el material de oficina, la maquinaria que usa en su negocio, aparatos de su propiedad o el local del negocio en caso de que sea suyo?",
       opts:[""],
       resp:"",
       value:""
-    }, 
+    },
     {
       quest:"Pensando en los últimos 6 meses, en promedio, ¿cuánto vende o ingresa por la realización de sus servicios cada mes sin descontar los gastos?",
       opts:[""],
       resp:"",
       value:""
-    }, 
+    },
     {
       quest:"Pensando en los últimos 6 meses, en promedio, ¿a cuánto ascienden, cada mes,  otros ingresos obtenidos además de los generados por su actividad principal del negocio?",
       opts:[""],
@@ -403,13 +403,13 @@ export class QuestionComponent implements OnInit {
       value:""
     }];
 
-    qcqcn3=[ 
+    qcqcn3=[
       {
         quest:"¿Con qué frecuencia surte su negocio con mercancías o materias primas para la venta de bienes o la prestación de sus servicios?",
         opts:["Diariamente","Cada semana","Cada quincena","Cada mes","Cada 2 meses","Cada 3 meses","Cada 4 meses","Cada 6 meses","Cada año"],
         resp:"",
         value:""
-      }, 
+      },
       {
         quest:"¿Cuándo fue la última vez que surtió su negocio con mercancías o materias primas para la venta de bienes o prestación de sus servicios?",
         opts:["Ayer","Hace una semana","Hace dos semanas","Hace un mes","Hace 2 meses","Hace 3 meses","Hace 4 meses","Hace 5 meses","Hace 6 meses","Hace 1 año","Hace más de un año"],
@@ -461,7 +461,7 @@ export class QuestionComponent implements OnInit {
         }
 
       ];
-      
+
       qcqcn4=[
         {
           quest:"Sueldos, salarios o cualquier otro pago a los trabajadores del negocio",
@@ -676,6 +676,8 @@ export class QuestionComponent implements OnInit {
         }
       ];
 
+
+
 formScrPerNeg : FormGroup;
 formScrPerMer : FormGroup;
 formScrRep : FormGroup;
@@ -839,6 +841,8 @@ this.formQcQcn = new FormGroup({
 
   }
 
+
+
   scrPerNegSend(){
     console.log("form is valid?", this.formScrPerNeg.valid);
     if(this.formScrPerNeg.valid){
@@ -858,7 +862,7 @@ this.formQcQcn = new FormGroup({
       this.instPefNeg.open(2); //aqui ira
     } else{
       this.instPefNeg.open(2); // no ira aqui solo para no completar form
-    } 
+    }
   }
 
   scrRepSend(){
@@ -869,7 +873,7 @@ this.formQcQcn = new FormGroup({
       this.instPefNeg.open(3); //aqui ira
     } else{
       this.instPefNeg.open(3); // no ira aqui solo para no completar form
-    }  
+    }
   }
 
   scrDirSend(){
@@ -880,7 +884,7 @@ this.formQcQcn = new FormGroup({
       this.prins.open(1); //aqui ira
     } else{
       this.prins.open(1); // no ira aqui solo para no completar form  CHECAR ESTE SALTO
-    } 
+    }
   }
 
   qcQcSend(){
@@ -891,7 +895,7 @@ this.formQcQcn = new FormGroup({
       this.instQrmCnct.open(1); //aqui ira
     } else{
       this.instQrmCnct.open(1); // no ira aqui solo para no completar form
-    } 
+    }
   }
 
   qcQcnSend(){
@@ -900,33 +904,59 @@ this.formQcQcn = new FormGroup({
     if(this.formQcQcn.valid){
       console.log("form", this.formQcQcn.value);
       //enviar datos a back
-    } 
+    }
   }
 
   b5(){
     console.log("Reviso valor de check", this.sfina5);
     if(this.sfina5){
-      this.formQcQcn.get("qcQcnr05").setValue(" ") 
+      this.formQcQcn.get("qcQcnr05").setValue(" ")
     }
 
   }
   b6(){
     console.log("Reviso valor de check", this.sfina6);
     if(this.sfina6){
-      this.formQcQcn.get("qcQcnr06").setValue(" ") 
+      this.formQcQcn.get("qcQcnr06").setValue(" ")
     }
   }
   b7(){
     console.log("Reviso valor de check", this.sfina7);
     if(this.sfina7){
-      this.formQcQcn.get("qcQcnr07").setValue(" ") 
+      this.formQcQcn.get("qcQcnr07").setValue(" ")
     }
   }
   monto(){
     console.log("Reviso valor de check", this.sfina8);
     if(this.sfina8){
-      this.formQcQcn.get("qcqcnmo").setValue(" ") 
+      this.formQcQcn.get("qcqcnmo").setValue(" ")
     }
+  }
+
+  sendQuestions() {
+    const questionForm = {
+      questions: true,
+      scrPerNeg: this.scrPerNeg,
+      scrPerMer: this.scrPerMer,
+      scrRep: this.scrRep,
+      scrDir: this.scrDir,
+      qcQc: this.qcQc,
+      qcQc1: this.qcQc1,
+      qcQcn: this.qcQcn,
+      qcQcnm: this.qcQcnm,
+      qcqn1: this.qcqn1,
+      qcqn22: this.qcqn22,
+      qcqn2: this.qcqn2,
+      qcqcn3: this.qcqcn3,
+      qcqcn5: this.qcqcn5,
+      qcqcn4: this.qcqcn4,
+      qcqcn6: this.qcqcn6,
+      qcqcn7: this.qcqcn7,
+      qcqcn8: this.qcqcn8,
+      qcqcn0: this.qcqcn0,
+      qcqcn1: this.qcqcn1,
+    }
+    window.parent.postMessage(questionForm, '*');
   }
 
 }

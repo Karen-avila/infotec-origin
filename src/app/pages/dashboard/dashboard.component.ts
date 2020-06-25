@@ -43,6 +43,7 @@ personal = {
   municipio: '',
   asentamiento: [],
 };
+questionForm = {};
 monte;
 hugo = '666';
 stepper;
@@ -134,12 +135,15 @@ constructor(
     'message',
     (msg) => {
       if (msg.data.latitude && msg.data.longitude) {
-        console.log('eventManager: ', msg.data);
         this.infoPersonal.calle = msg.data.name;
         this.infoPersonal.latitude = msg.data.latitude;
         this.infoPersonal.longitude = msg.data.longitude;
       }
       this.mapOk();
+      if (msg.data.questions) {
+        this.popup[0].open();
+        console.log(msg.data);
+      }
     }
   );
   this.route.params.subscribe( params => this.re = params);
