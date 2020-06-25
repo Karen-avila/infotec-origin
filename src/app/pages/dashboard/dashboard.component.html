@@ -406,6 +406,7 @@
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
                     <div class="input-field col s12 m2 l2">
+                    <span class="grey-text in">Codigo Postal</span>
                       <input
                         #cpNeg
                         (keyup)="searchCP(cpNeg.value, 'negocio')"
@@ -417,12 +418,13 @@
                         name="cpNeg"
                         maxlength="5"
                         [(ngModel)]="negocio.cp"
+                        placeholder="Codigo Postal"
                       />
-                      <label for="cpNeg">Codigo Postal</label>
+                      <!--<label for="cpNeg">Codigo Postal</label>-->
                       <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
                     <div class="input-field col s12 m5 l5">
-                      <select [(ngModel)]="negocio.estado" formControlName="entidadfedNeg" name="entidadfedNeg" id="entidadfedNeg" class="negocio validate">
+                      <!--<select [(ngModel)]="negocio.estado" formControlName="entidadfedNeg" name="entidadfedNeg" id="entidadfedNeg" class="negocio validate">
                         <option value="" disabled selected>Selecciona una opcion</option>
                         <option value="Aguascalientes">Aguascalientes</option>
                         <option value="Baja California">Baja California</option>
@@ -457,16 +459,22 @@
                         <option value="Yucatán">Yucatán</option>
                         <option value="Zacatecas">Zacatecas</option>
                       </select>
-                      <label>Entidad federativa</label>
-                      <div class="blue-text" *ngIf="f.entidadfedNeg.errors">Debes seleccionar una opción.</div>
+                      <label>Entidad federativa</label>-->
+                      <span class="grey-text in">Entidad federativa</span>
+                        <input type="text" [(ngModel)]="negocio.estado" formControlName="entidadfedNeg" name="entidadfedNeg" id="entidadfedNeg" class="validate" placeholder="Entidad federativa" disabled>
+                      <div class="blue-text" *ngIf="f.entidadfedNeg.errors"></div>
                     </div>
                     <div class="input-field col s12 m5 l5">
-                      <input [(ngModel)]="negocio.municipio" id="municipioNeg" type="text" formControlName="municipioNeg" name="municipioNeg" required class="negocio validate" />
-                      <label for="municipioNeg">Municipio</label>
+                        <span class="grey-text in">Municipio</span>
+                        <input type="text" [(ngModel)]="negocio.municipio" id="municipioNeg" formControlName="municipioNeg" name="municipioNeg" class="validate" placeholder="Municipio" disabled>
+                      <!--<input [(ngModel)]="negocio.municipio" id="municipioNeg" type="text" formControlName="municipioNeg" name="municipioNeg" required class="negocio validate" />
+                      <label for="municipioNeg">Municipio</label>-->
                       <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
                     <div class="input-field col s12 m6 l6">
-                        <select [(ngModel)]="negocio.tipo_asentamiento" formControlName="asentamientoTypeNeg" name="asentamientoTypeNeg" id="asentamientoTypeNeg" class="negocio validate">
+                        <span class="grey-text in">Tipo de asentamiento</span>
+                        <input type="text" [(ngModel)]="negocio.tipo_asentamiento" formControlName="asentamientoTypeNeg" name="asentamientoTypeNeg" id="asentamientoTypeNeg" class="validate" placeholder="Tipo de asentamiento" disabled>
+                        <!--<select [(ngModel)]="negocio.tipo_asentamiento" formControlName="asentamientoTypeNeg" name="asentamientoTypeNeg" id="asentamientoTypeNeg" class="negocio validate">
                           <option value="" disabled selected>Selecciona una opcion</option>
                           <option value="Barrio">Barrio</option>
                           <option value="Colonia">Colonia</option>
@@ -474,8 +482,8 @@
                           <option value="Pueblo">Pueblo</option>
                           <option value="Fraccionamiento">Fraccionamiento</option>
                         </select>
-                        <label>Tipo de asentamiento</label>
-                        <div class="blue-text" *ngIf="f.asentamientoTypeNeg.errors">Debes seleccionar una opción.</div>
+                        <label>Tipo de asentamiento</label>-->
+                        <div class="blue-text" *ngIf="f.asentamientoTypeNeg.errors"></div>
                     </div>
                     <div class="input-field col s12 m6 l6">
                       <select [(ngModel)]="negocio.asentamiento" formControlName="asentamientoNeg" name="asentamientoNeg" id="asentamientoNeg" class="negocio validate">
