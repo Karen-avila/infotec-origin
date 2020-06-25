@@ -248,24 +248,9 @@
                         <div class="blue-text" *ngIf="f.ocupacion.errors">Debes seleccionar una opción.</div>
                     </div>
 
-
-
-                    <div class="input-field col s12 m6 l6" (click)="viewMap()">
-                        <i class="material-icons prefix">near_me</i>
-                        <textarea id="domicilio" name="domicilio" formControlName="domicilio" required class="materialize-textarea"> </textarea>
-                        <label for="domicilio">Localiza tu domicilio particular</label>
-                        <div class="blue-text" *ngIf="f.domicilio.errors?.minlength ">Debe tener un mínimo 5 caracteres</div>
-                        <div class="blue-text" *ngIf="f.domicilio.errors?.maxlength ">Máximo 120 caracteres</div>
-                        <div class="red-text" *ngIf="form.errors?.isMatch">
-                        </div>
-                    </div>
-
-
-
-
                     <div class="input-field col s12 m8 l8">
                         <i class="material-icons prefix">house</i>
-                        <input [(ngModel)]="infoPersonal.calle" id="calle" type="text" formControlName="calle" required class="validate" name="calle" />
+                        <input id="calle" type="text" formControlName="calle" required class="validate" name="calle" />
                         <label for="calle">Calle</label>
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
@@ -280,12 +265,13 @@
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
                     <div class="input-field col s12 m2 l2">
-                        <input #cp (keyup)="searchCP(cp.value, 'personal')" id="cp" type="text" formControlName="cp" required class="validate" name="cp" maxlength="5" [(ngModel)]="personal.cp" />
-                        <label for="cp">Codigo Postal</label>
+                        <span class="grey-text in">Codigo Postal</span>
+                        <input #cp (keyup)="searchCP(cp.value, 'personal')" id="cp" type="text" formControlName="cp" required class="validate" name="cp" maxlength="5" [(ngModel)]="personal.cp" placeholder="Codigo Postal" />
+                        <!--<label for="cp">Codigo Postal</label>-->
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
                     <div class="input-field col s12 m5 l5">
-                        <select [(ngModel)]="personal.estado" formControlName="entidadfed" name="entidadfed" id="entidadfed" class="validate">
+                        <!--<select [(ngModel)]="personal.estado" formControlName="entidadfed" name="entidadfed" id="entidadfed" class="validate">
                         <option value="" disabled selected>Selecciona una opcion</option>
                         <option value="Aguascalientes">Aguascalientes</option>
                         <option value="Baja California">Baja California</option>
@@ -320,25 +306,31 @@
                         <option value="Yucatán">Yucatán</option>
                         <option value="Zacatecas">Zacatecas</option>
                       </select>
-                        <label>Entidad federativa de Nacimiento</label>
-                        <div class="blue-text" *ngIf="f.entidadfed.errors">Debes seleccionar una opción.</div>
+                      <label>Entidad federativa de Nacimiento</label>-->
+
+                        <span class="grey-text in">Entidad federativa de Nacimiento</span>
+                        <input type="text" [(ngModel)]="personal.estado" formControlName="entidadfed" name="entidadfed" id="entidadfed" class="validate" placeholder="Entidad federativa de Nacimiento" disabled>
+                        <div class="blue-text" *ngIf="f.entidadfed.errors"></div>
                     </div>
                     <div class="input-field col s12 m5 l5">
-                        <input [(ngModel)]="personal.municipio" id="municipio" type="text" formControlName="municipio" name="municipio" required class="validate" />
-                        <label for="municipio">Municipio</label>
+                        <span class="grey-text in">Municipio</span>
+                        <input [(ngModel)]="personal.municipio" id="municipio" type="text" formControlName="municipio" name="municipio" class="validate" placeholder="Municipio" disabled required class="validate" />
+                        <!--<label for="municipio">Municipio</label>-->
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
                     <div class="input-field col s12 m6 l6">
-                        <select [(ngModel)]="personal.tipo_asentamiento" formControlName="asentamientoType" name="asentamientoType" id="asentamientoType" class="validate">
+                        <!--<select [(ngModel)]="personal.tipo_asentamiento" formControlName="asentamientoType" name="asentamientoType" id="asentamientoType" class="validate">
                             <option value="" disabled selected>Selecciona una opcion</option>
                             <option value="Barrio">Barrio</option>
                             <option value="Colonia">Colonia</option>
                             <option value="Equipamiento">Equipamiento</option>
                             <option value="Pueblo">Pueblo</option>
                             <option value="Fraccionamiento">Fraccionamiento</option>
-                        </select>
-                        <label>Tipo de asentamiento</label>
-                        <div class="blue-text" *ngIf="f.asentamientoType.errors">Debes seleccionar una opción.</div>
+                        </select>-->
+                        <span class="grey-text in">Tipo de asentamiento</span>
+                        <input [(ngModel)]="personal.tipo_asentamiento" type="text" formControlName="asentamientoType" name="asentamientoType" id="asentamientoType" class="validate" placeholder="Tipo de asentamiento" disabled>
+                        <!--<label for="asentamientoType">Tipo de asentamiento</label>-->
+                        <div class="blue-text" *ngIf="f.asentamientoType.errors"></div>
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <select [(ngModel)]="personal.asentamiento" formControlName="asentamiento" name="asentamiento" id="asentamiento" class="validate">
@@ -349,6 +341,15 @@
                         <div class="blue-text" *ngIf="f.asentamiento.errors">Debes seleccionar una opción.</div>
                     </div>
 
+                    <div class="input-field col s12 m12 l12" (click)="viewMap()">
+                        <i class="material-icons prefix">near_me</i>
+
+                        <input [(ngModel)]="infoPersonal.calle" type="text" formControlName="domicilio" name="domicilio" id="domicilio" class="validate" placeholder="Localiza tu domicilio particular" disabled>
+                        <div class="blue-text" *ngIf="f.domicilio.errors?.minlength ">Debe tener un mínimo 5 caracteres</div>
+                        <div class="blue-text" *ngIf="f.domicilio.errors?.maxlength ">Máximo 120 caracteres</div>
+                        <div class="red-text" *ngIf="form.errors?.isMatch">
+                        </div>
+                    </div>
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">aspect_ratio</i>
@@ -393,12 +394,13 @@
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
                     <div class="input-field col s12 m2 l2">
-                        <input #cpNeg (keyup)="searchCP(cpNeg.value, 'negocio')" id="cpNeg" type="text" formControlName="cpNeg" required class="validate" name="cpNeg" maxlength="5" [(ngModel)]="negocio.cp" />
-                        <label for="cpNeg">Codigo Postal</label>
+                        <span class="grey-text in">Codigo Postal</span>
+                        <input #cpNeg (keyup)="searchCP(cpNeg.value, 'negocio')" id="cpNeg" type="text" formControlName="cpNeg" required class="validate" name="cpNeg" maxlength="5" [(ngModel)]="negocio.cp" placeholder="Codigo Postal" />
+                        <!--<label for="cpNeg">Codigo Postal</label>-->
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
                     <div class="input-field col s12 m5 l5">
-                        <select [(ngModel)]="negocio.estado" formControlName="entidadfedNeg" name="entidadfedNeg" id="entidadfedNeg" class="negocio validate">
+                        <!--<select [(ngModel)]="negocio.estado" formControlName="entidadfedNeg" name="entidadfedNeg" id="entidadfedNeg" class="negocio validate">
                         <option value="" disabled selected>Selecciona una opcion</option>
                         <option value="Aguascalientes">Aguascalientes</option>
                         <option value="Baja California">Baja California</option>
@@ -433,16 +435,22 @@
                         <option value="Yucatán">Yucatán</option>
                         <option value="Zacatecas">Zacatecas</option>
                       </select>
-                        <label>Entidad federativa</label>
-                        <div class="blue-text" *ngIf="f.entidadfedNeg.errors">Debes seleccionar una opción.</div>
+                      <label>Entidad federativa</label>-->
+                        <span class="grey-text in">Entidad federativa</span>
+                        <input type="text" [(ngModel)]="negocio.estado" formControlName="entidadfedNeg" name="entidadfedNeg" id="entidadfedNeg" class="validate" placeholder="Entidad federativa" disabled>
+                        <div class="blue-text" *ngIf="f.entidadfedNeg.errors"></div>
                     </div>
                     <div class="input-field col s12 m5 l5">
-                        <input [(ngModel)]="negocio.municipio" id="municipioNeg" type="text" formControlName="municipioNeg" name="municipioNeg" required class="negocio validate" />
-                        <label for="municipioNeg">Municipio</label>
+                        <span class="grey-text in">Municipio</span>
+                        <input type="text" [(ngModel)]="negocio.municipio" id="municipioNeg" formControlName="municipioNeg" name="municipioNeg" class="validate" placeholder="Municipio" disabled>
+                        <!--<input [(ngModel)]="negocio.municipio" id="municipioNeg" type="text" formControlName="municipioNeg" name="municipioNeg" required class="negocio validate" />
+                      <label for="municipioNeg">Municipio</label>-->
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
                     <div class="input-field col s12 m6 l6">
-                        <select [(ngModel)]="negocio.tipo_asentamiento" formControlName="asentamientoTypeNeg" name="asentamientoTypeNeg" id="asentamientoTypeNeg" class="negocio validate">
+                        <span class="grey-text in">Tipo de asentamiento</span>
+                        <input type="text" [(ngModel)]="negocio.tipo_asentamiento" formControlName="asentamientoTypeNeg" name="asentamientoTypeNeg" id="asentamientoTypeNeg" class="validate" placeholder="Tipo de asentamiento" disabled>
+                        <!--<select [(ngModel)]="negocio.tipo_asentamiento" formControlName="asentamientoTypeNeg" name="asentamientoTypeNeg" id="asentamientoTypeNeg" class="negocio validate">
                           <option value="" disabled selected>Selecciona una opcion</option>
                           <option value="Barrio">Barrio</option>
                           <option value="Colonia">Colonia</option>
@@ -450,8 +458,8 @@
                           <option value="Pueblo">Pueblo</option>
                           <option value="Fraccionamiento">Fraccionamiento</option>
                         </select>
-                        <label>Tipo de asentamiento</label>
-                        <div class="blue-text" *ngIf="f.asentamientoTypeNeg.errors">Debes seleccionar una opción.</div>
+                        <label>Tipo de asentamiento</label>-->
+                        <div class="blue-text" *ngIf="f.asentamientoTypeNeg.errors"></div>
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <select [(ngModel)]="negocio.asentamiento" formControlName="asentamientoNeg" name="asentamientoNeg" id="asentamientoNeg" class="negocio validate">
@@ -935,28 +943,22 @@
             </div>
         </li>
         <li class="step">
-
-
-
             <div class="step-title waves-effect waves-dark">Datos Socioeconómicos</div>
             <div class="step-content">
                 <div class="row">
                     <div class="col m2 s8 offset-s1">
                         <img class="responsive-img img0" src="../../../assets/5.png">
                     </div>
-
                     <!--pruebas-->
                     <app-question></app-question>
                     <!--pruebas-->
-
                     <div class="col s12">
                         <a class="waves-effect teal darken-4 btn previous-step left">Atras
                             <i class="material-icons prefix left">arrow_back_ios</i>
                             </a>
-                        <a class="waves-effect  teal darken-4 btn modal-trigger right" href="#modal1">
+                        <a class="waves-effect  teal darken-4 btn modal-trigger right" id="QuestionContinue" href="#modal1">
                             <i class="material-icons prefix right">send</i> Continuar
                         </a>
-
                     </div>
                 </div>
             </div>
