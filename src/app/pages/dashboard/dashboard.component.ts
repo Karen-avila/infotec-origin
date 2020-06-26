@@ -210,7 +210,7 @@ ngOnInit() {
       entidadfed : new FormControl(null, Validators.required),
       entidadfedNeg : new FormControl(null, Validators.required),
       pais : new FormControl(null, Validators.required),
-      ocupacion : new FormControl(null, Validators.required),
+      entidadfedn : new FormControl(null, Validators.required),
       // tslint:disable-next-line: max-line-length
       clabe_inter: new FormControl(null, [Validators.required, Validators.minLength(18), Validators.maxLength(18), Validators.pattern('[0-9]{18}')]),
       tel: new FormControl(null, [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
@@ -222,12 +222,12 @@ ngOnInit() {
       calle: new FormControl(null, Validators.required),
       ext: new FormControl(null, Validators.required),
       int: new FormControl(null, [Validators.minLength(0)]),
-      cp: new FormControl(null, Validators.required),
+      cp: new FormControl(null, [Validators.required, Validators.pattern('[0-9]{5}')]),
       municipio: new FormControl(null, Validators.required),
       asentamiento: new FormControl(null, Validators.required),
       asentamientoType: new FormControl(null, Validators.required),
       calleNeg: new FormControl(null, Validators.required),
-      cpNeg: new FormControl(null, Validators.required),
+      cpNeg: new FormControl(null, [Validators.required, Validators.pattern('[0-9]{5}')]),
       extNeg: new FormControl(null, Validators.required),
       intNeg: new FormControl(null, [Validators.minLength(0)]),
       municipioNeg: new FormControl(null, Validators.required),
@@ -295,7 +295,10 @@ ngOnInit() {
       rfcd: new FormControl(null, Validators.required),
       fiscal: new FormControl(null, Validators.required),
       autorizobc: new FormControl(false, Validators.required),
-      termcond: new FormControl(false, Validators.required)
+      termcond: new FormControl(false, Validators.required),
+      fiel: new FormControl(null, Validators.required),
+      cer: new FormControl(null, Validators.required),
+      password: new FormControl(null, Validators.required)
       // buro: new FormControl(null, Validators.required)
     });
     this.formFiel = new FormGroup({
