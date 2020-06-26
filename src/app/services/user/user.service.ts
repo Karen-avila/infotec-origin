@@ -76,7 +76,7 @@ export class UserService {
         localStorage.setItem('id',res.id);
         localStorage.setItem('email',res.email);
         localStorage.setItem('token',res.token);
-        localStorage.setItem('step','4');
+        localStorage.setItem('step','1');
         this.token = res.token;
         this.email = res.email;
         this.id = res.id;
