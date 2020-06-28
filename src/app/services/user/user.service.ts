@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 import { User } from '../../models/user.model';
 import { URL_SERVICES } from '../../config/config';
 
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 import swal from 'sweetalert';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +19,7 @@ export class UserService {
   token:string;
   email:string;
   id:string; 
+  values:any;
 
   constructor(public http:HttpClient, private router: Router) { 
     this.getStorage();
@@ -24,11 +27,38 @@ export class UserService {
 
   createUser(user:User){
     console.log("Service create user");
-    //let url = URL_SERVICES + '/create';
-    let url = URL_SERVICES + '/create';
-    console.log("Esto es lo que enviare a donde lo tenga que enviar",user);
+    let url = URL_SERVICES + '/registro'; //infotec
+    //let url = URL_SERVICES + '/user'; //local
+    const object = JSON.stringify(user);
+    /* const body = {"email":"gustavo.espindola@fintecheando.mx",
+                    "password":"passworD1",
+                    "rePassword":"passworD1"} */
+     
+
+    console.log("Esto es lo que enviare a donde lo tenga que enviar",object);
+
+    const headers = new HttpHeaders({'X-Gravitee-Api-Key':'20b1d990-c522-44dc-85bd-ef16d364abc4',
+    'Content-Type': 'application/json'})
       
-    return this.http.post(url,user);
+      
+/* 
+    return this.http.post(url,object,{headers}).map((res:any)=>{
+      console.log("creado",res)
+      swal("¡Felicidades!", "felicidades", "success");
+      
+    return true;
+  }).catch(err=>{
+    console.log(err.status);
+    return Observable.throw(err);
+  }); */
+  
+  return this.http.post<any>(url,object,{headers}).map(response => {
+    console.log(response);
+    return response;
+}, err => {
+    throw err;
+});
+
   }
 
   createUserL(user:User) {
@@ -66,7 +96,7 @@ export class UserService {
         localStorage.setItem('id',res.id);
         localStorage.setItem('email',res.email);
         localStorage.setItem('token',res.token);
-        localStorage.setItem('step','3');
+        localStorage.setItem('step','1');
         this.token = res.token;
         this.email = res.email;
         this.id = res.id;

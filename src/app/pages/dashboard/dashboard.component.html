@@ -117,6 +117,7 @@
                         <i class="material-icons prefix icon-gold">person</i>
                         <label class="title black-text"><b class="title col s12 m12 l12">Información Personal</b></label>
                         <p><br></p>
+
                     </div>
 
                     <div class="input-field col s12 m4">
@@ -237,6 +238,65 @@
                     </div>
 
                     <div class="input-field col s12 m6 l6">
+                        <select formControlName="entidadfedn" name="entidadfedn" id="entidadfedn" class="validate">
+                        <option value="" disabled selected>Selecciona una opcion</option>
+                        <option value="Aguascalientes">Aguascalientes</option>
+                        <option value="Baja California">Baja California</option>
+                        <option value="Baja California Sur">Baja California Sur</option>
+                        <option value="Campeche">Campeche</option>
+                        <option value="Coahuila de Zaragoza">Coahuila de Zaragoza</option>
+                        <option value="Colima">Colima</option>
+                        <option value="Chiapas">Chiapas</option>
+                        <option value="Chihuahua">Chihuahua</option>
+                        <option value="Ciudad de México">Ciudad de México</option>
+                        <option value="Durango">Durango</option>
+                        <option value="Guanajuato">Guanajuato</option>
+                        <option value="Guerrero">Guerrero</option>
+                        <option value="Hidalgo">Hidalgo</option>
+                        <option value="Jalisco">Jalisco</option>
+                        <option value="México">México</option>
+                        <option value="Michoacán de Ocampo">Michoacán de Ocampo</option>
+                        <option value="Morelos">Morelos</option>
+                        <option value="Nayarit">Nayarit</option>
+                        <option value="Nuevo León">Nuevo León</option>
+                        <option value="Oaxaca">Oaxaca</option>
+                        <option value="Puebla">Puebla</option>
+                        <option value="Querétaro">Querétaro</option>
+                        <option value="Quintana Roo">Quintana Roo</option>
+                        <option value="San Luis Potosí">San Luis Potosí</option>
+                        <option value="Sinaloa">Sinaloa</option>
+                        <option value="Sonora">Sonora</option>
+                        <option value="Tabasco">Tabasco</option>
+                        <option value="Tamaulipas">Tamaulipas</option>
+                        <option value="Tlaxcala">Tlaxcala</option>
+                        <option value="Veracruz de Ignacio de la Llave">Veracruz de Ignacio de la Llave</option>
+                        <option value="Yucatán">Yucatán</option>
+                        <option value="Zacatecas">Zacatecas</option>
+                      </select>
+                        <label>Entidad federativa de Nacimiento</label>
+                        <div class="blue-text" *ngIf="f.entidadfedn.errors"></div>
+                    </div>
+
+                    <div class="input-field col s12 m7 l7">
+                        <i class="material-icons prefix">aspect_ratio</i>
+                        <input id="clave_elector" type="text" formControlName="clave_elector" required class="validate" name="clave_elector" />
+                        <label for="clave_elector">Clave de Elector</label>
+                    </div>
+
+                    <div class="input-field col s12 m5 l5">
+                        <i class="material-icons prefix">aspect_ratio</i>
+                        <input id="curp" type="text" formControlName="curp" pattern="^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$"
+                            required class="validate" name="curp" />
+                        <label for="curp">CURP</label>
+                    </div>
+                    <!--<div class="input-field col s12 m6 l6" *ngIf="model=='pFisica'">-->
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">aspect_ratio</i>
+                        <input id="rfc" type="text" formControlName="rfc" pattern="^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$" required class="validate" name="rfc" />
+                        <label for="rfc">RFC</label>
+                    </div>
+
+                    <!--<div class="input-field col s12 m6 l6">
                         <select formControlName="ocupacion" name="ocupacion" id="ocupacion" class="validate">
                             <option value="" disabled selected>Selecciona una opcion</option>
                             <option value="1">Agricultor</option>
@@ -246,130 +306,114 @@
                         </select>
                         <label>Ocupación</label>
                         <div class="blue-text" *ngIf="f.ocupacion.errors">Debes seleccionar una opción.</div>
+                    </div>-->
+                    <div class="input-field col s12 m12 l12">
+                        <i class="material-icons prefix icon-gold">roofing</i>
+                        <label class="title black-text"><b class="title col s12 m12 l12">Dirección</b></label>
+                        <p><br></p>
                     </div>
 
-
-
-                    <div class="input-field col s12 m6 l6" (click)="viewMap()">
-
-                        <i class="material-icons prefix">near_me</i>
-                        <textarea id="domicilio" name="domicilio" formControlName="domicilio" required class="materialize-textarea"> </textarea>
-                        <label for="domicilio">Localiza tu domicilio particular</label>
-
-                        <div class="blue-text" *ngIf="f.domicilio.errors?.minlength ">Debe tener un mínimo 5 caracteres</div>
-                        <div class="blue-text" *ngIf="f.domicilio.errors?.maxlength ">Máximo 120 caracteres</div>
-                        <div class="red-text" *ngIf="form.errors?.isMatch">
-                            <!--  <p>Palabras altisonante</p> -->
-                        </div>
-
-                    </div>
-
-                    <div class="input-field col s12 m6 l6">
-                        <select formControlName="entidadfed" name="entidadfed" id="entidadfed" class="validate">
-                        <option value="" disabled selected>Selecciona una opcion</option>
-                        <option value="01">Aguascalientes</option>
-                        <option value="02">Baja California</option>
-                        <option value="03">Baja California Sur</option>
-                        <option value="04">Campeche</option>
-                        <option value="05">Coahuila de Zaragoza</option>
-                        <option value="06">Colima</option>
-                        <option value="07">Chiapas</option>
-                        <option value="08">Chihuahua</option>
-                        <option value="09">Ciudad de México</option>
-                        <option value="10">Durango</option>
-                        <option value="11">Guanajuato</option>
-                        <option value="12">Guerrero</option>
-                        <option value="13">Hidalgo</option>
-                        <option value="14">Jalisco</option>
-                        <option value="15">México</option>
-                        <option value="16">Michoacán de Ocampo</option>
-                        <option value="17">Morelos</option>
-                        <option value="18">Nayarit</option>
-                        <option value="19">Nuevo León</option>
-                        <option value="20">Oaxaca</option>
-                        <option value="21">Puebla</option>
-                        <option value="22">Querétaro</option>
-                        <option value="23">Quintana Roo</option>
-                        <option value="24">San Luis Potosí</option>
-                        <option value="25">Sinaloa</option>
-                        <option value="26">Sonora</option>
-                        <option value="27">Tabasco</option>
-                        <option value="28">Tamaulipas</option>
-                        <option value="29">Tlaxcala</option>
-                        <option value="30">Veracruz de Ignacio de la Llave</option>
-                        <option value="31">Yucatán</option>
-                        <option value="32">Zacatecas</option>
-                        
-                    </select>
-                        <label>Entidad federativa de Nacimiento</label>
-                        <div class="blue-text" *ngIf="f.entidadfed.errors">Debes seleccionar una opción.</div>
-                    </div>
-
-
-                    <div class="input-field col s12 m6 l6">
+                    <div class="input-field col s12 m8 l8">
                         <i class="material-icons prefix">house</i>
                         <input id="calle" type="text" formControlName="calle" required class="validate" name="calle" />
                         <label for="calle">Calle</label>
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
-
-                    <div class="input-field col s12 m3 l3">
-
+                    <div class="input-field col s12 m2 l2">
                         <input id="ext" type="text" formControlName="ext" required class="validate" name="ext" />
                         <label for="ext">Número exterior</label>
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
-
-                    <div class="input-field col s12 m3 l3">
-
+                    <div class="input-field col s12 m2 l2">
                         <input id="int" type="text" formControlName="int" name="int" />
                         <label for="int">Número interior</label>
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
-
-                    <div class="input-field col s12 m6 l6">
-                        <i class="material-icons prefix">house</i>
-                        <input id="municipio" type="text" formControlName="municipio" name="municipio" required class="validate" />
-                        <label for="municipio">Municipio</label>
+                    <div class="input-field col s12 m2 l2">
+                        <span class="grey-text in">Codigo Postal</span>
+                        <input #cp (keyup)="searchCP(cp.value, 'personal')" id="cp" type="number" formControlName="cp" required class="validate" name="cp" maxlength="5" [(ngModel)]="personal.cp" placeholder="Codigo Postal" />
+                        <!--<label for="cp">Codigo Postal</label>-->
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
+                    <div class="input-field col s12 m5 l5">
+                        <!--<select [(ngModel)]="personal.estado" formControlName="entidadfed" name="entidadfed" id="entidadfed" class="validate">
+                        <option value="" disabled selected>Selecciona una opcion</option>
+                        <option value="Aguascalientes">Aguascalientes</option>
+                        <option value="Baja California">Baja California</option>
+                        <option value="Baja California Sur">Baja California Sur</option>
+                        <option value="Campeche">Campeche</option>
+                        <option value="Coahuila de Zaragoza">Coahuila de Zaragoza</option>
+                        <option value="Colima">Colima</option>
+                        <option value="Chiapas">Chiapas</option>
+                        <option value="Chihuahua">Chihuahua</option>
+                        <option value="Ciudad de México">Ciudad de México</option>
+                        <option value="Durango">Durango</option>
+                        <option value="Guanajuato">Guanajuato</option>
+                        <option value="Guerrero">Guerrero</option>
+                        <option value="Hidalgo">Hidalgo</option>
+                        <option value="Jalisco">Jalisco</option>
+                        <option value="México">México</option>
+                        <option value="Michoacán de Ocampo">Michoacán de Ocampo</option>
+                        <option value="Morelos">Morelos</option>
+                        <option value="Nayarit">Nayarit</option>
+                        <option value="Nuevo León">Nuevo León</option>
+                        <option value="Oaxaca">Oaxaca</option>
+                        <option value="Puebla">Puebla</option>
+                        <option value="Querétaro">Querétaro</option>
+                        <option value="Quintana Roo">Quintana Roo</option>
+                        <option value="San Luis Potosí">San Luis Potosí</option>
+                        <option value="Sinaloa">Sinaloa</option>
+                        <option value="Sonora">Sonora</option>
+                        <option value="Tabasco">Tabasco</option>
+                        <option value="Tamaulipas">Tamaulipas</option>
+                        <option value="Tlaxcala">Tlaxcala</option>
+                        <option value="Veracruz de Ignacio de la Llave">Veracruz de Ignacio de la Llave</option>
+                        <option value="Yucatán">Yucatán</option>
+                        <option value="Zacatecas">Zacatecas</option>
+                      </select>
+                      <label>Entidad federativa de Nacimiento</label>-->
 
+                        <span class="grey-text in">Entidad federativa</span>
+                        <input type="text" [(ngModel)]="personal.estado" formControlName="entidadfed" name="entidadfed" id="entidadfed" class="validate" placeholder="Entidad federativa de Nacimiento" disabled>
+                        <div class="blue-text" *ngIf="f.entidadfed.errors"></div>
+                    </div>
+                    <div class="input-field col s12 m5 l5">
+                        <span class="grey-text in">Municipio</span>
+                        <input [(ngModel)]="personal.municipio" id="municipio" type="text" formControlName="municipio" name="municipio" class="validate" placeholder="Municipio" disabled required class="validate" />
+                        <!--<label for="municipio">Municipio</label>-->
+                        <div class="red-text" *ngIf="form.errors?.isMatch"></div>
+                    </div>
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="asentamientoType" name="asentamientoType" id="asentamientoType" class="validate">
+                        <!--<select [(ngModel)]="personal.tipo_asentamiento" formControlName="asentamientoType" name="asentamientoType" id="asentamientoType" class="validate">
                             <option value="" disabled selected>Selecciona una opcion</option>
                             <option value="Barrio">Barrio</option>
                             <option value="Colonia">Colonia</option>
                             <option value="Equipamiento">Equipamiento</option>
                             <option value="Pueblo">Pueblo</option>
-                        </select>
-                        <label>Tipo de asentamiento</label>
-                        <div class="blue-text" *ngIf="f.asentamientoType.errors">Debes seleccionar una opción.</div>
+                            <option value="Fraccionamiento">Fraccionamiento</option>
+                        </select>-->
+                        <span class="grey-text in">Tipo de asentamiento</span>
+                        <input [(ngModel)]="personal.tipo_asentamiento" type="text" formControlName="asentamientoType" name="asentamientoType" id="asentamientoType" class="validate" placeholder="Tipo de asentamiento" disabled>
+                        <!--<label for="asentamientoType">Tipo de asentamiento</label>-->
+                        <div class="blue-text" *ngIf="f.asentamientoType.errors"></div>
                     </div>
-
                     <div class="input-field col s12 m6 l6">
-                        <i class="material-icons prefix">house</i>
-                        <input id="asentamiento" type="text" formControlName="asentamiento" name="asentamiento" required class="validate" />
-                        <label for="asentamiento">Asentamiento</label>
-                        <div class="red-text" *ngIf="form.errors?.isMatch"></div>
+                        <select [(ngModel)]="personal.asentamiento" formControlName="asentamiento" name="asentamiento" id="asentamiento" class="validate">
+                        <option value="" disabled selected>Selecciona una opcion</option>
+                        <option [ngValue]="personal.asentamiento" *ngFor="let item of personal.asentamiento">{{item}}</option>
+                      </select>
+                        <label>Asentamiento</label>
+                        <div class="blue-text" *ngIf="f.asentamiento.errors">Debes seleccionar una opción.</div>
                     </div>
 
+                    <div class="input-field col s12 m12 l12" (click)="viewMap()">
+                        <i class="material-icons prefix">near_me</i>
 
-                    <div class="input-field col s12 m6 l6">
-                        <i class="material-icons prefix">aspect_ratio</i>
-                        <input id="clave_elector" type="text" formControlName="clave_elector" required class="validate" name="clave_elector" />
-                        <label for="clave_elector">Clave de Elector</label>
-                    </div>
-
-                    <div class="input-field col s12 m6 l6">
-                        <i class="material-icons prefix">aspect_ratio</i>
-                        <input id="curp" type="text" formControlName="curp" pattern="^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$"
-                            required class="validate" name="curp" />
-                        <label for="curp">CURP</label>
-                    </div>
-                    <div class="input-field col s12 m6 l6" *ngIf="model=='pFisica'">
-                        <i class="material-icons prefix">aspect_ratio</i>
-                        <input id="rfc" type="text" formControlName="rfc" pattern="^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$" required class="validate" name="rfc" />
-                        <label for="rfc">RFC</label>
+                        <input [(ngModel)]="infoPersonal.calle" type="text" formControlName="domicilio" name="domicilio" id="domicilio" class="validate" placeholder="Localiza tu domicilio particular" disabled>
+                        <div class="blue-text" *ngIf="f.domicilio.errors?.minlength ">Debe tener un mínimo 5 caracteres</div>
+                        <div class="blue-text" *ngIf="f.domicilio.errors?.maxlength ">Máximo 120 caracteres</div>
+                        <div class="red-text" *ngIf="form.errors?.isMatch">
+                        </div>
                     </div>
 
                     <div class="input-field col s12 m12 l12">
@@ -377,180 +421,146 @@
                         <label class="title black-text"><b class="title col s12 m12 l12">Información del Negocio</b></label>
                         <p><br></p>
                     </div>
-
-
-                    <div class="input-field col s12 m6 l6">
+                    <div class="input-field col s12 m8 l8">
                         <i class="material-icons prefix">house</i>
                         <input id="calleNeg" type="text" formControlName="calleNeg" required class="validate" name="calleNeg" />
                         <label for="calleNeg">Calle</label>
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
-
-                    <div class="input-field col s12 m3 l3">
-
+                    <div class="input-field col s12 m2 l2">
                         <input id="extNeg" type="text" formControlName="extNeg" required class="validate" name="extNeg" />
                         <label for="extNeg">Número exterior</label>
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
-
-                    <div class="input-field col s12 m3 l3">
-
+                    <div class="input-field col s12 m2 l2">
                         <input id="intNeg" type="text" formControlName="intNeg" name="intNeg" />
                         <label for="intNeg">Número interior</label>
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
-
-                    <div class="input-field col s12 m6 l6">
-                        <select formControlName="entidadfedNeg" name="entidadfedNeg" id="entidadfedNeg" class="validate">
+                    <div class="input-field col s12 m2 l2">
+                        <span class="grey-text in">Codigo Postal</span>
+                        <input #cpNeg (keyup)="searchCP(cpNeg.value, 'negocio')" id="cpNeg" type="number" formControlName="cpNeg" required class="validate" name="cpNeg" maxlength="5" [(ngModel)]="negocio.cp" placeholder="Codigo Postal" />
+                        <!--<label for="cpNeg">Codigo Postal</label>-->
+                        <div class="red-text" *ngIf="form.errors?.isMatch"></div>
+                    </div>
+                    <div class="input-field col s12 m5 l5">
+                        <!--<select [(ngModel)]="negocio.estado" formControlName="entidadfedNeg" name="entidadfedNeg" id="entidadfedNeg" class="negocio validate">
                         <option value="" disabled selected>Selecciona una opcion</option>
-                        <option value="01">Aguascalientes</option>
-                        <option value="02">Baja California</option>
-                        <option value="03">Baja California Sur</option>
-                        <option value="04">Campeche</option>
-                        <option value="05">Coahuila de Zaragoza</option>
-                        <option value="06">Colima</option>
-                        <option value="07">Chiapas</option>
-                        <option value="08">Chihuahua</option>
-                        <option value="09">Ciudad de México</option>
-                        <option value="10">Durango</option>
-                        <option value="11">Guanajuato</option>
-                        <option value="12">Guerrero</option>
-                        <option value="13">Hidalgo</option>
-                        <option value="14">Jalisco</option>
-                        <option value="15">México</option>
-                        <option value="16">Michoacán de Ocampo</option>
-                        <option value="17">Morelos</option>
-                        <option value="18">Nayarit</option>
-                        <option value="19">Nuevo León</option>
-                        <option value="20">Oaxaca</option>
-                        <option value="21">Puebla</option>
-                        <option value="22">Querétaro</option>
-                        <option value="23">Quintana Roo</option>
-                        <option value="24">San Luis Potosí</option>
-                        <option value="25">Sinaloa</option>
-                        <option value="26">Sonora</option>
-                        <option value="27">Tabasco</option>
-                        <option value="28">Tamaulipas</option>
-                        <option value="29">Tlaxcala</option>
-                        <option value="30">Veracruz de Ignacio de la Llave</option>
-                        <option value="31">Yucatán</option>
-                        <option value="32">Zacatecas</option>
+                        <option value="Aguascalientes">Aguascalientes</option>
+                        <option value="Baja California">Baja California</option>
+                        <option value="Baja California Sur">Baja California Sur</option>
+                        <option value="Campeche">Campeche</option>
+                        <option value="Coahuila de Zaragoza">Coahuila de Zaragoza</option>
+                        <option value="Colima">Colima</option>
+                        <option value="Chiapas">Chiapas</option>
+                        <option value="Chihuahua">Chihuahua</option>
+                        <option value="Ciudad de México">Ciudad de México</option>
+                        <option value="Durango">Durango</option>
+                        <option value="Guanajuato">Guanajuato</option>
+                        <option value="Guerrero">Guerrero</option>
+                        <option value="Hidalgo">Hidalgo</option>
+                        <option value="Jalisco">Jalisco</option>
+                        <option value="México">México</option>
+                        <option value="Michoacán de Ocampo">Michoacán de Ocampo</option>
+                        <option value="Morelos">Morelos</option>
+                        <option value="Nayarit">Nayarit</option>
+                        <option value="Nuevo León">Nuevo León</option>
+                        <option value="Oaxaca">Oaxaca</option>
+                        <option value="Puebla">Puebla</option>
+                        <option value="Querétaro">Querétaro</option>
+                        <option value="Quintana Roo">Quintana Roo</option>
+                        <option value="San Luis Potosí">San Luis Potosí</option>
+                        <option value="Sinaloa">Sinaloa</option>
+                        <option value="Sonora">Sonora</option>
+                        <option value="Tabasco">Tabasco</option>
+                        <option value="Tamaulipas">Tamaulipas</option>
+                        <option value="Tlaxcala">Tlaxcala</option>
+                        <option value="Veracruz de Ignacio de la Llave">Veracruz de Ignacio de la Llave</option>
+                        <option value="Yucatán">Yucatán</option>
+                        <option value="Zacatecas">Zacatecas</option>
+                      </select>
+                      <label>Entidad federativa</label>-->
+                        <span class="grey-text in">Entidad federativa</span>
+                        <input type="text" [(ngModel)]="negocio.estado" formControlName="entidadfedNeg" name="entidadfedNeg" id="entidadfedNeg" class="validate" placeholder="Entidad federativa" disabled>
+                        <div class="blue-text" *ngIf="f.entidadfedNeg.errors"></div>
+                    </div>
+                    <div class="input-field col s12 m5 l5">
+                        <span class="grey-text in">Municipio</span>
+                        <input type="text" [(ngModel)]="negocio.municipio" id="municipioNeg" formControlName="municipioNeg" name="municipioNeg" class="validate" placeholder="Municipio" disabled>
+                        <!--<input [(ngModel)]="negocio.municipio" id="municipioNeg" type="text" formControlName="municipioNeg" name="municipioNeg" required class="negocio validate" />
+                      <label for="municipioNeg">Municipio</label>-->
+                        <div class="red-text" *ngIf="form.errors?.isMatch"></div>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <span class="grey-text in">Tipo de asentamiento</span>
+                        <input type="text" [(ngModel)]="negocio.tipo_asentamiento" formControlName="asentamientoTypeNeg" name="asentamientoTypeNeg" id="asentamientoTypeNeg" class="validate" placeholder="Tipo de asentamiento" disabled>
+                        <!--<select [(ngModel)]="negocio.tipo_asentamiento" formControlName="asentamientoTypeNeg" name="asentamientoTypeNeg" id="asentamientoTypeNeg" class="negocio validate">
+                          <option value="" disabled selected>Selecciona una opcion</option>
+                          <option value="Barrio">Barrio</option>
+                          <option value="Colonia">Colonia</option>
+                          <option value="Equipamiento">Equipamiento</option>
+                          <option value="Pueblo">Pueblo</option>
+                          <option value="Fraccionamiento">Fraccionamiento</option>
                         </select>
-                        <label>Entidad federativa</label>
-                        <div class="blue-text" *ngIf="f.entidadfedNeg.errors">Debes seleccionar una opción.</div>
+                        <label>Tipo de asentamiento</label>-->
+                        <div class="blue-text" *ngIf="f.asentamientoTypeNeg.errors"></div>
                     </div>
-
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="asentamientoTypeNeg" name="asentamientoTypeNeg" id="asentamientoTypeNeg" class="validate">
-                                <option value="" disabled selected>Selecciona una opcion</option>
-                                <option value="Barrio">Barrio</option>
-                                <option value="Colonia">Colonia</option>
-                                <option value="Equipamiento">Equipamiento</option>
-                                <option value="Pueblo">Pueblo</option>
-                            </select>
-                        <label>Tipo de asentamiento</label>
-                        <div class="blue-text" *ngIf="f.asentamientoTypeNeg.errors">Debes seleccionar una opción.</div>
+                        <select [(ngModel)]="negocio.asentamiento" formControlName="asentamientoNeg" name="asentamientoNeg" id="asentamientoNeg" class="negocio validate">
+                        <option value="" disabled selected>Selecciona una opcion</option>
+                        <option [ngValue]="negocio.asentamiento" *ngFor="let item of negocio.asentamiento">{{item}}</option>
+                      </select>
+                        <label>Asentamiento</label>
+                        <div class="blue-text" *ngIf="f.asentamientoNeg.errors">Debes seleccionar una opción.</div>
                     </div>
-
-                    <div class="input-field col s12 m6 l6">
-                        <i class="material-icons prefix">house</i>
-                        <input id="municipioNeg" type="text" formControlName="municipioNeg" name="municipioNeg" required class="validate" />
-                        <label for="municipioNeg">Municipio</label>
-                        <div class="red-text" *ngIf="form.errors?.isMatch"></div>
-                    </div>
-
-
-
-                    <div class="input-field col s12 m6 l6">
-                        <i class="material-icons prefix">house</i>
-                        <input id="asentamientoNeg" type="text" formControlName="asentamientoNeg" name="asentamientoNeg" required class="validate" />
-                        <label for="asentamientoNeg">Asentamiento</label>
-                        <div class="red-text" *ngIf="form.errors?.isMatch"></div>
-                    </div>
-
-
                     <div class="input-field col s12 m12 l12">
                         <i class="material-icons prefix icon-gold">work_outline</i>
                         <label class="title black-text"><b class="title col s12 m12 l12">Actividad del Negocio</b></label>
                         <p><br></p>
                     </div>
-
-
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="sector" name="sector" id="sector" class="validate">
-                                <option value="" disabled selected>Selecciona una opcion</option>
-                                <option value="1">Minería</option>
-                                <option value="2">Construcción</option>
-                                <option value="3">Agricultura, cría y exportación de animales, aprovechamiento forestal, pezca y caza  </option>
-                            </select>
-                        <label>Sector</label>
+                        <select formControlName="sector" name="sector" id="sector" class="validate" [(ngModel)]="sector" (ngModelChange)="activitieChange($event, 'sector', sector=sector)">
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option [ngValue]="item.codigo" *ngFor="let item of activities.sectorList">{{item.titulo}}</option>
+                      </select>
+                        <label>Sector: <!--{{sector}}--></label>
+                        <div class="blue-text" *ngIf="f.sector.errors">Debes seleccionar una opción.</div>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <select formControlName="subsector" name="subsector" id="subsector" class="validate" [(ngModel)]="subsector" (ngModelChange)="activitieChange($event, 'subsector', sector=sector, subsector=subsector)">
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option [ngValue]="item.codigo" *ngFor="let item of activities.subsectorList">{{item.titulo}}</option>
+                      </select>
+                        <label>Subsector: <!--{{subsector}}--></label>
+                        <div class="blue-text" *ngIf="f.sector.errors">Debes seleccionar una opción.</div>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <select formControlName="rama" name="rama" id="rama" class="validate" [(ngModel)]="rama" (ngModelChange)="activitieChange($event, 'rama', sector=sector, subsector=subsector, rama=rama)">
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option [ngValue]="item.codigo" *ngFor="let item of activities.ramaList">{{item.titulo}}</option>
+                      </select>
+                        <label>Rama: <!--{{rama}}--></label>
+                        <div class="blue-text" *ngIf="f.sector.errors">Debes seleccionar una opción.</div>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <select formControlName="subrama" name="subrama" id="subrama" class="validate" [(ngModel)]="subrama" (ngModelChange)="activitieChange($event, 'subrama', sector=sector, subsector=subsector, rama=rama, subrama=subrama)">
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option [ngValue]="item.codigo" *ngFor="let item of activities.subramaList">{{item.titulo}}</option>
+                      </select>
+                        <label>Subrama: <!--{{subrama}}--></label>
+                        <div class="blue-text" *ngIf="f.sector.errors">Debes seleccionar una opción.</div>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <select formControlName="giro" name="giro" id="giro" class="validate" [(ngModel)]="giro">
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option [ngValue]="item.codigo" *ngFor="let item of activities.giroList">{{item.titulo}}</option>
+                      </select>
+                        <label>Giro: <!--{{giro}}--></label>
                         <div class="blue-text" *ngIf="f.sector.errors">Debes seleccionar una opción.</div>
                     </div>
 
-                    <div class="input-field col s12 m6 l6">
-                        <select formControlName="subsector" name="subsector" id="subsector" class="validate">
-                                <option value="" disabled selected>Selecciona una opcion</option>
-                                <option value="1">Extracción de petróleo y gas</option>
-                                <option value="2">Minería de minerales metálicos y no metálicos, excepto petroléo y gas</option>
-                                <option value="3">Servicios relacionados con la míneria</option>
-                                <option value="4">Construcción de obras de ingeniería civil</option>
-                                <option value="5">Edificación</option>
-                                <option value="6">Agricultura</option>
-                                <option value="7">Aprovechamiento forestal</option>
-                                <option value="8">Pesca, caza y captura</option>
-                            </select>
-                        <label>Subsector</label>
-                        <div class="blue-text" *ngIf="f.subsector.errors">Debes seleccionar una opción.</div>
-                    </div>
 
-                    <div class="input-field col s12 m6 l6">
-                        <select formControlName="rama" name="rama" id="rama" class="validate">
-                                <option value="" disabled selected>Selecciona una opcion</option>
-                                <option value="1">Caza y captura</option>
-                                <option value="2">Pesca</option>
-                                <option value="3">Extracción de petróleo y gas</option>
-                                <option value="4">Edificación no residencial</option>
-                                <option value="5">Edificación residencial</option>
-                                <option value="6">Construcción de vías de comunicación</option>
-                                <option value="7">Servicios relacionados con la minería</option>
-                            </select>
-                        <label>Rama</label>
-                        <div class="blue-text" *ngIf="f.rama.errors">Debes seleccionar una opción.</div>
-                    </div>
 
-                    <div class="input-field col s12 m6 l6">
-                        <select formControlName="subrama" name="subrama" id="subrama" class="validate">
-                                <option value="" disabled selected>Selecciona una opcion</option>
-                                <option value="1">Minería de otros minerales no metálicos</option>
-                                <option value="2">Servicios relacionados con la agricultura</option>
-                                <option value="3">Acuicultura</option>
-                                <option value="4">Cunicultura y explotación de animales con pelaje fino</option>
-                                <option value="5">Explotación de équidos</option>
-                                <option value="6">Captación, tratamiento y suministro de agua</option>
-                                <option value="7">Suministro de gas natural por ductos al consumidor final</option>
-                                <option value="8">Transmisión, distribución y comercialización de energía eléctrica</option>
-                            </select>
-                        <label>Subrama</label>
-                        <div class="blue-text" *ngIf="f.subrama.errors">Debes seleccionar una opción.</div>
-                    </div>
-
-                    <div class="input-field col s12 m6 l6">
-                        <select formControlName="giro" name="giro" id="giro" class="validate">
-                                <option value="" disabled selected>Selecciona una opcion</option>
-                                <option value="1">Construcción de obras para telecomunicaciones</option>
-                                <option value="2">Construcción de plantas de refinería y petroquímica</option>
-                                <option value="3">Construcción de sistemas de riego agrícola</option>
-                                <option value="4">Extracción de petróleo y gas</option>
-                                <option value="5">Minería de carbón mineral</option>
-                                <option value="6">Minería de oro</option>
-                                <option value="7">Minería de plata</option>
-                                <option value="8">Explotación de gallinas para la producción de huevo fértil</option>
-                                <option value="9">Explotación de guajolotes o pavos</option>
-                                <option value="10">Explotación de pollos para la producción de carne</option>
-                            </select>
-                        <label>Giro</label>
-                        <div class="blue-text" *ngIf="f.giro.errors">Debes seleccionar una opción.</div>
-                    </div>
 
                     <div class="input-field col s12 m12 l12">
                         <i class="material-icons prefix icon-gold">people_outline</i>
@@ -697,7 +707,7 @@
                         <div class="input-field col s12 m12 l12">
                             <label><input class="with-gap teal darken-4" formControlName="aprivacidad" name="aprivacidad" type="checkbox" [(ngModel)]="aviso"/>
                             <span>
-                        
+
                         <label class="waves-effect modal-trigger subrayar" href="#aviso">
                             <span class="blue-text text-darken-4" style = "font-size: 14px;">Acepto Aviso de Privacidad</span>
                         </label>
@@ -842,12 +852,12 @@
                         <!--   <div class="col s12 m2 l2">
                         <span>Score de Buro de Crédito </span>
                         <a (click)="sweetHome('2')"><i class="material-icons prefix icon-black">help_outline</i></a>
-                    </div>  
+                    </div>
                     <div class="file-field input-field col s12 m4 l4">
                         <div class="teal darken-4 btn">
                             <i class="material-icons right">attachment</i>cargar
                             <input type="file" accept="application/pdf" formControlName="buro" id="buro" required class="validate">
-                        </div> 
+                        </div>
                         <div class="col s1 m1 l1" *ngIf="doc.buro.errors?.required">
                             <i class="material-icons icon-red">error_outline</i>
                         </div>
@@ -911,26 +921,59 @@
                             </div>
                         </div>
 
-
+                        <br><br>
 
 
                         <div class="input-field col s12 m12 l12">
-                            <label><span><i class="material-icons icon-red left">error_outline</i>
-                                Son requeridos todos los archivos para poder continuar con el proceso.
-                            </span></label>
+                            <i class="material-icons prefix icon-gold">vpn_key</i>
+                            <label class="title black-text"><b class="title col s12 m12 l12">Firma de Documentos</b></label>
+                            <p><br></p>
+                            <p>Selecciona los archivos de tu firma electrónica avanzada (FIEL)</p>
+                        </div>
+
+                        <div class="file-field input-field col s12 m6 l6">
+                            <div class="teal darken-4 btn">
+                                <i class="material-icons right">attachment</i>Archivo .key
+                                <input type="file" (change)="ValidateSize('fiel')" accept=".key" formControlName="fiel" id="fiel" required class="validate">
+
+                                <div class="red-text" *ngIf="fi.fiel.errors?.required">
+                                </div>
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text">
+                            </div>
+                        </div>
+                        <div>
+
+                            <div class="file-field input-field col s12 m6 l6">
+                                <div class="teal darken-4 btn">
+                                    <i class="material-icons right">attachment</i>Archivo .cer
+                                    <input type="file" (change)="ValidateSize('cer')" accept=".cer" formControlName="cer" id="cer" required class="validate">
+
+                                    <div class="red-text" *ngIf="fi.cer.errors?.required">
+                                    </div>
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input-field col s12 m12 l12">
+                            <i class="material-icons prefix">lock</i>
+                            <input id="password" type="password" name="password" formControlName="password" required class="validate">
+                            <label for="password">Contraseña de tu FIEL</label>
+                            <div class="col s1 m1 l1" *ngIf="fi.password.errors?.required"></div>
                         </div>
 
                     </div>
-                    <br><br>
 
-                    <!--<a class="waves-effect  teal darken-4 btn modal-trigger right" href="#fiel">
-                        <i class="material-icons prefix right">send</i> Firmar Documentos
-                    </a>-->
+                    <div class="input-field col s12 m12 l12">
+                        <label><span><i class="material-icons icon-red left">error_outline</i>
+                            Son requeridos todos los archivos para poder continuar con el proceso.
+                        </span></label>
+                    </div><br><br>
 
-                    <div class="input-field col s12 m4 offset-m6 l4 offset-l6">
-                        <a class="waves-effect teal darken-4 btn modal-trigger" href="#sat">
-                            <i class="material-icons right">send</i>Firmar Documentos</a>
-                    </div>
 
                     <div class="row">
 
@@ -949,9 +992,9 @@
                         <br>
                         <div class="row">
                             <div class="input-field col s12 m12 l12">
-                                <label> <input class="with-gap teal darken-4" formControlName="termcond" name="termcond" type="checkbox" [(ngModel)]="term"/> 
+                                <label> <input class="with-gap teal darken-4" formControlName="termcond" name="termcond" type="checkbox" [(ngModel)]="term"/>
                             <span>
-                        
+
                         <label class="waves-effect modal-trigger subrayar" href="#terminos">
                             <span class="blue-text text-darken-4" style = "font-size: 14px;">Acepto Terminos y condiciones</span>
                         </label>
@@ -968,7 +1011,7 @@
                                 </a>
                             <button class="waves-effect teal darken-4 btn right " type="submit">Continuar <!--revisar nextstep igual en ts-->
                                     <i class="material-icons prefix right">arrow_forward_ios</i>
-                                </button>
+                            </button>
                         </div>
                     </div>
 
@@ -977,29 +1020,23 @@
             </div>
         </li>
         <li class="step">
-
-
-
             <div class="step-title waves-effect waves-dark">Datos Socioeconómicos</div>
             <div class="step-content">
                 <div class="row">
                     <div class="col m2 s8 offset-s1">
                         <img class="responsive-img img0" src="../../../assets/5.png">
                     </div>
-
                     <!--pruebas-->
                     <app-question></app-question>
                     <!--pruebas-->
-
-                    <div class="col s12">
+                    <!--<div class="col s12">
                         <a class="waves-effect teal darken-4 btn previous-step left">Atras
                             <i class="material-icons prefix left">arrow_back_ios</i>
                             </a>
-                        <a class="waves-effect  teal darken-4 btn modal-trigger right" href="#modal1">
+                        <a class="waves-effect  teal darken-4 btn modal-trigger right" id="QuestionContinue" href="#modal1">
                             <i class="material-icons prefix right">send</i> Continuar
                         </a>
-
-                    </div>
+                    </div>-->
                 </div>
             </div>
 
@@ -1021,7 +1058,7 @@
                                 <div class="file-field input-field col s12 m4 l4">
                                     <div class="teal darken-4 btn">
                                         <i class="material-icons right">attachment</i>Archivo .key
-                                        <input type="file" (change)="ValidateSize('fiel')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="fiel" id="fiel" required class="validate">
+                                        <input type="file" (change)="ValidateSize('fiel')" accept=".key" formControlName="fiel" id="fiel" required class="validate">
 
                                         <div class="red-text" *ngIf="fi.fiel.errors?.required">Archivo requerido</div>
                                     </div>
@@ -1033,7 +1070,7 @@
                                 <div class="file-field input-field col s12 m4 l4">
                                     <div class="teal darken-4 btn">
                                         <i class="material-icons right">attachment</i>Archivo .cer
-                                        <input type="file" (change)="ValidateSize('cer')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="cer" id="cer" required class="validate">
+                                        <input type="file" (change)="ValidateSize('cer')" accept=".cer" formControlName="cer" id="cer" required class="validate">
 
                                         <div class="red-text" *ngIf="fi.cer.errors?.required">Archivo requerido</div>
                                     </div>
@@ -1057,10 +1094,12 @@
                                 </div>
 
                                 <div class="col s12">
-
-                                    <a routerLink="/home" class="waves-effect  teal darken-4 btn right ">
-                                        <i class="material-icons prefix right">send</i> Terminar
-                                    </a>
+                                    <button class="waves-effect teal darken-4 btn right" type="submit">Terminar <!--revisar nextstep igual en ts-->
+                                    <i class="material-icons prefix right">arrow_forward_ios</i>
+                                </button>
+                                    <!--<a routerLink="/home" class="waves-effect  teal darken-4 btn right ">
+                                    <i class="material-icons prefix right">send</i> Terminar
+                                </a>-->
 
                                 </div>
                             </form>
@@ -1076,9 +1115,11 @@
                         </div>
                     </div>
                     <!--<div class="col s12">
+
                         <a routerLink="/home" class="waves-effect  teal darken-4 btn right ">
                             <i class="material-icons prefix right">send</i> Terminar
                         </a>
+
                     </div>-->
                 </div>
             </div>
@@ -1111,7 +1152,7 @@
     </div>
 </div>
 
-<div id="sat" class="modal">
+<!--<div id="sat" class="modal">
     <div class="modal-content">
 
         <h4>Selecciona los archivos de tu firma electrónica avanzada (FIEL)</h4>
@@ -1170,12 +1211,12 @@
         </div>
 
     </div>
-</div>
+</div>-->
 
 
 <div id="aviso" class="modal">
     <div class="modal-content justificacion">
-        <p>En cumplimiento de lo dispuesto en los artículos 68 fracciones II, III, IV y VI, de la Ley General de Transparencia y Acceso a la Información Pública (LGTAIP), 3º, fracción II, 16, 17, 18, 21, 25, 26, 27, 28, 67, 68, 69 y 70, de la Ley General
+        <p>En cumplimiento de lo dispuesto en los artículos 68 fracciones II, III, IV y VI, de la Ley General de Transparencia y Acceso a la Información Pública (LGTAIP), 3º, fracción II, 16, 17, 18, 21, 25, 26, 27, 28, 67, 68, 69 y 70,  de la Ley General
             de Protección de Datos Personales en Posesión de Sujetos Obligados (LGPDPPSO) y los numerales 9 fracción II, 11, fracción II, 15 y 26 al 45 de los Lineamientos Generales de Protección de Datos Personales para el Sector Público (en lo sucesivo
             los "Lineamientos"), se pone a disposición de los usuarios el siguiente:
         </p>
@@ -1434,7 +1475,7 @@
                 <p>Al utilizar el sitio me obligo a cumplir con los términos y condiciones de su uso, establecidos en el presente documento, reconozco haber leído, entendido y estar de acuerdo en sujetarme a los mismos, por lo que, al acceder estoy de acuerdo
                     en acatar lo anterior.</p>
                 <p>La información y los servicios que ofrece el Banco del Bienestar, S.N.C., I.B.D. (Banco del Bienestar), a través de su sitio, hacen referencia exclusivamente, a la normatividad que los rige en los Estados Unidos Mexicanos y son formulados
-                    para las operaciones que se realicen en su territorio.</p>
+                    para las operaciones que se realicen en su territorio.</p>
                 <p>Por el hecho de hacer uso de la información y hacer uso de los servicios, el usuario expresa su aceptación y está de acuerdo con los términos y condiciones del uso del sitio de Internet del Banco del Bienestar, así como con las modificaciones
                     que al mismo, en su caso, se realicen. </p>
                 <p>Este sitio, la información, los materiales descritos en él y el software que se proporciona, son presentados “como son”, “en el estado en que se encuentran” y están disponibles sin garantía alguna, ya sea expresa o tácita, incluyendo sin
@@ -1448,13 +1489,13 @@
                 <p><b>Usos permitidos.</b></p>
 
                 <P>El uso del sitio es bajo la exclusiva responsabilidad del usuario.</P>
-                <p>El Banco del Bienestar autoriza al usuario a visualizar y descargar los materiales contenidos en el sitio solamente para su uso personal y no para un uso comercial.</p>
+                <p>El Banco del Bienestar autoriza al usuario a visualizar y descargar los materiales contenidos en el sitio solamente para su uso personal y no para un uso comercial.</p>
                 <p>1) El Usuario deberá conservar en todas las copias de los materiales descargados, todos los avisos sobre derechos de autor y propiedad intelectual de los materiales, contenidos en los mismos;</p>
                 <p>2) El usuario no deberá modificar, reproducir o mostrar pública o comercialmente los materiales, ni podrá distribuir o utilizarlos con algún propósito público o comercial;</p>
                 <p>3) El usuario no deberá transferir los materiales a ningún tercero.</p>
-                <p>Este sitio, incluyendo todos los materiales contenidos en el mismo, se encuentran protegidos por la Ley Federal del Derecho de Autor de los Estados Unidos Mexicanos. El Banco del Bienestar no le concede al usuario derecho expreso o implícito
+                <p>Este sitio, incluyendo todos los materiales contenidos en el mismo, se encuentran protegidos por la Ley Federal del Derecho de Autor de los Estados Unidos Mexicanos. El Banco del Bienestar no le concede al usuario derecho expreso o implícito
                     sobre alguna patente, marca registrada, nombre comercial, aviso comercial, secreto industrial o derecho de autor.</p>
-                <p>Queda terminantemente prohibida la utilización de tales elementos, su reproducción, comunicación y/o distribución con fines comerciales o lucrativos, así como su modificación, alteración, o descompilación. </p>
+                <p>Queda terminantemente prohibida la utilización de tales elementos, su reproducción, comunicación y/o distribución con fines comerciales o lucrativos, así como su modificación, alteración, o descompilación. </p>
                 <p>El usuario no podrá modificar, copiar, reproducir, volver a publicar, cargar, exponer, transmitir o distribuir de cualquier forma el contenido disponible a través del servicio y los sitios asociados, incluidos el código y el software.</p>
 
                 <p><b>Marcas y derechos de autor.</b></p>
@@ -1509,8 +1550,8 @@
 
                 <p><b>Claves de acceso y claves de identificación.</b></p>
 
-                <p>Con el fin de cumplir con las disposiciones que rigen la protección de datos personales, es necesario que el usuario realice el alta de su cuenta; de la cual el usuario es responsable único y final, debiendo tomar todas las medidas que
-                    resulten necesarias para mantener en secreto, tanto la clave de usuario como la contraseña con las cuales tenga acceso a los servicios que ofrece el Banco del Bienestar a través del sitio.</p>
+                <p>Con el fin de cumplir con las disposiciones que rigen la protección de datos personales, es necesario que el usuario realice el alta de su cuenta; de la cual el usuario es responsable único y final, debiendo tomar todas las medidas que
+                    resulten necesarias para mantener en secreto, tanto la clave de usuario como la contraseña con las cuales tenga acceso a los servicios que ofrece el Banco del Bienestar a través del sitio.</p>
                 <p>El usuario se compromete a hacer un uso diligente y a mantener en secreto la clave de usuario y la contraseña mediante las cuales puede realizar operaciones en el sitio.</p>
                 <p>El usuario libera de manera absoluta y sin limitación alguna al Banco del Bienestar de cualquier tipo de responsabilidad, civil, penal, administrativa, así como de los daños y perjuicios o cualquier otra que pudiera ser ocasionados por
                     el mal uso que le dé a su cuenta y contraseña, o que se generen por no haber adoptado todas las medidas necesarias para su resguardo y confidencialidad.</p>
@@ -1569,10 +1610,10 @@
                 <p>El uso del sitio constituirá la aceptación del usuario de las disposiciones aplicables al sitio.</p>
                 <p>El Banco del Bienestar se reserva el derecho de modificar el presente aviso legal en cualquier tiempo, mediante simple publicación de las nuevas disposiciones aplicables, siendo el usuario responsable de revisar el aviso legal periódicamente.</p>
 
-                <p><b>Legislación y normatividad aplicable.</b></p>
+                <p><b>Legislación y normatividad aplicable.</b></p>
                 <p>El servicio del sitio es controlado por el Banco del Bienestar desde sus oficinas corporativas en la Ciudad de México, dentro de los Estados Unidos Mexicanos. Al ingresar al sitio, el usuario y el Banco del Bienestar aceptan someterse
                     a la legislación aplicable en los Estados Unidos Mexicanos, sin tomar en cuenta los principios de conflictos de leyes que pudieran surgir.</p>
-                <p>Para la interpretación, ejecución y cumplimiento del presente aviso legal, las partes están de acuerdo en someterse a la jurisdicción de los Tribunales Federales con sede en la Ciudad de México, renunciando expresamente a cualquier otro
+                <p>Para la interpretación, ejecución y cumplimiento del presente aviso legal, las partes están de acuerdo en someterse a la jurisdicción de los Tribunales Federales con sede en la Ciudad de México, renunciando expresamente a cualquier otro
                     fuero que por sus domicilios presentes o futuros pudiera corresponderles.</p>
                 <p><b>El usuario declara haber leído y aceptar íntegramente los presentes términos y condiciones vigentes en el momento de acceder al sitio y/o usar los servicios.</b></p>
                 <p><b>En el caso de que el usuario no esté de acuerdo con las disposiciones del presente aviso legal deberá abstenerse de utilizar el sitio y/o de realizar operaciones a través del sitio.</b></p>
@@ -1745,10 +1786,8 @@
 
 
 <div id="modalMap" class="iframe-container hide">
-    <!--<app-map></app-map>-->
     <a (click)="mapOk()" class="waves-effect teal darken-4 btn">Aceptar</a>
-    <iframe src="/map"></iframe>
-
+    <iframe id="mapFrame" src="/map"></iframe>
 </div>
 
 
