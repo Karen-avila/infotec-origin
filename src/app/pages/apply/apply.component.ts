@@ -19,7 +19,7 @@ export class ApplyComponent implements OnInit {
   instance 
   popup;
   recaptcha: any[];
-  //-------
+  //-----
   form : FormGroup;
   formval: FormGroup;
   dic = [
@@ -127,7 +127,7 @@ pbaDict(p1:string){
 //------------
 
   //-------------
-  register(){
+  register() {
     let user = new User(this.form.value.email,this.form.value.password,this.form.value.rePassword);
 
     console.log("form is valid?", this.form.valid);
@@ -135,7 +135,7 @@ pbaDict(p1:string){
     if(this.form.valid){
       console.log("form esto envio", this.form.value);
       //enviar datos a back
-      this.userService.createUser(user)
+      this.userService.createUser(this.form.value)
         .subscribe(res=>{
           console.log("esto responde el servicio register",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
         });

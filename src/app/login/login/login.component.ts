@@ -32,13 +32,13 @@ export class LoginComponent implements OnInit {
     console.log(this.recaptcha);
   }
 
-re
+step
   constructor(public userService:UserService, private router: Router) { 
     /*this.userService.localStep().subscribe(res=>{
       
       this.re = res[0].step;
     });*/
-    this.re="1";
+    this.step="5";
   }
 
   ngOnInit() {
@@ -98,18 +98,18 @@ this.router.navigate(["dashboard"]);
   }
 
   login(){
-    let user = new User(this.form.value.email,this.form.value.password,this.form.value.password);
-    console.log("form is valid?", this.form.valid);
+    
+    console.log("form login is valid?", this.form.valid);
     if(this.form.valid){
-      console.log("form esto envio", this.form.value);
+      let user = new User(this.form.value.email,this.form.value.password);
       //enviar datos a back
       this.userService.login(user)
         .subscribe(res=>{
-          console.log("esto responde el servicio login",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
+          console.log("Is logged?",res); 
+         /*  console.log("Entro al step",this.step)
+          this.router.navigate(["dashboard",{id:this.step}]); ///revisar donde quedara */
+
         });
-        console.log("waaa",this.re)
-      this.router.navigate(["dashboard",{id:this.re,un:"un",do:"do"}]);//revisar donde quedara
-     
     } else{
       swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
     }
