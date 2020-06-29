@@ -17,7 +17,7 @@ const pagesRoutes: Routes = [
         children: [
           {path: 'home', component: HomeComponent},
           {path: 'apply', component: ApplyComponent},
-          {path: 'map', component: MapComponent},
+          {path: 'map', component: MapComponent, canActivate: [LoginGuardGuard]},
           {path: 'dashboard', component: DashboardComponent, canActivate: [LoginGuardGuard]},
           {path: '', redirectTo: '/home', pathMatch: 'full' },
         ]

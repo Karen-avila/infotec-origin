@@ -58,69 +58,69 @@ termcond = false;
 form: FormGroup;
 formDocumentos: FormGroup;
 formFiel: FormGroup;
-dic = [
-  'apañar',
-  'cagar',
-  'cojo',
-  'chingada',
-  'APAÑAR',
-  'ARRABALERA',
-  'ASESINAR',
-  'ASESINO',
-  'ASSHOLE',
-];
-alrt = [
-  {name: 'Curp', url: 'https://www.gob.mx/curp/'},
-  {name: 'Rfc', url: 'https://www.siat.sat.gob.mx/PTSC/'},
-  {name: 'Constancia de Situación Fiscal', url: 'https://www.sat.gob.mx/aplicacion/53027/genera-tu-constancia-de-situacion-fiscal'}
-  // {name:"Buro de crédito", url:"https://www.burodecredito.com.mx/score-info.html"},
-];
-re;
- // -------------------
-valueMon = 20000;
-optionsMon: Options = {
-  floor: 0,
-  ceil: 50000,
-  step: 10000,
-  minLimit: 20000,
-  translate: (value: number, label: LabelType): string => {
-    switch (label) {
-      case LabelType.Low:
-        this.monte = value.toLocaleString('es-MX', {
-          style: 'currency',
-          currency: 'MXN',
-        });
-        return '<b>Si te Prestamos: </b>MX' +  this.monte;
-      case LabelType.Ceil:
-        return '<b>Monto Maximo: </b>MX' + value.toLocaleString('es-MX', {
-          style: 'currency',
-          currency: 'MXN',
-        });
-      default:
-        return '<b>Monto</b>';
-    }
-    // return '<b>Si te Prestamos:</b> $' + value;
-  }
-};
-valuePlaz = 18;
-optionsPlaz: Options = {
-  floor: 0,
-  ceil: 36,
-  step: 18,
-  minLimit: 18,
-  maxLimit: 18,
-  translate: (value: number, label: LabelType): string => {
-    switch (label) {
-      case LabelType.Low:
+  dic = [
+    "apañar",
+    "cagar",
+    "cojo",
+    "chingada",
+    "APAÑAR",
+    "ARRABALERA",
+    "ASESINAR",
+    "ASESINO",
+    "ASSHOLE",
+  ]
+  alrt = [
+    {name:"Curp", url:"https://www.gob.mx/curp/"},
+    {name:"Rfc", url:"https://www.siat.sat.gob.mx/PTSC/"},
+    {name:"Constancia de Situación Fiscal", url:"https://www.sat.gob.mx/aplicacion/53027/genera-tu-constancia-de-situacion-fiscal"}
+    //{name:"Buro de crédito", url:"https://www.burodecredito.com.mx/score-info.html"},
+  ];
+ re;
+ //-------------------
+ valueMon: number = 20000;
+ optionsMon: Options = {
+   floor: 0,
+   ceil: 50000,
+   step: 10000,
+   minLimit: 20000,
+   translate: (value: number, label: LabelType): string => {
+     switch (label) {
+       case LabelType.Low:
+         this.monte = value.toLocaleString('es-MX', {
+                  style: 'currency',
+                  currency: 'MXN',
+                }); 
+         return '<b>Si te Prestamos: </b>MX' +  this.monte;
+       case LabelType.Ceil:
+         return '<b>Monto Maximo: </b>MX' + value.toLocaleString('es-MX', {
+           style: 'currency',
+           currency: 'MXN',
+         });
+       default:
+         return '<b>Monto</b>';
+     }
+         //return '<b>Si te Prestamos:</b> $' + value;
+   }
+ };
+ valuePlaz: number = 18;
+ optionsPlaz: Options = {
+   floor: 0,
+   ceil: 36,
+   step: 18,
+   minLimit: 18,
+   maxLimit: 18,
+   translate: (value: number, label: LabelType): string => {
+     switch (label) {
+       case LabelType.Low:
         return '<b>' + value + ' Meses + 3 meses de gracia</b>';
-      case LabelType.Ceil:
+       case LabelType.Ceil:
         return '<b> Total 21 Meses </b>';
-      default:
-        return '<b>Plazo</b>';
-    }
-    // return '<b>Si te Prestamos:</b> $' + value;
-  }
-};
+       default:
+         return '<b>Plazo</b>';
+     }
+         //return '<b>Si te Prestamos:</b> $' + value;
+   }
+ };
 finance = new Finance();
 catPorcentaje = 0;
  // -------------------
@@ -130,6 +130,7 @@ constructor(
     private router: Router,
     private eventManager: EventManager
   ) {
+  this.re = localStorage.getItem('step');
   this.eventManager.addGlobalEventListener(
     'window',
     'message',
@@ -146,7 +147,6 @@ constructor(
       }
     }
   );
-  this.route.params.subscribe( params => this.re = params);
   // Monto del Prestamo
   const montoCapital = 20000 * -1;
   // Tasa de Interes Anual
@@ -172,18 +172,20 @@ constructor(
   this.catPorcentaje = ((Math.pow((1 + (tirMensual / 100)), 12)) - 1) * 100;
   // console.log("CAT "+ this.catPorcentaje.toFixed(2)+"%");
 }
-
-  ngOnInit() {
-    // console.log("comienza ngOnInit",this.alrt);
-    const elems = document.querySelectorAll('.modal');
+  
+ngOnInit() {
+    //console.log("comienza ngOnInit",this.alrt);
+    let elems = document.querySelectorAll('.modal');
     this.popup = M.Modal.init(elems);
-    const select = document.querySelectorAll('select');
+
+    let select = document.querySelectorAll('select');
     M.FormSelect.init(select);
-    const stepperDiv = document.getElementById('api_nav_demo');
-    // console.log(stepperDiv);
+
+    let stepperDiv = document.getElementById('api_nav_demo');
+    //console.log(stepperDiv);
     this.stepper = new MStepper(stepperDiv, {
       // Default active step.
-      firstActive: this.re.id, // api regresa paso a activar siempre debe empezar minimo en 1
+      firstActive: this.re, //api regresa paso a activar siempre debe empezar minimo en 1
       // Allow navigation by clicking on the next and previous steps on linear steppers.
       linearStepsNavigation: true,
       // Auto focus on first input of each step.
@@ -510,4 +512,6 @@ constructor(
       this.form.get('pFisica').setValue(' ');
     }
   }
+
+
 }
