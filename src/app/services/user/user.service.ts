@@ -27,7 +27,8 @@ export class UserService {
 
   createUser(user:User){
     console.log("Service create user");
-    let url = URL_SERVICES + '/registro'; //infotec
+    //let url = URL_SERVICES + '/registro'; //infotec
+    let url="http://localhost:4200/api";
     //let url = URL_SERVICES + '/user'; //local
     const object = JSON.stringify(user);
     /* const body = {"email":"gustavo.espindola@fintecheando.mx",

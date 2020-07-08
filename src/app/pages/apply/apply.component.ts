@@ -74,7 +74,7 @@ export class ApplyComponent implements OnInit {
 //----------------------
 
 
-   this.form = new FormGroup({
+   this.form = new FormGroup({  
       email: new FormControl(null,[Validators.required, Validators.email]),
       password: new FormControl(null, [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')]),
       rePassword: new FormControl(null, [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')])
@@ -128,14 +128,16 @@ pbaDict(p1:string){
 
   //-------------
   register() {
-    let user = new User(this.form.value.email,this.form.value.password,this.form.value.rePassword);
+    let user = new User(this.form.value.email,this.form.value.password,this.form.value.rePassword,"1");
 
     console.log("form is valid?", this.form.valid);
 
     if(this.form.valid){
-      console.log("form esto envio", this.form.value);
+      /* console.log("form esto envio", this.form.value); */
       //enviar datos a back
-      this.userService.createUser(this.form.value)
+      /* this.userService.createUser(this.form.value) */
+      console.log("form esto envio", user);
+      this.userService.createUser(user)
         .subscribe(res=>{
           console.log("esto responde el servicio register",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
         });
