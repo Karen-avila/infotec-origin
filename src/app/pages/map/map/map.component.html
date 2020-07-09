@@ -38,7 +38,8 @@
             <div id="details-panel">
               <div class="row">
                 <div class="col s12 leaflet-left">
-                  <a (click)="sendData(mapPoint, mapPoint.longitude, mapPoint.latitude, mapPoint.name)" class="waves-effect teal darken-4 btn">Aceptar</a>
+                 <!--  <a (click)="sendData(mapPoint, mapPoint.longitude, mapPoint.latitude, mapPoint.name)" class="waves-effect teal darken-4 btn">Aceptar</a> -->
+                  <a (click)="sendData(msg)" class="waves-effect teal darken-4 btn">Aceptar</a>
                   <app-geocoding (onSearch)="refreshSearchList($event)"></app-geocoding>
                 </div>
               </div>
