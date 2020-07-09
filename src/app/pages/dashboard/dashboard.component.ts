@@ -17,6 +17,7 @@ declare const MStepper: any;
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  sector;
 activities = {
   sectorList: [],
   subsectorList: [],
@@ -44,7 +45,6 @@ personal = {
   asentamiento: [],
 };
 questionForm = {};
-sector;
 subsector;
 rama;
 subrama;
