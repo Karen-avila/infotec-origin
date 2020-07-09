@@ -106,8 +106,8 @@ this.router.navigate(["dashboard"]);
       this.userService.login(user)
         .subscribe(res=>{
           console.log("Is logged?",res); 
-         /*  console.log("Entro al step",this.step)
-          this.router.navigate(["dashboard",{id:this.step}]); ///revisar donde quedara */
+         /*  console.log("Entro al step",this.step)*/
+          this.router.navigate(["register",{id:this.step}]); ///revisar donde quedara
 
         });
     } else{

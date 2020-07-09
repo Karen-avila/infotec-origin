@@ -25,10 +25,11 @@ export class UserService {
     this.getStorage();
   }
 
+
+  
   createUser(user:User){
     console.log("Service create user");
-    //let url = URL_SERVICES + '/registro'; //infotec
-    let url="http://localhost:4200/api";
+    let url = URL_SERVICES + '/user'; //infotec
     //let url = URL_SERVICES + '/user'; //local
     const object = JSON.stringify(user);
     /* const body = {"email":"gustavo.espindola@fintecheando.mx",
@@ -94,16 +95,16 @@ export class UserService {
     let url = URL_SERVICES + '/login';
 
     return this.http.post(url,user).map((res:any)=>{
-        localStorage.setItem('id',res.id);
+        //localStorage.setItem('id',res.id);
         localStorage.setItem('email',res.email);
-        localStorage.setItem('token',res.token);
+        //localStorage.setItem('token',res.token);
         localStorage.setItem('step','1');
-        this.token = res.token;
+        //this.token = res.token;
         this.email = res.email;
-        this.id = res.id;
-        swal("¡Felicidades!", "Inicio de sesión exitoso.", "success");
+        //this.id = res.id;
+        //swal("¡Felicidades!", "Inicio de sesión exitoso.", "success");
         //this.router.navigate(["dashboard",{id:this.step}]); ///revisar donde quedara
-        this.router.navigate(["dashboard"]);
+        this.router.navigate(["register"]);
       return true;
     })  
   }

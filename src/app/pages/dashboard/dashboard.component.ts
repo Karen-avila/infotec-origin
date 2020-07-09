@@ -45,6 +45,13 @@ personal = {
   asentamiento: [],
 };
 questionForm = {};
+subsector;
+rama;
+subrama;
+giro;
+aviso;
+bc;
+term;
 monte;
 hugo = '666';
 stepper;
