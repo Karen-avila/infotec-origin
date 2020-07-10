@@ -139,6 +139,7 @@ constructor(
     private eventManager: EventManager
   ) {
   this.re = localStorage.getItem('step');
+  this.re=4;
   this.eventManager.addGlobalEventListener(
     'window',
     'message',
@@ -231,7 +232,7 @@ ngOnInit() {
       municipio: new FormControl(null, Validators.required),
       asentamientoType: new FormControl(null, Validators.required),
       asentamiento: new FormControl(null, Validators.required),
-      domicilio: new FormControl(' ', [Validators.required]),
+      domicilio: new FormControl(' '),
       calleNeg: new FormControl(null, Validators.required),
       extNeg: new FormControl(null, Validators.required),
       intNeg: new FormControl(null, [Validators.minLength(0)]),

@@ -279,21 +279,22 @@
 
                     <div class="input-field col s12 m7 l7">
                         <i class="material-icons prefix">aspect_ratio</i>
-                        <input id="clave_elector" type="text" formControlName="clave_elector" required class="validate" name="clave_elector" />
-                        <label for="clave_elector">Clave de Elector</label>
-                    </div>
-
-                    <div class="input-field col s12 m5 l5">
-                        <i class="material-icons prefix">aspect_ratio</i>
                         <input id="curp" type="text" formControlName="curp" pattern="^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$"
                             required class="validate" name="curp" />
                         <label for="curp">CURP</label>
                     </div>
                     <!--<div class="input-field col s12 m6 l6" *ngIf="model=='pFisica'">-->
-                    <div class="input-field col s12 m6 l6">
+                    <div class="input-field col s12 m5 l5">
                         <i class="material-icons prefix">aspect_ratio</i>
                         <input id="rfc" type="text" formControlName="rfc" pattern="^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$" required class="validate" name="rfc" />
                         <label for="rfc">RFC</label>
+                    </div>
+
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">aspect_ratio</i>
+                        <input id="clave_elector" type="text" formControlName="clave_elector" required minlength="18" maxlength="18"class="validate" name="clave_elector" />
+                        <label for="clave_elector">Clave de Elector</label>
+                        <a class="modal-trigger" href="#helpIne"><i class="material-icons prefix icon-black">help_outline</i></a>
                     </div>
 
                     <!--<div class="input-field col s12 m6 l6">
@@ -745,7 +746,7 @@
                 <form ngNativeValidate [formGroup]="formDocumentos" (ngSubmit)="ddocumentos()">
                     <div class="row">
                         <div class="col s12 m2 l2">
-                            <span>Identificación Oficial Frontal</span>
+                            <span>Identificación Oficial Frontal (INE o Pasaporte)</span>
                         </div>
                         <div class="file-field input-field col s12 m4 l4">
                             <div class="teal darken-4 btn">
@@ -763,7 +764,7 @@
 
                         <div>
                             <div class="col s12 m2 l2">
-                                <span>Identificación Oficial Reverso</span>
+                                <span>Identificación Oficial Reverso (INE o Pasaporte)</span>
                             </div>
                             <div class="file-field input-field col s12 m4 l4">
                                 <div class="teal darken-4 btn">

@@ -13,12 +13,12 @@
                             <ul class="collection">
                                 <form ngNativeValidate [formGroup]="formScrPerNeg" (ngSubmit)="scrPerNegSend()">
 
-                                    <li class="collection-item avatar" *ngFor="let scrPerNeg of scrPerNeg; index as i;">
+                                    <li class="collection-item avatar validate" *ngFor="let scrPerNeg of scrPerNeg; index as i;">
                                         <span class="title">{{scrPerNeg.quest}}</span>
 
                                         <p *ngFor="let resp of scrPerNeg.opts; index as j;">
                                             <label>
-                                            <input class="with-gap" (change)="changedPerNeg(j, i)" [(ngModel)]="scrPerNeg.resp" formControlName="{{'scrPerNeg'+i}}" name="{{'scrPerNeg'+i}}" id="{{'scrPerNeg'+i}}" value="{{resp}}" type="radio"  />
+                                            <input class="with-gap" (change)="changedPerNeg(j, i)" [(ngModel)]="scrPerNeg.resp" formControlName="{{'scrPerNeg'+i}}" name="{{'scrPerNeg'+i}}" id="{{'scrPerNeg'+i}}" value="{{resp}}" type="radio" required>
                                             <span>{{resp}}</span>
                                           </label>
                                         </p>
@@ -418,53 +418,6 @@
                                     </select>
                                         </p>
                                     </li>
-
-                                    <!--<li class="collection-item avatar" *ngFor="let qcQcnm11 of qcQcnm; index as i;">
-                                    <span class="title">{{qcQcnm11.quest}}</span>
-
-                                    <p *ngFor="let resp of qcQcnm11.opts">
-                                        <label>
-                                            <select multiple class="with-gap" formControlName="{{'qcQcnm11'+i}}" name="{{'qcQcnm11'+i}}" id="{{'qcQcnm11'+i}}"  >
-                                            <option formControlName="{{'qcQcnm11'+i}}" ></option>
-                                        </select>
-                                            <span>{{resp}}</span>
-                                          </label>
-                                    </p>
-                                </li>-->
-
-
-                                    <!-- <p *ngFor="let resp of qcQcnm.opts">
-                                        <label>
-                                            <input class="with-gap" formControlName="{{'qcQcnm'+i}}" name="{{'qcQcnm'+i}}" id="{{'qcQcnm'+i}}" value="{{resp}}" type="radio"  />
-                                            <span>{{resp}}</span>
-                                          </label>
-                                    </p>
-                                    <div class="input-field col s12" *ngFor="let qcQcnm of qcQcnm; index as i;">
-                                        <span class="title">{{qcQcnm.quest}}</span>
-                                        <select multiple >
-                                          <option value="" disabled selected>Choose your option</option>
-                                          <option value="1" *ngFor="let resp of qcQcnm.opts">{{resp}}</option>
-
-                                        </select>
-                                        <label>Materialize Multiple Select</label>
-                                      </div>
-
-                                <li class="collection-item avatar" *ngFor="let qcQcnm of qcQcnm; index as i;">
-                                    <div >
-                                    <div class="input-field col s12">
-                                        <select multiple>
-                                          <option value="" disabled selected>Choose your option</option>
-                                          <option value="1">Option 1</option>
-                                          <option value="2">Option 2</option>
-                                          <option value="3">Option 3</option>
-                                        </select>
-                                        <label>Materialize Multiple Select</label>
-                                      </div>
-                                    </div>
-                                </li>-->
-
-
-
                                     <br>
                                     <br>
                                     <!--<div class="col s12">

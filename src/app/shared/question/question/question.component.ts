@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 declare const MStepper: any;
 import * as M from 'materialize-css';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-question',
@@ -786,20 +787,19 @@ this.formQcQc = new FormGroup({
 
 this.formQcQcn = new FormGroup({
   qcQcn0: new FormControl(null, [Validators.required]),
-  qcQcn1: new FormControl(null, [Validators.required]),
-  qcQcn2: new FormControl(null, [Validators.required]),
-  qcQcn3: new FormControl(null, [Validators.required]),
-  qcQcn4: new FormControl(null, [Validators.required]),
-  qcQcn5: new FormControl(null, [Validators.required]),
-  qcQcn6: new FormControl(null, [Validators.required]),
-  qcQcn7: new FormControl(null, [Validators.required]),
-  qcQcn8: new FormControl(null, [Validators.required]),
-  qcQcn9: new FormControl(null, [Validators.required]),
-  qcQcnm0: new FormControl(null, [Validators.required]),
-  qcQcnm1: new FormControl(null, [Validators.required]),
-  qcQcnm2: new FormControl(null, [Validators.required]),
-  qcQcnm3: new FormControl(null, [Validators.required]),
-  qcQcnm4: new FormControl(null, [Validators.required]),
+  //qcQcn1: new FormControl(null, [Validators.required]),
+  //qcQcn2: new FormControl(null, [Validators.required]),
+  //qcQcn3: new FormControl(null, [Validators.required]),
+  //qcQcn4: new FormControl(null, [Validators.required]),
+  //qcQcn5: new FormControl(null, [Validators.required]),
+  //qcQcn6: new FormControl(null, [Validators.required]),
+  //qcQcn7: new FormControl(null, [Validators.required]),
+  //qcQcn8: new FormControl(null, [Validators.required]),
+  //qcQcn9: new FormControl(null, [Validators.required]),
+  qcqcn10: new FormControl(null,[Validators.required]),
+  qcqcn11: new FormControl(null,[Validators.required]),
+  qcqcnmo: new FormControl(null,[Validators.required]),
+  qcQcn220: new FormControl(null, [Validators.required]),
   qcQcn010: new FormControl(null, [Validators.required]),
   qcQcn011: new FormControl(null, [Validators.required]),
   qcQcn020: new FormControl(null, [Validators.required]),
@@ -808,9 +808,18 @@ this.formQcQcn = new FormGroup({
   qcQcn023: new FormControl(null, [Validators.required]),
   qcQcn024: new FormControl(null, [Validators.required]),
   qcQcn025: new FormControl(null, [Validators.required]),
-  qcQcn220: new FormControl(null, [Validators.required]),
   qcQcn030: new FormControl(null, [Validators.required]),
   qcQcn031: new FormControl(null, [Validators.required]),
+
+  qcQcnm0: new FormControl(null, [Validators.required]),
+  qcQcnm1: new FormControl(null, [Validators.required]),
+  qcQcnm2: new FormControl(null, [Validators.required]),
+  qcQcnm3: new FormControl(null, [Validators.required]),
+  qcQcnm4: new FormControl(null, [Validators.required]),
+  
+  
+  
+  
   qcQcn00: new FormControl(null,[Validators.required]),
   qcQcn040: new FormControl(null,[Validators.required]),
   qcQcn041: new FormControl(null,[Validators.required]),
@@ -853,9 +862,6 @@ this.formQcQcn = new FormGroup({
   qcQcnr05: new FormControl(null,[Validators.required]),
   qcQcnr06: new FormControl(null,[Validators.required]),
   qcQcnr07: new FormControl(null,[Validators.required]),
-  qcqcn10: new FormControl(null,[Validators.required]),
-  qcqcn11: new FormControl(null,[Validators.required]),
-  qcqcnmo: new FormControl(null,[Validators.required]),
   qcQcnm110: new FormControl(null,[Validators.required]),
   qcQcnm111: new FormControl(null,[Validators.required]),
   qcQcnm112: new FormControl(null,[Validators.required]),
@@ -874,13 +880,14 @@ this.formQcQcn = new FormGroup({
   }
 
   scrPerNegSend(){
-    console.log("form is valid?", this.formScrPerNeg.valid);
+    console.log("form is valid? formScrPerNeg", this.formScrPerNeg.valid);
     if(this.formScrPerNeg.valid){
       console.log("form", this.formScrPerNeg.value);
       //enviar datos a back
       this.instPefNeg.open(1); //aqui ira
     } else{
-      this.instPefNeg.open(1); // no ira aqui solo para no completar form
+      swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
+      //this.instPefNeg.open(1); // no ira aqui solo para no completar form
     }
   }
 
@@ -889,13 +896,14 @@ this.formQcQcn = new FormGroup({
   }
 
   scrPerMerSend(){
-    console.log("form is valid?", this.formScrPerMer.valid);
+    console.log("form is valid? formScrPerMer", this.formScrPerMer.valid);
     if(this.formScrPerMer.valid){
       console.log("form", this.formScrPerMer.value);
       //enviar datos a back
       this.instPefNeg.open(2); //aqui ira
     } else{
-      this.instPefNeg.open(2); // no ira aqui solo para no completar form
+      swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
+      //this.instPefNeg.open(2); // no ira aqui solo para no completar form
     }
   }
 
@@ -904,13 +912,14 @@ this.formQcQcn = new FormGroup({
   }
 
   scrRepSend(){
-    console.log("form is valid?", this.formScrRep.valid);
+    console.log("form is valid? formScrRep", this.formScrRep.valid);
     if(this.formScrRep.valid){
       console.log("form", this.formScrRep.value);
       //enviar datos a back
       this.instPefNeg.open(3); //aqui ira
     } else{
-      this.instPefNeg.open(3); // no ira aqui solo para no completar form
+      swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
+      //this.instPefNeg.open(3); // no ira aqui solo para no completar form
     }
   }
 
@@ -919,33 +928,39 @@ this.formQcQcn = new FormGroup({
   }
 
   scrDirSend(){
-    console.log("form is valid?", this.formScrDir.valid);
+    console.log("form is valid? formScrDir", this.formScrDir.valid);
     if(this.formScrDir.valid){
       console.log("form", this.formScrDir.value);
       //enviar datos a back
       this.prins.open(1); //aqui ira
     } else{
-      this.prins.open(1); // no ira aqui solo para no completar form  CHECAR ESTE SALTO
+      swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
+      //this.prins.open(1); // no ira aqui solo para no completar form  CHECAR ESTE SALTO
     }
   }
 
   qcQcSend(){
-    console.log("form is valid?", this.formQcQc.valid);
+    console.log("form is valid? formQcQc", this.formQcQc.valid);
     if(this.formQcQc.valid){
       console.log("form", this.formQcQc.value);
       //enviar datos a back
       this.instQrmCnct.open(1); //aqui ira
     } else{
-      this.instQrmCnct.open(1); // no ira aqui solo para no completar form
+      swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
+      //this.instQrmCnct.open(1); // no ira aqui solo para no completar form
     }
   }
 
   qcQcnSend(){
-    console.log("form is valid?", this.formQcQcn.valid);
+    console.log("formQcQcn", this.formQcQcn.valid);
     console.log("form", this.formQcQcn.value);
     if(this.formQcQcn.valid){
       console.log("form", this.formQcQcn.value);
       //enviar datos a back
+    }
+    else{
+      swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
+      //this.instQrmCnct.open(1); // no ira aqui solo para no completar form
     }
   }
 
@@ -954,6 +969,10 @@ this.formQcQcn = new FormGroup({
     if(this.sfina5){
       this.formQcQcn.get("qcQcnr05").setValue(" ")
     }
+    else{
+      swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
+      //this.instQrmCnct.open(1); // no ira aqui solo para no completar form
+    }
 
   }
   b6(){
@@ -961,11 +980,19 @@ this.formQcQcn = new FormGroup({
     if(this.sfina6){
       this.formQcQcn.get("qcQcnr06").setValue(" ")
     }
+    else{
+      swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
+      //this.instQrmCnct.open(1); // no ira aqui solo para no completar form
+    }
   }
   b7(){
     console.log("Reviso valor de check", this.sfina7);
     if(this.sfina7){
       this.formQcQcn.get("qcQcnr07").setValue(" ")
+    }
+    else{
+      swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
+      //this.instQrmCnct.open(1); // no ira aqui solo para no completar form
     }
   }
   monto(){
@@ -973,9 +1000,19 @@ this.formQcQcn = new FormGroup({
     if(this.sfina8){
       this.formQcQcn.get("qcqcnmo").setValue(" ")
     }
+    else{
+      swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
+      //this.instQrmCnct.open(1); // no ira aqui solo para no completar form
+    }
   }
 
   sendQuestions() {
+    console.log(this.formScrPerNeg.valid,this.formScrPerMer.valid,this.formScrRep.valid,this.formScrDir.valid,this.formQcQc.valid,this.formQcQcn.valid)
+    if((this.formScrPerNeg.valid) && (this.formScrPerMer.valid)
+       && (this.formScrRep.valid) && (this.formScrDir.valid)
+       && (this.formQcQc.valid) && (this.formQcQcn.valid)
+       
+    ){
     const questionForm = {
       questions: true,
       scrPerNeg: this.scrPerNeg,
@@ -1000,5 +1037,13 @@ this.formQcQcn = new FormGroup({
     }
     window.parent.postMessage(questionForm, '*');
   }
+  else{
+    swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
+    //this.instQrmCnct.open(1); // no ira aqui solo para no completar form
+  }
+  }
+
+
+
 
 }
