@@ -41,7 +41,7 @@ step
     //this.step="2";
     /* localStorage.setItem('step','2');
     this.step = localStorage.getItem('step'); */
-
+console.log("")
     if(localStorage.getItem('step')){
       this.step = localStorage.getItem('step');
     }else{
@@ -109,6 +109,7 @@ this.router.navigate(["dashboard"]);
     
     console.log("form login is valid?", this.form.valid);
     if(this.form.valid){
+      this.router.navigate(["register",{id:this.step}]);
       let user = new User(this.form.value.email,this.form.value.password);
       this.router.navigate(["register",{id:this.step}]);
       //enviar datos a back
