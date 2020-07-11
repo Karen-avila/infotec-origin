@@ -45,7 +45,7 @@ console.log("")
     if(localStorage.getItem('step')){
       this.step = localStorage.getItem('step');
     }else{
-      localStorage.setItem('step','2');
+      localStorage.setItem('step','1');
     }
   }
 

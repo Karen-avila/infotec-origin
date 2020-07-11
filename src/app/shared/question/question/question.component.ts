@@ -976,7 +976,7 @@ this.formQcQcn = new FormGroup({
   }
 
   sendQuestions() {
-    localStorage.setItem('step','6');
+    localStorage.setItem('step','5');
     const questionForm = {
       questions: true,
       scrPerNeg: this.scrPerNeg,
