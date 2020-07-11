@@ -138,7 +138,8 @@ constructor(
     private router: Router,
     private eventManager: EventManager
   ) {
-  this.re = localStorage.getItem('step');
+  //this.re = localStorage.getItem('step');
+  this.re="1"
   this.eventManager.addGlobalEventListener(
     'window',
     'message',

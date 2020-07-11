@@ -38,7 +38,15 @@ step
       
       this.re = res[0].step;
     });*/
-    this.step="5";
+    //this.step="2";
+    /* localStorage.setItem('step','2');
+    this.step = localStorage.getItem('step'); */
+
+    if(localStorage.getItem('step')){
+      this.step = localStorage.getItem('step');
+    }else{
+      localStorage.setItem('step','2');
+    }
   }
 
   ngOnInit() {
@@ -102,14 +110,15 @@ this.router.navigate(["dashboard"]);
     console.log("form login is valid?", this.form.valid);
     if(this.form.valid){
       let user = new User(this.form.value.email,this.form.value.password);
+      this.router.navigate(["register",{id:this.step}]);
       //enviar datos a back
-      this.userService.login(user)
+     /*  this.userService.login(user)
         .subscribe(res=>{
           console.log("Is logged?",res); 
-         /*  console.log("Entro al step",this.step)*/
+          console.log("Entro al step",this.step)
           this.router.navigate(["register",{id:this.step}]); ///revisar donde quedara
 
-        });
+        }); */
     } else{
       swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
     }
