@@ -79,9 +79,9 @@ formFiel: FormGroup;
   ]
   alrt = [
     {name:"Curp", url:"https://www.gob.mx/curp/"},
-    {name:"Rfc", url:"https://www.siat.sat.gob.mx/PTSC/"},
-    {name:"Constancia de Situación Fiscal", url:"https://www.sat.gob.mx/aplicacion/53027/genera-tu-constancia-de-situacion-fiscal"}
-    //{name:"Buro de crédito", url:"https://www.burodecredito.com.mx/score-info.html"},
+    {name:"recibo digital de CFE", url:"https://app.cfe.mx/Aplicaciones/CCFE/SolicitudesCFE/Solicitudes/ConsultaTuReciboLuzGmx.aspx "},
+    {name:"Constancia de Situación Fiscal", url:"https://www.sat.gob.mx/aplicacion/operacion/53027/genera-tu-constancia-de-situacion-fiscal"},
+    {name:"recibo digital de CFE", url:"https://app.cfe.mx/Aplicaciones/CCFE/SolicitudesCFE/Solicitudes/ConsultaTuReciboLuzGmx.aspx"}
   ];
  re;
  //-------------------
@@ -139,7 +139,7 @@ constructor(
     private eventManager: EventManager
   ) {
   this.re = localStorage.getItem('step');
-  this.re=4;
+  this.re=3;
   this.eventManager.addGlobalEventListener(
     'window',
     'message',

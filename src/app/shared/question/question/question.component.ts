@@ -787,9 +787,9 @@ this.formQcQc = new FormGroup({
 
 this.formQcQcn = new FormGroup({
   qcQcnd: new FormControl(null, [Validators.required]),//1
-  qcqcn10: new FormControl(null,[Validators.required]), //2
-  //qcqcn11: new FormControl(null,[Validators.required]),
-  //qcqcnmo: new FormControl(null,[Validators.required]),
+  qcqcn10: new FormControl(' ',[Validators.required]), //2
+  qcqcn11: new FormControl(' ',[Validators.required]), //2
+  qcqcnmo: new FormControl(' ',[Validators.required]),//2
   qcQcn220: new FormControl(null, [Validators.required]),//3
   qcQcn010: new FormControl(null, [Validators.required]),//4
   qcQcn011: new FormControl(null, [Validators.required]),//5
@@ -812,30 +812,29 @@ this.formQcQcn = new FormGroup({
   qcQcn048: new FormControl(null,[Validators.required]), //14
   qcQcn049: new FormControl(null,[Validators.required]), //14
   qcQcn0410: new FormControl(null,[Validators.required]), //14
-  qcQcnr05: new FormControl(null,[Validators.required]), //15
-  qcQcn050: new FormControl(null,[Validators.required]),//15
-  qcQcn051: new FormControl(null,[Validators.required]),//15
-  qcQcn052: new FormControl(null,[Validators.required]),//15
-  qcQcn053: new FormControl(null,[Validators.required]),//15
-  qcQcn054: new FormControl(null,[Validators.required]),//15
-  qcQcn055: new FormControl(null,[Validators.required]),//15
-  qcQcn056: new FormControl(null,[Validators.required]),//15
-  qcQcnr06: new FormControl(null,[Validators.required]),//16
-  qcQcn060: new FormControl(null,[Validators.required]),//16
-  qcQcn061: new FormControl(null,[Validators.required]),//16
-  qcQcn062: new FormControl(null,[Validators.required]),//16
-  qcQcn063: new FormControl(null,[Validators.required]),//16
-  qcQcn064: new FormControl(null,[Validators.required]),//16
-  qcQcn065: new FormControl(null,[Validators.required]),//16
-  qcQcn066: new FormControl(null,[Validators.required]),//16
-  qcQcnr07: new FormControl(null,[Validators.required]),//17
-  qcQcn070: new FormControl(null,[Validators.required]),//17
-  qcQcn071: new FormControl(null,[Validators.required]),//17
-  qcQcn072: new FormControl(null,[Validators.required]),//17
-  qcQcn073: new FormControl(null,[Validators.required]),//17
-  qcQcn074: new FormControl(null,[Validators.required]),//17
-  qcQcn075: new FormControl(null,[Validators.required]),//17
-  qcQcn08: new FormControl(null,[Validators.required]),//18
+  qcQcnr05: new FormControl(' ',[Validators.required]), //15
+  qcQcn050: new FormControl(' ',[Validators.required]),//15
+  qcQcn051: new FormControl(' ',[Validators.required]),//15
+  qcQcn052: new FormControl(' ',[Validators.required]),//15
+  qcQcn053: new FormControl(' ',[Validators.required]),//15
+  qcQcn054: new FormControl(' ',[Validators.required]),//15
+  qcQcn055: new FormControl(' ',[Validators.required]),//15
+  qcQcn056: new FormControl(' ',[Validators.required]),//15
+  qcQcnr06: new FormControl(' ',[Validators.required]),//16
+  qcQcn060: new FormControl(' ',[Validators.required]),//16
+  qcQcn061: new FormControl(' ',[Validators.required]),//16
+  qcQcn062: new FormControl(' ',[Validators.required]),//16
+  qcQcn063: new FormControl(' ',[Validators.required]),//16
+  qcQcn064: new FormControl(' ',[Validators.required]),//16
+  qcQcn065: new FormControl(' ',[Validators.required]),//16
+  qcQcn066: new FormControl(' ',[Validators.required]),//16
+  qcQcnr07: new FormControl(' ',[Validators.required]),//17
+  qcQcn070: new FormControl(' ',[Validators.required]),//17
+  qcQcn071: new FormControl(' ',[Validators.required]),//17
+  qcQcn072: new FormControl(' ',[Validators.required]),//17
+  qcQcn073: new FormControl(' ',[Validators.required]),//17
+  qcQcn074: new FormControl(' ',[Validators.required]),//17
+  qcQcn075: new FormControl(' ',[Validators.required]),//17
   qcQcn080: new FormControl(null,[Validators.required]),//18
   qcQcn081: new FormControl(null,[Validators.required]),//18
   qcQcn082: new FormControl(null,[Validators.required]),//18
@@ -928,6 +927,10 @@ this.formQcQcn = new FormGroup({
     } 
   }
 
+  changedqcQc(j,i){
+    this.qcQc[i].value = this.qcQc[i].value[j]
+  }
+
   qcQcSend(){
     console.log("form is valid? formQcQc", this.formQcQc.valid);
     if(this.formQcQc.valid){
@@ -937,6 +940,7 @@ this.formQcQcn = new FormGroup({
     }
 
   }
+ 
 
   qcQcnSend(){
     console.log("formQcQcn", this.formQcQcn.valid);
@@ -979,20 +983,23 @@ this.formQcQcn = new FormGroup({
   }
 
   sendQuestions() {
-    //console.log(this.formScrPerNeg.valid,this.formScrPerMer.valid,this.formScrRep.valid,this.formScrDir.valid,this.formQcQc.valid,this.formQcQcn.valid)
-    //if((this.formScrPerNeg.valid) && (this.formScrPerMer.valid)
-      // && (this.formScrRep.valid) && (this.formScrDir.valid)
-      // && (this.formQcQc.valid) && (this.formQcQcn.valid)
-       
-    if(this.formQcQcn.valid)
-      {
+    console.log(this.formScrPerNeg.valid,this.formScrPerMer.valid,this.formScrRep.valid,this.formScrDir.valid,this.formQcQc.valid,this.formQcQcn.valid)
+    if((this.formScrPerNeg.valid) && (this.formScrPerMer.valid)
+       && (this.formScrRep.valid) && (this.formScrDir.valid)
+       && (this.formQcQc.valid) && (this.formQcQcn.valid))
+       {
+ 
     const questionForm = {
       questions: true,
       scrPerNeg: this.scrPerNeg,
       scrPerMer: this.scrPerMer,
       scrRep: this.scrRep,
       scrDir: this.scrDir,
-      qcQc: this.qcQc,
+      
+
+     
+      
+    
       qcQc1: this.qcQc1,
       qcQcn: this.qcQcn,
       qcQcnm: this.qcQcnm,
@@ -1006,7 +1013,7 @@ this.formQcQcn = new FormGroup({
       qcqcn7: this.qcqcn7,
       qcqcn8: this.qcqcn8,
       qcqcnd: this.qcqcnd,
-      qcqcn1: this.qcqcn1,
+      qcqcn1: this.qcqcn1
     }
     window.parent.postMessage(questionForm, '*');
   }

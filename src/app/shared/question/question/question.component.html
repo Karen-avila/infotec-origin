@@ -203,14 +203,14 @@
                                         </p>
                                         <p>
                                             <label>
-                                        <input class="with-gap teal darken-4"  (change)="monto()" formControlName="qcqcn10" name="qcqcn10" id="qcqcn10" type="checkbox" value="qcqcn10" [(ngModel)]="sfina9"/>
+                                        <input class="with-gap teal darken-4"  (change)="monto()" formControlName="qcqcn11" name="qcqcn11" id="qcqcn11" type="checkbox" value="qcqcn10" [(ngModel)]="sfina9"/>
                                         <span>Si sé, pero prefiero no  declararlo</span>
                                     </label>
                                         </p>
 
                                         <div *ngIf="!(sfina8 || sfina9)">
                                             <label><span class="title">Monto</span></label>
-                                            <input formControlName="qcqcn10" name="qcqcn10" id="qcqcn10" type="number" min='0' max='1' step='0.01' placeholder='$'>
+                                            <input formControlName="qcqcnmo" name="qcqcnmo" id="qcqcnmo" type="number" min='0' max='1' step='0.01' placeholder='$'>
                                         </div>
 
                                     </li>

@@ -871,11 +871,12 @@
                         <div>
                             <div class="col s12 m2 l2">
                                 <span>Comprobante de Domicilio Personal</span>
+                                <a (click)="sweetHome('1')"><i class="material-icons prefix icon-black">help_outline</i></a>
                             </div>
                             <div class="file-field input-field col s12 m4 l4">
                                 <div class="teal darken-4 btn">
                                     <i class="material-icons right">attachment</i>cargar
-                                    <input type="file" (change)="ValidateSize('comprobante')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="comprobante" id="comprobante" class="validate">
+                                    <input type="file" title="Recibo CFE del Domicilio Personal con antigüedad no mayor a 3 meses." (change)="ValidateSize('comprobante')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="comprobante" id="comprobante" class="validate">
                                 </div>
                                 <div class="col s1 m1 l1" *ngIf="doc.comprobante.errors?.required">
                                     <i class="material-icons icon-red">error_outline</i>
@@ -890,11 +891,12 @@
                         <div>
                             <div class="col s12 m2 l2">
                                 <span>Comprobante de Domicilio del Negocio</span>
+                                <a (click)="sweetHome('3')"><i class="material-icons prefix icon-black">help_outline</i></a>
                             </div>
                             <div class="file-field input-field col s12 m4 l4">
                                 <div class="teal darken-4 btn">
                                     <i class="material-icons right">attachment</i>cargar
-                                    <input type="file" (change)="ValidateSize('comprobanten')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="comprobanten" id="comprobanten" class="validate">
+                                    <input type="file" title="Recibo CFE del Negocio con antigüedad no mayor a 3 meses." (change)="ValidateSize('comprobanten')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="comprobanten" id="comprobanten" class="validate">
                                 </div>
                                 <div class="col s1 m1 l1" *ngIf="doc.comprobanten.errors?.required">
                                     <i class="material-icons icon-red">error_outline</i>
