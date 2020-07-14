@@ -689,7 +689,7 @@ export class QuestionComponent implements OnInit {
       }
     ];
 
-        qcqcn0=[
+        qcqcnd=[
           {
             quest:"¿Fecha en que inició su actividad productiva?",
             opts:[""],
@@ -786,88 +786,89 @@ this.formQcQc = new FormGroup({
 });
 
 this.formQcQcn = new FormGroup({
-  qcQcn0: new FormControl(null, [Validators.required]),
-  //qcQcn1: new FormControl(null, [Validators.required]),
-  //qcQcn2: new FormControl(null, [Validators.required]),
-  //qcQcn3: new FormControl(null, [Validators.required]),
-  //qcQcn4: new FormControl(null, [Validators.required]),
-  //qcQcn5: new FormControl(null, [Validators.required]),
-  //qcQcn6: new FormControl(null, [Validators.required]),
-  //qcQcn7: new FormControl(null, [Validators.required]),
-  //qcQcn8: new FormControl(null, [Validators.required]),
-  //qcQcn9: new FormControl(null, [Validators.required]),
-  qcqcn10: new FormControl(null,[Validators.required]),
-  qcqcn11: new FormControl(null,[Validators.required]),
-  qcqcnmo: new FormControl(null,[Validators.required]),
-  qcQcn220: new FormControl(null, [Validators.required]),
-  qcQcn010: new FormControl(null, [Validators.required]),
-  qcQcn011: new FormControl(null, [Validators.required]),
-  qcQcn020: new FormControl(null, [Validators.required]),
-  qcQcn021: new FormControl(null, [Validators.required]),
-  qcQcn022: new FormControl(null, [Validators.required]),
-  qcQcn023: new FormControl(null, [Validators.required]),
-  qcQcn024: new FormControl(null, [Validators.required]),
-  qcQcn025: new FormControl(null, [Validators.required]),
-  qcQcn030: new FormControl(null, [Validators.required]),
-  qcQcn031: new FormControl(null, [Validators.required]),
-
+  qcQcnd: new FormControl(null, [Validators.required]),//1
+  qcqcn10: new FormControl(null,[Validators.required]), //2
+  //qcqcn11: new FormControl(null,[Validators.required]),
+  //qcqcnmo: new FormControl(null,[Validators.required]),
+  qcQcn220: new FormControl(null, [Validators.required]),//3
+  qcQcn010: new FormControl(null, [Validators.required]),//4
+  qcQcn011: new FormControl(null, [Validators.required]),//5
+  qcQcn020: new FormControl(null, [Validators.required]),//6
+  qcQcn021: new FormControl(null, [Validators.required]),//7
+  qcQcn022: new FormControl(null, [Validators.required]),//8
+  qcQcn023: new FormControl(null, [Validators.required]),//9
+  qcQcn024: new FormControl(null, [Validators.required]),//10
+  qcQcn025: new FormControl(null, [Validators.required]),//11
+  qcQcn030: new FormControl(null, [Validators.required]),//12
+  qcQcn031: new FormControl(null, [Validators.required]),//13
+  qcQcn040: new FormControl(null,[Validators.required]), //14
+  qcQcn041: new FormControl(null,[Validators.required]), //14
+  qcQcn042: new FormControl(null,[Validators.required]), //14
+  qcQcn043: new FormControl(null,[Validators.required]), //14
+  qcQcn044: new FormControl(null,[Validators.required]), //14
+  qcQcn045: new FormControl(null,[Validators.required]), //14
+  qcQcn046: new FormControl(null,[Validators.required]), //14
+  qcQcn047: new FormControl(null,[Validators.required]), //14
+  qcQcn048: new FormControl(null,[Validators.required]), //14
+  qcQcn049: new FormControl(null,[Validators.required]), //14
+  qcQcn0410: new FormControl(null,[Validators.required]), //14
+  qcQcnr05: new FormControl(null,[Validators.required]), //15
+  qcQcn050: new FormControl(null,[Validators.required]),//15
+  qcQcn051: new FormControl(null,[Validators.required]),//15
+  qcQcn052: new FormControl(null,[Validators.required]),//15
+  qcQcn053: new FormControl(null,[Validators.required]),//15
+  qcQcn054: new FormControl(null,[Validators.required]),//15
+  qcQcn055: new FormControl(null,[Validators.required]),//15
+  qcQcn056: new FormControl(null,[Validators.required]),//15
+  qcQcnr06: new FormControl(null,[Validators.required]),//16
+  qcQcn060: new FormControl(null,[Validators.required]),//16
+  qcQcn061: new FormControl(null,[Validators.required]),//16
+  qcQcn062: new FormControl(null,[Validators.required]),//16
+  qcQcn063: new FormControl(null,[Validators.required]),//16
+  qcQcn064: new FormControl(null,[Validators.required]),//16
+  qcQcn065: new FormControl(null,[Validators.required]),//16
+  qcQcn066: new FormControl(null,[Validators.required]),//16
+  qcQcnr07: new FormControl(null,[Validators.required]),//17
+  qcQcn070: new FormControl(null,[Validators.required]),//17
+  qcQcn071: new FormControl(null,[Validators.required]),//17
+  qcQcn072: new FormControl(null,[Validators.required]),//17
+  qcQcn073: new FormControl(null,[Validators.required]),//17
+  qcQcn074: new FormControl(null,[Validators.required]),//17
+  qcQcn075: new FormControl(null,[Validators.required]),//17
+  qcQcn08: new FormControl(null,[Validators.required]),//18
+  qcQcn080: new FormControl(null,[Validators.required]),//18
+  qcQcn081: new FormControl(null,[Validators.required]),//18
+  qcQcn082: new FormControl(null,[Validators.required]),//18
+  qcQcn083: new FormControl(null,[Validators.required]),//18
+  qcQcn084: new FormControl(null,[Validators.required]),//18
+  qcQcn085: new FormControl(null,[Validators.required]),//18
+  qcQcn086: new FormControl(null,[Validators.required]),//18
+  qcQcn0: new FormControl(null, [Validators.required]), //19
+  qcQcn1: new FormControl(null, [Validators.required]),//20
+  qcQcn2: new FormControl(null, [Validators.required]),//21
+  qcQcn3: new FormControl(null, [Validators.required]),//22
+  qcQcn4: new FormControl(null, [Validators.required]),//23
+  qcQcn5: new FormControl(null, [Validators.required]),//24
+  qcQcn6: new FormControl(null, [Validators.required]),//25
+  qcQcn7: new FormControl(null, [Validators.required]),//26
+  qcQcn8: new FormControl(null, [Validators.required]),//27
+  qcQcn9: new FormControl(null, [Validators.required]),//28
+  qcQcnm110: new FormControl(null,[Validators.required]),//29
+  qcQcnm111: new FormControl(null,[Validators.required]),//30
+  qcQcnm112: new FormControl(null,[Validators.required]),//31
+  qcQcnm113: new FormControl(null,[Validators.required]),//32
+  qcQcnm114: new FormControl(null,[Validators.required]),//33
+  qcQcnm115: new FormControl(null,[Validators.required])//34
+  
+  /*
   qcQcnm0: new FormControl(null, [Validators.required]),
   qcQcnm1: new FormControl(null, [Validators.required]),
   qcQcnm2: new FormControl(null, [Validators.required]),
   qcQcnm3: new FormControl(null, [Validators.required]),
-  qcQcnm4: new FormControl(null, [Validators.required]),
-  
-  
-  
-  
+  qcQcnm4: new FormControl(null, [Validators.required]), 
   qcQcn00: new FormControl(null,[Validators.required]),
-  qcQcn040: new FormControl(null,[Validators.required]),
-  qcQcn041: new FormControl(null,[Validators.required]),
-  qcQcn042: new FormControl(null,[Validators.required]),
-  qcQcn043: new FormControl(null,[Validators.required]),
-  qcQcn044: new FormControl(null,[Validators.required]),
-  qcQcn045: new FormControl(null,[Validators.required]),
-  qcQcn046: new FormControl(null,[Validators.required]),
-  qcQcn047: new FormControl(null,[Validators.required]),
-  qcQcn048: new FormControl(null,[Validators.required]),
-  qcQcn049: new FormControl(null,[Validators.required]),
-  qcQcn0410: new FormControl(null,[Validators.required]),
-  qcQcn050: new FormControl(null,[Validators.required]),
-  qcQcn051: new FormControl(null,[Validators.required]),
-  qcQcn052: new FormControl(null,[Validators.required]),
-  qcQcn053: new FormControl(null,[Validators.required]),
-  qcQcn054: new FormControl(null,[Validators.required]),
-  qcQcn055: new FormControl(null,[Validators.required]),
-  qcQcn056: new FormControl(null,[Validators.required]),
-  qcQcn060: new FormControl(null,[Validators.required]),
-  qcQcn061: new FormControl(null,[Validators.required]),
-  qcQcn062: new FormControl(null,[Validators.required]),
-  qcQcn063: new FormControl(null,[Validators.required]),
-  qcQcn064: new FormControl(null,[Validators.required]),
-  qcQcn065: new FormControl(null,[Validators.required]),
-  qcQcn066: new FormControl(null,[Validators.required]),
-  qcQcn070: new FormControl(null,[Validators.required]),
-  qcQcn071: new FormControl(null,[Validators.required]),
-  qcQcn072: new FormControl(null,[Validators.required]),
-  qcQcn073: new FormControl(null,[Validators.required]),
-  qcQcn074: new FormControl(null,[Validators.required]),
-  qcQcn075: new FormControl(null,[Validators.required]),
-  qcQcn080: new FormControl(null,[Validators.required]),
-  qcQcn081: new FormControl(null,[Validators.required]),
-  qcQcn082: new FormControl(null,[Validators.required]),
-  qcQcn083: new FormControl(null,[Validators.required]),
-  qcQcn084: new FormControl(null,[Validators.required]),
-  qcQcn085: new FormControl(null,[Validators.required]),
-  qcQcn086: new FormControl(null,[Validators.required]),
-  qcQcnr05: new FormControl(null,[Validators.required]),
-  qcQcnr06: new FormControl(null,[Validators.required]),
-  qcQcnr07: new FormControl(null,[Validators.required]),
-  qcQcnm110: new FormControl(null,[Validators.required]),
-  qcQcnm111: new FormControl(null,[Validators.required]),
-  qcQcnm112: new FormControl(null,[Validators.required]),
-  qcQcnm113: new FormControl(null,[Validators.required]),
-  qcQcnm114: new FormControl(null,[Validators.required]),
-  qcQcnm115: new FormControl(null,[Validators.required])
+  */
+  
 
 
 });
@@ -885,10 +886,7 @@ this.formQcQcn = new FormGroup({
       console.log("form", this.formScrPerNeg.value);
       //enviar datos a back
       this.instPefNeg.open(1); //aqui ira
-    } else{
-      swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
-      //this.instPefNeg.open(1); // no ira aqui solo para no completar form
-    }
+    } 
   }
 
   changedPerMer(j,i){
@@ -901,10 +899,7 @@ this.formQcQcn = new FormGroup({
       console.log("form", this.formScrPerMer.value);
       //enviar datos a back
       this.instPefNeg.open(2); //aqui ira
-    } else{
-      swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
-      //this.instPefNeg.open(2); // no ira aqui solo para no completar form
-    }
+    } 
   }
 
   changedRep(j,i){
@@ -917,10 +912,7 @@ this.formQcQcn = new FormGroup({
       console.log("form", this.formScrRep.value);
       //enviar datos a back
       this.instPefNeg.open(3); //aqui ira
-    } else{
-      swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
-      //this.instPefNeg.open(3); // no ira aqui solo para no completar form
-    }
+    } 
   }
 
   changedDir(j,i){
@@ -933,10 +925,7 @@ this.formQcQcn = new FormGroup({
       console.log("form", this.formScrDir.value);
       //enviar datos a back
       this.prins.open(1); //aqui ira
-    } else{
-      swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
-      //this.prins.open(1); // no ira aqui solo para no completar form  CHECAR ESTE SALTO
-    }
+    } 
   }
 
   qcQcSend(){
@@ -945,10 +934,8 @@ this.formQcQcn = new FormGroup({
       console.log("form", this.formQcQc.value);
       //enviar datos a back
       this.instQrmCnct.open(1); //aqui ira
-    } else{
-      swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
-      //this.instQrmCnct.open(1); // no ira aqui solo para no completar form
     }
+
   }
 
   qcQcnSend(){
@@ -958,10 +945,7 @@ this.formQcQcn = new FormGroup({
       console.log("form", this.formQcQcn.value);
       //enviar datos a back
     }
-    else{
-      swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
-      //this.instQrmCnct.open(1); // no ira aqui solo para no completar form
-    }
+
   }
 
   b5(){
@@ -969,10 +953,7 @@ this.formQcQcn = new FormGroup({
     if(this.sfina5){
       this.formQcQcn.get("qcQcnr05").setValue(" ")
     }
-    else{
-      swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
-      //this.instQrmCnct.open(1); // no ira aqui solo para no completar form
-    }
+ 
 
   }
   b6(){
@@ -980,39 +961,31 @@ this.formQcQcn = new FormGroup({
     if(this.sfina6){
       this.formQcQcn.get("qcQcnr06").setValue(" ")
     }
-    else{
-      swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
-      //this.instQrmCnct.open(1); // no ira aqui solo para no completar form
-    }
+ 
   }
   b7(){
     console.log("Reviso valor de check", this.sfina7);
     if(this.sfina7){
       this.formQcQcn.get("qcQcnr07").setValue(" ")
     }
-    else{
-      swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
-      //this.instQrmCnct.open(1); // no ira aqui solo para no completar form
-    }
+  
   }
   monto(){
     console.log("Reviso valor de check", this.sfina8);
     if(this.sfina8){
       this.formQcQcn.get("qcqcnmo").setValue(" ")
     }
-    else{
-      swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
-      //this.instQrmCnct.open(1); // no ira aqui solo para no completar form
-    }
+   
   }
 
   sendQuestions() {
-    console.log(this.formScrPerNeg.valid,this.formScrPerMer.valid,this.formScrRep.valid,this.formScrDir.valid,this.formQcQc.valid,this.formQcQcn.valid)
-    if((this.formScrPerNeg.valid) && (this.formScrPerMer.valid)
-       && (this.formScrRep.valid) && (this.formScrDir.valid)
-       && (this.formQcQc.valid) && (this.formQcQcn.valid)
+    //console.log(this.formScrPerNeg.valid,this.formScrPerMer.valid,this.formScrRep.valid,this.formScrDir.valid,this.formQcQc.valid,this.formQcQcn.valid)
+    //if((this.formScrPerNeg.valid) && (this.formScrPerMer.valid)
+      // && (this.formScrRep.valid) && (this.formScrDir.valid)
+      // && (this.formQcQc.valid) && (this.formQcQcn.valid)
        
-    ){
+    if(this.formQcQcn.valid)
+      {
     const questionForm = {
       questions: true,
       scrPerNeg: this.scrPerNeg,
@@ -1032,16 +1005,16 @@ this.formQcQcn = new FormGroup({
       qcqcn6: this.qcqcn6,
       qcqcn7: this.qcqcn7,
       qcqcn8: this.qcqcn8,
-      qcqcn0: this.qcqcn0,
+      qcqcnd: this.qcqcnd,
       qcqcn1: this.qcqcn1,
     }
     window.parent.postMessage(questionForm, '*');
   }
   else{
     swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
-    //this.instQrmCnct.open(1); // no ira aqui solo para no completar form
+    this.instQrmCnct.open(1); // no ira aqui solo para no completar form
   }
-  }
+}
 
 
 

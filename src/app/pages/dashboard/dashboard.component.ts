@@ -301,7 +301,7 @@ ngOnInit() {
       estado: new FormControl(null, Validators.required),
       declaracion: new FormControl(null, Validators.required),
       curpd: new FormControl(null, Validators.required),
-      rfcd: new FormControl(null, Validators.required),
+      //rfcd: new FormControl(null, Validators.required),
       fiscal: new FormControl(null, Validators.required),
       autorizobc: new FormControl(false, Validators.required),
       termcond: new FormControl(false, Validators.required),

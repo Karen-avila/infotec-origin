@@ -786,7 +786,7 @@
                         <div class="file-field input-field col s12 m4 l4">
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>cargar
-                                <input type="file" (change)="ValidateSize('estado')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="estado" id="estado" class="validate">
+                                <input type="file" title="El Estado de Cuenta que propociones debe estar a tu nombre y mostrar con claridad la Clabe Interbancaria. Te sugerimos descargarlo directamente del portal de tu banco." (change)="ValidateSize('estado')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="estado" id="estado" class="validate">
                             </div>
                             <div class="col s1 m1 l1" *ngIf="doc.estado.errors?.required">
                                 <i class="material-icons icon-red">error_outline</i>
@@ -804,7 +804,7 @@
                         <div class="file-field input-field col s12 m4 l4">
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>cargar
-                                <input type="file" (change)="ValidateSize('declaracion')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="declaracion" id="declaracion" class="validate">
+                                <input type="file" title="Si eres PERSONA FÍSICA CON ACTIVIDAD EMPRESARIAL envía tu última DECLARACIÓN DEL EJERCICIO DE IMPUESTOS FEDERALES; si eres PERSONA FÍSICA EN EL RÉGIMEN DE INCORPORACIÓN FISCAL envía el último ACUSE DE RECIBO DECLARACIÓN DE IMPUESTOS FEDERALES." (change)="ValidateSize('declaracion')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="declaracion" id="declaracion" class="validate">
                             </div>
                             <div class="col s1 m1 l1" *ngIf="doc.declaracion.errors?.required">
                                 <i class="material-icons icon-red">error_outline</i>
@@ -832,11 +832,11 @@
                                 <input class="file-path validate" type="text">
                             </div>
                         </div>
-                        <div class="col s12 m2 l2">
+                        <!--<div class="col s12 m2 l2">
                             <span>RFC</span>
                             <a (click)="sweetHome('1')"><i class="material-icons prefix icon-black">help_outline</i></a>
-                        </div>
-                        <div class="file-field input-field col s12 m4 l4">
+                        </div>-->
+                        <!--<div class="file-field input-field col s12 m4 l4">
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>cargar
                                 <input accept="pplication/pdf" (change)="ValidateSize('rfcd')" type="file" formControlName="rfcd" id="rfcd" class="validate">
@@ -847,7 +847,7 @@
                             <div class="file-path-wrapper">
                                 <input class="file-path validate" type="text">
                             </div>
-                        </div>
+                        </div>-->
 
 
                         <!--   <div class="col s12 m2 l2">
