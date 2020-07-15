@@ -345,25 +345,29 @@ export class QuestionComponent implements OnInit {
     opts:["Se lleva registros escritos del negocio. Es decir, se tiene un lugar, cuaderno, archivo o computadora donde se concentra la información de las operaciones diarias del negocio","Se sabe cuánto dinero en efectivo tiene el negocio en un momento determinado","Se sabe si las ventas de un producto (bien o servicio) en particular están subiendo o bajando de un mes a otro","Se sabe cuánto le cuesta al negocio generar cada uno de sus principales productos (bienes o servicios). Por ejemplo, si tiene que calcular cuánto le cuesta producir una galleta, se hacen las cuentas de cuánto gasta en comprar harina, azúcar, leche, luz para usar la batidora, gas para el horno, renta del local, etcétera; otro ejemplo: si se ofrece un servicio de transporte, se hacen las cuentas de cuánto se gasta en el consumo de gasolina, casetas de peaje, etcétera","Se sabe de qué productos (bienes o servicios) se obtienen más ganancias por cada uno que vende","El negocio no lleva registros y no cuenta con información que permita conocer a detalle su operación"],
     resp:"",
     value:""
-  },
+  }];
+  qcQcnm1=[
   {
     quest:"¿Cuál es el motivo principal por el que se inició en este negocio o actividad? (Seleccionar una o varias opciones)",
     opts:["Por tradición familiar o lo heredó","Para complementar el ingreso familiar","Para mejorar el ingreso","Tenía dinero y encontró una buena oportuindad","Para ejercer su oficio, carrera o profesión","Fue la única manera que tuvo para obtener un ingreso","No tenía la experiencia requerida para un empleo","No tenía la escolaridad o capacitación requerida para un empleo","Estaba sobrecapacitado para un empleo","Los empleos que encontró estaban mal pagados","Requería un horario flexible","No había oportunidades de empleo","Otra razón"],
     resp:"",
     value:""
-  },
+  }];
+  qcQcnm2=[
   {
       quest:"En su negocio o actividad, ¿cuenta con un local para trabajar sea o no de su propiedad? (Seleccione una opción o más de una si tiene varios locales)",
       opts:["Sí, es un local independiente","Sí, es un local o instalación que forma parte de un conjunto de locales","No"],
       resp:"",
       value:""
-  },
+  }];
+  qcQcnm3=[
   {
       quest:"En caso de ser local independiente (fuera de un techo común), ¿éste es? (Seleccionar una o varias opciones)",
       opts:["Tienda, accesoria o tendajón","Taller (de servicios o de reparación)","Fábrica, tortillería, panadería","Oficina, despacho, consultorio"],
       resp:"",
       value:""
-  },
+  }];
+  qcQcnm4=[
   {
       quest:"Si no cuenta con un local, ¿en dónde se realizan las actividades de su negocio? (Seleccionar una o varias opciones)",
       opts:["Vehículo con o sin motor","Puesto fijo fuera de un techo común","Puesto semifijo bajo un techo común en pasillos de un centro comercial","Puesto semifijo en un tianguis","En un domicilio particular con una instalación especial","En un domicilio particular sin una instalación especial","Otro lugar"],
@@ -445,6 +449,7 @@ export class QuestionComponent implements OnInit {
         resp:"",
         value:""
       }];
+
       qcqcn5=[
         {
           quest:"Recursos propios (dueños, herencia, familia y amigos) o utilidades reinvertidas",
@@ -941,6 +946,11 @@ this.formQcQcn = new FormGroup({
 
   }
  
+  changedqcQcn(j,i){
+    this.qcQcn[i].value = this.qcQcn[i].value[j]
+  }
+ 
+  
 
   qcQcnSend(){
     console.log("formQcQcn", this.formQcQcn.valid);
@@ -991,32 +1001,35 @@ this.formQcQcn = new FormGroup({
  
     const questionForm = {
       questions: true,
+      
       scrPerNeg: this.scrPerNeg,
       scrPerMer: this.scrPerMer,
       scrRep: this.scrRep,
-      scrDir: this.scrDir,
-      
-
+      scrDir: this.scrDir, 
+     qcQc: this.qcQc,
+     qcQc1: this.qcQc1,
+     qcQcn: this.qcQcn,
+     qcQcnm: this.qcQcnm,
+     qcQcnm1:this.qcQcnm1,
+     qcQcnm2: this.qcQcnm2,
+     qcQcnm3: this.qcQcnm3,
+     qcQcnm4: this.qcQcnm4,
+     qcqn1: this.qcqn1,
+     qcqn22: this.qcqn22,
+     qcqn2: this.qcqn2,
+     qcqcn3: this.qcqcn3,
+     qcqcn5: this.qcqcn5,
+     qcqcn4: this.qcqcn4,
+     qcqcn6: this.qcqcn6,
+     qcqcn7: this.qcqcn7,
+     qcqcn8: this.qcqcn8,
+     qcqcnd: this.qcqcnd,
+     qcqcn1: this.qcqcn1,
      
-      
-    
-      qcQc1: this.qcQc1,
-      qcQcn: this.qcQcn,
-      qcQcnm: this.qcQcnm,
-      qcqn1: this.qcqn1,
-      qcqn22: this.qcqn22,
-      qcqn2: this.qcqn2,
-      qcqcn3: this.qcqcn3,
-      qcqcn5: this.qcqcn5,
-      qcqcn4: this.qcqcn4,
-      qcqcn6: this.qcqcn6,
-      qcqcn7: this.qcqcn7,
-      qcqcn8: this.qcqcn8,
-      qcqcnd: this.qcqcnd,
-      qcqcn1: this.qcqcn1
     }
     window.parent.postMessage(questionForm, '*');
   }
+  
   else{
     swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
     this.instQrmCnct.open(1); // no ira aqui solo para no completar form
