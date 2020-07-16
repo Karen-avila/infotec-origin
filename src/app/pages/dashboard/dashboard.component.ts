@@ -139,7 +139,7 @@ constructor(
     private eventManager: EventManager
   ) {
   this.re = localStorage.getItem('step');
-  this.re=4;
+  this.re=1;
   this.eventManager.addGlobalEventListener(
     'window',
     'message',

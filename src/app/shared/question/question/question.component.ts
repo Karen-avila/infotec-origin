@@ -1030,10 +1030,10 @@ this.formQcQcn = new FormGroup({
 
   sendQuestions() {
     console.log(this.formScrPerNeg.valid,this.formScrPerMer.valid,this.formScrRep.valid,this.formScrDir.valid,this.formQcQc.valid,this.formQcQcn.valid)
-    /*if((this.formScrPerNeg.valid) && (this.formScrPerMer.valid)
+    if((this.formScrPerNeg.valid) && (this.formScrPerMer.valid)
        && (this.formScrRep.valid) && (this.formScrDir.valid)
        && (this.formQcQc.valid) && (this.formQcQcn.valid))
-       {*/
+       {
  
     const questionForm = {
       questions: true,
@@ -1071,11 +1071,11 @@ this.formQcQcn = new FormGroup({
     window.parent.postMessage(questionForm, '*');
   }
   
-  /* else{
+   else{
     swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
     this.instQrmCnct.open(1); // no ira aqui solo para no completar form
   }
-} */
+} 
 
 
 
