@@ -450,6 +450,15 @@ export class QuestionComponent implements OnInit {
         value:""
       }];
 
+      qcqcnr5=[
+        {
+          quest:"No contó con ningún financiamiento",
+          opts:[""],
+          resp:"",
+          value:""
+        }
+      ];
+
       qcqcn5=[
         {
           quest:"Recursos propios (dueños, herencia, familia y amigos) o utilidades reinvertidas",
@@ -565,6 +574,15 @@ export class QuestionComponent implements OnInit {
         }
 
       ];
+      qcqcnr6=[
+        {
+          quest:"No contó con ningún financiamiento",
+          opts:[""],
+          resp:"",
+          value:""
+        }
+      ];
+
       qcqcn6=[
         {
           quest:"Recursos propios (dueños, herencia, familia y amigos) o utilidades reinvertidas",
@@ -608,6 +626,15 @@ export class QuestionComponent implements OnInit {
           resp:"",
           value:""
         }
+    ];
+
+    qcqcnr7=[
+      {
+        quest:"No contó con ningún financiamiento",
+        opts:[""],
+        resp:"",
+        value:""
+      }
     ];
 
     qcqcn7=[
@@ -701,10 +728,19 @@ export class QuestionComponent implements OnInit {
             resp:"",
             value:""
           }  ];
-      qcqcn1=[
+
+      qcQcn1=[
         {
           quest:"Registre el total de ingresos que obtuvo el negocio durante el ejercicio fiscal anterior. Por favor incluya tanto los ingresos derivados como los no derivados de la actividad, además de los apoyos del gobierno que haya recibido",
           opts:["No sé","Si sé, pero prefiero no  declararlo"],
+          resp:"",
+          value:""
+        }
+      ];
+      qcQcnm0=[
+        {
+          quest:"Monto",
+          opts:[""],
           resp:"",
           value:""
         }
@@ -787,7 +823,7 @@ this.formQcQc = new FormGroup({
   qcQc4: new FormControl(null, [Validators.required]),
   qcQc5: new FormControl(null, [Validators.required]),
   qcQc6: new FormControl(null, [Validators.required]),
-  qcQcI0: new FormControl(null, [Validators.required])
+  qcQcI0: new FormControl(null, [Validators.required,Validators.minLength(1), Validators.maxLength(2),Validators.pattern('[0-9]{1,38}')])
 });
 
 this.formQcQcn = new FormGroup({
@@ -994,10 +1030,10 @@ this.formQcQcn = new FormGroup({
 
   sendQuestions() {
     console.log(this.formScrPerNeg.valid,this.formScrPerMer.valid,this.formScrRep.valid,this.formScrDir.valid,this.formQcQc.valid,this.formQcQcn.valid)
-    if((this.formScrPerNeg.valid) && (this.formScrPerMer.valid)
+    /*if((this.formScrPerNeg.valid) && (this.formScrPerMer.valid)
        && (this.formScrRep.valid) && (this.formScrDir.valid)
        && (this.formQcQc.valid) && (this.formQcQcn.valid))
-       {
+       {*/
  
     const questionForm = {
       questions: true,
@@ -1024,17 +1060,22 @@ this.formQcQcn = new FormGroup({
      qcqcn7: this.qcqcn7,
      qcqcn8: this.qcqcn8,
      qcqcnd: this.qcqcnd,
-     qcqcn1: this.qcqcn1,
+     qcQcn1: this.qcQcn1,
+     qcqcnr5: this.qcqcnr5,
+     qcqcnr6: this.qcqcnr6,
+     qcqcnr7: this.qcqcnr7,
+     qcQcnm0: this.qcQcnm0,
+    
      
     }
     window.parent.postMessage(questionForm, '*');
   }
   
-  else{
+  /* else{
     swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
     this.instQrmCnct.open(1); // no ira aqui solo para no completar form
   }
-}
+} */
 
 
 
