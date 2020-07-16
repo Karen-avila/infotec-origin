@@ -17,7 +17,7 @@
                     <div class="input-field col s10 l12">
                         <i class="material-icons prefix icon-white">lock</i>
                         <input id="password" formControlName="password" [type]="passType" name='password' class="validate">
-                        <label class="white-text" for="password">Password</label>
+                        <label class="white-text" for="password">Contraseña</label>
                         <div class="red-text col s12" *ngIf="f.password.errors && !form.pristine">Debe tener un mínimo de 8 caracteres 1 Mayuscula 1 minuscula 1 numero</div>
                         <i class="material-icons prefix" *ngIf="icon" (click)="viewPassword()">visibility_off</i>
                         <i class="material-icons prefix" *ngIf="!icon" (click)="viewPassword()">visibility</i>
