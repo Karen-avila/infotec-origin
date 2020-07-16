@@ -279,21 +279,22 @@
 
                     <div class="input-field col s12 m7 l7">
                         <i class="material-icons prefix">aspect_ratio</i>
-                        <input id="clave_elector" type="text" formControlName="clave_elector" required class="validate" name="clave_elector" />
-                        <label for="clave_elector">Clave de Elector</label>
-                    </div>
-
-                    <div class="input-field col s12 m5 l5">
-                        <i class="material-icons prefix">aspect_ratio</i>
                         <input id="curp" type="text" formControlName="curp" pattern="^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$"
                             required class="validate" name="curp" />
                         <label for="curp">CURP</label>
                     </div>
                     <!--<div class="input-field col s12 m6 l6" *ngIf="model=='pFisica'">-->
-                    <div class="input-field col s12 m6 l6">
+                    <div class="input-field col s12 m5 l5">
                         <i class="material-icons prefix">aspect_ratio</i>
                         <input id="rfc" type="text" formControlName="rfc" pattern="^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$" required class="validate" name="rfc" />
                         <label for="rfc">RFC</label>
+                    </div>
+
+                    <div class="input-field col s12 m6 l6">
+                        <i class="material-icons prefix">aspect_ratio</i>
+                        <input id="clave_elector" type="text" formControlName="clave_elector" required minlength="18" maxlength="18"class="validate" name="clave_elector" />
+                        <label for="clave_elector">Clave de Elector</label>
+                        <a class="modal-trigger" href="#helpIne"><i class="material-icons prefix icon-black">help_outline</i></a>
                     </div>
 
                     <!--<div class="input-field col s12 m6 l6">
@@ -745,7 +746,7 @@
                 <form ngNativeValidate [formGroup]="formDocumentos" (ngSubmit)="ddocumentos()">
                     <div class="row">
                         <div class="col s12 m2 l2">
-                            <span>Identificación Oficial Frontal</span>
+                            <span>Identificación Oficial Frontal (INE o Pasaporte)</span>
                         </div>
                         <div class="file-field input-field col s12 m4 l4">
                             <div class="teal darken-4 btn">
@@ -763,7 +764,7 @@
 
                         <div>
                             <div class="col s12 m2 l2">
-                                <span>Identificación Oficial Reverso</span>
+                                <span>Identificación Oficial Reverso (INE o Pasaporte)</span>
                             </div>
                             <div class="file-field input-field col s12 m4 l4">
                                 <div class="teal darken-4 btn">
@@ -785,7 +786,7 @@
                         <div class="file-field input-field col s12 m4 l4">
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>cargar
-                                <input type="file" (change)="ValidateSize('estado')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="estado" id="estado" class="validate">
+                                <input type="file" title="El Estado de Cuenta que propociones debe estar a tu nombre y mostrar con claridad la Clabe Interbancaria. Te sugerimos descargarlo directamente del portal de tu banco." (change)="ValidateSize('estado')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="estado" id="estado" class="validate">
                             </div>
                             <div class="col s1 m1 l1" *ngIf="doc.estado.errors?.required">
                                 <i class="material-icons icon-red">error_outline</i>
@@ -803,7 +804,7 @@
                         <div class="file-field input-field col s12 m4 l4">
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>cargar
-                                <input type="file" (change)="ValidateSize('declaracion')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="declaracion" id="declaracion" class="validate">
+                                <input type="file" title="Si eres PERSONA FÍSICA CON ACTIVIDAD EMPRESARIAL envía tu última DECLARACIÓN DEL EJERCICIO DE IMPUESTOS FEDERALES; si eres PERSONA FÍSICA EN EL RÉGIMEN DE INCORPORACIÓN FISCAL envía el último ACUSE DE RECIBO DECLARACIÓN DE IMPUESTOS FEDERALES." (change)="ValidateSize('declaracion')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="declaracion" id="declaracion" class="validate">
                             </div>
                             <div class="col s1 m1 l1" *ngIf="doc.declaracion.errors?.required">
                                 <i class="material-icons icon-red">error_outline</i>
@@ -831,11 +832,11 @@
                                 <input class="file-path validate" type="text">
                             </div>
                         </div>
-                        <div class="col s12 m2 l2">
+                        <!--<div class="col s12 m2 l2">
                             <span>RFC</span>
                             <a (click)="sweetHome('1')"><i class="material-icons prefix icon-black">help_outline</i></a>
-                        </div>
-                        <div class="file-field input-field col s12 m4 l4">
+                        </div>-->
+                        <!--<div class="file-field input-field col s12 m4 l4">
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>cargar
                                 <input accept="pplication/pdf" (change)="ValidateSize('rfcd')" type="file" formControlName="rfcd" id="rfcd" class="validate">
@@ -846,7 +847,7 @@
                             <div class="file-path-wrapper">
                                 <input class="file-path validate" type="text">
                             </div>
-                        </div>
+                        </div>-->
 
 
                         <!--   <div class="col s12 m2 l2">
@@ -870,11 +871,12 @@
                         <div>
                             <div class="col s12 m2 l2">
                                 <span>Comprobante de Domicilio Personal</span>
+                                <a (click)="sweetHome('1')"><i class="material-icons prefix icon-black">help_outline</i></a>
                             </div>
                             <div class="file-field input-field col s12 m4 l4">
                                 <div class="teal darken-4 btn">
                                     <i class="material-icons right">attachment</i>cargar
-                                    <input type="file" (change)="ValidateSize('comprobante')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="comprobante" id="comprobante" class="validate">
+                                    <input type="file" title="Recibo CFE del Domicilio Personal con antigüedad no mayor a 3 meses." (change)="ValidateSize('comprobante')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="comprobante" id="comprobante" class="validate">
                                 </div>
                                 <div class="col s1 m1 l1" *ngIf="doc.comprobante.errors?.required">
                                     <i class="material-icons icon-red">error_outline</i>
@@ -889,11 +891,12 @@
                         <div>
                             <div class="col s12 m2 l2">
                                 <span>Comprobante de Domicilio del Negocio</span>
+                                <a (click)="sweetHome('3')"><i class="material-icons prefix icon-black">help_outline</i></a>
                             </div>
                             <div class="file-field input-field col s12 m4 l4">
                                 <div class="teal darken-4 btn">
                                     <i class="material-icons right">attachment</i>cargar
-                                    <input type="file" (change)="ValidateSize('comprobanten')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="comprobanten" id="comprobanten" class="validate">
+                                    <input type="file" title="Recibo CFE del Negocio con antigüedad no mayor a 3 meses." (change)="ValidateSize('comprobanten')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="comprobanten" id="comprobanten" class="validate">
                                 </div>
                                 <div class="col s1 m1 l1" *ngIf="doc.comprobanten.errors?.required">
                                     <i class="material-icons icon-red">error_outline</i>
@@ -1141,7 +1144,7 @@
 <div id="modal1" class="modal">
     <div class="modal-content">
         <h4 class="zz">¡Solicitud Enviada!</h4>
-        <p class="flow-text"><b>N° de Registro: </b>KJF986JHH32</p>
+        <!--<p class="flow-text"><b>N° de Registro: </b>KJF986JHH32</p>-->
         <p class="flow-text">Para continuar activa tu cuenta, revisa el correo que nos proporcionaste y encontraras las instrucciones para continuar con tu solicitud.</p>
     </div>
     <div class="modal-footer">

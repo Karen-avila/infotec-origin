@@ -17,8 +17,8 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
     
     this.form = new FormGroup({
-      codigo: new FormControl(null, [Validators.required]),
-      token: new FormControl(null, [Validators.required])
+      codigo: new FormControl(null, Validators.required),
+      token: new FormControl(null, Validators.required)
    });
 
   }
@@ -28,7 +28,7 @@ export class RegisterComponent implements OnInit {
     console.log("formval is valid?", this.form.valid);
     if(this.form.valid){
       console.log("formval", this.form.value);
-      this.router.navigate(["dashboard"]);
+      this.router.navigate(["/dashboard"]);
       swal("¡Felicidades!", "Inicio de sesión exitoso.", "success");
       //enviar datos a back
       //this.popup[0].open();

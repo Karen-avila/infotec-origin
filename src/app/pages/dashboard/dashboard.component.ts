@@ -79,9 +79,9 @@ formFiel: FormGroup;
   ]
   alrt = [
     {name:"Curp", url:"https://www.gob.mx/curp/"},
-    {name:"Rfc", url:"https://www.siat.sat.gob.mx/PTSC/"},
-    {name:"Constancia de Situación Fiscal", url:"https://www.sat.gob.mx/aplicacion/53027/genera-tu-constancia-de-situacion-fiscal"}
-    //{name:"Buro de crédito", url:"https://www.burodecredito.com.mx/score-info.html"},
+    {name:"recibo digital de CFE", url:"https://app.cfe.mx/Aplicaciones/CCFE/SolicitudesCFE/Solicitudes/ConsultaTuReciboLuzGmx.aspx "},
+    {name:"Constancia de Situación Fiscal", url:"https://www.sat.gob.mx/aplicacion/operacion/53027/genera-tu-constancia-de-situacion-fiscal"},
+    {name:"recibo digital de CFE", url:"https://app.cfe.mx/Aplicaciones/CCFE/SolicitudesCFE/Solicitudes/ConsultaTuReciboLuzGmx.aspx"}
   ];
  re;
  //-------------------
@@ -139,7 +139,7 @@ constructor(
     private eventManager: EventManager
   ) {
   this.re = localStorage.getItem('step');
-  //this.re="1"
+  this.re=4;
   this.eventManager.addGlobalEventListener(
     'window',
     'message',
@@ -232,7 +232,7 @@ ngOnInit() {
       municipio: new FormControl(null, Validators.required),
       asentamientoType: new FormControl(null, Validators.required),
       asentamiento: new FormControl(null, Validators.required),
-      domicilio: new FormControl(' ', [Validators.required]),
+      domicilio: new FormControl(' '),
       calleNeg: new FormControl(null, Validators.required),
       extNeg: new FormControl(null, Validators.required),
       intNeg: new FormControl(null, [Validators.minLength(0)]),
@@ -301,7 +301,7 @@ ngOnInit() {
       estado: new FormControl(null, Validators.required),
       declaracion: new FormControl(null, Validators.required),
       curpd: new FormControl(null, Validators.required),
-      rfcd: new FormControl(null, Validators.required),
+      //rfcd: new FormControl(null, Validators.required),
       fiscal: new FormControl(null, Validators.required),
       autorizobc: new FormControl(false, Validators.required),
       termcond: new FormControl(false, Validators.required),
