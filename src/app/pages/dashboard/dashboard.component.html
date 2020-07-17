@@ -7,7 +7,7 @@
             <div class="step-title waves-effect waves-dark">Cuenta</div>
         </li>
         <li class="step">
-            <div class="step-title waves-effect waves-dark">Datos de Prestamo</div>
+            <div class="step-title waves-effect waves-dark">Datos de Préstamo</div>
             <div class="step-content">
                 <div class="row">
                     <div class="cono2 special col xl5 offset-xl1 l5 offset-l1 m5 offset-m1 s9 offset-s1">
@@ -155,7 +155,7 @@
                         <input id="name" type="text" formControlName="name" name="name" required class="validate">
                         <label for="name">Nombre</label>
 
-                        <div class="blue-text" *ngIf="f.name.errors?.minlength">Debe tener un mínimo de 3 caracteres</div>
+                        <div class="blue-text" *ngIf="f.name.errors?.minlength">Debe tener un mínimo de 2 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <p>Palabra altisonante</p>
                         </div>
@@ -166,7 +166,7 @@
                         <input id="name2" type="text" formControlName="name2" name="name2" class="validate">
                         <label for="name2">Segundo nombre</label>
 
-                        <div class="blue-text" *ngIf="f.name2.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
+                        <div class="blue-text" *ngIf="f.name2.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabra altisonante</p>-->
                         </div>
@@ -175,7 +175,7 @@
                         <i class="material-icons prefix">account_circle</i>
                         <input id="a_paterno" type="text" name="a_paterno" formControlName="a_paterno" required class="validate">
                         <label for="a_paterno">Apellido paterno</label>
-                        <div class="blue-text" *ngIf="f.a_paterno.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
+                        <div class="blue-text" *ngIf="f.a_paterno.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabra altisonante</p> -->
                         </div>
@@ -184,7 +184,7 @@
                         <i class="material-icons prefix">account_circle</i>
                         <input id="a_materno" type="text" name="a_materno" formControlName="a_materno" required class="validate">
                         <label for="a_materno">Apellido materno</label>
-                        <div class="blue-text" *ngIf="f.a_materno.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
+                        <div class="blue-text" *ngIf="f.a_materno.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabra altisonante</p> -->
                         </div>
@@ -282,12 +282,14 @@
                         <input id="curp" type="text" formControlName="curp" pattern="^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$"
                             required class="validate" name="curp" />
                         <label for="curp">CURP</label>
+                        <div class="blue-text">Únicamente letras mayúsculas</div>
                     </div>
                     <!--<div class="input-field col s12 m6 l6" *ngIf="model=='pFisica'">-->
                     <div class="input-field col s12 m5 l5">
                         <i class="material-icons prefix">aspect_ratio</i>
                         <input id="rfc" type="text" formControlName="rfc" pattern="^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$" required class="validate" name="rfc" />
                         <label for="rfc">RFC</label>
+                        <div class="blue-text">Únicamente letras mayúsculas</div>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
@@ -375,7 +377,7 @@
                       <label>Entidad federativa de Nacimiento</label>-->
 
                         <span class="grey-text in">Entidad federativa</span>
-                        <input type="text" [(ngModel)]="personal.estado" formControlName="entidadfed" name="entidadfed" id="entidadfed" class="validate" placeholder="Entidad federativa de Nacimiento" disabled>
+                        <input type="text" [(ngModel)]="personal.estado" formControlName="entidadfed" name="entidadfed" id="entidadfed" class="validate" placeholder="Entidad federativa" disabled>
                         <div class="blue-text" *ngIf="f.entidadfed.errors"></div>
                     </div>
                     <div class="input-field col s12 m5 l5">
@@ -514,6 +516,7 @@
                         <label>Asentamiento</label>
                         <div class="blue-text" *ngIf="f.asentamientoNeg.errors">Debes seleccionar una opción.</div>
                     </div>
+
                     <div class="input-field col s12 m12 l12">
                         <i class="material-icons prefix icon-gold">work_outline</i>
                         <label class="title black-text"><b class="title col s12 m12 l12">Actividad del Negocio</b></label>
@@ -582,7 +585,7 @@
                         <input id="ref1_name" type="text" formControlName="ref1_name" name="ref1_name" required class="validate">
                         <label for="ref1_name">Nombre</label>
 
-                        <div class="blue-text" *ngIf="f.ref1_name.errors?.minlength">Debe tener un mínimo de 3 caracteres</div>
+                        <div class="blue-text" *ngIf="f.ref1_name.errors?.minlength">Debe tener un mínimo de 2 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                         </div>
                     </div>
@@ -592,7 +595,7 @@
                         <input id="ref1_name2" type="text" formControlName="ref1_name2" name="ref1_name2" class="validate">
                         <label for="ref1_name2">Segundo nombre</label>
 
-                        <div class="blue-text" *ngIf="f.ref1_name2.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
+                        <div class="blue-text" *ngIf="f.ref1_name2.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabra altisonante</p>-->
                         </div>
@@ -601,7 +604,7 @@
                         <i class="material-icons prefix">account_circle</i>
                         <input id="ref1_paterno" type="text" name="ref1_paterno" formControlName="ref1_paterno" required class="validate">
                         <label for="ref1_paterno">Apellido paterno</label>
-                        <div class="blue-text" *ngIf="f.ref1_paterno.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
+                        <div class="blue-text" *ngIf="f.ref1_paterno.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabra altisonante</p> -->
                         </div>
@@ -610,7 +613,7 @@
                         <i class="material-icons prefix">account_circle</i>
                         <input id="ref1_materno" type="text" name="ref1_materno" formControlName="ref1_materno" required class="validate">
                         <label for="ref1_materno">Apellido materno</label>
-                        <div class="blue-text" *ngIf="f.ref1_materno.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
+                        <div class="blue-text" *ngIf="f.ref1_materno.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabra altisonante</p> -->
                         </div>
@@ -647,7 +650,7 @@
                         <input id="ref2_name" type="text" formControlName="ref2_name" name="ref2_name" required class="validate">
                         <label for="ref2_name">Nombre</label>
 
-                        <div class="blue-text" *ngIf="f.ref2_name.errors?.minlength">Debe tener un mínimo de 3 caracteres</div>
+                        <div class="blue-text" *ngIf="f.ref2_name.errors?.minlength">Debe tener un mínimo de 2 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                         </div>
                     </div>
@@ -657,7 +660,7 @@
                         <input id="ref2_name2" type="text" formControlName="ref2_name2" name="ref2_name2" class="validate">
                         <label for="ref2_name2">Segundo nombre</label>
 
-                        <div class="blue-text" *ngIf="f.ref2_name2.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
+                        <div class="blue-text" *ngIf="f.ref2_name2.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabra altisonante</p>-->
                         </div>
@@ -666,7 +669,7 @@
                         <i class="material-icons prefix">account_circle</i>
                         <input id="ref2_paterno" type="text" name="ref2_paterno" formControlName="ref2_paterno" required class="validate">
                         <label for="ref2_paterno">Apellido paterno</label>
-                        <div class="blue-text" *ngIf="f.ref2_paterno.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
+                        <div class="blue-text" *ngIf="f.ref2_paterno.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabra altisonante</p> -->
                         </div>
@@ -675,7 +678,7 @@
                         <i class="material-icons prefix">account_circle</i>
                         <input id="ref2_materno" type="text" name="ref2_materno" formControlName="ref2_materno" required class="validate">
                         <label for="ref2_materno">Apellido materno</label>
-                        <div class="blue-text" *ngIf="f.ref2_materno.errors?.minlength">Debe tener un minimo de 3 caracteres</div>
+                        <div class="blue-text" *ngIf="f.ref2_materno.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabra altisonante</p> -->
                         </div>
@@ -710,7 +713,7 @@
                             <span>
 
                         <label class="waves-effect modal-trigger subrayar" href="#aviso">
-                            <span class="blue-text text-darken-4" style = "font-size: 14px;">Acepto Aviso de Privacidad</span>
+                            <span class="blue-text text-darken-4" style = "font-size: 14px;">He leído la política de privacidad.</span>
                         </label>
                             </span>
                             </label>
@@ -780,7 +783,7 @@
                                 <i class="material-icons icon-red">error_outline</i>
                             </div>
                             <div class="file-path-wrapper">
-                                <input class="file-path validate" type="text">
+                                <input class="file-path validate" type="text"  placeholder="Archivos permitidos PDF, JPG">
                             </div>
                         </div>
 
@@ -798,7 +801,7 @@
                                     <i class="material-icons icon-red">error_outline</i>
                                 </div>
                                 <div class="file-path-wrapper">
-                                    <input class="file-path validate" type="text">
+                                    <input class="file-path validate" type="text"  placeholder="Archivos permitidos PDF, JPG">
                                 </div>
                             </div>
                         </div>
@@ -838,7 +841,7 @@
                                 <i class="material-icons icon-red">error_outline</i>
                             </div>
                             <div class="file-path-wrapper">
-                                <input class="file-path validate" type="text">
+                                <input class="file-path validate" type="text"  placeholder="Archivos permitidos PDF, JPG">
                             </div>
                         </div>
 
@@ -856,7 +859,7 @@
                                 <i class="material-icons icon-red">error_outline</i>
                             </div>
                             <div class="file-path-wrapper">
-                                <input class="file-path validate" type="text">
+                                <input class="file-path validate" type="text"  placeholder="Archivos permitidos PDF, JPG">
                             </div>
                         </div>
 
@@ -875,7 +878,7 @@
                                 <i class="material-icons icon-red">error_outline</i>
                             </div>
                             <div class="file-path-wrapper">
-                                <input class="file-path validate" type="text">
+                                <input class="file-path validate" type="text"  placeholder="Archivos permitidos PDF, JPG">
                             </div>
                         </div>
                         <!--<div class="col s12 m2 l2">
@@ -928,7 +931,7 @@
                                     <i class="material-icons icon-red">error_outline</i>
                                 </div>
                                 <div class="file-path-wrapper">
-                                    <input class="file-path validate" type="text">
+                                    <input class="file-path validate" type="text"  placeholder="Archivos permitidos PDF, JPG">
                                 </div>
                             </div>
                         </div>
@@ -948,7 +951,7 @@
                                     <i class="material-icons icon-red">error_outline</i>
                                 </div>
                                 <div class="file-path-wrapper">
-                                    <input class="file-path validate" type="text">
+                                    <input class="file-path validate" type="text"  placeholder="Archivos permitidos PDF, JPG">
                                 </div>
                             </div>
                         </div>
@@ -966,9 +969,15 @@
                                 <i class="material-icons icon-red">error_outline</i>
                             </div>
                             <div class="file-path-wrapper">
-                                <input class="file-path validate" type="text">
+                                <input class="file-path validate" type="text" placeholder="Archivos permitidos PDF, JPG">
                             </div>
                         </div>
+
+                        <!--<div class="input-field col s12 m12 l12">
+                            <label><span class="subrayar ">
+                                Archivos permitidos PDF, JPG
+                            </span></label>
+                        </div><br><br>-->
 
                         <br><br>
 
@@ -1032,7 +1041,7 @@
                                 <label><input class="with-gap teal darken-4" formControlName="autorizobc" name="autorizobc" type="checkbox" [(ngModel)]="bc"/>
                             <span>
                                 <label>
-                                    <span class="black-text" style = "font-size: 14px;">Autorizó la consulta a sociedades de información crediticia</span>
+                                    <span class="black-text" style = "font-size: 14px;">Autorizo la consulta a sociedades de información crediticia</span>
                                 </label>
                                 </span>
                                 </label>
@@ -1045,7 +1054,7 @@
                             <span>
 
                         <label class="waves-effect modal-trigger subrayar" href="#terminos">
-                            <span class="blue-text text-darken-4" style = "font-size: 14px;">Acepto Terminos y condiciones</span>
+                            <span class="blue-text text-darken-4" style = "font-size: 14px;">Acepto Términos y condiciones</span>
                         </label>
                                 </span>
                                 </label>
@@ -1075,7 +1084,11 @@
                     <div class="col m2 s8 offset-s1">
                         <img class="responsive-img img0" src="../../../assets/5.png">
                     </div>
-                    <!--pruebas-->
+                    <div class="col m9 offset-s1">
+                    <p class="justificacion">Al responder las siguientes preguntas te recomendamos ser fiel a la situación de tu negocio. Tus respuestas sirven para evaluar tu solicitud de crédito. La información se validará con la documentación que nos proporcionaste.</p>
+                    </div>
+
+                    <!--pruebas--><br>
                     <app-question></app-question>
                     <!--pruebas-->
                     <!--<div class="col s12">
@@ -1204,10 +1217,24 @@
     <div class="modal-content">
         <h4 class="zz">¡Solicitud Enviada!</h4>
         <!--<p class="flow-text"><b>N° de Registro: </b>KJF986JHH32</p>-->
-        <p class="flow-text">Para continuar activa tu cuenta, revisa el correo que nos proporcionaste y encontraras las instrucciones para continuar con tu solicitud.</p>
+        <p class="flow-text">Para continuar activa tu cuenta, revisa el correo que nos proporcionaste y encontrarás las instrucciones para continuar con tu solicitud.</p>
     </div>
     <div class="modal-footer">
         <a routerLink="/home" class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>
+    </div>
+    <div class="footer-copyright teal darken-3">
+        <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
+    </div>
+</div>
+
+<div id="helpIne" class="modal">
+    <div class="modal-content center">
+        <h4 class="zz">Aquí podrás encontrar tu Clave de Elector</h4>
+        <br>
+        <img class="responsive-img" src="../../../assets/ineHelp.png">
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>
     </div>
     <div class="footer-copyright teal darken-3">
         <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">

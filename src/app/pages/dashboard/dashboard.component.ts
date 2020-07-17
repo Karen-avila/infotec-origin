@@ -140,9 +140,11 @@ constructor(
     private route: ActivatedRoute,
     private router: Router,
     private eventManager: EventManager
+    
   ) {
   this.re = localStorage.getItem('step');
-  this.re=3;//5
+  this.re=1;
+
   this.eventManager.addGlobalEventListener(
     'window',
     'message',
@@ -159,6 +161,7 @@ constructor(
       }
     }
   );
+
   // Monto del Prestamo
   const montoCapital = 20000 * -1;
   // Tasa de Interes Anual
@@ -214,10 +217,10 @@ ngOnInit() {
     this.form = new FormGroup({
       personType: new FormControl(null, Validators.required),
       clabe_inter: new FormControl(null, [Validators.required, Validators.minLength(18), Validators.maxLength(18), Validators.pattern('[0-9]{18}')]),
-      name: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      name: new FormControl(null, [Validators.required, Validators.minLength(2)]),
       name2: new FormControl(null, [Validators.minLength(0)]),
-      a_paterno: new FormControl(null, [Validators.required, Validators.minLength(3)]),
-      a_materno: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      a_paterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
+      a_materno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
       birthDate : new FormControl(null, Validators.required),
       civil: new FormControl(null, Validators.required),
       genero : new FormControl(null, Validators.required),
@@ -245,22 +248,23 @@ ngOnInit() {
       municipioNeg: new FormControl(null, Validators.required),
       asentamientoNeg: new FormControl(null, Validators.required),
       asentamientoTypeNeg: new FormControl(null, Validators.required),
+      /* domicilion: new FormControl(' '), */
       sector: new FormControl(null, Validators.required),
       subsector: new FormControl(null, Validators.required),
       rama: new FormControl(null, Validators.required),
       subrama: new FormControl(null, Validators.required),
       giro: new FormControl(null, Validators.required),
-      ref1_name: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      ref1_name: new FormControl(null, [Validators.required, Validators.minLength(2)]),
       ref1_name2: new FormControl(null, [Validators.minLength(0)]),
-      ref1_paterno: new FormControl(null, [Validators.required, Validators.minLength(3)]),
-      ref1_materno: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      ref1_paterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
+      ref1_materno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
       // tslint:disable-next-line: max-line-length
       ref1_tel: new FormControl(null, [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
       ref1_relacion: new FormControl(null, Validators.required),
-      ref2_name: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      ref2_name: new FormControl(null, [Validators.required, Validators.minLength(2)]),
       ref2_name2: new FormControl(null, [Validators.minLength(0)]),
-      ref2_paterno: new FormControl(null, [Validators.required, Validators.minLength(3)]),
-      ref2_materno: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      ref2_paterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
+      ref2_materno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
       // tslint:disable-next-line: max-line-length
       ref2_tel: new FormControl(null, [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
       ref2_relacion: new FormControl(null, Validators.required),
