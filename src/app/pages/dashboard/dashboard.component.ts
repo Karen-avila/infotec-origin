@@ -37,11 +37,6 @@ infoPersonal = {
   latitude: 0,
   longitude: 0,
 };
-infoNegocio = {
-  calleNeg: '',
-  latituden: 0,
-  longituden: 0,
-};
 personal = {
   cp: '',
   estado: '',
@@ -164,22 +159,6 @@ constructor(
     }
   );
 
-  /* this.eventManager.addGlobalEventListener(
-    'window',
-    'message',
-    (msgNeg) => {
-      if (msgNeg.data.latituden && msgNeg.data.longituden) {
-        this.infoNegocio.calleNeg = msgNeg.data.name;
-        this.infoNegocio.latituden = msgNeg.data.latituden;
-        this.infoNegocio.longituden = msgNeg.data.longituden;
-      }
-      this.mapOk();
-      if (msgNeg.data.questions) {
-        this.popup[0].open();
-        console.log(msgNeg.data);
-      }
-    }
-  ); */
   // Monto del Prestamo
   const montoCapital = 20000 * -1;
   // Tasa de Interes Anual
