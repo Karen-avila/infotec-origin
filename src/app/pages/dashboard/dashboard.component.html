@@ -745,9 +745,32 @@
             <div class="step-content">
                 <form ngNativeValidate [formGroup]="formDocumentos" (ngSubmit)="ddocumentos()">
                     <div class="row">
-                        <div class="col s12 m2 l2">
-                            <span>Identificación Oficial Frontal (INE o Pasaporte)</span>
+
+                        <div class="col s12">
+                        <div class="input-field col s12 m4">
+                            <p>
+                                <label>
+                            <input class="with-gap teal darken-4"  name="typeId" id="typeId" type="radio"  [(ngModel)]="typeId" value="ine" (change)="typeIdFun()"/>
+                            <span>INE</span>
+                        </label>
+                            </p>
                         </div>
+                        <div class="input-field col s12 m4">
+                            <p>
+                                <label>
+                            <input class="with-gap teal darken-4"  name="typeId" id="typeId" type="radio"  [(ngModel)]="typeId" value="pasaporte" (change)="typeIdFun()"/>
+                            <span>Pasaporte</span>
+                        </label>
+                            </p>
+                        </div> 
+                    </div>
+<br><br>
+                        <div *ngIf="typeId==='ine'">
+
+                        <div class="col s12 m2 l2">
+                            <span>Identificación Oficial Frontal (INE)</span>
+                        </div>
+
                         <div class="file-field input-field col s12 m4 l4">
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>cargar
@@ -764,7 +787,7 @@
 
                         <div>
                             <div class="col s12 m2 l2">
-                                <span>Identificación Oficial Reverso (INE o Pasaporte)</span>
+                                <span>Identificación Oficial Reverso (INE)</span>
                             </div>
                             <div class="file-field input-field col s12 m4 l4">
                                 <div class="teal darken-4 btn">
@@ -779,6 +802,29 @@
                                 </div>
                             </div>
                         </div>
+
+                    </div>
+
+                    <div *ngIf="typeId==='pasaporte'">
+
+                        <div class="col s12 m2 l2">
+                            <span>Identificación Oficial (Pasaporte)</span>
+                        </div>
+
+                        <div class="file-field input-field col s12 m4 l4">
+                            <div class="teal darken-4 btn">
+                                <i class="material-icons right">attachment</i>cargar
+                                <input type="file" (change)="ValidateSize('frontal')" accept="image/jpg, image/jpeg, image/png, application/pdf" formControlName="frontal" id="frontal" class="validate">
+                            </div>
+                            <div class="col s1 m1 l1" *ngIf="doc.frontal.errors?.required">
+                                <i class="material-icons icon-red">error_outline</i>
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text">
+                            </div>
+                        </div>
+
+                    </div>
 
                         <div class="col s12 m2 l2">
                             <span>Estado de Cuenta</span>
@@ -1049,7 +1095,36 @@
             <div class="step-title waves-effect waves-dark">Descarga de Documentos</div>
             <div class="step-content">
                 <br>
-                <div class="card">
+                                <!--  -->
+                                <div class="card col s12">
+                                    <div class="card-content">
+                                        <div class="row center">
+                                           <h3><b>¡Felicidades tu crédito fue aprobado!</b></h3>
+                                           <p class="flow-text">Por un monto de {{ dummyAmmount | currency:"MXN":"symbol" }}</p>
+                                        </div>
+                                        <div class="row center">
+
+                                            <div class="teal darken-4 btn">
+                                                <i class="material-icons right" (click)="rechazar()"></i>Rechazar
+                                            </div>
+                                            &nbsp;
+                                            <div class="teal darken-4 btn">
+                                                <i class="material-icons right"></i>Aceptar
+                                            </div>
+                                            
+                                         </div>
+                                        <!-- <div class="row" *ngIf="terms">
+                                            <div class="input-field col s12 m4 offset-m3">
+                                                <a class="waves-effect teal darken-4 btn " href="../../../assets/Caratula.pdf" download="contr.pdf">Descargar
+                                            <i class="medium material-icons icon-gold right">save_alt</i>
+                                        </a>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <!--  -->
+
+                <div class="card hide">
                     <div class="card-content">
                         <div class="row">
                             <!--<img class="responsive-img" src="../../../assets/contr.png">-->
@@ -1117,27 +1192,11 @@
                             </div>
                         </div>
                     </div>
-                    <!--<div class="col s12">
-
-                        <a routerLink="/home" class="waves-effect  teal darken-4 btn right ">
-                            <i class="material-icons prefix right">send</i> Terminar
-                        </a>
-
-                    </div>-->
                 </div>
+
             </div>
         </li>
-        <!--   <li class="step">
-        <div class="step-title waves-effect waves-dark">Felicidades!!!</div>
-        <div class="step-content">
-            <div class="row">
-                Felicidades!!!
-            </div>
-            <div class="step-actions">
-                <button class="waves-effect teal darken-4 btn ">Finalizar</button>
-            </div>
-        </div>
-    </li>-->
+       
     </ul>
 </div>
 

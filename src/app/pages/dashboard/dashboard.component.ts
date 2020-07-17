@@ -17,6 +17,9 @@ declare const MStepper: any;
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+
+  typeId = 'ine';
+  dummyAmmount = 40000;
   sector;
 activities = {
   sectorList: [],
@@ -139,7 +142,7 @@ constructor(
     private eventManager: EventManager
   ) {
   this.re = localStorage.getItem('step');
-  this.re=4;
+  this.re=3;//5
   this.eventManager.addGlobalEventListener(
     'window',
     'message',
@@ -522,5 +525,20 @@ ngOnInit() {
     }
   }
 
+  rechazar(){
+    console.log("Rechazado");
+
+  }
+
+  typeIdFun() {
+    console.log("cambiando..");
+    if (this.typeId == 'pasaporte') {
+      this.typeId = 'ine'
+      console.log("cambiooo..",this.typeId);
+    } else {
+      this.typeId = 'pasaporte'
+      console.log("cambiooo..",this.typeId);
+    }
+  }
 
 }
