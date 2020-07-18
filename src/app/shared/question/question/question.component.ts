@@ -400,7 +400,7 @@ export class QuestionComponent implements OnInit {
   qcqn2=[
 
     {
-      quest:"¿De cuánto efectivo dispone actualmente para cubrir las operaciones del negocios? Incluya lo que guarda en su casa, en el banco o en el negocio.",
+      quest:"¿De cuánto efectivo dispone actualmente para cubrir las operaciones del negocio? Incluya lo que guarda en su casa, en el banco o en el negocio.",
       opts:[""],
       resp:"",
       value:""
@@ -823,14 +823,14 @@ this.formQcQc = new FormGroup({
   qcQc4: new FormControl(null, [Validators.required]),
   qcQc5: new FormControl(null, [Validators.required]),
   qcQc6: new FormControl(null, [Validators.required]),
-  qcQcI0: new FormControl(null, [Validators.required,Validators.minLength(1), Validators.maxLength(2),Validators.pattern('[0-9]{1,38}')])
+  qcQcI0: new FormControl(null, [Validators.required])
 });
 
 this.formQcQcn = new FormGroup({
   qcQcnd: new FormControl(null, [Validators.required]),//1
   qcqcn10: new FormControl(' ',[Validators.required]), //2
   qcqcn11: new FormControl(' ',[Validators.required]), //2
-  qcqcnmo: new FormControl(' ',[Validators.required]),//2
+  qcqcnmo: new FormControl('',[Validators.required]),//2
   qcQcn220: new FormControl(null, [Validators.required]),//3
   qcQcn010: new FormControl(null, [Validators.required]),//4
   qcQcn011: new FormControl(null, [Validators.required]),//5
@@ -1030,9 +1030,10 @@ this.formQcQcn = new FormGroup({
 
   sendQuestions() {
     console.log(this.formScrPerNeg.valid,this.formScrPerMer.valid,this.formScrRep.valid,this.formScrDir.valid,this.formQcQc.valid,this.formQcQcn.valid)
-    if((this.formScrPerNeg.valid) && (this.formScrPerMer.valid)
+    /* if(this.formScrPerNeg.valid) */
+       if((this.formScrPerNeg.valid) && (this.formScrPerMer.valid)
        && (this.formScrRep.valid) && (this.formScrDir.valid)
-       && (this.formQcQc.valid) && (this.formQcQcn.valid))
+       && (this.formQcQc.valid) && (this.formQcQcn.valid)) 
        {
  
     const questionForm = {
