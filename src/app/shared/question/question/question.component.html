@@ -157,10 +157,10 @@
 
                                     <li class="collection-item avatar">
                                         <div class="input-field " *ngFor="let qcQcI of qcQc1; index as i;">
-                                            <span class="title">{{qcQcI.quest}}</span>
-
+                                            <span class="title">{{qcQc1.quest}}</span>
                                             <label>
-                                        <input  [(ngModel)]="qcQc1.resp; index as i;" formControlName="{{'qcQcI'+i}}" name="{{'qcQcI'+i}}" id="{{'qcQcI'+i}}" type="number" minlength="1" maxlength="2" max="38" min="0" required title="El número máximo de integrantes por hogar es de 38.">
+                                                <input  [(ngModel)]="qcQc1.resp" formControlName="{{'qcQcI'+i}}" name="{{'qcQcI'+i}}" id="{{'qcQcI'+i}}" type="number" minlength="1" maxlength="2" max="38" min="0" required title="El número máximo de integrantes por hogar es de 38.">
+                                        <!-- <input  [(ngModel)]="qcQc1.resp; index as i;" formControlName="{{'qcQcI'+i}}" name="{{'qcQcI'+i}}" id="{{'qcQcI'+i}}" type="number" minlength="1" maxlength="2" max="38" min="0" required title="El número máximo de integrantes por hogar es de 38."> -->
                                         </label>
                                         </div>
                                     </li>
