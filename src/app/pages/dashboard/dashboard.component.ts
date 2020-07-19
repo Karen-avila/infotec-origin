@@ -483,6 +483,7 @@ ngOnInit() {
     console.log('formFiel is valid?', this.formFiel.valid);
     if (this.formFiel.valid) {
       console.log('formFiel', this.formFiel.value);
+      this.router.navigate(["home"]);
       // enviar datos a back
       this.popup[0].open();
     } else {

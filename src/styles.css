@@ -75,6 +75,17 @@ ul.stepper.horizontal .step.done .step-title::before {
    width: 1050px;
 }
 
+input[type=number]::-webkit-outer-spin-button,
 
+input[type=number]::-webkit-inner-spin-button {
 
+    -webkit-appearance: none;
 
+    margin: 0;
+
+}
+input[type=number] {
+
+    -moz-appearance:textfield;
+
+}
