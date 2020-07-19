@@ -147,7 +147,7 @@
                                     <li class="collection-item avatar" *ngFor="let qcQc of qcQc; index as i;">
                                         <span class="title">{{qcQc.quest}}</span>
 
-                                        <p *ngFor="let resp of qcQc.opts">
+                                        <p *ngFor="let resp of qcQc.opts; index as j">
                                             <label>
                                             <input class="with-gap" (change)="changedqcQc(j, i)" [(ngModel)]="qcQc.resp" formControlName="{{'qcQc'+i}}" name="{{'qcQc'+i}}" id="{{'qcQc'+i}}" value="{{resp}}" type="radio"/>
                                             <span>{{resp}}</span>
@@ -160,7 +160,7 @@
                                             <span class="title">{{qcQcI.quest}}</span>
 
                                             <label>
-                                        <input  [(ngModel)]="qcQc1.resp" formControlName="{{'qcQcI'+i}}" name="{{'qcQcI'+i}}" id="{{'qcQcI'+i}}" type="number" minlength="1" maxlength="2" max="38" min="0" required title="El número máximo de integrantes por hogar es de 38.">
+                                        <input  [(ngModel)]="qcQc1.resp; index as i;" formControlName="{{'qcQcI'+i}}" name="{{'qcQcI'+i}}" id="{{'qcQcI'+i}}" type="number" minlength="1" maxlength="2" max="38" min="0" required title="El número máximo de integrantes por hogar es de 38.">
                                         </label>
                                         </div>
                                     </li>
