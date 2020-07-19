@@ -20,6 +20,10 @@ import { GeocodingComponent } from './map/geocoding/geocoding.component';
 import { MapPointFormComponent } from './map/map-point-form/map-point-form.component';
 import { ResultsListComponent } from './map/results-list/results-list.component';
 import {LeafletModule} from '@asymmetrik/ngx-leaflet';
+import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
+import { AgmCoreModule } from '@agm/core';
+import { PickAddressComponent } from './pick-address/pick-address.component';
+
 
 @NgModule({
     declarations:[
@@ -30,9 +34,16 @@ import {LeafletModule} from '@asymmetrik/ngx-leaflet';
         MapComponent,
         GeocodingComponent,
         MapPointFormComponent,
-        ResultsListComponent
+        ResultsListComponent,
+        PickAddressComponent
     ],
     imports:[
+        GooglePlaceModule,
+        AgmCoreModule.forRoot({
+          // please get your own API key here:
+          // https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en
+          apiKey: 'AIzaSyCseZ0trHuyvuZlNh6TXxz1-6OJhXfXaww'
+        }),
         FormsModule,
         ReactiveFormsModule,
         SharedModule,

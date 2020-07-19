@@ -11,12 +11,44 @@ import activitiesService from './service/activities.service';
 import { EventManager } from '@angular/platform-browser';
 declare const MStepper: any;
 
+// Pick Address
+import { MouseEvent } from '@agm/core';
+interface Marker {
+  lat: number;
+  lng: number;
+  label?: string;
+  draggable: boolean;
+}
+declare var google;
+// End PickAdress
+
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+
+  optionsplaces: any = {
+    types: ['geocode', 'establishment'],
+    componentRestrictions: { country: 'MX' }
+  };
+  // Pick Address
+  // google maps zoom level
+  zoom: number = 16;
+  // initial center position for the map
+  lat: number = 19.4310842;
+  lng: number = -99.1387687;
+  markers: Marker[] = [];
+
+  // google maps zoom level
+  zoom2: number = 16;
+  // initial center position for the map
+  lat2: number = 19.4310842;
+  lng2: number = -99.1387687;
+  markers2: Marker[] = [];
+  // End PickAdress
 
   typeId = 'ine';
   dummyAmmount = 40000;
@@ -28,24 +60,36 @@ activities = {
   subramaList: [],
   giroList: []
 };
-negocio = {
-  cp: '',
-  estado: '',
-  tipo_asentamiento: '',
-  municipio: '',
-  asentamiento: [],
-};
 infoPersonal = {
   calle: '',
   latitude: 0,
   longitude: 0,
 };
 personal = {
+  calle: '',
+  int: '',
+  ext: '',
   cp: '',
   estado: '',
   tipo_asentamiento: '',
+  colonia: '',
   municipio: '',
   asentamiento: [],
+  latitude: 0,
+  longitude: 0,
+};
+negocio = {
+  calle: '',
+  int: '',
+  ext: '',
+  cp: '',
+  estado: '',
+  tipo_asentamiento: '',
+  colonia: '',
+  municipio: '',
+  asentamiento: [],
+  latitude: 0,
+  longitude: 0,
 };
 questionForm = {};
 subsector;
@@ -143,7 +187,7 @@ constructor(
     
   ) {
   this.re = localStorage.getItem('step');
-  this.re=4;
+  this.re=1;
 
   this.eventManager.addGlobalEventListener(
     'window',
@@ -571,5 +615,98 @@ ngOnInit() {
       console.log("cambiooo..",this.typeId);
     }
   }
+
+  // Pick Address
+  handleAddressChange(event, target, centerMap=true) {
+    event.address_components.map((item) => {
+      if (item.types.includes('street_number')) {
+        if (target === 'personal') { this.personal.ext = item.long_name; }
+        if (target === 'negocio') { this.negocio.ext = item.long_name; }
+      }
+      if (item.types.includes('route')) {
+        if (target === 'personal') { this.personal.calle = item.long_name; }
+        if (target === 'negocio') { this.negocio.calle = item.long_name; }
+      }
+      if (item.types.includes('sublocality')) {
+        if (target === 'personal') { this.personal.colonia = item.long_name; }
+        if (target === 'negocio') { this.negocio.colonia = item.long_name; }
+      }
+      if (item.types.includes('locality')) {
+        if (target === 'personal') { this.personal.municipio = item.long_name; }
+        if (target === 'negocio') { this.negocio.municipio = item.long_name; }
+      }
+      if (item.types.includes('political')) {
+        if (target === 'personal') { this.personal.estado = item.long_name; }
+        if (target === 'negocio') { this.negocio.estado = item.long_name; }
+      }
+      if (item.types.includes('postal_code')) {
+        if (target === 'personal') { this.personal.cp = item.long_name; }
+        if (target === 'negocio') { this.negocio.cp = item.long_name; }
+      }
+      if (target === 'personal') {
+        this.personal.latitude = event.geometry.location.lat();
+        this.personal.longitude = event.geometry.location.lng();
+        this.searchCP(this.personal.cp, 'personal');
+        // document.querySelector('#ext').focus();
+      }
+      if (target === 'negocio') {
+        this.negocio.latitude = event.geometry.location.lat();
+        this.negocio.longitude = event.geometry.location.lng();
+        this.searchCP(this.negocio.cp, 'negocio');
+        // document.querySelector('#extNeg').focus() ;
+      }
+      if (centerMap) {
+        if (target === 'personal') {
+          this.lat = event.geometry.location.lat();
+          this.lng = event.geometry.location.lng();
+          this.markers = [
+            {
+              lat: event.geometry.location.lat(),
+              lng: event.geometry.location.lng(),
+              label: 'A',
+              draggable: true
+            },
+          ];
+        }
+        if (target === 'negocio') {
+          this.lat2 = event.geometry.location.lat();
+          this.lng2 = event.geometry.location.lng();
+          this.markers2 = [
+            {
+              lat: event.geometry.location.lat(),
+              lng: event.geometry.location.lng(),
+              label: 'A',
+              draggable: true
+            },
+          ];
+        }
+      }
+
+    });
+  }
+  mapClicked($event: MouseEvent, target) {
+    if (target === 'personal') {
+      this.markers = [{
+        lat: $event.coords.lat,
+        lng: $event.coords.lng,
+        label: 'A',
+        draggable: false
+      }];
+    }
+    if (target === 'negocio') {
+      this.markers2 = [{
+        lat: $event.coords.lat,
+        lng: $event.coords.lng,
+        label: 'A',
+        draggable: false
+      }];
+    }
+    new google.maps.Geocoder().geocode({
+      latLng: new google.maps.LatLng($event.coords.lat, $event.coords.lng)
+    }, (results, status) => {
+        this.handleAddressChange(results[1], target, false);
+    });
+  }
+  // end Pick Address
 
 }

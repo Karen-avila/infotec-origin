@@ -310,7 +310,89 @@
                         <label>Ocupación</label>
                         <div class="blue-text" *ngIf="f.ocupacion.errors">Debes seleccionar una opción.</div>
                     </div>-->
-                    <div class="input-field col s12 m12 l12">
+
+                    <div class="input-field col s12 m12 l12 mb-3">
+                        <i class="material-icons prefix icon-gold">roofing</i>
+                        <label class="title black-text">
+                          <b class="title col s12 m12 l12">Dirección</b>
+                        </label>
+                      </div>
+                      <div class="row">
+                        <div class="col s6">
+                          <div class="input-field col s12">
+                            <i class="material-icons prefix">near_me</i>
+                            <input placeholder="Ingresa aqui tu dirección" ngx-google-places-autocomplete #placesRef="ngx-places" [options]='optionsplaces' (onAddressChange)="handleAddressChange($event, 'personal')" />
+                          </div>
+                          <div class="input-field col s12">
+                            <span class="grey-text in">Calle</span>
+                            <input id="calle" type="text" [(ngModel)]="personal.calle" formControlName="calle" required class="validate" name="calle" disabled/>
+                            <div class="red-text" *ngIf="form.errors?.isMatch"></div>
+                          </div>
+                          <div class="input-field col s4">
+                            <span class="grey-text in">Número exterior</span>
+                            <input id="ext" type="text" [(ngModel)]="personal.ext" formControlName="ext" required class="validate" name="ext" placeholder="Número exterior"/>
+                            <div class="red-text" *ngIf="form.errors?.isMatch"></div>
+                          </div>
+                          <div class="input-field col s4">
+                            <span class="grey-text in">Número interior</span>
+                            <input id="int" type="text" [(ngModel)]="personal.int" formControlName="int" name="int" placeholder="Número interior"/>
+                            <div class="red-text" *ngIf="form.errors?.isMatch"></div>
+                          </div>
+                          <div class="input-field col s4">
+                            <span class="grey-text in">Código Postal</span>
+                            <input id="cp" type="number" formControlName="cp" required class="validate" name="cp" maxlength="5" [(ngModel)]="personal.cp" placeholder="Código Postal" disabled/>
+                            <!--<label for="cp">Codigo Postal</label>-->
+                            <div class="red-text" *ngIf="form.errors?.isMatch"></div>
+                          </div>
+                          <div class="input-field col s6">
+                            <span class="grey-text in">Alcaldia o Municipio</span>
+                            <input [(ngModel)]="personal.municipio" id="municipio" type="text" formControlName="municipio" name="municipio" class="validate" placeholder="Municipio" disabled required class="validate" />
+                            <!--<label for="municipio">Municipio</label>-->
+                            <div class="red-text" *ngIf="form.errors?.isMatch"></div>
+                          </div>
+                          <div class="input-field col s6">
+                            <span class="grey-text in">Entidad federativa</span>
+                            <input type="text" [(ngModel)]="personal.estado" formControlName="entidadfed" name="entidadfed" id="entidadfed" class="validate" placeholder="Entidad federativa" disabled>
+                            <div class="blue-text" *ngIf="f.entidadfed.errors"></div>
+                          </div>
+                          <div class="input-field col s6">
+                            <span class="grey-text in">Tipo de asentamiento</span>
+                            <input [(ngModel)]="personal.tipo_asentamiento" type="text" formControlName="asentamientoType" name="asentamientoType" id="asentamientoType" class="validate" placeholder="Tipo de asentamiento" disabled>
+                            <!--<label for="asentamientoType">Tipo de asentamiento</label>-->
+                            <div class="blue-text" *ngIf="f.asentamientoType.errors"></div>
+                          </div>
+                          <div class="input-field col s6">
+                            <span class="grey-text in">Asentamiento</span>
+                            <select [(ngModel)]="personal.asentamiento" formControlName="asentamiento" name="asentamiento" id="asentamiento" class="validate">
+                              <option value="" disabled selected>Selecciona una opcion</option>
+                              <option [ngValue]="personal.asentamiento" *ngFor="let item of personal.asentamiento">{{item}}</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col s6">
+                          <agm-map
+                            [latitude]="lat"
+                            [longitude]="lng"
+                            [zoom]="zoom"
+                            [zoomControl]="true"
+                            (mapClick)="mapClicked($event, 'personal')">
+                            <agm-marker
+                                *ngFor="let m of markers; let i = index"
+                                (markerClick)="clickedMarker(m.label, i)"
+                                [latitude]="m.lat"
+                                [longitude]="m.lng"
+                                [label]="m.label"
+                                [markerDraggable]="m.draggable"
+                                (dragEnd)="markerDragEnd(m, $event)">
+                              <agm-info-window>
+                                <strong>Mi ubicación</strong>
+                              </agm-info-window>
+                            </agm-marker>
+                          </agm-map>
+                        </div>
+                      </div>
+
+                    <!-- <div class="input-field col s12 m12 l12">
                         <i class="material-icons prefix icon-gold">roofing</i>
                         <label class="title black-text"><b class="title col s12 m12 l12">Dirección</b></label>
                         <p><br></p>
@@ -335,46 +417,11 @@
                     <div class="input-field col s12 m2 l2">
                         <span class="grey-text in">Codigo Postal</span>
                         <input #cp (keyup)="searchCP(cp.value, 'personal')" id="cp" type="number" formControlName="cp" required class="validate" name="cp" maxlength="5" [(ngModel)]="personal.cp" placeholder="Codigo Postal" />
-                        <!--<label for="cp">Codigo Postal</label>-->
+                        
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
                     <div class="input-field col s12 m5 l5">
-                        <!--<select [(ngModel)]="personal.estado" formControlName="entidadfed" name="entidadfed" id="entidadfed" class="validate">
-                        <option value="" disabled selected>Selecciona una opcion</option>
-                        <option value="Aguascalientes">Aguascalientes</option>
-                        <option value="Baja California">Baja California</option>
-                        <option value="Baja California Sur">Baja California Sur</option>
-                        <option value="Campeche">Campeche</option>
-                        <option value="Coahuila de Zaragoza">Coahuila de Zaragoza</option>
-                        <option value="Colima">Colima</option>
-                        <option value="Chiapas">Chiapas</option>
-                        <option value="Chihuahua">Chihuahua</option>
-                        <option value="Ciudad de México">Ciudad de México</option>
-                        <option value="Durango">Durango</option>
-                        <option value="Guanajuato">Guanajuato</option>
-                        <option value="Guerrero">Guerrero</option>
-                        <option value="Hidalgo">Hidalgo</option>
-                        <option value="Jalisco">Jalisco</option>
-                        <option value="México">México</option>
-                        <option value="Michoacán de Ocampo">Michoacán de Ocampo</option>
-                        <option value="Morelos">Morelos</option>
-                        <option value="Nayarit">Nayarit</option>
-                        <option value="Nuevo León">Nuevo León</option>
-                        <option value="Oaxaca">Oaxaca</option>
-                        <option value="Puebla">Puebla</option>
-                        <option value="Querétaro">Querétaro</option>
-                        <option value="Quintana Roo">Quintana Roo</option>
-                        <option value="San Luis Potosí">San Luis Potosí</option>
-                        <option value="Sinaloa">Sinaloa</option>
-                        <option value="Sonora">Sonora</option>
-                        <option value="Tabasco">Tabasco</option>
-                        <option value="Tamaulipas">Tamaulipas</option>
-                        <option value="Tlaxcala">Tlaxcala</option>
-                        <option value="Veracruz de Ignacio de la Llave">Veracruz de Ignacio de la Llave</option>
-                        <option value="Yucatán">Yucatán</option>
-                        <option value="Zacatecas">Zacatecas</option>
-                      </select>
-                      <label>Entidad federativa de Nacimiento</label>-->
+                       
 
                         <span class="grey-text in">Entidad federativa</span>
                         <input type="text" [(ngModel)]="personal.estado" formControlName="entidadfed" name="entidadfed" id="entidadfed" class="validate" placeholder="Entidad federativa" disabled>
@@ -383,21 +430,14 @@
                     <div class="input-field col s12 m5 l5">
                         <span class="grey-text in">Municipio</span>
                         <input [(ngModel)]="personal.municipio" id="municipio" type="text" formControlName="municipio" name="municipio" class="validate" placeholder="Municipio" disabled required class="validate" />
-                        <!--<label for="municipio">Municipio</label>-->
+                        
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
                     <div class="input-field col s12 m6 l6">
-                        <!--<select [(ngModel)]="personal.tipo_asentamiento" formControlName="asentamientoType" name="asentamientoType" id="asentamientoType" class="validate">
-                            <option value="" disabled selected>Selecciona una opcion</option>
-                            <option value="Barrio">Barrio</option>
-                            <option value="Colonia">Colonia</option>
-                            <option value="Equipamiento">Equipamiento</option>
-                            <option value="Pueblo">Pueblo</option>
-                            <option value="Fraccionamiento">Fraccionamiento</option>
-                        </select>-->
+                        
                         <span class="grey-text in">Tipo de asentamiento</span>
                         <input [(ngModel)]="personal.tipo_asentamiento" type="text" formControlName="asentamientoType" name="asentamientoType" id="asentamientoType" class="validate" placeholder="Tipo de asentamiento" disabled>
-                        <!--<label for="asentamientoType">Tipo de asentamiento</label>-->
+                        
                         <div class="blue-text" *ngIf="f.asentamientoType.errors"></div>
                     </div>
                     <div class="input-field col s12 m6 l6">
@@ -417,9 +457,89 @@
                         <div class="blue-text" *ngIf="f.domicilio.errors?.maxlength ">Máximo 120 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                         </div>
-                    </div>
+                    </div> -->
 
-                    <div class="input-field col s12 m12 l12">
+                    <div class="row">
+                        <div class="input-field col s12 m12 l12 mb-3">
+                          <i class="material-icons prefix icon-gold">work</i>
+                          <label class="title black-text">
+                              <b class="title col s12 m12 l12">Información del Negocio</b>
+                          </label>
+                        </div>
+                        <div class="col s6">
+                          <div class="input-field col s12">
+                            <i class="material-icons prefix">near_me</i>
+                            <input placeholder="Ingresa aqui tu dirección" ngx-google-places-autocomplete #placesRef="ngx-places" [options]='optionsplaces' (onAddressChange)="handleAddressChange($event, 'negocio')" />
+                          </div>
+                          <div class="input-field col s12">
+                            <span class="grey-text in">Calle</span>
+                            <input id="calleNeg" [(ngModel)]="negocio.calle" type="text" formControlName="calleNeg" required class="validate" name="calleNeg" disabled/>
+                            <div class="red-text" *ngIf="form.errors?.isMatch"></div>
+                          </div>
+                          <div class="input-field col s4">
+                            <span class="grey-text in">Número exterior</span>
+                            <input id="extNeg" [(ngModel)]="negocio.ext" type="text" formControlName="extNeg" required class="validate" name="extNeg" placeholder="Número exterior"/>
+                            <div class="red-text" *ngIf="form.errors?.isMatch"></div>
+                          </div>
+                          <div class="input-field col s4">
+                            <span class="grey-text in">Número interior</span>
+                            <input id="intNeg" [(ngModel)]="negocio.int" type="text" formControlName="intNeg" name="intNeg" placeholder="Número interior"/>
+                            <div class="red-text" *ngIf="form.errors?.isMatch"></div>
+                          </div>
+                          <div class="input-field col s4">
+                            <span class="grey-text in">Codigo Postal</span>
+                            <input id="cpNeg" [(ngModel)]="negocio.cp" type="number" formControlName="cpNeg" required class="validate" name="cpNeg" maxlength="5" [(ngModel)]="negocio.cp" placeholder="Codigo Postal" disabled/>
+                            <div class="red-text" *ngIf="form.errors?.isMatch"></div>
+                          </div>
+                          <div class="input-field col s6">
+                            <span class="grey-text in">Entidad federativa</span>
+                            <input type="text" [(ngModel)]="negocio.estado" formControlName="entidadfedNeg" name="entidadfedNeg" id="entidadfedNeg" class="validate" placeholder="Entidad federativa" disabled>
+                            <div class="blue-text" *ngIf="f.entidadfedNeg.errors"></div>
+                          </div>
+                          <div class="input-field col s6">
+                            <span class="grey-text in">Municipio</span>
+                            <input type="text" [(ngModel)]="negocio.municipio" id="municipioNeg" formControlName="municipioNeg" name="municipioNeg" class="validate" placeholder="Municipio" disabled>
+                            <div class="red-text" *ngIf="form.errors?.isMatch"></div>
+                          </div>
+                          <div class="input-field col s6">
+                            <span class="grey-text in">Tipo de asentamiento</span>
+                            <input type="text" [(ngModel)]="negocio.tipo_asentamiento" formControlName="asentamientoTypeNeg"
+                              name="asentamientoTypeNeg" id="asentamientoTypeNeg" class="validate" placeholder="Tipo de asentamiento" disabled>
+                            <div class="blue-text" *ngIf="f.asentamientoTypeNeg.errors"></div>
+                          </div>
+                          <div class="input-field col s6">
+                            <span class="grey-text in">Municipio</span>
+                            <select [(ngModel)]="negocio.asentamiento" formControlName="asentamientoNeg" name="asentamientoNeg" id="asentamientoNeg" class="negocio validate">
+                              <option value="" disabled selected>Selecciona una opcion</option>
+                              <option [ngValue]="negocio.asentamiento" *ngFor="let item of negocio.asentamiento">{{item}}</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col s6">
+                          <agm-map
+                            [latitude]="lat2"
+                            [longitude]="lng2"
+                            [zoom]="zoom2"
+                            [zoomControl]="true"
+                            (mapClick)="mapClicked($event, 'negocio')">
+                            <agm-marker
+                                *ngFor="let m of markers2; let i = index"
+                                (markerClick)="clickedMarker(m.label, i)"
+                                [latitude]="m.lat"
+                                [longitude]="m.lng"
+                                [label]="m.label"
+                                [markerDraggable]="m.draggable"
+                                (dragEnd)="markerDragEnd(m, $event)">
+                              <agm-info-window>
+                                <strong>Mi ubicación</strong>
+                              </agm-info-window>
+                            </agm-marker>
+                          </agm-map>
+                        </div>
+                      </div>
+  
+
+                   <!--  <div class="input-field col s12 m12 l12">
                         <i class="material-icons prefix icon-gold">work</i>
                         <label class="title black-text"><b class="title col s12 m12 l12">Información del Negocio</b></label>
                         <p><br></p>
@@ -443,46 +563,11 @@
                     <div class="input-field col s12 m2 l2">
                         <span class="grey-text in">Codigo Postal</span>
                         <input #cpNeg (keyup)="searchCP(cpNeg.value, 'negocio')" id="cpNeg" type="number" formControlName="cpNeg" required class="validate" name="cpNeg" maxlength="5" [(ngModel)]="negocio.cp" placeholder="Codigo Postal" />
-                        <!--<label for="cpNeg">Codigo Postal</label>-->
+                        
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
                     <div class="input-field col s12 m5 l5">
-                        <!--<select [(ngModel)]="negocio.estado" formControlName="entidadfedNeg" name="entidadfedNeg" id="entidadfedNeg" class="negocio validate">
-                        <option value="" disabled selected>Selecciona una opcion</option>
-                        <option value="Aguascalientes">Aguascalientes</option>
-                        <option value="Baja California">Baja California</option>
-                        <option value="Baja California Sur">Baja California Sur</option>
-                        <option value="Campeche">Campeche</option>
-                        <option value="Coahuila de Zaragoza">Coahuila de Zaragoza</option>
-                        <option value="Colima">Colima</option>
-                        <option value="Chiapas">Chiapas</option>
-                        <option value="Chihuahua">Chihuahua</option>
-                        <option value="Ciudad de México">Ciudad de México</option>
-                        <option value="Durango">Durango</option>
-                        <option value="Guanajuato">Guanajuato</option>
-                        <option value="Guerrero">Guerrero</option>
-                        <option value="Hidalgo">Hidalgo</option>
-                        <option value="Jalisco">Jalisco</option>
-                        <option value="México">México</option>
-                        <option value="Michoacán de Ocampo">Michoacán de Ocampo</option>
-                        <option value="Morelos">Morelos</option>
-                        <option value="Nayarit">Nayarit</option>
-                        <option value="Nuevo León">Nuevo León</option>
-                        <option value="Oaxaca">Oaxaca</option>
-                        <option value="Puebla">Puebla</option>
-                        <option value="Querétaro">Querétaro</option>
-                        <option value="Quintana Roo">Quintana Roo</option>
-                        <option value="San Luis Potosí">San Luis Potosí</option>
-                        <option value="Sinaloa">Sinaloa</option>
-                        <option value="Sonora">Sonora</option>
-                        <option value="Tabasco">Tabasco</option>
-                        <option value="Tamaulipas">Tamaulipas</option>
-                        <option value="Tlaxcala">Tlaxcala</option>
-                        <option value="Veracruz de Ignacio de la Llave">Veracruz de Ignacio de la Llave</option>
-                        <option value="Yucatán">Yucatán</option>
-                        <option value="Zacatecas">Zacatecas</option>
-                      </select>
-                      <label>Entidad federativa</label>-->
+                        
                         <span class="grey-text in">Entidad federativa</span>
                         <input type="text" [(ngModel)]="negocio.estado" formControlName="entidadfedNeg" name="entidadfedNeg" id="entidadfedNeg" class="validate" placeholder="Entidad federativa" disabled>
                         <div class="blue-text" *ngIf="f.entidadfedNeg.errors"></div>
@@ -490,22 +575,13 @@
                     <div class="input-field col s12 m5 l5">
                         <span class="grey-text in">Municipio</span>
                         <input type="text" [(ngModel)]="negocio.municipio" id="municipioNeg" formControlName="municipioNeg" name="municipioNeg" class="validate" placeholder="Municipio" disabled>
-                        <!--<input [(ngModel)]="negocio.municipio" id="municipioNeg" type="text" formControlName="municipioNeg" name="municipioNeg" required class="negocio validate" />
-                      <label for="municipioNeg">Municipio</label>-->
+                       
                         <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <span class="grey-text in">Tipo de asentamiento</span>
                         <input type="text" [(ngModel)]="negocio.tipo_asentamiento" formControlName="asentamientoTypeNeg" name="asentamientoTypeNeg" id="asentamientoTypeNeg" class="validate" placeholder="Tipo de asentamiento" disabled>
-                        <!--<select [(ngModel)]="negocio.tipo_asentamiento" formControlName="asentamientoTypeNeg" name="asentamientoTypeNeg" id="asentamientoTypeNeg" class="negocio validate">
-                          <option value="" disabled selected>Selecciona una opcion</option>
-                          <option value="Barrio">Barrio</option>
-                          <option value="Colonia">Colonia</option>
-                          <option value="Equipamiento">Equipamiento</option>
-                          <option value="Pueblo">Pueblo</option>
-                          <option value="Fraccionamiento">Fraccionamiento</option>
-                        </select>
-                        <label>Tipo de asentamiento</label>-->
+                        
                         <div class="blue-text" *ngIf="f.asentamientoTypeNeg.errors"></div>
                     </div>
                     <div class="input-field col s12 m6 l6">
@@ -515,7 +591,7 @@
                       </select>
                         <label>Asentamiento</label>
                         <div class="blue-text" *ngIf="f.asentamientoNeg.errors">Debes seleccionar una opción.</div>
-                    </div>
+                    </div> -->
 
                     <div class="input-field col s12 m12 l12">
                         <i class="material-icons prefix icon-gold">work_outline</i>
