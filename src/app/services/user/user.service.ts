@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { User } from '../../models/user.model';
 import { UserLog } from '../../models/user-log.module';
+import { UserActivate } from '../../models/user-activate.module';
 
 import { URL_SERVICES } from '../../config/config';
 
@@ -31,6 +32,43 @@ export class UserService {
 
   
   createUser(user:User){
+    console.log("Service create user");
+    /*   */ //infotec
+    let url =  '/registros'; //infotec
+    //let url = URL_SERVICES + '/user'; //local
+    const object = JSON.stringify(user);
+    /* const body = {"email":"gustavo.espindola@fintecheando.mx",
+                    "password":"passworD1",
+                    "rePassword":"passworD1"} */
+     
+
+    console.log("Esto es lo que enviare a donde lo tenga que enviar",object);
+
+    const headers = new HttpHeaders({'X-Gravitee-Api-Key':'20b1d990-c522-44dc-85bd-ef16d364abc4',
+    'Content-Type': 'application/json'})
+      
+      
+/* 
+    return this.http.post(url,object,{headers}).map((res:any)=>{
+      console.log("creado",res)
+      swal("¡Felicidades!", "felicidades", "success");
+      
+    return true;
+  }).catch(err=>{
+    console.log(err.status);
+    return Observable.throw(err);
+  }); */
+  
+  return this.http.post(url,object,{headers}).map(response => {
+    console.log(response);
+    return response;
+}, err => {
+    throw err;
+});
+
+  }
+
+  activate(user:UserActivate){
     console.log("Service create user");
     /*   */ //infotec
     let url =  '/registros'; //infotec
@@ -107,6 +145,7 @@ export class UserService {
     'Content-Type': 'application/json'})
 
     return this.http.post(url,object,{headers}).map((res:any)=>{
+      localStorage.setItem('clientId',res.clientId);
         //localStorage.setItem('id',res.id);
        // localStorage.setItem('email',res.email);
         //localStorage.setItem('token',res.token);
@@ -114,7 +153,7 @@ export class UserService {
         //this.token = res.token;
        // this.email = res.email;
         //this.id = res.id;
-        //swal("¡Felicidades!", "Inicio de sesión exitoso.", "success");
+        swal("¡Felicidades!", "Inicio de sesión exitoso.", "success");
         //this.router.navigate(["dashboard",{id:this.step}]); ///revisar donde quedara
         //this.router.navigate(["register"]);
         console.log(res);

@@ -114,7 +114,7 @@ this.router.navigate(["dashboard"]);
       //enviar datos a back
       this.userService.login(user)
         .subscribe(res=>{
-          console.log("Is logged?",res); 
+          console.log("Is logged?",res);
           console.log("Entro al step",this.step)
           /* this.router.navigate(["dashboard",{id:this.step}]);  */
           this.router.navigate(["dashboard"]); 

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import swal from 'sweetalert';
+import { UserService } from '../../services/user/user.service';
+import { UserActivate } from '../../models/user-activate.module'
 
 @Component({
   selector: 'app-register',
@@ -12,7 +14,7 @@ export class RegisterComponent implements OnInit {
 
   form:FormGroup;
 
-  constructor(private router: Router) { }
+  constructor(public userService:UserService, private router: Router) { }
 
   ngOnInit() {
     
@@ -25,16 +27,34 @@ export class RegisterComponent implements OnInit {
   get fo() { return this.form.controls; }
 
   validacion(){
-    console.log("formval is valid?", this.form.valid);
-    if(this.form.valid){
-      console.log("formval", this.form.value);
-      this.router.navigate(["/login"]);
-      swal("¡Felicidades!", "Inicio de sesión exitoso.", "success");
-      //enviar datos a back
-      //this.popup[0].open();
-    } else{
-      swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
-    }
+   
+let user = new UserActivate(this.form.value.codigo,this.form.value.token,"2");
+
+console.log("form is valid?", this.form.valid);
+
+if(this.form.valid){
+  /* console.log("form esto envio", this.form.value); */
+  //enviar datos a back
+  /* this.userService.createUser(this.form.value) */
+  console.log("register envia", user);
+  this.userService.activate(user)
+    .subscribe(res=>{
+      console.log("esto responde el servicio register",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
+      swal("¡Felicidades!", "Usuario activo.", "success");
+      this.router.navigate(["login"]);
+    });
+
+
+
+  
+}else{
+  //algo esta mal revisa tus datos
+  swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
+}
+
+
+
+
   }
 
   

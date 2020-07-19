@@ -181,7 +181,7 @@ pbaDict(p1:string){
     console.log("formval is valid?", this.formval.valid);
     if(this.formval.valid){
       console.log("formval", this.formval.value);
-      this.router.navigate(["login"]);
+      this.router.navigate(["home"]);
       //enviar datos a back
       //this.popup[0].open();
     } else{
