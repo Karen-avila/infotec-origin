@@ -1,0 +1,16 @@
+{
+"documentType": "ine",
+"autorizoBuro": true,
+"cer": "data",
+"comprobanteDom": "data",
+"comprobanteDomNeg": "data",
+"curp": "data",
+"declaracion": "data",
+"edoCta": "data",
+"key": "data",
+"constFiscal": "data",
+"idFrontal": "data",
+"fielPass": "data",
+"idReverso": "data",
+"termCond": true
+}           

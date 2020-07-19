@@ -128,7 +128,7 @@ pbaDict(p1:string){
 
   //-------------
   register() {
-    let user = new User(this.form.value.email,this.form.value.password,this.form.value.rePassword,"1");
+    let user = new User(this.form.value.email,this.form.value.password,"1",this.form.value.rePassword);
 
     console.log("form is valid?", this.form.valid);
 

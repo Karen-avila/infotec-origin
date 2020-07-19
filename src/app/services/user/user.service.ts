@@ -3,6 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 import { User } from '../../models/user.model';
+import { UserLog } from '../../models/user-log.module';
+
 import { URL_SERVICES } from '../../config/config';
 
 import 'rxjs/add/operator/map';
@@ -10,6 +12,7 @@ import 'rxjs/add/operator/catch';
 import swal from 'sweetalert';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
+
 
 @Injectable({
   providedIn: 'root'
@@ -91,22 +94,30 @@ export class UserService {
       this.router.navigate(["home"]);
   }
 
-  login(user:User){
-    //console.log("Service login");
-    //localStorage.setItem('step','2');
-    let url = URL_SERVICES + '/login';
+  login(user:UserLog){
 
-    return this.http.post(url,user).map((res:any)=>{
+    console.log("Login Service");
+    let url =  '/inicio';
+    //let url = URL_SERVICES + '/login';
+
+    const object = JSON.stringify(user);
+    console.log("Esto es lo que enviare a donde lo tenga que enviar",object);
+
+    const headers = new HttpHeaders({'Fineract-Platform-TenantId':'default',
+    'Content-Type': 'application/json'})
+
+    return this.http.post(url,object,{headers}).map((res:any)=>{
         //localStorage.setItem('id',res.id);
-        localStorage.setItem('email',res.email);
+       // localStorage.setItem('email',res.email);
         //localStorage.setItem('token',res.token);
         //localStorage.setItem('step','1');
         //this.token = res.token;
-        this.email = res.email;
+       // this.email = res.email;
         //this.id = res.id;
         //swal("¡Felicidades!", "Inicio de sesión exitoso.", "success");
         //this.router.navigate(["dashboard",{id:this.step}]); ///revisar donde quedara
-        this.router.navigate(["register"]);
+        //this.router.navigate(["register"]);
+        console.log(res);
       return true;
     })  
   }

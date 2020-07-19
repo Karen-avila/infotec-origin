@@ -469,6 +469,7 @@ ngOnInit() {
 }); */
 
   dpersonales() {
+    console.log(this.form.value);
     console.log('form is valid?', this.form.valid);
     if (this.form.valid) {
       console.log('form', this.form.value);

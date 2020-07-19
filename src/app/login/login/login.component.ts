@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 import * as M from 'materialize-css';
 
 import { UserService } from '../../services/service.index';
-import { User } from '../../models/user.model';
+import { UserLog } from '../../models/user-log.module';
 
 import swal from 'sweetalert';
 
@@ -109,17 +109,18 @@ this.router.navigate(["dashboard"]);
     
     console.log("form login is valid?", this.form.valid);
     if(this.form.valid){
-      this.router.navigate(["register",{id:this.step}]);
-      let user = new User(this.form.value.email,this.form.value.password);
-      this.router.navigate(["register",{id:this.step}]);
+      const user = new UserLog(this.form.value.email,this.form.value.password);
+      //this.router.navigate(["register",{id:this.step}]);
       //enviar datos a back
-     /*  this.userService.login(user)
+      this.userService.login(user)
         .subscribe(res=>{
           console.log("Is logged?",res); 
           console.log("Entro al step",this.step)
-          this.router.navigate(["register",{id:this.step}]); ///revisar donde quedara
+          /* this.router.navigate(["dashboard",{id:this.step}]);  */
+          this.router.navigate(["dashboard"]); 
+          //this.router.navigate(["register",{id:this.step}]); ///revisar donde quedara
 
-        }); */
+        });
     } else{
       swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
     }

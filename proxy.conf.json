@@ -1,10 +1,23 @@
 {
-    "/registros": {
-      "target": "https://apim.infotec.mx/V1.0/banbi/creditosimple/registro",
-      "secure": false,
-  "changeOrigin": true,
-  "logLevel": "debug",
-  "pathRewrite": {"^/registros" : ""}
 
+  "/registros": {
+    "target": "https://apim.infotec.mx/V1.0/banbi/creditosimple/registro",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/registros": ""
+    }
+  },
+
+  "/inicio": {
+    "target": "https://mifos.infotec.mx/fineract-provider/api/v1/self/authentication",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/inicio": ""
+    }
   }
+
 }
