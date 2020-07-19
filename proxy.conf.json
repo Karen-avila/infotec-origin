@@ -1,10 +1,10 @@
 {
-    "/api": {
+    "/registros": {
       "target": "https://apim.infotec.mx/V1.0/banbi/creditosimple/registro",
-      "secure": true,
-      "changeOrigin": true,
-      "pathRewrite": {
-        "^/api": ""
-      }
-    }
+      "secure": false,
+  "changeOrigin": true,
+  "logLevel": "debug",
+  "pathRewrite": {"^/registros" : ""}
+
   }
+}

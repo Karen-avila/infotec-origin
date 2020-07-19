@@ -29,7 +29,8 @@ export class UserService {
   
   createUser(user:User){
     console.log("Service create user");
-    let url = URL_SERVICES + '/user'; //infotec
+    /*   */ //infotec
+    let url =  '/registros'; //infotec
     //let url = URL_SERVICES + '/user'; //local
     const object = JSON.stringify(user);
     /* const body = {"email":"gustavo.espindola@fintecheando.mx",
@@ -54,7 +55,7 @@ export class UserService {
     return Observable.throw(err);
   }); */
   
-  return this.http.post<any>(url,object,{headers}).map(response => {
+  return this.http.post(url,object,{headers}).map(response => {
     console.log(response);
     return response;
 }, err => {

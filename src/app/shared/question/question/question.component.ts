@@ -1029,6 +1029,7 @@ this.formQcQcn = new FormGroup({
   }
 
   sendQuestions() {
+    console.log(JSON.stringify(this.scrPerNeg));
     console.log(this.formScrPerNeg.valid,this.formScrPerMer.valid,this.formScrRep.valid,this.formScrDir.valid,this.formQcQc.valid,this.formQcQcn.valid)
     if((this.formScrPerNeg.valid) && (this.formScrPerMer.valid)
        && (this.formScrRep.valid) && (this.formScrDir.valid)

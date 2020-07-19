@@ -136,7 +136,7 @@ pbaDict(p1:string){
       /* console.log("form esto envio", this.form.value); */
       //enviar datos a back
       /* this.userService.createUser(this.form.value) */
-      console.log("form esto envio", user);
+      console.log("apply envia", user);
       this.userService.createUser(user)
         .subscribe(res=>{
           console.log("esto responde el servicio register",res); //revisar res.user p.ej y hacer un if(uid){openmodal}

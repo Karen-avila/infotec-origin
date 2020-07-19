@@ -143,13 +143,13 @@ constructor(
     
   ) {
   this.re = localStorage.getItem('step');
-  this.re=1;
+  this.re=4;
 
   this.eventManager.addGlobalEventListener(
     'window',
     'message',
     (msg) => {
-      if (msg.data.latitude && msg.data.longitude) {
+      if (msg.data.latitude  && msg.data.longitude) {
         this.infoPersonal.calle = msg.data.name;
         this.infoPersonal.latitude = msg.data.latitude;
         this.infoPersonal.longitude = msg.data.longitude;
@@ -316,7 +316,9 @@ ngOnInit() {
       cer: new FormControl(null, Validators.required),
       password: new FormControl(null, Validators.required)
       // buro: new FormControl(null, Validators.required)
+      
     });
+
     this.formFiel = new FormGroup({
       fiel: new FormControl(null, Validators.required),
       cer: new FormControl(null, Validators.required),
@@ -443,8 +445,29 @@ ngOnInit() {
         swal('¡Cuidado!', 'Tu archivo debe ser menor a 2Mb', 'warning');
         fl.value = null;
         // $(file).val(''); //for clearing with Jquery
-    } else { }
+    } else { 
+      
+         /* this.toBase64(fl.files[0]) */
+        /*  this.formDocumentos.controls.cer.setValue(this.toBase64(fl.files[0])); */
+
+         const reader = new FileReader();
+    reader.readAsDataURL(fl.files[0]);
+    reader.onload = () => {
+        this.formDocumentos.controls[file].setValue(reader.result);
+    };
+
+     
+
+    }
   }
+
+   /* toBase64 = file => new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = error => reject(error);
+}); */
+
   dpersonales() {
     console.log('form is valid?', this.form.valid);
     if (this.form.valid) {
@@ -468,6 +491,8 @@ ngOnInit() {
   }
   ddocumentos() {
     console.log('formDocumentos is valid?', this.formDocumentos.valid);
+    console.log('formDocumentos', this.formDocumentos.value);
+    console.log('cer', this.formDocumentos.controls.cer.value);
     if (this.formDocumentos.valid) {
       console.log('formDocumentos', this.formDocumentos.value);
       // enviar datos a back
