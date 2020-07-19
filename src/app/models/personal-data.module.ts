@@ -1,12 +1,12 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+export class PersonalData{
+
+  constructor(
+      public email:string,
+      public password:string,
+      //opts
+      public paso?:string,
+      public rePassword?:string
+      ){}
 
 
-
-@NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
-})
-export class PersonalDataModule { }
+}
