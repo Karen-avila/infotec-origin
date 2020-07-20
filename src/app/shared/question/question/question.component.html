@@ -160,7 +160,7 @@
                                             <span class="title">{{qcQcI.quest}}</span>
 
                                             <label>
-                                                <input  [(ngModel)]="qcQc1.resp" formControlName="{{'qcQcI'+i}}" name="{{'qcQcI'+i}}" id="{{'qcQcI'+i}}" maxlength="2" type="number"  min="1">
+                                                <input  [(ngModel)]="qcQc1[0].resp" formControlName="{{'qcQcI'+i}}" name="{{'qcQcI'+i}}" id="{{'qcQcI'+i}}" maxlength="2" type="number"  min="1">
                                             </label>
                                         </div>
                                     </li>
@@ -348,7 +348,7 @@
                                     <li class="collection-item avatar">
                                         <label class="title black-text">¿Cuál es el motivo principal por el que se inició en este negocio o actividad?</label>
                                         <p>
-                                            <select multiple formControlName="preg30" [(ngModel)]="preg30.resp" name="preg30" id="preg30">
+                                            <select multiple formControlName="preg30" [(ngModel)]="preg30[0].resp" name="preg30" id="preg30">
                                                 <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
                                                 <option  value="A">Por tradición familiar o lo heredó</option>
                                                 <option  value="B">Para complementar el ingreso familiar</option>
@@ -370,7 +370,7 @@
                                     <li class="collection-item avatar">
                                         <label class="title black-text">En su negocio o actividad, ¿cuenta con un local para trabajar sea o no de su propiedad?</label>
                                         <p>
-                                            <select multiple formControlName="preg31" [(ngModel)]="preg31.resp" name="preg31" id="preg31">
+                                            <select multiple formControlName="preg31" [(ngModel)]="preg31[0].resp" name="preg31" id="preg31">
                                                 <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
                                                 <option  value="A">Sí, es un local independiente</option>
                                                 <option  value="B">Sí, es un local o instalación que forma parte de un conjunto de locales</option>
@@ -382,7 +382,7 @@
                                     <li class="collection-item avatar">
                                         <label class="title black-text">En caso de ser local independiente (fuera de un techo común), ¿éste es?</label>
                                         <p>
-                                            <select multiple formControlName="preg32" [(ngModel)]="preg32.resp" name="preg32" id="preg32">
+                                            <select multiple formControlName="preg32" [(ngModel)]="preg32[0].resp" name="preg32" id="preg32">
                                                 <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
                                                 <option  value="A">Tienda, accesoria o tendajón</option>
                                                 <option  value="B">Taller (de servicios o de reparación)</option>
