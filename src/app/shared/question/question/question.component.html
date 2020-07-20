@@ -149,8 +149,8 @@
 
                                         <p *ngFor="let resp of qcQc.opts">
                                             <label>
-                                            <input class="with-gap" (change)="changedqcQc(j, i)" [(ngModel)]="qcQc.resp" formControlName="{{'qcQc'+i}}" name="{{'qcQc'+i}}" id="{{'qcQc'+i}}" value="{{resp}}" type="radio"  />
-                                            <span>{{resp}}</span>
+                                                <input class="with-gap" formControlName="{{'qcQc'+i}}" name="{{'qcQc'+i}}" id="{{'qcQc'+i}}" value="{{resp}}" type="radio"  />
+                                                <span>{{resp}}</span>
                                           </label>
                                         </p>
                                     </li>
@@ -160,8 +160,8 @@
                                             <span class="title">{{qcQcI.quest}}</span>
 
                                             <label>
-                                        <input  [(ngModel)]="qcQc1.resp" formControlName="{{'qcQcI'+i}}" name="{{'qcQcI'+i}}" id="{{'qcQcI'+i}}" maxlength="2" type="number"  min="1">
-                                        </label>
+                                                <input  formControlName="{{'qcQcI'+i}}" name="{{'qcQcI'+i}}" id="{{'qcQcI'+i}}" maxlength="2" type="number"  min="1">
+                                            </label>
                                         </div>
                                     </li>
                                     <br>
@@ -188,8 +188,8 @@
                                             <span class="title">{{qcQcnd.quest}}</span>
                                             <label>
                                         <i class="material-icons prefix">calendar_today
-                                        <input type="date" [(ngModel)]="qcqcnd.resp" formControlName="qcQcnd" name="qcQcnd" id="qcQcnd"  max="2020-01-01"></i>
-                                    </label>
+                                            <input type="date"  formControlName="qcQcn0" name="qcQcn0" id="qcQcn0"  max="2020-01-01"></i>
+                                        </label>
                                         </div>
                                     </li>
 
@@ -218,7 +218,7 @@
                                     <li class="collection-item avatar">
                                         <div *ngFor="let qcQcn22 of qcqn22; index as i;">
                                             <label class="title black-text" for="{{'qcQcn22'+i}}">{{qcQcn22.quest}}</label>
-                                            <input [(ngModel)]="qcqn22.resp" formControlName="{{'qcQcn22'+i}}" name="{{'qcQcn22'+i}}" id="{{'qcQcn22'+i}}" type="number" min='0' maxlength='3'>
+                                            <input formControlName="{{'qcQcn22'+i}}" name="{{'qcQcn22'+i}}" id="{{'qcQcn22'+i}}" type="number" min='0' maxlength='3'>
                                         </div>
                                     </li>
 
@@ -321,86 +321,86 @@
 
                                         <p *ngFor="let resp of qcQcn.opts">
                                             <label>
-                                            <input class="with-gap" (change)="changedqcQcn(j, i)" [(ngModel)]="qcQcn.resp" formControlName="{{'qcQcn'+i}}" name="{{'qcQcn'+i}}" id="{{'qcQcn'+i}}" value="{{resp}}" type="radio"  />
-                                            <span>{{resp}}</span>
+                                                <input class="with-gap" formControlName="{{'qcQcn'+i}}" name="{{'qcQcn'+i}}" id="{{'qcQcn'+i}}" value="{{resp}}" type="radio"  />
+                                                <span>{{resp}}</span>
                                           </label>
                                         </p>
                                     </li>
                                     <li class="collection-item avatar">
                                         <label class="title black-text">¿En la empresa se realizan actualmente algunas de las siguientes actividades?</label>
                                         <p>
-                                            <select multiple [(ngModel)]="qcQcnm.resp" formControlName="qcQcnm110">
-                                      <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
-                                      <option  value="A">Se lleva registros escritos del negocio. Es decir, se tiene un lugar, cuaderno, archivo o computadora donde se concentra la información de las operaciones diarias del negocio</option>
-                                      <option  value="B">Se sabe cuánto dinero en efectivo tiene el negocio en un momento determinado</option>
-                                      <option  value="C">Se sabe si las ventas de un producto (bien o servicio) en particular están subiendo o bajando de un mes a otro</option>
-                                      <option value="D">Se sabe cuánto le cuesta al negocio generar cada uno de sus principales productos (bienes o servicios). Por ejemplo, si tiene que calcular cuánto le cuesta producir una galleta, se hacen las cuentas de cuánto gasta en comprar harina, azúcar, leche, luz para usar la batidora, gas para el horno, renta del local, etcétera; otro ejemplo: si se ofrece un servicio de transporte, se hacen las cuentas de cuánto se gasta en el consumo de gasolina, casetas de peaje, etcétera.</option>
-                                      <option value="E">Se sabe de qué productos (bienes o servicios) se obtienen más ganancias por cada uno que vende</option>
-                                      <option value="F">El negocio no lleva registros y no cuenta con información que permita conocer a detalle su operación</option>
-                                    </select>
+                                            <select multiple formControlName="qcQcnm110">
+                                                <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
+                                                <option  value="A">Se lleva registros escritos del negocio. Es decir, se tiene un lugar, cuaderno, archivo o computadora donde se concentra la información de las operaciones diarias del negocio</option>
+                                                <option  value="B">Se sabe cuánto dinero en efectivo tiene el negocio en un momento determinado</option>
+                                                <option  value="C">Se sabe si las ventas de un producto (bien o servicio) en particular están subiendo o bajando de un mes a otro</option>
+                                                <option value="D">Se sabe cuánto le cuesta al negocio generar cada uno de sus principales productos (bienes o servicios). Por ejemplo, si tiene que calcular cuánto le cuesta producir una galleta, se hacen las cuentas de cuánto gasta en comprar harina, azúcar, leche, luz para usar la batidora, gas para el horno, renta del local, etcétera; otro ejemplo: si se ofrece un servicio de transporte, se hacen las cuentas de cuánto se gasta en el consumo de gasolina, casetas de peaje, etcétera.</option>
+                                                <option value="E">Se sabe de qué productos (bienes o servicios) se obtienen más ganancias por cada uno que vende</option>
+                                                <option value="F">El negocio no lleva registros y no cuenta con información que permita conocer a detalle su operación</option>
+                                              </select>
                                         </p>
                                     </li>
 
                                     <li class="collection-item avatar">
                                         <label class="title black-text">¿Cuál es el motivo principal por el que se inició en este negocio o actividad?</label>
                                         <p>
-                                            <select multiple [(ngModel)]="qcQcnm1.resp" formControlName="qcQcnm111">
-                                      <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
-                                      <option  value="A">Por tradición familiar o lo heredó</option>
-                                      <option  value="B">Para complementar el ingreso familiar</option>
-                                      <option  value="C">Para mejorar el ingreso</option>
-                                      <option value="D">Tenía dinero y encontró una buena oportuindad</option>
-                                      <option value="E">Para ejercer su oficio, carrera o profesión</option>
-                                      <option value="F">Fue la única manera que tuvo para obtener un ingreso</option>
-                                      <option  value="G">No tenía la experiencia requerida para un empleo</option>
-                                      <option  value="H">No tenía la escolaridad o capacitación requerida para un empleo</option>
-                                      <option  value="I">Estaba sobrecapacitado para un empleo</option>
-                                      <option value="J">Los empleos que encontró estaban mal pagados</option>
-                                      <option value="K">Requería un horario flexible</option>
-                                      <option value="L">No había oportunidades de empleo</option>
-                                      <option value="M">Otra razón</option>
-                                    </select>
+                                            <select multiple formControlName="qcQcnm111">
+                                                <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
+                                                <option  value="A">Por tradición familiar o lo heredó</option>
+                                                <option  value="B">Para complementar el ingreso familiar</option>
+                                                <option  value="C">Para mejorar el ingreso</option>
+                                                <option value="D">Tenía dinero y encontró una buena oportuindad</option>
+                                                <option value="E">Para ejercer su oficio, carrera o profesión</option>
+                                                <option value="F">Fue la única manera que tuvo para obtener un ingreso</option>
+                                                <option  value="G">No tenía la experiencia requerida para un empleo</option>
+                                                <option  value="H">No tenía la escolaridad o capacitación requerida para un empleo</option>
+                                                <option  value="I">Estaba sobrecapacitado para un empleo</option>
+                                                <option value="J">Los empleos que encontró estaban mal pagados</option>
+                                                <option value="K">Requería un horario flexible</option>
+                                                <option value="L">No había oportunidades de empleo</option>
+                                                <option value="M">Otra razón</option>
+                                              </select>
                                         </p>
                                     </li>
 
                                     <li class="collection-item avatar">
                                         <label class="title black-text">En su negocio o actividad, ¿cuenta con un local para trabajar sea o no de su propiedad?</label>
                                         <p>
-                                            <select multiple [(ngModel)]="qcQcnm2.resp" formControlName="qcQcnm112">
-                                      <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
-                                      <option  value="A">Sí, es un local independiente</option>
-                                      <option  value="B">Sí, es un local o instalación que forma parte de un conjunto de locales</option>
-                                      <option  value="C">No</option>
-                                    </select>
+                                            <select multiple formControlName="qcQcnm112">
+                                                <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
+                                                <option  value="A">Sí, es un local independiente</option>
+                                                <option  value="B">Sí, es un local o instalación que forma parte de un conjunto de locales</option>
+                                                <option  value="C">No</option>
+                                              </select>
                                         </p>
                                     </li>
 
                                     <li class="collection-item avatar">
                                         <label class="title black-text">En caso de ser local independiente (fuera de un techo común), ¿éste es?</label>
                                         <p>
-                                            <select multiple [(ngModel)]="qcQcnm3.resp" formControlName="qcQcnm113">
-                                      <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
-                                      <option  value="A">Tienda, accesoria o tendajón</option>
-                                      <option  value="B">Taller (de servicios o de reparación)</option>
-                                      <option  value="C">Fábrica, tortillería, panadería</option>
-                                      <option  value="D">Oficina, despacho, consultorio</option>
-                                    </select>
+                                            <select multiple formControlName="qcQcnm113">
+                                                <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
+                                                <option  value="A">Tienda, accesoria o tendajón</option>
+                                                <option  value="B">Taller (de servicios o de reparación)</option>
+                                                <option  value="C">Fábrica, tortillería, panadería</option>
+                                                <option  value="D">Oficina, despacho, consultorio</option>
+                                              </select>
                                         </p>
                                     </li>
 
                                     <li class="collection-item avatar">
                                         <label class="title black-text">Si no cuenta con un local, ¿en dónde se realizan las actividades de su negocio?</label>
                                         <p>
-                                            <select multiple [(ngModel)]="qcQcnm4.resp" formControlName="qcQcnm114">
-                                      <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
-                                      <option  value="A">Vehículo con o sin motor</option>
-                                      <option  value="B">Puesto fijo fuera de un techo común</option>
-                                      <option  value="C">Puesto semifijo bajo un techo común en pasillos de un centro comercial</option>
-                                      <option  value="D">Puesto semifijo en un tianguis</option>
-                                      <option value="E">En un domicilio particular con una instalación especial</option>
-                                      <option value="F">En un domicilio particular sin una instalación especial</option>
-                                      <option  value="G">Otro lugar</option>
-                                    </select>
+                                            <select multiple formControlName="qcQcnm114">
+                                                <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
+                                                <option  value="A">Vehículo con o sin motor</option>
+                                                <option  value="B">Puesto fijo fuera de un techo común</option>
+                                                <option  value="C">Puesto semifijo bajo un techo común en pasillos de un centro comercial</option>
+                                                <option  value="D">Puesto semifijo en un tianguis</option>
+                                                <option value="E">En un domicilio particular con una instalación especial</option>
+                                                <option value="F">En un domicilio particular sin una instalación especial</option>
+                                                <option  value="G">Otro lugar</option>
+                                              </select>
                                         </p>
                                     </li>
 
