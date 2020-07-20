@@ -110,6 +110,8 @@
 
                     <input formControlName="plazo" class="hide" value="{{valuePlaz}}" [(ngModel)]="valuePlaz">
                     <input formControlName="monto" class="hide" value="{{valueMon}}" [(ngModel)]="valueMon">
+                    <input type="text"  hidden formControlName="paso" class="validate">
+                    <input type="text"  hidden formControlName="clientId" class="validate">
 
 
 
@@ -231,7 +233,6 @@
                         <select formControlName="pais" name="pais" id="pais" class="validate">
                             <option value="" disabled selected>Selecciona una opcion</option>
                             <option value="1">México</option>
-                            <option value="2">Estados Unidos</option>
                         </select>
                         <label>País de nacimiento</label>
                         <div class="blue-text" *ngIf="f.pais.errors">Debes seleccionar una opción.</div>
@@ -687,13 +688,15 @@
             <div class="step-title waves-effect waves-dark">Subir Documentos</div>
             <div class="step-content">
                 <form ngNativeValidate [formGroup]="formDocumentos" (ngSubmit)="ddocumentos()">
+                    <input type="text"  hidden formControlName="paso" class="validate">
+                    <input type="text"  hidden formControlName="clientId" class="validate">
                     <div class="row">
 
-                        <div class="col s12">
+       <!--                  <div class="col s12">
                         <div class="input-field col s12 m4">
                             <p>
                                 <label>
-                            <input class="with-gap teal darken-4"  name="typeId" id="typeId" type="radio"  [(ngModel)]="typeId" value="ine" (change)="typeIdFun()"/>
+                            <input class="with-gap teal darken-4"  name="typeId" id="typeId" type="radio" formControlName="typeId" [(ngModel)]="typeId" value="ine" (change)="typeIdFun()"/>
                             <span>INE</span>
                         </label>
                             </p>
@@ -701,12 +704,36 @@
                         <div class="input-field col s12 m4">
                             <p>
                                 <label>
-                            <input class="with-gap teal darken-4"  name="typeId" id="typeId" type="radio"  [(ngModel)]="typeId" value="pasaporte" (change)="typeIdFun()"/>
+                            <input class="with-gap teal darken-4"  name="typeId" id="typeId" type="radio" formControlName="typeId" [(ngModel)]="typeId" value="pasaporte" (change)="typeIdFun()"/>
                             <span>Pasaporte</span>
                         </label>
                             </p>
                         </div>
+                    </div> -->
+                    <!--  -->
+                    <div class="input-field col s12 m4">
+                        <p>
+                            <label>
+                        <input class="with-gap teal darken-4"  (change)="typeIdFun()" formControlName="typeId" name="typeId" id="typeId" type="radio" value="ine" [(ngModel)]="typeId" />
+                        <span>INE</span>
+                    </label>
+                        </p>
                     </div>
+                    <div class="input-field col s12 m4">
+                        <p>
+                            <label>
+                        <input class="with-gap teal darken-4" (change)="typeIdFun()" formControlName="typeId" name="typeId" id="typeId" type="radio" value="pasaporte" [(ngModel)]="typeId" />
+                        <span>Pasaporte</span>
+                    </label>
+                        </p>
+                    </div>
+
+                    <div>
+                        <p class="white-text white hide">.</p>
+                        <br><br>
+
+                    </div>
+                    <!--  -->
 <br><br>
                         <div *ngIf="typeId==='ine'">
 

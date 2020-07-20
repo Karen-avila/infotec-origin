@@ -260,6 +260,8 @@ ngOnInit() {
       feedbackPreloader: '<div class="spinner-layer spinner-blue-only">...</div>'
     });
     this.form = new FormGroup({
+      paso: new FormControl("3", Validators.required),
+      clientId: new FormControl(localStorage.getItem('clientId'), Validators.required),
       personType: new FormControl(null, Validators.required),
       clabe_inter: new FormControl(null, [Validators.required, Validators.minLength(18), Validators.maxLength(18), Validators.pattern('[0-9]{18}')]),
       name: new FormControl(null, [Validators.required, Validators.minLength(2)]),
@@ -346,6 +348,9 @@ ngOnInit() {
         )
     });
     this.formDocumentos = new FormGroup({
+      paso: new FormControl("4", Validators.required),
+      clientId: new FormControl(localStorage.getItem('clientId'), Validators.required),
+      typeId: new FormControl(null, Validators.required),
       frontal: new FormControl(null, Validators.required),
       reverso: new FormControl(null, Validators.required),
       comprobante: new FormControl(null, Validators.required),
@@ -646,13 +651,16 @@ ngOnInit() {
   }
 
   typeIdFun() {
-    console.log("cambiando..");
-    if (this.typeId == 'pasaporte') {
+    /* console.log("cambiando..");
+    if (this.typeId === 'pasaporte') {
       this.typeId = 'ine'
       console.log("cambiooo..",this.typeId);
     } else {
       this.typeId = 'pasaporte'
       console.log("cambiooo..",this.typeId);
+    } */
+    if (this.typeId) {
+      this.formDocumentos.get('reverso').setValue('N/A');
     }
   }
 
