@@ -41,17 +41,19 @@ COPY sweetalert.d.ts.md /usr/src/app/node_modules/sweetalert/typings/sweetalert.
 COPY materialize.css.md /usr/src/app/node_modules/materialize-css/dist/css/materialize.css
 COPY materialize.js.md /usr/src/app/node_modules/materialize-css/dist/js/materialize.js
 
-RUN ng build --prod && \  
-    cd dist/originacion/  && \  
-    rm -Rf ../../firebase/public/*  && \  
-    cp -Rf * ../../firebase/public/
+RUN ng build --prod  
+# && \  
+#    cd dist/originacion/  && \  
+#    rm -Rf ../../firebase/public/*  && \  
+#    cp -Rf * ../../firebase/public/
 
 
-RUN cd firebase && npm install -g firebase-tools && \ 
-    firebase deploy --token "1//0fuHSWkfPufAQCgYIARAAGA8SNwF-L9Ir5YkizcWlYOmmeqmr6QrAD9b1h6pAjk8KqXVbGKpB_YYi70Ql4p8LQgm1CTzLQ-cN_8c"
+#RUN cd firebase && npm install -g firebase-tools && \ 
+#    firebase deploy --token "1//0fuHSWkfPufAQCgYIARAAGA8SNwF-L9Ir5YkizcWlYOmmeqmr6QrAD9b1h6pAjk8KqXVbGKpB_YYi70Ql4p8LQgm1CTzLQ-cN_8c"
 
 # Stage 2: Host Fims web app on Nginx
-FROM nginx:1.17.9
+# Stage 2: Host Fims web app on Nginx
+FROM litespeedtech/openlitespeed:latest AS runner
 
 ENV LANG en_US.UTF-8  
 ENV LANGUAGE en_US:en  
@@ -71,20 +73,12 @@ RUN apt-get update && \
     && apt-get clean all && \ 
     rm -rf /var/lib/apt/lists/*
 
-COPY --from=node /usr/src/app/dist/originacion/ /usr/share/nginx/html
+RUN mv /usr/local/lsws/Example /usr/local/lsws/Mifos
 
-WORKDIR /etc/nginx
+COPY --from=node /usr/src/app/dist/originacion/ /usr/local/lsws/Mifos/html
 
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY ./httpd_config.conf /usr/local/lsws/conf/httpd_config.conf
 
-COPY ./options-ssl-nginx.conf /etc/nginx/options-ssl-nginx.conf
+COPY ./vhconf.conf /usr/local/lsws/conf/vhosts/Mifos/vhconf.conf 
 
-COPY nginx.sh /opt/nginx.sh  
-
-RUN chmod +x /opt/nginx.sh
-
-VOLUME ["/etc/ssl/certs"]
-
-EXPOSE 61616 80 443
-
-CMD ["/opt/nginx.sh"]
+EXPOSE 80 443 7080 61616
