@@ -37,6 +37,9 @@ export class DashboardComponent implements OnInit {
   aviso;
   bc;
   term;
+
+  asentamiento;
+  asentamientoNeg;
   
   optionsplaces: any = {
     types: ['geocode', 'establishment'],
