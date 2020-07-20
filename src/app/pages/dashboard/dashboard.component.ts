@@ -474,7 +474,7 @@ ngOnInit() {
             this.negocio.tipo_asentamiento = json.response.tipo_asentamiento;
             this.negocio.colonia = json.response.colonia;
             this.negocio.asentamiento = json.response.asentamiento;
-            this.negocio.municipio = json.response.ciudad;
+            this.negocio.municipio = json.response.municipio;
             this.negocio.estado = json.response.estado;
             fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.negocio.calle}+${this.negocio.ext}+${this.negocio.asentamiento}+${this.negocio.municipio}+${this.negocio.estado}&key=AIzaSyCseZ0trHuyvuZlNh6TXxz1-6OJhXfXaww&language=es`)
               .then((response) => {
@@ -495,7 +495,7 @@ ngOnInit() {
             this.personal.tipo_asentamiento = json.response.tipo_asentamiento;
             this.personal.colonia = json.response.colonia;
             this.personal.asentamiento = json.response.asentamiento;
-            this.personal.municipio = json.response.ciudad;
+            this.personal.municipio = json.response.municipio;
             this.personal.estado = json.response.estado;
             fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.personal.calle}+${this.personal.ext}+${this.personal.asentamiento}+${this.personal.municipio}+${this.personal.estado}&key=AIzaSyCseZ0trHuyvuZlNh6TXxz1-6OJhXfXaww&language=es`)
               .then((response) => {

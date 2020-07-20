@@ -351,7 +351,7 @@
                         </div>
                         <div class="input-field col s6">
                           <span class="grey-text in">Tipo de asentamiento</span>
-                          <input [(ngModel)]="personal.tipo_asentamiento" type="text" formControlName="tipoAsentamiento"
+                          <input [(ngModel)]="personal.tipo_asentamiento" type="text" formControlName="tipoAsentamiento" disabled
                             name="tipoAsentamiento" id="tipoAsentamiento" class="validate" placeholder="Tipo de asentamiento">
                           <!--<label for="tipoAsentamiento">Tipo de asentamiento</label>-->
                           <div class="blue-text" *ngIf="f.tipoAsentamiento.errors"></div>
@@ -365,7 +365,7 @@
                           </select>
                         </div>
                         <div class="input-field col s6">
-                          <span class="grey-text in">Ciudad</span>
+                          <span class="grey-text in">Municipio</span>
                           <input [(ngModel)]="personal.municipio" id="municipio" type="text" formControlName="municipio" name="municipio"
                             class="validate" placeholder="Municipio" disabled required class="validate" />
                           <div class="red-text" *ngIf="form.errors?.isMatch"></div>
@@ -373,7 +373,7 @@
                         <div class="input-field col s6">
                           <span class="grey-text in">Entidad federativa</span>
                           <input type="text" [(ngModel)]="personal.estado" formControlName="entidadFedDomic" name="entidadFedDomic" id="entidadFedDomic"
-                            class="validate" placeholder="Entidad federativa">
+                            class="validate" placeholder="Entidad federativa" disabled>
                           <div class="blue-text" *ngIf="f.entidadFedDomic.errors"></div>
                         </div>
                       </div>
@@ -424,7 +424,7 @@
                         </div>
                         <div class="input-field col s6">
                           <span class="grey-text in">Tipo de asentamiento</span>
-                          <input type="text" [(ngModel)]="negocio.tipo_asentamiento" formControlName="tipoAsentamientoNeg"
+                          <input type="text" [(ngModel)]="negocio.tipo_asentamiento" formControlName="tipoAsentamientoNeg" disabled
                             name="tipoAsentamientoNeg" id="tipoAsentamientoNeg" class="validate" placeholder="Tipo de asentamiento">
                           <div class="blue-text" *ngIf="f.tipoAsentamientoNeg.errors"></div>
                         </div>
@@ -437,14 +437,14 @@
                           </select>
                         </div>
                         <div class="input-field col s6">
-                          <span class="grey-text in">Ciudad</span>
-                          <input type="text" [(ngModel)]="negocio.municipio" id="municipioNeg" formControlName="municipioNeg"
+                          <span class="grey-text in">Municipio</span>
+                          <input type="text" [(ngModel)]="negocio.municipio" id="municipioNeg" formControlName="municipioNeg" disabled
                             name="municipioNeg" class="validate" placeholder="Ciudad">
                           <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                         </div>
                         <div class="input-field col s6">
                           <span class="grey-text in">Entidad federativa</span>
-                          <input type="text" [(ngModel)]="negocio.estado" formControlName="entidadFedNeg" name="entidadFedNeg"
+                          <input type="text" [(ngModel)]="negocio.estado" formControlName="entidadFedNeg" name="entidadFedNeg" disabled
                             id="entidadFedNeg" class="validate" placeholder="Entidad federativa">
                           <div class="blue-text" *ngIf="f.entidadFedNeg.errors"></div>
                         </div>
