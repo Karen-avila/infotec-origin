@@ -688,7 +688,7 @@ ngOnInit() {
             {
               lat: event.geometry.location.lat(),
               lng: event.geometry.location.lng(),
-              label: 'A',
+              label: 'CASA',
               draggable: true
             },
           ];
@@ -700,7 +700,7 @@ ngOnInit() {
             {
               lat: event.geometry.location.lat(),
               lng: event.geometry.location.lng(),
-              label: 'A',
+              label: 'NEGOCIO',
               draggable: true
             },
           ];
@@ -714,7 +714,7 @@ ngOnInit() {
       this.markers = [{
         lat: $event.coords.lat,
         lng: $event.coords.lng,
-        label: 'A',
+        label: 'CASA',
         draggable: false
       }];
     }
@@ -722,7 +722,7 @@ ngOnInit() {
       this.markers2 = [{
         lat: $event.coords.lat,
         lng: $event.coords.lng,
-        label: 'A',
+        label: 'NEGOCIO',
         draggable: false
       }];
     }
