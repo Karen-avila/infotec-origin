@@ -144,7 +144,7 @@ formFiel: FormGroup;
          this.monte = value.toLocaleString('es-MX', {
                   style: 'currency',
                   currency: 'MXN',
-                }); 
+                });
          return '<b>Si te Prestamos: </b>MX' +  this.monte;
        case LabelType.Ceil:
          return '<b>Monto Maximo: </b>MX' + value.toLocaleString('es-MX', {
@@ -184,7 +184,7 @@ constructor(
     private route: ActivatedRoute,
     private router: Router,
     private eventManager: EventManager
-    
+
   ) {
   this.re = localStorage.getItem('step');
   /* this.re=1; */
@@ -231,7 +231,7 @@ constructor(
   this.catPorcentaje = ((Math.pow((1 + (tirMensual / 100)), 12)) - 1) * 100;
   // console.log("CAT "+ this.catPorcentaje.toFixed(2)+"%");
 }
-  
+
 ngOnInit() {
     //console.log("comienza ngOnInit",this.alrt);
     let elems = document.querySelectorAll('.modal');
@@ -360,7 +360,7 @@ ngOnInit() {
       cer: new FormControl(null, Validators.required),
       password: new FormControl(null, Validators.required)
       // buro: new FormControl(null, Validators.required)
-      
+
     });
 
     this.formFiel = new FormGroup({
@@ -458,18 +458,57 @@ ngOnInit() {
   async searchCP(value, target) {
     if (value.length === 5) {
       await fetch(`https://api-sepomex.hckdrk.mx/query/info_cp/${value}?type=simplified`)
-      .then(( response ) => {
-        return response.json();
-      }).then((json) => {
-        console.log(json.response);
-        if (target === 'negocio') {
-          this.negocio = json.response;
-        } else if (target === 'personal') {
-          this.personal = json.response;
-        }
-        setTimeout(() => { M.FormSelect.init(document.querySelectorAll('select')); }, 200);
-        return;
-      });
+        .then((response) => {
+          return response.json();
+        }).then((json) => {
+          if (target === 'negocio') {
+            this.negocio.tipo_asentamiento = json.response.tipo_asentamiento;
+            this.negocio.colonia = json.response.colonia;
+            this.negocio.asentamiento = json.response.asentamiento;
+            this.negocio.municipio = json.response.ciudad;
+            this.negocio.estado = json.response.estado;
+            fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.negocio.calle}+${this.negocio.ext}+${this.negocio.asentamiento}+${this.negocio.municipio}+${this.negocio.estado}&key=AIzaSyCseZ0trHuyvuZlNh6TXxz1-6OJhXfXaww&language=es`)
+              .then((response) => {
+                return response.json();
+              }).then((json) => {
+                if (json.status === 'OK') {
+                  this.lat2 = json.results[0].geometry.location.lat;
+                  this.lng2 = json.results[0].geometry.location.lng;
+                  this.markers2 = [{
+                    lat: json.results[0].geometry.location.lat,
+                    lng: json.results[0].geometry.location.lng,
+                    label: 'A',
+                    draggable: false
+                  }];
+                }
+              });
+          } else if (target === 'personal') {
+            this.personal.tipo_asentamiento = json.response.tipo_asentamiento;
+            this.personal.colonia = json.response.colonia;
+            this.personal.asentamiento = json.response.asentamiento;
+            this.personal.municipio = json.response.ciudad;
+            this.personal.estado = json.response.estado;
+            fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.personal.calle}+${this.personal.ext}+${this.personal.asentamiento}+${this.personal.municipio}+${this.personal.estado}&key=AIzaSyCseZ0trHuyvuZlNh6TXxz1-6OJhXfXaww&language=es`)
+              .then((response) => {
+                return response.json();
+              }).then((json) => {
+                if (json.status === 'OK') {
+                  if (target === 'personal') {
+                    this.lat = json.results[0].geometry.location.lat;
+                    this.lng = json.results[0].geometry.location.lng;
+                    this.markers = [{
+                      lat: json.results[0].geometry.location.lat,
+                      lng: json.results[0].geometry.location.lng,
+                      label: 'A',
+                      draggable: false
+                    }];
+                  }
+                }
+              });
+          }
+          setTimeout(() => { M.FormSelect.init(document.querySelectorAll('select')); }, 200);
+          return;
+        });
     }
   }
   async activitieChange(value, type, sector= null, subsector= null, rama= null, subrama= null) {
@@ -489,8 +528,8 @@ ngOnInit() {
         swal('¡Cuidado!', 'Tu archivo debe ser menor a 2Mb', 'warning');
         fl.value = null;
         // $(file).val(''); //for clearing with Jquery
-    } else { 
-      
+    } else {
+
          /* this.toBase64(fl.files[0]) */
         /*  this.formDocumentos.controls.cer.setValue(this.toBase64(fl.files[0])); */
 
@@ -500,7 +539,7 @@ ngOnInit() {
         this.formDocumentos.controls[file].setValue(reader.result);
     };
 
-     
+
 
     }
   }
@@ -617,43 +656,17 @@ ngOnInit() {
   }
 
   // Pick Address
-  handleAddressChange(event, target, centerMap=true) {
+  handleAddressChange(event, target, centerMap = true) {
     event.address_components.map((item) => {
-      if (item.types.includes('street_number')) {
-        if (target === 'personal') { this.personal.ext = item.long_name; }
-        if (target === 'negocio') { this.negocio.ext = item.long_name; }
-      }
-      if (item.types.includes('route')) {
-        if (target === 'personal') { this.personal.calle = item.long_name; }
-        if (target === 'negocio') { this.negocio.calle = item.long_name; }
-      }
-      if (item.types.includes('sublocality')) {
-        if (target === 'personal') { this.personal.colonia = item.long_name; }
-        if (target === 'negocio') { this.negocio.colonia = item.long_name; }
-      }
-      if (item.types.includes('locality')) {
-        if (target === 'personal') { this.personal.municipio = item.long_name; }
-        if (target === 'negocio') { this.negocio.municipio = item.long_name; }
-      }
-      if (item.types.includes('political')) {
-        if (target === 'personal') { this.personal.estado = item.long_name; }
-        if (target === 'negocio') { this.negocio.estado = item.long_name; }
-      }
-      if (item.types.includes('postal_code')) {
-        if (target === 'personal') { this.personal.cp = item.long_name; }
-        if (target === 'negocio') { this.negocio.cp = item.long_name; }
-      }
       if (target === 'personal') {
         this.personal.latitude = event.geometry.location.lat();
         this.personal.longitude = event.geometry.location.lng();
-        this.searchCP(this.personal.cp, 'personal');
-        // document.querySelector('#ext').focus();
+        // this.searchCP(this.personal.cp, 'personal');
       }
       if (target === 'negocio') {
         this.negocio.latitude = event.geometry.location.lat();
         this.negocio.longitude = event.geometry.location.lng();
-        this.searchCP(this.negocio.cp, 'negocio');
-        // document.querySelector('#extNeg').focus() ;
+        // this.searchCP(this.negocio.cp, 'negocio');
       }
       if (centerMap) {
         if (target === 'personal') {
@@ -704,7 +717,7 @@ ngOnInit() {
     new google.maps.Geocoder().geocode({
       latLng: new google.maps.LatLng($event.coords.lat, $event.coords.lng)
     }, (results, status) => {
-        this.handleAddressChange(results[1], target, false);
+      this.handleAddressChange(results[1], target, false);
     });
   }
   // end Pick Address
