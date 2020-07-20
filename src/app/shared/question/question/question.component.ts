@@ -20,6 +20,7 @@ export class QuestionComponent implements OnInit {
   scrPerNeg=[
     {
       quest:"Antigüedad de negocio.",
+      value_quest:"0.2",
       opts:["Menos de 12 meses","De 1 a 2 años","De 3 a 5 años","De 6 a 10 años","Más de 10 años"],
       resp:"",
       values:["20","35","50","70","100"],
@@ -27,6 +28,7 @@ export class QuestionComponent implements OnInit {
     },
     {
       quest:"Tipo de negocio.",
+      value_quest:"0.1",
       opts:["Ventas al menudeo","Manufactura","Ventas al mayoreo","Servicios","Agropecuario"],
       resp:"",
       values:["20","40","30","20","100"],
@@ -34,6 +36,7 @@ export class QuestionComponent implements OnInit {
     },
     {
       quest:"¿Principalmente a qué plazo se pagan las compras?",
+      value_quest:"0.2",
       opts:["Se paga por adelantado","Se paga al momento","Se paga en menos de 7 días","Se paga de 7 a 14 días","Se paga de 15 a 30 días","Se paga antes de 30 días"],
       resp:"",
       values:["0","10","40","60","80","100"],
@@ -41,6 +44,7 @@ export class QuestionComponent implements OnInit {
     },
     {
       quest:"¿Principalmente a qué plazo se cobran las ventas?",
+      value_quest:"0.2",
       opts:["Se cobran en más de 60 días","Se cobran de 31 a 60 días","Se cobra de 15 a 30 días","Se cobra de 8 a 14 días","Se cobra de 7 días o menos", "Se cobra al momento"],
       resp:"",
       values:["0","60","40","20","80","100"],
@@ -48,6 +52,7 @@ export class QuestionComponent implements OnInit {
     },
     {
       quest:"¿Normalmente cómo se compone el inventario del negocio?",
+      value_quest:"0.1",
       opts:["Menos del 25% del inventario corresponde a materias primas","Entre 25% y 50% del inventario corresponde a materias primas","Entre 51% y 75% del inventario corresponde a materias primas","Más de 75% del inventario corresponde a materias primas"],
       resp:"",
       values:["0","20","30","50"],
@@ -55,6 +60,7 @@ export class QuestionComponent implements OnInit {
     },
     {
       quest:"¿Desde hace cuánto tiempo el negocio es formal?",
+      value_quest:"0.1",
       opts:["Menos de 12 meses","De 1 a 2 años","De 3 a 5 años","De 6 a 10 años","Más de 10 años"],
       resp:"",
       values:["20","35","50","70","100"],
@@ -62,6 +68,7 @@ export class QuestionComponent implements OnInit {
     },
     {
       quest:"Seleccione la opción que describa mejor a los propietarios actuales del negocio.",
+      value_quest:"0.1",
       opts:["El negocio tiene un solo propietario","El negocio tiene varios propietarios pero uno toma las decisiones","El negocio tiene varios propietarios y varios toman decisiones"],
       resp:"",
       values:["20","30","50"],
@@ -72,6 +79,7 @@ export class QuestionComponent implements OnInit {
   scrPerMer=[
     {
       quest:"¿El negocio ofrece varios productos o servicios?",
+      value_quest:"0.1",
       opts:["Un solo producto o marca","Un solo producto de diferentes marcas","Múltiples productos"],
       resp:"",
       values:["30","40","50"],
@@ -79,6 +87,7 @@ export class QuestionComponent implements OnInit {
     },
     {
       quest:"¿El producto o servicio es de temporada o se ofrece en cualquier época del año?",
+      value_quest:"0.1",
       opts:["De temporada","En cualquier época del año"],
       resp:"",
       values:["0","100"],
@@ -86,6 +95,7 @@ export class QuestionComponent implements OnInit {
     },
     {
       quest:"¿Cómo es la fuente principal de suministros del negocio?",
+      value_quest:"0.1",
       opts:["El negocio depende de importaciones","El negocio no depende de importaciones"],
       resp:"",
       values:["0","100"],
@@ -93,6 +103,7 @@ export class QuestionComponent implements OnInit {
     },
     {
       quest:"Número de proveedores.",
+      value_quest:"0.1",
       opts:["1 solo proveedor","2 a 5 proveedores","Más de 5 proveedores","No aplica"],
       resp:"",
       values:["0","50","100","100"],
@@ -100,6 +111,7 @@ export class QuestionComponent implements OnInit {
     },
     {
       quest:"Seleccione la opción que describa mejor las ventas que se hace a los 5 mejores clientes.",
+      value_quest:"0.05",
       opts:["Menos del 25% de las ventas se hace a los 5 principales clientes","Entre el 25% y el 50% de la venta se hace a los principales clientes","Entre el 51% y el 75% de las ventas se hace a los principales clientes","Más del 75% de las ventas se hace a los 5 principales clientes"],
       resp:"",
       values:["60","40","20","10"],
@@ -107,6 +119,7 @@ export class QuestionComponent implements OnInit {
     },
     {
       quest:"¿Los precios de los productos o servicios que ofrece el negocio suben y bajan durante el año?",
+      value_quest:"0.05",
       opts:["No cambian","Suben y bajan moderadamente","Suben y bajan mucho"],
       resp:"",
       values:["100","60","40"],
@@ -115,12 +128,14 @@ export class QuestionComponent implements OnInit {
     {
       quest:"¿Cuántos competidores tiene el negocio?",
       opts:["Producto o servicio único","Menos de 10 competidores","De 10 hasta 50 competidores","Más de 50 competidores"],
+      value_quest:"0.05",
       resp:"",
       values:["100","60","30","10"],
       value:""
     },
     {
       quest:"¿Qué tan probable es que el producto o servicio que se ofrece se reemplace o quede obsoleto durante los próximos 2 años?",
+      value_quest:"0.05",
       opts:["Poco","Más o menos","Mucho"],
       resp:"",
       values:["60","40","0"],
@@ -128,6 +143,7 @@ export class QuestionComponent implements OnInit {
     },
     {
       quest:"Seleccione la opción que describa mejor el sector o mercado que atiende el negocio.",
+      value_quest:"0.1",
       opts:["El sector o mercado ya pasó por su mejor momento y ahora está disminuyendo","El sector o mercado está en su mejor momento pero ya no crederá","El sector o mercado está en crecimiento"],
       resp:"",
       values:["0","50","100"],
@@ -135,6 +151,7 @@ export class QuestionComponent implements OnInit {
     },
     {
       quest:"¿Normalmente el negocio depende de apoyos del gobierno o permisos especiales de éste?",
+      value_quest:"0.2",
       opts:["Si","No"],
       resp:"",
       values:["0","100"],
@@ -142,6 +159,7 @@ export class QuestionComponent implements OnInit {
     },
     {
       quest:"¿Considera que la regulación limita el negocio?",
+      value_quest:"0.1",
       opts:["Si","No","Las actividades del negocio no necesitan regularse o controlarse"],
       resp:"",
       values:["0","50","100"],
@@ -152,6 +170,7 @@ export class QuestionComponent implements OnInit {
   scrRep=[
     {
       quest:"¿Cómo es la reputación del negocio con los clientes?",
+      value_quest:"0.13",
       opts:["No favorable","Aceptable","Favorable"],
       resp:"",
       values:["0","50","100"],
@@ -159,6 +178,7 @@ export class QuestionComponent implements OnInit {
     },
     {
       quest:"¿Cómo es la reputación del negocio con los proveedores?",
+      value_quest:"0.13",
       opts:["No favorable","Aceptable","Favorable"],
       resp:"",
       values:["0","50","100"],
@@ -166,6 +186,7 @@ export class QuestionComponent implements OnInit {
     },
     {
       quest:"¿Hacé cuánto tiempo tienen los dueños del negocio cuentas bancarias?",
+      value_quest:"0.15",
       opts:["Menos de 12 meses","De 1 a 2 años","De 3 a 5 años","De 6 a 10 años","Más de 10 años"],
       resp:"",
       values:["0","25","50","75","100"],
@@ -173,6 +194,7 @@ export class QuestionComponent implements OnInit {
     },
     {
       quest:"Seleccione la opción que describa mejor la relación de los dueños con los bancos.",
+      value_quest:"0.3",
       opts:["Los dueños tienen o han tenido problemas mayores con los bancos","Los dueños son nuevos clientes y adquirieron un crédito por primera vez","Los dueños ya eran clientes del banco pero apenas adquirieron un crédito por primera vez","Los dueños tienen o han tenido problemas menores con los bancos"],
       resp:"",
       values:["0","20","50","100"],
@@ -180,6 +202,7 @@ export class QuestionComponent implements OnInit {
     },
     {
       quest:"¿Cómo calificaría el historial de crédito de los dueños con los bancos?",
+      value_quest:"0.15",
       opts:["Los dueños tienen un mal historial crediticio con los bancos","Los dueños tienen un buen historial crediticio con los bancos","Los dueños no tienen historial crediticio con los bancos"],
       resp:"",
       values:["0","100","20"],
@@ -187,6 +210,7 @@ export class QuestionComponent implements OnInit {
     },
     {
       quest:"¿Los dueños tienen juicios en contra o asuntos legales por resolver?",
+      value_quest:"0.14",
       opts:["Si","No"],
       resp:"",
       values:["0","100"],
@@ -197,6 +221,7 @@ export class QuestionComponent implements OnInit {
   scrDir=[
     {
       quest:"¿Cuántos años de experiencia en el negocio tienen los dueños del negocio?",
+      value_quest:"0.35",
       opts:["Menos de 1 año","1 a 5 años","6 a 10 años","Más de 10 años"],
       resp:"",
       values:["0","40","80","100"],
@@ -204,6 +229,7 @@ export class QuestionComponent implements OnInit {
     },
     {
       quest:"¿Cuál es la escolaridad de la persona que dirige el negocio?",
+      value_quest:"0.15",
       opts:["Ninguna","Primaria incompleta","Primaria completa","Secundaria incompleta","Secundaria completa","Preparatoria o Bachillerato incompleto","Preparatoria o Bachillerato completo","Técnica o comercial incompleta","Técnica o comercial completa","Licenciatura incompleta","Licenciatura completa","Posgrado"],
       resp:"",
       values:["0","10","20","30","40","60","70","60","70","80","90","100"],
@@ -211,6 +237,7 @@ export class QuestionComponent implements OnInit {
     },
     {
       quest:"¿Cuál es el rango de edad de la persona que dirige el negocio?",
+      value_quest:"0.2",
       opts:["Menos de 25 años","25 a 34 años","35 a 55 años","56 a 65 años","Más de 65 años"],
       resp:"",
       values:["0","30","70","30","0"],
@@ -218,12 +245,14 @@ export class QuestionComponent implements OnInit {
     },
     {
       quest:"¿El negocio tiene un plan de sucesión para que otra persona se encargue de la dirección en caso de ser necesario? ",
+      value_quest:"0.3",
       opts:["No se ha pensado que alguien más se ocupe de la dirección del negocio","La dirección la tomará un familiar pero no conoce el negocio","La dirección la tomará un familiar que ya conoce el negocio","La dirección la tomará alguien profesional auqnue no sea de la familia"],
       resp:"",
       values:["0","40","80","100"],
       value:""
     }
   ];
+  
   qcQc=[
     {
       quest:"Estado civil",
@@ -400,7 +429,7 @@ export class QuestionComponent implements OnInit {
   qcqn2=[
 
     {
-      quest:"¿De cuánto efectivo dispone actualmente para cubrir las operaciones del negocio? Incluya lo que guarda en su casa, en el banco o en el negocio.",
+      quest:"¿De cuánto efectivo dispone actualmente para cubrir las operaciones del negocios? Incluya lo que guarda en su casa, en el banco o en el negocio.",
       opts:[""],
       resp:"",
       value:""
@@ -449,15 +478,6 @@ export class QuestionComponent implements OnInit {
         resp:"",
         value:""
       }];
-
-      qcqcnr5=[
-        {
-          quest:"No contó con ningún financiamiento",
-          opts:[""],
-          resp:"",
-          value:""
-        }
-      ];
 
       qcqcn5=[
         {
@@ -574,15 +594,6 @@ export class QuestionComponent implements OnInit {
         }
 
       ];
-      qcqcnr6=[
-        {
-          quest:"No contó con ningún financiamiento",
-          opts:[""],
-          resp:"",
-          value:""
-        }
-      ];
-
       qcqcn6=[
         {
           quest:"Recursos propios (dueños, herencia, familia y amigos) o utilidades reinvertidas",
@@ -626,15 +637,6 @@ export class QuestionComponent implements OnInit {
           resp:"",
           value:""
         }
-    ];
-
-    qcqcnr7=[
-      {
-        quest:"No contó con ningún financiamiento",
-        opts:[""],
-        resp:"",
-        value:""
-      }
     ];
 
     qcqcn7=[
@@ -728,19 +730,10 @@ export class QuestionComponent implements OnInit {
             resp:"",
             value:""
           }  ];
-
-      qcQcn1=[
+      qcqcn1=[
         {
           quest:"Registre el total de ingresos que obtuvo el negocio durante el ejercicio fiscal anterior. Por favor incluya tanto los ingresos derivados como los no derivados de la actividad, además de los apoyos del gobierno que haya recibido",
           opts:["No sé","Si sé, pero prefiero no  declararlo"],
-          resp:"",
-          value:""
-        }
-      ];
-      qcQcnm0=[
-        {
-          quest:"Monto",
-          opts:[""],
           resp:"",
           value:""
         }
@@ -830,7 +823,7 @@ this.formQcQcn = new FormGroup({
   qcQcnd: new FormControl(null, [Validators.required]),//1
   qcqcn10: new FormControl(' ',[Validators.required]), //2
   qcqcn11: new FormControl(' ',[Validators.required]), //2
-  qcqcnmo: new FormControl('',[Validators.required]),//2
+  qcqcnmo: new FormControl(' ',[Validators.required]),//2
   qcQcn220: new FormControl(null, [Validators.required]),//3
   qcQcn010: new FormControl(null, [Validators.required]),//4
   qcQcn011: new FormControl(null, [Validators.required]),//5
@@ -915,7 +908,6 @@ this.formQcQcn = new FormGroup({
 
 
   }
-
   changedPerNeg(j,i){
     this.scrPerNeg[i].value = this.scrPerNeg[i].values[j]
   }
@@ -1029,12 +1021,10 @@ this.formQcQcn = new FormGroup({
   }
 
   sendQuestions() {
-    console.log(JSON.stringify(this.scrPerNeg));
     console.log(this.formScrPerNeg.valid,this.formScrPerMer.valid,this.formScrRep.valid,this.formScrDir.valid,this.formQcQc.valid,this.formQcQcn.valid)
-    /* if(this.formScrPerNeg.valid) */
-       if((this.formScrPerNeg.valid) && (this.formScrPerMer.valid)
+    if((this.formScrPerNeg.valid) && (this.formScrPerMer.valid)
        && (this.formScrRep.valid) && (this.formScrDir.valid)
-       && (this.formQcQc.valid) && (this.formQcQcn.valid)) 
+       && (this.formQcQc.valid) && (this.formQcQcn.valid))
        {
  
     const questionForm = {
@@ -1062,22 +1052,17 @@ this.formQcQcn = new FormGroup({
      qcqcn7: this.qcqcn7,
      qcqcn8: this.qcqcn8,
      qcqcnd: this.qcqcnd,
-     qcQcn1: this.qcQcn1,
-     qcqcnr5: this.qcqcnr5,
-     qcqcnr6: this.qcqcnr6,
-     qcqcnr7: this.qcqcnr7,
-     qcQcnm0: this.qcQcnm0,
-    
+     qcqcn1: this.qcqcn1,
      
     }
     window.parent.postMessage(questionForm, '*');
   }
   
-   else{
+  else{
     swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
     this.instQrmCnct.open(1); // no ira aqui solo para no completar form
   }
-} 
+}
 
 
 

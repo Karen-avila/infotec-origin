@@ -147,20 +147,20 @@
                                     <li class="collection-item avatar" *ngFor="let qcQc of qcQc; index as i;">
                                         <span class="title">{{qcQc.quest}}</span>
 
-                                        <p *ngFor="let resp of qcQc.opts; index as j">
+                                        <p *ngFor="let resp of qcQc.opts">
                                             <label>
-                                            <input class="with-gap" (change)="changedqcQc(j, i)" [(ngModel)]="qcQc.resp" formControlName="{{'qcQc'+i}}" name="{{'qcQc'+i}}" id="{{'qcQc'+i}}" value="{{resp}}" type="radio"/>
+                                            <input class="with-gap" (change)="changedqcQc(j, i)" [(ngModel)]="qcQc.resp" formControlName="{{'qcQc'+i}}" name="{{'qcQc'+i}}" id="{{'qcQc'+i}}" value="{{resp}}" type="radio"  />
                                             <span>{{resp}}</span>
                                           </label>
                                         </p>
                                     </li>
 
                                     <li class="collection-item avatar">
-                                        <div class="input-field " *ngFor="let qcQcI  of qcQc1;">
-                                            <span class="title">{{qcQc1.quest}}</span>
+                                        <div class="input-field " *ngFor="let qcQcI of qcQc1; index as i;">
+                                            <span class="title">{{qcQcI.quest}}</span>
+
                                             <label>
-                                                <input  [(ngModel)]="qcQc1.resp" formControlName="{{'qcQcI'+i}}" name="{{'qcQcI'+i}}" id="{{'qcQcI'+i}}" type="number" minlength="1" maxlength="2" max="38" min="0" required title="El número máximo de integrantes por hogar es de 38.">
-                                        <!-- <input  [(ngModel)]="qcQc1.resp; index as i;" formControlName="{{'qcQcI'+i}}" name="{{'qcQcI'+i}}" id="{{'qcQcI'+i}}" type="number" minlength="1" maxlength="2" max="38" min="0" required title="El número máximo de integrantes por hogar es de 38."> -->
+                                        <input  [(ngModel)]="qcQc1.resp" formControlName="{{'qcQcI'+i}}" name="{{'qcQcI'+i}}" id="{{'qcQcI'+i}}" maxlength="2" type="number"  min="1">
                                         </label>
                                         </div>
                                     </li>
@@ -193,22 +193,24 @@
                                         </div>
                                     </li>
 
-                                    <!--Cambiar checkbox-->
-                                    <li class="collection-item avatar" *ngFor="let qcQcn1 of qcQcn1; index as i;">
-
-                                        <span class="title">{{qcQcn1.quest}}</span>
-
-                                        <p *ngFor="let resp of qcQcn1.opts">
+                                    <li class="collection-item avatar">
+                                        <span class="title">Registre el total de ingresos que obtuvo el negocio durante el ejercicio fiscal anterior. Por favor incluya tanto los ingresos derivados como los no derivados de la actividad, además de los apoyos del gobierno que haya recibido.</span>
+                                        <p>
                                             <label>
-                                                <input class="with-gap" [(ngModel)]="qcQcn1.resp" (change)="monto()" formControlName="{{'qcqcn1'+i}}" name="{{'qcqcn1'+i}}" id="{{'qcqcn1'+i}}" value="{{resp}}" type="radio"  />
-                                                <span>{{resp }}</span>
-                                              </label>
+                                        <input class="with-gap teal darken-4"  (change)="monto()"  formControlName="qcqcn10" name="qcqcn10" id="qcqcn10" type="checkbox" value="qcqcn10" [(ngModel)]="sfina8" />
+                                        <span>No sé</span>
+                                    </label>
+                                        </p>
+                                        <p>
+                                            <label>
+                                        <input class="with-gap teal darken-4"  (change)="monto()" formControlName="qcqcn11" name="qcqcn11" id="qcqcn11" type="checkbox" value="qcqcn10" [(ngModel)]="sfina9"/>
+                                        <span>Si sé, pero prefiero no  declararlo</span>
+                                    </label>
                                         </p>
 
-
                                         <div *ngIf="!(sfina8 || sfina9)">
-                                            <label><span class="title">Monto</span></label>                                           
-                                            <input [(ngModel)]="qcQcnm0.resp" formControlName="qcqcnmo" name="qcqcnmo" id="qcqcnmo" type="number"  required title="El número máximo de integrantes por hogar es de 20000000." placeholder="$">                                          
+                                            <label><span class="title">Monto</span></label>
+                                            <input  formControlName="qcqcnmo" name="qcqcnmo" id="qcqcnmo" type="number" min='0' max='1' step='0.01' placeholder='$'>
                                         </div>
 
                                     </li>
@@ -216,7 +218,7 @@
                                     <li class="collection-item avatar">
                                         <div *ngFor="let qcQcn22 of qcqn22; index as i;">
                                             <label class="title black-text" for="{{'qcQcn22'+i}}">{{qcQcn22.quest}}</label>
-                                            <input [(ngModel)]="qcqn22.resp" formControlName="{{'qcQcn22'+i}}" name="{{'qcQcn22'+i}}" id="{{'qcQcn22'+i}}" type="number"  required title="El número máximo de integrantes por hogar es de 38.">
+                                            <input [(ngModel)]="qcqn22.resp" formControlName="{{'qcQcn22'+i}}" name="{{'qcQcn22'+i}}" id="{{'qcQcn22'+i}}" type="number" min='0' maxlength='3'>
                                         </div>
                                     </li>
 
@@ -259,38 +261,30 @@
                                     </li>
                                     <li class="collection-item avatar">
                                         <span class="title">Indique el monto de financiamiento que haya recibido de cada una de estas fuentes durante el ejercicio fiscal anterior:</span>
-                                        
-                                        <!--Checkbox-->
+
                                         <p>
                                             <label>
-                                            <input class="with-gap teal darken-4" (change)="b5()" [(ngModel)]="qcqcnr5.resp" formControlName="qcQcnr05" name="qcQcnr05" id="qcQcnr05" type="checkbox" value="qcQcnr05" />
-                                            <!-- [(ngModel)]="sfina5" /> -->
+                                            <input class="with-gap teal darken-4" (change)="b5()" formControlName="qcQcnr05" name="qcQcnr05" id="qcQcnr05" type="checkbox" value="qcQcnr05" [(ngModel)]="sfina5" />
                                             <span>No contó con ningún financiamiento</span>
                                         </label>
                                         </p>
-                                        
-                                        <!--Ocultar dichos inputs-->
+
                                         <div *ngIf="!sfina5">
                                             <div *ngFor="let qcQcn05 of qcqcn5; index as i;">
                                                 <label for="{{'qcQcn05'+i}}"><span class="title">{{qcQcn05.quest}}</span></label>
                                                 <input [(ngModel)]="qcQcn05.resp" formControlName="{{'qcQcn05'+i}}" name="{{'qcQcn05'+i}}" id="{{'qcQcn05'+i}}" type="number" min='0' max='1' step='0.01' placeholder='$'>
                                             </div>
                                         </div>
-
-
                                     </li>
                                     <li class="collection-item avatar">
                                         <span class="title">¿Cuánto debe al día de hoy por los conceptos siguientes?</span>
                                         <br>
-                                        <!--Checkbox-->
                                         <p>
                                             <label>
-                                            <input class="with-gap teal darken-4"  (change)="b6()" formControlName="qcQcnr06" name="qcQcnr06" id="qcQcnr06" type="checkbox" value="qcQcnr06" [(ngModel)]="qcqcnr6.resp" />
-                                            <!--[(ngModel)]="sfina6" />-->
+                                            <input class="with-gap teal darken-4"  (change)="b6()" formControlName="qcQcnr06" name="qcQcnr06" id="qcQcnr06" type="checkbox" value="qcQcnr06" [(ngModel)]="sfina6" />
                                             <span>No contó con ningún financiamiento</span>
                                         </label>
                                         </p>
-                                        <!--Ocultar dichos inputs-->
                                         <div *ngIf="!sfina6">
                                             <div *ngFor="let qcQcn06 of qcqcn6; index as i;">
                                                 <label for="{{'qcQcn06'+i}}"><span class="title">{{qcQcn06.quest}}</span></label>
@@ -301,15 +295,12 @@
                                     <li class="collection-item avatar">
                                         <span class="title">En promedio, ¿cuánto paga cada mes por los conceptos siguientes?</span>
                                         <br>
-                                        <!--Checkbox-->
                                         <p>
                                             <label>
-                                            <input class="with-gap teal darken-4" (change)="b7()" formControlName="qcQcnr07" name="qcQcnr07" id="qcQcnr07" type="checkbox" value="qcQcnr07" [(ngModel)]="qcqcnr7.resp" />
-                                            <!--[(ngModel)]="sfina7" />-->
+                                            <input class="with-gap teal darken-4" (change)="b7()" formControlName="qcQcnr07" name="qcQcnr07" id="qcQcnr07" type="checkbox" value="qcQcnr07" [(ngModel)]="sfina7" />
                                             <span>No contó con ningún financiamiento</span>
                                         </label>
                                         </p>
-                                        <!--Ocultar dichos inputs-->
                                         <div *ngIf="!sfina7">
                                             <div *ngFor="let qcQcn07 of qcqcn7; index as i;">
                                                 <label for="{{'qcQcn07'+i}}"><span class="title">{{qcQcn07.quest}}</span></label>
