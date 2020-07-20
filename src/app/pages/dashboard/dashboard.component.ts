@@ -29,7 +29,15 @@ declare var google;
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
+  sector;
+  subsector;
+  rama;
+  subrama;
+  giro;
+  aviso;
+  bc;
+  term;
+  
   optionsplaces: any = {
     types: ['geocode', 'establishment'],
     componentRestrictions: { country: 'MX' }
@@ -52,7 +60,7 @@ export class DashboardComponent implements OnInit {
 
   typeId = 'ine';
   dummyAmmount = 40000;
-  sector;
+
 activities = {
   sectorList: [],
   subsectorList: [],
@@ -92,13 +100,6 @@ negocio = {
   longitude: 0,
 };
 questionForm = {};
-subsector;
-rama;
-subrama;
-giro;
-aviso;
-bc;
-term;
 monte;
 hugo = '666';
 stepper;
