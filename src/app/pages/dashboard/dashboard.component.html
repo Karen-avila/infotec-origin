@@ -354,10 +354,10 @@
                         </div>
                         <div class="input-field col s6">
                           <span class="grey-text in">Asentamiento</span>
-                          <select [(ngModel)]="personal.asentamiento" formControlName="asentamiento" name="asentamiento" id="asentamiento"
+                          <select [(ngModel)]="asentamiento" formControlName="asentamiento" name="asentamiento" id="asentamiento"
                             class="validate">
                             <option value="" disabled selected>Selecciona una opcion</option>
-                            <option [ngValue]="personal.asentamiento" *ngFor="let item of personal.asentamiento">{{item}}</option>
+                            <option [ngValue]="item" *ngFor="let item of personal.asentamiento">{{item}}</option>
                           </select>
                         </div>
                         <div class="input-field col s6">
@@ -425,11 +425,11 @@
                           <div class="blue-text" *ngIf="f.asentamientoTypeNeg.errors"></div>
                         </div>
                         <div class="input-field col s6">
-                          <span class="grey-text in">Municipio</span>
-                          <select [(ngModel)]="negocio.asentamiento" formControlName="asentamientoNeg" name="asentamientoNeg"
+                          <span class="grey-text in">Asentamiento</span>
+                          <select [(ngModel)]="asentamientoNeg" formControlName="asentamientoNeg" name="asentamientoNeg"
                             id="asentamientoNeg" class="negocio validate">
                             <option value="" disabled selected>Selecciona una opcion</option>
-                            <option [ngValue]="negocio.asentamiento" *ngFor="let item of negocio.asentamiento">{{item}}</option>
+                            <option [ngValue]="item" *ngFor="let item of negocio.asentamiento">{{item}}</option>
                           </select>
                         </div>
                         <div class="input-field col s6">
