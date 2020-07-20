@@ -23,6 +23,8 @@ import {LeafletModule} from '@asymmetrik/ngx-leaflet';
 import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
 import { AgmCoreModule } from '@agm/core';
 import { PickAddressComponent } from './pick-address/pick-address.component';
+import { LegalComponent } from './legal/legal.component';
+import { AvisodeprivacidadComponent } from './avisodeprivacidad/avisodeprivacidad.component';
 
 
 @NgModule({
@@ -35,7 +37,9 @@ import { PickAddressComponent } from './pick-address/pick-address.component';
         GeocodingComponent,
         MapPointFormComponent,
         ResultsListComponent,
-        PickAddressComponent
+        PickAddressComponent,
+        LegalComponent,
+        AvisodeprivacidadComponent
     ],
     imports:[
         GooglePlaceModule,
