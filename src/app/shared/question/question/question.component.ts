@@ -252,6 +252,7 @@ export class QuestionComponent implements OnInit {
       value:""
     }
   ];
+  
   qcQc=[
     {
       quest:"Estado civil",
@@ -428,7 +429,7 @@ export class QuestionComponent implements OnInit {
   qcqn2=[
 
     {
-      quest:"¿De cuánto efectivo dispone actualmente para cubrir las operaciones del negocio? Incluya lo que guarda en su casa, en el banco o en el negocio.",
+      quest:"¿De cuánto efectivo dispone actualmente para cubrir las operaciones del negocios? Incluya lo que guarda en su casa, en el banco o en el negocio.",
       opts:[""],
       resp:"",
       value:""
@@ -477,15 +478,6 @@ export class QuestionComponent implements OnInit {
         resp:"",
         value:""
       }];
-
-      qcqcnr5=[
-        {
-          quest:"No contó con ningún financiamiento",
-          opts:[""],
-          resp:"",
-          value:""
-        }
-      ];
 
       qcqcn5=[
         {
@@ -602,15 +594,6 @@ export class QuestionComponent implements OnInit {
         }
 
       ];
-      qcqcnr6=[
-        {
-          quest:"No contó con ningún financiamiento",
-          opts:[""],
-          resp:"",
-          value:""
-        }
-      ];
-
       qcqcn6=[
         {
           quest:"Recursos propios (dueños, herencia, familia y amigos) o utilidades reinvertidas",
@@ -654,15 +637,6 @@ export class QuestionComponent implements OnInit {
           resp:"",
           value:""
         }
-    ];
-
-    qcqcnr7=[
-      {
-        quest:"No contó con ningún financiamiento",
-        opts:[""],
-        resp:"",
-        value:""
-      }
     ];
 
     qcqcn7=[
@@ -756,19 +730,10 @@ export class QuestionComponent implements OnInit {
             resp:"",
             value:""
           }  ];
-
-      qcQcn1=[
+      qcqcn1=[
         {
           quest:"Registre el total de ingresos que obtuvo el negocio durante el ejercicio fiscal anterior. Por favor incluya tanto los ingresos derivados como los no derivados de la actividad, además de los apoyos del gobierno que haya recibido",
           opts:["No sé","Si sé, pero prefiero no  declararlo"],
-          resp:"",
-          value:""
-        }
-      ];
-      qcQcnm0=[
-        {
-          quest:"Monto",
-          opts:[""],
           resp:"",
           value:""
         }
@@ -858,7 +823,7 @@ this.formQcQcn = new FormGroup({
   qcQcnd: new FormControl(null, [Validators.required]),//1
   qcqcn10: new FormControl(' ',[Validators.required]), //2
   qcqcn11: new FormControl(' ',[Validators.required]), //2
-  qcqcnmo: new FormControl('',[Validators.required]),//2
+  qcqcnmo: new FormControl(' ',[Validators.required]),//2
   qcQcn220: new FormControl(null, [Validators.required]),//3
   qcQcn010: new FormControl(null, [Validators.required]),//4
   qcQcn011: new FormControl(null, [Validators.required]),//5
@@ -943,7 +908,6 @@ this.formQcQcn = new FormGroup({
 
 
   }
-
   changedPerNeg(j,i){
     this.scrPerNeg[i].value = this.scrPerNeg[i].values[j]
   }
@@ -1057,12 +1021,10 @@ this.formQcQcn = new FormGroup({
   }
 
   sendQuestions() {
-    console.log(JSON.stringify(this.scrPerNeg));
     console.log(this.formScrPerNeg.valid,this.formScrPerMer.valid,this.formScrRep.valid,this.formScrDir.valid,this.formQcQc.valid,this.formQcQcn.valid)
-    /* if(this.formScrPerNeg.valid) */
-       if((this.formScrPerNeg.valid) && (this.formScrPerMer.valid)
+    if((this.formScrPerNeg.valid) && (this.formScrPerMer.valid)
        && (this.formScrRep.valid) && (this.formScrDir.valid)
-       && (this.formQcQc.valid) && (this.formQcQcn.valid)) 
+       && (this.formQcQc.valid) && (this.formQcQcn.valid))
        {
  
     const questionForm = {
@@ -1090,22 +1052,17 @@ this.formQcQcn = new FormGroup({
      qcqcn7: this.qcqcn7,
      qcqcn8: this.qcqcn8,
      qcqcnd: this.qcqcnd,
-     qcQcn1: this.qcQcn1,
-     qcqcnr5: this.qcqcnr5,
-     qcqcnr6: this.qcqcnr6,
-     qcqcnr7: this.qcqcnr7,
-     qcQcnm0: this.qcQcnm0,
-    
+     qcqcn1: this.qcqcn1,
      
     }
     window.parent.postMessage(questionForm, '*');
   }
   
-   else{
+  else{
     swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
     this.instQrmCnct.open(1); // no ira aqui solo para no completar form
   }
-} 
+}
 
 
 
