@@ -23,42 +23,43 @@ export class UserService {
 
   token:string;
   email:string;
-  id:string; 
+  id:string;
   values:any;
 
-  constructor(public http:HttpClient, private router: Router) { 
+  constructor(public http:HttpClient, private router: Router) {
     this.getStorage();
   }
 
 
-  
+
   createUser(user:User){
     console.log("Service create user");
     /* let url =  '/registros';  */
-    let url = URL_SERVICES + '/api/register'; 
+    // let url = URL_SERVICES + '/registro';
+    let url = '/registros'
     const object = JSON.stringify(user);
     /* const body = {"email":"gustavo.espindola@fintecheando.mx",
                     "password":"passworD1",
                     "rePassword":"passworD1"} */
-     
+
 
     console.log("Esto es lo que enviare a donde lo tenga que enviar",object);
 
     const headers = new HttpHeaders({'X-Gravitee-Api-Key':'20b1d990-c522-44dc-85bd-ef16d364abc4',
     'Content-Type': 'application/json'})
-      
-      
-/* 
+
+
+/*
     return this.http.post(url,object,{headers}).map((res:any)=>{
       console.log("creado",res)
       swal("¡Felicidades!", "felicidades", "success");
-      
+
     return true;
   }).catch(err=>{
     console.log(err.status);
     return Observable.throw(err);
   }); */
-  
+
   return this.http.post(url,object,{headers}).map(response => {
     console.log(response);
     return response;
@@ -71,30 +72,30 @@ export class UserService {
   activate(user:UserActivate){
     console.log("Service activate user");
     /* let url =  '/registros'; */
-    let url = URL_SERVICES + '/api/register'; 
+    let url = '/registros'
     const object = JSON.stringify(user);
     /* const body = {"email":"gustavo.espindola@fintecheando.mx",
                     "password":"passworD1",
                     "rePassword":"passworD1"} */
-     
+
 
     console.log("Esto es lo que enviare a donde lo tenga que enviar",object);
 
     const headers = new HttpHeaders({'X-Gravitee-Api-Key':'20b1d990-c522-44dc-85bd-ef16d364abc4',
     'Content-Type': 'application/json'})
-      
-      
-/* 
+
+
+/*
     return this.http.post(url,object,{headers}).map((res:any)=>{
       console.log("creado",res)
       swal("¡Felicidades!", "felicidades", "success");
-      
+
     return true;
   }).catch(err=>{
     console.log(err.status);
     return Observable.throw(err);
   }); */
-  
+
   return this.http.post(url,object,{headers}).map(response => {
     console.log(response);
     return response;
@@ -104,10 +105,10 @@ export class UserService {
 
   }
 
-  senPersonalData(data) {
+  sendPersonalData(data) {
     console.log("Service create user");
-    /* let url = '/registros'; */ 
-    let url = URL_SERVICES + '/api/register'; 
+    /* let url = '/registros'; */
+    let url = '/registros'
     const object = JSON.stringify(data);
 
     console.log("Esto es lo que enviare a donde lo tenga que enviar", object);
@@ -129,7 +130,7 @@ export class UserService {
   createUserL(user:User) {
     console.log("create user");
     console.log("Esto es lo que enviare a donde lo tenga que enviar",user);
-    
+
     return {as: user};
   }
 
@@ -141,7 +142,7 @@ export class UserService {
     }
   }
 
-  isLogged(){
+  isLogged() {
     return (this.token.length > 5) ? true : false;
   }
 
@@ -178,15 +179,15 @@ export class UserService {
         //this.router.navigate(["dashboard",{id:this.step}]); ///revisar donde quedara
         //this.router.navigate(["register"]);
         console.log(res);
-    
+
       return true;
-    })  
+    })
   }
 0
   localStep(){
     return this.http.get("http://localhost:3002/step");
   }
 
-  
+
 
 }
