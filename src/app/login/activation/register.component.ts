@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
     
     this.form = new FormGroup({
       codigo: new FormControl(null, Validators.required),
-      token: new FormControl(null, Validators.required)
+      /* token: new FormControl(null, Validators.required) */
    });
 
   }
@@ -28,8 +28,8 @@ export class RegisterComponent implements OnInit {
 
   validacion(){
    
-let user = new UserActivate(this.form.value.codigo,this.form.value.token,"2");
-
+/* let user = new UserActivate(this.form.value.codigo,this.form.value.token,"2"); */
+let user = new UserActivate(this.form.value.codigo,"2");
 console.log("form is valid?", this.form.valid);
 
 if(this.form.valid){

@@ -4,20 +4,20 @@
     <div id="token" class="col card s6 offset-s3 m6 offset-m3 l6 offset-l4">
         <div class="container">
             <form ngNativeValidate [formGroup]="form" (ngSubmit)="validacion()">
-                <br><br><p>El código de activación y token se enviaron al correo electrónico registrado anteriormente.</p><br><br>
+                <br><br><p>El código de activación fue enviado al correo electrónico registrado anteriormente.</p><br><br>
                 <div class="row">
                     <div class="input-field col s10">
                         <i class="material-icons prefix">no_encryption</i>
-                        <input class="validate" id="codigo" type="number" formControlName="codigo" name="codigo" minlength="3" maxlength="3" required>
+                        <input placeholder="xxxxxx-xxxx" class="validate" id="codigo" type="text" formControlName="codigo" name="codigo" maxlength="12" required>
                         <label for="codigo">Código de activación</label>
                         <!--<div class="blue-text" *ngIf="fo.codigo.errors?.required">Máximo 3 caracteres</div>-->
                     </div>
-                    <div class="input-field col s10">
+                    <!-- <div class="input-field col s10">
                         <i class="material-icons prefix">no_encryption</i>
                         <input class="validate" id="token" type="number" formControlName="token" name="token" minlength="3" maxlength="3" required>
                         <label for="token">Token</label>
-                        <!-- <div class="blue-text" *ngIf="fo.token.errors?.required">Máximo 3 caracteres</div -->
-                    </div>
+                        /* <div class="blue-text" *ngIf="fo.token.errors?.required">Máximo 3 caracteres</div */
+                    </div> -->
                     <div class="input-field col s5 offset-s7">
                         <button class="waves-effect teal darken-4 btn right" type="submit">Aceptar
                             <i class="material-icons right">send</i></button>
