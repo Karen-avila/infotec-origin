@@ -387,7 +387,7 @@ export class QuestionComponent implements OnInit {
               value:""
             },
             {
-              quest:"Cuánto obtendría si vendiera el material de oficina, la maquinaria que usa en su negocio, aparatos de su propiedad o el local del negocio en caso de que sea suyo?",
+              quest:"¿Cuánto obtendría si vendiera el material de oficina, la maquinaria que usa en su negocio, aparatos de su propiedad o el local del negocio en caso de que sea suyo?",
               opts:[""],
               resp:"",
               value:""
