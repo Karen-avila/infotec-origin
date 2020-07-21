@@ -156,8 +156,8 @@ export class UserService {
   login(user:UserLog){
 
     console.log("Login Service");
-    let url =  '/inicio';
-    /* let url = URL_AUTH + '/authentication'; */
+    /* let url =  '/inicio'; */
+    let url = URL_AUTH + '/authentication';
 
     const object = JSON.stringify(user);
     console.log("Esto es lo que enviare a donde lo tenga que enviar",object);
@@ -178,6 +178,7 @@ export class UserService {
         //this.router.navigate(["dashboard",{id:this.step}]); ///revisar donde quedara
         //this.router.navigate(["register"]);
         console.log(res);
+    
       return true;
     })  
   }

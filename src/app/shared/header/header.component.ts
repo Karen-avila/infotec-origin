@@ -11,6 +11,7 @@ export class HeaderComponent implements OnInit {
   
   isLogged = false;
 
+ 
   constructor(public userService:UserService) { }
 
   ngOnInit() {
