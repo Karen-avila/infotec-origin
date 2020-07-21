@@ -739,4 +739,10 @@ ngOnInit() {
   }
   // end Pick Address
 
+  myClick(){
+    console.log("ah");
+    document.getElementById('nano').classList.remove('hide');
+    document.getElementById('nanoo').classList.add('hide');
+}
+
 }

@@ -9,8 +9,9 @@ import { UserService } from '../../services/user/user.service';
 })
 export class HeaderComponent implements OnInit {
   
-  isLogged = false;
+  private isLogged = false;
 
+ 
   constructor(public userService:UserService) { }
 
   ngOnInit() {
