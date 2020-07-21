@@ -8,7 +8,7 @@ import { UserService } from '../../services/user/user.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  isLogged: boolean;
+  isLogged: string;
   constructor(
     public userService: UserService
   ) {
