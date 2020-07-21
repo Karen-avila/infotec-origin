@@ -108,10 +108,14 @@
 
 
 
-                    <input formControlName="plazo" class="hide" value="{{valuePlaz}}" [(ngModel)]="valuePlaz">
-                    <input formControlName="monto" class="hide" value="{{valueMon}}" [(ngModel)]="valueMon">
+                    <input formControlName="plazoCredito" class="hide" value="{{valuePlaz}}" [(ngModel)]="valuePlaz">
+                    <input formControlName="montoCredito" class="hide" value="{{valueMon}}" [(ngModel)]="valueMon">
                     <input type="text"  hidden formControlName="paso" class="validate">
                     <input type="text"  hidden formControlName="clientId" class="validate">
+                    <input type="text"  hidden formControlName="latDomic" class="validate" [(ngModel)]="lat">
+                    <input type="text"  hidden formControlName="lngDomic" class="validate" [(ngModel)]="lng">
+                    <input type="text"  hidden formControlName="latNeg" class="validate" [(ngModel)]="lat2">
+                    <input type="text"  hidden formControlName="lngNeg" class="validate" [(ngModel)]="lng2">
 
 
 
@@ -125,7 +129,7 @@
                     <div class="input-field col s12 m4">
                         <p>
                             <label>
-                        <input class="with-gap teal darken-4"  (change)="rFiscal()" formControlName="personType" name="personType" id="personType" type="radio" value="pFisica" [(ngModel)]="model" />
+                        <input class="with-gap teal darken-4"  (change)="rFiscal()" formControlName="tipoPersona" name="tipoPersona" id="tipoPersona" type="radio" value="pFisica" [(ngModel)]="model" />
                         <span>Persona Fisica con Actividad Empresarial</span>
                     </label>
                         </p>
@@ -133,7 +137,7 @@
                     <div class="input-field col s12 m4">
                         <p>
                             <label>
-                        <input class="with-gap teal darken-4"  formControlName="personType" name="personType" id="personType" type="radio" value="rFiscal" [(ngModel)]="model" />
+                        <input class="with-gap teal darken-4"  formControlName="tipoPersona" name="tipoPersona" id="tipoPersona" type="radio" value="rFiscal" [(ngModel)]="model" />
                         <span>Regimen de Incorporación Fiscal</span>
                     </label>
                         </p>
@@ -147,17 +151,17 @@
 
                     <div class="input-field col s12 m12 l12">
                         <i class="material-icons prefix">payment</i>
-                        <input class="validate" id="clabe_inter" type="number" formControlName="clabe_inter" name="clabe_inter" minlength="18" maxlength="18" required>
+                        <input class="validate" id="clabeInter" type="number" formControlName="clabeInter" name="clabeInter" minlength="18" maxlength="18" required>
                         <label for="text">Clabe interbancaria</label>
-                        <div class="blue-text" *ngIf="f.clabe_inter.errors">La clabe interbancaria consta de 18 dígitos</div>
+                        <div class="blue-text" *ngIf="f.clabeInter.errors">La clabe interbancaria consta de 18 dígitos</div>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="name" type="text" formControlName="name" name="name" required class="validate">
-                        <label for="name">Nombre</label>
+                        <input id="nombre" type="text" formControlName="nombre" name="nombre" required class="validate">
+                        <label for="nombre">Nombre</label>
 
-                        <div class="blue-text" *ngIf="f.name.errors?.minlength">Debe tener un mínimo de 2 caracteres</div>
+                        <div class="blue-text" *ngIf="f.nombre.errors?.minlength">Debe tener un mínimo de 2 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <p>Palabra altisonante</p>
                         </div>
@@ -165,28 +169,28 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="name2" type="text" formControlName="name2" name="name2" class="validate">
-                        <label for="name2">Segundo nombre</label>
+                        <input id="nombre2" type="text" formControlName="nombre2" name="nombre2" class="validate">
+                        <label for="nombre2">Segundo nombre</label>
 
-                        <div class="blue-text" *ngIf="f.name2.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
+                        <div class="blue-text" *ngIf="f.nombre2.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabra altisonante</p>-->
                         </div>
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="a_paterno" type="text" name="a_paterno" formControlName="a_paterno" required class="validate">
-                        <label for="a_paterno">Apellido paterno</label>
-                        <div class="blue-text" *ngIf="f.a_paterno.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
+                        <input id="aPaterno" type="text" name="aPaterno" formControlName="aPaterno" required class="validate">
+                        <label for="aPaterno">Apellido paterno</label>
+                        <div class="blue-text" *ngIf="f.aPaterno.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabra altisonante</p> -->
                         </div>
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="a_materno" type="text" name="a_materno" formControlName="a_materno" required class="validate">
-                        <label for="a_materno">Apellido materno</label>
-                        <div class="blue-text" *ngIf="f.a_materno.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
+                        <input id="aMaterno" type="text" name="aMaterno" formControlName="aMaterno" required class="validate">
+                        <label for="aMaterno">Apellido materno</label>
+                        <div class="blue-text" *ngIf="f.aMaterno.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabra altisonante</p> -->
                         </div>
@@ -194,12 +198,12 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">calendar_today</i>
-                        <input type="date" class="fecha validate" formControlName="birthDate" name="birthDate" id="birthDate" min="1960-12-31" max="2002-01-01" required>
+                        <input type="date" class="fecha validate" formControlName="fechaNac" name="fechaNac" id="fechaNac" min="1960-12-31" max="2002-01-01" required>
                         <label>Fecha de Nacimiento</label>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="civil" name="civil" id="civil" class="validate">
+                        <select formControlName="edoCivil" name="edoCivil" id="edoCivil" class="validate">
                             <option value="" disabled selected>Selecciona una opcion</option>
                             <option value="Soltero">Soltero</option>
                             <option value="Casado">Casado</option>
@@ -224,22 +228,22 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">phone</i>
-                        <input class="validate" id="tel" type="number" formControlName="tel" name="tel" minlength="10" maxlength="10" required>
+                        <input class="validate" id="telPersonal" type="number" formControlName="telPersonal" name="telPersonal" minlength="10" maxlength="10" required>
                         <label for="text">Número de Teléfono</label>
-                        <div class="blue-text" *ngIf="f.tel.errors">El teléfono debe ser de 10 digitos</div>
+                        <div class="blue-text" *ngIf="f.telPersonal.errors">El teléfono debe ser de 10 digitos</div>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="pais" name="pais" id="pais" class="validate">
+                        <select formControlName="paisNaci" name="paisNaci" id="paisNaci" class="validate">
                             <option value="" disabled selected>Selecciona una opcion</option>
                             <option value="1">México</option>
                         </select>
                         <label>País de nacimiento</label>
-                        <div class="blue-text" *ngIf="f.pais.errors">Debes seleccionar una opción.</div>
+                        <div class="blue-text" *ngIf="f.paisNaci.errors">Debes seleccionar una opción.</div>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="entidadfedn" name="entidadfedn" id="entidadfedn" class="validate">
+                        <select formControlName="entidadFedNaci" name="entidadFedNaci" id="entidadFedNaci" class="validate">
                         <option value="" disabled selected>Selecciona una opcion</option>
                         <option value="Aguascalientes">Aguascalientes</option>
                         <option value="Baja California">Baja California</option>
@@ -275,7 +279,7 @@
                         <option value="Zacatecas">Zacatecas</option>
                       </select>
                         <label>Entidad federativa de Nacimiento</label>
-                        <div class="blue-text" *ngIf="f.entidadfedn.errors"></div>
+                        <div class="blue-text" *ngIf="f.entidadFedNaci.errors"></div>
                     </div>
 
                     <div class="input-field col s12 m7 l7">
@@ -295,8 +299,8 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">aspect_ratio</i>
-                        <input id="clave_elector" type="text" formControlName="clave_elector" required minlength="18" maxlength="18"class="validate" name="clave_elector" />
-                        <label for="clave_elector">Clave de Elector</label>
+                        <input id="claveElector" type="text" formControlName="claveElector" required minlength="18" maxlength="18"class="validate" name="claveElector" />
+                        <label for="claveElector">Clave de Elector</label>
                         <a class="modal-trigger" href="#helpIne"><i class="material-icons prefix icon-black">help_outline</i></a>
                     </div>
 
@@ -328,13 +332,13 @@
                         </div>
                         <div class="input-field col s4">
                           <span class="grey-text in">Número exterior</span>
-                          <input id="ext" type="text" [(ngModel)]="personal.ext" formControlName="ext" required class="validate" name="ext"
+                          <input id="numExtDomic" type="text" [(ngModel)]="personal.ext" formControlName="numExtDomic" required class="validate" name="numExtDomic"
                             placeholder="Número exterior" />
                           <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                         </div>
                         <div class="input-field col s4">
                           <span class="grey-text in">Número interior</span>
-                          <input id="int" type="text" [(ngModel)]="personal.int" formControlName="int" name="int"
+                          <input id="numInt" type="text" [(ngModel)]="personal.int" formControlName="numInt" name="numInt"
                             placeholder="Número interior" />
                           <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                         </div>
@@ -347,10 +351,10 @@
                         </div>
                         <div class="input-field col s6">
                           <span class="grey-text in">Tipo de asentamiento</span>
-                          <input [(ngModel)]="personal.tipo_asentamiento" type="text" formControlName="asentamientoType"
-                            name="asentamientoType" id="asentamientoType" class="validate" placeholder="Tipo de asentamiento">
-                          <!--<label for="asentamientoType">Tipo de asentamiento</label>-->
-                          <div class="blue-text" *ngIf="f.asentamientoType.errors"></div>
+                          <input [(ngModel)]="personal.tipo_asentamiento" type="text" formControlName="tipoAsentamiento" disabled
+                            name="tipoAsentamiento" id="tipoAsentamiento" class="validate" placeholder="Tipo de asentamiento">
+                          <!--<label for="tipoAsentamiento">Tipo de asentamiento</label>-->
+                          <div class="blue-text" *ngIf="f.tipoAsentamiento.errors"></div>
                         </div>
                         <div class="input-field col s6">
                           <span class="grey-text in">Asentamiento</span>
@@ -361,16 +365,16 @@
                           </select>
                         </div>
                         <div class="input-field col s6">
-                          <span class="grey-text in">Ciudad</span>
+                          <span class="grey-text in">Municipio</span>
                           <input [(ngModel)]="personal.municipio" id="municipio" type="text" formControlName="municipio" name="municipio"
                             class="validate" placeholder="Municipio" disabled required class="validate" />
                           <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                         </div>
                         <div class="input-field col s6">
                           <span class="grey-text in">Entidad federativa</span>
-                          <input type="text" [(ngModel)]="personal.estado" formControlName="entidadfed" name="entidadfed" id="entidadfed"
-                            class="validate" placeholder="Entidad federativa">
-                          <div class="blue-text" *ngIf="f.entidadfed.errors"></div>
+                          <input type="text" [(ngModel)]="personal.estado" formControlName="entidadFedDomic" name="entidadFedDomic" id="entidadFedDomic"
+                            class="validate" placeholder="Entidad federativa" disabled>
+                          <div class="blue-text" *ngIf="f.entidadFedDomic.errors"></div>
                         </div>
                       </div>
                       <div class="col s6">
@@ -402,13 +406,13 @@
                         </div>
                         <div class="input-field col s4">
                           <span class="grey-text in">Número exterior</span>
-                          <input id="extNeg" [(ngModel)]="negocio.ext" type="text" formControlName="extNeg" required class="validate"
-                            name="extNeg" placeholder="Número exterior" />
+                          <input id="numExtNeg" [(ngModel)]="negocio.ext" type="text" formControlName="numExtNeg" required class="validate"
+                            name="numExtNeg" placeholder="Número exterior" />
                           <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                         </div>
                         <div class="input-field col s4">
                           <span class="grey-text in">Número interior</span>
-                          <input id="intNeg" [(ngModel)]="negocio.int" type="text" formControlName="intNeg" name="intNeg"
+                          <input id="numIntNeg" [(ngModel)]="negocio.int" type="text" formControlName="numIntNeg" name="numIntNeg"
                             placeholder="Número interior" />
                           <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                         </div>
@@ -420,9 +424,9 @@
                         </div>
                         <div class="input-field col s6">
                           <span class="grey-text in">Tipo de asentamiento</span>
-                          <input type="text" [(ngModel)]="negocio.tipo_asentamiento" formControlName="asentamientoTypeNeg"
-                            name="asentamientoTypeNeg" id="asentamientoTypeNeg" class="validate" placeholder="Tipo de asentamiento">
-                          <div class="blue-text" *ngIf="f.asentamientoTypeNeg.errors"></div>
+                          <input type="text" [(ngModel)]="negocio.tipo_asentamiento" formControlName="tipoAsentamientoNeg" disabled
+                            name="tipoAsentamientoNeg" id="tipoAsentamientoNeg" class="validate" placeholder="Tipo de asentamiento">
+                          <div class="blue-text" *ngIf="f.tipoAsentamientoNeg.errors"></div>
                         </div>
                         <div class="input-field col s6">
                           <span class="grey-text in">Asentamiento</span>
@@ -433,16 +437,16 @@
                           </select>
                         </div>
                         <div class="input-field col s6">
-                          <span class="grey-text in">Ciudad</span>
-                          <input type="text" [(ngModel)]="negocio.municipio" id="municipioNeg" formControlName="municipioNeg"
+                          <span class="grey-text in">Municipio</span>
+                          <input type="text" [(ngModel)]="negocio.municipio" id="municipioNeg" formControlName="municipioNeg" disabled
                             name="municipioNeg" class="validate" placeholder="Ciudad">
                           <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                         </div>
                         <div class="input-field col s6">
                           <span class="grey-text in">Entidad federativa</span>
-                          <input type="text" [(ngModel)]="negocio.estado" formControlName="entidadfedNeg" name="entidadfedNeg"
-                            id="entidadfedNeg" class="validate" placeholder="Entidad federativa">
-                          <div class="blue-text" *ngIf="f.entidadfedNeg.errors"></div>
+                          <input type="text" [(ngModel)]="negocio.estado" formControlName="entidadFedNeg" name="entidadFedNeg" disabled
+                            id="entidadFedNeg" class="validate" placeholder="Entidad federativa">
+                          <div class="blue-text" *ngIf="f.entidadFedNeg.errors"></div>
                         </div>
                       </div>
                       <div class="col s6">
@@ -477,7 +481,7 @@
                         <option [ngValue]="item.codigo" *ngFor="let item of activities.subsectorList">{{item.titulo}}</option>
                       </select>
                         <label>Subsector: <!--{{subsector}}--></label>
-                        <div class="blue-text" *ngIf="f.sector.errors">Debes seleccionar una opción.</div>
+                        <div class="blue-text" *ngIf="f.subsector.errors">Debes seleccionar una opción.</div>
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <select formControlName="rama" name="rama" id="rama" class="validate" [(ngModel)]="rama" (ngModelChange)="activitieChange($event, 'rama', sector=sector, subsector=subsector, rama=rama)">
@@ -523,38 +527,38 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="ref1_name" type="text" formControlName="ref1_name" name="ref1_name" required class="validate">
-                        <label for="ref1_name">Nombre</label>
+                        <input id="ref1_nombre" type="text" formControlName="ref1_nombre" name="ref1_nombre" required class="validate">
+                        <label for="ref1_nombre">Nombre</label>
 
-                        <div class="blue-text" *ngIf="f.ref1_name.errors?.minlength">Debe tener un mínimo de 2 caracteres</div>
+                        <div class="blue-text" *ngIf="f.ref1_nombre.errors?.minlength">Debe tener un mínimo de 2 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                         </div>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="ref1_name2" type="text" formControlName="ref1_name2" name="ref1_name2" class="validate">
-                        <label for="ref1_name2">Segundo nombre</label>
+                        <input id="ref1_nombre2" type="text" formControlName="ref1_nombre2" name="ref1_nombre2" class="validate">
+                        <label for="ref1_nombre2">Segundo nombre</label>
 
-                        <div class="blue-text" *ngIf="f.ref1_name2.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
+                        <div class="blue-text" *ngIf="f.ref1_nombre2.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabra altisonante</p>-->
                         </div>
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="ref1_paterno" type="text" name="ref1_paterno" formControlName="ref1_paterno" required class="validate">
-                        <label for="ref1_paterno">Apellido paterno</label>
-                        <div class="blue-text" *ngIf="f.ref1_paterno.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
+                        <input id="ref1_aPaterno" type="text" name="ref1_aPaterno" formControlName="ref1_aPaterno" required class="validate">
+                        <label for="ref1_aPaterno">Apellido paterno</label>
+                        <div class="blue-text" *ngIf="f.ref1_aPaterno.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabra altisonante</p> -->
                         </div>
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="ref1_materno" type="text" name="ref1_materno" formControlName="ref1_materno" required class="validate">
-                        <label for="ref1_materno">Apellido materno</label>
-                        <div class="blue-text" *ngIf="f.ref1_materno.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
+                        <input id="ref1_aMaterno" type="text" name="ref1_aMaterno" formControlName="ref1_aMaterno" required class="validate">
+                        <label for="ref1_aMaterno">Apellido materno</label>
+                        <div class="blue-text" *ngIf="f.ref1_aMaterno.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabra altisonante</p> -->
                         </div>
@@ -568,14 +572,14 @@
                     </div>
 
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="ref1_relacion" name="ref1_relacion" id="ref1_relacion" class="validate">
+                        <select formControlName="ref1_tipoRelacion" name="ref1_tipoRelacion" id="ref1_tipoRelacion" class="validate">
                                 <option value="" disabled selected>Selecciona una opcion</option>
                                 <option value="1">Familiar</option>
                                 <option value="2">Amistad</option>
                                 <option value="3">Laboral o profesional</option>
                             </select>
                         <label>Relación</label>
-                        <div class="blue-text" *ngIf="f.ref1_relacion.errors">Debes seleccionar una opción.</div>
+                        <div class="blue-text" *ngIf="f.ref1_tipoRelacion.errors">Debes seleccionar una opción.</div>
                     </div>
 
 
@@ -588,38 +592,38 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="ref2_name" type="text" formControlName="ref2_name" name="ref2_name" required class="validate">
-                        <label for="ref2_name">Nombre</label>
+                        <input id="ref2_nombre" type="text" formControlName="ref2_nombre" name="ref2_nombre" required class="validate">
+                        <label for="ref2_nombre">Nombre</label>
 
-                        <div class="blue-text" *ngIf="f.ref2_name.errors?.minlength">Debe tener un mínimo de 2 caracteres</div>
+                        <div class="blue-text" *ngIf="f.ref2_nombre.errors?.minlength">Debe tener un mínimo de 2 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                         </div>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="ref2_name2" type="text" formControlName="ref2_name2" name="ref2_name2" class="validate">
-                        <label for="ref2_name2">Segundo nombre</label>
+                        <input id="ref2_nombre2" type="text" formControlName="ref2_nombre2" name="ref2_nombre2" class="validate">
+                        <label for="ref2_nombre2">Segundo nombre</label>
 
-                        <div class="blue-text" *ngIf="f.ref2_name2.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
+                        <div class="blue-text" *ngIf="f.ref2_nombre2.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabra altisonante</p>-->
                         </div>
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="ref2_paterno" type="text" name="ref2_paterno" formControlName="ref2_paterno" required class="validate">
-                        <label for="ref2_paterno">Apellido paterno</label>
-                        <div class="blue-text" *ngIf="f.ref2_paterno.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
+                        <input id="ref2_aPaterno" type="text" name="ref2_aPaterno" formControlName="ref2_aPaterno" required class="validate">
+                        <label for="ref2_aPaterno">Apellido paterno</label>
+                        <div class="blue-text" *ngIf="f.ref2_aPaterno.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabra altisonante</p> -->
                         </div>
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="ref2_materno" type="text" name="ref2_materno" formControlName="ref2_materno" required class="validate">
-                        <label for="ref2_materno">Apellido materno</label>
-                        <div class="blue-text" *ngIf="f.ref2_materno.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
+                        <input id="ref2_aMaterno" type="text" name="ref2_aMaterno" formControlName="ref2_aMaterno" required class="validate">
+                        <label for="ref2_aMaterno">Apellido materno</label>
+                        <div class="blue-text" *ngIf="f.ref2_aMaterno.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabra altisonante</p> -->
                         </div>
@@ -633,14 +637,14 @@
                     </div>
 
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="ref2_relacion" name="ref2_relacion" id="ref2_relacion" class="validate">
+                        <select formControlName="ref2_tipoRelacion" name="ref2_tipoRelacion" id="ref2_tipoRelacion" class="validate">
                                 <option value="" disabled selected>Selecciona una opcion</option>
                                 <option value="1">Familiar</option>
                                 <option value="2">Amistad</option>
                                 <option value="3">Laboral o profesional</option>
                         </select>
                         <label>Relación</label>
-                        <div class="blue-text" *ngIf="f.ref2_relacion.errors">Debes seleccionar una opción.</div>
+                        <div class="blue-text" *ngIf="f.ref2_tipoRelacion.errors">Debes seleccionar una opción.</div>
                     </div>
 
 
@@ -650,7 +654,7 @@
 
                     <div class="row">
                         <div class="input-field col s12 m12 l12">
-                            <label><input class="with-gap teal darken-4" formControlName="aprivacidad" name="aprivacidad" type="checkbox" [(ngModel)]="aviso"/>
+                            <label><input class="with-gap teal darken-4" formControlName="aPrivacidad" name="aPrivacidad" type="checkbox" [(ngModel)]="aviso"/>
                             <span>
 
                         <label class="waves-effect modal-trigger subrayar" href="#aviso">

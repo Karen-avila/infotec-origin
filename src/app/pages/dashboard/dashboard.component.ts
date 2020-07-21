@@ -263,74 +263,74 @@ ngOnInit() {
       feedbackPreloader: '<div class="spinner-layer spinner-blue-only">...</div>'
     });
     this.form = new FormGroup({
+      latDomic: new FormControl(null, Validators.required),
+      lngDomic: new FormControl(null, Validators.required),
+      latNeg: new FormControl(null, Validators.required),
+      lngNeg: new FormControl(null, Validators.required),
       paso: new FormControl("3", Validators.required),
       clientId: new FormControl(localStorage.getItem('clientId'), Validators.required),
-      personType: new FormControl(null, Validators.required),
-      clabe_inter: new FormControl(null, [Validators.required, Validators.minLength(18), Validators.maxLength(18), Validators.pattern('[0-9]{18}')]),
-      name: new FormControl(null, [Validators.required, Validators.minLength(2)]),
-      name2: new FormControl(null, [Validators.minLength(0)]),
-      a_paterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
-      a_materno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
-      birthDate : new FormControl(null, Validators.required),
-      civil: new FormControl(null, Validators.required),
+      tipoPersona: new FormControl(null, Validators.required),
+      clabeInter: new FormControl(null, [Validators.required, Validators.minLength(18), Validators.maxLength(18), Validators.pattern('[0-9]{18}')]),
+      nombre: new FormControl(null, [Validators.required, Validators.minLength(2)]),
+      nombre2: new FormControl(null, [Validators.minLength(0)]),
+      aPaterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
+      aMaterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
+      fechaNac : new FormControl(null, Validators.required),
+      edoCivil: new FormControl(null, Validators.required),
       genero : new FormControl(null, Validators.required),
-      tel: new FormControl(null, [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
-      pais : new FormControl(null, Validators.required),
-      entidadfedn : new FormControl(null, Validators.required),
-      clave_elector: new FormControl(null, Validators.required),
+      telPersonal: new FormControl(null, [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
+      paisNaci : new FormControl(null, Validators.required),
+      entidadFedNaci : new FormControl(null, Validators.required),
+      claveElector: new FormControl(null, Validators.required),
       curp: new FormControl(null, Validators.required),
       rfc: new FormControl(null, Validators.required),
       calle: new FormControl(null, Validators.required),
-      ext: new FormControl(null, Validators.required),
-      int: new FormControl(null, [Validators.minLength(0)]),
+      numExtDomic: new FormControl(null, Validators.required),
+      numInt: new FormControl(null, [Validators.minLength(0)]),
       cp: new FormControl(null, Validators.required),
-      entidadfed : new FormControl(null, Validators.required),
+      entidadFedDomic : new FormControl(null, Validators.required),
       municipio: new FormControl(null, Validators.required),
-      asentamientoType: new FormControl(null, Validators.required),
+      tipoAsentamiento: new FormControl(null, Validators.required),
       asentamiento: new FormControl(null, Validators.required),
-      domicilio: new FormControl(' '),
+      /* domicilio: new FormControl(' '), */  /* Se quita al remover map openStreet */
       calleNeg: new FormControl(null, Validators.required),
-      extNeg: new FormControl(null, Validators.required),
-      intNeg: new FormControl(null, [Validators.minLength(0)]),
+      numExtNeg: new FormControl(null, Validators.required),
+      numIntNeg: new FormControl(null, [Validators.minLength(0)]),
       cpNeg: new FormControl(null, Validators.required),
-      entidadfedNeg : new FormControl(null, Validators.required),
-      // tslint:disable-next-line: max-line-length
+      entidadFedNeg : new FormControl(null, Validators.required),
       municipioNeg: new FormControl(null, Validators.required),
       asentamientoNeg: new FormControl(null, Validators.required),
-      asentamientoTypeNeg: new FormControl(null, Validators.required),
-      /* domicilion: new FormControl(' '), */
+      tipoAsentamientoNeg: new FormControl(null, Validators.required),
       sector: new FormControl(null, Validators.required),
       subsector: new FormControl(null, Validators.required),
       rama: new FormControl(null, Validators.required),
       subrama: new FormControl(null, Validators.required),
       giro: new FormControl(null, Validators.required),
-      ref1_name: new FormControl(null, [Validators.required, Validators.minLength(2)]),
-      ref1_name2: new FormControl(null, [Validators.minLength(0)]),
-      ref1_paterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
-      ref1_materno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
-      // tslint:disable-next-line: max-line-length
+      ref1_nombre: new FormControl(null, [Validators.required, Validators.minLength(2)]),
+      ref1_nombre2: new FormControl(null, [Validators.minLength(0)]),
+      ref1_aPaterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
+      ref1_aMaterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
       ref1_tel: new FormControl(null, [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
-      ref1_relacion: new FormControl(null, Validators.required),
-      ref2_name: new FormControl(null, [Validators.required, Validators.minLength(2)]),
-      ref2_name2: new FormControl(null, [Validators.minLength(0)]),
-      ref2_paterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
-      ref2_materno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
-      // tslint:disable-next-line: max-line-length
+      ref1_tipoRelacion: new FormControl(null, Validators.required),
+      ref2_nombre: new FormControl(null, [Validators.required, Validators.minLength(2)]),
+      ref2_nombre2: new FormControl(null, [Validators.minLength(0)]),
+      ref2_aPaterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
+      ref2_aMaterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
       ref2_tel: new FormControl(null, [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
-      ref2_relacion: new FormControl(null, Validators.required),
-      monto: new FormControl(),
-      plazo: new FormControl(),
-      aprivacidad: new FormControl(null, Validators.required)
+      ref2_tipoRelacion: new FormControl(null, Validators.required),
+      montoCredito: new FormControl(),
+      plazoCredito: new FormControl(),
+      aPrivacidad: new FormControl(null, Validators.required)
     },
     {
       validators:
         this.pbaDict(
-          'name',
-          'a_paterno',
-          'name2',
-          'a_materno',
-          'domicilio',
-          'calle',
+          'nombre',
+          'aPaterno',
+          'nombre2',
+          'aMaterno',
+          /* 'domicilio', */
+    /*       'calle',
           'ext',
           'int',
           'municipio',
@@ -347,7 +347,7 @@ ngOnInit() {
           'ref2_name',
           'ref2_paterno',
           'ref2_name2',
-          'ref2_materno'
+          'ref2_materno' */
         )
     });
     this.formDocumentos = new FormGroup({
@@ -388,8 +388,8 @@ ngOnInit() {
     p2: string,
     p3: string,
     p4: string,
-    p5: string,
-    p6: string,
+    /* p5: string, */
+/*     p6: string,
     p7: string,
     p8: string,
     p9: string,
@@ -406,15 +406,15 @@ ngOnInit() {
     p20: string,
     p21: string,
     p22: string,
-    p23: string
+    p23: string */
   ) {
     return ( group: FormGroup) => {
       const val1 = group.controls[p1].value;
       const val2 = group.controls[p2].value;
       const val3 = group.controls[p3].value;
       const val4 = group.controls[p4].value;
-      const val5 = group.controls[p5].value;
-      const val6 = group.controls[p6].value;
+      /* const val5 = group.controls[p5].value; */
+  /*     const val6 = group.controls[p6].value;
       const val7 = group.controls[p7].value;
       const val8 = group.controls[p8].value;
       const val9 = group.controls[p9].value;
@@ -431,16 +431,16 @@ ngOnInit() {
       const val20 = group.controls[p20].value;
       const val21 = group.controls[p21].value;
       const val22 = group.controls[p22].value;
-      const val23 = group.controls[p23].value;
+      const val23 = group.controls[p23].value; */
       for (const i of this.dic) {
         // console.log("compare",val1,"vs",i)
         if (
           val1  === i ||
           val2 === i ||
           val3 === i ||
-          val4 === i ||
-          val5 === i ||
-          val6  === i ||
+          val4 === i 
+          /* val5 === i || */
+    /*       val6  === i ||
           val7 === i ||
           val8 === i ||
           val9 === i ||
@@ -457,7 +457,7 @@ ngOnInit() {
           val20  === i ||
           val21 === i ||
           val22 === i ||
-          val23 === i
+          val23 === i */
         ) {
           return {isMatch: true};
         }
@@ -474,7 +474,7 @@ ngOnInit() {
             this.negocio.tipo_asentamiento = json.response.tipo_asentamiento;
             this.negocio.colonia = json.response.colonia;
             this.negocio.asentamiento = json.response.asentamiento;
-            this.negocio.municipio = json.response.ciudad;
+            this.negocio.municipio = json.response.municipio;
             this.negocio.estado = json.response.estado;
             fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.negocio.calle}+${this.negocio.ext}+${this.negocio.asentamiento}+${this.negocio.municipio}+${this.negocio.estado}&key=AIzaSyCseZ0trHuyvuZlNh6TXxz1-6OJhXfXaww&language=es`)
               .then((response) => {
@@ -495,7 +495,7 @@ ngOnInit() {
             this.personal.tipo_asentamiento = json.response.tipo_asentamiento;
             this.personal.colonia = json.response.colonia;
             this.personal.asentamiento = json.response.asentamiento;
-            this.personal.municipio = json.response.ciudad;
+            this.personal.municipio = json.response.municipio;
             this.personal.estado = json.response.estado;
             fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.personal.calle}+${this.personal.ext}+${this.personal.asentamiento}+${this.personal.municipio}+${this.personal.estado}&key=AIzaSyCseZ0trHuyvuZlNh6TXxz1-6OJhXfXaww&language=es`)
               .then((response) => {
@@ -564,14 +564,19 @@ ngOnInit() {
     console.log(this.form.value);
     console.log('form is valid?', this.form.valid);
     if (this.form.valid) {
-      console.log('form', this.form.value);
-      // enviar datos a back
-      // this.popup[0].open();
+      this.userService.activate(this.form.value)
+    .subscribe(res=>{
+      console.log("esto responde el servicio dpaersonales",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
+      swal("¡Datos Guardados!", "Continuar", "success");
       this.stepper.openStep(3);
+    });
+    
+      /* this.stepper.openStep(3); */
     } else {
       swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
     }
   }
+
   dfiel() {
     console.log('formFiel is valid?', this.formFiel.valid);
     if (this.formFiel.valid) {
@@ -688,7 +693,7 @@ ngOnInit() {
             {
               lat: event.geometry.location.lat(),
               lng: event.geometry.location.lng(),
-              label: 'A',
+              label: 'CASA',
               draggable: true
             },
           ];
@@ -700,7 +705,7 @@ ngOnInit() {
             {
               lat: event.geometry.location.lat(),
               lng: event.geometry.location.lng(),
-              label: 'A',
+              label: 'NEGOCIO',
               draggable: true
             },
           ];
@@ -714,7 +719,7 @@ ngOnInit() {
       this.markers = [{
         lat: $event.coords.lat,
         lng: $event.coords.lng,
-        label: 'A',
+        label: 'CASA',
         draggable: false
       }];
     }
@@ -722,7 +727,7 @@ ngOnInit() {
       this.markers2 = [{
         lat: $event.coords.lat,
         lng: $event.coords.lng,
-        label: 'A',
+        label: 'NEGOCIO',
         draggable: false
       }];
     }

@@ -81,4 +81,6 @@ COPY ./httpd_config.conf /usr/local/lsws/conf/httpd_config.conf
 
 COPY ./vhconf.conf /usr/local/lsws/conf/vhosts/Mifos/vhconf.conf 
 
+COPY ./.htaccess /usr/local/lsws/Mifos/html
+
 EXPOSE 80 443 7080 61616

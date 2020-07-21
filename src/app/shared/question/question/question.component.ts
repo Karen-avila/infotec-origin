@@ -17,6 +17,7 @@ export class QuestionComponent implements OnInit {
   sfina8 = false;
   sfina9 = false;
 
+    /* Perfil de negocio */
   scrPerNeg=[
     {
       quest:"Antigüedad de negocio.",
@@ -75,6 +76,8 @@ export class QuestionComponent implements OnInit {
       value:""
     }
   ];
+
+  /* Perfil de mercado */
 
   scrPerMer=[
     {
@@ -167,6 +170,8 @@ export class QuestionComponent implements OnInit {
     }
   ];
 
+  /* Reputación */
+
   scrRep=[
     {
       quest:"¿Cómo es la reputación del negocio con los clientes?",
@@ -218,6 +223,8 @@ export class QuestionComponent implements OnInit {
     }
   ];
 
+  /* Dirección */
+
   scrDir=[
     {
       quest:"¿Cuántos años de experiencia en el negocio tienen los dueños del negocio?",
@@ -252,6 +259,8 @@ export class QuestionComponent implements OnInit {
       value:""
     }
   ];
+
+  /* Queremos conocerte */
   
   qcQc=[
     {
@@ -305,439 +314,482 @@ export class QuestionComponent implements OnInit {
         value:""
       }
   ];
-  qcQcn=[
-    {
-      quest:"¿Participó en la convocatoria 2.1 Desarrollo y Fortalecimiento Empresarial de la SE?",
-      opts:["Sí","No"],
-      resp:"",
-      value:""
-    },
-    {
-      quest:"¿Recibió capacitación vinculada a su crédito proveniente de alguna organización?",
-      opts:["Sí","No"],
-      resp:"",
-      value:""
-    },
-    {
-      quest:"¿Ha solicitado crédito anteriormente?",
-      opts:["Sí","No"],
-      resp:"",
-      value:""
-    },
-    {
-      quest:"¿Sus ingresos han mejorado después de recibir un crédito?",
-      opts:["Sí","No","No aplica"],
-      resp:"",
-      value:""
-    },
-    {
-      quest:"Además de su oficina, comercio, o local principal, ¿tiene otra(s) oficina(s), comercio(s), local(es) o sucursal(es)?",
-      opts:["Sí","No"],
-      resp:"",
-      value:""
-    },
-    {
-      quest:"¿Cómo se lleva la contabilidad de la empresa?",
-      opts:["Se utiliza un cuaderno o una libreta de apuntes para llevar la contabilidad","Se utiliza los servicios de un contador o profesional para llevar la contabilidad","Se utiliza el “Portal Mis Cuentas” del SAT","Se utiliza un paquete de contabilidad por parte de la empresa","No se lleva la contabilidad de la empresa","Otro"],
-      resp:"",
-      value:""
-    },
-    {
-      quest:"¿La empresa tiene cuenta bancaria exclusiva para el manejo del dinero del negocio?",
-      opts:["Sí","No"],
-      resp:"",
-      value:""
-    },
-    {
-      quest:"Durante el ejercicio fiscal anterior, ¿la empresa tuvo necesidad de invertir en equipo, vehículos, inmuebles, capacitación, etcétera y no pudo por falta de dinero?",
-      opts:["Sí","No"],
-      resp:"",
-      value:""
-    },
-    {
-      quest:"¿Durante el ejercicio fiscal anterior se otorgó capacitación al personal de la empresa (usando capacitadores internos o externos)?",
-      opts:["Sí","No"],
-      resp:"",
-      value:""
-    },
-    {
-      quest:"¿Cuál fue la principal causa por la que durante el ejercicio fiscal anterior no se otorgó capacitación al personal de la empresa?",
-      opts:["Capacitar interrumpe la producción","Capacitar hace que el personal demande un salario mayor, busque otro trabajo o se independice","No se encontró capacitador conforme a las necesidades de la empresa","Se tenía la intención de capacitar pero es muy caro","Se consideró que el conocimiento y las habilidades técnicas del personal son adecuadas","No vale la pena porque la empresa tiene muy alta rotación de personal","En años previos se impartió la capacitación necesaria","Se solicitó la capacitación a instituciones públicas, pero no se pudo obtener","No hay beneﬁcios palpables como resultado de la capacitación","Se utiliza gente externa que ya viene capacitada","El horario de la empresa no lo permite","Otra"],
-      resp:"",
-      value:""
-    }
 
-  ];
-  qcQcnm=[
-  {
-    quest:"¿En la empresa se realizan actualmente algunas de las siguientes actividades? (seleccionar una o más de las siguientes opciones)",
-    opts:["Se lleva registros escritos del negocio. Es decir, se tiene un lugar, cuaderno, archivo o computadora donde se concentra la información de las operaciones diarias del negocio","Se sabe cuánto dinero en efectivo tiene el negocio en un momento determinado","Se sabe si las ventas de un producto (bien o servicio) en particular están subiendo o bajando de un mes a otro","Se sabe cuánto le cuesta al negocio generar cada uno de sus principales productos (bienes o servicios). Por ejemplo, si tiene que calcular cuánto le cuesta producir una galleta, se hacen las cuentas de cuánto gasta en comprar harina, azúcar, leche, luz para usar la batidora, gas para el horno, renta del local, etcétera; otro ejemplo: si se ofrece un servicio de transporte, se hacen las cuentas de cuánto se gasta en el consumo de gasolina, casetas de peaje, etcétera","Se sabe de qué productos (bienes o servicios) se obtienen más ganancias por cada uno que vende","El negocio no lleva registros y no cuenta con información que permita conocer a detalle su operación"],
-    resp:"",
-    value:""
-  }];
-  qcQcnm1=[
-  {
-    quest:"¿Cuál es el motivo principal por el que se inició en este negocio o actividad? (Seleccionar una o varias opciones)",
-    opts:["Por tradición familiar o lo heredó","Para complementar el ingreso familiar","Para mejorar el ingreso","Tenía dinero y encontró una buena oportuindad","Para ejercer su oficio, carrera o profesión","Fue la única manera que tuvo para obtener un ingreso","No tenía la experiencia requerida para un empleo","No tenía la escolaridad o capacitación requerida para un empleo","Estaba sobrecapacitado para un empleo","Los empleos que encontró estaban mal pagados","Requería un horario flexible","No había oportunidades de empleo","Otra razón"],
-    resp:"",
-    value:""
-  }];
-  qcQcnm2=[
-  {
-      quest:"En su negocio o actividad, ¿cuenta con un local para trabajar sea o no de su propiedad? (Seleccione una opción o más de una si tiene varios locales)",
-      opts:["Sí, es un local independiente","Sí, es un local o instalación que forma parte de un conjunto de locales","No"],
-      resp:"",
-      value:""
-  }];
-  qcQcnm3=[
-  {
-      quest:"En caso de ser local independiente (fuera de un techo común), ¿éste es? (Seleccionar una o varias opciones)",
-      opts:["Tienda, accesoria o tendajón","Taller (de servicios o de reparación)","Fábrica, tortillería, panadería","Oficina, despacho, consultorio"],
-      resp:"",
-      value:""
-  }];
-  qcQcnm4=[
-  {
-      quest:"Si no cuenta con un local, ¿en dónde se realizan las actividades de su negocio? (Seleccionar una o varias opciones)",
-      opts:["Vehículo con o sin motor","Puesto fijo fuera de un techo común","Puesto semifijo bajo un techo común en pasillos de un centro comercial","Puesto semifijo en un tianguis","En un domicilio particular con una instalación especial","En un domicilio particular sin una instalación especial","Otro lugar"],
-      resp:"",
-      value:""
-  }
-];
 
-  qcqn1=[
-  {
-    quest:"¿Cuál es el destino del crédito; es decir, específicamente para qué va a usar el crédito en su negocio? Por ejemplo, comprar un vehículo para repartir a domicilio.",
-    opts:[""],
-    resp:"",
-    value:""
-  },
-  {
-    quest:"¿Cuál es el propósito del proyecto; es decir, en qué espera que mejore su negocio debido al crédito que solicita? Por ejemplo, incrementar las ventas con la entrega a domicilio.",
-    opts:[""],
-    resp:"",
-    value:""
-  }];
 
-  qcqn22=[
-    {
-      quest:"¿Cuántas personas trabajan en su negocio?",
-      opts:[""],
-      resp:"",
-      value:""
-    }];
-  qcqn2=[
-
-    {
-      quest:"¿De cuánto efectivo dispone actualmente para cubrir las operaciones del negocios? Incluya lo que guarda en su casa, en el banco o en el negocio.",
-      opts:[""],
-      resp:"",
-      value:""
-    },
-    {
-      quest:"¿Al día de hoy cuánto le deben por venta de bienes a crédito o servicios realizados y que aún no le hayan terminado de pagar? ",
-      opts:[""],
-      resp:"",
-      value:""
-    },
-    {
-      quest:"Cuánto obtendría si vendiera el material de oficina, la maquinaria que usa en su negocio, aparatos de su propiedad o el local del negocio en caso de que sea suyo?",
-      opts:[""],
-      resp:"",
-      value:""
-    },
-    {
-      quest:"Pensando en los últimos 6 meses, en promedio, ¿cuánto vende o ingresa por la realización de sus servicios cada mes sin descontar los gastos?",
-      opts:[""],
-      resp:"",
-      value:""
-    },
-    {
-      quest:"Pensando en los últimos 6 meses, en promedio, ¿a cuánto ascienden, cada mes,  otros ingresos obtenidos además de los generados por su actividad principal del negocio?",
-      opts:[""],
-      resp:"",
-      value:""
-    },
-    {
-      quest:"En promedio ¿cuánto gasta cada vez que surte su negocio con mercancías para la venta de bienes o realización de sus servicios?",
-      opts:[""],
-      resp:"",
-      value:""
-    }];
-
-    qcqcn3=[
-      {
-        quest:"¿Con qué frecuencia surte su negocio con mercancías o materias primas para la venta de bienes o la prestación de sus servicios?",
-        opts:["Diariamente","Cada semana","Cada quincena","Cada mes","Cada 2 meses","Cada 3 meses","Cada 4 meses","Cada 6 meses","Cada año"],
-        resp:"",
-        value:""
-      },
-      {
-        quest:"¿Cuándo fue la última vez que surtió su negocio con mercancías o materias primas para la venta de bienes o prestación de sus servicios?",
-        opts:["Ayer","Hace una semana","Hace dos semanas","Hace un mes","Hace 2 meses","Hace 3 meses","Hace 4 meses","Hace 5 meses","Hace 6 meses","Hace 1 año","Hace más de un año"],
-        resp:"",
-        value:""
-      }];
-
-      qcqcn5=[
-        {
-          quest:"Recursos propios (dueños, herencia, familia y amigos) o utilidades reinvertidas",
-          opts:[""],
-          resp:"",
-          value:""
-        },
-        {
-          quest:"Préstamos de familiares y amigos que no tienen participación en la empresa. ",
-          opts:[""],
-          resp:"",
-          value:""
-        },
-        {
-          quest:"Sistema ﬁnanciero formal (bancos  privados, Banco del Bienestar, antes Bansefi, o ﬁnancieras)",
-          opts:[""],
-          resp:"",
-          value:""
-        },
-        {
-          quest:"Prestamistas particulares (personas que prestan dinero)",
-          opts:[""],
-          resp:"",
-          value:""
-        },
-        {
-          quest:"Crédito de proveedores",
-          opts:[""],
-          resp:"",
-          value:""
-        },
-        {
-          quest:"Recursos de inversionistas privados",
-          opts:[""],
-          resp:"",
-          value:""
-        },
-        {
-          quest:"Otras",
-          opts:[""],
-          resp:"",
-          value:""
-        }
-
-      ];
-
-      qcqcn4=[
-        {
-          quest:"Sueldos, salarios o cualquier otro pago a los trabajadores del negocio",
-          opts:[""],
-          resp:"",
-          value:""
-        },
-        {
-          quest:"Renta de locales o espacios comerciales",
-          opts:[""],
-          resp:"",
-          value:""
-        },
-        {
-          quest:"Servicios públicos",
-          opts:[""],
-          resp:"",
-          value:""
-        },
-        {
-          quest:"Transporte para actividades del negocio",
-          opts:[""],
-          resp:"",
-          value:""
-        },
-        {
-          quest:"Pago por franquicias",
-          opts:[""],
-          resp:"",
-          value:""
-        },
-        {
-          quest:"Promoción y publicidad",
-          opts:[""],
-          resp:"",
-          value:""
-        },
-        {
-          quest:"Pago de servicios contables o legales",
-          opts:[""],
-          resp:"",
-          value:""
-        },
-        {
-          quest:"Mantenimiento del negocio",
-          opts:[""],
-          resp:"",
-          value:""
-        },
-        {
-          quest:"Licencias de software",
-          opts:[""],
-          resp:"",
-          value:""
-        },
-        {
-          quest:"Impuestos",
-          opts:[""],
-          resp:"",
-          value:""
-        },
-        {
-          quest:"Otros gastos no incluidos en la lista pero que son necesarios para la operación de su negocio",
-          opts:[""],
-          resp:"",
-          value:""
-        }
-
-      ];
-      qcqcn6=[
-        {
-          quest:"Recursos propios (dueños, herencia, familia y amigos) o utilidades reinvertidas",
-          opts:[""],
-          resp:"",
-          value:""
-        },
-        {
-          quest:"Préstamos de familiares y amigos que no tienen participación en la empresa",
-          opts:[""],
-          resp:"",
-          value:""
-        },
-        {
-          quest:"Sistema ﬁnanciero formal (bancos  privados, Banco del Bienestar, antes Bansefi, o ﬁnancieras)",
-          opts:[""],
-          resp:"",
-          value:""
-        },
-        {
-          quest:"Prestamistas particulares (personas que prestan dinero)",
-          opts:[""],
-          resp:"",
-          value:""
-        },
-        {
-          quest:"Crédito de proveedores ",
-          opts:[""],
-          resp:"",
-          value:""
-        },
-        {
-          quest:"Recursos de inversionistas privados",
-          opts:[""],
-          resp:"",
-          value:""
-        },
-        {
-          quest:"Otras",
-          opts:[""],
-          resp:"",
-          value:""
-        }
-    ];
-
-    qcqcn7=[
-      {
-        quest:"Préstamos de familiares y amigos que no tienen participación en la empresa",
-        opts:[""],
-        resp:"",
-        value:""
-      },
-      {
-        quest:"Sistema ﬁnanciero formal (bancos  privados, Banco del Bienestar, antes Bansefi, o ﬁnancieras)",
-        opts:[""],
-        resp:"",
-        value:""
-      },
-      {
-        quest:"Prestamistas particulares (personas que prestan dinero)",
-        opts:[""],
-        resp:"",
-        value:""
-      },
-      {
-        quest:"Crédito de proveedores",
-        opts:[""],
-        resp:"",
-        value:""
-      },
-      {
-        quest:"Recursos de inversionistas privados",
-        opts:[""],
-        resp:"",
-        value:""
-      },
-      {
-        quest:"Otras",
-        opts:[""],
-        resp:"",
-        value:""
-      }
-    ];
-
-    qcqcn8=[
-      {
-        quest:"Luz",
-        opts:[""],
-        resp:"",
-        value:""
-      },
-      {
-        quest:"Gas o algún combustible",
-        opts:[""],
-        resp:"",
-        value:""
-      },
-      {
-        quest:"Telecomunicaciones (teléfono fijo o celular para el negocio e internet)",
-        opts:[""],
-        resp:"",
-        value:""
-      },
-      {
-        quest:"Materias primas consumidas (a costo de adquisición)",
-        opts:[""],
-        resp:"",
-        value:""
-      },
-      {
-        quest:"Mercancías compradas para reventa",
-        opts:[""],
-        resp:"",
-        value:""
-      },
-      {
-        quest:"Materiales consumidos para la prestación del servicio",
-        opts:[""],
-        resp:"",
-        value:""
-      },
-      {
-        quest:"Otros",
-        opts:[""],
-        resp:"",
-        value:""
-      }
-    ];
-
-        qcqcnd=[
+      
+     
+      /* Queremos conocer tu negocio */
+        preg1=[
           {
             quest:"¿Fecha en que inició su actividad productiva?",
             opts:[""],
             resp:"",
             value:""
           }  ];
-      qcqcn1=[
-        {
-          quest:"Registre el total de ingresos que obtuvo el negocio durante el ejercicio fiscal anterior. Por favor incluya tanto los ingresos derivados como los no derivados de la actividad, además de los apoyos del gobierno que haya recibido",
-          opts:["No sé","Si sé, pero prefiero no  declararlo"],
-          resp:"",
-          value:""
-        }
-      ];
+
+        preg2=[
+            {
+              quest:"Registre el total de ingresos que obtuvo el negocio durante el ejercicio fiscal anterior. Por favor incluya tanto los ingresos derivados como los no derivados de la actividad, además de los apoyos del gobierno que haya recibido",
+              opts:["No sé","Si sé, pero prefiero no  declararlo"],
+              resp:"",
+              value:""
+            }
+          ];
+        preg2m=[
+              {
+              quest:"Monto",
+              opts:[""],
+              resp:"",
+              value:""
+              }
+          ];
+    
+
+        preg3=[
+          {
+            quest:"¿Cuántas personas trabajan en su negocio?",
+            opts:[""],
+            resp:"",
+            value:""
+          }];
+    
+        preg4a5=[
+          {
+            quest:"¿Cuál es el destino del crédito; es decir, específicamente para qué va a usar el crédito en su negocio? Por ejemplo, comprar un vehículo para repartir a domicilio.",
+            opts:[""],
+            resp:"",
+            value:""
+          },
+          
+          {
+            quest:"¿Cuál es el propósito del proyecto; es decir, en qué espera que mejore su negocio debido al crédito que solicita? Por ejemplo, incrementar las ventas con la entrega a domicilio.",
+            opts:[""],
+            resp:"",
+            value:""
+          }];
+
+          preg6a11=[
+
+            {
+              quest:"¿De cuánto efectivo dispone actualmente para cubrir las operaciones del negocios? Incluya lo que guarda en su casa, en el banco o en el negocio.",
+              opts:[""],
+              resp:"",
+              value:""
+            },
+            {
+              quest:"¿Al día de hoy cuánto le deben por venta de bienes a crédito o servicios realizados y que aún no le hayan terminado de pagar? ",
+              opts:[""],
+              resp:"",
+              value:""
+            },
+            {
+              quest:"Cuánto obtendría si vendiera el material de oficina, la maquinaria que usa en su negocio, aparatos de su propiedad o el local del negocio en caso de que sea suyo?",
+              opts:[""],
+              resp:"",
+              value:""
+            },
+            {
+              quest:"Pensando en los últimos 6 meses, en promedio, ¿cuánto vende o ingresa por la realización de sus servicios cada mes sin descontar los gastos?",
+              opts:[""],
+              resp:"",
+              value:""
+            },
+            {
+              quest:"Pensando en los últimos 6 meses, en promedio, ¿a cuánto ascienden, cada mes,  otros ingresos obtenidos además de los generados por su actividad principal del negocio?",
+              opts:[""],
+              resp:"",
+              value:""
+            },
+            {
+              quest:"En promedio ¿cuánto gasta cada vez que surte su negocio con mercancías para la venta de bienes o realización de sus servicios?",
+              opts:[""],
+              resp:"",
+              value:""
+            }];
+
+            preg12a13=[
+              {
+                quest:"¿Con qué frecuencia surte su negocio con mercancías o materias primas para la venta de bienes o la prestación de sus servicios?",
+                opts:["Diariamente","Cada semana","Cada quincena","Cada mes","Cada 2 meses","Cada 3 meses","Cada 4 meses","Cada 6 meses","Cada año"],
+                resp:"",
+                value:""
+              },
+              {
+                quest:"¿Cuándo fue la última vez que surtió su negocio con mercancías o materias primas para la venta de bienes o prestación de sus servicios?",
+                opts:["Ayer","Hace una semana","Hace dos semanas","Hace un mes","Hace 2 meses","Hace 3 meses","Hace 4 meses","Hace 5 meses","Hace 6 meses","Hace 1 año","Hace más de un año"],
+                resp:"",
+                value:""
+              }];
+
+            preg14=[
+                {
+                  quest:"Sueldos, salarios o cualquier otro pago a los trabajadores del negocio",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Renta de locales o espacios comerciales",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Servicios públicos",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Transporte para actividades del negocio",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Pago por franquicias",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Promoción y publicidad",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Pago de servicios contables o legales",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Mantenimiento del negocio",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Licencias de software",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Impuestos",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Otros gastos no incluidos en la lista pero que son necesarios para la operación de su negocio",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                }
+        
+              ];
+
+              preg15r=[
+                {
+                  quest:"No cuento con ningún financiamiento.",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                }];
+
+              preg15=[
+                {
+                  quest:"Recursos propios (dueños, herencia, familia y amigos) o utilidades reinvertidas",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Préstamos de familiares y amigos que no tienen participación en la empresa. ",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Sistema ﬁnanciero formal (bancos  privados, Banco del Bienestar, antes Bansefi, o ﬁnancieras)",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Prestamistas particulares (personas que prestan dinero)",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Crédito de proveedores",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Recursos de inversionistas privados",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Otras",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                }
+        
+              ];
+        
+              preg16r=[
+                {
+                  quest:"No cuento con ningún financiamiento.",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                }];
+
+              preg16=[
+                {
+                  quest:"Recursos propios (dueños, herencia, familia y amigos) o utilidades reinvertidas",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Préstamos de familiares y amigos que no tienen participación en la empresa",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Sistema ﬁnanciero formal (bancos  privados, Banco del Bienestar, antes Bansefi, o ﬁnancieras)",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Prestamistas particulares (personas que prestan dinero)",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Crédito de proveedores ",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Recursos de inversionistas privados",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Otras",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                }
+            ];
+
+            preg17r=[
+              {
+                quest:"No cuento con ningún financiamiento.",
+                opts:[""],
+                resp:"",
+                value:""
+              }];
+        
+            preg17=[
+              {
+                quest:"Préstamos de familiares y amigos que no tienen participación en la empresa",
+                opts:[""],
+                resp:"",
+                value:""
+              },
+              {
+                quest:"Sistema ﬁnanciero formal (bancos  privados, Banco del Bienestar, antes Bansefi, o ﬁnancieras)",
+                opts:[""],
+                resp:"",
+                value:""
+              },
+              {
+                quest:"Prestamistas particulares (personas que prestan dinero)",
+                opts:[""],
+                resp:"",
+                value:""
+              },
+              {
+                quest:"Crédito de proveedores",
+                opts:[""],
+                resp:"",
+                value:""
+              },
+              {
+                quest:"Recursos de inversionistas privados",
+                opts:[""],
+                resp:"",
+                value:""
+              },
+              {
+                quest:"Otras",
+                opts:[""],
+                resp:"",
+                value:""
+              }
+            ];
+
+              preg18=[
+                {
+                  quest:"Luz",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Gas o algún combustible",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Telecomunicaciones (teléfono fijo o celular para el negocio e internet)",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Materias primas consumidas (a costo de adquisición)",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Mercancías compradas para reventa",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Materiales consumidos para la prestación del servicio",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Otros",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                }
+              ];
+            
+              preg19a28=[
+                {
+                  quest:"¿Participó en la convocatoria 2.1 Desarrollo y Fortalecimiento Empresarial de la SE?",
+                  opts:["Sí","No"],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"¿Recibió capacitación vinculada a su crédito proveniente de alguna organización?",
+                  opts:["Sí","No"],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"¿Ha solicitado crédito anteriormente?",
+                  opts:["Sí","No"],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"¿Sus ingresos han mejorado después de recibir un crédito?",
+                  opts:["Sí","No","No aplica"],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Además de su oficina, comercio, o local principal, ¿tiene otra(s) oficina(s), comercio(s), local(es) o sucursal(es)?",
+                  opts:["Sí","No"],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"¿Cómo se lleva la contabilidad de la empresa?",
+                  opts:["Se utiliza un cuaderno o una libreta de apuntes para llevar la contabilidad","Se utiliza los servicios de un contador o profesional para llevar la contabilidad","Se utiliza el “Portal Mis Cuentas” del SAT","Se utiliza un paquete de contabilidad por parte de la empresa","No se lleva la contabilidad de la empresa","Otro"],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"¿La empresa tiene cuenta bancaria exclusiva para el manejo del dinero del negocio?",
+                  opts:["Sí","No"],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Durante el ejercicio fiscal anterior, ¿la empresa tuvo necesidad de invertir en equipo, vehículos, inmuebles, capacitación, etcétera y no pudo por falta de dinero?",
+                  opts:["Sí","No"],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"¿Durante el ejercicio fiscal anterior se otorgó capacitación al personal de la empresa (usando capacitadores internos o externos)?",
+                  opts:["Sí","No"],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"¿Cuál fue la principal causa por la que durante el ejercicio fiscal anterior no se otorgó capacitación al personal de la empresa?",
+                  opts:["Capacitar interrumpe la producción","Capacitar hace que el personal demande un salario mayor, busque otro trabajo o se independice","No se encontró capacitador conforme a las necesidades de la empresa","Se tenía la intención de capacitar pero es muy caro","Se consideró que el conocimiento y las habilidades técnicas del personal son adecuadas","No vale la pena porque la empresa tiene muy alta rotación de personal","En años previos se impartió la capacitación necesaria","Se solicitó la capacitación a instituciones públicas, pero no se pudo obtener","No hay beneﬁcios palpables como resultado de la capacitación","Se utiliza gente externa que ya viene capacitada","El horario de la empresa no lo permite","Otra"],
+                  resp:"",
+                  value:""
+                }
+            
+              ];
+              preg29=[
+                {
+                  quest:"¿En la empresa se realizan actualmente algunas de las siguientes actividades? (seleccionar una o más de las siguientes opciones)",
+                  opts:["Se lleva registros escritos del negocio. Es decir, se tiene un lugar, cuaderno, archivo o computadora donde se concentra la información de las operaciones diarias del negocio","Se sabe cuánto dinero en efectivo tiene el negocio en un momento determinado","Se sabe si las ventas de un producto (bien o servicio) en particular están subiendo o bajando de un mes a otro","Se sabe cuánto le cuesta al negocio generar cada uno de sus principales productos (bienes o servicios). Por ejemplo, si tiene que calcular cuánto le cuesta producir una galleta, se hacen las cuentas de cuánto gasta en comprar harina, azúcar, leche, luz para usar la batidora, gas para el horno, renta del local, etcétera; otro ejemplo: si se ofrece un servicio de transporte, se hacen las cuentas de cuánto se gasta en el consumo de gasolina, casetas de peaje, etcétera","Se sabe de qué productos (bienes o servicios) se obtienen más ganancias por cada uno que vende","El negocio no lleva registros y no cuenta con información que permita conocer a detalle su operación"],
+                  resp:"",
+                  value:""
+                }];
+                preg30=[
+                {
+                  quest:"¿Cuál es el motivo principal por el que se inició en este negocio o actividad? (Seleccionar una o varias opciones)",
+                  opts:["Por tradición familiar o lo heredó","Para complementar el ingreso familiar","Para mejorar el ingreso","Tenía dinero y encontró una buena oportuindad","Para ejercer su oficio, carrera o profesión","Fue la única manera que tuvo para obtener un ingreso","No tenía la experiencia requerida para un empleo","No tenía la escolaridad o capacitación requerida para un empleo","Estaba sobrecapacitado para un empleo","Los empleos que encontró estaban mal pagados","Requería un horario flexible","No había oportunidades de empleo","Otra razón"],
+                  resp:"",
+                  value:""
+                }];
+                preg31=[
+                {
+                    quest:"En su negocio o actividad, ¿cuenta con un local para trabajar sea o no de su propiedad? (Seleccione una opción o más de una si tiene varios locales)",
+                    opts:["Sí, es un local independiente","Sí, es un local o instalación que forma parte de un conjunto de locales","No"],
+                    resp:"",
+                    value:""
+                }];
+                preg32=[
+                {
+                    quest:"En caso de ser local independiente (fuera de un techo común), ¿éste es? (Seleccionar una o varias opciones)",
+                    opts:["Tienda, accesoria o tendajón","Taller (de servicios o de reparación)","Fábrica, tortillería, panadería","Oficina, despacho, consultorio"],
+                    resp:"",
+                    value:""
+                }];
+                preg33=[
+                {
+                    quest:"Si no cuenta con un local, ¿en dónde se realizan las actividades de su negocio? (Seleccionar una o varias opciones)",
+                    opts:["Vehículo con o sin motor","Puesto fijo fuera de un techo común","Puesto semifijo bajo un techo común en pasillos de un centro comercial","Puesto semifijo en un tianguis","En un domicilio particular con una instalación especial","En un domicilio particular sin una instalación especial","Otro lugar"],
+                    resp:"",
+                    value:""
+                }
+              ];
 
 
 
@@ -820,41 +872,41 @@ this.formQcQc = new FormGroup({
 });
 
 this.formQcQcn = new FormGroup({
-  qcQcnd: new FormControl(null, [Validators.required]),//1
-  qcqcn10: new FormControl(' ',[Validators.required]), //2
-  qcqcn11: new FormControl(' ',[Validators.required]), //2
-  qcqcnmo: new FormControl(' ',[Validators.required]),//2
-  qcQcn220: new FormControl(null, [Validators.required]),//3
-  qcQcn010: new FormControl(null, [Validators.required]),//4
-  qcQcn011: new FormControl(null, [Validators.required]),//5
-  qcQcn020: new FormControl(null, [Validators.required]),//6
-  qcQcn021: new FormControl(null, [Validators.required]),//7
-  qcQcn022: new FormControl(null, [Validators.required]),//8
-  qcQcn023: new FormControl(null, [Validators.required]),//9
-  qcQcn024: new FormControl(null, [Validators.required]),//10
-  qcQcn025: new FormControl(null, [Validators.required]),//11
-  qcQcn030: new FormControl(null, [Validators.required]),//12
-  qcQcn031: new FormControl(null, [Validators.required]),//13
-  qcQcn040: new FormControl(null,[Validators.required]), //14
-  qcQcn041: new FormControl(null,[Validators.required]), //14
-  qcQcn042: new FormControl(null,[Validators.required]), //14
-  qcQcn043: new FormControl(null,[Validators.required]), //14
-  qcQcn044: new FormControl(null,[Validators.required]), //14
-  qcQcn045: new FormControl(null,[Validators.required]), //14
-  qcQcn046: new FormControl(null,[Validators.required]), //14
-  qcQcn047: new FormControl(null,[Validators.required]), //14
-  qcQcn048: new FormControl(null,[Validators.required]), //14
-  qcQcn049: new FormControl(null,[Validators.required]), //14
-  qcQcn0410: new FormControl(null,[Validators.required]), //14
-  qcQcnr05: new FormControl(' ',[Validators.required]), //15
-  qcQcn050: new FormControl(' ',[Validators.required]),//15
-  qcQcn051: new FormControl(' ',[Validators.required]),//15
-  qcQcn052: new FormControl(' ',[Validators.required]),//15
-  qcQcn053: new FormControl(' ',[Validators.required]),//15
-  qcQcn054: new FormControl(' ',[Validators.required]),//15
-  qcQcn055: new FormControl(' ',[Validators.required]),//15
-  qcQcn056: new FormControl(' ',[Validators.required]),//15
-  qcQcnr06: new FormControl(' ',[Validators.required]),//16
+  preg1: new FormControl(null, [Validators.required]),
+  /*preg20: new FormControl(' ',[Validators.required]), //2
+  preg20: new FormControl(' ',[Validators.required]), //2
+  preg2m: new FormControl(' ',[Validators.required]),//2*/
+  preg3: new FormControl(null, [Validators.required]),
+  preg4a50: new FormControl(null, [Validators.required]),
+  preg4a51: new FormControl(null, [Validators.required]),
+  preg6a110: new FormControl(null, [Validators.required]),
+  preg6a111: new FormControl(null, [Validators.required]),
+  preg6a112: new FormControl(null, [Validators.required]),
+  preg6a113: new FormControl(null, [Validators.required]),
+  preg6a114: new FormControl(null, [Validators.required]),
+  preg6a115: new FormControl(null, [Validators.required]),
+  preg12a130: new FormControl(null, [Validators.required]),
+  preg12a131: new FormControl(null, [Validators.required]),
+  preg140: new FormControl(null,[Validators.required]), 
+  preg141: new FormControl(null,[Validators.required]), 
+  preg142: new FormControl(null,[Validators.required]), 
+  preg143: new FormControl(null,[Validators.required]), 
+  preg144: new FormControl(null,[Validators.required]), 
+  preg145: new FormControl(null,[Validators.required]), 
+  preg146: new FormControl(null,[Validators.required]), 
+  preg147: new FormControl(null,[Validators.required]), 
+  preg148: new FormControl(null,[Validators.required]), 
+  preg149: new FormControl(null,[Validators.required]), 
+  preg1410: new FormControl(null,[Validators.required]),
+  /*preg15r: new FormControl(' ',[Validators.required]), //15
+  preg150: new FormControl(' ',[Validators.required]),//15
+  preg151: new FormControl(' ',[Validators.required]),//15
+  preg152: new FormControl(' ',[Validators.required]),//15
+  preg153: new FormControl(' ',[Validators.required]),//15
+  preg154: new FormControl(' ',[Validators.required]),//15
+  preg155: new FormControl(' ',[Validators.required]),//15
+  preg156: new FormControl(' ',[Validators.required]),//15
+  preg16r: new FormControl(' ',[Validators.required]),//16
   qcQcn060: new FormControl(' ',[Validators.required]),//16
   qcQcn061: new FormControl(' ',[Validators.required]),//16
   qcQcn062: new FormControl(' ',[Validators.required]),//16
@@ -869,38 +921,30 @@ this.formQcQcn = new FormGroup({
   qcQcn073: new FormControl(' ',[Validators.required]),//17
   qcQcn074: new FormControl(' ',[Validators.required]),//17
   qcQcn075: new FormControl(' ',[Validators.required]),//17
-  qcQcn080: new FormControl(null,[Validators.required]),//18
-  qcQcn081: new FormControl(null,[Validators.required]),//18
-  qcQcn082: new FormControl(null,[Validators.required]),//18
-  qcQcn083: new FormControl(null,[Validators.required]),//18
-  qcQcn084: new FormControl(null,[Validators.required]),//18
-  qcQcn085: new FormControl(null,[Validators.required]),//18
-  qcQcn086: new FormControl(null,[Validators.required]),//18
-  qcQcn0: new FormControl(null, [Validators.required]), //19
-  qcQcn1: new FormControl(null, [Validators.required]),//20
-  qcQcn2: new FormControl(null, [Validators.required]),//21
-  qcQcn3: new FormControl(null, [Validators.required]),//22
-  qcQcn4: new FormControl(null, [Validators.required]),//23
-  qcQcn5: new FormControl(null, [Validators.required]),//24
-  qcQcn6: new FormControl(null, [Validators.required]),//25
-  qcQcn7: new FormControl(null, [Validators.required]),//26
-  qcQcn8: new FormControl(null, [Validators.required]),//27
-  qcQcn9: new FormControl(null, [Validators.required]),//28
-  qcQcnm110: new FormControl(null,[Validators.required]),//29
-  qcQcnm111: new FormControl(null,[Validators.required]),//30
-  qcQcnm112: new FormControl(null,[Validators.required]),//31
-  qcQcnm113: new FormControl(null,[Validators.required]),//32
-  qcQcnm114: new FormControl(null,[Validators.required]),//33
-  qcQcnm115: new FormControl(null,[Validators.required])//34
-  
-  /*
-  qcQcnm0: new FormControl(null, [Validators.required]),
-  qcQcnm1: new FormControl(null, [Validators.required]),
-  qcQcnm2: new FormControl(null, [Validators.required]),
-  qcQcnm3: new FormControl(null, [Validators.required]),
-  qcQcnm4: new FormControl(null, [Validators.required]), 
-  qcQcn00: new FormControl(null,[Validators.required]),
   */
+  preg180: new FormControl(null,[Validators.required]),
+  preg181: new FormControl(null,[Validators.required]),
+  preg182: new FormControl(null,[Validators.required]),
+  preg183: new FormControl(null,[Validators.required]),
+  preg184: new FormControl(null,[Validators.required]),
+  preg185: new FormControl(null,[Validators.required]),
+  preg186: new FormControl(null,[Validators.required]),
+  preg19a280: new FormControl(null, [Validators.required]),
+  preg19a281: new FormControl(null, [Validators.required]),
+  preg19a282: new FormControl(null, [Validators.required]),
+  preg19a283: new FormControl(null, [Validators.required]),
+  preg19a284: new FormControl(null, [Validators.required]),
+  preg19a285: new FormControl(null, [Validators.required]),
+  preg19a286: new FormControl(null, [Validators.required]),
+  preg19a287: new FormControl(null, [Validators.required]),
+  preg19a288: new FormControl(null, [Validators.required]),
+  preg19a289: new FormControl(null, [Validators.required]),
+  preg29: new FormControl(null,[Validators.required]),
+  preg30: new FormControl(null,[Validators.required]),
+  preg31: new FormControl(null,[Validators.required]),
+  preg32: new FormControl(null,[Validators.required]),
+  preg33: new FormControl(null,[Validators.required]) 
+  
   
 
 
@@ -973,12 +1017,6 @@ this.formQcQcn = new FormGroup({
     }
 
   }
- 
-  changedqcQcn(j,i){
-    this.qcQcn[i].value = this.qcQcn[i].value[j]
-  }
- 
-  
 
   qcQcnSend(){
     console.log("formQcQcn", this.formQcQcn.valid);
@@ -1034,25 +1072,22 @@ this.formQcQcn = new FormGroup({
       scrPerMer: this.scrPerMer,
       scrRep: this.scrRep,
       scrDir: this.scrDir, 
-     qcQc: this.qcQc,
-     qcQc1: this.qcQc1,
-     qcQcn: this.qcQcn,
-     qcQcnm: this.qcQcnm,
-     qcQcnm1:this.qcQcnm1,
-     qcQcnm2: this.qcQcnm2,
-     qcQcnm3: this.qcQcnm3,
-     qcQcnm4: this.qcQcnm4,
-     qcqn1: this.qcqn1,
-     qcqn22: this.qcqn22,
-     qcqn2: this.qcqn2,
-     qcqcn3: this.qcqcn3,
-     qcqcn5: this.qcqcn5,
-     qcqcn4: this.qcqcn4,
-     qcqcn6: this.qcqcn6,
-     qcqcn7: this.qcqcn7,
-     qcqcn8: this.qcqcn8,
-     qcqcnd: this.qcqcnd,
-     qcqcn1: this.qcqcn1,
+      //Queremos conocerte
+      qcQc: this.qcQc,
+      qcQc1: this.qcQc1,
+      //Queremos conocer tu negocio 
+      preg1: this.preg1,
+      preg3: this.preg3,
+      preg4a5: this.preg4a5,
+      preg6a11: this.preg6a11,
+      preg12a13: this.preg12a13,
+      preg14: this.preg14,
+      preg19a28: this.preg19a28,
+      preg29: this.preg29,
+      preg30:this.preg30,
+      preg31:this.preg31,
+      preg32:this.preg32,
+      preg33: this.preg33,
      
     }
     window.parent.postMessage(questionForm, '*');
