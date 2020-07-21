@@ -16,10 +16,12 @@ export class QuestionComponent implements OnInit {
   sfina7 = false;
   sfina8 = false;
   sfina9 = false;
+  
 
     /* Perfil de negocio */
     
   scrPerNeg=[
+    
     {
       quest:"Antigüedad de negocio.",
       value_quest:"0.2",
@@ -1061,12 +1063,11 @@ this.formQcQcn = new FormGroup({
 
   sendQuestions() {
     console.log(this.formScrPerNeg.valid,this.formScrPerMer.valid,this.formScrRep.valid,this.formScrDir.valid,this.formQcQc.valid,this.formQcQcn.valid)
-    if(this.formScrPerNeg.valid){
-   /*  if((this.formScrPerNeg.valid) && (this.formScrPerMer.valid)
+    /* if (this.formScrPerNeg.valid){ */
+    if((this.formScrPerNeg.valid) && (this.formScrPerMer.valid)
        && (this.formScrRep.valid) && (this.formScrDir.valid)
        && (this.formQcQc.valid) && (this.formQcQcn.valid))
-       { */
- 
+       { 
     const questionForm = {
       questions: true,
       
