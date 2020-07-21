@@ -191,7 +191,7 @@ constructor(
 
   ) {
   this.re = localStorage.getItem('step');
-  this.re=5;
+  /* this.re=5; */
 
   this.eventManager.addGlobalEventListener(
     'window',
