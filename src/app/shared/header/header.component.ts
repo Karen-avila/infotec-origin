@@ -9,7 +9,7 @@ import { UserService } from '../../services/user/user.service';
 })
 export class HeaderComponent implements OnInit {
   
-  private isLogged = false;
+  isLogged = false;
 
  
   constructor(public userService:UserService) { }
