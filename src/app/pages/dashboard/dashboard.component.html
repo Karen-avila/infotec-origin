@@ -1209,15 +1209,16 @@
                     <div class="card-content">
                         <div class="row">
                             <br>
-                            <form ngNativeValidate [formGroup]="formFiel" (ngSubmit)="dfiel()">
+                            <form ngNativeValidate [formGroup]="formFielFirm" (ngSubmit)="dfielFirm()">
                 
                                 <div class="file-field input-field col s12 m4 l4">
                                     <div class="teal darken-4 btn">
                                         <i class="material-icons right">attachment</i>Archivo .key
-                                        <input type="file" (change)="ValidateSize('fiel')" accept=".key" formControlName="fiel"
-                                            id="fiel" required class="validate">
+                                        <input type="text" hidden formControlName="fielFirm"  required class="validate">
+                                        <input type="file" (change)="ValidateSize('fielFirm')" accept=".key"
+                                            id="fielFirm" required class="validate">
                 
-                                        <div class="red-text" *ngIf="fi.fiel.errors?.required">Archivo requerido</div>
+                                        <div class="red-text" *ngIf="fir.fielFirm.errors?.required">Archivo requerido</div>
                                     </div>
                                     <div class="file-path-wrapper">
                                         <input class="file-path validate" type="text">
@@ -1227,10 +1228,11 @@
                                 <div class="file-field input-field col s12 m4 l4">
                                     <div class="teal darken-4 btn">
                                         <i class="material-icons right">attachment</i>Archivo .cer
-                                        <input type="file" (change)="ValidateSize('cer')" accept=".cer" formControlName="cer" id="cer"
+                                        <input type="text" hidden formControlName="cerFirm"  required class="validate">
+                                        <input type="file" (change)="ValidateSize('cerFirm')" accept=".cer" id="cerFirm"
                                             required class="validate">
                 
-                                        <div class="red-text" *ngIf="fi.cer.errors?.required">Archivo requerido</div>
+                                        <div class="red-text" *ngIf="fir.cerFirm.errors?.required">Archivo requerido</div>
                                     </div>
                                     <div class="file-path-wrapper">
                                         <input class="file-path validate" type="text">
@@ -1239,10 +1241,10 @@
                 
                                 <div class="input-field col s12 m4 l4">
                                     <i class="material-icons prefix">lock</i>
-                                    <input id="password" type="password" name="password" formControlName="password" required
+                                    <input id="passwordFirm" type="password" name="passwordFirm" formControlName="passwordFirm" required
                                         class="validate">
                                     <label for="password">Contraseña de tu FIEL</label>
-                                    <div class="col s1 m1 l1" *ngIf="fi.password.errors?.required"></div>
+                                    <div class="col s1 m1 l1" *ngIf="fir.passwordFirm.errors?.required"></div>
                                 </div>
                 
                 
