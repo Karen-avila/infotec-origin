@@ -576,7 +576,7 @@ ngOnInit() {
     console.log(this.form.value);
     console.log('form is valid?', this.form.valid);
     if (this.form.valid) {
-      this.userService.activate(this.form.value)
+      this.userService.sendPersonalData(this.form.value)
     .subscribe(res=>{
       console.log("esto responde el servicio dpaersonales",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
       swal("¡Datos Guardados!", "Continuar", "success");
