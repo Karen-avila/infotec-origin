@@ -739,10 +739,18 @@ ngOnInit() {
   }
   // end Pick Address
 
-  myClick(){
-    console.log("ah");
+  aceptaCred(){
     document.getElementById('nano').classList.remove('hide');
     document.getElementById('nanoo').classList.add('hide');
+}
+
+cancelaCred(){
+  document.getElementById('nano').classList.add('hide');
+  document.getElementById('nanoo').classList.remove('hide');
+}
+
+rechazaCred(){
+
 }
 
 }

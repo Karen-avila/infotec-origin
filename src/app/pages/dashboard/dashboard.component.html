@@ -1143,11 +1143,11 @@
                                         </div>
                                         <div class="row center">
 
-                                            <div class="teal darken-4 btn">
-                                                <i class="material-icons right" (click)="rechazar()"></i>Rechazar
+                                            <div class="teal darken-4 btn" (click)="rechazaCred()">
+                                                <i class="material-icons right" ></i>Rechazar
                                             </div>
                                             &nbsp;
-                                            <div class="teal darken-4 btn" (click)="myClick()">
+                                            <div class="teal darken-4 btn" (click)="aceptaCred()">
                                                 <i class="material-icons right" ></i>Aceptar
                                             </div>
 
@@ -1163,73 +1163,125 @@
                                 </div>
                                 <!--  -->
 
-                <div class="card hide" id="nano">
+                <div class=" hide" id="nano">
+                    <div class="row">
+                        <div class="input-field col s12 m12 l12">
+                            <i class="material-icons prefix icon-gold">vpn_key</i>
+                            <label class="title black-text"><b class="title col s12 m12 l12">Revisa tus Documentos</b></label>
+                            <p><br></p>
+                            <p>Revisa cada uno de tus documentos, y si estas de acuerdo firmalos.</p>
+                        </div>
+                    </div>  
+                    <div class="card col s12">
+                        <div class="card-content">
+                            
+                            <div class="row">
+                                <ul>
+                                    <li><label class="waves-effect modal-trigger subrayar" href="#ccontrato">
+                                            <span class="blue-text text-darken-4" style="font-size: 14px;">Ver Caratula de Contrato</span>
+                                        </label>
+                                    </li>
+                                    <li><label class="waves-effect modal-trigger subrayar" href="#tamortizacion">
+                                            <span class="blue-text text-darken-4" style="font-size: 14px;">Ver Tabla de Amortización</span>
+                                        </label>
+                                    </li>
+                                    <li><label class="waves-effect modal-trigger subrayar" href="#pagare">
+                                            <span class="blue-text text-darken-4" style="font-size: 14px;">Ver Pagaré</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                    
+                    
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12 m12 l12">
+                            <i class="material-icons prefix icon-gold">vpn_key</i>
+                            <label class="title black-text"><b class="title col s12 m12 l12">Firma tus Documentos</b></label>
+                            <p><br></p>
+                            <p>Selecciona los archivos de tu firma electrónica avanzada (FIEL)</p>
+                        </div>
+                    </div>
+
+<div class="card col s12">
                     <div class="card-content">
                         <div class="row">
-                            <!--<img class="responsive-img" src="../../../assets/contr.png">-->
-
-                            <p>Selecciona los archivos de tu firma electrónica avanzada (FIEL)</p>
                             <br>
                             <form ngNativeValidate [formGroup]="formFiel" (ngSubmit)="dfiel()">
-
+                
                                 <div class="file-field input-field col s12 m4 l4">
                                     <div class="teal darken-4 btn">
                                         <i class="material-icons right">attachment</i>Archivo .key
-                                        <input type="file" (change)="ValidateSize('fiel')" accept=".key" formControlName="fiel" id="fiel" required class="validate">
-
+                                        <input type="file" (change)="ValidateSize('fiel')" accept=".key" formControlName="fiel"
+                                            id="fiel" required class="validate">
+                
                                         <div class="red-text" *ngIf="fi.fiel.errors?.required">Archivo requerido</div>
                                     </div>
                                     <div class="file-path-wrapper">
                                         <input class="file-path validate" type="text">
                                     </div>
                                 </div>
-
+                
                                 <div class="file-field input-field col s12 m4 l4">
                                     <div class="teal darken-4 btn">
                                         <i class="material-icons right">attachment</i>Archivo .cer
-                                        <input type="file" (change)="ValidateSize('cer')" accept=".cer" formControlName="cer" id="cer" required class="validate">
-
+                                        <input type="file" (change)="ValidateSize('cer')" accept=".cer" formControlName="cer" id="cer"
+                                            required class="validate">
+                
                                         <div class="red-text" *ngIf="fi.cer.errors?.required">Archivo requerido</div>
                                     </div>
                                     <div class="file-path-wrapper">
                                         <input class="file-path validate" type="text">
                                     </div>
                                 </div>
-
+                
                                 <div class="input-field col s12 m4 l4">
                                     <i class="material-icons prefix">lock</i>
-                                    <input id="password" type="password" name="password" formControlName="password" required class="validate">
+                                    <input id="password" type="password" name="password" formControlName="password" required
+                                        class="validate">
                                     <label for="password">Contraseña de tu FIEL</label>
                                     <div class="col s1 m1 l1" *ngIf="fi.password.errors?.required"></div>
                                 </div>
-
-
-                                <div class="input-field col s12 m4 l4">
+                
+                
+                              <!--   <div class="input-field col s12 m4 l4">
                                     <a class="waves-effect teal darken-4 btn modal-trigger" href="#modalContr">Ver Carátula Informativa
-                        <i class="medium material-icons icon-gold right">visibility</i>
-                    </a>
-                                </div>
-
+                                        <i class="medium material-icons icon-gold right">visibility</i>
+                                    </a>
+                                </div> -->
+                
+                
+                
                                 <div class="col s12">
-                                    <button class="waves-effect teal darken-4 btn right" type="submit">Terminar <!--revisar nextstep igual en ts-->
-                                    <i class="material-icons prefix right">arrow_forward_ios</i>
-                                </button>
-                                    <!--<a routerLink="/home" class="waves-effect  teal darken-4 btn right ">
-                                    <i class="material-icons prefix right">send</i> Terminar
-                                </a>-->
+                                    <br><br>
+                                    <button class="waves-effect teal darken-4 btn right" type="submit">Firmar
+                                        <!--revisar nextstep igual en ts-->
+                                        <i class="material-icons prefix right">arrow_forward_ios</i>
+                                    </button>
 
+                                    <button class="waves-effect teal darken-4 btn left" (click)="cancelaCred()">Cancelar
+                                        
+                                    </button>
+                                   
+                                    <!--<a routerLink="/home" class="waves-effect  teal darken-4 btn right ">
+                                                    <i class="material-icons prefix right">send</i> Terminar
+                                                </a>-->
+                
                                 </div>
                             </form>
                         </div>
-
-
-                        <div class="row" *ngIf="terms">
-                            <div class="input-field col s12 m4 offset-m3">
-                                <a class="waves-effect teal darken-4 btn " href="../../../assets/Caratula.pdf" download="contr.pdf">Descargar
-                            <i class="medium material-icons icon-gold right">save_alt</i>
-                        </a>
-                            </div>
-                        </div>
+                
+                
+                        <!--  <div class="row" *ngIf="terms">
+                                            <div class="input-field col s12 m4 offset-m3">
+                                                <a class="waves-effect teal darken-4 btn " href="../../../assets/Caratula.pdf" download="contr.pdf">Descargar
+                                            <i class="medium material-icons icon-gold right">save_alt</i>
+                                        </a>
+                                            </div>
+                                        </div> -->
+                    </div>
                     </div>
                 </div>
 
@@ -1903,6 +1955,42 @@
 <div id="modalMap" class="iframe-container hide">
     <a (click)="mapOk()" class="waves-effect teal darken-4 btn">Aceptar</a>
     <iframe id="mapFrame" src="/map"></iframe>
+</div>
+
+<div id="ccontrato" class="modal">
+    <div class="modal-content">
+        <app-ccontrato></app-ccontrato>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect teal darken-4 white-text btn-flat">Cerrar</a>
+    </div>
+    <div class="footer-copyright teal darken-3">
+        <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
+    </div>
+</div>
+
+<div id="tamortizacion" class="modal">
+    <div class="modal-content">
+        <app-amortizacion></app-amortizacion>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect teal darken-4 white-text btn-flat">Cerrar</a>
+    </div>
+    <div class="footer-copyright teal darken-3">
+        <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
+    </div>
+</div>
+
+<div id="pagare" class="modal">
+    <div class="modal-content">
+        <app-pagare></app-pagare>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect teal darken-4 white-text btn-flat">Cerrar</a>
+    </div>
+    <div class="footer-copyright teal darken-3">
+        <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
+    </div>
 </div>
 
 
