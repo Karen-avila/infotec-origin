@@ -9,7 +9,7 @@ import { LoginGuardGuard } from '../services/guards/login-guard.guard';
 import { MapComponent } from './map/map/map.component';
 import { AvisodeprivacidadComponent } from './avisodeprivacidad/avisodeprivacidad.component';
 import { LegalComponent } from './legal/legal.component';
-
+import { AmortizacionComponent } from './amortizacion/amortizacion.component';
 
 const pagesRoutes: Routes = [
     {
@@ -25,6 +25,7 @@ const pagesRoutes: Routes = [
           {path: 'avisodeprivacidad', component: AvisodeprivacidadComponent},
           {path: 'legal', component: LegalComponent},
           {path: '', redirectTo: '/home', pathMatch: 'full' },
+          {path: 'amortizacion', component: AmortizacionComponent},
         ]
       },
 ];
