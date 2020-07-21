@@ -35,7 +35,7 @@ export class UserService {
   createUser(user:User){
     console.log("Service create user");
     /* let url =  '/registros';  */
-    let url = URL_SERVICES + '/registro'; 
+    let url = URL_SERVICES + '/api/register'; 
     const object = JSON.stringify(user);
     /* const body = {"email":"gustavo.espindola@fintecheando.mx",
                     "password":"passworD1",
@@ -71,7 +71,7 @@ export class UserService {
   activate(user:UserActivate){
     console.log("Service activate user");
     /* let url =  '/registros'; */
-    let url = URL_SERVICES + '/registro'; 
+    let url = URL_SERVICES + '/api/register'; 
     const object = JSON.stringify(user);
     /* const body = {"email":"gustavo.espindola@fintecheando.mx",
                     "password":"passworD1",
@@ -106,8 +106,8 @@ export class UserService {
 
   senPersonalData(data) {
     console.log("Service create user");
-   /*  let url = '/registros';  */
-    let url = URL_SERVICES + '/registro'; 
+    /* let url = '/registros'; */ 
+    let url = URL_SERVICES + '/api/register'; 
     const object = JSON.stringify(data);
 
     console.log("Esto es lo que enviare a donde lo tenga que enviar", object);
@@ -156,8 +156,8 @@ export class UserService {
   login(user:UserLog){
 
     console.log("Login Service");
-    /* let url =  '/inicio'; */
-    let url = URL_AUTH + '/authentication';
+    let url =  '/inicio';
+    /* let url = URL_AUTH + '/authentication'; */
 
     const object = JSON.stringify(user);
     console.log("Esto es lo que enviare a donde lo tenga que enviar",object);
