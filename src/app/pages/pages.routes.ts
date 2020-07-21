@@ -9,6 +9,7 @@ import { LoginGuardGuard } from '../services/guards/login-guard.guard';
 import { MapComponent } from './map/map/map.component';
 import { AvisodeprivacidadComponent } from './avisodeprivacidad/avisodeprivacidad.component';
 import { LegalComponent } from './legal/legal.component';
+import { CcontratoComponent } from './ccontrato/ccontrato.component';
 
 
 const pagesRoutes: Routes = [
@@ -24,6 +25,7 @@ const pagesRoutes: Routes = [
           {path: 'dashboard', component: DashboardComponent},
           {path: 'avisodeprivacidad', component: AvisodeprivacidadComponent},
           {path: 'legal', component: LegalComponent},
+          {path: 'ccontrato', component: CcontratoComponent},
           {path: '', redirectTo: '/home', pathMatch: 'full' },
         ]
       },

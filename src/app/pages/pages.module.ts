@@ -25,6 +25,7 @@ import { AgmCoreModule } from '@agm/core';
 import { PickAddressComponent } from './pick-address/pick-address.component';
 import { LegalComponent } from './legal/legal.component';
 import { AvisodeprivacidadComponent } from './avisodeprivacidad/avisodeprivacidad.component';
+import { CcontratoComponent } from './ccontrato/ccontrato.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { AvisodeprivacidadComponent } from './avisodeprivacidad/avisodeprivacida
         ResultsListComponent,
         PickAddressComponent,
         LegalComponent,
-        AvisodeprivacidadComponent
+        AvisodeprivacidadComponent,
+        CcontratoComponent
     ],
     imports:[
         GooglePlaceModule,
