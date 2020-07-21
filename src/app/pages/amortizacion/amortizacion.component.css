@@ -1,15 +1,41 @@
 .logo {
   
-    width: 80x;
-    height: 40px;
+    width: 250px;
+    height: 80px;
   }
-
 
 .titulos {
     text-align: center;
     font-weight: 400;
+    font-size: 18px;
 }
 
-.titulo {
+.titulos2 {
     text-align: center;
+    font-size: 18px;
+    font-weight: normal;
+}
+.titulo {
+    text-align: justify; 
+    font-size:16px;
+}
+.parrafo {
+    text-align: center;
+    font-size: 18px;
+    text-align: justify;
+}
+
+table {
+    width: 100%;
+    display: table;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+td {
+   
+    border: 1px solid #000;
+  
+}
+th {
+    background: #eee;
 }

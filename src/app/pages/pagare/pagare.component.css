@@ -1,0 +1,24 @@
+.logo-bdb {
+    width: 400px;
+}
+.justificacion{
+    text-align: justify;
+}
+.titulos {
+    text-align: center;
+    font-weight: 400;
+}
+.valor {
+    margin-bottom: 30px;
+    margin-right: 50px;
+    font-weight: bold;
+    text-align: right;
+}
+.fecha-pagare {
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+.separa {
+    padding: 0.5em;
+}

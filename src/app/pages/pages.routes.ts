@@ -9,7 +9,10 @@ import { LoginGuardGuard } from '../services/guards/login-guard.guard';
 import { MapComponent } from './map/map/map.component';
 import { AvisodeprivacidadComponent } from './avisodeprivacidad/avisodeprivacidad.component';
 import { LegalComponent } from './legal/legal.component';
+import { CcontratoComponent} from './ccontrato/ccontrato.component';
 import { AmortizacionComponent } from './amortizacion/amortizacion.component';
+import { PagareComponent } from './pagare/pagare.component';
+
 
 const pagesRoutes: Routes = [
     {
@@ -27,6 +30,7 @@ const pagesRoutes: Routes = [
           {path: 'ccontrato', component: CcontratoComponent},
           {path: '', redirectTo: '/home', pathMatch: 'full' },
           {path: 'amortizacion', component: AmortizacionComponent},
+          {path : 'pagare', component: PagareComponent }
         ]
       },
 ];
