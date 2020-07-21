@@ -1,0 +1,15 @@
+.justificacion{
+    text-align: justify;
+}
+
+.subrayar{
+    text-decoration: underline;
+}
+.titulos {
+    text-align: center;
+    font-weight: 600;
+}
+p{
+    font-size: small;
+    margin:0;
+}

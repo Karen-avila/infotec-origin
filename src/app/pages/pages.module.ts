@@ -28,6 +28,9 @@ import { AvisodeprivacidadComponent } from './avisodeprivacidad/avisodeprivacida
 import { CcontratoComponent } from './ccontrato/ccontrato.component';
 import { AmortizacionComponent } from './amortizacion/amortizacion.component';
 import { PagareComponent } from './pagare/pagare.component';
+import { CregistroComponent } from './cregistro/cregistro.component';
+import { AutorizacionComponent } from './autorizacion/autorizacion.component';
+import { ContratoComponent } from './contrato/contrato.component';
 
 
 @NgModule({
@@ -45,7 +48,10 @@ import { PagareComponent } from './pagare/pagare.component';
         AvisodeprivacidadComponent,
         AmortizacionComponent,
         CcontratoComponent,
-        PagareComponent
+        PagareComponent,
+        CregistroComponent,
+        AutorizacionComponent,
+        ContratoComponent
     ],
     imports:[
         GooglePlaceModule,

@@ -1,0 +1,35 @@
+.justificacion{
+    text-align: justify;
+}
+
+.subrayar{
+    text-decoration: underline;
+}
+.titulos {
+    text-align: center;
+    font-weight: 600;
+}
+
+.titulo {
+    text-align: center;
+}
+.tituloss {
+    font-size: large;
+    text-align: center;
+}
+
+.espacio {
+    height: 100px;
+}
+p{
+    font-size: small;
+    margin:0;
+}
+p.titulo{
+    font-size: 17px;
+    text-align: center;
+    font-weight: 500;
+}
+hr{
+    size: 5;
+}
