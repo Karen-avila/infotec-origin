@@ -143,7 +143,7 @@ export class UserService {
   }
 
   isLogged() {
-    return (this.token.length > 5) ? true : false;
+    return localStorage.getItem('token');
   }
 
   logout(){
@@ -168,19 +168,19 @@ export class UserService {
     'Content-Type': 'application/json'})
 
     return this.http.post(url,object,{headers}).map((res:any)=>{
-      localStorage.setItem('clientId',res.clientId);
-        //localStorage.setItem('id',res.id);
-       // localStorage.setItem('email',res.email);
-        //localStorage.setItem('token',res.token);
-        //localStorage.setItem('step','1');
-        //this.token = res.token;
-       // this.email = res.email;
-        //this.id = res.id;
-        swal("¡Felicidades!", "Inicio de sesión exitoso.", "success");
-        //this.router.navigate(["dashboard",{id:this.step}]); ///revisar donde quedara
-        //this.router.navigate(["register"]);
-        console.log(res);
-
+      localStorage.setItem('clientId', res.clientId);
+      localStorage.setItem('token', res.authenticated);
+      //localStorage.setItem('id',res.id);
+      // localStorage.setItem('email',res.email);
+      //localStorage.setItem('token',res.token);
+      //localStorage.setItem('step','1');
+      //this.token = res.token;
+      // this.email = res.email;
+      //this.id = res.id;
+      swal("¡Felicidades!", "Inicio de sesión exitoso.", "success");
+      //this.router.navigate(["dashboard",{id:this.step}]); ///revisar donde quedara
+      //this.router.navigate(["register"]);
+      console.log(res);
       return true;
     })
   }
