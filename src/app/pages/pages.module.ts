@@ -26,6 +26,8 @@ import { PickAddressComponent } from './pick-address/pick-address.component';
 import { LegalComponent } from './legal/legal.component';
 import { AvisodeprivacidadComponent } from './avisodeprivacidad/avisodeprivacidad.component';
 import { CcontratoComponent } from './ccontrato/ccontrato.component';
+import { AmortizacionComponent } from './amortizacion/amortizacion.component';
+import { PagareComponent } from './pagare/pagare.component';
 
 
 @NgModule({
@@ -41,7 +43,9 @@ import { CcontratoComponent } from './ccontrato/ccontrato.component';
         PickAddressComponent,
         LegalComponent,
         AvisodeprivacidadComponent,
-        CcontratoComponent
+        AmortizacionComponent,
+        CcontratoComponent,
+        PagareComponent
     ],
     imports:[
         GooglePlaceModule,

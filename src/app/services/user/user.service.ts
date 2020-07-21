@@ -181,7 +181,7 @@ export class UserService {
       return true;
     })  
   }
-
+0
   localStep(){
     return this.http.get("http://localhost:3002/step");
   }
