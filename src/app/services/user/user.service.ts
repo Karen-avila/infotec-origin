@@ -7,6 +7,7 @@ import { UserLog } from '../../models/user-log.module';
 import { UserActivate } from '../../models/user-activate.module';
 
 import { URL_SERVICES } from '../../config/config';
+import { URL_AUTH } from '../../config/config';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -33,9 +34,8 @@ export class UserService {
   
   createUser(user:User){
     console.log("Service create user");
-    /*   */ //infotec
-    let url =  '/registros'; //infotec
-    //let url = URL_SERVICES + '/user'; //local
+    /* let url =  '/registros';  */
+    let url = URL_SERVICES + '/api/register'; 
     const object = JSON.stringify(user);
     /* const body = {"email":"gustavo.espindola@fintecheando.mx",
                     "password":"passworD1",
@@ -69,10 +69,9 @@ export class UserService {
   }
 
   activate(user:UserActivate){
-    console.log("Service create user");
-    /*   */ //infotec
-    let url =  '/registros'; //infotec
-    //let url = URL_SERVICES + '/user'; //local
+    console.log("Service activate user");
+    /* let url =  '/registros'; */
+    let url = URL_SERVICES + '/api/register'; 
     const object = JSON.stringify(user);
     /* const body = {"email":"gustavo.espindola@fintecheando.mx",
                     "password":"passworD1",
@@ -102,6 +101,28 @@ export class UserService {
 }, err => {
     throw err;
 });
+
+  }
+
+  senPersonalData(data) {
+    console.log("Service create user");
+    /* let url = '/registros'; */ 
+    let url = URL_SERVICES + '/api/register'; 
+    const object = JSON.stringify(data);
+
+    console.log("Esto es lo que enviare a donde lo tenga que enviar", object);
+
+    const headers = new HttpHeaders({
+      'X-Gravitee-Api-Key': '20b1d990-c522-44dc-85bd-ef16d364abc4',
+      'Content-Type': 'application/json'
+    })
+
+    return this.http.post(url, object, { headers }).map(response => {
+      console.log(response);
+      return response;
+    }, err => {
+      throw err;
+    });
 
   }
 
@@ -136,7 +157,7 @@ export class UserService {
 
     console.log("Login Service");
     let url =  '/inicio';
-    //let url = URL_SERVICES + '/login';
+    /* let url = URL_AUTH + '/authentication'; */
 
     const object = JSON.stringify(user);
     console.log("Esto es lo que enviare a donde lo tenga que enviar",object);

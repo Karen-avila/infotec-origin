@@ -24,6 +24,7 @@ const pagesRoutes: Routes = [
           {path: 'dashboard', component: DashboardComponent},
           {path: 'avisodeprivacidad', component: AvisodeprivacidadComponent},
           {path: 'legal', component: LegalComponent},
+          {path: 'ccontrato', component: CcontratoComponent},
           {path: '', redirectTo: '/home', pathMatch: 'full' },
           {path: 'amortizacion', component: AmortizacionComponent},
         ]

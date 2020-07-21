@@ -564,14 +564,19 @@ ngOnInit() {
     console.log(this.form.value);
     console.log('form is valid?', this.form.valid);
     if (this.form.valid) {
-      console.log('form', this.form.value);
-      // enviar datos a back
-      // this.popup[0].open();
+      this.userService.activate(this.form.value)
+    .subscribe(res=>{
+      console.log("esto responde el servicio dpaersonales",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
+      swal("¡Datos Guardados!", "Continuar", "success");
       this.stepper.openStep(3);
+    });
+    
+      /* this.stepper.openStep(3); */
     } else {
       swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
     }
   }
+
   dfiel() {
     console.log('formFiel is valid?', this.formFiel.valid);
     if (this.formFiel.valid) {

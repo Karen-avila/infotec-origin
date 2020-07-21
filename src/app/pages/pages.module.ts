@@ -41,7 +41,11 @@ import { AmortizacionComponent } from './amortizacion/amortizacion.component';
         PickAddressComponent,
         LegalComponent,
         AvisodeprivacidadComponent,
+<<<<<<< HEAD
         AmortizacionComponent
+=======
+        CcontratoComponent
+>>>>>>> 5269e131b52a122afad38f032c1f26a8e344ffa2
     ],
     imports:[
         GooglePlaceModule,
