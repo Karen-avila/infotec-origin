@@ -16,9 +16,17 @@ export class QuestionComponent implements OnInit {
   sfina7 = false;
   sfina8 = false;
   sfina9 = false;
+  
 
+<<<<<<< HEAD
   /* Perfil de negocio */
   scrPerNeg = [
+=======
+    /* Perfil de negocio */
+    
+  scrPerNeg=[
+    
+>>>>>>> 2cc085f52f52c0d6a8edbfb0438f643f5bb71c02
     {
       quest: "Antigüedad de negocio.",
       value_quest: "0.2",
@@ -317,6 +325,7 @@ export class QuestionComponent implements OnInit {
 
 
 
+<<<<<<< HEAD
 
 
   /* Queremos conocer tu negocio */
@@ -802,6 +811,493 @@ export class QuestionComponent implements OnInit {
   instPefNeg;
   instQrmCnct;
   prins;
+=======
+      
+     
+      /* Queremos conocer tu negocio */
+        preg1=[
+          {
+            quest:"¿Fecha en que inició su actividad productiva?",
+            opts:[""],
+            resp:"",
+            value:""
+          }  ];
+
+        preg2=[
+            {
+              quest:"Registre el total de ingresos que obtuvo el negocio durante el ejercicio fiscal anterior. Por favor incluya tanto los ingresos derivados como los no derivados de la actividad, además de los apoyos del gobierno que haya recibido",
+              opts:["No sé","Si sé, pero prefiero no  declararlo"],
+              resp:"",
+              value:""
+            }
+          ];
+        preg2m=[
+              {
+              quest:"Monto",
+              opts:[""],
+              resp:"",
+              value:""
+              }
+          ];
+    
+
+        preg3=[
+          {
+            quest:"¿Cuántas personas trabajan en su negocio?",
+            opts:[""],
+            resp:"",
+            value:""
+          }];
+    
+        preg4a5=[
+          {
+            quest:"¿Cuál es el destino del crédito; es decir, específicamente para qué va a usar el crédito en su negocio? Por ejemplo, comprar un vehículo para repartir a domicilio.",
+            opts:[""],
+            resp:"",
+            value:""
+          },
+          
+          {
+            quest:"¿Cuál es el propósito del proyecto; es decir, en qué espera que mejore su negocio debido al crédito que solicita? Por ejemplo, incrementar las ventas con la entrega a domicilio.",
+            opts:[""],
+            resp:"",
+            value:""
+          }];
+
+          preg6a11=[
+
+            {
+              quest:"¿De cuánto efectivo dispone actualmente para cubrir las operaciones del negocios? Incluya lo que guarda en su casa, en el banco o en el negocio.",
+              opts:[""],
+              resp:"",
+              value:""
+            },
+            {
+              quest:"¿Al día de hoy cuánto le deben por venta de bienes a crédito o servicios realizados y que aún no le hayan terminado de pagar? ",
+              opts:[""],
+              resp:"",
+              value:""
+            },
+            {
+              quest:"¿Cuánto obtendría si vendiera el material de oficina, la maquinaria que usa en su negocio, aparatos de su propiedad o el local del negocio en caso de que sea suyo?",
+              opts:[""],
+              resp:"",
+              value:""
+            },
+            {
+              quest:"Pensando en los últimos 6 meses, en promedio, ¿cuánto vende o ingresa por la realización de sus servicios cada mes sin descontar los gastos?",
+              opts:[""],
+              resp:"",
+              value:""
+            },
+            {
+              quest:"Pensando en los últimos 6 meses, en promedio, ¿a cuánto ascienden, cada mes,  otros ingresos obtenidos además de los generados por su actividad principal del negocio?",
+              opts:[""],
+              resp:"",
+              value:""
+            },
+            {
+              quest:"En promedio ¿cuánto gasta cada vez que surte su negocio con mercancías para la venta de bienes o realización de sus servicios?",
+              opts:[""],
+              resp:"",
+              value:""
+            }];
+
+            preg12a13=[
+              {
+                quest:"¿Con qué frecuencia surte su negocio con mercancías o materias primas para la venta de bienes o la prestación de sus servicios?",
+                opts:["Diariamente","Cada semana","Cada quincena","Cada mes","Cada 2 meses","Cada 3 meses","Cada 4 meses","Cada 6 meses","Cada año"],
+                resp:"",
+                value:""
+              },
+              {
+                quest:"¿Cuándo fue la última vez que surtió su negocio con mercancías o materias primas para la venta de bienes o prestación de sus servicios?",
+                opts:["Ayer","Hace una semana","Hace dos semanas","Hace un mes","Hace 2 meses","Hace 3 meses","Hace 4 meses","Hace 5 meses","Hace 6 meses","Hace 1 año","Hace más de un año"],
+                resp:"",
+                value:""
+              }];
+
+            preg14=[
+                {
+                  quest:"Sueldos, salarios o cualquier otro pago a los trabajadores del negocio",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Renta de locales o espacios comerciales",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Servicios públicos",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Transporte para actividades del negocio",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Pago por franquicias",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Promoción y publicidad",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Pago de servicios contables o legales",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Mantenimiento del negocio",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Licencias de software",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Impuestos",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Otros gastos no incluidos en la lista pero que son necesarios para la operación de su negocio",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                }
+        
+              ];
+
+              preg15r=[
+                {
+                  quest:"No cuento con ningún financiamiento.",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                }];
+
+              preg15=[
+                {
+                  quest:"Recursos propios (dueños, herencia, familia y amigos) o utilidades reinvertidas",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Préstamos de familiares y amigos que no tienen participación en la empresa. ",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Sistema ﬁnanciero formal (bancos  privados, Banco del Bienestar, antes Bansefi, o ﬁnancieras)",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Prestamistas particulares (personas que prestan dinero)",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Crédito de proveedores",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Recursos de inversionistas privados",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Otras",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                }
+        
+              ];
+        
+              preg16r=[
+                {
+                  quest:"No cuento con ningún financiamiento.",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                }];
+
+              preg16=[
+                {
+                  quest:"Recursos propios (dueños, herencia, familia y amigos) o utilidades reinvertidas",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Préstamos de familiares y amigos que no tienen participación en la empresa",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Sistema ﬁnanciero formal (bancos  privados, Banco del Bienestar, antes Bansefi, o ﬁnancieras)",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Prestamistas particulares (personas que prestan dinero)",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Crédito de proveedores ",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Recursos de inversionistas privados",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Otras",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                }
+            ];
+
+            preg17r=[
+              {
+                quest:"No cuento con ningún financiamiento.",
+                opts:[""],
+                resp:"",
+                value:""
+              }];
+        
+            preg17=[
+              {
+                quest:"Préstamos de familiares y amigos que no tienen participación en la empresa",
+                opts:[""],
+                resp:"",
+                value:""
+              },
+              {
+                quest:"Sistema ﬁnanciero formal (bancos  privados, Banco del Bienestar, antes Bansefi, o ﬁnancieras)",
+                opts:[""],
+                resp:"",
+                value:""
+              },
+              {
+                quest:"Prestamistas particulares (personas que prestan dinero)",
+                opts:[""],
+                resp:"",
+                value:""
+              },
+              {
+                quest:"Crédito de proveedores",
+                opts:[""],
+                resp:"",
+                value:""
+              },
+              {
+                quest:"Recursos de inversionistas privados",
+                opts:[""],
+                resp:"",
+                value:""
+              },
+              {
+                quest:"Otras",
+                opts:[""],
+                resp:"",
+                value:""
+              }
+            ];
+
+              preg18=[
+                {
+                  quest:"Luz",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Gas o algún combustible",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Telecomunicaciones (teléfono fijo o celular para el negocio e internet)",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Materias primas consumidas (a costo de adquisición)",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Mercancías compradas para reventa",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Materiales consumidos para la prestación del servicio",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Otros",
+                  opts:[""],
+                  resp:"",
+                  value:""
+                }
+              ];
+            
+              preg19a28=[
+                {
+                  quest:"¿Participó en la convocatoria 2.1 Desarrollo y Fortalecimiento Empresarial de la SE?",
+                  opts:["Sí","No"],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"¿Recibió capacitación vinculada a su crédito proveniente de alguna organización?",
+                  opts:["Sí","No"],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"¿Ha solicitado crédito anteriormente?",
+                  opts:["Sí","No"],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"¿Sus ingresos han mejorado después de recibir un crédito?",
+                  opts:["Sí","No","No aplica"],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Además de su oficina, comercio, o local principal, ¿tiene otra(s) oficina(s), comercio(s), local(es) o sucursal(es)?",
+                  opts:["Sí","No"],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"¿Cómo se lleva la contabilidad de la empresa?",
+                  opts:["Se utiliza un cuaderno o una libreta de apuntes para llevar la contabilidad","Se utiliza los servicios de un contador o profesional para llevar la contabilidad","Se utiliza el “Portal Mis Cuentas” del SAT","Se utiliza un paquete de contabilidad por parte de la empresa","No se lleva la contabilidad de la empresa","Otro"],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"¿La empresa tiene cuenta bancaria exclusiva para el manejo del dinero del negocio?",
+                  opts:["Sí","No"],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"Durante el ejercicio fiscal anterior, ¿la empresa tuvo necesidad de invertir en equipo, vehículos, inmuebles, capacitación, etcétera y no pudo por falta de dinero?",
+                  opts:["Sí","No"],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"¿Durante el ejercicio fiscal anterior se otorgó capacitación al personal de la empresa (usando capacitadores internos o externos)?",
+                  opts:["Sí","No"],
+                  resp:"",
+                  value:""
+                },
+                {
+                  quest:"¿Cuál fue la principal causa por la que durante el ejercicio fiscal anterior no se otorgó capacitación al personal de la empresa?",
+                  opts:["Capacitar interrumpe la producción","Capacitar hace que el personal demande un salario mayor, busque otro trabajo o se independice","No se encontró capacitador conforme a las necesidades de la empresa","Se tenía la intención de capacitar pero es muy caro","Se consideró que el conocimiento y las habilidades técnicas del personal son adecuadas","No vale la pena porque la empresa tiene muy alta rotación de personal","En años previos se impartió la capacitación necesaria","Se solicitó la capacitación a instituciones públicas, pero no se pudo obtener","No hay beneﬁcios palpables como resultado de la capacitación","Se utiliza gente externa que ya viene capacitada","El horario de la empresa no lo permite","Otra"],
+                  resp:"",
+                  value:""
+                }
+            
+              ];
+              preg29=[
+                {
+                  quest:"¿En la empresa se realizan actualmente algunas de las siguientes actividades? (seleccionar una o más de las siguientes opciones)",
+                  opts:["Se lleva registros escritos del negocio. Es decir, se tiene un lugar, cuaderno, archivo o computadora donde se concentra la información de las operaciones diarias del negocio","Se sabe cuánto dinero en efectivo tiene el negocio en un momento determinado","Se sabe si las ventas de un producto (bien o servicio) en particular están subiendo o bajando de un mes a otro","Se sabe cuánto le cuesta al negocio generar cada uno de sus principales productos (bienes o servicios). Por ejemplo, si tiene que calcular cuánto le cuesta producir una galleta, se hacen las cuentas de cuánto gasta en comprar harina, azúcar, leche, luz para usar la batidora, gas para el horno, renta del local, etcétera; otro ejemplo: si se ofrece un servicio de transporte, se hacen las cuentas de cuánto se gasta en el consumo de gasolina, casetas de peaje, etcétera","Se sabe de qué productos (bienes o servicios) se obtienen más ganancias por cada uno que vende","El negocio no lleva registros y no cuenta con información que permita conocer a detalle su operación"],
+                  resp:"",
+                  value:""
+                }];
+                preg30=[
+                {
+                  quest:"¿Cuál es el motivo principal por el que se inició en este negocio o actividad? (Seleccionar una o varias opciones)",
+                  opts:["Por tradición familiar o lo heredó","Para complementar el ingreso familiar","Para mejorar el ingreso","Tenía dinero y encontró una buena oportuindad","Para ejercer su oficio, carrera o profesión","Fue la única manera que tuvo para obtener un ingreso","No tenía la experiencia requerida para un empleo","No tenía la escolaridad o capacitación requerida para un empleo","Estaba sobrecapacitado para un empleo","Los empleos que encontró estaban mal pagados","Requería un horario flexible","No había oportunidades de empleo","Otra razón"],
+                  resp:"",
+                  value:""
+                }];
+                preg31=[
+                {
+                    quest:"En su negocio o actividad, ¿cuenta con un local para trabajar sea o no de su propiedad? (Seleccione una opción o más de una si tiene varios locales)",
+                    opts:["Sí, es un local independiente","Sí, es un local o instalación que forma parte de un conjunto de locales","No"],
+                    resp:"",
+                    value:""
+                }];
+                preg32=[
+                {
+                    quest:"En caso de ser local independiente (fuera de un techo común), ¿éste es? (Seleccionar una o varias opciones)",
+                    opts:["Tienda, accesoria o tendajón","Taller (de servicios o de reparación)","Fábrica, tortillería, panadería","Oficina, despacho, consultorio"],
+                    resp:"",
+                    value:""
+                }];
+                preg33=[
+                {
+                    quest:"Si no cuenta con un local, ¿en dónde se realizan las actividades de su negocio? (Seleccionar una o varias opciones)",
+                    opts:["Vehículo con o sin motor","Puesto fijo fuera de un techo común","Puesto semifijo bajo un techo común en pasillos de un centro comercial","Puesto semifijo en un tianguis","En un domicilio particular con una instalación especial","En un domicilio particular sin una instalación especial","Otro lugar"],
+                    resp:"",
+                    value:""
+                }
+              ];
+
+
+
+formScrPerNeg : FormGroup;
+formScrPerMer : FormGroup;
+formScrRep : FormGroup;
+formScrDir : FormGroup;
+formQcQc : FormGroup;
+formQcQcn : FormGroup;
+instPefNeg;
+instQrmCnct;
+prins;
+>>>>>>> 2cc085f52f52c0d6a8edbfb0438f643f5bb71c02
 
   constructor() { }
 
@@ -1058,6 +1554,7 @@ export class QuestionComponent implements OnInit {
   }
 
   sendQuestions() {
+<<<<<<< HEAD
     console.log(this.formScrPerNeg.valid, this.formScrPerMer.valid, this.formScrRep.valid, this.formScrDir.valid, this.formQcQc.valid, this.formQcQcn.valid)
     if ((this.formScrPerNeg.valid) && (this.formScrPerMer.valid)
       && (this.formScrRep.valid) && (this.formScrDir.valid)
@@ -1094,6 +1591,38 @@ export class QuestionComponent implements OnInit {
     else {
       swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
       this.instQrmCnct.open(1); // no ira aqui solo para no completar form
+=======
+    console.log(this.formScrPerNeg.valid,this.formScrPerMer.valid,this.formScrRep.valid,this.formScrDir.valid,this.formQcQc.valid,this.formQcQcn.valid)
+    /* if (this.formScrPerNeg.valid){ */
+    if((this.formScrPerNeg.valid) && (this.formScrPerMer.valid)
+       && (this.formScrRep.valid) && (this.formScrDir.valid)
+       && (this.formQcQc.valid) && (this.formQcQcn.valid))
+       { 
+    const questionForm = {
+      questions: true,
+      
+      scrPerNeg: this.scrPerNeg,
+      scrPerMer: this.scrPerMer,
+      scrRep: this.scrRep,
+      scrDir: this.scrDir, 
+      //Queremos conocerte
+      qcQc: this.qcQc,
+      qcQc1: this.qcQc1,
+      //Queremos conocer tu negocio 
+      preg1: this.preg1,
+      preg3: this.preg3,
+      preg4a5: this.preg4a5,
+      preg6a11: this.preg6a11,
+      preg12a13: this.preg12a13,
+      preg14: this.preg14,
+      preg19a28: this.preg19a28,
+      preg29: this.preg29,
+      preg30:this.preg30,
+      preg31:this.preg31,
+      preg32:this.preg32,
+      preg33: this.preg33,
+     
+>>>>>>> 2cc085f52f52c0d6a8edbfb0438f643f5bb71c02
     }
   }
 

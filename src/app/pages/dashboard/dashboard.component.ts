@@ -117,6 +117,7 @@ termcond = false;
 form: FormGroup;
 formDocumentos: FormGroup;
 formFiel: FormGroup;
+formFielFirm: FormGroup;
   dic = [
     "apañar",
     "cagar",
@@ -191,7 +192,7 @@ constructor(
 
   ) {
   this.re = localStorage.getItem('step');
-  /* this.re=1; */
+  /* this.re=5; */
 
   this.eventManager.addGlobalEventListener(
     'window',
@@ -377,11 +378,18 @@ ngOnInit() {
       cer: new FormControl(null, Validators.required),
       password: new FormControl(null, Validators.required)
     });
+
+    this.formFielFirm = new FormGroup({
+      fielFirm: new FormControl(null, Validators.required),
+      cerFirm: new FormControl(null, Validators.required),
+      passwordFirm: new FormControl(null, Validators.required)
+    });
   }
 
   get f() { return this.form.controls; }
   get doc() { return this.formDocumentos.controls; }
   get fi() { return this.formFiel.controls; }
+  get fir() { return this.formFielFirm.controls; }
 
   pbaDict(
     p1: string,
@@ -545,7 +553,11 @@ ngOnInit() {
          const reader = new FileReader();
     reader.readAsDataURL(fl.files[0]);
     reader.onload = () => {
-        this.formDocumentos.controls[file].setValue(reader.result);
+        if(file === 'fielFirm' || file === 'cerFirm'){
+          this.formFielFirm.controls[file].setValue(reader.result);
+        }if(file === 'fiel' || file === 'cer'){
+          this.formDocumentos.controls[file].setValue(reader.result);
+        }
     };
 
 
@@ -564,7 +576,7 @@ ngOnInit() {
     console.log(this.form.value);
     console.log('form is valid?', this.form.valid);
     if (this.form.valid) {
-      this.userService.activate(this.form.value)
+      this.userService.sendPersonalData(this.form.value)
     .subscribe(res=>{
       console.log("esto responde el servicio dpaersonales",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
       swal("¡Datos Guardados!", "Continuar", "success");
@@ -588,6 +600,19 @@ ngOnInit() {
       swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
     }
   }
+
+  dfielFirm() {
+    console.log('formFiel is valid?', this.formFielFirm.valid);
+    if (this.formFielFirm.valid) {
+      console.log('formFiel', this.formFielFirm.value);
+      this.router.navigate(["home"]);
+      // enviar datos a back
+      this.popup[0].open();
+    } else {
+      swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
+    }
+  }
+
   ddocumentos() {
     console.log('formDocumentos is valid?', this.formDocumentos.valid);
     console.log('formDocumentos', this.formDocumentos.value);
@@ -738,5 +763,19 @@ ngOnInit() {
     });
   }
   // end Pick Address
+
+  aceptaCred(){
+    document.getElementById('nano').classList.remove('hide');
+    document.getElementById('nanoo').classList.add('hide');
+}
+
+cancelaCred(){
+  document.getElementById('nano').classList.add('hide');
+  document.getElementById('nanoo').classList.remove('hide');
+}
+
+rechazaCred(){
+
+}
 
 }
