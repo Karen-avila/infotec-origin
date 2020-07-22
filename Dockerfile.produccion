@@ -41,7 +41,7 @@ COPY sweetalert.d.ts.md /usr/src/app/node_modules/sweetalert/typings/sweetalert.
 COPY materialize.css.md /usr/src/app/node_modules/materialize-css/dist/css/materialize.css
 COPY materialize.js.md /usr/src/app/node_modules/materialize-css/dist/js/materialize.js
 
-RUN ng build --prod 
+RUN ng build  --configuration=prod
 
 # Stage 2: Host Fims web app on Nginx
 FROM litespeedtech/openlitespeed:latest AS runner
