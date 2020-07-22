@@ -1,7 +1,7 @@
 
-const desarrollo = 'https://apim.infotec.mx';
+/* const desarrollo = 'https://apim.infotec.mx'; */
 const preProd = 'https://apis-pre.bancodelbienestar.com.mx';
-const prod = 'https://apis.bancodelbienestar.com.mx';
+/* const prod = 'https://apis.bancodelbienestar.com.mx'; */
 
 /* export const URL_SERVICES = desarrollo + '/V1.0/banbi/creditosimple';
 export const URL_AUTH = desarrollo + '/fineract-provider/api/v1/self'; */
