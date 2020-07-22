@@ -26,6 +26,8 @@ export class UserService {
   id:string;
   values:any;
 
+  preProd='6c7180e6-4855-413a-ba3d-0f8c75b97490';
+
   constructor(public http:HttpClient, private router: Router) {
     this.getStorage();
   }
@@ -44,7 +46,7 @@ export class UserService {
 
     console.log("Esto es lo que enviare a donde lo tenga que enviar",object);
 
-    const headers = new HttpHeaders({'X-Gravitee-Api-Key':'5e92de26-5451-4819-b674-558caf7fffd9',
+    const headers = new HttpHeaders({'X-Gravitee-Api-Key':this.preProd,
     'Content-Type': 'application/json'})
 
 
@@ -81,7 +83,7 @@ export class UserService {
 
     console.log("Esto es lo que enviare a donde lo tenga que enviar",object);
 
-    const headers = new HttpHeaders({'X-Gravitee-Api-Key':'5e92de26-5451-4819-b674-558caf7fffd9',
+    const headers = new HttpHeaders({'X-Gravitee-Api-Key':this.preProd,
     'Content-Type': 'application/json'})
 
 
@@ -114,7 +116,7 @@ export class UserService {
     console.log("Esto es lo que enviare a donde lo tenga que enviar", object);
 
     const headers = new HttpHeaders({
-      'X-Gravitee-Api-Key': '5e92de26-5451-4819-b674-558caf7fffd9',
+      'X-Gravitee-Api-Key': this.preProd,
       'Content-Type': 'application/json'
     })
 
