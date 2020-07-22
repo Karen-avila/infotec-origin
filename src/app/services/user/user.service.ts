@@ -47,7 +47,7 @@ export class UserService {
 
     console.log("Esto es lo que enviare a donde lo tenga que enviar",object);
 
-    const headers = new HttpHeaders({'X-Gravitee-Api-Key':this.desarrollo,
+    const headers = new HttpHeaders({'X-Gravitee-Api-Key':this.preProd,
     'Content-Type': 'application/json'})
 
 
@@ -84,7 +84,7 @@ export class UserService {
 
     console.log("Esto es lo que enviare a donde lo tenga que enviar",object);
 
-    const headers = new HttpHeaders({'X-Gravitee-Api-Key':this.desarrollo,
+    const headers = new HttpHeaders({'X-Gravitee-Api-Key':this.preProd,
     'Content-Type': 'application/json'})
 
 
@@ -117,7 +117,7 @@ export class UserService {
     console.log("Esto es lo que enviare a donde lo tenga que enviar", object);
 
     const headers = new HttpHeaders({
-      'X-Gravitee-Api-Key': this.desarrollo,
+      'X-Gravitee-Api-Key': this.preProd,
       'Content-Type': 'application/json'
     })
 
