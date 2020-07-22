@@ -204,13 +204,12 @@
 
                     <div class="input-field col s12 m6 l6">
                         <select formControlName="edoCivil" name="edoCivil" id="edoCivil" class="validate">
-                            <option value="" disabled selected>Selecciona una opcion</option>
-                            <option value="Soltero">Soltero</option>
-                            <option value="Casado">Casado</option>
-                            <option value="Viudo">Viudo</option>
+                            <option value="Casado">Casado</option>                           
                             <option value="Divorciado">Divorciado</option>
-                            <option value="Union_libre">Unión libre</option>
                             <option value="Separado">Separado</option>
+                            <option value="Soltero">Soltero</option>
+                            <option value="Union_libre">Unión libre</option>
+                            <option value="Viudo">Viudo</option>
                         </select>
                         <label>Estado civil</label>
                         <div class="blue-text" *ngIf="f.genero.errors">Debes seleccionar una opción.</div>
@@ -574,8 +573,8 @@
                     <div class="input-field col s12 m6 l6">
                         <select formControlName="ref1_tipoRelacion" name="ref1_tipoRelacion" id="ref1_tipoRelacion" class="validate">
                                 <option value="" disabled selected>Selecciona una opcion</option>
-                                <option value="1">Familiar</option>
                                 <option value="2">Amistad</option>
+                                <option value="1">Familiar</option>
                                 <option value="3">Laboral o profesional</option>
                             </select>
                         <label>Relación</label>
@@ -639,8 +638,8 @@
                     <div class="input-field col s12 m6 l6">
                         <select formControlName="ref2_tipoRelacion" name="ref2_tipoRelacion" id="ref2_tipoRelacion" class="validate">
                                 <option value="" disabled selected>Selecciona una opcion</option>
-                                <option value="1">Familiar</option>
                                 <option value="2">Amistad</option>
+                                <option value="1">Familiar</option>
                                 <option value="3">Laboral o profesional</option>
                         </select>
                         <label>Relación</label>

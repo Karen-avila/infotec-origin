@@ -23,42 +23,44 @@ export class UserService {
 
   token:string;
   email:string;
-  id:string; 
+  id:string;
   values:any;
 
-  constructor(public http:HttpClient, private router: Router) { 
+  preProd='6c7180e6-4855-413a-ba3d-0f8c75b97490';
+
+  constructor(public http:HttpClient, private router: Router) {
     this.getStorage();
   }
 
 
-  
+
   createUser(user:User){
     console.log("Service create user");
-    /* let url =  '/registros';  */
-    let url = URL_SERVICES + '/registro'; 
+    let url = URL_SERVICES + '/registro';
+    /* let url = '/registros' */
     const object = JSON.stringify(user);
     /* const body = {"email":"gustavo.espindola@fintecheando.mx",
                     "password":"passworD1",
                     "rePassword":"passworD1"} */
-     
+
 
     console.log("Esto es lo que enviare a donde lo tenga que enviar",object);
 
-    const headers = new HttpHeaders({'X-Gravitee-Api-Key':'20b1d990-c522-44dc-85bd-ef16d364abc4',
+    const headers = new HttpHeaders({'X-Gravitee-Api-Key':'6c7180e6-4855-413a-ba3d-0f8c75b97490',
     'Content-Type': 'application/json'})
-      
-      
-/* 
+
+
+/*
     return this.http.post(url,object,{headers}).map((res:any)=>{
       console.log("creado",res)
       swal("¡Felicidades!", "felicidades", "success");
-      
+
     return true;
   }).catch(err=>{
     console.log(err.status);
     return Observable.throw(err);
   }); */
-  
+
   return this.http.post(url,object,{headers}).map(response => {
     console.log(response);
     return response;
@@ -70,31 +72,32 @@ export class UserService {
 
   activate(user:UserActivate){
     console.log("Service activate user");
-    /* let url =  '/registros'; */
-    let url = URL_SERVICES + '/registro'; 
+    
+    /* let url = '/registros'; */
+    let url = URL_SERVICES + '/registro';
     const object = JSON.stringify(user);
     /* const body = {"email":"gustavo.espindola@fintecheando.mx",
                     "password":"passworD1",
                     "rePassword":"passworD1"} */
-     
+
 
     console.log("Esto es lo que enviare a donde lo tenga que enviar",object);
 
-    const headers = new HttpHeaders({'X-Gravitee-Api-Key':'20b1d990-c522-44dc-85bd-ef16d364abc4',
+    const headers = new HttpHeaders({'X-Gravitee-Api-Key':'6c7180e6-4855-413a-ba3d-0f8c75b97490',
     'Content-Type': 'application/json'})
-      
-      
-/* 
+
+
+/*
     return this.http.post(url,object,{headers}).map((res:any)=>{
       console.log("creado",res)
       swal("¡Felicidades!", "felicidades", "success");
-      
+
     return true;
   }).catch(err=>{
     console.log(err.status);
     return Observable.throw(err);
   }); */
-  
+
   return this.http.post(url,object,{headers}).map(response => {
     console.log(response);
     return response;
@@ -106,14 +109,14 @@ export class UserService {
 
   sendPersonalData(data) {
     console.log("Service create user");
-    /* let url = '/registros'; */ 
-    let url = URL_SERVICES + '/registro'; 
+    let url = URL_SERVICES + '/registro';
+    /* let url = '/registros'; */
     const object = JSON.stringify(data);
 
     console.log("Esto es lo que enviare a donde lo tenga que enviar", object);
 
     const headers = new HttpHeaders({
-      'X-Gravitee-Api-Key': '20b1d990-c522-44dc-85bd-ef16d364abc4',
+      'X-Gravitee-Api-Key': '6c7180e6-4855-413a-ba3d-0f8c75b97490',
       'Content-Type': 'application/json'
     })
 
@@ -129,7 +132,7 @@ export class UserService {
   createUserL(user:User) {
     console.log("create user");
     console.log("Esto es lo que enviare a donde lo tenga que enviar",user);
-    
+
     return {as: user};
   }
 
@@ -141,8 +144,8 @@ export class UserService {
     }
   }
 
-  isLogged(){
-    return (this.token.length > 5) ? true : false;
+  isLogged() {
+    return localStorage.getItem('token');
   }
 
   logout(){
@@ -156,8 +159,9 @@ export class UserService {
   login(user:UserLog){
 
     console.log("Login Service");
-    /* let url =  '/inicio'; */
     let url = URL_AUTH + '/authentication';
+    /* let url =  '/inicio'; */
+    
 
     const object = JSON.stringify(user);
     console.log("Esto es lo que enviare a donde lo tenga que enviar",object);
@@ -166,27 +170,27 @@ export class UserService {
     'Content-Type': 'application/json'})
 
     return this.http.post(url,object,{headers}).map((res:any)=>{
-      localStorage.setItem('clientId',res.clientId);
-        //localStorage.setItem('id',res.id);
-       // localStorage.setItem('email',res.email);
-        //localStorage.setItem('token',res.token);
-        //localStorage.setItem('step','1');
-        //this.token = res.token;
-       // this.email = res.email;
-        //this.id = res.id;
-        swal("¡Felicidades!", "Inicio de sesión exitoso.", "success");
-        //this.router.navigate(["dashboard",{id:this.step}]); ///revisar donde quedara
-        //this.router.navigate(["register"]);
-        console.log(res);
-    
+      localStorage.setItem('clientId', res.clientId);
+      localStorage.setItem('token', res.authenticated);
+      //localStorage.setItem('id',res.id);
+      // localStorage.setItem('email',res.email);
+      //localStorage.setItem('token',res.token);
+      //localStorage.setItem('step','1');
+      //this.token = res.token;
+      // this.email = res.email;
+      //this.id = res.id;
+      swal("¡Felicidades!", "Inicio de sesión exitoso.", "success");
+      //this.router.navigate(["dashboard",{id:this.step}]); ///revisar donde quedara
+      //this.router.navigate(["register"]);
+      console.log(res);
       return true;
-    })  
+    })
   }
-0
+
   localStep(){
     return this.http.get("http://localhost:3002/step");
   }
 
-  
+
 
 }

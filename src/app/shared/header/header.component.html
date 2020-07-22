@@ -15,7 +15,7 @@
                     <li><a href="#">Empresas y Gobierno</a></li>
                     <li><a href="#">Sucursales</a></li>-->
                     <li *ngIf="!isLogged"><a href="/login"><i class="material-icons left">account_circle</i>Ingresar</a></li>
-                    <!-- <li *ngIf="!isLogged"><a (click)="userService.logout()"><i class="material-icons left">account_circle</i>Cerrar sesión</a></li> -->
+                    <li *ngIf="isLogged"><a (click)="userService.logout()"><i class="material-icons left">account_circle</i>Cerrar sesión</a></li>
                     <!--<li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Es<i class="material-icons right">arrow_drop_down</i></a></li>-->
                 </ul>
             </div>

@@ -1,7 +1,7 @@
 {
 
   "/registros": {
-    "target": "https://apim.infotec.mx/V1.0/banbi/creditosimple/registro",
+    "target": "https://apis-pre.bancodelbienestar.com.mx/V1.0/banbi/creditosimple/registro",
     "secure": false,
     "changeOrigin": true,
     "logLevel": "debug",
@@ -11,7 +11,7 @@
   },
 
   "/inicio": {
-    "target": "https://mifos.infotec.mx/fineract-provider/api/v1/self/authentication",
+    "target": "https://apis-pre.bancodelbienestar.com.mx/fineract-provider/api/v1/self/authentication",
     "secure": false,
     "changeOrigin": true,
     "logLevel": "debug",
