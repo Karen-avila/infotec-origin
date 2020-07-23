@@ -38,7 +38,7 @@ export class DashboardComponent implements OnInit {
   term;
 
   asentamiento;
-  asentamientoNeg;
+  asentamientoneg;
 
   optionsplaces: any = {
     types: ['geocode', 'establishment'],
@@ -264,64 +264,64 @@ export class DashboardComponent implements OnInit {
     });
 
     this.form = new FormGroup({
-      latDomic: new FormControl(null, Validators.required),
-      lngDomic: new FormControl(null, Validators.required),
-      latNeg: new FormControl(null, Validators.required),
-      lngNeg: new FormControl(null, Validators.required),
+      latdomic: new FormControl(null, Validators.required),
+      lngdomic: new FormControl(null, Validators.required),
+      latneg: new FormControl(null, Validators.required),
+      lngneg: new FormControl(null, Validators.required),
       paso: new FormControl("3", Validators.required),
-      clientId: new FormControl(localStorage.getItem('clientId'), Validators.required),
-      tipoPersona: new FormControl(null, Validators.required),
-      clabeInter: new FormControl(null, [Validators.required, Validators.minLength(18), Validators.maxLength(18), Validators.pattern('[0-9]{18}')]),
+      clientid: new FormControl(localStorage.getItem('clientid'), Validators.required),
+      tipopersona: new FormControl(null, Validators.required),
+      clabeinter: new FormControl(null, [Validators.required, Validators.minLength(18), Validators.maxLength(18), Validators.pattern('[0-9]{18}')]),
       nombre: new FormControl(null, [Validators.required, Validators.minLength(2)]),
       nombre2: new FormControl(null, [Validators.minLength(0)]),
       apaterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
       amaterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
-      fechaNac: new FormControl(null, Validators.required),
-      edoCivil: new FormControl(null, Validators.required),
+      fechanac: new FormControl(null, Validators.required),
+      edocivil: new FormControl(null, Validators.required),
       genero: new FormControl(null, Validators.required),
-      telPersonal: new FormControl(null, [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
-      paisNaci: new FormControl("Mexico", Validators.required),
-      entidadFedNaci: new FormControl(null, Validators.required),
-      claveElector: new FormControl(null, Validators.required),
+      telpersonal: new FormControl(null, [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
+      paisnaci: new FormControl("Mexico", Validators.required),
+      entidadfednaci: new FormControl(null, Validators.required),
+      claveelector: new FormControl(null, Validators.required),
       curp: new FormControl(null, Validators.required),
       rfc: new FormControl(null, Validators.required),
       calle: new FormControl(null, Validators.required),
-      numExtDomic: new FormControl(null, Validators.required),
-      numInt: new FormControl(null, [Validators.minLength(0)]),
+      numextdomic: new FormControl(null, Validators.required),
+      numint: new FormControl(null, [Validators.minLength(0)]),
       cp: new FormControl(null, Validators.required),
-      entidadFedDomic: new FormControl(null, Validators.required),
+      entidadfeddomic: new FormControl(null, Validators.required),
       municipio: new FormControl(null, Validators.required),
-      tipoAsentamiento: new FormControl(null, Validators.required),
+      tipoasentamiento: new FormControl(null, Validators.required),
       asentamiento: new FormControl(null, Validators.required),
       /* domicilio: new FormControl(' '), */  /* Se quita al remover map openStreet */
-      calleNeg: new FormControl(null, Validators.required),
-      numExtNeg: new FormControl(null, Validators.required),
-      numIntNeg: new FormControl(null, [Validators.minLength(0)]),
-      cpNeg: new FormControl(null, Validators.required),
-      entidadFedNeg: new FormControl(null, Validators.required),
-      municipioNeg: new FormControl(null, Validators.required),
-      asentamientoNeg: new FormControl(null, Validators.required),
-      tipoAsentamientoNeg: new FormControl(null, Validators.required),
+      calleneg: new FormControl(null, Validators.required),
+      numextneg: new FormControl(null, Validators.required),
+      numintneg: new FormControl(null, [Validators.minLength(0)]),
+      cpneg: new FormControl(null, Validators.required),
+      entidadfedneg: new FormControl(null, Validators.required),
+      municipioneg: new FormControl(null, Validators.required),
+      asentamientoneg: new FormControl(null, Validators.required),
+      tipoasentamientoneg: new FormControl(null, Validators.required),
       sector: new FormControl(null, Validators.required),
       subsector: new FormControl(null, Validators.required),
       rama: new FormControl(null, Validators.required),
       subrama: new FormControl(null, Validators.required),
       giro: new FormControl(null, Validators.required),
-      ref1_nombre: new FormControl(null, [Validators.required, Validators.minLength(2)]),
-      ref1_nombre2: new FormControl(null, [Validators.minLength(0)]),
-      ref1_aPaterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
-      ref1_aMaterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
-      ref1_tel: new FormControl(null, [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
-      ref1_tipoRelacion: new FormControl(null, Validators.required),
-      ref2_nombre: new FormControl(null, [Validators.required, Validators.minLength(2)]),
-      ref2_nombre2: new FormControl(null, [Validators.minLength(0)]),
-      ref2_aPaterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
-      ref2_aMaterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
-      ref2_tel: new FormControl(null, [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
-      ref2_tipoRelacion: new FormControl(null, Validators.required),
-      montoCredito: new FormControl(),
-      plazoCredito: new FormControl(),
-      aPrivacidad: new FormControl(null, Validators.required)
+      ref1nombre: new FormControl(null, [Validators.required, Validators.minLength(2)]),
+      ref1nombre2: new FormControl(null, [Validators.minLength(0)]),
+      ref1apaterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
+      ref1amaterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
+      ref1tel: new FormControl(null, [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
+      ref1tiporelacion: new FormControl(null, Validators.required),
+      ref2nombre: new FormControl(null, [Validators.required, Validators.minLength(2)]),
+      ref2nombre2: new FormControl(null, [Validators.minLength(0)]),
+      ref2apaterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
+      ref2amaterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
+      ref2tel: new FormControl(null, [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
+      ref2tiporelacion: new FormControl(null, Validators.required),
+      montocredito: new FormControl(),
+      plazocredito: new FormControl(),
+      aprivacidad: new FormControl(null, Validators.required)
     },
       {
         validators:
@@ -336,11 +336,11 @@ export class DashboardComponent implements OnInit {
                   'int',
                   'municipio',
                   'asentamiento',
-                  'calleNeg',
+                  'calleneg',
                   'extNeg',
                   'intNeg',
-                  'municipioNeg',
-                  'asentamientoNeg',
+                  'municipioneg',
+                  'asentamientoneg',
                   'ref1_name',
                   'ref1_paterno', GMVLMR80070601M100
                   'ref1_name2',
@@ -353,7 +353,7 @@ export class DashboardComponent implements OnInit {
       });
     this.formDocumentos = new FormGroup({
       paso: new FormControl("4", Validators.required),
-      clientId: new FormControl(localStorage.getItem('clientId'), Validators.required),
+      clientid: new FormControl(localStorage.getItem('clientid'), Validators.required),
       typeId: new FormControl(null, Validators.required),
       frontal: new FormControl(null, Validators.required),
       reverso: new FormControl(null, Validators.required),
@@ -580,13 +580,14 @@ export class DashboardComponent implements OnInit {
   }
 
   dpersonales() {   
+    //console.log(this.form.value);
     if (this.form.valid) {
       this.userService.sendPersonalData(this.form.value)
         .subscribe(res => {
           console.log(res);
-          // claveElector
+          // claveelector
           // CURP 
-          var identification = <HTMLInputElement>document.getElementById('claveElector');
+          var identification = <HTMLInputElement>document.getElementById('claveelector');
           var payload = {
             documentTypeId: 1, // INE 1, CURP 2
             status: "Active",

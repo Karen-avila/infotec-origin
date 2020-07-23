@@ -129,7 +129,7 @@ export class UserService {
     return this.http.post(url, object, { headers }).map((res: any) => {
       // console.log("creado", res)
       swal("¡Felicidades!", "Inicio de sesión exitoso.", "success");
-      localStorage.setItem('clientId', res.clientId);
+      localStorage.setItem('clientid', res.clientid);
       localStorage.setItem('token', res.authenticated);
       return true;
     }).catch(err => {
@@ -150,8 +150,8 @@ export class UserService {
     formData.append('file', file);
     formData.append('name', name);
     // console.log("Document Service");
-    let clientId = localStorage.getItem('clientId');
-    let url = environment.apis_url + '/V1.0/fineract-protected/clients/' + clientId + '/documents';
+    let clientid = localStorage.getItem('clientid');
+    let url = environment.apis_url + '/V1.0/fineract-protected/clients/' + clientid + '/documents';
     let api_keys = environment.gravitee_api_keys;
     let headers = environment.headers_apis;
     headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
@@ -167,8 +167,8 @@ export class UserService {
 
   sendIdentification(data) {
     // console.log("Document Service");
-    let clientId = localStorage.getItem('clientId');
-    let url = environment.apis_url + '/V1.0/fineract-protected/clients/' + clientId + '/identifiers';
+    let clientid = localStorage.getItem('clientid');
+    let url = environment.apis_url + '/V1.0/fineract-protected/clients/' + clientid + '/identifiers';
     let api_keys = environment.gravitee_api_keys;
     let headers = environment.headers_apis;
     headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
