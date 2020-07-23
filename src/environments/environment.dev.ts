@@ -1,13 +1,13 @@
 export const environment = {
   production: true,
-  apis_url : 'https://apis-pre.bancodelbienestar.com.mx',
-  mifos_url : 'https://backoffice-pre.bancodelbienestar.com.mx',
+  apis_url : 'urldesarrolo',
+  mifos_url : 'urlmifosdesarrollo',
   headers_mifos : {
     'Fineract-Platform-TenantId': 'default',
     'Content-Type': 'application/json', 'Content-Encoding': 'Gzip'
   },
   headers_apis : {
-    'X-Gravitee-Api-Key': 'debe ser una llava de desarrolo',
+    'X-Gravitee-Api-Key': 'key desarrollo',
     'Content-Type': 'application/json'
   }
 
