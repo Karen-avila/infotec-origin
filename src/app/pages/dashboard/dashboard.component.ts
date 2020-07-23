@@ -579,26 +579,26 @@ export class DashboardComponent implements OnInit {
     return invalid;
   }
 
-  dpersonales() {   
+  dpersonales() {
     //console.log(this.form.value);
     if (this.form.valid) {
       this.userService.sendPersonalData(this.form.value)
         .subscribe(res => {
           console.log(res);
           // claveelector
-          // CURP 
+          // CURP
           var identification = <HTMLInputElement>document.getElementById('claveelector');
           var payload = {
             documentTypeId: 1, // INE 1, CURP 2
             status: "Active",
             documentKey: identification.value,
-            description: "Clave Elector"            
+            description: "Clave Elector"
           }
           this.userService.sendIdentification(payload).subscribe(res => {
             console.log(res);
             swal("¡Datos Guardados!", "Continuar", "success");
             this.stepper.openStep(3);
-          }); 
+          });
         });
       /* this.stepper.openStep(3); */
     } else {
