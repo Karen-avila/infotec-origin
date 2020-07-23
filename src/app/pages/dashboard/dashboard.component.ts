@@ -274,8 +274,8 @@ export class DashboardComponent implements OnInit {
       clabeInter: new FormControl(null, [Validators.required, Validators.minLength(18), Validators.maxLength(18), Validators.pattern('[0-9]{18}')]),
       nombre: new FormControl(null, [Validators.required, Validators.minLength(2)]),
       nombre2: new FormControl(null, [Validators.minLength(0)]),
-      aPaterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
-      aMaterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
+      apaterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
+      amaterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
       fechaNac: new FormControl(null, Validators.required),
       edoCivil: new FormControl(null, Validators.required),
       genero: new FormControl(null, Validators.required),
@@ -327,9 +327,9 @@ export class DashboardComponent implements OnInit {
         validators:
           this.pbaDict(
             'nombre',
-            'aPaterno',
+            'apaterno',
             'nombre2',
-            'aMaterno',
+            'amaterno',
             /* 'domicilio', */
             /*       'calle',
                   'ext',
@@ -584,9 +584,11 @@ export class DashboardComponent implements OnInit {
       this.userService.sendPersonalData(this.form.value)
         .subscribe(res => {
           console.log(res);
+          // claveElector
+          // CURP 
           var identification = <HTMLInputElement>document.getElementById('claveElector');
           var payload = {
-            documentTypeId: 1,
+            documentTypeId: 1, // INE 1, CURP 2
             status: "Active",
             documentKey: identification.value,
             description: "Clave Elector"            
@@ -631,20 +633,16 @@ export class DashboardComponent implements OnInit {
   ddocumentos() {
     // if (this.formDocumentos.valid) {
     if (1) {
-        const formData: FormData = new FormData();
-      formData.append("name", "INE");
-      formData.append("description", "INE");
+      // Loop
       const file = (<HTMLInputElement>document.getElementById('frontal')).files[0];
-      formData.append("file", file, file.name);
-      // enviar datos a back
-      // this.popup[0].open();
-      //this.stepper.openStep(4);
-      this.userService.sendDocuments(formData)
+      this.userService.sendDocuments('identificacion', file)
         .subscribe(res => {
           console.log("esto responde el servicio documents", res); //revisar res.user p.ej y hacer un if(uid){openmodal}
           swal("¡Documentos Guardados!", "Continuar", "success");
-          this.stepper.openStep(4);
         });
+      // End Loop
+      // Esperar a que terminen
+      this.stepper.openStep(4);
     } else {
       this.findInvalidControls();
       swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
