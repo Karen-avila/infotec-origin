@@ -35,6 +35,8 @@ export class UserService {
 
     let url = environment.apis_url + '/V1.0/banbi/creditosimple/registro';
     let headers = environment.headers_apis;
+    let api_keys = environment.gravitee_api_keys;
+    headers['X-Gravitee-Api-Key'] = api_keys['registro'];
 
     // console.log("Esto es lo que enviare a donde lo tenga que enviar", object);
 
@@ -55,6 +57,8 @@ export class UserService {
 
     let url = environment.apis_url + '/V1.0/banbi/creditosimple/registro';
     let headers = environment.headers_apis;
+    let api_keys = environment.gravitee_api_keys;
+    headers['X-Gravitee-Api-Key'] = api_keys['registro'];
 
     const object = JSON.stringify(user);
 
@@ -76,6 +80,8 @@ export class UserService {
     // console.log("Service create user");
     let url = environment.apis_url + '/V1.0/banbi/creditosimple/registro';
     let headers = environment.headers_apis;
+    let api_keys = environment.gravitee_api_keys;
+    headers['X-Gravitee-Api-Key'] = api_keys['registro'];
 
     const object = JSON.stringify(data);
     return this.http.post(url, object, { headers }).map((res: any) => {
@@ -114,6 +120,8 @@ export class UserService {
   login(user: UserLog) {
     let url = environment.mifos_url + '/fineract-provider/api/v1/self/authentication';
     let headers = environment.headers_mifos;
+    let api_keys = environment.gravitee_api_keys;
+    headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
     const object = JSON.stringify(user);
 
     // console.log("Esto es lo que enviare a donde lo tenga que enviar", object);
