@@ -171,7 +171,7 @@ export class UserService {
 
     console.log("Login Service");
 
-    let url = environment.mifos_url + '/fineract-provider/api/v1/self/authentication';;
+    let url = environment.mifos_url + '/fineract-provider/api/v1/self/authentication';
     let headers = environment.headers_mifos;
     const object = JSON.stringify(user);
 
