@@ -262,6 +262,7 @@ export class DashboardComponent implements OnInit {
       // Preloader used when step is waiting for feedback function. If not defined, Materializecss spinner-blue-only will be used.
       feedbackPreloader: '<div class="spinner-layer spinner-blue-only">...</div>'
     });
+
     this.form = new FormGroup({
       latDomic: new FormControl(null, Validators.required),
       lngDomic: new FormControl(null, Validators.required),
@@ -568,19 +569,33 @@ export class DashboardComponent implements OnInit {
     for (const name in controls) {
       if (controls[name].invalid) {
         console.log("Invalid: " + name);
-        document.getElementById(name).classList.add('invalid');
+        if (document.getElementById(name) != null) {
+          document.getElementById(name).classList.add('invalid');
+        } else {
+          console.log("Element in null");
+        }
       }
     }
     return invalid;
   }
 
-  dpersonales() {
+  dpersonales() {    
     if (this.form.valid) {
       this.userService.sendPersonalData(this.form.value)
         .subscribe(res => {
-          // console.log("esto responde el servicio dpaersonales",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
-          swal("¡Datos Guardados!", "Continuar", "success");
-          this.stepper.openStep(3);
+          console.log(res);
+          var identification = <HTMLInputElement>document.getElementById('claveElector');
+          var payload = {
+            documentTypeId: 1,
+            status: "Active",
+            documentKey: identification.value,
+            description: "Clave Elector"            
+          }
+          this.userService.sendIdentification(payload).subscribe(res => {
+            console.log(res);
+            swal("¡Datos Guardados!", "Continuar", "success");
+            this.stepper.openStep(3);
+          });
         });
 
       /* this.stepper.openStep(3); */
@@ -617,12 +632,11 @@ export class DashboardComponent implements OnInit {
   ddocumentos() {
     // if (this.formDocumentos.valid) {
     if (1) {
-      const formData: FormData = new FormData();
-      formData.append("name", "CER");
-      formData.append("description", "CER");
-      const fl = (document.getElementById('cer') as HTMLInputElement);
-      var f = fl.files.item(0);
-      formData.append("file", f, f.name);
+        const formData: FormData = new FormData();
+      formData.append("name", "INE");
+      formData.append("description", "INE");
+      const file = (<HTMLInputElement>document.getElementById('frontal')).files[0];
+      formData.append("file", file, file.name);
       // enviar datos a back
       // this.popup[0].open();
       //this.stepper.openStep(4);
@@ -632,8 +646,8 @@ export class DashboardComponent implements OnInit {
           swal("¡Documentos Guardados!", "Continuar", "success");
           this.stepper.openStep(4);
         });
-
     } else {
+      this.findInvalidControls();
       swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
     }
   }
