@@ -34,7 +34,7 @@ export class UserService {
     const object = JSON.stringify(user);
 
     let url = environment.apis_url + '/V1.0/banbi/creditosimple/registro';
-    let headers = environment.headers_mifos;
+    let headers = environment.headers_apis;
 
     // console.log("Esto es lo que enviare a donde lo tenga que enviar", object);
 
@@ -54,7 +54,7 @@ export class UserService {
     // console.log("Service activate user");
 
     let url = environment.apis_url + '/V1.0/banbi/creditosimple/registro';
-    let headers = environment.headers_mifos;
+    let headers = environment.headers_apis;
 
     const object = JSON.stringify(user);
 
@@ -75,7 +75,7 @@ export class UserService {
   sendPersonalData(data) {
     // console.log("Service create user");
     let url = environment.apis_url + '/V1.0/banbi/creditosimple/registro';
-    let headers = environment.headers_mifos;
+    let headers = environment.headers_apis;
 
     const object = JSON.stringify(data);
     return this.http.post(url, object, { headers }).map((res: any) => {
