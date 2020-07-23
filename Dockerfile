@@ -41,7 +41,7 @@ COPY sweetalert.d.ts.md /usr/src/app/node_modules/sweetalert/typings/sweetalert.
 COPY materialize.css.md /usr/src/app/node_modules/materialize-css/dist/css/materialize.css
 COPY materialize.js.md /usr/src/app/node_modules/materialize-css/dist/js/materialize.js
 
-RUN ng build --prod  
+RUN ng build --configuration=dev  
 # && \  
 #    cd dist/originacion/  && \  
 #    rm -Rf ../../firebase/public/*  && \  
