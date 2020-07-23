@@ -138,14 +138,11 @@ export class UserService {
 
   sendDocuments(userDocs) {
     // console.log("Document Service");
-
-    let url = environment.mifos_url + `/fineract-provider/api/v1/clients/${localStorage.getItem('clientId')}/documents`;
+    let clientId = localStorage.getItem('clientId');
+    let url = environment.mifos_url + '/fineract-provider/api/v1/clients/' + clientId + '/documents';
     let headers = environment.headers_mifos;
     //const object = JSON.stringify(userDocs);
-    const object = userDocs;
-
-    // console.log("Esto es lo que enviare a donde lo tenga que enviar", object);
-    return this.http.post(url, object, { headers }).map((res: any) => {
+    return this.http.post(url, userDocs, { headers: headers }).map((res: any) => {
       // console.log("Enviados", res)
       swal("¡Felicidades!", "Documentos Guardados", "success");
       return true;
@@ -154,7 +151,7 @@ export class UserService {
         swal('Existio un error al procesar tu solicitud intentalo mas tarde');
       }
       this.prosessing = false;
-      // console.log(err);
+      console.log(err);
       return Observable.throw(err);
     });
   }
