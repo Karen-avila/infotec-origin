@@ -1,4 +1,8 @@
 ul.stepper.horizontal {
     min-height: 70vh;
 }
+.cursor{
+    cursor:pointer;
+}
+
 
