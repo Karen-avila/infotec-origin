@@ -463,7 +463,7 @@
                                 <span class="grey-text in">Código Postal</span>
                                 <input #cpNeg id="cpNeg" [(ngModel)]="negocio.cp" type="number" formControlName="cpNeg"
                                     required class="validate" name="cpNeg" maxlength="5" placeholder="Codigo Postal"
-                                    (keypress)="numberOnly($event)" (keyup)="negocio.cp.length == 5 && searchCP(cpNeg.value, 'negocio')" />
+                                    (keypress)="numberOnly($event)" (keyup)="negocio.cp.length == 5 && searchCP(cpNeg, 'negocio')" />
                                 <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                             </div>
                             <div class="input-field col s6">

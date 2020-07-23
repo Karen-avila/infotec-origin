@@ -478,53 +478,61 @@ export class DashboardComponent implements OnInit {
         .then((response) => {
           return response.json();
         }).then((json) => {
-          if (target === 'negocio') {
-            this.negocio.tipo_asentamiento = json.response.tipo_asentamiento;
-            this.negocio.colonia = json.response.colonia;
-            this.negocio.asentamiento = json.response.asentamiento;
-            this.negocio.municipio = json.response.municipio;
-            this.negocio.estado = json.response.estado;
-            fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.negocio.calle}+${this.negocio.ext}+${this.negocio.asentamiento}+${this.negocio.municipio}+${this.negocio.estado}&key=AIzaSyCseZ0trHuyvuZlNh6TXxz1-6OJhXfXaww&language=es`)
-              .then((response) => {
-                return response.json();
-              }).then((json) => {
-                if (json.status === 'OK') {
-                  this.lat2 = json.results[0].geometry.location.lat;
-                  this.lng2 = json.results[0].geometry.location.lng;
-                  this.markers2 = [{
-                    lat: json.results[0].geometry.location.lat,
-                    lng: json.results[0].geometry.location.lng,
-                    label: 'A',
-                    draggable: false
-                  }];
-                }
-              });
-          } else if (target === 'personal') {
-            this.personal.tipo_asentamiento = json.response.tipo_asentamiento;
-            this.personal.colonia = json.response.colonia;
-            this.personal.asentamiento = json.response.asentamiento;
-            this.personal.municipio = json.response.municipio;
-            this.personal.estado = json.response.estado;
-            fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.personal.calle}+${this.personal.ext}+${this.personal.asentamiento}+${this.personal.municipio}+${this.personal.estado}&key=AIzaSyCseZ0trHuyvuZlNh6TXxz1-6OJhXfXaww&language=es`)
-              .then((response) => {
-                return response.json();
-              }).then((json) => {
-                if (json.status === 'OK') {
-                  if (target === 'personal') {
-                    this.lat = json.results[0].geometry.location.lat;
-                    this.lng = json.results[0].geometry.location.lng;
-                    this.markers = [{
+          console.log('verver',json.code_error)
+          if(json.code_error === 105){
+            swal("Lo sentimos!", "Tu código postal no esta dentro de los participantes para este apoyo, revisa constantemente para validar si existen otros apoyos.", "info");
+            this.userService.logout();
+          }else{
+            if (target === 'negocio') {
+              this.negocio.tipo_asentamiento = json.response.tipo_asentamiento;
+              this.negocio.colonia = json.response.colonia;
+              this.negocio.asentamiento = json.response.asentamiento;
+              this.negocio.municipio = json.response.municipio;
+              this.negocio.estado = json.response.estado;
+              fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.negocio.calle}+${this.negocio.ext}+${this.negocio.asentamiento}+${this.negocio.municipio}+${this.negocio.estado}&key=AIzaSyCseZ0trHuyvuZlNh6TXxz1-6OJhXfXaww&language=es`)
+                .then((response) => {
+                  return response.json();
+                }).then((json) => {
+                  if (json.status === 'OK') {
+                    this.lat2 = json.results[0].geometry.location.lat;
+                    this.lng2 = json.results[0].geometry.location.lng;
+                    this.markers2 = [{
                       lat: json.results[0].geometry.location.lat,
                       lng: json.results[0].geometry.location.lng,
                       label: 'A',
                       draggable: false
                     }];
                   }
-                }
-              });
+                });
+            } else if (target === 'personal') {
+              this.personal.tipo_asentamiento = json.response.tipo_asentamiento;
+              this.personal.colonia = json.response.colonia;
+              this.personal.asentamiento = json.response.asentamiento;
+              this.personal.municipio = json.response.municipio;
+              this.personal.estado = json.response.estado;
+              fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.personal.calle}+${this.personal.ext}+${this.personal.asentamiento}+${this.personal.municipio}+${this.personal.estado}&key=AIzaSyCseZ0trHuyvuZlNh6TXxz1-6OJhXfXaww&language=es`)
+                .then((response) => {
+                  return response.json();
+                }).then((json) => {
+                  if (json.status === 'OK') {
+                    if (target === 'personal') {
+                      this.lat = json.results[0].geometry.location.lat;
+                      this.lng = json.results[0].geometry.location.lng;
+                      this.markers = [{
+                        lat: json.results[0].geometry.location.lat,
+                        lng: json.results[0].geometry.location.lng,
+                        label: 'A',
+                        draggable: false
+                      }];
+                    }
+                  }
+                });
+            }
+            setTimeout(() => { M.FormSelect.init(document.querySelectorAll('select')); }, 200);
+            return;
           }
-          setTimeout(() => { M.FormSelect.init(document.querySelectorAll('select')); }, 200);
-          return;
+       
+          
         });
     }
   }
@@ -583,6 +591,7 @@ export class DashboardComponent implements OnInit {
   for (const name in controls) {
       if (controls[name].invalid) {
           console.log("Invalid: " + name);
+          document.getElementById(name).classList.add('invalid');
       }
   }
   return invalid;
