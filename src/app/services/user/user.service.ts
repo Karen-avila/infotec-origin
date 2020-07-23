@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpRequest, HttpHeaders } from '@angular/common/http';
 
 import { User } from '../../models/user.model';
 import { UserLog } from '../../models/user-log.module';
@@ -144,26 +144,25 @@ export class UserService {
     });
   }
 
-  sendDocuments(userDocs) {
+  sendDocuments(name: any, file: File) {
+    const formData: FormData = new FormData();
+
+    formData.append('file', file);
+    formData.append('name', name);
     // console.log("Document Service");
     let clientId = localStorage.getItem('clientId');
     let url = environment.apis_url + '/V1.0/fineract-protected/clients/' + clientId + '/documents';
     let api_keys = environment.gravitee_api_keys;
     let headers = environment.headers_apis;
     headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
-    //const object = JSON.stringify(userDocs);
-    return this.http.post(url, userDocs, {headers: headers}).map((res: any) => {
-      console.log(res);
-      swal("¡Felicidades!", "Documentos Guardados", "success");
-      return true;
-    }).catch(err => {
-      if (err.status == '0') {
-        swal('Existio un error al procesar tu solicitud de documentos, intentalo mas tarde');
-      }
-      this.prosessing = false;
-      console.log(err);
-      return err;
+    const httpHeaders = new HttpHeaders(headers);
+    const req = new HttpRequest('POST', url, formData, {
+      reportProgress: true,
+      responseType: 'json',
+      headers: httpHeaders
     });
+
+    return this.http.request(req);
   }
 
   sendIdentification(data) {

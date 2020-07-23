@@ -198,11 +198,11 @@
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="aPaterno" type="text" name="aPaterno" formControlName="aPaterno"
-                            (keyup)="form.patchValue({aPaterno: $event.target.value.toUpperCase()})" required
+                        <input id="apaterno" type="text" name="apaterno" formControlName="apaterno"
+                            (keyup)="form.patchValue({apaterno: $event.target.value.toUpperCase()})" required
                             class="validate">
-                        <label for="aPaterno">Apellido paterno</label>
-                        <div class="blue-text" *ngIf="f.aPaterno.errors?.minlength">Debe tener un minimo de 2 carácteres
+                        <label for="apaterno">Apellido paterno</label>
+                        <div class="blue-text" *ngIf="f.apaterno.errors?.minlength">Debe tener un minimo de 2 carácteres
                         </div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabra altisonante</p> -->
@@ -210,11 +210,11 @@
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="aMaterno" type="text" name="aMaterno" formControlName="aMaterno"
-                            (keyup)="form.patchValue({aMaterno: $event.target.value.toUpperCase()})" required
+                        <input id="amaterno" type="text" name="amaterno" formControlName="amaterno"
+                            (keyup)="form.patchValue({amaterno: $event.target.value.toUpperCase()})" required
                             class="validate">
-                        <label for="aMaterno">Apellido materno</label>
-                        <div class="blue-text" *ngIf="f.aMaterno.errors?.minlength">Debe tener un minimo de 2 carácteres
+                        <label for="amaterno">Apellido materno</label>
+                        <div class="blue-text" *ngIf="f.amaterno.errors?.minlength">Debe tener un minimo de 2 carácteres
                         </div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
                             <!--  <p>Palabra altisonante</p> -->
