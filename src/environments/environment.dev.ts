@@ -1,16 +1,22 @@
 export const environment = {
   production: true,
-  apis_url : 'https://apis-pre.bancodelbienestar.com.mx',
-  mifos_url : 'https://backoffice-pre.bancodelbienestar.com.mx',
+  apis_url : 'https://apis.infotec.mx',
+  mifos_url : 'https://mifos.infotec.mx',
+  gravitee_api_keys : {
+    'registro': '1',
+    'clients': '1'
+  },
   headers_mifos : {
     'Fineract-Platform-TenantId': 'default',
-    'Content-Type': 'application/json', 'Content-Encoding': 'Gzip'
+    'Content-Type': 'application/json', 
+    'Accept': 'application/json', 
+    'Content-Encoding': 'gzip'
   },
   headers_apis : {
-    'X-Gravitee-Api-Key': 'debe ser una llava de desarrolo',
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'Accept': 'application/json', 
+    'Content-Encoding': 'gzip'
   }
-
 };
 
 
