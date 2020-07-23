@@ -44,16 +44,16 @@
                                 <i class="material-icons prefix">https</i>
                                 <input formControlName="password" name='password' id="password" [type]="passType" class="validate">
                                 <label for="password">Contraseña</label>
-                                <div class="red-text col s12" *ngIf="f.password.errors && !form.pristine">Debe tener un mínimo de 8 caracteres 1 Mayuscula 1 minuscula 1 numero</div>
-                                <i class="material-icons prefix" *ngIf="icon" (click)="viewPassword()">visibility_off</i>
-                                <i class="material-icons prefix" *ngIf="!icon" (click)="viewPassword()">visibility</i>
+                                <div class="red-text col s12" *ngIf="f.password.errors && !form.pristine">Debe tener un mínimo de 8 caracteres 1 Mayúscula 1 minúscula 1 numero</div>
+                                <i class="material-icons prefix cursor" *ngIf="icon" (click)="viewPassword()">visibility_off</i>
+                                <i class="material-icons prefix cursor" *ngIf="!icon" (click)="viewPassword()">visibility</i>
                             </div>
                             <div class="input-field col s10">
                                 <i class="material-icons prefix">https</i>
                                 <input formControlName="rePassword" name='rePassword' id="rePassword" [type]="rePassType" class="validate">
                                 <label for="rePassword">Confirmar Contraseña</label>
-                                <i class="material-icons prefix" *ngIf="reIcon" (click)="viewRePassword()">visibility_off</i>
-                                <i class="material-icons prefix" *ngIf="!reIcon" (click)="viewRePassword()">visibility</i>
+                                <i class="material-icons prefix cursor" *ngIf="reIcon" (click)="viewRePassword()">visibility_off</i>
+                                <i class="material-icons prefix cursor" *ngIf="!reIcon" (click)="viewRePassword()">visibility</i>
                             </div>
                             <div class="red-text col s12" *ngIf="form.errors?.isEqual && !form.pristine">
                                 <p>Las contraseñas deben de ser iguales.</p>
@@ -120,7 +120,7 @@
     <div class="modal-content">
         <h4 class="zz">¡Cuenta Creada!</h4>
         <p class="flow-text"><b>Ya casi: </b>Revisa tu correo.</p>
-        <p class="flow-text">Para continuar activa tu cuenta, revisa el correo que nos proporcionaste y encontrarás las instrucciones para continuar con tu solicitud.</p>
+        <p class="flow-text">Para activar tu cuenta, revisa el correo que nos proporcionaste y encontrarás las instrucciones para continuar con tu solicitud.</p>
     </div>
     <div class="modal-footer darken-3">
         <!--<a routerLink="/home" class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>-->
