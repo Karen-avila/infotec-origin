@@ -314,7 +314,7 @@
                         <input id="curp" type="text" formControlName="curp"
                             (keyup)="form.patchValue({curp: $event.target.value.toUpperCase()})"
                             pattern="^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$"
-                            required class="validate" name="curp" />
+                            required class="validate" name="curp" minlength="18" maxlength="18" />
                         <label for="curp">CURP</label>
                         <div class="blue-text">Únicamente letras mayúsculas</div>
                     </div>
@@ -324,7 +324,7 @@
                         <input id="rfc" type="text" formControlName="rfc"
                             (keyup)="form.patchValue({rfc: $event.target.value.toUpperCase()})"
                             pattern="^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$"
-                            required class="validate" name="rfc" />
+                            required class="validate" name="rfc" minlength="12" maxlength="13" />
                         <label for="rfc">RFC</label>
                         <div class="blue-text">Únicamente letras mayúsculas</div>
                     </div>
