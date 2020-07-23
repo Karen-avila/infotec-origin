@@ -22,7 +22,6 @@ interface Marker {
 declare var google;
 // End PickAdress
 
-
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -40,8 +39,7 @@ export class DashboardComponent implements OnInit {
 
   asentamiento;
   asentamientoNeg;
-  
-  
+
   optionsplaces: any = {
     types: ['geocode', 'establishment'],
     componentRestrictions: { country: 'MX' }
@@ -65,61 +63,60 @@ export class DashboardComponent implements OnInit {
   typeId = 'ine';
   dummyAmmount = 40000;
 
-
-activities = {
-  sectorList: [],
-  subsectorList: [],
-  ramaList: [],
-  subramaList: [],
-  giroList: []
-};
-infoPersonal = {
-  calle: '',
-  latitude: 0,
-  longitude: 0,
-};
-personal = {
-  calle: '',
-  int: '',
-  ext: '',
-  cp: '',
-  estado: '',
-  tipo_asentamiento: '',
-  colonia: '',
-  municipio: '',
-  asentamiento: [],
-  latitude: 0,
-  longitude: 0,
-};
-negocio = {
-  calle: '',
-  int: '',
-  ext: '',
-  cp: '',
-  estado: '',
-  tipo_asentamiento: '',
-  colonia: '',
-  municipio: '',
-  asentamiento: [],
-  latitude: 0,
-  longitude: 0,
-};
-questionForm = {};
-monte;
-hugo = '666';
-stepper;
-model = 'pFisica';
-modal = 'falso';
-popup;
-calendar;
-terms = false;
-autorizobc = false;
-aprivacidad = false;
-termcond = false;
-form: FormGroup;
-formDocumentos: FormGroup;
-formFiel: FormGroup;
-formFielFirm: FormGroup;
+  activities = {
+    sectorList: [],
+    subsectorList: [],
+    ramaList: [],
+    subramaList: [],
+    giroList: []
+  };
+  infoPersonal = {
+    calle: '',
+    latitude: 0,
+    longitude: 0,
+  };
+  personal = {
+    calle: '',
+    int: '',
+    ext: '',
+    cp: '',
+    estado: '',
+    tipo_asentamiento: '',
+    colonia: '',
+    municipio: '',
+    asentamiento: [],
+    latitude: 0,
+    longitude: 0,
+  };
+  negocio = {
+    calle: '',
+    int: '',
+    ext: '',
+    cp: '',
+    estado: '',
+    tipo_asentamiento: '',
+    colonia: '',
+    municipio: '',
+    asentamiento: [],
+    latitude: 0,
+    longitude: 0,
+  };
+  questionForm = {};
+  monte;
+  hugo = '666';
+  stepper;
+  model = 'pFisica';
+  modal = 'falso';
+  popup;
+  calendar;
+  terms = false;
+  autorizobc = false;
+  aprivacidad = false;
+  termcond = false;
+  form: FormGroup;
+  formDocumentos: FormGroup;
+  formFiel: FormGroup;
+  formFielFirm: FormGroup;
   dic = [
     "apañar",
     "cagar",
@@ -132,115 +129,115 @@ formFielFirm: FormGroup;
     "ASSHOLE",
   ]
   alrt = [
-    {name:"Curp", url:"https://www.gob.mx/curp/"},
-    {name:"recibo digital de CFE", url:"https://app.cfe.mx/Aplicaciones/CCFE/SolicitudesCFE/Solicitudes/ConsultaTuReciboLuzGmx.aspx "},
-    {name:"Constancia de Situación Fiscal", url:"https://www.sat.gob.mx/aplicacion/operacion/53027/genera-tu-constancia-de-situacion-fiscal"},
-    {name:"recibo digital de CFE", url:"https://app.cfe.mx/Aplicaciones/CCFE/SolicitudesCFE/Solicitudes/ConsultaTuReciboLuzGmx.aspx"}
+    { name: "Curp", url: "https://www.gob.mx/curp/" },
+    { name: "recibo digital de CFE", url: "https://app.cfe.mx/Aplicaciones/CCFE/SolicitudesCFE/Solicitudes/ConsultaTuReciboLuzGmx.aspx " },
+    { name: "Constancia de Situación Fiscal", url: "https://www.sat.gob.mx/aplicacion/operacion/53027/genera-tu-constancia-de-situacion-fiscal" },
+    { name: "recibo digital de CFE", url: "https://app.cfe.mx/Aplicaciones/CCFE/SolicitudesCFE/Solicitudes/ConsultaTuReciboLuzGmx.aspx" }
   ];
- re;
- //-------------------
- valueMon: number = 20000;
- optionsMon: Options = {
-   floor: 0,
-   ceil: 50000,
-   step: 10000,
-   minLimit: 20000,
-   translate: (value: number, label: LabelType): string => {
-     switch (label) {
-       case LabelType.Low:
-         this.monte = value.toLocaleString('es-MX', {
-                  style: 'currency',
-                  currency: 'MXN',
-                });
-         return '<b>Si te Prestamos: </b>MX' +  this.monte;
-       case LabelType.Ceil:
-         return '<b>Monto Máximo: </b>MX' + value.toLocaleString('es-MX', {
-           style: 'currency',
-           currency: 'MXN',
-         });
-       default:
-         return '<b>Monto</b>';
-     }
-         //return '<b>Si te Prestamos:</b> $' + value;
-   }
- };
- valuePlaz: number = 18;
- optionsPlaz: Options = {
-   floor: 0,
-   ceil: 36,
-   step: 18,
-   minLimit: 18,
-   maxLimit: 18,
-   translate: (value: number, label: LabelType): string => {
-     switch (label) {
-       case LabelType.Low:
-        return '<b>' + value + ' Meses + 3 meses de gracia</b>';
-       case LabelType.Ceil:
-        return '<b> Total 21 Meses </b>';
-       default:
-         return '<b>Plazo</b>';
-     }
-         //return '<b>Si te Prestamos:</b> $' + value;
-   }
- };
-finance = new Finance();
-catPorcentaje = 0;
- // -------------------
-constructor(
+  re;
+  //-------------------
+  valueMon: number = 20000;
+  optionsMon: Options = {
+    floor: 0,
+    ceil: 50000,
+    step: 10000,
+    minLimit: 20000,
+    translate: (value: number, label: LabelType): string => {
+      switch (label) {
+        case LabelType.Low:
+          this.monte = value.toLocaleString('es-MX', {
+            style: 'currency',
+            currency: 'MXN',
+          });
+          return '<b>Si te Prestamos: </b>MX' + this.monte;
+        case LabelType.Ceil:
+          return '<b>Monto Maximo: </b>MX' + value.toLocaleString('es-MX', {
+            style: 'currency',
+            currency: 'MXN',
+          });
+        default:
+          return '<b>Monto</b>';
+      }
+      //return '<b>Si te Prestamos:</b> $' + value;
+    }
+  };
+  valuePlaz: number = 18;
+  optionsPlaz: Options = {
+    floor: 0,
+    ceil: 36,
+    step: 18,
+    minLimit: 18,
+    maxLimit: 18,
+    translate: (value: number, label: LabelType): string => {
+      switch (label) {
+        case LabelType.Low:
+          return '<b>' + value + ' Meses + 3 meses de gracia</b>';
+        case LabelType.Ceil:
+          return '<b> Total 21 Meses </b>';
+        default:
+          return '<b>Plazo</b>';
+      }
+      //return '<b>Si te Prestamos:</b> $' + value;
+    }
+  };
+  finance = new Finance();
+  catPorcentaje = 0;
+  // -------------------
+  constructor(
     public userService: UserService,
     private route: ActivatedRoute,
     private router: Router,
     private eventManager: EventManager
 
   ) {
-  this.re = localStorage.getItem('step');
-  /* this.re=5; */
+    this.re = localStorage.getItem('step');
+    /* this.re=5; */
 
-  this.eventManager.addGlobalEventListener(
-    'window',
-    'message',
-    (msg) => {
-      if (msg.data.latitude  && msg.data.longitude) {
-        this.infoPersonal.calle = msg.data.name;
-        this.infoPersonal.latitude = msg.data.latitude;
-        this.infoPersonal.longitude = msg.data.longitude;
+    this.eventManager.addGlobalEventListener(
+      'window',
+      'message',
+      (msg) => {
+        if (msg.data.latitude && msg.data.longitude) {
+          this.infoPersonal.calle = msg.data.name;
+          this.infoPersonal.latitude = msg.data.latitude;
+          this.infoPersonal.longitude = msg.data.longitude;
+        }
+        this.mapOk();
+        if (msg.data.questions) {
+          this.popup[0].open();
+          // console.log(msg.data);
+        }
       }
-      this.mapOk();
-      if (msg.data.questions) {
-        this.popup[0].open();
-        console.log(msg.data);
-      }
-    }
-  );
+    );
 
-  // Monto del Prestamo
-  const montoCapital = 20000 * -1;
-  // Tasa de Interes Anual
-  const tasaInteresAnual = 0.12; // cambio a 12
-  // Tasa de Interes Mensual
-  const tasaInteresMensual = tasaInteresAnual / 12;
-  // Plazo del Credito
-  const plazoCredito = 18;
-  // Monto del Pago Mensual
-  const pmt = this.finance.PMT(tasaInteresMensual, plazoCredito, montoCapital);
-  // console.log("PAGO MENSUAL ", pmt.toFixed(2));
-  const pagos = [];
-  pagos.push(montoCapital);
-  for (let i = 0; i < plazoCredito; i++) {
+    // Monto del Prestamo
+    const montoCapital = 20000 * -1;
+    // Tasa de Interes Anual
+    const tasaInteresAnual = 0.12; // cambio a 12
+    // Tasa de Interes Mensual
+    const tasaInteresMensual = tasaInteresAnual / 12;
+    // Plazo del Credito
+    const plazoCredito = 18;
+    // Monto del Pago Mensual
+    const pmt = this.finance.PMT(tasaInteresMensual, plazoCredito, montoCapital);
+    // // console.log("PAGO MENSUAL ", pmt.toFixed(2));
+    const pagos = [];
+    pagos.push(montoCapital);
+    for (let i = 0; i < plazoCredito; i++) {
       pagos.push(pmt);
+    }
+    const tirMensual = this.finance.IRR.apply(this, pagos);
+    // // console.log("TIR MENSUAL " +tirMensual.toFixed(2) +"%");
+    const tirAnual = tirMensual * 12;
+    // // console.log("TIR ANUAL "+ tirAnual.toFixed(2)+"%");
+    const cat = (Math.pow((1 + (tirMensual / 100)), 12)) - 1;
+    // // console.log("CAT "+cat.toFixed(2)+"%");
+    this.catPorcentaje = ((Math.pow((1 + (tirMensual / 100)), 12)) - 1) * 100;
+    // // console.log("CAT "+ this.catPorcentaje.toFixed(2)+"%");
   }
-  const tirMensual = this.finance.IRR.apply(this, pagos);
-  // console.log("TIR MENSUAL " +tirMensual.toFixed(2) +"%");
-  const tirAnual = tirMensual * 12;
-  // console.log("TIR ANUAL "+ tirAnual.toFixed(2)+"%");
-  const cat = (Math.pow((1 + (tirMensual / 100)), 12)) - 1;
-  // console.log("CAT "+cat.toFixed(2)+"%");
-  this.catPorcentaje = ((Math.pow((1 + (tirMensual / 100)), 12)) - 1) * 100;
-  // console.log("CAT "+ this.catPorcentaje.toFixed(2)+"%");
-}
 
-ngOnInit() {
-    //console.log("comienza ngOnInit",this.alrt);
+  ngOnInit() {
+    //// console.log("comienza ngOnInit",this.alrt);
     let elems = document.querySelectorAll('.modal');
     this.popup = M.Modal.init(elems);
 
@@ -248,7 +245,7 @@ ngOnInit() {
     M.FormSelect.init(select);
 
     let stepperDiv = document.getElementById('api_nav_demo');
-    //console.log(stepperDiv);
+    //// console.log(stepperDiv);
     this.stepper = new MStepper(stepperDiv, {
       // Default active step.
       firstActive: this.re, //api regresa paso a activar siempre debe empezar minimo en 1
@@ -265,6 +262,7 @@ ngOnInit() {
       // Preloader used when step is waiting for feedback function. If not defined, Materializecss spinner-blue-only will be used.
       feedbackPreloader: '<div class="spinner-layer spinner-blue-only">...</div>'
     });
+
     this.form = new FormGroup({
       latDomic: new FormControl(null, Validators.required),
       lngDomic: new FormControl(null, Validators.required),
@@ -278,29 +276,29 @@ ngOnInit() {
       nombre2: new FormControl(null, [Validators.minLength(0)]),
       aPaterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
       aMaterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
-      fechaNac : new FormControl(null, Validators.required),
+      fechaNac: new FormControl(null, Validators.required),
       edoCivil: new FormControl(null, Validators.required),
-      genero : new FormControl(null, Validators.required),
+      genero: new FormControl(null, Validators.required),
       telPersonal: new FormControl(null, [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
-      paisNaci : new FormControl(null, Validators.required),
-      entidadFedNaci : new FormControl(null, Validators.required),
+      paisNaci: new FormControl("Mexico", Validators.required),
+      entidadFedNaci: new FormControl(null, Validators.required),
       claveElector: new FormControl(null, Validators.required),
-      curp: new FormControl(null, [Validators.required, Validators.minLength(18), Validators.maxLength(18)]),
-      rfc: new FormControl(null,[Validators.required, Validators.minLength(12)]),
-      calle: new FormControl(null,[ Validators.required, Validators.minLength(2)]),
+      curp: new FormControl(null, Validators.required),
+      rfc: new FormControl(null, Validators.required),
+      calle: new FormControl(null, Validators.required),
       numExtDomic: new FormControl(null, Validators.required),
       numInt: new FormControl(null, [Validators.minLength(0)]),
-      cp: new FormControl(null, [Validators.required, Validators.minLength(5), Validators.maxLength(5)]),
-      entidadFedDomic : new FormControl(null, Validators.required),
+      cp: new FormControl(null, Validators.required),
+      entidadFedDomic: new FormControl(null, Validators.required),
       municipio: new FormControl(null, Validators.required),
       tipoAsentamiento: new FormControl(null, Validators.required),
       asentamiento: new FormControl(null, Validators.required),
       /* domicilio: new FormControl(' '), */  /* Se quita al remover map openStreet */
-      calleNeg: new FormControl(null,[ Validators.required, Validators.minLength(2)]),
+      calleNeg: new FormControl(null, Validators.required),
       numExtNeg: new FormControl(null, Validators.required),
       numIntNeg: new FormControl(null, [Validators.minLength(0)]),
-      cpNeg: new FormControl(null,[Validators.required, Validators.minLength(5), Validators.maxLength(5)]),
-      entidadFedNeg : new FormControl(null, Validators.required),
+      cpNeg: new FormControl(null, Validators.required),
+      entidadFedNeg: new FormControl(null, Validators.required),
       municipioNeg: new FormControl(null, Validators.required),
       asentamientoNeg: new FormControl(null, Validators.required),
       tipoAsentamientoNeg: new FormControl(null, Validators.required),
@@ -325,34 +323,34 @@ ngOnInit() {
       plazoCredito: new FormControl(),
       aPrivacidad: new FormControl(null, Validators.required)
     },
-    {
-      validators:
-        this.pbaDict(
-          'nombre',
-          'aPaterno',
-          'nombre2',
-          'aMaterno',
-          /* 'domicilio', */
-    /*       'calle',
-          'ext',
-          'int',
-          'municipio',
-          'asentamiento',
-          'calleNeg',
-          'extNeg',
-          'intNeg',
-          'municipioNeg',
-          'asentamientoNeg',
-          'ref1_name',
-          'ref1_paterno',
-          'ref1_name2',
-          'ref1_materno',
-          'ref2_name',
-          'ref2_paterno',
-          'ref2_name2',
-          'ref2_materno' */
-        )
-    });
+      {
+        validators:
+          this.pbaDict(
+            'nombre',
+            'aPaterno',
+            'nombre2',
+            'aMaterno',
+            /* 'domicilio', */
+            /*       'calle',
+                  'ext',
+                  'int',
+                  'municipio',
+                  'asentamiento',
+                  'calleNeg',
+                  'extNeg',
+                  'intNeg',
+                  'municipioNeg',
+                  'asentamientoNeg',
+                  'ref1_name',
+                  'ref1_paterno', GMVLMR80070601M100
+                  'ref1_name2',
+                  'ref1_materno',
+                  'ref2_name',
+                  'ref2_paterno',
+                  'ref2_name2',
+                  'ref2_materno' */
+          )
+      });
     this.formDocumentos = new FormGroup({
       paso: new FormControl("4", Validators.required),
       clientId: new FormControl(localStorage.getItem('clientId'), Validators.required),
@@ -399,77 +397,77 @@ ngOnInit() {
     p3: string,
     p4: string,
     /* p5: string, */
-/*     p6: string,
-    p7: string,
-    p8: string,
-    p9: string,
-    p10: string,
-    p11: string,
-    p12: string,
-    p13: string,
-    p14: string,
-    p15: string,
-    p16: string,
-    p17: string,
-    p18: string,
-    p19: string,
-    p20: string,
-    p21: string,
-    p22: string,
-    p23: string */
+    /*     p6: string,
+        p7: string,
+        p8: string,
+        p9: string,
+        p10: string,
+        p11: string,
+        p12: string,
+        p13: string,
+        p14: string,
+        p15: string,
+        p16: string,
+        p17: string,
+        p18: string,
+        p19: string,
+        p20: string,
+        p21: string,
+        p22: string,
+        p23: string */
   ) {
-    return ( group: FormGroup) => {
+    return (group: FormGroup) => {
       const val1 = group.controls[p1].value;
       const val2 = group.controls[p2].value;
       const val3 = group.controls[p3].value;
       const val4 = group.controls[p4].value;
       /* const val5 = group.controls[p5].value; */
-  /*     const val6 = group.controls[p6].value;
-      const val7 = group.controls[p7].value;
-      const val8 = group.controls[p8].value;
-      const val9 = group.controls[p9].value;
-      const val10 = group.controls[p10].value;
-      const val11 = group.controls[p11].value;
-      const val12 = group.controls[p12].value;
-      const val13 = group.controls[p13].value;
-      const val14 = group.controls[p14].value;
-      const val15 = group.controls[p15].value;
-      const val16 = group.controls[p16].value;
-      const val17 = group.controls[p17].value;
-      const val18 = group.controls[p18].value;
-      const val19 = group.controls[p19].value;
-      const val20 = group.controls[p20].value;
-      const val21 = group.controls[p21].value;
-      const val22 = group.controls[p22].value;
-      const val23 = group.controls[p23].value; */
+      /*     const val6 = group.controls[p6].value;
+          const val7 = group.controls[p7].value;
+          const val8 = group.controls[p8].value;
+          const val9 = group.controls[p9].value;
+          const val10 = group.controls[p10].value;
+          const val11 = group.controls[p11].value;
+          const val12 = group.controls[p12].value;
+          const val13 = group.controls[p13].value;
+          const val14 = group.controls[p14].value;
+          const val15 = group.controls[p15].value;
+          const val16 = group.controls[p16].value;
+          const val17 = group.controls[p17].value;
+          const val18 = group.controls[p18].value;
+          const val19 = group.controls[p19].value;
+          const val20 = group.controls[p20].value;
+          const val21 = group.controls[p21].value;
+          const val22 = group.controls[p22].value;
+          const val23 = group.controls[p23].value; */
       for (const i of this.dic) {
-        // console.log("compare",val1,"vs",i)
+        // // console.log("compare",val1,"vs",i)
         if (
-          val1  === i ||
+          val1 === i ||
           val2 === i ||
           val3 === i ||
-          val4 === i 
+          val4 === i
           /* val5 === i || */
-    /*       val6  === i ||
-          val7 === i ||
-          val8 === i ||
-          val9 === i ||
-          val10 === i ||
-          val11  === i ||
-          val12 === i ||
-          val13 === i ||
-          val4 === i ||
-          val15 === i ||
-          val16  === i ||
-          val17 === i ||
-          val18 === i ||
-          val9 === i ||
-          val20  === i ||
-          val21 === i ||
-          val22 === i ||
-          val23 === i */
+          /*       val6  === i ||
+                val7 === i ||
+                val8 === i ||
+                val9 === i ||
+                val10 === i ||
+                val11  === i ||
+                val12 === i ||
+                val13 === i ||
+                val4 === i ||
+                val15 === i ||
+                val16  === i ||
+                val17 === i ||
+                val18 === i ||
+                val9 === i ||
+                val20  === i ||
+                val21 === i ||
+                val22 === i ||
+                val23 === i */
         ) {
-          return {isMatch: true};
+          return { isMatch: true };
         }
       }
     };
@@ -530,71 +528,86 @@ ngOnInit() {
         });
     }
   }
-  async activitieChange(value, type, sector= null, subsector= null, rama= null, subrama= null) {
-    if (type === 'sector' &&  value === undefined) { this.activities = await activitiesService.init(this.activities); }
-    if (type === 'sector' &&  value !== undefined) { this.activities = await activitiesService.getSubsector(this.activities, sector); }
-    if (type === 'subsector' &&  value !== undefined) { this.activities = await activitiesService.getRama(this.activities, sector, subsector); }
-    if (type === 'rama' &&  value !== undefined) { this.activities = await activitiesService.getSubrama(this.activities, sector, subsector, rama); }
-    if (type === 'subrama' &&  value !== undefined) { this.activities = await activitiesService.getGiro(this.activities, sector, subsector, rama, subrama); }
+
+  numberOnly(event): boolean {
+    const charCode = (event.which) ? event.which : event.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+      return false;
+    }
+    return true;
+  }
+
+  async activitieChange(value, type, sector = null, subsector = null, rama = null, subrama = null) {
+    if (type === 'sector' && value === undefined) { this.activities = await activitiesService.init(this.activities); }
+    if (type === 'sector' && value !== undefined) { this.activities = await activitiesService.getSubsector(this.activities, sector); }
+    if (type === 'subsector' && value !== undefined) { this.activities = await activitiesService.getRama(this.activities, sector, subsector); }
+    if (type === 'rama' && value !== undefined) { this.activities = await activitiesService.getSubrama(this.activities, sector, subsector, rama); }
+    if (type === 'subrama' && value !== undefined) { this.activities = await activitiesService.getGiro(this.activities, sector, subsector, rama, subrama); }
     setTimeout(() => { M.FormSelect.init(document.querySelectorAll('select')); }, 200);
   }
+
   ValidateSize(file) {
-    // console.log("onchanges")
-    const fl = ( document.getElementById(file) as HTMLInputElement);
+    // // console.log("onchanges")
+    const fl = (document.getElementById(file) as HTMLInputElement);
     const FileSize = fl.files[0].size / 1024 / 1024; // in MB
     if (FileSize > 2) {
-        // alert('File size exceeds 2 MB');
-        swal('¡Cuidado!', 'Tu archivo debe ser menor a 2Mb', 'warning');
-        fl.value = null;
-        // $(file).val(''); //for clearing with Jquery
-    } else {
-
-         /* this.toBase64(fl.files[0]) */
-        /*  this.formDocumentos.controls.cer.setValue(this.toBase64(fl.files[0])); */
-
-         const reader = new FileReader();
-    reader.readAsDataURL(fl.files[0]);
-    reader.onload = () => {
-        if(file === 'fielFirm' || file === 'cerFirm'){
-          this.formFielFirm.controls[file].setValue(reader.result);
-        }if(file === 'fiel' || file === 'cer'){
-          this.formDocumentos.controls[file].setValue(reader.result);
-        }
-    };
-
-
-
+      // alert('File size exceeds 2 MB');
+      swal('¡Cuidado!', 'Tu archivo debe ser menor a 2Mb', 'warning');
+      fl.value = null;
     }
   }
 
-   /* toBase64 = file => new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => resolve(reader.result);
-    reader.onerror = error => reject(error);
+  /* toBase64 = file => new Promise((resolve, reject) => {
+   const reader = new FileReader();
+   reader.readAsDataURL(file);
+   reader.onload = () => resolve(reader.result);
+   reader.onerror = error => reject(error);
 }); */
+  findInvalidControls() {
+    const invalid = [];
+    const controls = this.form.controls;
+    for (const name in controls) {
+      if (controls[name].invalid) {
+        console.log("Invalid: " + name);
+        if (document.getElementById(name) != null) {
+          document.getElementById(name).classList.add('invalid');
+        } else {
+          console.log("Element in null");
+        }
+      }
+    }
+    return invalid;
+  }
 
-  dpersonales() {
-    console.log(this.form.value);
-    console.log('form is valid?', this.form.valid);
+  dpersonales() {   
     if (this.form.valid) {
       this.userService.sendPersonalData(this.form.value)
-    .subscribe(res=>{
-      console.log("esto responde el servicio dpaersonales",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
-      swal("¡Datos Guardados!", "Continuar", "success");
-      this.stepper.openStep(3);
-    });
-    
+        .subscribe(res => {
+          console.log(res);
+          var identification = <HTMLInputElement>document.getElementById('claveElector');
+          var payload = {
+            documentTypeId: 1,
+            status: "Active",
+            documentKey: identification.value,
+            description: "Clave Elector"            
+          }
+          this.userService.sendIdentification(payload).subscribe(res => {
+            console.log(res);
+            swal("¡Datos Guardados!", "Continuar", "success");
+            this.stepper.openStep(3);
+          }); 
+        });
       /* this.stepper.openStep(3); */
     } else {
+      this.findInvalidControls();
       swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
     }
   }
 
   dfiel() {
-    console.log('formFiel is valid?', this.formFiel.valid);
+    // console.log('formFiel is valid?', this.formFiel.valid);
     if (this.formFiel.valid) {
-      console.log('formFiel', this.formFiel.value);
+      // console.log('formFiel', this.formFiel.value);
       this.router.navigate(["home"]);
       // enviar datos a back
       this.popup[0].open();
@@ -604,9 +617,9 @@ ngOnInit() {
   }
 
   dfielFirm() {
-    console.log('formFiel is valid?', this.formFielFirm.valid);
+    // console.log('formFiel is valid?', this.formFielFirm.valid);
     if (this.formFielFirm.valid) {
-      console.log('formFiel', this.formFielFirm.value);
+      // console.log('formFiel', this.formFielFirm.value);
       this.router.navigate(["home"]);
       // enviar datos a back
       this.popup[0].open();
@@ -616,18 +629,28 @@ ngOnInit() {
   }
 
   ddocumentos() {
-    console.log('formDocumentos is valid?', this.formDocumentos.valid);
-    console.log('formDocumentos', this.formDocumentos.value);
-    console.log('cer', this.formDocumentos.controls.cer.value);
-    if (this.formDocumentos.valid) {
-      console.log('formDocumentos', this.formDocumentos.value);
+    // if (this.formDocumentos.valid) {
+    if (1) {
+        const formData: FormData = new FormData();
+      formData.append("name", "INE");
+      formData.append("description", "INE");
+      const file = (<HTMLInputElement>document.getElementById('frontal')).files[0];
+      formData.append("file", file, file.name);
       // enviar datos a back
       // this.popup[0].open();
-      this.stepper.openStep(4);
+      //this.stepper.openStep(4);
+      this.userService.sendDocuments(formData)
+        .subscribe(res => {
+          console.log("esto responde el servicio documents", res); //revisar res.user p.ej y hacer un if(uid){openmodal}
+          swal("¡Documentos Guardados!", "Continuar", "success");
+          this.stepper.openStep(4);
+        });
     } else {
+      this.findInvalidControls();
       swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
     }
   }
+
   sweetHome(id) {
     /* swal('Importante',
     'Para obtener su CURP debera obtenerlo de https://www.gob.mx/curp/, puede acceder dando click en el boton de abajo',
@@ -662,37 +685,37 @@ ngOnInit() {
     });
   }
   viewMap() {
-    // console.log("map")
+    // // console.log("map")
     document.getElementById('steps').classList.add('hide');
     document.getElementById('modalMap').classList.remove('hide');
     // this.router.navigate(["map"]);
   }
   mapOk() {
-    // console.log("map")
+    // // console.log("map")
     document.getElementById('steps').classList.remove('hide');
     document.getElementById('modalMap').classList.add('hide');
     // this.router.navigate(["map"]);
   }
   rFiscal() {
-    // console.log("Reviso valor de check", this.model);
+    // // console.log("Reviso valor de check", this.model);
     if (this.model) {
       this.form.get('pFisica').setValue(' ');
     }
   }
 
-  rechazar(){
-    console.log("Rechazado");
+  rechazar() {
+    // console.log("Rechazado");
 
   }
 
   typeIdFun() {
-    /* console.log("cambiando..");
+    /* // console.log("cambiando..");
     if (this.typeId === 'pasaporte') {
       this.typeId = 'ine'
-      console.log("cambiooo..",this.typeId);
+      // console.log("cambiooo..",this.typeId);
     } else {
       this.typeId = 'pasaporte'
-      console.log("cambiooo..",this.typeId);
+      // console.log("cambiooo..",this.typeId);
     } */
     if (this.typeId) {
       this.formDocumentos.get('reverso').setValue('N/A');
@@ -766,18 +789,18 @@ ngOnInit() {
   }
   // end Pick Address
 
-  aceptaCred(){
+  aceptaCred() {
     document.getElementById('nano').classList.remove('hide');
     document.getElementById('nanoo').classList.add('hide');
-}
+  }
 
-cancelaCred(){
-  document.getElementById('nano').classList.add('hide');
-  document.getElementById('nanoo').classList.remove('hide');
-}
+  cancelaCred() {
+    document.getElementById('nano').classList.add('hide');
+    document.getElementById('nanoo').classList.remove('hide');
+  }
 
-rechazaCred(){
+  rechazaCred() {
 
-}
+  }
 
 }
