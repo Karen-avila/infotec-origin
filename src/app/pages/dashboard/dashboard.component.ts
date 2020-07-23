@@ -22,7 +22,6 @@ interface Marker {
 declare var google;
 // End PickAdress
 
-
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -40,7 +39,7 @@ export class DashboardComponent implements OnInit {
 
   asentamiento;
   asentamientoNeg;
-  
+
   optionsplaces: any = {
     types: ['geocode', 'establishment'],
     componentRestrictions: { country: 'MX' }
@@ -280,8 +279,8 @@ export class DashboardComponent implements OnInit {
       edoCivil: new FormControl(null, Validators.required),
       genero: new FormControl(null, Validators.required),
       telPersonal: new FormControl(null, [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
-      paisNaci : new FormControl("Mexico", Validators.required),
-      entidadFedNaci : new FormControl(null, Validators.required),
+      paisNaci: new FormControl("Mexico", Validators.required),
+      entidadFedNaci: new FormControl(null, Validators.required),
       claveElector: new FormControl(null, Validators.required),
       curp: new FormControl(null, Validators.required),
       rfc: new FormControl(null, Validators.required),
@@ -545,6 +544,7 @@ export class DashboardComponent implements OnInit {
     if (type === 'subrama' && value !== undefined) { this.activities = await activitiesService.getGiro(this.activities, sector, subsector, rama, subrama); }
     setTimeout(() => { M.FormSelect.init(document.querySelectorAll('select')); }, 200);
   }
+
   ValidateSize(file) {
     // // console.log("onchanges")
     const fl = (document.getElementById(file) as HTMLInputElement);
@@ -553,21 +553,6 @@ export class DashboardComponent implements OnInit {
       // alert('File size exceeds 2 MB');
       swal('¡Cuidado!', 'Tu archivo debe ser menor a 2Mb', 'warning');
       fl.value = null;
-      // $(file).val(''); //for clearing with Jquery
-    } else {
-
-      /* this.toBase64(fl.files[0]) */
-      /*  this.formDocumentos.controls.cer.setValue(this.toBase64(fl.files[0])); */
-
-      const reader = new FileReader();
-      reader.readAsDataURL(fl.files[0]);
-      reader.onload = () => {
-        if (file === 'fielFirm' || file === 'cerFirm') {
-          this.formFielFirm.controls[file].setValue(reader.result);
-        } if (file === 'fiel' || file === 'cer') {
-          this.formDocumentos.controls[file].setValue(reader.result);
-        }
-      };
     }
   }
 
@@ -578,15 +563,16 @@ export class DashboardComponent implements OnInit {
    reader.onerror = error => reject(error);
 }); */
   findInvalidControls() {
-  const invalid = [];
-  const controls = this.form.controls;
-  for (const name in controls) {
+    const invalid = [];
+    const controls = this.form.controls;
+    for (const name in controls) {
       if (controls[name].invalid) {
-          console.log("Invalid: " + name);
+        console.log("Invalid: " + name);
+        document.getElementById(name).classList.add('invalid');
       }
+    }
+    return invalid;
   }
-  return invalid;
-}
 
   dpersonales() {
     if (this.form.valid) {
@@ -629,32 +615,29 @@ export class DashboardComponent implements OnInit {
   }
 
   ddocumentos() {
-    if (this.formDocumentos.valid) {
-      var formData = new FormData();
+    // if (this.formDocumentos.valid) {
+    if (1) {
+      const formData: FormData = new FormData();
       formData.append("name", "CER");
       formData.append("description", "CER");
-      formData.append("file", this.formDocumentos.controls.cer.value);
-
-      console.log('formDocumentos is valid?', this.formDocumentos.valid);
-      console.log('formDocumentos', this.formDocumentos.value);
-      console.log('cer', this.formDocumentos.controls.cer.value);
-    // if (true) {
-      console.log('formDocumentos', this.formDocumentos.value);
+      const fl = (document.getElementById('cer') as HTMLInputElement);
+      var f = fl.files.item(0);
+      formData.append("file", f, f.name);
       // enviar datos a back
       // this.popup[0].open();
       //this.stepper.openStep(4);
       this.userService.sendDocuments(formData)
-      .subscribe(res=>{
-        console.log("esto responde el servicio documents",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
-        swal("¡Documentos Guardados!", "Continuar", "success");
-        this.stepper.openStep(4);
-      });
-      
+        .subscribe(res => {
+          console.log("esto responde el servicio documents", res); //revisar res.user p.ej y hacer un if(uid){openmodal}
+          swal("¡Documentos Guardados!", "Continuar", "success");
+          this.stepper.openStep(4);
+        });
+
     } else {
       swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
     }
   }
-  
+
   sweetHome(id) {
     /* swal('Importante',
     'Para obtener su CURP debera obtenerlo de https://www.gob.mx/curp/, puede acceder dando click en el boton de abajo',
