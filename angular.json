@@ -140,7 +140,7 @@
             },
             
             "dev": {
-              "browserTarget": "originacion:build:develoment"
+              "browserTarget": "originacion:build"
             }
           }
         },

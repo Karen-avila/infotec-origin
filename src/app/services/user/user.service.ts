@@ -139,8 +139,10 @@ export class UserService {
   sendDocuments(userDocs) {
     // console.log("Document Service");
     let clientId = localStorage.getItem('clientId');
-    let url = environment.mifos_url + '/fineract-provider/api/v1/clients/' + clientId + '/documents';
-    let headers = environment.headers_mifos;
+    let url = environment.apis_url + '/V1.0/fineract-protected/clients/' + clientId + '/documents';
+    let api_keys = environment.gravitee_api_keys;
+    let headers = environment.headers_apis;
+    headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
     //const object = JSON.stringify(userDocs);
     return this.http.post(url, userDocs, {headers: headers}).map((res: any) => {
       console.log(res);
@@ -152,15 +154,18 @@ export class UserService {
       }
       this.prosessing = false;
       console.log(err);
-      return Observable.throw(err);
+      return err;
     });
   }
 
   sendIdentification(data) {
     // console.log("Document Service");
     let clientId = localStorage.getItem('clientId');
-    let url = environment.mifos_url + '/fineract-provider/api/v1/clients/' + clientId + '/identifiers';
-    let headers = environment.headers_mifos;
+    let url = environment.apis_url + '/V1.0/fineract-protected/clients/' + clientId + '/identifiers';
+    let api_keys = environment.gravitee_api_keys;
+    let headers = environment.headers_apis;
+    headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
+
     const object = JSON.stringify(data);
 
     //const object = JSON.stringify(userDocs);
@@ -173,7 +178,7 @@ export class UserService {
       }
       this.prosessing = false;
       console.log(err);
-      return Observable.throw(err);
+      return err;
     });
   }
 

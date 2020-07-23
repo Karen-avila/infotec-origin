@@ -1,20 +1,21 @@
 export const environment = {
   production: true,
-  apis_url : 'urlprod',
-  mifos_url : 'urlmifosprod',
+  apis_url : 'https://apis.bancodelbienestar.com.mx',
+  mifos_url : 'https://backoffice.bancodelbienestar.com.mx',
+  gravitee_api_keys : {
+    'registro': '6c7180e6-4855-413a-ba3d-0f8c75b97490',
+    'fineract': '9e2a3bba-a89f-405d-a56d-236d9671a99d'
+  },
   headers_mifos : {
     'Fineract-Platform-TenantId': 'default',
     'Content-Type': 'application/json', 
     'Accept': 'application/json', 
-    'Content-Encoding': 'gzip',
-    'Access-Control-Allow-Origin': '*'
+    'Content-Encoding': 'gzip'
   },
   headers_apis : {
-    'X-Gravitee-Api-Key': 'API_KEY_PROD',
     'Content-Type': 'application/json',
     'Accept': 'application/json', 
-    'Content-Encoding': 'gzip',
-    'Access-Control-Allow-Origin': '*'
+    'Content-Encoding': 'gzip'
   }
 };
 
