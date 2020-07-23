@@ -5,32 +5,28 @@
         <br>
         <div class="container">
             <form ngNativeValidate [formGroup]="form" (ngSubmit)="login()">
-                <p class="flow-text white-text center-align">Iniciar Sesion</p>
+                <p class="flow-text white-text center-align">Iniciar Sesión</p>
                 <div class="row">
 
                     <div class="input-field col s10 l12">
                         <i class="material-icons prefix icon-white">account_circle</i>
                         <input id="email" formControlName="email" type="email" name='email' class="validate">
                         <label class="white-text" for="email">Email</label>
-                        <div class="red-text" *ngIf="f.email.errors?.email">El correo electrónico debe de ser valido</div>
+                        <div class="red-text" *ngIf="f.email.errors?.email">El correo electrónico debe de ser válido.</div>
                     </div>
                     <div class="input-field col s10 l12">
                         <i class="material-icons prefix icon-white">lock</i>
                         <input id="password" formControlName="password" [type]="passType" name='password' class="validate">
                         <label class="white-text" for="password">Contraseña</label>
-                        <div class="red-text col s12" *ngIf="f.password.errors && !form.pristine">Debe tener un mínimo de 8 caracteres 1 Mayuscula 1 minuscula 1 numero</div>
+                        <div class="red-text col s12" *ngIf="f.password.errors && !form.pristine">Debe tener un mínimo de 8 caracteres 1 mayúscula, 1 minúscula, 1 número.</div>
                         <i class="material-icons prefix" *ngIf="icon" (click)="viewPassword()">visibility_off</i>
                         <i class="material-icons prefix" *ngIf="!icon" (click)="viewPassword()">visibility</i>
                     </div>
 
-
-
                     <div class="col s12 m8 offset-m4 l8 offset-l4">
                         <a (click)="forgot()" class="white-text">¿Olvidaste tu Contraseña?</a>
                     </div>
-
                 </div>
-
                 <br>
 
                 <!--<div class="row">

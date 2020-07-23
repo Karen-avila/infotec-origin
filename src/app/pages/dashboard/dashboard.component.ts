@@ -579,7 +579,7 @@ export class DashboardComponent implements OnInit {
     return invalid;
   }
 
-  dpersonales() {    
+  dpersonales() {   
     if (this.form.valid) {
       this.userService.sendPersonalData(this.form.value)
         .subscribe(res => {
@@ -595,9 +595,8 @@ export class DashboardComponent implements OnInit {
             console.log(res);
             swal("¡Datos Guardados!", "Continuar", "success");
             this.stepper.openStep(3);
-          });
+          }); 
         });
-
       /* this.stepper.openStep(3); */
     } else {
       this.findInvalidControls();
