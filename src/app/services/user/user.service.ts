@@ -134,7 +134,7 @@ export class UserService {
       return true;
     }).catch(err => {
       if (err.status == 0) {
-        swal('Existio un error al procesar tu solicitud intentalo mas tarde');
+        swal('Existio un error al procesar tu solicitud intentalo más tarde');
       } else if (err.status == 401) {
         swal('Verifica que tu usuario/contraseña sean correctos');
       }
@@ -145,24 +145,28 @@ export class UserService {
   }
 
   sendDocuments(name: any, file: File) {
-    const formData: FormData = new FormData();
+    if (this.validateFileExtension(file.name)) {
+      const formData: FormData = new FormData();
 
-    formData.append('file', file);
-    formData.append('name', name);
-    // console.log("Document Service");
-    let clientid = localStorage.getItem('clientid');
-    let url = environment.apis_url + '/V1.0/fineract-protected/clients/' + clientid + '/documents';
-    let api_keys = environment.gravitee_api_keys;
-    let headers = environment.headers_apis;
-    headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
-    const httpHeaders = new HttpHeaders(headers);
-    const req = new HttpRequest('POST', url, formData, {
-      reportProgress: true,
-      responseType: 'json',
-      headers: httpHeaders
-    });
+      formData.append('file', file);
+      formData.append('name', name);
+      // console.log("Document Service");
+      let clientid = localStorage.getItem('clientid');
+      let url = environment.apis_url + '/V1.0/fineract-protected/clients/' + clientid + '/documents';
+      let api_keys = environment.gravitee_api_keys;
+      let headers = environment.headers_apis;
+      headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
+      const httpHeaders = new HttpHeaders(headers);
+      const req = new HttpRequest('POST', url, formData, {
+        reportProgress: true,
+        responseType: 'json',
+        headers: httpHeaders
+      });
 
-    return this.http.request(req);
+      return this.http.request(req);
+    } else {
+      swal('¡Cuidado!', 'El tipo de archivo ' + file.name + ' es incorrecto, intentalo de nuevo', 'error');
+    }
   }
 
   sendIdentification(data) {
@@ -181,7 +185,7 @@ export class UserService {
       return true;
     }).catch(err => {
       if (err.status == '0') {
-        swal('Existio un error al procesar tu solicitud de identificación, intentalo mas tarde');
+        swal('Existio un error al procesar tu solicitud de identificación, intentalo más tarde');
       }
       this.prosessing = false;
       console.log(err);
@@ -189,4 +193,18 @@ export class UserService {
     });
   }
 
+  validateFileExtension(fileName: String) {
+    var _validFileExtensions = [".jpg", ".jpeg", ".pdf", ".png"];    
+    var isValid = false;
+    if (fileName.length > 0) {
+        for (var j = 0; j < _validFileExtensions.length; j++) {
+            var extension = _validFileExtensions[j];
+            if (fileName.substr(fileName.length - extension.length, extension.length).toLowerCase() == extension.toLowerCase()) {
+              isValid = true;
+              break;
+            }
+        }
+    }
+    return isValid;
+  }
 }
