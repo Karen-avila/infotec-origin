@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
 
   resolved(captchaResponse: any[]) {
     this.recaptcha = captchaResponse;
-    console.log(this.recaptcha);
+    // console.log(this.recaptcha);
   }
 
 step
@@ -41,7 +41,7 @@ step
     //this.step="2";
     /* localStorage.setItem('step','2');
     this.step = localStorage.getItem('step'); */
-console.log("")
+// console.log("")
     if(localStorage.getItem('step')){
       this.step = localStorage.getItem('step');
     }else{
@@ -69,9 +69,9 @@ console.log("")
   get fgt() { return this.form1.controls; }
 
   recuperarpsw(){
-    console.log("form is valid?", this.form1.valid);
+    // console.log("form is valid?", this.form1.valid);
     if(this.form1.valid){
-    console.log("form", this.form1.value);
+    // console.log("form", this.form1.value);
       //enviar datos a back
     this.instance[0].open();
     } else{
@@ -83,39 +83,39 @@ console.log("")
 
    // this.output = null;
 
-console.log("login component")
+// console.log("login component")
 this.router.navigate(["dashboard"]);
   }
 
   
   recuperar(){
-    console.log("Recuperar");
+    // console.log("Recuperar");
     //M.Modal.open(); //Abrir pop up de cambio de contraseña
   }
 
   cancel(){
-    console.log("cancelar");
+    // console.log("cancelar");
     document.getElementById("login").classList.remove("hide");
     document.getElementById("forgot").classList.add("hide");
   }
 
   forgot(){
-    console.log("forgot");
+    // console.log("forgot");
     document.getElementById("login").classList.add("hide");
     document.getElementById("forgot").classList.remove("hide");
   }
 
   login(){
     
-    console.log("form login is valid?", this.form.valid);
+    // console.log("form login is valid?", this.form.valid);
     if(this.form.valid){
       const user = new UserLog(this.form.value.email,this.form.value.password);
       //this.router.navigate(["register",{id:this.step}]);
       //enviar datos a back
       this.userService.login(user)
         .subscribe(res=>{
-          console.log("Is logged?",res);
-          console.log("Entro al step",this.step)
+          // console.log("Is logged?",res);
+          // console.log("Entro al step",this.step)
           /* this.router.navigate(["dashboard",{id:this.step}]);  */
           this.router.navigate(["dashboard"]); 
           //this.router.navigate(["register",{id:this.step}]); ///revisar donde quedara
@@ -128,11 +128,11 @@ this.router.navigate(["dashboard"]);
 
   viewPassword(){
     if(this.icon){
-      console.log("view password");
+      // console.log("view password");
       this.icon=false;
       this.passType="text";
     }else{
-      console.log("not view password");
+      // console.log("not view password");
       this.icon=true;
       this.passType="password";
     }
