@@ -41,6 +41,7 @@ export class DashboardComponent implements OnInit {
   asentamiento;
   asentamientoNeg;
   
+  
   optionsplaces: any = {
     types: ['geocode', 'establishment'],
     componentRestrictions: { country: 'MX' }
@@ -63,6 +64,7 @@ export class DashboardComponent implements OnInit {
 
   typeId = 'ine';
   dummyAmmount = 40000;
+
 
 activities = {
   sectorList: [],
@@ -283,21 +285,21 @@ ngOnInit() {
       paisNaci : new FormControl(null, Validators.required),
       entidadFedNaci : new FormControl(null, Validators.required),
       claveElector: new FormControl(null, Validators.required),
-      curp: new FormControl(null, Validators.required),
-      rfc: new FormControl(null, Validators.required),
-      calle: new FormControl(null, Validators.required),
+      curp: new FormControl(null, [Validators.required, Validators.minLength(18), Validators.maxLength(18)]),
+      rfc: new FormControl(null,[Validators.required, Validators.minLength(12)]),
+      calle: new FormControl(null,[ Validators.required, Validators.minLength(2)]),
       numExtDomic: new FormControl(null, Validators.required),
       numInt: new FormControl(null, [Validators.minLength(0)]),
-      cp: new FormControl(null, Validators.required),
+      cp: new FormControl(null, [Validators.required, Validators.minLength(5), Validators.maxLength(5)]),
       entidadFedDomic : new FormControl(null, Validators.required),
       municipio: new FormControl(null, Validators.required),
       tipoAsentamiento: new FormControl(null, Validators.required),
       asentamiento: new FormControl(null, Validators.required),
       /* domicilio: new FormControl(' '), */  /* Se quita al remover map openStreet */
-      calleNeg: new FormControl(null, Validators.required),
+      calleNeg: new FormControl(null,[ Validators.required, Validators.minLength(2)]),
       numExtNeg: new FormControl(null, Validators.required),
       numIntNeg: new FormControl(null, [Validators.minLength(0)]),
-      cpNeg: new FormControl(null, Validators.required),
+      cpNeg: new FormControl(null,[Validators.required, Validators.minLength(5), Validators.maxLength(5)]),
       entidadFedNeg : new FormControl(null, Validators.required),
       municipioNeg: new FormControl(null, Validators.required),
       asentamientoNeg: new FormControl(null, Validators.required),

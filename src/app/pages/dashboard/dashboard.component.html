@@ -151,14 +151,14 @@
 
                     <div class="input-field col s12 m12 l12">
                         <i class="material-icons prefix">payment</i>
-                        <input class="validate" id="clabeInter" type="number" formControlName="clabeInter" name="clabeInter" minlength="18" maxlength="18" required>
+                        <input class="validate" id="clabeInter" type="number" formControlName="clabeInter" name="clabeInter" minlength="18" maxlength="18" required oninput="maxlengthNumber(this);" >
                         <label for="text">Clabe interbancaria</label>
                         <div class="blue-text" *ngIf="f.clabeInter.errors">La clabe interbancaria consta de 18 dígitos</div>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="nombre" type="text" formControlName="nombre" name="nombre" required class="validate">
+                        <input id="nombre" type="text" formControlName="nombre" name="nombre" minlength="2" required class="validate">
                         <label for="nombre">Nombre</label>
 
                         <div class="blue-text" *ngIf="f.nombre.errors?.minlength">Debe tener un mínimo de 2 caracteres</div>
@@ -169,7 +169,7 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="nombre2" type="text" formControlName="nombre2" name="nombre2" class="validate">
+                        <input id="nombre2" type="text" formControlName="nombre2" minLength="0" name="nombre2" class="validate">
                         <label for="nombre2">Segundo nombre</label>
 
                         <div class="blue-text" *ngIf="f.nombre2.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
@@ -179,7 +179,7 @@
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="aPaterno" type="text" name="aPaterno" formControlName="aPaterno" required class="validate">
+                        <input id="aPaterno" type="text" name="aPaterno" formControlName="aPaterno" minLength="2" required class="validate">
                         <label for="aPaterno">Apellido paterno</label>
                         <div class="blue-text" *ngIf="f.aPaterno.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
@@ -188,7 +188,7 @@
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="aMaterno" type="text" name="aMaterno" formControlName="aMaterno" required class="validate">
+                        <input id="aMaterno" type="text" name="aMaterno" formControlName="aMaterno" minLength="2"  required class="validate">
                         <label for="aMaterno">Apellido materno</label>
                         <div class="blue-text" *ngIf="f.aMaterno.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
@@ -227,7 +227,7 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">phone</i>
-                        <input class="validate" id="telPersonal" type="number" formControlName="telPersonal" name="telPersonal" minlength="10" maxlength="10" required>
+                        <input class="validate" id="telPersonal" type="tel" formControlName="telPersonal" name="telPersonal" minlength="10" maxlength="10" required>
                         <label for="text">Número de Teléfono</label>
                         <div class="blue-text" *ngIf="f.telPersonal.errors">El teléfono debe ser de 10 digitos</div>
                     </div>
@@ -284,21 +284,21 @@
                     <div class="input-field col s12 m7 l7">
                         <i class="material-icons prefix">aspect_ratio</i>
                         <input id="curp" type="text" formControlName="curp" pattern="^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$"
-                            required class="validate" name="curp" />
+                            required class="validate" name="curp" minlength="18" maxlength="18" />
                         <label for="curp">CURP</label>
                         <div class="blue-text">Únicamente letras mayúsculas</div>
                     </div>
                     <!--<div class="input-field col s12 m6 l6" *ngIf="model=='pFisica'">-->
                     <div class="input-field col s12 m5 l5">
                         <i class="material-icons prefix">aspect_ratio</i>
-                        <input id="rfc" type="text" formControlName="rfc" pattern="^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$" required class="validate" name="rfc" />
+                        <input id="rfc" type="text" formControlName="rfc" pattern="^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$" required class="validate" name="rfc" minlength="12" />
                         <label for="rfc">RFC</label>
                         <div class="blue-text">Únicamente letras mayúsculas</div>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">aspect_ratio</i>
-                        <input id="claveElector" type="text" formControlName="claveElector" required minlength="18" maxlength="18"class="validate" name="claveElector" />
+                        <input id="claveElector" type="text" formControlName="claveElector" required minlength="18" maxlength="18" class="validate" name="claveElector" />
                         <label for="claveElector">Clave de Elector</label>
                         <a class="modal-trigger" href="#helpIne"><i class="material-icons prefix icon-black">help_outline</i></a>
                     </div>
@@ -326,7 +326,7 @@
                         <div class="input-field col s12">
                           <span class="grey-text in">Calle</span>
                           <input id="calle" type="text" [(ngModel)]="personal.calle" formControlName="calle" required class="validate"
-                            name="calle" />
+                          minlength="2" name="calle" />
                           <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                         </div>
                         <div class="input-field col s4">
@@ -343,7 +343,7 @@
                         </div>
                         <div class="input-field col s4">
                           <span class="grey-text in">Código Postal</span>
-                          <input #cp id="cp" type="number" formControlName="cp" required class="validate" name="cp" maxlength="5"
+                          <input #cp id="cp" type="number" formControlName="cp" required class="validate" name="cp" maxlength="5" minlength="5"
                             [(ngModel)]="personal.cp" placeholder="Código Postal" (keyup)="searchCP(cp.value, 'personal')" />
                           <!--<label for="cp">Codigo Postal</label>-->
                           <div class="red-text" *ngIf="form.errors?.isMatch"></div>
@@ -399,7 +399,7 @@
                       <div class="col s6">
                         <div class="input-field col s12">
                           <span class="grey-text in">Calle</span>
-                          <input id="calleNeg" [(ngModel)]="negocio.calle" type="text" formControlName="calleNeg" required class="validate"
+                          <input id="calleNeg" [(ngModel)]="negocio.calle" type="text" formControlName="calleNeg"  minlength="2" required class="validate"
                             name="calleNeg" />
                           <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                         </div>
@@ -418,7 +418,7 @@
                         <div class="input-field col s4">
                           <span class="grey-text in">Codigo Postal</span>
                           <input #cpNeg id="cpNeg" [(ngModel)]="negocio.cp" type="number" formControlName="cpNeg" required class="validate"
-                            name="cpNeg" maxlength="5" placeholder="Codigo Postal" (keyup)="searchCP(cpNeg.value, 'negocio')" />
+                            name="cpNeg" minlength="5" maxlength="5" placeholder="Codigo Postal" (keyup)="searchCP(cpNeg.value, 'negocio')" />
                           <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                         </div>
                         <div class="input-field col s6">
@@ -526,7 +526,7 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="ref1_nombre" type="text" formControlName="ref1_nombre" name="ref1_nombre" required class="validate">
+                        <input id="ref1_nombre" type="text" formControlName="ref1_nombre" name="ref1_nombre" minlength="2" required class="validate">
                         <label for="ref1_nombre">Nombre</label>
 
                         <div class="blue-text" *ngIf="f.ref1_nombre.errors?.minlength">Debe tener un mínimo de 2 caracteres</div>
@@ -546,7 +546,7 @@
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="ref1_aPaterno" type="text" name="ref1_aPaterno" formControlName="ref1_aPaterno" required class="validate">
+                        <input id="ref1_aPaterno" type="text" name="ref1_aPaterno" formControlName="ref1_aPaterno" minlength="2" required class="validate">
                         <label for="ref1_aPaterno">Apellido paterno</label>
                         <div class="blue-text" *ngIf="f.ref1_aPaterno.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
@@ -555,7 +555,7 @@
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="ref1_aMaterno" type="text" name="ref1_aMaterno" formControlName="ref1_aMaterno" required class="validate">
+                        <input id="ref1_aMaterno" type="text" name="ref1_aMaterno" formControlName="ref1_aMaterno" minlength="2" required class="validate">
                         <label for="ref1_aMaterno">Apellido materno</label>
                         <div class="blue-text" *ngIf="f.ref1_aMaterno.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
@@ -565,7 +565,7 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">phone</i>
-                        <input class="validate" id="ref1_tel" type="number" formControlName="ref1_tel" name="ref1_tel" minlength="10" maxlength="10" required>
+                        <input class="validate" id="ref1_tel" type="tel" formControlName="ref1_tel" name="ref1_tel" minlength="10" maxlength="10" required>
                         <label for="text">Número de Teléfono</label>
                         <div class="blue-text" *ngIf="f.ref1_tel.errors">El teléfono debe ser de 10 digitos</div>
                     </div>
@@ -591,7 +591,7 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="ref2_nombre" type="text" formControlName="ref2_nombre" name="ref2_nombre" required class="validate">
+                        <input id="ref2_nombre" type="text" formControlName="ref2_nombre" name="ref2_nombre" minlength="2" required class="validate">
                         <label for="ref2_nombre">Nombre</label>
 
                         <div class="blue-text" *ngIf="f.ref2_nombre.errors?.minlength">Debe tener un mínimo de 2 caracteres</div>
@@ -611,7 +611,7 @@
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="ref2_aPaterno" type="text" name="ref2_aPaterno" formControlName="ref2_aPaterno" required class="validate">
+                        <input id="ref2_aPaterno" type="text" name="ref2_aPaterno" formControlName="ref2_aPaterno" minlength="2" required class="validate">
                         <label for="ref2_aPaterno">Apellido paterno</label>
                         <div class="blue-text" *ngIf="f.ref2_aPaterno.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
@@ -620,7 +620,7 @@
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="ref2_aMaterno" type="text" name="ref2_aMaterno" formControlName="ref2_aMaterno" required class="validate">
+                        <input id="ref2_aMaterno" type="text" name="ref2_aMaterno" formControlName="ref2_aMaterno" minlength="2" required class="validate">
                         <label for="ref2_aMaterno">Apellido materno</label>
                         <div class="blue-text" *ngIf="f.ref2_aMaterno.errors?.minlength">Debe tener un minimo de 2 caracteres</div>
                         <div class="red-text" *ngIf="form.errors?.isMatch">
@@ -630,7 +630,7 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">phone</i>
-                        <input class="validate" id="ref2_tel" type="number" formControlName="ref2_tel" name="ref2_tel" minlength="10" maxlength="10" required>
+                        <input class="validate" id="ref2_tel" type="tel" formControlName="ref2_tel" name="ref2_tel" minlength="10" maxlength="10" required>
                         <label for="text">Número de Teléfono</label>
                         <div class="blue-text" *ngIf="f.ref2_tel.errors">El teléfono debe ser de 10 digitos</div>
                     </div>
