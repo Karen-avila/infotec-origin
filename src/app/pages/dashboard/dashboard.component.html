@@ -314,7 +314,7 @@
                         <input id="curp" type="text" formControlName="curp"
                             (keyup)="form.patchValue({curp: $event.target.value.toUpperCase()})"
                             pattern="^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$"
-                            required class="validate" name="curp" />
+                            required class="validate" name="curp" minlength="18" maxlength="18" />
                         <label for="curp">CURP</label>
                         <div class="blue-text">Únicamente letras mayúsculas</div>
                     </div>
@@ -324,7 +324,7 @@
                         <input id="rfc" type="text" formControlName="rfc"
                             (keyup)="form.patchValue({rfc: $event.target.value.toUpperCase()})"
                             pattern="^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$"
-                            required class="validate" name="rfc" />
+                            required class="validate" name="rfc" minlength="12" maxlength="13" />
                         <label for="rfc">RFC</label>
                         <div class="blue-text">Únicamente letras mayúsculas</div>
                     </div>
@@ -383,7 +383,7 @@
                                 <span class="grey-text in">Código Postal</span>
                                 <input #cp id="cp" type="text" formControlName="cp" required class="validate"
                                     name="cp" maxlength="5" [(ngModel)]="personal.cp" placeholder="Código Postal"
-                                    (keypress)="numberOnly($event)" (keyup)="personal.cp.length == 5 && searchCP(cp.value, 'personal')" />
+                                    (keypress)="numberOnly($event)" (keyup)="cp.value.length == 5 && searchCP(cp.value, 'personal')" />
                                 <!--<label for="cp">Codigo Postal</label>-->
                                 <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                             </div>
@@ -463,7 +463,7 @@
                                 <span class="grey-text in">Código Postal</span>
                                 <input #cpNeg id="cpNeg" [(ngModel)]="negocio.cp" type="number" formControlName="cpNeg"
                                     required class="validate" name="cpNeg" maxlength="5" placeholder="Codigo Postal"
-                                    (keypress)="numberOnly($event)" (keyup)="negocio.cp.length == 5 && searchCP(cpNeg, 'negocio')" />
+                                    (keypress)="numberOnly($event)" (keyup)="cpNeg.value.length == 5 && searchCP(cpNeg.value, 'negocio')" />
                                 <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                             </div>
                             <div class="input-field col s6">
@@ -845,9 +845,7 @@
                             <div class="file-field input-field col s12 m4 l4">
                                 <div class="teal darken-4 btn">
                                     <i class="material-icons right">attachment</i>cargar
-                                    <input type="text" hidden formControlName="frontal" class="validate">
-
-                                    <input type="file" (change)="ValidateSize('frontal')"
+                                    <input type="file" formControlName="frontal" (change)="ValidateSize('frontal')"
                                         accept="image/jpg, image/jpeg, image/png, application/pdf" id="frontal"
                                         class="validate">
                                 </div>
@@ -860,7 +858,6 @@
                                 </div>
                             </div>
 
-
                             <div>
                                 <div class="col s12 m2 l2">
                                     <span>Identificación Oficial Reverso (INE)</span>
@@ -868,9 +865,7 @@
                                 <div class="file-field input-field col s12 m4 l4">
                                     <div class="teal darken-4 btn">
                                         <i class="material-icons right">attachment</i>cargar
-                                        <input type="text" hidden formControlName="reverso" class="validate">
-
-                                        <input type="file" (change)="ValidateSize('reverso')"
+                                        <input type="file" formControlName="reverso" (change)="ValidateSize('reverso')"
                                             accept="image/jpg, image/jpeg, image/png, application/pdf" id="reverso"
                                             class="validate">
                                     </div>
@@ -895,9 +890,7 @@
                             <div class="file-field input-field col s12 m4 l4">
                                 <div class="teal darken-4 btn">
                                     <i class="material-icons right">attachment</i>cargar
-                                    <input type="text" hidden formControlName="frontal" class="validate">
-
-                                    <input type="file" (change)="ValidateSize('frontal')"
+                                    <input type="file" formControlName="frontal" (change)="ValidateSize('frontal')"
                                         accept="image/jpg, image/jpeg, image/png, application/pdf" id="frontal"
                                         class="validate">
                                 </div>
@@ -930,9 +923,8 @@
                             <div class="file-field input-field col s12 m4 l4">
                                 <div class="teal darken-4 btn">
                                     <i class="material-icons right">attachment</i>cargar
-                                    <input type="text" hidden formControlName="comprobante" class="validate">
 
-                                    <input type="file"
+                                    <input type="file" formControlName="comprobante" 
                                         title="Recibo CFE del Domicilio Personal con antigüedad no mayor a 3 meses."
                                         (change)="ValidateSize('comprobante')"
                                         accept="image/jpg, image/jpeg, image/png, application/pdf" id="comprobante"
@@ -958,10 +950,10 @@
                             <div class="file-field input-field col s12 m4 l4">
                                 <div class="teal darken-4 btn">
                                     <i class="material-icons right">attachment</i>cargar
-                                    <input type="text" hidden formControlName="comprobanten" class="validate">
+                                    
 
                                     <input type="file" title="Recibo CFE del Negocio con antigüedad no mayor a 3 meses."
-                                        (change)="ValidateSize('comprobanten')"
+                                        (change)="ValidateSize('comprobanten')" formControlName="comprobanten" 
                                         accept="image/jpg, image/jpeg, image/png, application/pdf" id="comprobanten"
                                         class="validate">
                                 </div>
@@ -987,19 +979,17 @@
                     </div>
 
                     <div class="row">
-
-
                         <div class="col s12 m2 l2">
                             <span>Estado de Cuenta</span>
                         </div>
                         <div class="file-field input-field col s12 m4 l4">
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>cargar
-                                <input type="text" hidden formControlName="estado" class="validate">
+                                
 
                                 <input type="file"
                                     title="El Estado de Cuenta que propociones debe estar a tu nombre y mostrar con claridad la Clabe Interbancaria. Te sugerimos descargarlo directamente del portal de tu banco."
-                                    (change)="ValidateSize('estado')"
+                                    (change)="ValidateSize('estado')" formControlName="estado" 
                                     accept="image/jpg, image/jpeg, image/png, application/pdf" id="estado"
                                     class="validate">
                             </div>
@@ -1012,19 +1002,17 @@
                             </div>
                         </div>
 
-
-
                         <div class="col s12 m2 l2">
                             <span>Última declaración anual</span>
                         </div>
                         <div class="file-field input-field col s12 m4 l4">
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>cargar
-                                <input type="text" hidden formControlName="declaracion" class="validate">
+                                
 
                                 <input type="file"
                                     title="Si eres PERSONA FÍSICA CON ACTIVIDAD EMPRESARIAL envía tu última DECLARACIÓN DEL EJERCICIO DE IMPUESTOS FEDERALES; si eres PERSONA FÍSICA EN EL RÉGIMEN DE INCORPORACIÓN FISCAL envía el último ACUSE DE RECIBO DECLARACIÓN DE IMPUESTOS FEDERALES."
-                                    (change)="ValidateSize('declaracion')"
+                                    (change)="ValidateSize('declaracion')" formControlName="declaracion" 
                                     accept="image/jpg, image/jpeg, image/png, application/pdf" id="declaracion"
                                     class="validate">
                             </div>
@@ -1037,8 +1025,6 @@
                             </div>
                         </div>
 
-
-
                         <div class="col s12 m2 l2">
                             <span>CURP</span>
                             <a (click)="sweetHome('0')"><i class="material-icons prefix icon-black">help_outline</i></a>
@@ -1046,10 +1032,9 @@
                         <div class="file-field input-field col s12 m4 l4">
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>cargar
-                                <input type="text" hidden formControlName="curpd" class="validate">
 
                                 <input type="file" (change)="ValidateSize('curpd')" accept="application/pdf" id="curpd"
-                                    class="validate">
+                                    class="validate" formControlName="curpd" >
                             </div>
                             <div class="col s1 m1 l1" *ngIf="doc.curpd.errors?.required">
                                 <i class="material-icons icon-red">error_outline</i>
@@ -1059,42 +1044,6 @@
                                     placeholder="Archivos permitidos PDF, JPG">
                             </div>
                         </div>
-                        <!--<div class="col s12 m2 l2">
-                            <span>RFC</span>
-                            <a (click)="sweetHome('1')"><i class="material-icons prefix icon-black">help_outline</i></a>
-                        </div>-->
-                        <!--<div class="file-field input-field col s12 m4 l4">
-                            <div class="teal darken-4 btn">
-                                <i class="material-icons right">attachment</i>cargar
-                                <input accept="pplication/pdf" (change)="ValidateSize('rfcd')" type="file" formControlName="rfcd" id="rfcd" class="validate">
-                            </div>
-                            <div class="col s1 m1 l1" *ngIf="doc.rfcd.errors?.required">
-                                <i class="material-icons icon-red">error_outline</i>
-                            </div>
-                            <div class="file-path-wrapper">
-                                <input class="file-path validate" type="text">
-                            </div>
-                        </div>-->
-
-
-                        <!--   <div class="col s12 m2 l2">
-                        <span>Score de Buro de Crédito </span>
-                        <a (click)="sweetHome('2')"><i class="material-icons prefix icon-black">help_outline</i></a>
-                    </div>
-                    <div class="file-field input-field col s12 m4 l4">
-                        <div class="teal darken-4 btn">
-                            <i class="material-icons right">attachment</i>cargar
-                            <input type="file" accept="application/pdf" formControlName="buro" id="buro" required class="validate">
-                        </div>
-                        <div class="col s1 m1 l1" *ngIf="doc.buro.errors?.required">
-                            <i class="material-icons icon-red">error_outline</i>
-                        </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text" >
-                        </div>
-                    </div> -->
-
-
 
                         <div class="col s12 m2 l2">
                             <span>Constancia de Situación Fiscal (32D)</span>
@@ -1103,10 +1052,9 @@
                         <div class="file-field input-field col s12 m4 l4">
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>cargar
-                                <input type="text" hidden formControlName="fiscal" class="validate">
 
                                 <input type="file" (change)="ValidateSize('fiscal')" accept="application/pdf"
-                                    id="fiscal" name="fiscal" class="validate">
+                                    id="fiscal" name="fiscal" formControlName="fiscal" class="validate">
                             </div>
                             <div class="col s1 m1 l1" *ngIf="doc.fiscal.errors?.required">
                                 <i class="material-icons icon-red">error_outline</i>
@@ -1116,13 +1064,6 @@
                                     placeholder="Archivos permitidos PDF, JPG">
                             </div>
                         </div>
-
-                        <!--<div class="input-field col s12 m12 l12">
-                            <label><span class="subrayar ">
-                                Archivos permitidos PDF, JPG
-                            </span></label>
-                        </div><br><br>-->
-
                     </div>
 
                     <div class="row">
@@ -1139,10 +1080,10 @@
                         <div class="file-field input-field col s12 m6 l6">
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>Archivo .key
-                                <input type="text" hidden formControlName="fiel" required class="validate">
+                                
 
                                 <input type="file" (change)="ValidateSize('fiel')" accept=".key" id="fiel" required
-                                    class="validate">
+                                    class="validate" formControlName="fiel">
 
                                 <div class="red-text" *ngIf="fi.fiel.errors?.required">
                                 </div>
@@ -1156,9 +1097,9 @@
                             <div class="file-field input-field col s12 m6 l6">
                                 <div class="teal darken-4 btn">
                                     <i class="material-icons right">attachment</i>Archivo .cer
-                                    <input type="text" hidden formControlName="cer" required class="validate">
+                                    
                                     <input type="file" (change)="ValidateSize('cer')" id="cer" accept=".cer" required
-                                        class="validate">
+                                        class="validate" formControlName="cer">
 
                                     <div class="red-text" *ngIf="fi.cer.errors?.required">
                                     </div>
@@ -1185,11 +1126,8 @@
                             </span></label>
                     </div><br><br>
 
-
                     <div class="row">
-
                         <div class="row">
-
                             <div class="input-field col s12 m12 l12">
                                 <label><input class="with-gap teal darken-4" formControlName="autorizobc"
                                         name="autorizobc" type="checkbox" [(ngModel)]="bc" />
@@ -1336,10 +1274,8 @@
                                     <div class="file-field input-field col s12 m4 l4">
                                         <div class="teal darken-4 btn">
                                             <i class="material-icons right">attachment</i>Archivo .key
-                                            <input type="text" hidden formControlName="fielFirm" required
-                                                class="validate">
                                             <input type="file" (change)="ValidateSize('fielFirm')" accept=".key"
-                                                id="fielFirm" required class="validate">
+                                                id="fielFirm" formControlName="fielFirm"  required class="validate">
 
                                             <div class="red-text" *ngIf="fir.fielFirm.errors?.required">Archivo
                                                 requerido</div>
@@ -1352,9 +1288,7 @@
                                     <div class="file-field input-field col s12 m4 l4">
                                         <div class="teal darken-4 btn">
                                             <i class="material-icons right">attachment</i>Archivo .cer
-                                            <input type="text" hidden formControlName="cerFirm" required
-                                                class="validate">
-                                            <input type="file" (change)="ValidateSize('cerFirm')" accept=".cer"
+                                            <input type="file" formControlName="cerFirm"  (change)="ValidateSize('cerFirm')" accept=".cer"
                                                 id="cerFirm" required class="validate">
 
                                             <div class="red-text" *ngIf="fir.cerFirm.errors?.required">Archivo requerido

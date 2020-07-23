@@ -34,7 +34,7 @@ export class UserService {
     const object = JSON.stringify(user);
 
     let url = environment.apis_url + '/V1.0/banbi/creditosimple/registro';
-    let headers = environment.headers_mifos;
+    let headers = environment.headers_apis;
 
     // console.log("Esto es lo que enviare a donde lo tenga que enviar", object);
 
@@ -54,7 +54,7 @@ export class UserService {
     // console.log("Service activate user");
 
     let url = environment.apis_url + '/V1.0/banbi/creditosimple/registro';
-    let headers = environment.headers_mifos;
+    let headers = environment.headers_apis;
 
     const object = JSON.stringify(user);
 
@@ -75,7 +75,7 @@ export class UserService {
   sendPersonalData(data) {
     // console.log("Service create user");
     let url = environment.apis_url + '/V1.0/banbi/creditosimple/registro';
-    let headers = environment.headers_mifos;
+    let headers = environment.headers_apis;
 
     const object = JSON.stringify(data);
     return this.http.post(url, object, { headers }).map((res: any) => {
@@ -138,24 +138,43 @@ export class UserService {
 
   sendDocuments(userDocs) {
     // console.log("Document Service");
-
-    let url = environment.mifos_url + `/fineract-provider/api/v1/clients/${localStorage.getItem('clientId')}/documents`;
+    let clientId = localStorage.getItem('clientId');
+    let url = environment.mifos_url + '/fineract-provider/api/v1/clients/' + clientId + '/documents';
     let headers = environment.headers_mifos;
     //const object = JSON.stringify(userDocs);
-    const object = userDocs;
-
-    // console.log("Esto es lo que enviare a donde lo tenga que enviar", object);
-    return this.http.post(url, object, { headers }).map((res: any) => {
-      // console.log("Enviados", res)
+    return this.http.post(url, userDocs, {headers: headers}).map((res: any) => {
+      console.log(res);
       swal("¡Felicidades!", "Documentos Guardados", "success");
       return true;
     }).catch(err => {
       if (err.status == '0') {
-        swal('Existio un error al procesar tu solicitud intentalo mas tarde');
+        swal('Existio un error al procesar tu solicitud de documentos, intentalo mas tarde');
       }
       this.prosessing = false;
-      // console.log(err);
+      console.log(err);
       return Observable.throw(err);
     });
   }
+
+  sendIdentification(data) {
+    // console.log("Document Service");
+    let clientId = localStorage.getItem('clientId');
+    let url = environment.mifos_url + '/fineract-provider/api/v1/clients/' + clientId + '/identifiers';
+    let headers = environment.headers_mifos;
+    const object = JSON.stringify(data);
+
+    //const object = JSON.stringify(userDocs);
+    return this.http.post(url, object, { headers: headers }).map((res: any) => {
+      // console.log("Enviados", res)
+      return true;
+    }).catch(err => {
+      if (err.status == '0') {
+        swal('Existio un error al procesar tu solicitud de identificación, intentalo mas tarde');
+      }
+      this.prosessing = false;
+      console.log(err);
+      return Observable.throw(err);
+    });
+  }
+
 }

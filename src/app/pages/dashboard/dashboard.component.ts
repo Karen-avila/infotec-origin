@@ -22,7 +22,6 @@ interface Marker {
 declare var google;
 // End PickAdress
 
-
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -40,7 +39,7 @@ export class DashboardComponent implements OnInit {
 
   asentamiento;
   asentamientoNeg;
-  
+
   optionsplaces: any = {
     types: ['geocode', 'establishment'],
     componentRestrictions: { country: 'MX' }
@@ -263,6 +262,7 @@ export class DashboardComponent implements OnInit {
       // Preloader used when step is waiting for feedback function. If not defined, Materializecss spinner-blue-only will be used.
       feedbackPreloader: '<div class="spinner-layer spinner-blue-only">...</div>'
     });
+
     this.form = new FormGroup({
       latDomic: new FormControl(null, Validators.required),
       lngDomic: new FormControl(null, Validators.required),
@@ -280,8 +280,8 @@ export class DashboardComponent implements OnInit {
       edoCivil: new FormControl(null, Validators.required),
       genero: new FormControl(null, Validators.required),
       telPersonal: new FormControl(null, [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('[0-9]{10}')]),
-      paisNaci : new FormControl("Mexico", Validators.required),
-      entidadFedNaci : new FormControl(null, Validators.required),
+      paisNaci: new FormControl("Mexico", Validators.required),
+      entidadFedNaci: new FormControl(null, Validators.required),
       claveElector: new FormControl(null, Validators.required),
       curp: new FormControl(null, Validators.required),
       rfc: new FormControl(null, Validators.required),
@@ -553,6 +553,7 @@ export class DashboardComponent implements OnInit {
     if (type === 'subrama' && value !== undefined) { this.activities = await activitiesService.getGiro(this.activities, sector, subsector, rama, subrama); }
     setTimeout(() => { M.FormSelect.init(document.querySelectorAll('select')); }, 200);
   }
+
   ValidateSize(file) {
     // // console.log("onchanges")
     const fl = (document.getElementById(file) as HTMLInputElement);
@@ -561,21 +562,6 @@ export class DashboardComponent implements OnInit {
       // alert('File size exceeds 2 MB');
       swal('¡Cuidado!', 'Tu archivo debe ser menor a 2Mb', 'warning');
       fl.value = null;
-      // $(file).val(''); //for clearing with Jquery
-    } else {
-
-      /* this.toBase64(fl.files[0]) */
-      /*  this.formDocumentos.controls.cer.setValue(this.toBase64(fl.files[0])); */
-
-      const reader = new FileReader();
-      reader.readAsDataURL(fl.files[0]);
-      reader.onload = () => {
-        if (file === 'fielFirm' || file === 'cerFirm') {
-          this.formFielFirm.controls[file].setValue(reader.result);
-        } if (file === 'fiel' || file === 'cer') {
-          this.formDocumentos.controls[file].setValue(reader.result);
-        }
-      };
     }
   }
 
@@ -586,24 +572,38 @@ export class DashboardComponent implements OnInit {
    reader.onerror = error => reject(error);
 }); */
   findInvalidControls() {
-  const invalid = [];
-  const controls = this.form.controls;
-  for (const name in controls) {
+    const invalid = [];
+    const controls = this.form.controls;
+    for (const name in controls) {
       if (controls[name].invalid) {
-          console.log("Invalid: " + name);
+        console.log("Invalid: " + name);
+        if (document.getElementById(name) != null) {
           document.getElementById(name).classList.add('invalid');
+        } else {
+          console.log("Element in null");
+        }
       }
+    }
+    return invalid;
   }
-  return invalid;
-}
 
-  dpersonales() {
+  dpersonales() {    
     if (this.form.valid) {
       this.userService.sendPersonalData(this.form.value)
         .subscribe(res => {
-          // console.log("esto responde el servicio dpaersonales",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
-          swal("¡Datos Guardados!", "Continuar", "success");
-          this.stepper.openStep(3);
+          console.log(res);
+          var identification = <HTMLInputElement>document.getElementById('claveElector');
+          var payload = {
+            documentTypeId: 1,
+            status: "Active",
+            documentKey: identification.value,
+            description: "Clave Elector"            
+          }
+          this.userService.sendIdentification(payload).subscribe(res => {
+            console.log(res);
+            swal("¡Datos Guardados!", "Continuar", "success");
+            this.stepper.openStep(3);
+          });
         });
 
       /* this.stepper.openStep(3); */
@@ -638,32 +638,28 @@ export class DashboardComponent implements OnInit {
   }
 
   ddocumentos() {
-    if (this.formDocumentos.valid) {
-      var formData = new FormData();
-      formData.append("name", "CER");
-      formData.append("description", "CER");
-      formData.append("file", this.formDocumentos.controls.cer.value);
-
-      console.log('formDocumentos is valid?', this.formDocumentos.valid);
-      console.log('formDocumentos', this.formDocumentos.value);
-      console.log('cer', this.formDocumentos.controls.cer.value);
-    // if (true) {
-      console.log('formDocumentos', this.formDocumentos.value);
+    // if (this.formDocumentos.valid) {
+    if (1) {
+        const formData: FormData = new FormData();
+      formData.append("name", "INE");
+      formData.append("description", "INE");
+      const file = (<HTMLInputElement>document.getElementById('frontal')).files[0];
+      formData.append("file", file, file.name);
       // enviar datos a back
       // this.popup[0].open();
       //this.stepper.openStep(4);
       this.userService.sendDocuments(formData)
-      .subscribe(res=>{
-        console.log("esto responde el servicio documents",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
-        swal("¡Documentos Guardados!", "Continuar", "success");
-        this.stepper.openStep(4);
-      });
-      
+        .subscribe(res => {
+          console.log("esto responde el servicio documents", res); //revisar res.user p.ej y hacer un if(uid){openmodal}
+          swal("¡Documentos Guardados!", "Continuar", "success");
+          this.stepper.openStep(4);
+        });
     } else {
+      this.findInvalidControls();
       swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
     }
   }
-  
+
   sweetHome(id) {
     /* swal('Importante',
     'Para obtener su CURP debera obtenerlo de https://www.gob.mx/curp/, puede acceder dando click en el boton de abajo',
