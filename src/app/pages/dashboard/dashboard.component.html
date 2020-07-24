@@ -847,7 +847,7 @@
                                     <i class="material-icons right">attachment</i>cargar
                                     <input type="file" formControlName="frontal" (change)="ValidateSize('frontal')"
                                         accept="image/jpg, image/jpeg, image/png, application/pdf" id="frontal"
-                                        class="validate">
+                                        class="validate" required>
                                 </div>
                                 <div class="col s1 m1 l1" *ngIf="doc.frontal.errors?.required">
                                     <i class="material-icons icon-red">error_outline</i>
@@ -865,7 +865,7 @@
                                 <div class="file-field input-field col s12 m4 l4">
                                     <div class="teal darken-4 btn">
                                         <i class="material-icons right">attachment</i>cargar
-                                        <input type="file" formControlName="reverso" (change)="ValidateSize('reverso')"
+                                        <input type="file" required formControlName="reverso" (change)="ValidateSize('reverso')"
                                             accept="image/jpg, image/jpeg, image/png, application/pdf" id="reverso"
                                             class="validate">
                                     </div>
@@ -890,7 +890,7 @@
                             <div class="file-field input-field col s12 m4 l4">
                                 <div class="teal darken-4 btn">
                                     <i class="material-icons right">attachment</i>cargar
-                                    <input type="file" formControlName="frontal" (change)="ValidateSize('frontal')"
+                                    <input type="file" required formControlName="frontal" (change)="ValidateSize('frontal')"
                                         accept="image/jpg, image/jpeg, image/png, application/pdf" id="frontal"
                                         class="validate">
                                 </div>
@@ -924,7 +924,7 @@
                                 <div class="teal darken-4 btn">
                                     <i class="material-icons right">attachment</i>cargar
 
-                                    <input type="file" formControlName="comprobante" 
+                                    <input type="file" required formControlName="comprobante" 
                                         title="Recibo CFE del Domicilio Personal con antigüedad no mayor a 3 meses."
                                         (change)="ValidateSize('comprobante')"
                                         accept="image/jpg, image/jpeg, image/png, application/pdf" id="comprobante"
@@ -952,7 +952,7 @@
                                     <i class="material-icons right">attachment</i>cargar
                                     
 
-                                    <input type="file" title="Recibo CFE del Negocio con antigüedad no mayor a 3 meses."
+                                    <input type="file" required title="Recibo CFE del Negocio con antigüedad no mayor a 3 meses."
                                         (change)="ValidateSize('comprobanten')" formControlName="comprobanten" 
                                         accept="image/jpg, image/jpeg, image/png, application/pdf" id="comprobanten"
                                         class="validate">
@@ -987,7 +987,7 @@
                                 <i class="material-icons right">attachment</i>cargar
                                 
 
-                                <input type="file"
+                                <input type="file" required
                                     title="El Estado de Cuenta que propociones debe estar a tu nombre y mostrar con claridad la Clabe Interbancaria. Te sugerimos descargarlo directamente del portal de tu banco."
                                     (change)="ValidateSize('estado')" formControlName="estado" 
                                     accept="image/jpg, image/jpeg, image/png, application/pdf" id="estado"
@@ -1010,7 +1010,7 @@
                                 <i class="material-icons right">attachment</i>cargar
                                 
 
-                                <input type="file"
+                                <input type="file" required
                                     title="Si eres PERSONA FÍSICA CON ACTIVIDAD EMPRESARIAL envía tu última DECLARACIÓN DEL EJERCICIO DE IMPUESTOS FEDERALES; si eres PERSONA FÍSICA EN EL RÉGIMEN DE INCORPORACIÓN FISCAL envía el último ACUSE DE RECIBO DECLARACIÓN DE IMPUESTOS FEDERALES."
                                     (change)="ValidateSize('declaracion')" formControlName="declaracion" 
                                     accept="image/jpg, image/jpeg, image/png, application/pdf" id="declaracion"
@@ -1033,7 +1033,7 @@
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>cargar
 
-                                <input type="file" (change)="ValidateSize('curpd')" accept="application/pdf" id="curpd"
+                                <input type="file" required (change)="ValidateSize('curpd')" accept="application/pdf" id="curpd"
                                     class="validate" formControlName="curpd" >
                             </div>
                             <div class="col s1 m1 l1" *ngIf="doc.curpd.errors?.required">
@@ -1053,7 +1053,7 @@
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>cargar
 
-                                <input type="file" (change)="ValidateSize('fiscal')" accept="application/pdf"
+                                <input type="file" required (change)="ValidateSize('fiscal')" accept="application/pdf"
                                     id="fiscal" name="fiscal" formControlName="fiscal" class="validate">
                             </div>
                             <div class="col s1 m1 l1" *ngIf="doc.fiscal.errors?.required">
@@ -1083,7 +1083,7 @@
                                 
 
                                 <input type="file" (change)="ValidateSize('fiel')" accept=".key" id="fiel" required
-                                    class="validate" formControlName="fiel">
+                                    class="validate" > <!-- formControlName="fiel" -->
 
                                 <div class="red-text" *ngIf="fi.fiel.errors?.required">
                                 </div>
@@ -1099,7 +1099,7 @@
                                     <i class="material-icons right">attachment</i>Archivo .cer
                                     
                                     <input type="file" (change)="ValidateSize('cer')" id="cer" accept=".cer" required
-                                        class="validate" formControlName="cer">
+                                        class="validate" > <!-- formControlName="cer" -->
 
                                     <div class="red-text" *ngIf="fi.cer.errors?.required">
                                     </div>
@@ -1112,8 +1112,8 @@
 
                         <div class="input-field col s12 m12 l12">
                             <i class="material-icons prefix">lock</i>
-                            <input id="password" type="password" name="password" formControlName="password" required
-                                class="validate">
+                            <input id="password" type="password" name="password"  required
+                                class="validate"> <!-- formControlName="password" -->
                             <label for="password">Contraseña de tu FIEL</label>
                             <div class="col s1 m1 l1" *ngIf="fi.password.errors?.required"></div>
                         </div>
@@ -1129,7 +1129,7 @@
                     <div class="row">
                         <div class="row">
                             <div class="input-field col s12 m12 l12">
-                                <label><input class="with-gap teal darken-4" formControlName="autorizobc"
+                                <label><input class="with-gap teal darken-4" required formControlName="autorizobc"
                                         name="autorizobc" type="checkbox" [(ngModel)]="bc" />
                                     <span>
                                         <label>
@@ -1143,7 +1143,7 @@
                         <br>
                         <div class="row">
                             <div class="input-field col s12 m12 l12">
-                                <label> <input class="with-gap teal darken-4" formControlName="termcond" name="termcond"
+                                <label> <input class="with-gap teal darken-4" required formControlName="termcond" name="termcond"
                                         type="checkbox" [(ngModel)]="term" />
                                     <span>
 

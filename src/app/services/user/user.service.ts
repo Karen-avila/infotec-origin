@@ -10,8 +10,9 @@ import 'rxjs/add/operator/catch';
 import swal from 'sweetalert';
 import { Router } from '@angular/router';
 
-import { environment } from '../../../environments/environment'
+import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -42,12 +43,12 @@ export class UserService {
 
     return this.http.post(url, object, { headers }).map((res: any) => {
       // console.log("creado", res)
-      swal("¡Felicidades!", "felicidades", "success");
+      swal("¡Felicidades!", "Felicidades usuario creado correctamente.", "success");
 
       return true;
     }).catch(err => {
       console.log(err.status);
-      return Observable.throw(err);
+      return err;
     });
 
   }
@@ -66,12 +67,12 @@ export class UserService {
 
     return this.http.post(url, object, { headers }).map((res: any) => {
       // console.log("creado", res)
-      swal("¡Felicidades!", "felicidades", "success");
+      swal("¡Felicidades!", "Felicidades usuario activado correctamente.", "success");
 
       return true;
     }).catch(err => {
       // console.log(err.status);
-      return Observable.throw(err);
+      return err;
     });
 
   }
@@ -86,14 +87,14 @@ export class UserService {
     const object = JSON.stringify(data);
     return this.http.post(url, object, { headers }).map((res: any) => {
       // console.log("creado", res)
-      swal("¡Felicidades!", "Documentos Guardados", "success");
+      swal("¡Felicidades!", "Información guardada correctamente.", "success");
 
       return true;
     }).catch(err => {
       swal('Existio un error' + err.status);
       this.prosessing = false;
       console.log(err.status);
-      return Observable.throw(err);
+      return err;
     });
   }
 
@@ -129,7 +130,7 @@ export class UserService {
     return this.http.post(url, object, { headers }).map((res: any) => {
       // console.log("creado", res)
       swal("¡Felicidades!", "Inicio de sesión exitoso.", "success");
-      localStorage.setItem('clientid', res.clientid);
+      localStorage.setItem('clientid', res.clientId);
       localStorage.setItem('token', res.authenticated);
       return true;
     }).catch(err => {
@@ -140,7 +141,7 @@ export class UserService {
       }
       this.prosessing = false;
       console.log(err);
-      return Observable.throw(err);
+      return err;
     });
   }
 
@@ -153,9 +154,12 @@ export class UserService {
     let clientid = localStorage.getItem('clientid');
     let url = environment.apis_url + '/V1.0/fineract-protected/clients/' + clientid + '/documents';
     let api_keys = environment.gravitee_api_keys;
-    let headers = environment.headers_apis;
-    headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
-    const httpHeaders = new HttpHeaders(headers);
+    /* let headers = environment.headers_apis; */
+    /* var headers :Array=[];
+    headers['X-Gravitee-Api-Key'] = api_keys['fineract']; */
+    /* headers['Content-Type'] = 'multipart/form-data; boundary=---011000010111000001101001';
+    delete headers['Content-Type']; */
+    const httpHeaders = new HttpHeaders({'X-Gravitee-Api-Key':api_keys['fineract']});
     const req = new HttpRequest('POST', url, formData, {
       reportProgress: true,
       responseType: 'json',
@@ -178,10 +182,10 @@ export class UserService {
     //const object = JSON.stringify(userDocs);
     return this.http.post(url, object, { headers: headers }).map((res: any) => {
       // console.log("Enviados", res)
-      return true;
+      return res;
     }).catch(err => {
       if (err.status == '0') {
-        swal('Existio un error al procesar tu solicitud de identificación, intentalo mas tarde');
+        swal('Existio un error al procesar tu solicitud de identificación, intentalo mas tarde.');
       }
       this.prosessing = false;
       console.log(err);

@@ -1098,7 +1098,7 @@ this.formQcQcn = new FormGroup({
   
   else{
     swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
-    this.instQrmCnct.open(1); // no ira aqui solo para no completar form
+    //this.instQrmCnct.open(1); // no ira aqui solo para no completar form
   }
 }
 

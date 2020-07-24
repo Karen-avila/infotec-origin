@@ -362,14 +362,13 @@ export class DashboardComponent implements OnInit {
       estado: new FormControl(null, Validators.required),
       declaracion: new FormControl(null, Validators.required),
       curpd: new FormControl(null, Validators.required),
-      //rfcd: new FormControl(null, Validators.required),
       fiscal: new FormControl(null, Validators.required),
       autorizobc: new FormControl(false, Validators.required),
       termcond: new FormControl(false, Validators.required),
-      fiel: new FormControl(null, Validators.required),
-      cer: new FormControl(null, Validators.required),
-      password: new FormControl(null, Validators.required)
-      // buro: new FormControl(null, Validators.required)
+      //fiel: new FormControl(null, Validators.required),
+      //cer: new FormControl(null, Validators.required),
+      //password: new FormControl(null, Validators.required)
+       buro: new FormControl(null, Validators.required)
 
     });
 
@@ -472,59 +471,68 @@ export class DashboardComponent implements OnInit {
       }
     };
   }
+
   async searchCP(value, target) {
     if (value.length === 5) {
       await fetch(`https://api-sepomex.hckdrk.mx/query/info_cp/${value}?type=simplified`)
         .then((response) => {
           return response.json();
         }).then((json) => {
-          if (target === 'negocio') {
-            this.negocio.tipo_asentamiento = json.response.tipo_asentamiento;
-            this.negocio.colonia = json.response.colonia;
-            this.negocio.asentamiento = json.response.asentamiento;
-            this.negocio.municipio = json.response.municipio;
-            this.negocio.estado = json.response.estado;
-            fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.negocio.calle}+${this.negocio.ext}+${this.negocio.asentamiento}+${this.negocio.municipio}+${this.negocio.estado}&key=AIzaSyCseZ0trHuyvuZlNh6TXxz1-6OJhXfXaww&language=es`)
-              .then((response) => {
-                return response.json();
-              }).then((json) => {
-                if (json.status === 'OK') {
-                  this.lat2 = json.results[0].geometry.location.lat;
-                  this.lng2 = json.results[0].geometry.location.lng;
-                  this.markers2 = [{
-                    lat: json.results[0].geometry.location.lat,
-                    lng: json.results[0].geometry.location.lng,
-                    label: 'A',
-                    draggable: false
-                  }];
-                }
-              });
-          } else if (target === 'personal') {
-            this.personal.tipo_asentamiento = json.response.tipo_asentamiento;
-            this.personal.colonia = json.response.colonia;
-            this.personal.asentamiento = json.response.asentamiento;
-            this.personal.municipio = json.response.municipio;
-            this.personal.estado = json.response.estado;
-            fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.personal.calle}+${this.personal.ext}+${this.personal.asentamiento}+${this.personal.municipio}+${this.personal.estado}&key=AIzaSyCseZ0trHuyvuZlNh6TXxz1-6OJhXfXaww&language=es`)
-              .then((response) => {
-                return response.json();
-              }).then((json) => {
-                if (json.status === 'OK') {
-                  if (target === 'personal') {
-                    this.lat = json.results[0].geometry.location.lat;
-                    this.lng = json.results[0].geometry.location.lng;
-                    this.markers = [{
+          //console.log('codigo error',json.code_error)
+          if(json.code_error === 105){
+            swal("Lo sentimos!", "Tu código postal no esta dentro de los participantes para este apoyo, revisa constantemente para validar si existen otros apoyos.", "info");
+            this.userService.logout();
+          }else{
+            if (target === 'negocio') {
+              this.negocio.tipo_asentamiento = json.response.tipo_asentamiento;
+              this.negocio.colonia = json.response.colonia;
+              this.negocio.asentamiento = json.response.asentamiento;
+              this.negocio.municipio = json.response.municipio;
+              this.negocio.estado = json.response.estado;
+              fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.negocio.calle}+${this.negocio.ext}+${this.negocio.asentamiento}+${this.negocio.municipio}+${this.negocio.estado}&key=AIzaSyCseZ0trHuyvuZlNh6TXxz1-6OJhXfXaww&language=es`)
+                .then((response) => {
+                  return response.json();
+                }).then((json) => {
+                  if (json.status === 'OK') {
+                    this.lat2 = json.results[0].geometry.location.lat;
+                    this.lng2 = json.results[0].geometry.location.lng;
+                    this.markers2 = [{
                       lat: json.results[0].geometry.location.lat,
                       lng: json.results[0].geometry.location.lng,
                       label: 'A',
                       draggable: false
                     }];
                   }
-                }
-              });
+                });
+            } else if (target === 'personal') {
+              this.personal.tipo_asentamiento = json.response.tipo_asentamiento;
+              this.personal.colonia = json.response.colonia;
+              this.personal.asentamiento = json.response.asentamiento;
+              this.personal.municipio = json.response.municipio;
+              this.personal.estado = json.response.estado;
+              fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.personal.calle}+${this.personal.ext}+${this.personal.asentamiento}+${this.personal.municipio}+${this.personal.estado}&key=AIzaSyCseZ0trHuyvuZlNh6TXxz1-6OJhXfXaww&language=es`)
+                .then((response) => {
+                  return response.json();
+                }).then((json) => {
+                  if (json.status === 'OK') {
+                    if (target === 'personal') {
+                      this.lat = json.results[0].geometry.location.lat;
+                      this.lng = json.results[0].geometry.location.lng;
+                      this.markers = [{
+                        lat: json.results[0].geometry.location.lat,
+                        lng: json.results[0].geometry.location.lng,
+                        label: 'A',
+                        draggable: false
+                      }];
+                    }
+                  }
+                });
+            }
+            setTimeout(() => { M.FormSelect.init(document.querySelectorAll('select')); }, 200);
+            return;
           }
-          setTimeout(() => { M.FormSelect.init(document.querySelectorAll('select')); }, 200);
-          return;
+       
+          
         });
     }
   }
@@ -587,20 +595,28 @@ export class DashboardComponent implements OnInit {
           console.log(res);
           // claveelector
           // CURP 
+          var curp = <HTMLInputElement>document.getElementById('curp');
           var identification = <HTMLInputElement>document.getElementById('claveelector');
-          var payload = {
-            documentTypeId: 1, // INE 1, CURP 2
+          var payload = { // INE 1, CURP 2
+            documentTypeId: 1, 
             status: "Active",
             documentKey: identification.value,
             description: "Clave Elector"            
+          };
+          var payload2 = { // INE 1, CURP 2
+            documentTypeId: 2, 
+            status: "Active",
+            documentKey: curp.value,
+            description: "Curp"            
           }
           this.userService.sendIdentification(payload).subscribe(res => {
-            console.log(res);
-            swal("¡Datos Guardados!", "Continuar", "success");
-            this.stepper.openStep(3);
+            console.log("sube clave elector",res);
+          }); 
+          this.userService.sendIdentification(payload2).subscribe(res => {
+            console.log("sube curp",res);
           }); 
         });
-      /* this.stepper.openStep(3); */
+      this.stepper.openStep(3);
     } else {
       this.findInvalidControls();
       swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
@@ -632,18 +648,30 @@ export class DashboardComponent implements OnInit {
   }
 
   ddocumentos() {
+    let documents = ['frontal','reverso','comprobante','comprobanten','estado','declaarcion','curpd','fiscal'];
     // if (this.formDocumentos.valid) {
     if (1) {
       // Loop
-      const file = (<HTMLInputElement>document.getElementById('frontal')).files[0];
+      console.log("for",documents.length)
+      for(let i=0;i<documents.length;i++){
+        console.log("for")
+        this.userService.sendDocuments(documents[i], (<HTMLInputElement>document.getElementById(documents[i])).files[0])
+        .subscribe(res => {
+          console.log("esto responde el servicio documents", res); //revisar res.user p.ej y hacer un if(uid){openmodal}
+          //swal("¡Documentos Guardados!", "Continuar", "success");
+        });
+        swal("¡Documentos Guardados!", "Continuar", "success");
+        this.stepper.openStep(4);
+      }
+     /*  const file = (<HTMLInputElement>document.getElementById('frontal')).files[0];
       this.userService.sendDocuments('identificacion', file)
         .subscribe(res => {
           console.log("esto responde el servicio documents", res); //revisar res.user p.ej y hacer un if(uid){openmodal}
-          swal("¡Documentos Guardados!", "Continuar", "success");
-        });
+          //swal("¡Documentos Guardados!", "Continuar", "success");
+        }); */
       // End Loop
       // Esperar a que terminen
-      this.stepper.openStep(4);
+      
     } else {
       this.findInvalidControls();
       swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
