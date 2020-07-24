@@ -160,7 +160,7 @@
                                             <span class="title">{{qcQcI.quest}}</span>
 
                                             <label>
-                                                <input  [(ngModel)]="qcQc1[0].resp" formControlName="{{'qcQcI'+i}}" name="{{'qcQcI'+i}}" id="{{'qcQcI'+i}}" maxlength="2" type="number"  min="1">
+                                                <input  [(ngModel)]="qcQc1[0].resp" formControlName="{{'qcQcI'+i}}" name="{{'qcQcI'+i}}" id="{{'qcQcI'+i}}" max="38" type="number"  min="0" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" >
                                             </label>
                                         </div>
                                     </li>
@@ -218,7 +218,8 @@
                                     <li class="collection-item avatar">
                                         <div *ngFor="let preg3 of preg3; index as i;">
                                             <label class="title black-text" >{{preg3.quest}}</label>
-                                            <input [(ngModel)]="preg3.resp" formControlName="preg3" name="preg3" id="preg3" type="number" min='0' maxlength='3'>
+                                            <input [(ngModel)]="preg3.resp" formControlName="preg3" name="preg3" id="preg3" type="number" min='0' maxlength='10'
+                                            oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" >
                                         </div>
                                     </li>
 
@@ -314,7 +315,7 @@
                                         <span class="title">Registre la cantidad que pagó la empresa por los siguientes conceptos durante el ejercicio fiscal anterior:</span>
                                         <div *ngFor="let preg18 of preg18; index as i;">
                                             <label for="{{'preg18'+i}}"><span class="title">{{preg18.quest}}</span></label>
-                                            <input  [(ngModel)]="preg18.resp" formControlName="{{'preg18'+i}}" name="{{'preg18'+i}}" id="{{'preg18'+i}}" type="number" min='0' max='1' step='0.01' placeholder='$'>
+                                            <input  [(ngModel)]="preg18.resp" formControlName="{{'preg18'+i}}" name="{{'preg18'+i}}" id="{{'preg18'+i}}" type="number" min='0' max='2000000' step='0.01' placeholder='$'>
                                         </div>
                                     </li>
 
