@@ -587,7 +587,7 @@ export class DashboardComponent implements OnInit {
     return invalid;
   }
 
-  dpersonales() {   
+  dpersonales() {
     //console.log(this.form.value);
     if (this.form.valid) {
       this.userService.sendPersonalData(this.form.value)

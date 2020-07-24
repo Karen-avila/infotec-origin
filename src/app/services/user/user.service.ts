@@ -135,7 +135,7 @@ export class UserService {
       return true;
     }).catch(err => {
       if (err.status == 0) {
-        swal('Existio un error al procesar tu solicitud intentalo mas tarde');
+        swal('Existio un error al procesar tu solicitud intentalo más tarde');
       } else if (err.status == 401) {
         swal('Verifica que tu usuario/contraseña sean correctos');
       }
@@ -185,7 +185,7 @@ export class UserService {
       return res;
     }).catch(err => {
       if (err.status == '0') {
-        swal('Existio un error al procesar tu solicitud de identificación, intentalo mas tarde.');
+        swal('Existio un error al procesar tu solicitud de identificación, intentalo más tarde');
       }
       this.prosessing = false;
       console.log(err);
@@ -193,4 +193,18 @@ export class UserService {
     });
   }
 
+  validateFileExtension(fileName: String) {
+    var _validFileExtensions = [".jpg", ".jpeg", ".pdf", ".png"];    
+    var isValid = false;
+    if (fileName.length > 0) {
+        for (var j = 0; j < _validFileExtensions.length; j++) {
+            var extension = _validFileExtensions[j];
+            if (fileName.substr(fileName.length - extension.length, extension.length).toLowerCase() == extension.toLowerCase()) {
+              isValid = true;
+              break;
+            }
+        }
+    }
+    return isValid;
+  }
 }

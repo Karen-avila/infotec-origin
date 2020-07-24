@@ -222,7 +222,6 @@
                     </div>
 
                     <div class="input-field col s12 m6 l6">
-                        <i class="material-icons prefix">calendar_today</i>
                         <input type="date" class="fecha validate" formControlName="fechanac" name="fechanac"
                             id="fechanac" min="1960-12-31" max="2002-01-01" required>
                         <label>Fecha de Nacimiento</label>
@@ -834,7 +833,7 @@
                         <br><br>
 
                     </div>
-                   
+
 <br><br> -->
                         <div *ngIf="typeId==='ine'">
 
@@ -950,7 +949,7 @@
                             <div class="file-field input-field col s12 m4 l4">
                                 <div class="teal darken-4 btn">
                                     <i class="material-icons right">attachment</i>cargar
-                                    
+
 
                                     <input type="file" required title="Recibo CFE del Negocio con antigüedad no mayor a 3 meses."
                                         (change)="ValidateSize('comprobanten')" formControlName="comprobanten" 
@@ -985,11 +984,11 @@
                         <div class="file-field input-field col s12 m4 l4">
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>cargar
-                                
+
 
                                 <input type="file" required
                                     title="El Estado de Cuenta que propociones debe estar a tu nombre y mostrar con claridad la Clabe Interbancaria. Te sugerimos descargarlo directamente del portal de tu banco."
-                                    (change)="ValidateSize('estado')" formControlName="estado" 
+                                    (change)="ValidateSize('estado')" formControlName="estado"
                                     accept="image/jpg, image/jpeg, image/png, application/pdf" id="estado"
                                     class="validate">
                             </div>
@@ -1008,11 +1007,11 @@
                         <div class="file-field input-field col s12 m4 l4">
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>cargar
-                                
+
 
                                 <input type="file" required
                                     title="Si eres PERSONA FÍSICA CON ACTIVIDAD EMPRESARIAL envía tu última DECLARACIÓN DEL EJERCICIO DE IMPUESTOS FEDERALES; si eres PERSONA FÍSICA EN EL RÉGIMEN DE INCORPORACIÓN FISCAL envía el último ACUSE DE RECIBO DECLARACIÓN DE IMPUESTOS FEDERALES."
-                                    (change)="ValidateSize('declaracion')" formControlName="declaracion" 
+                                    (change)="ValidateSize('declaracion')" formControlName="declaracion"
                                     accept="image/jpg, image/jpeg, image/png, application/pdf" id="declaracion"
                                     class="validate">
                             </div>
@@ -1080,7 +1079,7 @@
                         <div class="file-field input-field col s12 m6 l6">
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>Archivo .key
-                                
+
 
                                 <input type="file" (change)="ValidateSize('fiel')" accept=".key" id="fiel" required
                                     class="validate" > <!-- formControlName="fiel" -->
@@ -1097,7 +1096,7 @@
                             <div class="file-field input-field col s12 m6 l6">
                                 <div class="teal darken-4 btn">
                                     <i class="material-icons right">attachment</i>Archivo .cer
-                                    
+
                                     <input type="file" (change)="ValidateSize('cer')" id="cer" accept=".cer" required
                                         class="validate" > <!-- formControlName="cer" -->
 
@@ -1233,20 +1232,26 @@
 
                             <div class="row">
                                 <ul>
-                                    <li><label class="waves-effect modal-trigger subrayar" href="#ccontrato">
-                                            <span class="blue-text text-darken-4" style="font-size: 14px;">Ver Caratula
-                                                de Contrato</span>
-                                        </label>
+                                    <li>
+                                      <button class="waves-effect teal btn darken-4 modal-trigger left ml-3" href="#ccontrato">
+                                        <span class="white-text text-darken-4" style="font-size: 14px;">
+                                          Ver Caratula de Contrato
+                                        </span>
+                                      </button>
                                     </li>
-                                    <li><label class="waves-effect modal-trigger subrayar" href="#tamortizacion">
-                                            <span class="blue-text text-darken-4" style="font-size: 14px;">Ver Tabla de
-                                                Amortización</span>
-                                        </label>
+                                    <li>
+                                      <button class="waves-effect teal btn darken-4 modal-trigger left ml-3" href="#tamortizacion">
+                                        <span class="white-text text-darken-4" style="font-size: 14px;">
+                                          Ver Tabla de Amortización
+                                        </span>
+                                      </button>
                                     </li>
-                                    <li><label class="waves-effect modal-trigger subrayar" href="#pagare">
-                                            <span class="blue-text text-darken-4" style="font-size: 14px;">Ver
-                                                Pagaré</span>
-                                        </label>
+                                    <li>
+                                      <button class="waves-effect teal btn darken-4 modal-trigger left ml-3" href="#pagare">
+                                        <span class="white-text text-darken-3" style="font-size: 14px;">
+                                          Ver Pagaré
+                                        </span>
+                                      </button>
                                     </li>
                                 </ul>
 
@@ -1750,7 +1755,7 @@
             </tr>
         </table>
 
-        <p>Ultima fecha de actualización Abril 2020.</p>
+        <p>Última fecha de actualización Abril 2020.</p>
 
         <tr></tr>
 
