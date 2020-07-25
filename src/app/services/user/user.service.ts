@@ -112,7 +112,6 @@ export class UserService {
 
   logout() {
     this.token = '';
-    this.email = '';
     this.id = '';
     localStorage.clear();
     this.router.navigate(["home"]);
@@ -130,7 +129,8 @@ export class UserService {
     return this.http.post(url, object, { headers }).map((res: any) => {
       // console.log("creado", res)
       swal("¡Felicidades!", "Inicio de sesión exitoso.", "success");
-      localStorage.setItem('clientid', res.clientId);
+      console.log(res)
+      localStorage.setItem('clientid', res.userId);
       localStorage.setItem('token', res.authenticated);
       return true;
     }).catch(err => {

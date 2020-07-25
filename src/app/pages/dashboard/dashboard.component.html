@@ -141,7 +141,7 @@
                                 <input class="with-gap teal darken-4" (change)="rFiscal()" formControlName="tipopersona"
                                     name="tipopersona" id="tipopersona" type="radio" value="pFisica"
                                     [(ngModel)]="model" />
-                                <span>Persona Fisica con Actividad Empresarial</span>
+                                <span>Persona Física con Actividad Empresarial</span>
                             </label>
                         </p>
                     </div>
@@ -150,7 +150,7 @@
                             <label>
                                 <input class="with-gap teal darken-4" formControlName="tipopersona" name="tipopersona"
                                     id="tipopersona" type="radio" value="rFiscal" [(ngModel)]="model" />
-                                <span>Regimen de Incorporación Fiscal</span>
+                                <span>Régimen de Incorporación Fiscal</span>
                             </label>
                         </p>
                     </div>
@@ -164,7 +164,7 @@
                     <div class="input-field col s12 m12 l12">
                         <i class="material-icons prefix">payment</i>
                         <input class="validate" id="clabeinter" type="text" (keypress)="numberOnly($event)"
-                            formControlName="clabeinter" name="clabeinter" minlength="18" maxlength="18" required>
+                            formControlName="clabeinter" name="Clabe interbancaria" minlength="18" maxlength="18" required>
                         <label for="text">Clabe interbancaria</label>
                         <div class="blue-text" *ngIf="f.clabeinter.errors">La clabe interbancaria consta de 18 dígitos
                         </div>
@@ -172,7 +172,7 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="nombre" type="text" formControlName="nombre" name="nombre"
+                        <input id="nombre" type="text" formControlName="nombre" name="Nombre"
                             (keyup)="form.patchValue({nombre: $event.target.value.toUpperCase()})" required
                             class="validate">
                         <label for="nombre">Nombre</label>
@@ -186,7 +186,7 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="nombre2" type="text" formControlName="nombre2" name="nombre2"
+                        <input id="nombre2" type="text" formControlName="nombre2" name="Segundo Nombre"
                             (keyup)="form.patchValue({nombre2: $event.target.value.toUpperCase()})" class="validate">
                         <label for="nombre2">Segundo nombre</label>
 
@@ -198,7 +198,7 @@
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="apaterno" type="text" name="apaterno" formControlName="apaterno"
+                        <input id="apaterno" type="text" name="Apellido Paterno" formControlName="apaterno"
                             (keyup)="form.patchValue({apaterno: $event.target.value.toUpperCase()})" required
                             class="validate">
                         <label for="apaterno">Apellido paterno</label>
@@ -210,7 +210,7 @@
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="amaterno" type="text" name="amaterno" formControlName="amaterno"
+                        <input id="amaterno" type="text" name="Apellido materno" formControlName="amaterno"
                             (keyup)="form.patchValue({amaterno: $event.target.value.toUpperCase()})" required
                             class="validate">
                         <label for="amaterno">Apellido materno</label>
@@ -222,13 +222,13 @@
                     </div>
 
                     <div class="input-field col s12 m6 l6">
-                        <input type="date" class="fecha validate" formControlName="fechanac" name="fechanac"
+                        <input type="date" class="fecha validate" formControlName="fechanac" name="Fecha de Nacimiento"
                             id="fechanac" min="1960-12-31" max="2002-01-01" required>
                         <label>Fecha de Nacimiento</label>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="edocivil" name="edocivil" id="edocivil" class="validate">
+                        <select formControlName="edocivil" name="Estado civil" id="edocivil" class="validate">
                             <option value="Casado">Casado</option>
                             <option value="Divorciado">Divorciado</option>
                             <option value="Separado">Separado</option>
@@ -241,7 +241,7 @@
                     </div>
 
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="genero" name="genero" id="genero" class="validate">
+                        <select formControlName="genero" name="Genero" id="genero" class="validate">
                             <option value="" disabled selected>Selecciona una opción</option>
                             <option value="Femenino">Femenino</option>
                             <option value="Masculino">Masculino</option>
@@ -253,13 +253,13 @@
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">phone</i>
                         <input class="validate" id="telpersonal" type="text" formControlName="telpersonal"
-                        (keypress)="numberOnly($event)" name="telpersonal" minlength="10" maxlength="10" required>
+                        (keypress)="numberOnly($event)" name="Número de Teléfono" minlength="10" maxlength="10" required>
                         <label for="text">Número de Teléfono</label>
                         <div class="blue-text" *ngIf="f.telpersonal.errors">El teléfono debe ser de 10 digitos</div>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="paisnaci" name="paisnaci" id="paisnaci" class="validate">
+                        <select formControlName="paisnaci" name="País de nacimiento" id="paisnaci" class="validate">
                             <option value="" disabled>Selecciona una opcion</option>
                             <option value="Mexico" selected>México</option>
                         </select>
@@ -268,7 +268,7 @@
                     </div>
 
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="entidadfednaci" name="entidadfednaci" id="entidadfednaci"
+                        <select formControlName="entidadfednaci" name="Entidad Federativa de Nacimiento" id="entidadfednaci"
                             class="validate">
                             <option value="" disabled selected>Selecciona una opción</option>
                             <option value="Aguascalientes">Aguascalientes</option>
@@ -313,7 +313,7 @@
                         <input id="curp" type="text" formControlName="curp"
                             (keyup)="form.patchValue({curp: $event.target.value.toUpperCase()})"
                             pattern="^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$"
-                            required class="validate" name="curp" minlength="18" maxlength="18" />
+                            required class="validate" name="Curp" minlength="18" maxlength="18" />
                         <label for="curp">CURP</label>
                         <div class="blue-text">Únicamente letras mayúsculas</div>
                     </div>
@@ -323,7 +323,7 @@
                         <input id="rfc" type="text" formControlName="rfc"
                             (keyup)="form.patchValue({rfc: $event.target.value.toUpperCase()})"
                             pattern="^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$"
-                            required class="validate" name="rfc" minlength="12" maxlength="13" />
+                            required class="validate" name="Rfc" minlength="12" maxlength="13" />
                         <label for="rfc">RFC</label>
                         <div class="blue-text">Únicamente letras mayúsculas</div>
                     </div>
@@ -332,7 +332,7 @@
                         <i class="material-icons prefix">aspect_ratio</i>
                         <input id="claveelector" type="text" formControlName="claveelector"
                             (keyup)="form.patchValue({claveelector: $event.target.value.toUpperCase()})" required
-                            minlength="18" maxlength="18" class="validate" name="claveelector" />
+                            minlength="18" maxlength="18" class="validate" name="Clave de Elector" />
                         <label for="claveelector">Clave de Elector</label>
                         <a class="modal-trigger" href="#helpIne"><i
                                 class="material-icons prefix icon-black">help_outline</i></a>
@@ -362,26 +362,26 @@
                                 <span class="grey-text in">Calle</span>
                                 <input id="calle" type="text" [(ngModel)]="personal.calle"
                                     (keyup)="form.patchValue({calle: $event.target.value.toUpperCase()})"
-                                    formControlName="calle" required class="validate" name="calle" />
+                                    formControlName="calle" required class="validate" name="Calle domicilio" />
                                 <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                             </div>
                             <div class="input-field col s4">
                                 <span class="grey-text in">Número exterior</span>
                                 <input id="numextdomic" type="text" [(ngModel)]="personal.ext"
-                                    formControlName="numextdomic" required class="validate" name="numextdomic"
+                                    formControlName="numextdomic" required class="validate" name="Número exterior domicilio"
                                     placeholder="Número exterior" />
                                 <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                             </div>
                             <div class="input-field col s4">
                                 <span class="grey-text in">Número interior</span>
                                 <input id="numint" type="text" [(ngModel)]="personal.int" formControlName="numint"
-                                    name="numint" placeholder="Número interior" />
+                                    name="Número interior domicilio" placeholder="Número interior domicilio" />
                                 <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                             </div>
                             <div class="input-field col s4">
                                 <span class="grey-text in">Código Postal</span>
                                 <input #cp id="cp" type="text" formControlName="cp" required class="validate"
-                                    name="cp" maxlength="5" [(ngModel)]="personal.cp" placeholder="Código Postal"
+                                    name="Código Postal domicilio" maxlength="5" [(ngModel)]="personal.cp" placeholder="Código Postal"
                                     (keypress)="numberOnly($event)" (keyup)="cp.value.length == 5 && searchCP(cp.value, 'personal')" />
                                 <!--<label for="cp">Codigo Postal</label>-->
                                 <div class="red-text" *ngIf="form.errors?.isMatch"></div>
@@ -389,14 +389,14 @@
                             <div class="input-field col s6">
                                 <span class="grey-text in">Tipo de asentamiento</span>
                                 <input [(ngModel)]="personal.tipo_asentamiento" type="text"
-                                    formControlName="tipoasentamiento" disabled name="tipoasentamiento"
+                                    formControlName="tipoasentamiento" disabled name="Tipo de asentamiento domicilio"
                                     id="tipoasentamiento" class="validate" placeholder="Tipo de asentamiento">
                                 <!--<label for="tipoasentamiento">Tipo de asentamiento</label>-->
                                 <div class="blue-text" *ngIf="f.tipoasentamiento.errors"></div>
                             </div>
                             <div class="input-field col s6">
                                 <span class="grey-text in">Asentamiento</span>
-                                <select [(ngModel)]="asentamiento" formControlName="asentamiento" name="asentamiento"
+                                <select [(ngModel)]="asentamiento" formControlName="asentamiento" name="Asentamiento Domicilio"
                                     id="asentamiento" class="validate">
                                     <option value="" disabled selected>Selecciona una opción</option>
                                     <option [ngValue]="item" *ngFor="let item of personal.asentamiento">{{item}}
@@ -406,14 +406,14 @@
                             <div class="input-field col s6">
                                 <span class="grey-text in">Municipio</span>
                                 <input [(ngModel)]="personal.municipio" id="municipio" type="text"
-                                    formControlName="municipio" name="municipio" class="validate"
+                                    formControlName="municipio" name="Municipio domicilio" class="validate"
                                     placeholder="Municipio" disabled required class="validate" />
                                 <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                             </div>
                             <div class="input-field col s6">
                                 <span class="grey-text in">Entidad Federativa</span>
                                 <input type="text" [(ngModel)]="personal.estado" formControlName="entidadfeddomic"
-                                    name="entidadfeddomic" id="entidadfeddomic" class="validate"
+                                    name="Entidad Federativa domicilio" id="entidadfeddomic" class="validate"
                                     placeholder="Entidad federativa" disabled>
                                 <div class="blue-text" *ngIf="f.entidadfeddomic.errors"></div>
                             </div>
@@ -443,39 +443,39 @@
                             <div class="input-field col s12">
                                 <span class="grey-text in">Calle</span>
                                 <input id="calleneg" [(ngModel)]="negocio.calle" type="text" formControlName="calleneg"
-                                    required class="validate" name="calleneg" />
+                                    required class="validate" name="Calle negocio" />
                                 <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                             </div>
                             <div class="input-field col s4">
                                 <span class="grey-text in">Número exterior</span>
                                 <input id="numextneg" [(ngModel)]="negocio.ext" type="text" formControlName="numextneg"
-                                    required class="validate" name="numextneg" placeholder="Número exterior" />
+                                    required class="validate" name="Número exterior negocio" placeholder="Número exterior" />
                                 <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                             </div>
                             <div class="input-field col s4">
                                 <span class="grey-text in">Número interior</span>
                                 <input id="numintneg" [(ngModel)]="negocio.int" type="text" formControlName="numintneg"
-                                    name="numintneg" placeholder="Número interior" />
+                                    name="Número interior negocio" placeholder="Número interior" />
                                 <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                             </div>
                             <div class="input-field col s4">
                                 <span class="grey-text in">Código Postal</span>
                                 <input #cpneg id="cpneg" [(ngModel)]="negocio.cp" type="number" formControlName="cpneg"
-                                    required class="validate" name="cpneg" maxlength="5" placeholder="Codigo Postal"
+                                    required class="validate" name="Código Postal negocio" maxlength="5" placeholder="Codigo Postal"
                                     (keypress)="numberOnly($event)" (keyup)="cpneg.value.length == 5 && searchCP(cpneg.value, 'negocio')" />
                                 <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                             </div>
                             <div class="input-field col s6">
                                 <span class="grey-text in">Tipo de asentamiento</span>
                                 <input type="text" [(ngModel)]="negocio.tipo_asentamiento"
-                                    formControlName="tipoasentamientoneg" disabled name="tipoasentamientoneg"
+                                    formControlName="tipoasentamientoneg" disabled name="Tipo de asentamiento negocio"
                                     id="tipoasentamientoneg" class="validate" placeholder="Tipo de asentamiento">
                                 <div class="blue-text" *ngIf="f.tipoasentamientoneg.errors"></div>
                             </div>
                             <div class="input-field col s6">
                                 <span class="grey-text in">Asentamiento</span>
                                 <select [(ngModel)]="asentamientoneg" formControlName="asentamientoneg"
-                                    name="asentamientoneg" id="asentamientoneg" class="negocio validate">
+                                    name="Asentamiento negocio" id="asentamientoneg" class="negocio validate">
                                     <option value="" disabled selected>Selecciona una opción</option>
                                     <option [ngValue]="item" *ngFor="let item of negocio.asentamiento">{{item}}</option>
                                 </select>
@@ -483,14 +483,14 @@
                             <div class="input-field col s6">
                                 <span class="grey-text in">Municipio</span>
                                 <input type="text" [(ngModel)]="negocio.municipio" id="municipioneg"
-                                    formControlName="municipioneg" disabled name="municipioneg" class="validate"
+                                    formControlName="municipioneg" disabled name="Municipio negocio" class="validate"
                                     placeholder="Ciudad">
                                 <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                             </div>
                             <div class="input-field col s6">
                                 <span class="grey-text in">Entidad federativa</span>
                                 <input type="text" [(ngModel)]="negocio.estado" formControlName="entidadfedneg"
-                                    name="entidadfedneg" disabled id="entidadfedneg" class="validate"
+                                    name="Entidad federativa negocio" disabled id="entidadfedneg" class="validate"
                                     placeholder="Entidad federativa">
                                 <div class="blue-text" *ngIf="f.entidadfedneg.errors"></div>
                             </div>
@@ -517,7 +517,7 @@
                         <p><br></p>
                     </div>
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="sector" name="sector" id="sector" class="validate" [(ngModel)]="sector"
+                        <select formControlName="sector" name="Sector" id="sector" class="validate" [(ngModel)]="sector"
                             (ngModelChange)="activitieChange($event, 'sector', sector=sector)">
                             <option value="" disabled selected>Selecciona una opción</option>
                             <option [ngValue]="item.codigo" *ngFor="let item of activities.sectorList">{{item.titulo}}
@@ -528,7 +528,7 @@
                         <div class="blue-text" *ngIf="f.sector.errors">Debes seleccionar una opción.</div>
                     </div>
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="subsector" name="subsector" id="subsector" class="validate"
+                        <select formControlName="subsector" name="Subsector" id="subsector" class="validate"
                             [(ngModel)]="subsector"
                             (ngModelChange)="activitieChange($event, 'subsector', sector=sector, subsector=subsector)">
                             <option value="" disabled selected>Selecciona una opción</option>
@@ -540,7 +540,7 @@
                         <div class="blue-text" *ngIf="f.subsector.errors">Debes seleccionar una opción.</div>
                     </div>
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="rama" name="rama" id="rama" class="validate" [(ngModel)]="rama"
+                        <select formControlName="rama" name="Rama" id="rama" class="validate" [(ngModel)]="rama"
                             (ngModelChange)="activitieChange($event, 'rama', sector=sector, subsector=subsector, rama=rama)">
                             <option value="" disabled selected>Selecciona una opción</option>
                             <option [ngValue]="item.codigo" *ngFor="let item of activities.ramaList">{{item.titulo}}
@@ -551,7 +551,7 @@
                         <div class="blue-text" *ngIf="f.sector.errors">Debes seleccionar una opción.</div>
                     </div>
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="subrama" name="subrama" id="subrama" class="validate"
+                        <select formControlName="subrama" name="Subrama" id="subrama" class="validate"
                             [(ngModel)]="subrama"
                             (ngModelChange)="activitieChange($event, 'subrama', sector=sector, subsector=subsector, rama=rama, subrama=subrama)">
                             <option value="" disabled selected>Selecciona una opción</option>
@@ -563,7 +563,7 @@
                         <div class="blue-text" *ngIf="f.sector.errors">Debes seleccionar una opción.</div>
                     </div>
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="giro" name="giro" id="giro" class="validate" [(ngModel)]="giro">
+                        <select formControlName="giro" name="Giro" id="giro" class="validate" [(ngModel)]="giro">
                             <option value="" disabled selected>Selecciona una opción</option>
                             <option [ngValue]="item.codigo" *ngFor="let item of activities.giroList">{{item.titulo}}
                             </option>
@@ -593,7 +593,7 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="ref1nombre" type="text" formControlName="ref1nombre" name="ref1nombre" required
+                        <input id="ref1nombre" type="text" formControlName="ref1nombre" name="Nombre ref 1" required
                         (keyup)="form.patchValue({ref1nombre: $event.target.value.toUpperCase()})" class="validate">
                         <label for="ref1nombre">Nombre</label>
 
@@ -617,7 +617,7 @@
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="ref1apaterno" type="text" name="ref1apaterno" formControlName="ref1apaterno"
+                        <input id="ref1apaterno" type="text" name="A paterno ref 1" formControlName="ref1apaterno"
                         (keyup)="form.patchValue({ref1apaterno: $event.target.value.toUpperCase()})" required class="validate">
                         <label for="ref1apaterno">Apellido paterno</label>
                         <div class="blue-text" *ngIf="f.ref1apaterno.errors?.minlength">Debe tener un minimo de 2
@@ -628,7 +628,7 @@
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="ref1amaterno" type="text" name="ref1amaterno" formControlName="ref1amaterno"
+                        <input id="ref1amaterno" type="text" name="A materno ref 1" formControlName="ref1amaterno"
                         (keyup)="form.patchValue({ref1amaterno: $event.target.value.toUpperCase()})" required class="validate">
                         <label for="ref1amaterno">Apellido materno</label>
                         <div class="blue-text" *ngIf="f.ref1amaterno.errors?.minlength">Debe tener un minimo de 2
@@ -640,14 +640,14 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">phone</i>
-                        <input class="validate" id="ref1tel" type="text" formControlName="ref1tel" name="ref1tel"
+                        <input class="validate" id="ref1tel" type="text" formControlName="ref1tel" name="Teléfono ref 1"
                         (keypress)="numberOnly($event)" minlength="10" maxlength="10" required>
                         <label for="text">Número de Teléfono</label>
                         <div class="blue-text" *ngIf="f.ref1tel.errors">El teléfono debe ser de 10 digitos</div>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="ref1tiporelacion" name="ref1tiporelacion" id="ref1tiporelacion"
+                        <select formControlName="ref1tiporelacion" name="Relación ref 1" id="ref1tiporelacion"
                             class="validate">
                             <option value="" disabled selected>Selecciona una opción</option>
                             <option value="2">Amistad</option>
@@ -666,7 +666,7 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="ref2nombre" type="text" formControlName="ref2nombre" name="ref2nombre" required
+                        <input id="ref2nombre" type="text" formControlName="ref2nombre" name="Nombre ref 2" required
                         (keyup)="form.patchValue({ref2nombre: $event.target.value.toUpperCase()})" class="validate">
                         <label for="ref2nombre">Nombre</label>
 
@@ -690,7 +690,7 @@
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="ref2apaterno" type="text" name="ref2apaterno" formControlName="ref2apaterno"
+                        <input id="ref2apaterno" type="text" name="A paterno ref 2" formControlName="ref2apaterno"
                         (keyup)="form.patchValue({ref2apaterno: $event.target.value.toUpperCase()})" required class="validate">
                         <label for="ref2apaterno">Apellido paterno</label>
                         <div class="blue-text" *ngIf="f.ref2apaterno.errors?.minlength">Debe tener un minimo de 2
@@ -701,7 +701,7 @@
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="ref2amaterno" type="text" name="ref2amaterno" formControlName="ref2amaterno"
+                        <input id="ref2amaterno" type="text" name="A materno ref 2" formControlName="ref2amaterno"
                         (keyup)="form.patchValue({ref2amaterno: $event.target.value.toUpperCase()})" required class="validate">
                         <label for="ref2amaterno">Apellido materno</label>
                         <div class="blue-text" *ngIf="f.ref2amaterno.errors?.minlength">Debe tener un minimo de 2
@@ -713,14 +713,14 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">phone</i>
-                        <input class="validate" id="ref2tel" type="text" formControlName="ref2tel" name="ref2tel"
+                        <input class="validate" id="ref2tel" type="text" formControlName="ref2tel" name="Teléfono ref 2"
                         (keypress)="numberOnly($event)" minlength="10" maxlength="10" required>
                         <label for="text">Número de Teléfono</label>
                         <div class="blue-text" *ngIf="f.ref2tel.errors">El teléfono debe ser de 10 digitos</div>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="ref2tiporelacion" name="ref2tiporelacion" id="ref2tiporelacion"
+                        <select formControlName="ref2tiporelacion" name="Relación ref 2" id="ref2tiporelacion"
                             class="validate">
                             <option value="" disabled selected>Selecciona una opción</option>
                             <option value="2">Amistad</option>
@@ -739,7 +739,7 @@
                     <div class="row">
                         <div class="input-field col s12 m12 l12">
                             <label><input class="with-gap teal darken-4" formControlName="aprivacidad"
-                                    name="aprivacidad" type="checkbox" [(ngModel)]="aviso" />
+                                    name="A privacidad" id="aprivacidad" type="checkbox" [(ngModel)]="aviso" required/>
                                 <span>
 
                                     <label class="waves-effect modal-trigger subrayar" href="#aviso">
@@ -1009,10 +1009,10 @@
                                 <i class="material-icons right">attachment</i>cargar
 
 
-                                <input type="file" required
+                                <input type="file" id="declaracion" formControlName="declaracion" required
                                     title="Si eres PERSONA FÍSICA CON ACTIVIDAD EMPRESARIAL envía tu última DECLARACIÓN DEL EJERCICIO DE IMPUESTOS FEDERALES; si eres PERSONA FÍSICA EN EL RÉGIMEN DE INCORPORACIÓN FISCAL envía el último ACUSE DE RECIBO DECLARACIÓN DE IMPUESTOS FEDERALES."
-                                    (change)="ValidateSize('declaracion')" formControlName="declaracion"
-                                    accept="image/jpg, image/jpeg, image/png, application/pdf" id="declaracion"
+                                    (change)="ValidateSize('declaracion')" 
+                                    accept="image/jpg, image/jpeg, image/png, application/pdf" 
                                     class="validate">
                             </div>
                             <div class="col s1 m1 l1" *ngIf="doc.declaracion.errors?.required">
@@ -1032,8 +1032,8 @@
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>cargar
 
-                                <input type="file" required (change)="ValidateSize('curpd')" accept="application/pdf" id="curpd"
-                                    class="validate" formControlName="curpd" >
+                                <input type="file" id="curpd" formControlName="curpd" required (change)="ValidateSize('curpd')" accept="application/pdf" 
+                                    class="validate">
                             </div>
                             <div class="col s1 m1 l1" *ngIf="doc.curpd.errors?.required">
                                 <i class="material-icons icon-red">error_outline</i>
@@ -1052,8 +1052,8 @@
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>cargar
 
-                                <input type="file" required (change)="ValidateSize('fiscal')" accept="application/pdf"
-                                    id="fiscal" name="fiscal" formControlName="fiscal" class="validate">
+                                <input type="file" id="fiscal" formControlName="fiscal" required (change)="ValidateSize('fiscal')" accept="application/pdf"
+                                     name="fiscal" class="validate">
                             </div>
                             <div class="col s1 m1 l1" *ngIf="doc.fiscal.errors?.required">
                                 <i class="material-icons icon-red">error_outline</i>
@@ -1350,13 +1350,12 @@
 
 <div id="modal1" class="modal">
     <div class="modal-content">
-        <h4 class="zz">¡Solicitud Enviada!</h4>
+        <h4 class="zz">¡Felicidades!, Solicitud Registrada.</h4>
         <!--<p class="flow-text"><b>N° de Registro: </b>KJF986JHH32</p>-->
-        <p class="flow-text">Para continuar activa tu cuenta, revisa el correo que nos proporcionaste y encontrarás las
-            instrucciones para continuar con tu solicitud.</p>
+        <p class="floe-text">Tu solicitud ha sido enviada a un proceso de evaluación, te mantendremos al tanto a través del correo registrado.</p>
     </div>
     <div class="modal-footer">
-        <a routerLink="/home" class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>
+        <a routerLink="/home" (click)="userService.logout()" class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>
     </div>
     <div class="footer-copyright teal darken-3">
         <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
