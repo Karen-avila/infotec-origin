@@ -11,7 +11,6 @@ import swal from 'sweetalert';
 import { Router } from '@angular/router';
 
 import { environment } from '../../../environments/environment';
-import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -39,6 +38,7 @@ export class UserService {
     let api_keys = environment.gravitee_api_keys;
     headers['X-Gravitee-Api-Key'] = api_keys['registro'];
 
+    console.log(headers);
     // console.log("Esto es lo que enviare a donde lo tenga que enviar", object);
 
     return this.http.post(url, object, { headers }).map((res: any) => {
@@ -47,7 +47,7 @@ export class UserService {
 
       return true;
     }).catch(err => {
-      console.log(err.status);
+      console.log(err);
       return err;
     });
 
@@ -63,18 +63,14 @@ export class UserService {
 
     const object = JSON.stringify(user);
 
-    // console.log("Esto es lo que enviare a donde lo tenga que enviar", object);
-
     return this.http.post(url, object, { headers }).map((res: any) => {
       // console.log("creado", res)
       swal("¡Felicidades!", "Felicidades usuario activado correctamente.", "success");
 
       return true;
     }).catch(err => {
-      // console.log(err.status);
       return err;
     });
-
   }
 
   sendPersonalData(data) {
@@ -154,11 +150,7 @@ export class UserService {
     let clientid = localStorage.getItem('clientid');
     let url = environment.apis_url + '/V1.0/fineract-protected/clients/' + clientid + '/documents';
     let api_keys = environment.gravitee_api_keys;
-    /* let headers = environment.headers_apis; */
-    /* var headers :Array=[];
-    headers['X-Gravitee-Api-Key'] = api_keys['fineract']; */
-    /* headers['Content-Type'] = 'multipart/form-data; boundary=---011000010111000001101001';
-    delete headers['Content-Type']; */
+
     const httpHeaders = new HttpHeaders({'X-Gravitee-Api-Key':api_keys['fineract']});
     const req = new HttpRequest('POST', url, formData, {
       reportProgress: true,
@@ -191,6 +183,16 @@ export class UserService {
       console.log(err);
       return err;
     });
+  }
+
+  getDataCode(codeName: String) {
+    this.prosessing = false;
+    let url = environment.apis_url + '/V1.0/fineract-protected/codes/' + codeName + '/options';
+    let api_keys = environment.gravitee_api_keys;
+    let headers = environment.headers_apis;
+    headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
+
+    return this.http.get<any>(url, { headers: headers });
   }
 
   validateFileExtension(fileName: String) {
