@@ -130,9 +130,6 @@ pbaDict(p1:string){
   register() {
     let user = new User(this.form.value.email,this.form.value.password,"1",this.form.value.rePassword);
 
-    console.log("form is valid?", this.form.valid);
-    console.log("form is valid?", this.form.value);
-
     if(this.form.valid){
       /* // console.log("form esto envio", this.form.value); */
       //enviar datos a back
@@ -179,8 +176,6 @@ pbaDict(p1:string){
   }
 
   validacion(){
-    console.log("formval is valid?", this.formval.valid);
-    console.log("formval is valid?", this.formval.value);
     if(this.formval.valid){
       // console.log("formval", this.formval.value);
       this.router.navigate(["home"]);
@@ -189,7 +184,6 @@ pbaDict(p1:string){
     } else{
       swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
     }
-
   }
 
 }

@@ -368,7 +368,7 @@ export class DashboardComponent implements OnInit {
       //fiel: new FormControl(null, Validators.required),
       //cer: new FormControl(null, Validators.required),
       //password: new FormControl(null, Validators.required)
-       buro: new FormControl(null, Validators.required)
+      buro: new FormControl(null, Validators.required)
 
     });
 
@@ -479,10 +479,10 @@ export class DashboardComponent implements OnInit {
           return response.json();
         }).then((json) => {
           //console.log('codigo error',json.code_error)
-          if(json.code_error === 105){
+          if (json.code_error === 105) {
             swal("Lo sentimos!", "Tu código postal no esta dentro de los participantes para este apoyo, revisa constantemente para validar si existen otros apoyos.", "info");
             this.userService.logout();
-          }else{
+          } else {
             if (target === 'negocio') {
               this.negocio.tipo_asentamiento = json.response.tipo_asentamiento;
               this.negocio.colonia = json.response.colonia;
@@ -531,8 +531,8 @@ export class DashboardComponent implements OnInit {
             setTimeout(() => { M.FormSelect.init(document.querySelectorAll('select')); }, 200);
             return;
           }
-       
-          
+
+
         });
     }
   }
@@ -558,8 +558,13 @@ export class DashboardComponent implements OnInit {
     // // console.log("onchanges")
     const fl = (document.getElementById(file) as HTMLInputElement);
     const FileSize = fl.files[0].size / 1024 / 1024; // in MB
+    if (!this.userService.validateFileExtension(fl.files[0].name)) {
+      swal('¡Cuidado!', 'Tu archivo debe no es del tipo válido', 'warning');
+      fl.value = null;
+      return;
+    }
+
     if (FileSize > 2) {
-      // alert('File size exceeds 2 MB');
       swal('¡Cuidado!', 'Tu archivo debe ser menor a 2Mb', 'warning');
       fl.value = null;
     }
@@ -592,29 +597,28 @@ export class DashboardComponent implements OnInit {
     if (this.form.valid) {
       this.userService.sendPersonalData(this.form.value)
         .subscribe(res => {
-          console.log(res);
           // claveelector
           // CURP 
           var curp = <HTMLInputElement>document.getElementById('curp');
           var identification = <HTMLInputElement>document.getElementById('claveelector');
           var payload = { // INE 1, CURP 2
-            documentTypeId: 1, 
+            documentTypeId: 1,
             status: "Active",
             documentKey: identification.value,
-            description: "Clave Elector"            
+            description: "Clave Elector"
           };
           var payload2 = { // INE 1, CURP 2
-            documentTypeId: 2, 
+            documentTypeId: 2,
             status: "Active",
             documentKey: curp.value,
-            description: "Curp"            
+            description: "Curp"
           }
           this.userService.sendIdentification(payload).subscribe(res => {
-            console.log("sube clave elector",res);
-          }); 
+            console.log("sube clave elector", res);
+          });
           this.userService.sendIdentification(payload2).subscribe(res => {
-            console.log("sube curp",res);
-          }); 
+            console.log("sube curp", res);
+          });
         });
       this.stepper.openStep(3);
     } else {
@@ -648,30 +652,22 @@ export class DashboardComponent implements OnInit {
   }
 
   ddocumentos() {
-    let documents = ['frontal','reverso','comprobante','comprobanten','estado','declaarcion','curpd','fiscal'];
+    let documents = ['frontal', 'reverso', 'comprobante', 'comprobanten', 'estado', 'declaarcion', 'curpd', 'fiscal'];
     // if (this.formDocumentos.valid) {
     if (1) {
       // Loop
-      console.log("for",documents.length)
-      for(let i=0;i<documents.length;i++){
+      console.log("for", documents.length)
+      for (let i = 0; i < documents.length; i++) {
         console.log("for")
         this.userService.sendDocuments(documents[i], (<HTMLInputElement>document.getElementById(documents[i])).files[0])
-        .subscribe(res => {
-          console.log("esto responde el servicio documents", res); //revisar res.user p.ej y hacer un if(uid){openmodal}
-          //swal("¡Documentos Guardados!", "Continuar", "success");
-        });
+          .subscribe(res => {
+            console.log("esto responde el servicio documents", res); //revisar res.user p.ej y hacer un if(uid){openmodal}
+            //swal("¡Documentos Guardados!", "Continuar", "success");
+          });
         swal("¡Documentos Guardados!", "Continuar", "success");
         this.stepper.openStep(4);
       }
-     /*  const file = (<HTMLInputElement>document.getElementById('frontal')).files[0];
-      this.userService.sendDocuments('identificacion', file)
-        .subscribe(res => {
-          console.log("esto responde el servicio documents", res); //revisar res.user p.ej y hacer un if(uid){openmodal}
-          //swal("¡Documentos Guardados!", "Continuar", "success");
-        }); */
-      // End Loop
-      // Esperar a que terminen
-      
+
     } else {
       this.findInvalidControls();
       swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
