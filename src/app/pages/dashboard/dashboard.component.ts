@@ -9,6 +9,9 @@ import * as M from 'materialize-css';
 import swal from 'sweetalert';
 import activitiesService from './service/activities.service';
 import { EventManager } from '@angular/platform-browser';
+
+import * as _ from 'underscore';
+
 declare const MStepper: any;
 
 // Pick Address
@@ -28,6 +31,8 @@ declare var google;
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+
+  viewError: Array<string> = [];
   sector;
   subsector;
   rama;
@@ -102,6 +107,7 @@ export class DashboardComponent implements OnInit {
     longitude: 0,
   };
   questionForm = {};
+  stateOptions = [];
   monte;
   hugo = '666';
   stepper;
@@ -383,6 +389,15 @@ export class DashboardComponent implements OnInit {
       cerFirm: new FormControl(null, Validators.required),
       passwordFirm: new FormControl(null, Validators.required)
     });
+
+    var dataCode = 'STATE';
+    this.userService.getDataCode(dataCode).subscribe(
+      data => {
+        this.stateOptions = _.sortBy(data.codeValues, 'name');
+        console.log(this.stateOptions); 
+      },
+      error => console.error('There was an error getting code values ' + dataCode, error)
+    )
   }
 
   get f() { return this.form.controls; }
@@ -581,15 +596,26 @@ export class DashboardComponent implements OnInit {
     const controls = this.form.controls;
     for (const name in controls) {
       if (controls[name].invalid) {
+        this.viewError.push(name);
         console.log("Invalid: " + name);
         if (document.getElementById(name) != null) {
           document.getElementById(name).classList.add('invalid');
+          var x = document.getElementById(name);
+          M.toast({html: x.getAttribute("name")})
         } else {
           console.log("Element in null");
         }
       }
     }
+    /* this.popup[0].open(); */
     return invalid;
+  }
+
+  sortObject(obj) {
+    return Object.keys(obj).sort().reduce(function (result, key) {
+        result[key] = obj[key];
+        return result;
+    }, {});
   }
 
   dpersonales() {
@@ -652,13 +678,13 @@ export class DashboardComponent implements OnInit {
   }
 
   ddocumentos() {
-    let documents = ['frontal', 'reverso', 'comprobante', 'comprobanten', 'estado', 'declaarcion', 'curpd', 'fiscal'];
+    let documents = ['frontal','reverso','comprobante','comprobanten','estado','declarcion','curpd','fiscal'];
     // if (this.formDocumentos.valid) {
     if (1) {
       // Loop
-      console.log("for", documents.length)
-      for (let i = 0; i < documents.length; i++) {
-        console.log("for")
+      
+      for(let i=0;i<documents.length;i++){
+        
         this.userService.sendDocuments(documents[i], (<HTMLInputElement>document.getElementById(documents[i])).files[0])
           .subscribe(res => {
             console.log("esto responde el servicio documents", res); //revisar res.user p.ej y hacer un if(uid){openmodal}
