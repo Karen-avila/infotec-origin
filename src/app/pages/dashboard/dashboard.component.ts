@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/service.index';
+import { PersonalReferences } from '../../models/personal-references.model' ;
 import { ActivatedRoute } from '@angular/router';
 import { Options, LabelType } from 'ng5-slider';
 import { Finance } from 'financejs';
@@ -595,20 +596,22 @@ export class DashboardComponent implements OnInit {
   dpersonales() {
     //console.log(this.form.value);
     if (this.form.valid) {
+      let ref1 = new PersonalReferences(this.form.value.entidadfednaci,'25/Junio/19',this.form.value.ref1nombre,this.form.value.ref1apaterno,this.form.value.ref1tel,'93','17','75','33');
+      let ref2 = new PersonalReferences(this.form.value.entidadfednaci,'25/Junio/19',this.form.value.ref2nombre,this.form.value.ref2apaterno,this.form.value.ref2tel,'93','17','75','33');
+
       this.userService.sendPersonalData(this.form.value)
         .subscribe(res => {
           console.log(res);
-          // claveelector
-          // CURP 
+          //send identifications
           var curp = <HTMLInputElement>document.getElementById('curp');
           var identification = <HTMLInputElement>document.getElementById('claveelector');
-          var payload = { // INE 1, CURP 2
+          var payload = {
             documentTypeId: 1, 
             status: "Active",
             documentKey: identification.value,
             description: "Clave Elector"            
           };
-          var payload2 = { // INE 1, CURP 2
+          var payload2 = {
             documentTypeId: 2, 
             status: "Active",
             documentKey: curp.value,
@@ -619,7 +622,16 @@ export class DashboardComponent implements OnInit {
           }); 
           this.userService.sendIdentification(payload2).subscribe(res => {
             console.log("sube curp",res);
-          }); 
+          });
+
+          //send references
+          this.userService.sendPersonalReferences(ref1).subscribe(res => {
+            console.log("manda referencias1",res);
+          });
+          this.userService.sendPersonalReferences(ref2).subscribe(res => {
+            console.log("manda referencias2",res);
+          });
+
         });
       this.stepper.openStep(3);
     } else {
@@ -627,6 +639,7 @@ export class DashboardComponent implements OnInit {
       swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
     }
   }
+
 
   dfiel() {
     // console.log('formFiel is valid?', this.formFiel.valid);
