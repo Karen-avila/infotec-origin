@@ -10,6 +10,9 @@ import * as M from 'materialize-css';
 import swal from 'sweetalert';
 import activitiesService from './service/activities.service';
 import { EventManager } from '@angular/platform-browser';
+
+import * as _ from 'underscore';
+
 declare const MStepper: any;
 
 // Pick Address
@@ -105,6 +108,7 @@ export class DashboardComponent implements OnInit {
     longitude: 0,
   };
   questionForm = {};
+  stateOptions = [];
   monte;
   hugo = '666';
   stepper;
@@ -371,7 +375,7 @@ export class DashboardComponent implements OnInit {
       //fiel: new FormControl(null, Validators.required),
       //cer: new FormControl(null, Validators.required),
       //password: new FormControl(null, Validators.required)
-       buro: new FormControl(null, Validators.required)
+      buro: new FormControl(null, Validators.required)
 
     });
 
@@ -386,6 +390,15 @@ export class DashboardComponent implements OnInit {
       cerFirm: new FormControl(null, Validators.required),
       passwordFirm: new FormControl(null, Validators.required)
     });
+
+    var dataCode = 'STATE';
+    this.userService.getDataCode(dataCode).subscribe(
+      data => {
+        this.stateOptions = _.sortBy(data.codeValues, 'name');
+        console.log(this.stateOptions); 
+      },
+      error => console.error('There was an error getting code values ' + dataCode, error)
+    )
   }
 
   get f() { return this.form.controls; }
@@ -482,9 +495,10 @@ export class DashboardComponent implements OnInit {
           return response.json();
         }).then((json) => {
           //console.log('codigo error',json.code_error)
-          if(json.code_error === 105){
+          if (json.code_error === 105) {
             swal("Lo sentimos!", "Tu código postal no esta dentro de los participantes para este apoyo, revisa constantemente para validar si existen otros apoyos.", "info");
-          }else{
+            this.userService.logout();
+          } else {
             if (target === 'negocio') {
               this.negocio.tipo_asentamiento = json.response.tipo_asentamiento;
               this.negocio.colonia = json.response.colonia;
@@ -533,8 +547,8 @@ export class DashboardComponent implements OnInit {
             setTimeout(() => { M.FormSelect.init(document.querySelectorAll('select')); }, 200);
             return;
           }
-       
-          
+
+
         });
     }
   }
@@ -560,8 +574,13 @@ export class DashboardComponent implements OnInit {
     // // console.log("onchanges")
     const fl = (document.getElementById(file) as HTMLInputElement);
     const FileSize = fl.files[0].size / 1024 / 1024; // in MB
+    if (!this.userService.validateFileExtension(fl.files[0].name)) {
+      swal('¡Cuidado!', 'Tu archivo debe no es del tipo válido', 'warning');
+      fl.value = null;
+      return;
+    }
+
     if (FileSize > 2) {
-      // alert('File size exceeds 2 MB');
       swal('¡Cuidado!', 'Tu archivo debe ser menor a 2Mb', 'warning');
       fl.value = null;
     }
@@ -593,6 +612,13 @@ export class DashboardComponent implements OnInit {
     return invalid;
   }
 
+  sortObject(obj) {
+    return Object.keys(obj).sort().reduce(function (result, key) {
+        result[key] = obj[key];
+        return result;
+    }, {});
+  }
+
   dpersonales() {
     //console.log(this.form.value);
     if (this.form.valid) {
@@ -601,25 +627,25 @@ export class DashboardComponent implements OnInit {
 
       this.userService.sendPersonalData(this.form.value)
         .subscribe(res => {
-          console.log(res);
-          //send identifications
+          // claveelector
+          // CURP 
           var curp = <HTMLInputElement>document.getElementById('curp');
           var identification = <HTMLInputElement>document.getElementById('claveelector');
-          var payload = {
-            documentTypeId: 1, 
+          var payload = { // INE 1, CURP 2
+            documentTypeId: 1,
             status: "Active",
             documentKey: identification.value,
-            description: "Clave Elector"            
+            description: "Clave Elector"
           };
-          var payload2 = {
-            documentTypeId: 2, 
+          var payload2 = { // INE 1, CURP 2
+            documentTypeId: 2,
             status: "Active",
             documentKey: curp.value,
-            description: "Curp"            
+            description: "Curp"
           }
           this.userService.sendIdentification(payload).subscribe(res => {
-            console.log("sube clave elector",res);
-          }); 
+            console.log("sube clave elector", res);
+          });
           this.userService.sendIdentification(payload2).subscribe(res => {
             console.log("sube curp",res);
           });
@@ -674,22 +700,14 @@ export class DashboardComponent implements OnInit {
       for(let i=0;i<documents.length;i++){
         
         this.userService.sendDocuments(documents[i], (<HTMLInputElement>document.getElementById(documents[i])).files[0])
-        .subscribe(res => {
-          console.log("esto responde el servicio documents", res); //revisar res.user p.ej y hacer un if(uid){openmodal}
-          //swal("¡Documentos Guardados!", "Continuar", "success");
-        });
+          .subscribe(res => {
+            console.log("esto responde el servicio documents", res); //revisar res.user p.ej y hacer un if(uid){openmodal}
+            //swal("¡Documentos Guardados!", "Continuar", "success");
+          });
         swal("¡Documentos Guardados!", "Continuar", "success");
         this.stepper.openStep(4);
       }
-     /*  const file = (<HTMLInputElement>document.getElementById('frontal')).files[0];
-      this.userService.sendDocuments('identificacion', file)
-        .subscribe(res => {
-          console.log("esto responde el servicio documents", res); //revisar res.user p.ej y hacer un if(uid){openmodal}
-          //swal("¡Documentos Guardados!", "Continuar", "success");
-        }); */
-      // End Loop
-      // Esperar a que terminen
-      
+
     } else {
       this.findInvalidControls();
       swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
