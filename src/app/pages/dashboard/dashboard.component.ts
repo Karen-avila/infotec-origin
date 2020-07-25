@@ -28,6 +28,8 @@ declare var google;
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+
+  viewError: Array<string> = [];
   sector;
   subsector;
   rama;
@@ -481,7 +483,6 @@ export class DashboardComponent implements OnInit {
           //console.log('codigo error',json.code_error)
           if(json.code_error === 105){
             swal("Lo sentimos!", "Tu código postal no esta dentro de los participantes para este apoyo, revisa constantemente para validar si existen otros apoyos.", "info");
-            this.userService.logout();
           }else{
             if (target === 'negocio') {
               this.negocio.tipo_asentamiento = json.response.tipo_asentamiento;
@@ -576,14 +577,18 @@ export class DashboardComponent implements OnInit {
     const controls = this.form.controls;
     for (const name in controls) {
       if (controls[name].invalid) {
+        this.viewError.push(name);
         console.log("Invalid: " + name);
         if (document.getElementById(name) != null) {
           document.getElementById(name).classList.add('invalid');
+          var x = document.getElementById(name);
+          M.toast({html: x.getAttribute("name")})
         } else {
           console.log("Element in null");
         }
       }
     }
+    /* this.popup[0].open(); */
     return invalid;
   }
 
@@ -648,13 +653,13 @@ export class DashboardComponent implements OnInit {
   }
 
   ddocumentos() {
-    let documents = ['frontal','reverso','comprobante','comprobanten','estado','declaarcion','curpd','fiscal'];
+    let documents = ['frontal','reverso','comprobante','comprobanten','estado','declarcion','curpd','fiscal'];
     // if (this.formDocumentos.valid) {
     if (1) {
       // Loop
-      console.log("for",documents.length)
+      
       for(let i=0;i<documents.length;i++){
-        console.log("for")
+        
         this.userService.sendDocuments(documents[i], (<HTMLInputElement>document.getElementById(documents[i])).files[0])
         .subscribe(res => {
           console.log("esto responde el servicio documents", res); //revisar res.user p.ej y hacer un if(uid){openmodal}
