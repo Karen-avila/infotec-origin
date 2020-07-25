@@ -29,7 +29,7 @@ car = this.carr();
             currency: 'MXN',
           }); 
         case LabelType.Ceil:
-          return '<b>Monto Maximo: </b>MX' + value.toLocaleString('es-MX', {
+          return '<b>Monto Máximo: </b>MX' + value.toLocaleString('es-MX', {
             style: 'currency',
             currency: 'MXN',
           });

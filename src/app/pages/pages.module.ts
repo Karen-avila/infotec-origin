@@ -30,7 +30,7 @@ import { AmortizacionComponent } from './amortizacion/amortizacion.component';
 import { PagareComponent } from './pagare/pagare.component';
 import { CregistroComponent } from './cregistro/cregistro.component';
 import { AutorizacionComponent } from './autorizacion/autorizacion.component';
-
+import { EstatusComponent } from './estatus/estatus.component';
 
 
 @NgModule({
@@ -50,7 +50,8 @@ import { AutorizacionComponent } from './autorizacion/autorizacion.component';
         CcontratoComponent,
         PagareComponent,
         CregistroComponent,
-        AutorizacionComponent
+        AutorizacionComponent,
+        EstatusComponent
     ],
     imports:[
         GooglePlaceModule,

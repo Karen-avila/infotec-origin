@@ -76,8 +76,8 @@ export class ApplyComponent implements OnInit {
 
    this.form = new FormGroup({  
       email: new FormControl(null,[Validators.required, Validators.email]),
-      password: new FormControl(null, [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')]),
-      rePassword: new FormControl(null, [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')])
+      password: new FormControl(null, [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$')]),
+      rePassword: new FormControl(null, [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$')])
    }, { validators: this.equalPass('password','rePassword') });
 
    //validators: this.pbaDict('password') 
@@ -130,7 +130,8 @@ pbaDict(p1:string){
   register() {
     let user = new User(this.form.value.email,this.form.value.password,"1",this.form.value.rePassword);
 
-    // console.log("form is valid?", this.form.valid);
+    console.log("form is valid?", this.form.valid);
+    console.log("form is valid?", this.form.value);
 
     if(this.form.valid){
       /* // console.log("form esto envio", this.form.value); */
@@ -178,7 +179,8 @@ pbaDict(p1:string){
   }
 
   validacion(){
-    // console.log("formval is valid?", this.formval.valid);
+    console.log("formval is valid?", this.formval.valid);
+    console.log("formval is valid?", this.formval.value);
     if(this.formval.valid){
       // console.log("formval", this.formval.value);
       this.router.navigate(["home"]);

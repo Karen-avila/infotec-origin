@@ -11,20 +11,20 @@
                     <div class="input-field col s10 l12">
                         <i class="material-icons prefix icon-white">account_circle</i>
                         <input id="email" formControlName="email" type="email" name='email' class="validate">
-                        <label class="white-text" for="email">Email</label>
+                        <label class="white-text" for="email">Correo electrónico</label>
                         <div class="red-text" *ngIf="f.email.errors?.email">El correo electrónico debe de ser válido.</div>
                     </div>
                     <div class="input-field col s10 l12">
                         <i class="material-icons prefix icon-white">lock</i>
                         <input id="password" formControlName="password" [type]="passType" name='password' class="validate">
                         <label class="white-text" for="password">Contraseña</label>
-                        <div class="red-text col s12" *ngIf="f.password.errors && !form.pristine">Debe tener un mínimo de 8 caracteres 1 mayúscula, 1 minúscula, 1 número.</div>
-                        <i class="material-icons prefix" *ngIf="icon" (click)="viewPassword()">visibility_off</i>
-                        <i class="material-icons prefix" *ngIf="!icon" (click)="viewPassword()">visibility</i>
+                        <div class="red-text col s12" *ngIf="f.password.errors && !form.pristine">Debe tener un mínimo de 8 caracteres 1 Mayúscula 1 minúscula 1 número 1 carácter especial</div>
+                        <i class="material-icons prefix cursor" *ngIf="icon" (click)="viewPassword()">visibility_off</i>
+                        <i class="material-icons prefix cursor" *ngIf="!icon" (click)="viewPassword()">visibility</i>
                     </div>
 
                     <div class="col s12 m8 offset-m4 l8 offset-l4">
-                        <a (click)="forgot()" class="white-text">¿Olvidaste tu Contraseña?</a>
+                        <a (click)="forgot()" class="white-text cursor">¿Olvidaste tu Contraseña?</a>
                     </div>
                 </div>
                 <br>
@@ -38,12 +38,12 @@
                 <br>
                 <div class="row">
                     <div class="col s5 offset-s1 m4 offset-m3 l4 offset-l2">
-                        <button type="submit" class="waves-effect waves-light btn red darken-3"> 
+                        <button type="submit" class="waves-light btn red darken-3"> 
         Ingresar <i class="material-icons right">send</i> </button>
 
                     </div>
                     <div class="col s4 m4 l4">
-                        <button routerLink="/home" class="waves-effect waves-light btn grey">Cancelar</button>
+                        <button routerLink="/home" class="waves-light btn grey">Cancelar</button>
                     </div>
 
                 </div>
@@ -54,30 +54,30 @@
 
     <div id="forgot" class="hide valign-wrapper row login-box ">
 
-        <div class="col card s11 offset-s1 m7 offset-m2 l6 offset-l4 mycolor">
+        <div class="col card s11 offset-s1 m9 offset-m2 l9 offset-l2 mycolor">
             <br>
             <p class="flow-text white-text center-align">Recuperar Contraseña</p>
             <div class="card-content">
                 <div class="row">
                     <form ngNativeValidate [formGroup]="form1" (ngSubmit)="recuperarpsw()">
-                        <div class="input-field col s12">
+                        <div class="input-field col s12 l10">
                             <i class="material-icons prefix icon-white">account_circle</i>
-                            <input id="email" type="email" formControlName="email" name='email' class="validate">
-                            <label class="white-text" for="email">Email</label>
+                          <input id="email" type="email" formControlName="email" name='email' class="validate">
+                            <label class="white-text" for="email">Correo electrónico</label>
                             <div class="red-text" *ngIf="fgt.email.errors?.email">El correo electrónico debe de ser valido</div>
 
                         </div>
 
                         <br>
                         <div class="row">
-                            <div class="col s6 m6 offset-m3 l6 offset-l1 ">
+                            <div class="col s6 m5 offset-m1">
                                 <!--<button (click)="recuperar()" type="submit" ng-click=”recuperar()” class="waves-effect waves-light btn red darken-3 right"> 
                     Recuperar <i class="material-icons right">send</i> </button>-->
                                 <button class="waves-effect red darken-3 btn right" type="submit">Recuperar
                         <i class="material-icons right">send</i>
                       </button>
                             </div>
-                            <div class="col s6  m6 offset-m3 l3 ">
+                            <div class="col s6  m5 offset-m1">
                                 <a (click)="cancel()" class="waves-effect waves-light btn grey left">Cancelar</a>
                             </div>
 
