@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RecaptchaModule } from 'ng-recaptcha';
+import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
 
 import { InlineSVGModule } from 'ng-inline-svg';
 
@@ -38,6 +38,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     AppRoutingModule,
     HttpClientModule,
     RecaptchaModule,
+    RecaptchaFormsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

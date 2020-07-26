@@ -10,6 +10,7 @@ import { UserService } from '../../services/service.index';
 import { UserLog } from '../../models/user-log.module';
 
 import swal from 'sweetalert';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -23,19 +24,15 @@ export class LoginComponent implements OnInit {
   output: any;
   signInForm: NgForm;
   recaptcha: any[];
+  reCaptchaKey: string;
 
   passType = "password";
   icon:boolean=true;
 
-  resolved(captchaResponse: any[]) {
-    this.recaptcha = captchaResponse;
-    // console.log(this.recaptcha);
-  }
-
 step
-  constructor(public userService:UserService, private router: Router) { 
+  constructor(public userService:UserService, private router: Router) {
     /*this.userService.localStep().subscribe(res=>{
-      
+
       this.re = res[0].step;
     });*/
     //this.step="2";
@@ -51,13 +48,20 @@ step
 
   ngOnInit() {
    // M.AutoInit();
+    this.reCaptchaKey = environment.reCaptchaKey;
     var elems = document.querySelectorAll('.modal');
     this.instance = M.Modal.init(elems);
 
     this.form = new FormGroup({
       email: new FormControl(null,[Validators.required, Validators.email]),
-      password: new FormControl(null, [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}')])
-   });
+      password: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(8),
+        Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}')
+      ]),
+      token: new FormControl(''),
+      paso: new FormControl(0)
+    });
 
    this.form1 = new FormGroup({
       email: new FormControl(null,[Validators.required, Validators.email])
@@ -87,10 +91,18 @@ step
 this.router.navigate(["dashboard"]);
   }
 
-  
+
   recuperar(){
     // console.log("Recuperar");
     //M.Modal.open(); //Abrir pop up de cambio de contraseña
+  }
+
+  resolved(captchaResponse: string) {
+    console.log(`Resolved response token: ${captchaResponse}`);
+    this.form.get('token').setValue(captchaResponse);
+
+    console.log(this.form.value);
+
   }
 
   cancel(){
@@ -106,18 +118,18 @@ this.router.navigate(["dashboard"]);
   }
 
   login(){
-    
-    // console.log("form login is valid?", this.form.valid);
+
+    console.log("form login is valid?", this.form.valid);
     if(this.form.valid){
       const user = new UserLog(this.form.value.email,this.form.value.password);
       //this.router.navigate(["register",{id:this.step}]);
       //enviar datos a back
       this.userService.login(user)
-        .subscribe(res=>{
+        .then(res=>{
           // console.log("Is logged?",res);
           // console.log("Entro al step",this.step)
           /* this.router.navigate(["dashboard",{id:this.step}]);  */
-          this.router.navigate(["dashboard"]); 
+          this.router.navigate(["dashboard"]);
           //this.router.navigate(["register",{id:this.step}]); ///revisar donde quedara
 
         });
