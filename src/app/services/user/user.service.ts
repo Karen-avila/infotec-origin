@@ -208,4 +208,29 @@ export class UserService {
     }
     return isValid;
   }
+
+  sendPersonalReferences(data) {
+    // console.log("Document Service");
+    let clientid = localStorage.getItem('clientid');/* fineract-provider/api/v1/clients/%7BidCliente%7D/familymembers */
+    let url = environment.apis_url + '/V1.0/fineract-protected/clients/' + clientid + '/familymembers';
+    let api_keys = environment.gravitee_api_keys;
+    let headers = environment.headers_apis;
+    headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
+
+    const object = JSON.stringify(data);
+
+    //const object = JSON.stringify(userDocs);
+    return this.http.post(url, object, { headers: headers }).map((res: any) => {
+      // console.log("Enviados", res)
+      return res;
+    }).catch(err => {
+      if (err.status == '0') {
+        swal('Existio un error al procesar tu solicitud de identificación, intentalo más tarde');
+      }
+      this.prosessing = false;
+      console.log(err);
+      return err;
+    });
+  }
+
 }

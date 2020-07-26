@@ -155,7 +155,7 @@
                         <i class="material-icons prefix">payment</i>
                         <input class="validate" id="clabeinter" type="text" (keypress)="numberOnly($event)"
                             formControlName="clabeinter" name="Clabe interbancaria" minlength="18" maxlength="18" required>
-                        <label for="text">Clabe interbancaria</label>
+                        <label for="text">Clabe interbancaria *</label>
 
                         <div class="blue-text" *ngIf="f.clabeinter.errors">La clabe interbancaria consta de 18 dígitos
                         </div>
@@ -265,7 +265,7 @@
                         <input class="validate" id="telpersonal" type="text" formControlName="telpersonal"
 
                         (keypress)="numberOnly($event)" name="Número de Teléfono" minlength="10" maxlength="10" required>
-                        <label for="text">Número de Teléfono</label>
+                        <label for="text">Número de Teléfono *</label>
 
                         <div class="blue-text" *ngIf="f.telpersonal.errors">El teléfono debe ser de 10 digitos</div>
                     </div>
@@ -295,7 +295,7 @@
                             pattern="^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$"
 
                             required class="validate" name="Curp" minlength="18" maxlength="18" />
-                        <label for="curp">CURP</label>
+                        <label for="curp">CURP *</label>
 
                         <div class="blue-text">Únicamente letras mayúsculas</div>
                     </div>
@@ -307,7 +307,7 @@
                             pattern="^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$"
 
                                required class="validate" name="Rfc" minlength="12" maxlength="13" />
-                        <label for="rfc">RFC</label>
+                        <label for="rfc">RFC *</label>
 
                         <div class="blue-text">Únicamente letras mayúsculas</div>
                     </div>
@@ -318,7 +318,7 @@
                             (keyup)="form.patchValue({claveelector: $event.target.value.toUpperCase()})" required
 
                             minlength="18" maxlength="18" class="validate" name="Clave de Elector" />
-
+                            <label for="rfc">Clave de elector *</label>
                         <a class="modal-trigger" href="#helpIne"><i
                                 class="material-icons prefix icon-black">help_outline</i></a>
                     </div>
@@ -430,8 +430,7 @@
                             <div class="input-field col s12">
                                 <span class="grey-text in">Calle *</span>
                                 <input id="calleneg" [(ngModel)]="negocio.calle" type="text" formControlName="calleneg"
-                                    (keyup)="form.patchValue({rfc: $event.target.value.toUpperCase()})"
-                                    required class="validate" name="Calle negocio" />
+                                    required class="validate" name="Calle negocio" (keyup)="form.patchValue({calleneg: $event.target.value.toUpperCase()})"/>
                                 <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                             </div>
                             <div class="input-field col s4">
@@ -1212,7 +1211,7 @@
                             <label class="title black-text"><b class="title col s12 m12 l12">Revisa tus
                                     Documentos</b></label>
                             <p><br></p>
-                            <p>Revisa cada uno de tus documentos, y si estas de acuerdo firmalos.</p>
+                            <p>Revisa cada uno de tus documentos, y si estas de acuerdo fírmalos.</p>
                         </div>
                     </div>
                     <div class="card col s12">

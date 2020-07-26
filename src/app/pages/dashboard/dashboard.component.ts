@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/service.index';
+import { PersonalReferences } from '../../models/personal-references.model' ;
 import { ActivatedRoute } from '@angular/router';
 import { Options, LabelType } from 'ng5-slider';
 import { Finance } from 'financejs';
@@ -46,6 +47,7 @@ export class DashboardComponent implements OnInit {
 
   asentamiento;
   asentamientoneg;
+  email;
 
   optionsplaces: any = {
     types: ['geocode', 'establishment'],
@@ -244,6 +246,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.route.params.subscribe( params => this.email=params.email);
     //// console.log("comienza ngOnInit",this.alrt);
     let elems = document.querySelectorAll('.modal');
     this.popup = M.Modal.init(elems);
@@ -271,6 +274,7 @@ export class DashboardComponent implements OnInit {
     });
 
     this.form = new FormGroup({
+      email: new FormControl(this.email),
       latdomic: new FormControl(null, Validators.required),
       lngdomic: new FormControl(null, Validators.required),
       latneg: new FormControl(null, Validators.required),
@@ -742,6 +746,9 @@ export class DashboardComponent implements OnInit {
   dpersonales() {
     //console.log(this.form.value);
     if (this.form.valid) {
+      let ref1 = new PersonalReferences(this.form.value.entidadfednaci,'25/Junio/19',this.form.value.ref1nombre,this.form.value.ref1apaterno,this.form.value.ref1tel,'93','17','75','33');
+      let ref2 = new PersonalReferences(this.form.value.entidadfednaci,'25/Junio/19',this.form.value.ref2nombre,this.form.value.ref2apaterno,this.form.value.ref2tel,'93','17','75','33');
+
       this.userService.sendPersonalData(this.form.value)
         .subscribe(res => {
           // claveelector
@@ -764,8 +771,17 @@ export class DashboardComponent implements OnInit {
             console.log("sube clave elector", res);
           });
           this.userService.sendIdentification(payload2).subscribe(res => {
-            console.log("sube curp", res);
+            console.log("sube curp",res);
           });
+
+          //send references
+          this.userService.sendPersonalReferences(ref1).subscribe(res => {
+            console.log("manda referencias1",res);
+          });
+          this.userService.sendPersonalReferences(ref2).subscribe(res => {
+            console.log("manda referencias2",res);
+          });
+
         });
       this.stepper.openStep(3);
     } else {
@@ -773,6 +789,7 @@ export class DashboardComponent implements OnInit {
       swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
     }
   }
+
 
   dfiel() {
     // console.log('formFiel is valid?', this.formFiel.valid);

@@ -118,8 +118,8 @@ this.router.navigate(["dashboard"]);
         .subscribe(res=>{
           // console.log("Is logged?",res);
           // console.log("Entro al step",this.step)
-          /* this.router.navigate(["dashboard",{id:this.step}]);  */
-          this.router.navigate(["dashboard"]); 
+          this.router.navigate(["dashboard",{email:this.form.value.email}]); 
+         /*  this.router.navigate(["dashboard"]);  */
           //this.router.navigate(["register",{id:this.step}]); ///revisar donde quedara
 
         });
