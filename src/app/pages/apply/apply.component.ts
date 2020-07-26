@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from '../../services/service.index';
 import { User } from '../../models/user.model';
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-apply',
@@ -128,7 +129,9 @@ pbaDict(p1:string){
 
   //-------------
   register() {
-    let user = new User(this.form.value.email,this.form.value.password,"1",this.form.value.rePassword);
+    let user = new User(this.form.value.email,
+      CryptoJS.AES.encrypt(this.form.value.password, this.form.value.email).toString(),"1",
+      CryptoJS.AES.encrypt(this.form.value.rePassword, this.form.value.email).toString());
 
     if(this.form.valid){
       /* // console.log("form esto envio", this.form.value); */
