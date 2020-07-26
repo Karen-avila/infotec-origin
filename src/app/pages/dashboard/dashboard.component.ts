@@ -45,6 +45,7 @@ export class DashboardComponent implements OnInit {
 
   asentamiento;
   asentamientoneg;
+  email;
 
   optionsplaces: any = {
     types: ['geocode', 'establishment'],
@@ -244,6 +245,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.route.params.subscribe( params => this.email=params.email);
     //// console.log("comienza ngOnInit",this.alrt);
     let elems = document.querySelectorAll('.modal');
     this.popup = M.Modal.init(elems);
@@ -271,6 +273,7 @@ export class DashboardComponent implements OnInit {
     });
 
     this.form = new FormGroup({
+      email: new FormControl(this.email),
       latdomic: new FormControl(null, Validators.required),
       lngdomic: new FormControl(null, Validators.required),
       latneg: new FormControl(null, Validators.required),
