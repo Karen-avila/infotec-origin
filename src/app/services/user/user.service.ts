@@ -12,7 +12,6 @@ import { Router } from '@angular/router';
 
 import { environment } from '../../../environments/environment';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -60,7 +59,6 @@ export class UserService {
     let headers = environment.headers_apis;
     let api_keys = environment.gravitee_api_keys;
     headers['X-Gravitee-Api-Key'] = api_keys['registro'];
-
     const object = JSON.stringify(user);
 
     return this.http.post(url, object, { headers }).map((res: any) => {
@@ -118,6 +116,7 @@ export class UserService {
     let headers = environment.headers_mifos;
     let api_keys = environment.gravitee_api_keys;
     headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
+    console.log(user);
     const object = JSON.stringify(user);
 
     // console.log("Esto es lo que enviare a donde lo tenga que enviar", object);

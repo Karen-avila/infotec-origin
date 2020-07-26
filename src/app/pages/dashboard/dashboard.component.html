@@ -43,12 +43,8 @@
                                     {{((finance.PMT(0.0125,valuePlaz,-valueMon))*valuePlaz).toFixed(2) | currency:"MXN":"symbol"}}</b>
                             </p>
                         </div>
-
-
                         <br>
-
                     </div>
-
 
                     <div class="crono1 col m5 offset-m1 l5 offset-l1 s10 offset-s1 hide-on-small-only">
                         <div class="card crd teal darken-4 white-text z-depth-3">
@@ -100,12 +96,10 @@
                         </div>
                     </div>
 
-
                     <button class="waves-effect waves-dark teal darken-4 btn next-step">Continuar</button>
 
                 </div>
                 <!-- Here goes your actions buttons -->
-
             </div>
 
         </li>
@@ -113,9 +107,6 @@
             <div class="step-title waves-effect waves-dark">Datos Personales</div>
             <div class="step-content">
                 <div class="row" [formGroup]="form">
-
-
-
                     <input formControlName="plazocredito" class="hide" value="{{valuePlaz}}" [(ngModel)]="valuePlaz">
                     <input formControlName="montocredito" class="hide" value="{{valueMon}}" [(ngModel)]="valueMon">
                     <input type="text" hidden formControlName="paso" class="validate">
@@ -125,51 +116,68 @@
                     <input type="text" hidden formControlName="latneg" class="validate" [(ngModel)]="lat2">
                     <input type="text" hidden formControlName="lngneg" class="validate" [(ngModel)]="lng2">
 
-
-
                     <div class="input-field col s12 m12 l12">
                         <i class="material-icons prefix icon-gold">person</i>
                         <label class="title black-text"><b class="title col s12 m12 l12">Información
                                 Personal</b></label>
                         <p><br></p>
-
                     </div>
 
-                    <div class="input-field col s12 m4">
-                        <p>
-                            <label>
-                                <input class="with-gap teal darken-4" (change)="rFiscal()" formControlName="tipopersona"
-                                    name="tipopersona" id="tipopersona" type="radio" value="pFisica"
-                                    [(ngModel)]="model" />
-                                <span>Persona Física con Actividad Empresarial</span>
-                            </label>
-                        </p>
-                    </div>
-                    <div class="input-field col s12 m4">
-                        <p>
-                            <label>
-                                <input class="with-gap teal darken-4" formControlName="tipopersona" name="tipopersona"
-                                    id="tipopersona" type="radio" value="rFiscal" [(ngModel)]="model" />
-                                <span>Régimen de Incorporación Fiscal</span>
-                            </label>
-                        </p>
+                    <div class="row">
+                        <div class="input-field col s12 m4">
+                            <p>
+                                <label>
+                                    <input class="with-gap teal darken-4" (change)="rFiscal()" formControlName="tipopersona"
+                                        name="tipopersonaF" id="tipopersonaF" type="radio" value="pFisica"
+                                        [(ngModel)]="model" />
+                                    <span>Persona Física con Actividad Empresarial</span>
+                                </label>
+                            </p>
+                        </div>
+                        <div class="input-field col s12 m4">
+                            <p>
+                                <label>
+                                    <input class="with-gap teal darken-4" formControlName="tipopersona" name="tipopersonaM"
+                                        id="tipopersonaM" type="radio" value="rFiscal" [(ngModel)]="model" />
+                                    <span>Régimen de Incorporación Fiscal</span>
+                                </label>
+                            </p>
+                        </div>
+                        <div class="input-field col s12 m4"></div>
                     </div>
 
                     <div>
                         <p class="white-text white hide">.</p>
                         <br><br>
-
                     </div>
 
-                    <div class="input-field col s12 m12 l12">
+                    <div class="input-field col s12 m4 l4">
                         <i class="material-icons prefix">payment</i>
                         <input class="validate" id="clabeinter" type="text" (keypress)="numberOnly($event)"
-
                             formControlName="clabeinter" name="Clabe interbancaria" minlength="18" maxlength="18" required>
                         <label for="text">Clabe interbancaria</label>
 
                         <div class="blue-text" *ngIf="f.clabeinter.errors">La clabe interbancaria consta de 18 dígitos
                         </div>
+                    </div>
+                    <div class="input-field col s12 m2 l2">
+                        <i class="material-icons prefix">house</i>
+
+                        <label for="text">{{getBankName(1)}}</label>
+                    </div>
+
+                    <div class="input-field col s12 m4 l4">
+                        <i class="material-icons prefix">payment</i>
+                        <input class="validate" id="clabeinter" type="text" (keypress)="numberOnly($event)"
+                            formControlName="clabeinterConf" name="Clabe interbancaria" minlength="18" maxlength="18" required>
+                        <label for="text">Clabe interbancaria (confirmación)</label>
+
+                        <div class="blue-text" *ngIf="f.clabeinter.errors">La clabe interbancaria no coincide</div>
+                    </div>
+                    <div class="input-field col s12 m2 l2">
+                        <i class="material-icons prefix">house</i>
+
+                        <label for="text">{{getBankName(2)}}</label>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
@@ -280,7 +288,7 @@
                         <div class="blue-text" *ngIf="f.entidadfednaci.errors"></div>
                     </div>
 
-                    <div class="input-field col s12 m7 l7">
+                    <div class="input-field col s12 m6 l7">
                         <i class="material-icons prefix">aspect_ratio</i>
                         <input id="curp" type="text" formControlName="curp"
                             (keyup)="form.patchValue({curp: $event.target.value.toUpperCase()})"
@@ -292,7 +300,7 @@
                         <div class="blue-text">Únicamente letras mayúsculas</div>
                     </div>
                     <!--<div class="input-field col s12 m6 l6" *ngIf="model=='pFisica'">-->
-                    <div class="input-field col s12 m5 l5">
+                    <div class="input-field col s12 m6 l5">
                         <i class="material-icons prefix">aspect_ratio</i>
                         <input id="rfc" type="text" formControlName="rfc"
                             (keyup)="form.patchValue({rfc: $event.target.value.toUpperCase()})"
@@ -422,6 +430,7 @@
                             <div class="input-field col s12">
                                 <span class="grey-text in">Calle *</span>
                                 <input id="calleneg" [(ngModel)]="negocio.calle" type="text" formControlName="calleneg"
+                                    (keyup)="form.patchValue({rfc: $event.target.value.toUpperCase()})"
                                     required class="validate" name="Calle negocio" />
                                 <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                             </div>
