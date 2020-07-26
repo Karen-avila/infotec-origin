@@ -910,7 +910,7 @@
                                 <div class="teal darken-4 btn">
                                     <i class="material-icons right">attachment</i>cargar
 
-                                    <input type="file" required formControlName="comprobante" 
+                                    <input type="file" required formControlName="comprobante"
                                         title="Recibo CFE del Domicilio Personal con antigüedad no mayor a 3 meses."
                                         (change)="ValidateSize('comprobante')"
                                         accept="image/jpg, image/jpeg, image/png, application/pdf" id="comprobante"
@@ -939,7 +939,7 @@
 
 
                                     <input type="file" required title="Recibo CFE del Negocio con antigüedad no mayor a 3 meses."
-                                        (change)="ValidateSize('comprobanten')" formControlName="comprobanten" 
+                                        (change)="ValidateSize('comprobanten')" formControlName="comprobanten"
                                         accept="image/jpg, image/jpeg, image/png, application/pdf" id="comprobanten"
                                         class="validate">
                                 </div>
@@ -998,8 +998,8 @@
 
                                 <input type="file" id="declaracion" formControlName="declaracion" required
                                     title="Si eres PERSONA FÍSICA CON ACTIVIDAD EMPRESARIAL envía tu última DECLARACIÓN DEL EJERCICIO DE IMPUESTOS FEDERALES; si eres PERSONA FÍSICA EN EL RÉGIMEN DE INCORPORACIÓN FISCAL envía el último ACUSE DE RECIBO DECLARACIÓN DE IMPUESTOS FEDERALES."
-                                    (change)="ValidateSize('declaracion')" 
-                                    accept="image/jpg, image/jpeg, image/png, application/pdf" 
+                                    (change)="ValidateSize('declaracion')"
+                                    accept="image/jpg, image/jpeg, image/png, application/pdf"
                                     class="validate">
                             </div>
                             <div class="col s1 m1 l1" *ngIf="doc.declaracion.errors?.required">
@@ -1019,7 +1019,7 @@
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>cargar
 
-                                <input type="file" id="curpd" formControlName="curpd" required (change)="ValidateSize('curpd')" accept="application/pdf" 
+                                <input type="file" id="curpd" formControlName="curpd" required (change)="ValidateSize('curpd')" accept="application/pdf"
                                     class="validate">
                             </div>
                             <div class="col s1 m1 l1" *ngIf="doc.curpd.errors?.required">
