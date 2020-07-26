@@ -196,7 +196,6 @@ export class DashboardComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private eventManager: EventManager
-
   ) {
     this.re = localStorage.getItem('step');
     /* this.re=5; */
@@ -398,7 +397,6 @@ export class DashboardComponent implements OnInit {
     this.userService.getDataCode(dataCode).subscribe(
       data => {
         this.stateOptions = _.sortBy(data.codeValues, 'name');
-        console.log(this.stateOptions); 
       },
       error => console.error('There was an error getting code values ' + dataCode, error)
     )
