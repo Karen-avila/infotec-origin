@@ -12,14 +12,14 @@
                     <div class="input-field col s10 l12">
                         <i class="material-icons prefix icon-white">account_circle</i>
                         <input id="email" formControlName="email" type="email" name='email' class="validate">
-                        <label class="white-text" for="email">Email</label>
+                        <label class="white-text" for="email">Correo electrónico</label>
                         <div class="red-text" *ngIf="f.email.errors?.email">El correo electrónico debe de ser válido.</div>
                     </div>
                     <div class="input-field col s10 l12">
                         <i class="material-icons prefix icon-white">lock</i>
                         <input id="password" formControlName="password" [type]="passType" name='password' class="validate">
                         <label class="white-text" for="password">Contraseña</label>
-                        <div class="red-text col s12" *ngIf="f.password.errors && !form.pristine">Debe tener un mínimo de 8 caracteres 1 Mayúscula 1 minúscula 1 numero</div>
+                        <div class="red-text col s12" *ngIf="f.password.errors && !form.pristine">Debe tener un mínimo de 8 caracteres 1 Mayúscula 1 minúscula 1 número 1 carácter especial</div>
                         <i class="material-icons prefix cursor" *ngIf="icon" (click)="viewPassword()">visibility_off</i>
                         <i class="material-icons prefix cursor" *ngIf="!icon" (click)="viewPassword()">visibility</i>
                     </div>
@@ -75,7 +75,7 @@
                         <div class="input-field col s12 l10">
                             <i class="material-icons prefix icon-white">account_circle</i>
                           <input id="email" type="email" formControlName="email" name='email' class="validate">
-                            <label class="white-text" for="email">Email</label>
+                            <label class="white-text" for="email">Correo electrónico</label>
                             <div class="red-text" *ngIf="fgt.email.errors?.email">El correo electrónico debe de ser valido</div>
 
                         </div>

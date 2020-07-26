@@ -11,8 +11,6 @@ import swal from 'sweetalert';
 import { Router } from '@angular/router';
 
 import { environment } from '../../../environments/environment';
-import { Observable } from 'rxjs';
-
 
 @Injectable({
   providedIn: 'root'
@@ -39,6 +37,7 @@ export class UserService {
     let api_keys = environment.gravitee_api_keys;
     headers['X-Gravitee-Api-Key'] = api_keys['registro'];
 
+    console.log(headers);
     // console.log("Esto es lo que enviare a donde lo tenga que enviar", object);
 
     return this.http.post(url, object, { headers }).map((res: any) => {
@@ -47,7 +46,7 @@ export class UserService {
 
       return true;
     }).catch(err => {
-      console.log(err.status);
+      console.log(err);
       return err;
     });
 
@@ -60,10 +59,7 @@ export class UserService {
     let headers = environment.headers_apis;
     let api_keys = environment.gravitee_api_keys;
     headers['X-Gravitee-Api-Key'] = api_keys['registro'];
-
     const object = JSON.stringify(user);
-
-    // console.log("Esto es lo que enviare a donde lo tenga que enviar", object);
 
     return this.http.post(url, object, { headers }).map((res: any) => {
       // console.log("creado", res)
@@ -71,10 +67,8 @@ export class UserService {
 
       return true;
     }).catch(err => {
-      // console.log(err.status);
       return err;
     });
-
   }
 
   sendPersonalData(data) {
@@ -112,7 +106,6 @@ export class UserService {
 
   logout() {
     this.token = '';
-    this.email = '';
     this.id = '';
     localStorage.clear();
     this.router.navigate(["home"]);
@@ -123,6 +116,7 @@ export class UserService {
     let headers = environment.headers_mifos;
     let api_keys = environment.gravitee_api_keys;
     headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
+    console.log(user);
     const object = JSON.stringify(user);
 
     // console.log("Esto es lo que enviare a donde lo tenga que enviar", object);
@@ -130,7 +124,8 @@ export class UserService {
     return this.http.post(url, object, { headers }).map((res: any) => {
       // console.log("creado", res)
       swal("¡Felicidades!", "Inicio de sesión exitoso.", "success");
-      localStorage.setItem('clientid', res.clientId);
+      console.log(res)
+      localStorage.setItem('clientid', res.userId);
       localStorage.setItem('token', res.authenticated);
       return true;
     }).catch(err => {
@@ -154,11 +149,7 @@ export class UserService {
     let clientid = localStorage.getItem('clientid');
     let url = environment.apis_url + '/V1.0/fineract-protected/clients/' + clientid + '/documents';
     let api_keys = environment.gravitee_api_keys;
-    /* let headers = environment.headers_apis; */
-    /* var headers :Array=[];
-    headers['X-Gravitee-Api-Key'] = api_keys['fineract']; */
-    /* headers['Content-Type'] = 'multipart/form-data; boundary=---011000010111000001101001';
-    delete headers['Content-Type']; */
+
     const httpHeaders = new HttpHeaders({'X-Gravitee-Api-Key':api_keys['fineract']});
     const req = new HttpRequest('POST', url, formData, {
       reportProgress: true,
@@ -193,6 +184,16 @@ export class UserService {
     });
   }
 
+  getDataCode(codeName: String) {
+    this.prosessing = false;
+    let url = environment.apis_url + '/V1.0/fineract-protected/codes/' + codeName + '/options';
+    let api_keys = environment.gravitee_api_keys;
+    let headers = environment.headers_apis;
+    headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
+
+    return this.http.get<any>(url, { headers: headers });
+  }
+
   validateFileExtension(fileName: String) {
     var _validFileExtensions = [".jpg", ".jpeg", ".pdf", ".png"];    
     var isValid = false;
@@ -207,4 +208,29 @@ export class UserService {
     }
     return isValid;
   }
+
+  sendPersonalReferences(data) {
+    // console.log("Document Service");
+    let clientid = localStorage.getItem('clientid');/* fineract-provider/api/v1/clients/%7BidCliente%7D/familymembers */
+    let url = environment.apis_url + '/V1.0/fineract-protected/clients/' + clientid + '/familymembers';
+    let api_keys = environment.gravitee_api_keys;
+    let headers = environment.headers_apis;
+    headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
+
+    const object = JSON.stringify(data);
+
+    //const object = JSON.stringify(userDocs);
+    return this.http.post(url, object, { headers: headers }).map((res: any) => {
+      // console.log("Enviados", res)
+      return res;
+    }).catch(err => {
+      if (err.status == '0') {
+        swal('Existio un error al procesar tu solicitud de identificación, intentalo más tarde');
+      }
+      this.prosessing = false;
+      console.log(err);
+      return err;
+    });
+  }
+
 }

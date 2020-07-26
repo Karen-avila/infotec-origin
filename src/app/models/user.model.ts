@@ -7,6 +7,4 @@ export class User{
         public paso?:string,
         public rePassword?:string
         ){}
-
-
 }

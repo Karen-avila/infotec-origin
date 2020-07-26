@@ -5,6 +5,4 @@ export class UserActivate{
       /* public authenticationToken:number, */
       public paso:string
       ){}
-
-
 }

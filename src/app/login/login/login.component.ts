@@ -8,6 +8,7 @@ import * as M from 'materialize-css';
 
 import { UserService } from '../../services/service.index';
 import { UserLog } from '../../models/user-log.module';
+import * as CryptoJS from 'crypto-js';
 
 import swal from 'sweetalert';
 import { environment } from 'src/environments/environment';
@@ -52,7 +53,7 @@ step
     var elems = document.querySelectorAll('.modal');
     this.instance = M.Modal.init(elems);
 
-    this.form = new FormGroup({
+    this.form = new FormGroup({/* '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}' */
       email: new FormControl(null,[Validators.required, Validators.email]),
       password: new FormControl(null, [
         Validators.required,
@@ -121,15 +122,16 @@ this.router.navigate(["dashboard"]);
 
     console.log("form login is valid?", this.form.valid);
     if(this.form.valid){
-      const user = new UserLog(this.form.value.email,this.form.value.password);
+      const user = new UserLog(this.form.value.email,
+        CryptoJS.AES.encrypt(this.form.value.password, this.form.value.email).toString());
       //this.router.navigate(["register",{id:this.step}]);
       //enviar datos a back
       this.userService.login(user)
-        .then(res=>{
+        .subscribe(res=>{
           // console.log("Is logged?",res);
           // console.log("Entro al step",this.step)
-          /* this.router.navigate(["dashboard",{id:this.step}]);  */
-          this.router.navigate(["dashboard"]);
+          this.router.navigate(["dashboard",{email:this.form.value.email}]);
+         /*  this.router.navigate(["dashboard"]);  */
           //this.router.navigate(["register",{id:this.step}]); ///revisar donde quedara
 
         });
