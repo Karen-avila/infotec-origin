@@ -104,15 +104,16 @@
                             <ul class="collection">
                                 <form ngNativeValidate [formGroup]="formScrDir" (ngSubmit)="scrDirSend()">
                                     <li class="collection-item avatar" *ngFor="let scrDir of scrDir; index as i;">
-                                        <span class="title">{{scrDir.quest}}</span>
+                                        <span class="title">{{scrDir.question}}</span>
 
-                                        <p *ngFor="let resp of scrDir.opts; index as j;">
+                                        <p *ngFor="let resp of scrDir.options; index as j;">
                                             <label>
-                                            <input class="with-gap" (change)="changedDir(j, i)" [(ngModel)]="scrDir.resp" formControlName="{{'scrDir'+i}}" name="{{'scrDir'+i}}" id="{{'scrDir'+i}}" value="{{resp}}" type="radio"  />
-                                            <span>{{resp}}</span>
+                                            <input class="with-gap" (change)="changedDir(j, i)" [(ngModel)]="scrDir.resp" 
+                                            formControlName="{{'scrDir'+i}}" name="{{'scrDir'+i}}" id="dir_{{'scrDir'+i}}" 
+                                            value="{{resp.id}}" type="radio"  />
+                                            <span>{{resp.name}}</span>
                                           </label>
                                         </p>
-
 
                                     </li>
                                     <br>
@@ -125,10 +126,6 @@
                             </ul>
                         </div>
                     </li>
-
-
-
-
                 </ul>
             </div>
 

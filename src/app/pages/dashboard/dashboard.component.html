@@ -43,12 +43,8 @@
                                     {{((finance.PMT(0.0125,valuePlaz,-valueMon))*valuePlaz).toFixed(2) | currency:"MXN":"symbol"}}</b>
                             </p>
                         </div>
-
-
                         <br>
-
                     </div>
-
 
                     <div class="crono1 col m5 offset-m1 l5 offset-l1 s10 offset-s1 hide-on-small-only">
                         <div class="card crd teal darken-4 white-text z-depth-3">
@@ -100,12 +96,10 @@
                         </div>
                     </div>
 
-
                     <button class="waves-effect waves-dark teal darken-4 btn next-step">Continuar</button>
 
                 </div>
                 <!-- Here goes your actions buttons -->
-
             </div>
 
         </li>
@@ -113,9 +107,6 @@
             <div class="step-title waves-effect waves-dark">Datos Personales</div>
             <div class="step-content">
                 <div class="row" [formGroup]="form">
-
-
-
                     <input formControlName="plazocredito" class="hide" value="{{valuePlaz}}" [(ngModel)]="valuePlaz">
                     <input formControlName="montocredito" class="hide" value="{{valueMon}}" [(ngModel)]="valueMon">
                     <input type="text" hidden formControlName="paso" class="validate">
@@ -125,51 +116,68 @@
                     <input type="text" hidden formControlName="latneg" class="validate" [(ngModel)]="lat2">
                     <input type="text" hidden formControlName="lngneg" class="validate" [(ngModel)]="lng2">
 
-
-
                     <div class="input-field col s12 m12 l12">
                         <i class="material-icons prefix icon-gold">person</i>
                         <label class="title black-text"><b class="title col s12 m12 l12">Información
                                 Personal</b></label>
                         <p><br></p>
-
                     </div>
 
-                    <div class="input-field col s12 m4">
-                        <p>
-                            <label>
-                                <input class="with-gap teal darken-4" (change)="rFiscal()" formControlName="tipopersona"
-                                    name="tipopersona" id="tipopersona" type="radio" value="pFisica"
-                                    [(ngModel)]="model" />
-                                <span>Persona Física con Actividad Empresarial</span>
-                            </label>
-                        </p>
-                    </div>
-                    <div class="input-field col s12 m4">
-                        <p>
-                            <label>
-                                <input class="with-gap teal darken-4" formControlName="tipopersona" name="tipopersona"
-                                    id="tipopersona" type="radio" value="rFiscal" [(ngModel)]="model" />
-                                <span>Régimen de Incorporación Fiscal</span>
-                            </label>
-                        </p>
+                    <div class="row">
+                        <div class="input-field col s12 m4">
+                            <p>
+                                <label>
+                                    <input class="with-gap teal darken-4" (change)="rFiscal()" formControlName="tipopersona"
+                                        name="tipopersonaF" id="tipopersonaF" type="radio" value="pFisica"
+                                        [(ngModel)]="model" />
+                                    <span>Persona Física con Actividad Empresarial</span>
+                                </label>
+                            </p>
+                        </div>
+                        <div class="input-field col s12 m4">
+                            <p>
+                                <label>
+                                    <input class="with-gap teal darken-4" formControlName="tipopersona" name="tipopersonaM"
+                                        id="tipopersonaM" type="radio" value="rFiscal" [(ngModel)]="model" />
+                                    <span>Régimen de Incorporación Fiscal</span>
+                                </label>
+                            </p>
+                        </div>
+                        <div class="input-field col s12 m4"></div>
                     </div>
 
                     <div>
                         <p class="white-text white hide">.</p>
                         <br><br>
-
                     </div>
 
-                    <div class="input-field col s12 m12 l12">
+                    <div class="input-field col s12 m4 l4">
                         <i class="material-icons prefix">payment</i>
                         <input class="validate" id="clabeinter" type="text" (keypress)="numberOnly($event)"
-
                             formControlName="clabeinter" name="Clabe interbancaria" minlength="18" maxlength="18" required>
-                        <label for="text">Clabe interbancaria</label>
+                        <label for="text">Clabe interbancaria *</label>
 
                         <div class="blue-text" *ngIf="f.clabeinter.errors">La clabe interbancaria consta de 18 dígitos
                         </div>
+                    </div>
+                    <div class="input-field col s12 m2 l2">
+                        <i class="material-icons prefix">house</i>
+
+                        <label for="text">{{getBankName(1)}}</label>
+                    </div>
+
+                    <div class="input-field col s12 m4 l4">
+                        <i class="material-icons prefix">payment</i>
+                        <input class="validate" id="clabeinter" type="text" (keypress)="numberOnly($event)"
+                            formControlName="clabeinterConf" name="Clabe interbancaria" minlength="18" maxlength="18" required>
+                        <label for="text">Clabe interbancaria (confirmación)</label>
+
+                        <div class="blue-text" *ngIf="f.clabeinter.errors">La clabe interbancaria no coincide</div>
+                    </div>
+                    <div class="input-field col s12 m2 l2">
+                        <i class="material-icons prefix">house</i>
+
+                        <label for="text">{{getBankName(2)}}</label>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
@@ -177,7 +185,7 @@
                         <input id="nombre" type="text" formControlName="nombre" name="Nombre"
                             (keyup)="form.patchValue({nombre: $event.target.value.toUpperCase()})" required
                             class="validate">
-                        <label for="nombre">Nombre *</p> </label>
+                        <label for="nombre">Nombre *</label>
 
                         <div class="blue-text" *ngIf="f.nombre.errors?.minlength">Debe tener un mínimo de 2 carácteres
                         </div>
@@ -257,7 +265,7 @@
                         <input class="validate" id="telpersonal" type="text" formControlName="telpersonal"
 
                         (keypress)="numberOnly($event)" name="Número de Teléfono" minlength="10" maxlength="10" required>
-                        <label for="text">Número de Teléfono</label>
+                        <label for="text">Número de Teléfono *</label>
 
                         <div class="blue-text" *ngIf="f.telpersonal.errors">El teléfono debe ser de 10 digitos</div>
                     </div>
@@ -274,64 +282,32 @@
                     <div class="input-field col s12 m6 l6">
                         <select formControlName="entidadfednaci" name="Entidad Federativa de Nacimiento" id="entidadfednaci"
                             class="validate">
-                            <option value="" disabled selected>Selecciona una opción</option>
-                            <option value="Aguascalientes">Aguascalientes</option>
-                            <option value="Baja California">Baja California</option>
-                            <option value="Baja California Sur">Baja California Sur</option>
-                            <option value="Campeche">Campeche</option>
-                            <option value="Coahuila de Zaragoza">Coahuila de Zaragoza</option>
-                            <option value="Colima">Colima</option>
-                            <option value="Chiapas">Chiapas</option>
-                            <option value="Chihuahua">Chihuahua</option>
-                            <option value="Ciudad de México">Ciudad de México</option>
-                            <option value="Durango">Durango</option>
-                            <option value="Guanajuato">Guanajuato</option>
-                            <option value="Guerrero">Guerrero</option>
-                            <option value="Hidalgo">Hidalgo</option>
-                            <option value="Jalisco">Jalisco</option>
-                            <option value="México">México</option>
-                            <option value="Michoacán de Ocampo">Michoacán de Ocampo</option>
-                            <option value="Morelos">Morelos</option>
-                            <option value="Nayarit">Nayarit</option>
-                            <option value="Nuevo León">Nuevo León</option>
-                            <option value="Oaxaca">Oaxaca</option>
-                            <option value="Puebla">Puebla</option>
-                            <option value="Querétaro">Querétaro</option>
-                            <option value="Quintana Roo">Quintana Roo</option>
-                            <option value="San Luis Potosí">San Luis Potosí</option>
-                            <option value="Sinaloa">Sinaloa</option>
-                            <option value="Sonora">Sonora</option>
-                            <option value="Tabasco">Tabasco</option>
-                            <option value="Tamaulipas">Tamaulipas</option>
-                            <option value="Tlaxcala">Tlaxcala</option>
-                            <option value="Veracruz de Ignacio de la Llave">Veracruz de Ignacio de la Llave</option>
-                            <option value="Yucatán">Yucatán</option>
-                            <option value="Zacatecas">Zacatecas</option>
+                            <option *ngFor="let state of stateOptions" [value]="state.name">{{state.name}}</option>
                         </select>
                         <label>Entidad Federativa de Nacimiento *</label>
                         <div class="blue-text" *ngIf="f.entidadfednaci.errors"></div>
                     </div>
 
-                    <div class="input-field col s12 m7 l7">
+                    <div class="input-field col s12 m6 l7">
                         <i class="material-icons prefix">aspect_ratio</i>
                         <input id="curp" type="text" formControlName="curp"
                             (keyup)="form.patchValue({curp: $event.target.value.toUpperCase()})"
                             pattern="^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$"
 
                             required class="validate" name="Curp" minlength="18" maxlength="18" />
-                        <label for="curp">CURP</label>
+                        <label for="curp">CURP *</label>
 
                         <div class="blue-text">Únicamente letras mayúsculas</div>
                     </div>
                     <!--<div class="input-field col s12 m6 l6" *ngIf="model=='pFisica'">-->
-                    <div class="input-field col s12 m5 l5">
+                    <div class="input-field col s12 m6 l5">
                         <i class="material-icons prefix">aspect_ratio</i>
                         <input id="rfc" type="text" formControlName="rfc"
                             (keyup)="form.patchValue({rfc: $event.target.value.toUpperCase()})"
                             pattern="^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$"
 
                                required class="validate" name="Rfc" minlength="12" maxlength="13" />
-                        <label for="rfc">RFC</label>
+                        <label for="rfc">RFC *</label>
 
                         <div class="blue-text">Únicamente letras mayúsculas</div>
                     </div>
@@ -342,7 +318,7 @@
                             (keyup)="form.patchValue({claveelector: $event.target.value.toUpperCase()})" required
 
                             minlength="18" maxlength="18" class="validate" name="Clave de Elector" />
-
+                            <label for="rfc">Clave de elector *</label>
                         <a class="modal-trigger" href="#helpIne"><i
                                 class="material-icons prefix icon-black">help_outline</i></a>
                     </div>
@@ -454,7 +430,7 @@
                             <div class="input-field col s12">
                                 <span class="grey-text in">Calle *</span>
                                 <input id="calleneg" [(ngModel)]="negocio.calle" type="text" formControlName="calleneg"
-                                    required class="validate" name="Calle negocio" />
+                                    required class="validate" name="Calle negocio" (keyup)="form.patchValue({calleneg: $event.target.value.toUpperCase()})"/>
                                 <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                             </div>
                             <div class="input-field col s4">
@@ -1235,7 +1211,7 @@
                             <label class="title black-text"><b class="title col s12 m12 l12">Revisa tus
                                     Documentos</b></label>
                             <p><br></p>
-                            <p>Revisa cada uno de tus documentos, y si estas de acuerdo firmalos.</p>
+                            <p>Revisa cada uno de tus documentos, y si estas de acuerdo fírmalos.</p>
                         </div>
                     </div>
                     <div class="card col s12">

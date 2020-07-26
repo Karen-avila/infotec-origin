@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/service.index';
+import { PersonalReferences } from '../../models/personal-references.model' ;
 import { ActivatedRoute } from '@angular/router';
 import { Options, LabelType } from 'ng5-slider';
 import { Finance } from 'financejs';
@@ -9,6 +10,9 @@ import * as M from 'materialize-css';
 import swal from 'sweetalert';
 import activitiesService from './service/activities.service';
 import { EventManager } from '@angular/platform-browser';
+
+import * as _ from 'underscore';
+
 declare const MStepper: any;
 
 // Pick Address
@@ -38,9 +42,12 @@ export class DashboardComponent implements OnInit {
   aviso;
   bc;
   term;
+  bankInter1: String;
+  bankInter2: String;
 
   asentamiento;
   asentamientoneg;
+  email;
 
   optionsplaces: any = {
     types: ['geocode', 'establishment'],
@@ -104,6 +111,7 @@ export class DashboardComponent implements OnInit {
     longitude: 0,
   };
   questionForm = {};
+  stateOptions = [];
   monte;
   hugo = '666';
   stepper;
@@ -190,7 +198,6 @@ export class DashboardComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private eventManager: EventManager
-
   ) {
     this.re = localStorage.getItem('step');
     /* this.re=5; */
@@ -239,6 +246,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.route.params.subscribe( params => this.email=params.email);
     //// console.log("comienza ngOnInit",this.alrt);
     let elems = document.querySelectorAll('.modal');
     this.popup = M.Modal.init(elems);
@@ -266,6 +274,7 @@ export class DashboardComponent implements OnInit {
     });
 
     this.form = new FormGroup({
+      email: new FormControl(this.email),
       latdomic: new FormControl(null, Validators.required),
       lngdomic: new FormControl(null, Validators.required),
       latneg: new FormControl(null, Validators.required),
@@ -274,6 +283,7 @@ export class DashboardComponent implements OnInit {
       clientid: new FormControl(localStorage.getItem('clientid'), Validators.required),
       tipopersona: new FormControl(null, Validators.required),
       clabeinter: new FormControl(null, [Validators.required, Validators.minLength(18), Validators.maxLength(18), Validators.pattern('[0-9]{18}')]),
+      clabeinterConf: new FormControl(null, [Validators.required, Validators.minLength(18), Validators.maxLength(18), Validators.pattern('[0-9]{18}'), this.checkClabeInterbank]),
       nombre: new FormControl(null, [Validators.required, Validators.minLength(2)]),
       nombre2: new FormControl(null, [Validators.minLength(0)]),
       apaterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
@@ -370,7 +380,7 @@ export class DashboardComponent implements OnInit {
       //fiel: new FormControl(null, Validators.required),
       //cer: new FormControl(null, Validators.required),
       //password: new FormControl(null, Validators.required)
-       buro: new FormControl(null, Validators.required)
+      buro: new FormControl(null, Validators.required)
 
     });
 
@@ -385,6 +395,14 @@ export class DashboardComponent implements OnInit {
       cerFirm: new FormControl(null, Validators.required),
       passwordFirm: new FormControl(null, Validators.required)
     });
+
+    var dataCode = 'STATE';
+    this.userService.getDataCode(dataCode).subscribe(
+      data => {
+        this.stateOptions = _.sortBy(data.codeValues, 'name');
+      },
+      error => console.error('There was an error getting code values ' + dataCode, error)
+    )
   }
 
   get f() { return this.form.controls; }
@@ -481,9 +499,10 @@ export class DashboardComponent implements OnInit {
           return response.json();
         }).then((json) => {
           //console.log('codigo error',json.code_error)
-          if(json.code_error === 105){
+          if (json.code_error === 105) {
             swal("Lo sentimos!", "Tu código postal no esta dentro de los participantes para este apoyo, revisa constantemente para validar si existen otros apoyos.", "info");
-          }else{
+            this.userService.logout();
+          } else {
             if (target === 'negocio') {
               this.negocio.tipo_asentamiento = json.response.tipo_asentamiento;
               this.negocio.colonia = json.response.colonia;
@@ -532,8 +551,6 @@ export class DashboardComponent implements OnInit {
             setTimeout(() => { M.FormSelect.init(document.querySelectorAll('select')); }, 200);
             return;
           }
-       
-          
         });
     }
   }
@@ -546,6 +563,128 @@ export class DashboardComponent implements OnInit {
     return true;
   }
 
+  getBankName(option) {
+    var clabe = this.form.get('clabeinter').value;
+    if (option === 2) {
+      clabe = this.form.get('clabeinterConf').value;
+    }
+    if (clabe.length > 2) {
+      const prefix = clabe.substring(0, 3);
+      const banks = [
+        { "code": "002", "name": "BANAMEX" },
+        { "code": "006", "name": "BANCOMEXT" },
+        { "code": "009", "name": "BANOBRAS" },
+        { "code": "012", "name": "BBVA BANCOMER" },
+        { "code": "014", "name": "SANTANDER" },
+        { "code": "019", "name": "BANJERCITO" },
+        { "code": "021", "name": "HSBC" },
+        { "code": "030", "name": "BAJIO" },
+        { "code": "032", "name": "IXE" },
+        { "code": "036", "name": "INBURSA" },
+        { "code": "037", "name": "INTERACCIONES" },
+        { "code": "042", "name": "MIFEL" },
+        { "code": "044", "name": "SCOTIABANK" },
+        { "code": "058", "name": "BANREGIO" },
+        { "code": "059", "name": "INVEX" },
+        { "code": "060", "name": "BANSI" },
+        { "code": "062", "name": "AFIRME" },
+        { "code": "072", "name": "BANORTE" },
+        { "code": "102", "name": "THE ROYAL BANK" },
+        { "code": "103", "name": "AMERICAN EXPRESS" },
+        { "code": "106", "name": "BAMSA" },
+        { "code": "108", "name": "TOKYO" },
+        { "code": "110", "name": "JP MORGAN" },
+        { "code": "112", "name": "BMONEX" },
+        { "code": "113", "name": "VE POR MAS" },
+        { "code": "116", "name": "ING" },
+        { "code": "124", "name": "DEUTSCHE BANK" },
+        { "code": "126", "name": "CREDIT SUISSE" },
+        { "code": "127", "name": "AZTECA" },
+        { "code": "128", "name": "AUTOFIN" },
+        { "code": "129", "name": "BARCLAYS" },
+        { "code": "130", "name": "COMPARTAMOS" },
+        { "code": "131", "name": "BANCO FAMSA" },
+        { "code": "132", "name": "BMULTIVA" },
+        { "code": "133", "name": "ACTINVER" },
+        { "code": "134", "name": "WAL-MART" },
+        { "code": "135", "name": "NAFIN" },
+        { "code": "136", "name": "INTERBANCO" },
+        { "code": "137", "name": "BANCOPPEL" },
+        { "code": "138", "name": "ABC CAPITAL" },
+        { "code": "139", "name": "UBS BANK" },
+        { "code": "140", "name": "CONSUBANCO" },
+        { "code": "141", "name": "VOLKSWAGEN" },
+        { "code": "143", "name": "CIBANCO" },
+        { "code": "145", "name": "BBASE" },
+        { "code": "156", "name": "SABADELL" },
+        { "code": "166", "name": "BANSEFI" },
+        { "code": "168", "name": "HIPOTECARIA FEDERAL" },
+        { "code": "600", "name": "MONEXCB" },
+        { "code": "601", "name": "GBM" },
+        { "code": "602", "name": "MASARI" },
+        { "code": "605", "name": "VALUE" },
+        { "code": "606", "name": "ESTRUCTURADORES" },
+        { "code": "607", "name": "TIBER" },
+        { "code": "608", "name": "VECTOR" },
+        { "code": "610", "name": "B&B" },
+        { "code": "614", "name": "ACCIVAL" },
+        { "code": "615", "name": "MERRILL LYNCH" },
+        { "code": "616", "name": "FINAMEX" },
+        { "code": "617", "name": "VALMEX" },
+        { "code": "618", "name": "UNICA" },
+        { "code": "619", "name": "MAPFRE" },
+        { "code": "620", "name": "PROFUTURO" },
+        { "code": "621", "name": "CB ACTINVER" },
+        { "code": "622", "name": "OACTIN" },
+        { "code": "623", "name": "SKANDIA" },
+        { "code": "626", "name": "CBDEUTSCHE" },
+        { "code": "627", "name": "ZURICH" },
+        { "code": "628", "name": "ZURICHVI" },
+        { "code": "629", "name": "SU CASITA" },
+        { "code": "630", "name": "CB INTERCAM" },
+        { "code": "631", "name": "CI BOLSA" },
+        { "code": "632", "name": "BULLTICK CB" },
+        { "code": "633", "name": "STERLING" },
+        { "code": "634", "name": "FINCOMUN" },
+        { "code": "636", "name": "HDI SEGUROS" },
+        { "code": "637", "name": "ORDER" },
+        { "code": "638", "name": "AKALA" },
+        { "code": "640", "name": "CB JPMORGAN" },
+        { "code": "642", "name": "REFORMA" },
+        { "code": "646", "name": "STP" },
+        { "code": "647", "name": "TELECOMM" },
+        { "code": "648", "name": "EVERCORE" },
+        { "code": "649", "name": "SKANDIA" },
+        { "code": "651", "name": "SEGMTY" },
+        { "code": "652", "name": "ASEA" },
+        { "code": "653", "name": "KUSPIT" },
+        { "code": "655", "name": "SOFIEXPRESS" },
+        { "code": "656", "name": "UNAGRA" },
+        { "code": "659", "name": "OPCIONES EMPRESARIALES DEL NOROESTE" },
+        { "code": "670", "name": "LIBERTAD" },
+        { "code": "901", "name": "CLS" },
+        { "code": "902", "name": "INDEVAL" },
+        { "code": "999", "name": "N/A" }
+      ];
+      for (var i = 0; i < banks.length; i++) {
+        if (banks[i].code === String(prefix)) {
+          return banks[i].name;
+        }
+      }
+    }
+    return "";
+  }
+  
+  checkClabeInterbank(control: AbstractControl) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        var clabeinter = this.form.get('clabeinter').value;
+        if (control.value === clabeinter) {
+          resolve(true)
+        } else { resolve(null) }
+      }, 2000)
+    })
+  }
   async activitieChange(value, type, sector = null, subsector = null, rama = null, subrama = null) {
     if (type === 'sector' && value === undefined) { this.activities = await activitiesService.init(this.activities); }
     if (type === 'sector' && value !== undefined) { this.activities = await activitiesService.getSubsector(this.activities, sector); }
@@ -559,8 +698,13 @@ export class DashboardComponent implements OnInit {
     // // console.log("onchanges")
     const fl = (document.getElementById(file) as HTMLInputElement);
     const FileSize = fl.files[0].size / 1024 / 1024; // in MB
+    if (!this.userService.validateFileExtension(fl.files[0].name)) {
+      swal('¡Cuidado!', 'Tu archivo debe no es del tipo válido', 'warning');
+      fl.value = null;
+      return;
+    }
+
     if (FileSize > 2) {
-      // alert('File size exceeds 2 MB');
       swal('¡Cuidado!', 'Tu archivo debe ser menor a 2Mb', 'warning');
       fl.value = null;
     }
@@ -582,7 +726,7 @@ export class DashboardComponent implements OnInit {
         if (document.getElementById(name) != null) {
           document.getElementById(name).classList.add('invalid');
           var x = document.getElementById(name);
-          M.toast({html: x.getAttribute("name")})
+          M.toast({ html: x.getAttribute("name") })
         } else {
           console.log("Element in null");
         }
@@ -592,34 +736,52 @@ export class DashboardComponent implements OnInit {
     return invalid;
   }
 
+  sortObject(obj) {
+    return Object.keys(obj).sort().reduce(function (result, key) {
+      result[key] = obj[key];
+      return result;
+    }, {});
+  }
+
   dpersonales() {
     //console.log(this.form.value);
     if (this.form.valid) {
+      let ref1 = new PersonalReferences(this.form.value.entidadfednaci,'25/Junio/19',this.form.value.ref1nombre,this.form.value.ref1apaterno,this.form.value.ref1tel,'93','17','75','33');
+      let ref2 = new PersonalReferences(this.form.value.entidadfednaci,'25/Junio/19',this.form.value.ref2nombre,this.form.value.ref2apaterno,this.form.value.ref2tel,'93','17','75','33');
+
       this.userService.sendPersonalData(this.form.value)
         .subscribe(res => {
-          console.log(res);
           // claveelector
           // CURP 
           var curp = <HTMLInputElement>document.getElementById('curp');
           var identification = <HTMLInputElement>document.getElementById('claveelector');
           var payload = { // INE 1, CURP 2
-            documentTypeId: 1, 
+            documentTypeId: 1,
             status: "Active",
             documentKey: identification.value,
-            description: "Clave Elector"            
+            description: "Clave Elector"
           };
           var payload2 = { // INE 1, CURP 2
-            documentTypeId: 2, 
+            documentTypeId: 2,
             status: "Active",
             documentKey: curp.value,
-            description: "Curp"            
+            description: "Curp"
           }
           this.userService.sendIdentification(payload).subscribe(res => {
-            console.log("sube clave elector",res);
-          }); 
+            console.log("sube clave elector", res);
+          });
           this.userService.sendIdentification(payload2).subscribe(res => {
             console.log("sube curp",res);
-          }); 
+          });
+
+          //send references
+          this.userService.sendPersonalReferences(ref1).subscribe(res => {
+            console.log("manda referencias1",res);
+          });
+          this.userService.sendPersonalReferences(ref2).subscribe(res => {
+            console.log("manda referencias2",res);
+          });
+
         });
       this.stepper.openStep(3);
     } else {
@@ -627,6 +789,7 @@ export class DashboardComponent implements OnInit {
       swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
     }
   }
+
 
   dfiel() {
     // console.log('formFiel is valid?', this.formFiel.valid);
@@ -653,30 +816,22 @@ export class DashboardComponent implements OnInit {
   }
 
   ddocumentos() {
-    let documents = ['frontal','reverso','comprobante','comprobanten','estado','declarcion','curpd','fiscal'];
+    let documents = ['frontal', 'reverso', 'comprobante', 'comprobanten', 'estado', 'declarcion', 'curpd', 'fiscal'];
     // if (this.formDocumentos.valid) {
     if (1) {
       // Loop
-      
-      for(let i=0;i<documents.length;i++){
-        
+
+      for (let i = 0; i < documents.length; i++) {
+
         this.userService.sendDocuments(documents[i], (<HTMLInputElement>document.getElementById(documents[i])).files[0])
-        .subscribe(res => {
-          console.log("esto responde el servicio documents", res); //revisar res.user p.ej y hacer un if(uid){openmodal}
-          //swal("¡Documentos Guardados!", "Continuar", "success");
-        });
+          .subscribe(res => {
+            console.log("esto responde el servicio documents", res); //revisar res.user p.ej y hacer un if(uid){openmodal}
+            //swal("¡Documentos Guardados!", "Continuar", "success");
+          });
         swal("¡Documentos Guardados!", "Continuar", "success");
         this.stepper.openStep(4);
       }
-     /*  const file = (<HTMLInputElement>document.getElementById('frontal')).files[0];
-      this.userService.sendDocuments('identificacion', file)
-        .subscribe(res => {
-          console.log("esto responde el servicio documents", res); //revisar res.user p.ej y hacer un if(uid){openmodal}
-          //swal("¡Documentos Guardados!", "Continuar", "success");
-        }); */
-      // End Loop
-      // Esperar a que terminen
-      
+
     } else {
       this.findInvalidControls();
       swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');

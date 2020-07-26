@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { UserService } from '../../../services/service.index';
+
+import * as _ from 'underscore';
+
 declare const MStepper: any;
 import * as M from 'materialize-css';
 import swal from 'sweetalert';
@@ -17,11 +21,9 @@ export class QuestionComponent implements OnInit {
   sfina8 = false;
   sfina9 = false;
 
-
   /* Perfil de negocio */
 
   scrPerNeg = [
-
     {
       quest: "Antigüedad de negocio.",
       value_quest: "0.2",
@@ -227,40 +229,35 @@ export class QuestionComponent implements OnInit {
   ];
 
   /* Dirección */
-
   scrDir = [
     {
-      quest: "¿Cuántos años de experiencia en el negocio tienen los dueños del negocio?",
-      value_quest: "0.35",
-      opts: ["Menos de 1 año", "1 a 5 años", "6 a 10 años", "Más de 10 años"],
-      resp: "",
-      values: ["0", "40", "80", "100"],
-      value: ""
+      dataCode: "cuantos_anos_de_experiencia_en_el_negocio_tienen",
+      columnId: "campo_1",
+      question: "",
+      options: [],
+      value_quest: "0.35"
     },
     {
-      quest: "¿Cuál es la escolaridad de la persona que dirige el negocio?",
-      value_quest: "0.15",
-      opts: ["Ninguna", "Primaria incompleta", "Primaria completa", "Secundaria incompleta", "Secundaria completa", "Preparatoria o Bachillerato incompleto", "Preparatoria o Bachillerato completo", "Técnica o comercial incompleta", "Técnica o comercial completa", "Licenciatura incompleta", "Licenciatura completa", "Posgrado"],
-      resp: "",
-      values: ["0", "10", "20", "30", "40", "60", "70", "60", "70", "80", "90", "100"],
-      value: ""
+      dataCode: "cual_es_la_escolaridad_de_la_persona_que",
+      columnId: "campo_2",
+      question: "",
+      options: [],
+      value_quest: "0.15"
     },
     {
-      quest: "¿Cuál es el rango de edad de la persona que dirige el negocio?",
-      value_quest: "0.2",
-      opts: ["Menos de 25 años", "25 a 34 años", "35 a 55 años", "56 a 65 años", "Más de 65 años"],
-      resp: "",
-      values: ["0", "30", "70", "30", "0"],
-      value: ""
+      dataCode: "cual_es_el_rango_de_edad_de_la_persona_que_dirig",
+      columnId: "campo_3",
+      question: "",
+      options: [],
+      value_quest: "0.20"
     },
     {
-      quest: "¿El negocio tiene un plan de sucesión para que otra persona se encargue de la dirección en caso de ser necesario? ",
-      value_quest: "0.3",
-      opts: ["No se ha pensado que alguien más se ocupe de la dirección del negocio", "La dirección la tomará un familiar pero no conoce el negocio", "La dirección la tomará un familiar que ya conoce el negocio", "La dirección la tomará alguien profesional auqnue no sea de la familia"],
-      resp: "",
-      values: ["0", "40", "80", "100"],
-      value: ""
-    }
+      dataCode: "el_negocio_tiene_un_plan_de_sucesion_para_que_ot",
+      columnId: "campo_4",
+      question: "",
+      options: [],
+      value_quest: "0.3"
+    } 
   ];
 
   /* Queremos conocerte */
@@ -309,6 +306,7 @@ export class QuestionComponent implements OnInit {
       value: ""
     }
   ];
+
   qcQc1 = [
     {
       quest: "Número de dependientes económicos",
@@ -317,10 +315,6 @@ export class QuestionComponent implements OnInit {
       value: ""
     }
   ];
-
-
-
-
 
   /* Queremos conocer tu negocio */
   preg1 = [
@@ -337,16 +331,15 @@ export class QuestionComponent implements OnInit {
       opts: ["No sé", "Si sé, pero prefiero no  declararlo"],
       resp: "",
       value: ""
-    }
-  ];
+    }];
+
   preg2m = [
     {
       quest: "Monto",
       opts: [""],
       resp: "",
       value: ""
-    }
-  ];
+    }];
 
 
   preg3 = [
@@ -754,9 +747,8 @@ export class QuestionComponent implements OnInit {
       opts: ["Capacitar interrumpe la producción", "Capacitar hace que el personal demande un salario mayor, busque otro trabajo o se independice", "No se encontró capacitador conforme a las necesidades de la empresa", "Se tenía la intención de capacitar pero es muy caro", "Se consideró que el conocimiento y las habilidades técnicas del personal son adecuadas", "No vale la pena porque la empresa tiene muy alta rotación de personal", "En años previos se impartió la capacitación necesaria", "Se solicitó la capacitación a instituciones públicas, pero no se pudo obtener", "No hay beneﬁcios palpables como resultado de la capacitación", "Se utiliza gente externa que ya viene capacitada", "El horario de la empresa no lo permite", "Otra"],
       resp: "",
       value: ""
-    }
+    }];
 
-  ];
   preg29 = [
     {
       quest: "¿En la empresa se realizan actualmente algunas de las siguientes actividades? (seleccionar una o más de las siguientes opciones)",
@@ -764,6 +756,7 @@ export class QuestionComponent implements OnInit {
       resp: "",
       value: ""
     }];
+
   preg30 = [
     {
       quest: "¿Cuál es el motivo principal por el que se inició en este negocio o actividad? (Seleccionar una o varias opciones)",
@@ -771,6 +764,7 @@ export class QuestionComponent implements OnInit {
       resp: "",
       value: ""
     }];
+
   preg31 = [
     {
       quest: "En su negocio o actividad, ¿cuenta con un local para trabajar sea o no de su propiedad? (Seleccione una opción o más de una si tiene varios locales)",
@@ -778,6 +772,7 @@ export class QuestionComponent implements OnInit {
       resp: "",
       value: ""
     }];
+
   preg32 = [
     {
       quest: "En caso de ser local independiente (fuera de un techo común), ¿éste es? (Seleccionar una o varias opciones)",
@@ -785,16 +780,14 @@ export class QuestionComponent implements OnInit {
       resp: "",
       value: ""
     }];
+
   preg33 = [
     {
       quest: "Si no cuenta con un local, ¿en dónde se realizan las actividades de su negocio? (Seleccionar una o varias opciones)",
       opts: ["Vehículo con o sin motor", "Puesto fijo fuera de un techo común", "Puesto semifijo bajo un techo común en pasillos de un centro comercial", "Puesto semifijo en un tianguis", "En un domicilio particular con una instalación especial", "En un domicilio particular sin una instalación especial", "Otro lugar"],
       resp: "",
       value: ""
-    }
-  ];
-
-
+    }];
 
   formScrPerNeg: FormGroup;
   formScrPerMer: FormGroup;
@@ -806,18 +799,14 @@ export class QuestionComponent implements OnInit {
   instQrmCnct;
   prins;
 
-  constructor() { }
+  constructor(
+    public userService: UserService
+  ) { }
 
   ngOnInit() {
-
-    /*var elems = document.querySelectorAll('.datepicker');
-    this.calendar = M.Datepicker.init(elems);
-    // console.log("heyy",this.calendar)
-*/
     M.AutoInit();
     let select = document.querySelectorAll('select');
     M.FormSelect.init(select);
-
 
     this.instPefNeg = M.Collapsible.init(document.getElementById('perfilNegocio'));
     this.instQrmCnct = M.Collapsible.init(document.getElementById('queremosConocerte'));
@@ -948,16 +937,37 @@ export class QuestionComponent implements OnInit {
       preg31: new FormControl(null, [Validators.required]),
       preg32: new FormControl(null, [Validators.required]),
       preg33: new FormControl(null, [Validators.required])
-
-
-
-
-
-
     });
+  
+    // Read DataCodes Values
+    // Cuestionario Direccion
+    let preConf = this.scrDir;
+    let questions:any = []; 
+    preConf.forEach(function (element) {
+      this.userService.getDataCode(element.dataCode).subscribe(
+        data => {
+          element.question = data.description;
+          var options = [];
+          _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
+            options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+          });
+          element.options = options;
+        },
+        error => {
+          console.error('There was an error getting code values ' + element.dataCode, error);
+        }
+      );
+      questions.push(element);
+    }, this);
+    this.scrDir = questions;
+    // Cuestionario Direccion -- Fin
+
+    // Cuestionario Reputacion
+    // Cuestionario Reputacion -- Fin
 
 
   }
+
   changedPerNeg(j, i) {
     this.scrPerNeg[i].value = this.scrPerNeg[i].values[j]
   }
@@ -998,7 +1008,7 @@ export class QuestionComponent implements OnInit {
   }
 
   changedDir(j, i) {
-    this.scrDir[i].value = this.scrDir[i].values[j]
+    // this.scrDir[i].score = this.scrDir[i].score[j]
   }
 
   scrDirSend() {
@@ -1021,7 +1031,6 @@ export class QuestionComponent implements OnInit {
       //enviar datos a back
       this.instQrmCnct.open(1); //aqui ira
     }
-
   }
 
   qcQcnSend() {
@@ -1031,7 +1040,6 @@ export class QuestionComponent implements OnInit {
       // console.log("form", this.formQcQcn.value);
       //enviar datos a back
     }
-
   }
 
   b5() {
@@ -1039,29 +1047,27 @@ export class QuestionComponent implements OnInit {
     if (this.sfina5) {
       this.formQcQcn.get("qcQcnr05").setValue(" ")
     }
-
-
   }
+
   b6() {
     // console.log("Reviso valor de check", this.sfina6);
     if (this.sfina6) {
       this.formQcQcn.get("qcQcnr06").setValue(" ")
     }
-
   }
+
   b7() {
     // console.log("Reviso valor de check", this.sfina7);
     if (this.sfina7) {
       this.formQcQcn.get("qcQcnr07").setValue(" ")
     }
-
   }
+
   monto() {
     // console.log("Reviso valor de check", this.sfina8);
     if (this.sfina8) {
       this.formQcQcn.get("qcqcnmo").setValue(" ")
     }
-
   }
 
   sendQuestions() {
@@ -1103,6 +1109,4 @@ export class QuestionComponent implements OnInit {
       //this.instQrmCnct.open(1); // no ira aqui solo para no completar form
     }
   }
-
-
 }
