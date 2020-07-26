@@ -8,7 +8,6 @@ import * as M from 'materialize-css';
 
 import { UserService } from '../../services/service.index';
 import { UserLog } from '../../models/user-log.module';
-import * as CryptoJS from 'crypto-js';
 
 import swal from 'sweetalert';
 
@@ -111,7 +110,7 @@ this.router.navigate(["dashboard"]);
     // console.log("form login is valid?", this.form.valid);
     if(this.form.valid){
       const user = new UserLog(this.form.value.email,
-        CryptoJS.AES.encrypt(this.form.value.password, this.form.value.email).toString());
+        this.userService.createHash(this.form.value.password));
       //this.router.navigate(["register",{id:this.step}]);
       //enviar datos a back
       this.userService.login(user)

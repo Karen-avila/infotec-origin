@@ -11,6 +11,7 @@ import swal from 'sweetalert';
 import { Router } from '@angular/router';
 
 import { environment } from '../../../environments/environment';
+import jsSHA from "jssha";
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +29,12 @@ export class UserService {
     this.getStorage();
   }
 
+  createHash(text: any): string {
+    const shaObj = new jsSHA("SHA-256", "TEXT", { encoding: "UTF8" });
+    shaObj.update(text);
+    return shaObj.getHash("HEX");
+  }
+
   createUser(user: User) {
     // console.log("Service create user");
     const object = JSON.stringify(user);
@@ -36,9 +43,6 @@ export class UserService {
     let headers = environment.headers_apis;
     let api_keys = environment.gravitee_api_keys;
     headers['X-Gravitee-Api-Key'] = api_keys['registro'];
-
-    console.log(headers);
-    // console.log("Esto es lo que enviare a donde lo tenga que enviar", object);
 
     return this.http.post(url, object, { headers }).map((res: any) => {
       // console.log("creado", res)
@@ -176,7 +180,7 @@ export class UserService {
       return res;
     }).catch(err => {
       if (err.status == '0') {
-        swal('Existio un error al procesar tu solicitud de identificación, intentalo más tarde');
+        console.log('Existio un error al procesar tu identificación, intentalo más tarde');
       }
       this.prosessing = false;
       console.log(err);
@@ -210,7 +214,6 @@ export class UserService {
   }
 
   sendPersonalReferences(data) {
-    // console.log("Document Service");
     let clientid = localStorage.getItem('clientid');/* fineract-provider/api/v1/clients/%7BidCliente%7D/familymembers */
     let url = environment.apis_url + '/V1.0/fineract-protected/clients/' + clientid + '/familymembers';
     let api_keys = environment.gravitee_api_keys;
@@ -221,11 +224,10 @@ export class UserService {
 
     //const object = JSON.stringify(userDocs);
     return this.http.post(url, object, { headers: headers }).map((res: any) => {
-      // console.log("Enviados", res)
       return res;
     }).catch(err => {
       if (err.status == '0') {
-        swal('Existio un error al procesar tu solicitud de identificación, intentalo más tarde');
+        swal('Existio un error al procesar tus referencias personales, intentalo más tarde');
       }
       this.prosessing = false;
       console.log(err);
