@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   apis_url : 'https://apis-pre.bancodelbienestar.com.mx',
   mifos_url : 'https://backoffice-pre.bancodelbienestar.com.mx',
+  reCaptchaKey: "6LdQErYZAAAAACb2f4AgheH_SFBH131W8QCKvnvA",
   gravitee_api_keys : {},
   headers_mifos : {
     'Fineract-Platform-TenantId': 'default',
