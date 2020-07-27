@@ -60,8 +60,8 @@ step
         Validators.minLength(8),
         Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}')
       ]),
-      token: new FormControl(''),
-      paso: new FormControl(0)
+      // token: new FormControl(null, Validators.required),
+      // paso: new FormControl(0)
     });
 
    this.form1 = new FormGroup({
@@ -100,7 +100,7 @@ this.router.navigate(["dashboard"]);
 
   resolved(captchaResponse: string) {
     console.log(`Resolved response token: ${captchaResponse}`);
-    this.form.get('token').setValue(captchaResponse);
+    // this.form.get('token').setValue(captchaResponse);
 
     console.log(this.form.value);
 

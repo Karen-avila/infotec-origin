@@ -10,6 +10,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from '../../services/service.index';
 import { User } from '../../models/user.model';
 import * as CryptoJS from 'crypto-js';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-apply',
@@ -17,7 +18,7 @@ import * as CryptoJS from 'crypto-js';
   styleUrls: ['./apply.component.css']
 })
 export class ApplyComponent implements OnInit {
-  instance 
+  instance
   popup;
   recaptcha: any[];
   //-----
@@ -34,22 +35,21 @@ export class ApplyComponent implements OnInit {
   rePassType = "password";
   icon:boolean=true;
   reIcon:boolean=true;
+  reCaptchaKey:string;
 
 
-  resolved(captchaResponse: any[]) {
-    this.recaptcha = captchaResponse;
-    // console.log(this.recaptcha);
-  }
 
   constructor(public userService:UserService, private router: Router) {
-    
+
   }
 
   ngOnInit() {
 
+    this.reCaptchaKey = environment.reCaptchaKey;
+
     var elems = document.querySelectorAll('.modal');
     this.instance = M.Modal.init(elems);
-    
+
     var select = document.querySelectorAll('select');
     var instances = M.FormSelect.init(select);
 
@@ -75,15 +75,17 @@ export class ApplyComponent implements OnInit {
 //----------------------
 
 
-   this.form = new FormGroup({  
+   this.form = new FormGroup({
       email: new FormControl(null,[Validators.required, Validators.email]),
       password: new FormControl(null, [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$')]),
-      rePassword: new FormControl(null, [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$')])
-   }, { validators: this.equalPass('password','rePassword') });
+      rePassword: new FormControl(null, [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$')]),
+      // token: new FormControl('', [Validators.required]),
+      // paso: new FormControl(0)
+    }, { validators: this.equalPass('password','rePassword') });
 
-   //validators: this.pbaDict('password') 
+   //validators: this.pbaDict('password')
 
-//------------------------   
+//------------------------
    this.formval = new FormGroup({
     codigo: new FormControl(null,[Validators.required, Validators.minLength(3),  Validators.maxLength(3), Validators.pattern('[0-9]{3}')]),
     token: new FormControl(null, [Validators.required, Validators.minLength(3),  Validators.maxLength(3), Validators.pattern('[0-9]{3}')])
@@ -95,6 +97,14 @@ export class ApplyComponent implements OnInit {
   get f() { return this.form.controls; }
   get fo() { return this.formval.controls; }
 //------------
+
+  resolved(captchaResponse: string) {
+    console.log(`Resolved response token: ${captchaResponse}`);
+    // this.form.get('token').setValue(captchaResponse);
+
+    console.log(this.form.value);
+
+  }
 
 equalPass(p1:string,p2:string){
 
@@ -112,26 +122,31 @@ pbaDict(p1:string){
 
   return ( group:FormGroup)=>{
     let val1 = group.controls[p1].value;
-    
+
     for(let i of this.dic){
       //// console.log("compare",val1,"vs",i)
     if(val1 === i){
       return {isMatch:true};
     }
-    
+
 
   }
 
   }
-  
+
 }
 //------------
 
   //-------------
   register() {
+
+    console.log('Here');
+
     let user = new User(this.form.value.email,
       CryptoJS.AES.encrypt(this.form.value.password, this.form.value.email).toString(),"1",
       CryptoJS.AES.encrypt(this.form.value.rePassword, this.form.value.email).toString());
+
+
 
     if(this.form.valid){
       /* // console.log("form esto envio", this.form.value); */
