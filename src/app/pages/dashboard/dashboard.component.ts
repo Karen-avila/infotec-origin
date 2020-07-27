@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserService } from '../../services/service.index';
+import { UserService, CurpService } from '../../services/service.index';
 import { PersonalReferences } from '../../models/personal-references.model' ;
 import { ActivatedRoute } from '@angular/router';
 import { Options, LabelType } from 'ng5-slider';
@@ -195,6 +195,7 @@ export class DashboardComponent implements OnInit {
   // -------------------
   constructor(
     public userService: UserService,
+    private curpService: CurpService,
     private route: ActivatedRoute,
     private router: Router,
     private eventManager: EventManager
@@ -490,6 +491,23 @@ export class DashboardComponent implements OnInit {
         }
       }
     };
+  }
+
+  generateCurp() {
+    var nombre = this.form.get('nombre').value;
+    const nombre2 = this.form.get('nombre2').value;
+    if (nombre2 !== '') {
+      nombre = nombre + " " + nombre2;
+    }
+    const apaterno = this.form.get('apaterno').value;
+    const amaterno = this.form.get('amaterno').value;
+    const fechanac = this.form.get('fechanac').value;
+    const entidadfednaci = this.form.get('entidadfednaci').value;
+    const genero = this.form.get('genero').value;
+    var curp = this.curpService.generarCURP(nombre, apaterno, amaterno, fechanac, genero, entidadfednaci);
+    if (curp !== '') {
+      this.form.get('curp').setValue(curp);
+    }
   }
 
   async searchCP(value, target) {
