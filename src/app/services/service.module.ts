@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UserService, LoginGuardGuard, NominatimServiceService } from './service.index';
+import { CurpService, UserService, LoginGuardGuard, NominatimServiceService } from './service.index';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -11,7 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
         CommonModule,
         HttpClientModule
     ],
-    providers:[ 
+    providers:[
+        CurpService,
         UserService,
         NominatimServiceService,
         LoginGuardGuard

@@ -122,7 +122,7 @@ export class ApplyComponent implements OnInit {
   //-------------
   register() {
     let user = new User(this.form.value.email,
-      this.userService.createHash(this.form.value.password), "1",
+      this.userService.createHash(this.form.value.password), true, "1",
       this.userService.createHash(this.form.value.rePassword));
 
     if (this.form.valid) {
