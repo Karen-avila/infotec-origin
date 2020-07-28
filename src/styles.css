@@ -34,6 +34,9 @@ i.icon-white {
 }
 
 
+.step-title{
+    pointer-events:none;
+}
 /*https://alchile.com.mx/wp-content/uploads/2020/03/gobiernomexico-1280x720.jpg
 https://gacm.gob.mx/images/aguilaiori.png
 */

@@ -11,6 +11,7 @@ import { UserLog } from '../../models/user-log.module';
 
 import swal from 'sweetalert';
 import { environment } from 'src/environments/environment';
+import { User } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-login',
@@ -122,14 +123,21 @@ this.router.navigate(["dashboard"]);
 
     console.log("form login is valid?", this.form.valid);
     if(this.form.valid){
-      const user = new UserLog(this.form.value.email,
-        this.userService.createHash(this.form.value.password));
-      //this.router.navigate(["register",{id:this.step}]);
-      //enviar datos a back
+      
+      
+      var user:UserLog;
+      if(environment.passwordShaded){
+          user = new UserLog(this.form.value.email,
+          this.userService.createHash(this.form.value.password));
+      }
+       else {
+        user = new UserLog(this.form.value.email,
+          this.form.value.password);
+       }
+      
+       
       this.userService.login(user)
         .subscribe(res=>{
-          // console.log("Is logged?",res);
-          // console.log("Entro al step",this.step)
           this.router.navigate(["dashboard",{email:this.form.value.email}]);
          /*  this.router.navigate(["dashboard"]);  */
           //this.router.navigate(["register",{id:this.step}]); ///revisar donde quedara
@@ -142,11 +150,9 @@ this.router.navigate(["dashboard"]);
 
   viewPassword(){
     if(this.icon){
-      // console.log("view password");
       this.icon=false;
       this.passType="text";
     }else{
-      // console.log("not view password");
       this.icon=true;
       this.passType="password";
     }

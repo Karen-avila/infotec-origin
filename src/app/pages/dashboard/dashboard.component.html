@@ -128,7 +128,7 @@
                             <p>
                                 <label>
                                     <input class="with-gap teal darken-4" (change)="rFiscal()" formControlName="tipopersona"
-                                        name="tipopersonaF" id="tipopersonaF" type="radio" value="pFisica"
+                                        name="tipopersona" id="tipopersonaF" type="radio" value="pFisica"
                                         [(ngModel)]="model" />
                                     <span>Persona Física con Actividad Empresarial</span>
                                 </label>
@@ -137,7 +137,7 @@
                         <div class="input-field col s12 m4">
                             <p>
                                 <label>
-                                    <input class="with-gap teal darken-4" formControlName="tipopersona" name="tipopersonaM"
+                                    <input class="with-gap teal darken-4" formControlName="tipopersona" name="tipopersona"
                                         id="tipopersonaM" type="radio" value="rFiscal" [(ngModel)]="model" />
                                     <span>Régimen de Incorporación Fiscal</span>
                                 </label>
@@ -155,7 +155,7 @@
                         <i class="material-icons prefix">payment</i>
                         <input class="validate" id="clabeinter" type="text" (keypress)="numberOnly($event)"
                             formControlName="clabeinter" name="Clabe interbancaria" minlength="18" maxlength="18" required>
-                        <label for="text">Clabe Interbancaria *</label>
+                        <label for="text" class="active">Clabe interbancaria *</label>
 
                         <div class="blue-text" *ngIf="f.clabeinter.errors">La clabe interbancaria consta de 18 dígitos
                         </div>
@@ -169,10 +169,12 @@
                     <div class="input-field col s12 m4 l4">
                         <i class="material-icons prefix">payment</i>
                         <input class="validate" id="clabeinter" type="text" (keypress)="numberOnly($event)"
-                            formControlName="clabeinterConf" name="Clabe interbancaria" minlength="18" maxlength="18" required>
-                        <label for="text">Clabe Interbancaria (confirmación)</label>
+                            formControlName="clabeinterconf" name="Clabe interbancaria (Conf) *" minlength="18" maxlength="18" required>
+                        <label for="text">Clabe interbancaria (confirmación)</label>
 
-                        <div class="blue-text" *ngIf="f.clabeinter.errors">La clabe interbancaria no coincide</div>
+                        <div class="red-text col s12" *ngIf="form.errors?.isValid && !form.pristine">
+                            <p>Las clabes interbancarias no son iguales.</p>
+                        </div>
                     </div>
                     <div class="input-field col s12 m2 l2">
                         <i class="material-icons prefix">house</i>
@@ -283,6 +285,7 @@
                         <select formControlName="entidadfednaci" name="Entidad Federativa de Nacimiento" id="entidadfednaci"
                             class="validate" (change)="generateCurp()">
                             <option *ngFor="let state of stateOptions" [value]="state.name">{{state.name}}</option>
+                            <option value="CIUDAD DE MEXICO">CIUDAD DE MEXICO</option>
                         </select>
                         <label>Entidad Federativa de Nacimiento *</label>
                         <div class="blue-text" *ngIf="f.entidadfednaci.errors"></div>

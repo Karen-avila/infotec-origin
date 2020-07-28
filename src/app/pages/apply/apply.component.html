@@ -48,6 +48,9 @@
                                 <i class="material-icons prefix" *ngIf="icon" (click)="viewPassword()">visibility_off</i>
                                 <i class="material-icons prefix" *ngIf="!icon" (click)="viewPassword()">visibility</i>
                             </div>
+                            <!--  -->
+
+                            <!--  -->
                             <div class="input-field col s10">
                                 <i class="material-icons prefix">https</i>
                                 <input formControlName="rePassword" name='rePassword' id="rePassword" [type]="rePassType" class="validate">
@@ -137,6 +140,20 @@
     </div>
 </div>
 
-<!--Modal de token -->
+<div id="loader" class="modal transparent z-depth-0 center">
+    <div class="modal-content" >
+        <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-green-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+    </div>    
+</div>
 
 <app-footer></app-footer>

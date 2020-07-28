@@ -284,7 +284,7 @@ export class DashboardComponent implements OnInit {
       clientid: new FormControl(localStorage.getItem('clientid'), Validators.required),
       tipopersona: new FormControl(null, Validators.required),
       clabeinter: new FormControl(null, [Validators.required, Validators.minLength(18), Validators.maxLength(18), Validators.pattern('[0-9]{18}')]),
-      clabeinterConf: new FormControl(null, [Validators.required, Validators.minLength(18), Validators.maxLength(18), Validators.pattern('[0-9]{18}'), this.checkClabeInterbank]),
+      clabeinterconf: new FormControl(null, [Validators.required, Validators.minLength(18), Validators.maxLength(18), Validators.pattern('[0-9]{18}'), this.checkClabeInterbank]),
       nombre: new FormControl(null, [Validators.required, Validators.minLength(2)]),
       nombre2: new FormControl(null, [Validators.minLength(0)]),
       apaterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
@@ -335,7 +335,8 @@ export class DashboardComponent implements OnInit {
       montocredito: new FormControl(),
       plazocredito: new FormControl(),
       aprivacidad: new FormControl(null, Validators.required)
-    },
+    }, { validators: this.compareClabe('clabeinter', 'clabeinterconf'), }
+    /* ,
       {
         validators:
           this.pbaDict(
@@ -343,8 +344,8 @@ export class DashboardComponent implements OnInit {
             'apaterno',
             'nombre2',
             'amaterno',
-            /* 'domicilio', */
-            /*       'calle',
+            'domicilio',
+                  'calle',
                   'ext',
                   'int',
                   'municipio',
@@ -361,9 +362,11 @@ export class DashboardComponent implements OnInit {
                   'ref2_name',
                   'ref2_paterno',
                   'ref2_name2',
-                  'ref2_materno' */
+                  'ref2_materno'
           )
-      });
+      } */
+      );
+
     this.formDocumentos = new FormGroup({
       paso: new FormControl("4", Validators.required),
       clientid: new FormControl(localStorage.getItem('clientid'), Validators.required),
@@ -411,6 +414,16 @@ export class DashboardComponent implements OnInit {
   get fi() { return this.formFiel.controls; }
   get fir() { return this.formFielFirm.controls; }
 
+  compareClabe(cbl1: string, cbl2: string){
+    return (group: FormGroup) => {
+      let clabe1 = group.controls[cbl1].value;
+      let clabe2 = group.controls[cbl2].value;
+      if (clabe1 === clabe2) {
+        return null;
+      }
+      return { isValid: true };
+    }
+  }
   pbaDict(
     p1: string,
     p2: string,
@@ -494,6 +507,7 @@ export class DashboardComponent implements OnInit {
   }
 
   generateCurp() {
+    console.log("se llama generar curp");
     var nombre = this.form.get('nombre').value;
     const nombre2 = this.form.get('nombre2').value;
     if (nombre2 !== '') {
@@ -584,7 +598,7 @@ export class DashboardComponent implements OnInit {
   getBankName(option) {
     var clabe = this.form.get('clabeinter').value;
     if (option === 2) {
-      clabe = this.form.get('clabeinterConf').value;
+      clabe = this.form.get('clabeinterconf').value;
     }
     if (clabe.length > 2) {
       const prefix = clabe.substring(0, 3);
@@ -691,6 +705,7 @@ export class DashboardComponent implements OnInit {
       }
     }
     return "";
+  
   }
   
   checkClabeInterbank(control: AbstractControl) {
