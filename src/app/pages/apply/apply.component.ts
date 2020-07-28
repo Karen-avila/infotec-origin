@@ -22,7 +22,7 @@ export class ApplyComponent implements OnInit {
   popup;
   recaptcha: any[];
   //-----
-  form : FormGroup;
+  form: FormGroup;
   formval: FormGroup;
   dic = [
     "apañar",
@@ -39,7 +39,7 @@ export class ApplyComponent implements OnInit {
 
 
 
-  constructor(public userService:UserService, private router: Router) {
+  constructor(public userService: UserService, private router: Router) {
 
   }
 
@@ -70,9 +70,7 @@ export class ApplyComponent implements OnInit {
       stepTitleNavigation: false,
       // Preloader used when step is waiting for feedback function. If not defined, Materializecss spinner-blue-only will be used.
       feedbackPreloader: '<div class="spinner-layer spinner-blue-only">...</div>'
-   })
-
-//----------------------
+    })
 
 
    this.form = new FormGroup({
@@ -96,7 +94,7 @@ export class ApplyComponent implements OnInit {
 
   get f() { return this.form.controls; }
   get fo() { return this.formval.controls; }
-//------------
+  //------------
 
   resolved(captchaResponse: string) {
     console.log(`Resolved response token: ${captchaResponse}`);
@@ -108,34 +106,31 @@ export class ApplyComponent implements OnInit {
 
 equalPass(p1:string,p2:string){
 
-  return ( group:FormGroup)=>{
-    let pass1 = group.controls[p1].value;
-    let pass2 = group.controls[p2].value;
-    if(pass1 === pass2){
-      return null;
+    return (group: FormGroup) => {
+      let pass1 = group.controls[p1].value;
+      let pass2 = group.controls[p2].value;
+      if (pass1 === pass2) {
+        return null;
+      }
+      return { isEqual: true };
     }
-    return{isEqual:true};
   }
-}
 
-pbaDict(p1:string){
+  pbaDict(p1: string) {
 
-  return ( group:FormGroup)=>{
-    let val1 = group.controls[p1].value;
+    return (group: FormGroup) => {
+      let val1 = group.controls[p1].value;
 
-    for(let i of this.dic){
-      //// console.log("compare",val1,"vs",i)
-    if(val1 === i){
-      return {isMatch:true};
+      for (let i of this.dic) {
+        //// console.log("compare",val1,"vs",i)
+        if (val1 === i) {
+          return { isMatch: true };
+        }
+      }
     }
 
-
   }
-
-  }
-
-}
-//------------
+  //------------
 
   //-------------
   register() {
@@ -146,62 +141,59 @@ pbaDict(p1:string){
       CryptoJS.AES.encrypt(this.form.value.password, this.form.value.email).toString(),"1",
       CryptoJS.AES.encrypt(this.form.value.rePassword, this.form.value.email).toString());
 
-
-
-    if(this.form.valid){
+    if (this.form.valid) {
       /* // console.log("form esto envio", this.form.value); */
       //enviar datos a back
       /* this.userService.createUser(this.form.value) */
       // console.log("apply envia", user);
       this.userService.createUser(user)
-        .subscribe(res=>{
+        .subscribe(res => {
           // console.log("esto responde el servicio register",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
         });
 
-        //this.userService.createUserL(user);
+      //this.userService.createUserL(user);
 
 
       this.instance[0].open(); //revisar donde quedara
-    }else{
+    } else {
       //algo esta mal revisa tus datos
       swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
     }
 
   }
   //-------------
-  viewRePassword(){
-    if(this.reIcon){
+  viewRePassword() {
+    if (this.reIcon) {
       //// console.log("view repassword");
-      this.reIcon=false;
-      this.rePassType="text";
-    }else{
+      this.reIcon = false;
+      this.rePassType = "text";
+    } else {
       //// console.log("not view repassword");
-      this.reIcon=true;
-      this.rePassType="password";
+      this.reIcon = true;
+      this.rePassType = "password";
     }
   }
 
-  viewPassword(){
-    if(this.icon){
+  viewPassword() {
+    if (this.icon) {
       //// console.log("view password");
-      this.icon=false;
-      this.passType="text";
-    }else{
+      this.icon = false;
+      this.passType = "text";
+    } else {
       //// console.log("not view password");
-      this.icon=true;
-      this.passType="password";
+      this.icon = true;
+      this.passType = "password";
     }
   }
 
-  validacion(){
-    if(this.formval.valid){
+  validacion() {
+    if (this.formval.valid) {
       // console.log("formval", this.formval.value);
       this.router.navigate(["home"]);
       //enviar datos a back
       //this.popup[0].open();
-    } else{
+    } else {
       swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
     }
   }
-
 }

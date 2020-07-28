@@ -25,60 +25,53 @@ export class QuestionComponent implements OnInit {
 
   scrPerNeg = [
     {
-      quest: "Antigüedad de negocio.",
-      value_quest: "0.2",
-      opts: ["Menos de 12 meses", "De 1 a 2 años", "De 3 a 5 años", "De 6 a 10 años", "Más de 10 años"],
-      resp: "",
-      values: ["20", "35", "50", "70", "100"],
-      value: ""
+      dataCode: "antiguedad_de_negocio",
+      columnId: "campo_1",
+      question: "",
+      options: [],
+      value_quest: "0.2"
     },
     {
-      quest: "Tipo de negocio.",
-      value_quest: "0.1",
-      opts: ["Ventas al menudeo", "Manufactura", "Ventas al mayoreo", "Servicios", "Agropecuario"],
-      resp: "",
-      values: ["20", "40", "30", "20", "100"],
-      value: ""
+      dataCode: "tipo_de_negocio",
+      columnId: "campo_2",
+      question: "",
+      options: [],
+      value_quest: "0.1"
     },
     {
-      quest: "¿Principalmente a qué plazo se pagan las compras?",
-      value_quest: "0.2",
-      opts: ["Se paga por adelantado", "Se paga al momento", "Se paga en menos de 7 días", "Se paga de 7 a 14 días", "Se paga de 15 a 30 días", "Se paga antes de 30 días"],
-      resp: "",
-      values: ["0", "10", "40", "60", "80", "100"],
-      value: ""
+      dataCode: "principalmente_a_que_plazo_se_pagan_las_compras",
+      columnId: "campo_3",
+      question: "",
+      options: [],
+      value_quest: "0.2"
     },
     {
-      quest: "¿Principalmente a qué plazo se cobran las ventas?",
-      value_quest: "0.2",
-      opts: ["Se cobran en más de 60 días", "Se cobran de 31 a 60 días", "Se cobra de 15 a 30 días", "Se cobra de 8 a 14 días", "Se cobra de 7 días o menos", "Se cobra al momento"],
-      resp: "",
-      values: ["0", "60", "40", "20", "80", "100"],
-      value: ""
+      dataCode: "principalmente_a_que_plazo_se_pagan_las_ventas",
+      columnId: "campo_4",
+      question: "",
+      options: [],
+      value_quest: "0.2"
     },
     {
-      quest: "¿Normalmente cómo se compone el inventario del negocio?",
-      value_quest: "0.1",
-      opts: ["Menos del 25% del inventario corresponde a materias primas", "Entre 25% y 50% del inventario corresponde a materias primas", "Entre 51% y 75% del inventario corresponde a materias primas", "Más de 75% del inventario corresponde a materias primas"],
-      resp: "",
-      values: ["0", "20", "30", "50"],
-      value: ""
+      dataCode: "normalmente_como_compone_el_inventario_de_negoci",
+      columnId: "campo_4",
+      question: "",
+      options: [],
+      value_quest: "0.1"
     },
     {
-      quest: "¿Desde hace cuánto tiempo el negocio es formal?",
-      value_quest: "0.1",
-      opts: ["Menos de 12 meses", "De 1 a 2 años", "De 3 a 5 años", "De 6 a 10 años", "Más de 10 años"],
-      resp: "",
-      values: ["20", "35", "50", "70", "100"],
-      value: ""
+      dataCode: "desde_hace_cuanto_tiempo_el_negocio_es_formal",
+      columnId: "campo_5",
+      question: "",
+      options: [],
+      value_quest: "0.1"
     },
     {
-      quest: "Seleccione la opción que describa mejor a los propietarios actuales del negocio.",
-      value_quest: "0.1",
-      opts: ["El negocio tiene un solo propietario", "El negocio tiene varios propietarios pero uno toma las decisiones", "El negocio tiene varios propietarios y varios toman decisiones"],
-      resp: "",
-      values: ["20", "30", "50"],
-      value: ""
+      dataCode: "seleccione_la_opcion_que_describa_mejor_a_los_pr",
+      columnId: "campo_6",
+      question: "",
+      options: [],
+      value_quest: "0.1"
     }
   ];
 
@@ -86,92 +79,81 @@ export class QuestionComponent implements OnInit {
 
   scrPerMer = [
     {
-      quest: "¿El negocio ofrece varios productos o servicios?",
-      value_quest: "0.1",
-      opts: ["Un solo producto o marca", "Un solo producto de diferentes marcas", "Múltiples productos"],
-      resp: "",
-      values: ["30", "40", "50"],
-      value: ""
+      dataCode: "el_negocio_ofrece_varios_productos_o_servicios",
+      columnId: "campo_1",
+      question: "",
+      options: [],
+      value_quest: "0.1"
     },
     {
-      quest: "¿El producto o servicio es de temporada o se ofrece en cualquier época del año?",
-      value_quest: "0.1",
-      opts: ["De temporada", "En cualquier época del año"],
-      resp: "",
-      values: ["0", "100"],
-      value: ""
+      dataCode: "el_producto_o_servicio_es_de_temporada_o_se_ofre",
+      columnId: "campo_2",
+      question: "",
+      options: [],
+      value_quest: "0.1"
     },
     {
-      quest: "¿Cómo es la fuente principal de suministros del negocio?",
-      value_quest: "0.1",
-      opts: ["El negocio depende de importaciones", "El negocio no depende de importaciones"],
-      resp: "",
-      values: ["0", "100"],
-      value: ""
+      dataCode: "como_es_la_fuente_principal_de_suministros_del_n",
+      columnId: "campo_3",
+      question: "",
+      options: [],
+      value_quest: "0.1"
     },
     {
-      quest: "Número de proveedores.",
-      value_quest: "0.1",
-      opts: ["1 solo proveedor", "2 a 5 proveedores", "Más de 5 proveedores", "No aplica"],
-      resp: "",
-      values: ["0", "50", "100", "100"],
-      value: ""
+      dataCode: "numero_de_proveedores",
+      columnId: "campo_4",
+      question: "",
+      options: [],
+      value_quest: "0.1"
     },
     {
-      quest: "Seleccione la opción que describa mejor las ventas que se hace a los 5 mejores clientes.",
-      value_quest: "0.05",
-      opts: ["Menos del 25% de las ventas se hace a los 5 principales clientes", "Entre el 25% y el 50% de la venta se hace a los principales clientes", "Entre el 51% y el 75% de las ventas se hace a los principales clientes", "Más del 75% de las ventas se hace a los 5 principales clientes"],
-      resp: "",
-      values: ["60", "40", "20", "10"],
-      value: ""
+      dataCode: "seleccione_la_opcion_que_describa_mejor_las_vent",
+      columnId: "campo_5",
+      question: "",
+      options: [],
+      value_quest: "0.05"
     },
     {
-      quest: "¿Los precios de los productos o servicios que ofrece el negocio suben y bajan durante el año?",
-      value_quest: "0.05",
-      opts: ["No cambian", "Suben y bajan moderadamente", "Suben y bajan mucho"],
-      resp: "",
-      values: ["100", "60", "40"],
-      value: ""
+      dataCode: "los_precios_de_los_productos_o_servicios_que_ofr",
+      columnId: "campo_6",
+      question: "",
+      options: [],
+      value_quest: "0.05"
     },
     {
-      quest: "¿Cuántos competidores tiene el negocio?",
-      opts: ["Producto o servicio único", "Menos de 10 competidores", "De 10 hasta 50 competidores", "Más de 50 competidores"],
-      value_quest: "0.05",
-      resp: "",
-      values: ["100", "60", "30", "10"],
-      value: ""
+      dataCode: "cuantos_competidores_tiene_el_negocio",
+      columnId: "campo_7",
+      question: "",
+      options: [],
+      value_quest: "0.05"
     },
     {
-      quest: "¿Qué tan probable es que el producto o servicio que se ofrece se reemplace o quede obsoleto durante los próximos 2 años?",
-      value_quest: "0.05",
-      opts: ["Poco", "Más o menos", "Mucho"],
-      resp: "",
-      values: ["60", "40", "0"],
-      value: ""
+      dataCode: "que_tan_probable_es_que_el_producto_o_servicio_q",
+      columnId: "campo_8",
+      question: "",
+      options: [],
+      value_quest: "0.05"
     },
     {
-      quest: "Seleccione la opción que describa mejor el sector o mercado que atiende el negocio.",
-      value_quest: "0.1",
-      opts: ["El sector o mercado ya pasó por su mejor momento y ahora está disminuyendo", "El sector o mercado está en su mejor momento pero ya no crederá", "El sector o mercado está en crecimiento"],
-      resp: "",
-      values: ["0", "50", "100"],
-      value: ""
+      dataCode: "seleccione_la_opcion_que_describa_mejor_el_secto",
+      columnId: "campo_9",
+      question: "",
+      options: [],
+      value_quest: "0.1"
     },
     {
-      quest: "¿Normalmente el negocio depende de apoyos del gobierno o permisos especiales de éste?",
-      value_quest: "0.2",
-      opts: ["Si", "No"],
-      resp: "",
-      values: ["0", "100"],
-      value: ""
+      dataCode: "normalmente_el_negocio_depende_de_apoyos_del_gob",
+      columnId: "campo_10",
+      question: "",
+      options: [],
+      value_quest: "0.2"
     },
     {
-      quest: "¿Considera que la regulación limita el negocio?",
-      value_quest: "0.1",
-      opts: ["Si", "No", "Las actividades del negocio no necesitan regularse o controlarse"],
-      resp: "",
-      values: ["0", "50", "100"],
-      value: ""
+      dataCode: "considera_que_la_regulacion_limita_el_negocio",
+      columnId: "campo_11",
+      question: "",
+      options: [],
+      value_quest: "0.1"
     }
   ];
 
@@ -179,52 +161,46 @@ export class QuestionComponent implements OnInit {
 
   scrRep = [
     {
-      quest: "¿Cómo es la reputación del negocio con los clientes?",
-      value_quest: "0.13",
-      opts: ["No favorable", "Aceptable", "Favorable"],
-      resp: "",
-      values: ["0", "50", "100"],
-      value: ""
+      dataCode: "como_es_la_reputacion_del_negocio_con_los_client",
+      columnId: "campo_1",
+      question: "",
+      options: [],
+      value_quest: "0.13"
     },
     {
-      quest: "¿Cómo es la reputación del negocio con los proveedores?",
-      value_quest: "0.13",
-      opts: ["No favorable", "Aceptable", "Favorable"],
-      resp: "",
-      values: ["0", "50", "100"],
-      value: ""
+      dataCode: "como_es_la_reputacion_del_negocio_con_los_provee",
+      columnId: "campo_2",
+      question: "",
+      options: [],
+      value_quest: "0.13"
     },
     {
-      quest: "¿Hacé cuánto tiempo tienen los dueños del negocio cuentas bancarias?",
-      value_quest: "0.15",
-      opts: ["Menos de 12 meses", "De 1 a 2 años", "De 3 a 5 años", "De 6 a 10 años", "Más de 10 años"],
-      resp: "",
-      values: ["0", "25", "50", "75", "100"],
-      value: ""
+      dataCode: "hace_cuanto_tiempo_tienen_los_duenos_del_negocio",
+      columnId: "campo_3",
+      question: "",
+      options: [],
+      value_quest: "0.15"
     },
     {
-      quest: "Seleccione la opción que describa mejor la relación de los dueños con los bancos.",
-      value_quest: "0.3",
-      opts: ["Los dueños tienen o han tenido problemas mayores con los bancos", "Los dueños son nuevos clientes y adquirieron un crédito por primera vez", "Los dueños ya eran clientes del banco pero apenas adquirieron un crédito por primera vez", "Los dueños tienen o han tenido problemas menores con los bancos"],
-      resp: "",
-      values: ["0", "20", "50", "100"],
-      value: ""
+      dataCode: "selecciona_la_opcion_que_describa_mejor_la_relac",
+      columnId: "campo_4",
+      question: "",
+      options: [],
+      value_quest: "0.3"
     },
     {
-      quest: "¿Cómo calificaría el historial de crédito de los dueños con los bancos?",
-      value_quest: "0.15",
-      opts: ["Los dueños tienen un mal historial crediticio con los bancos", "Los dueños tienen un buen historial crediticio con los bancos", "Los dueños no tienen historial crediticio con los bancos"],
-      resp: "",
-      values: ["0", "100", "20"],
-      value: ""
+      dataCode: "como_calificaria_el_historial_de_credito_de_los_",
+      columnId: "campo_5",
+      question: "",
+      options: [],
+      value_quest: "0.15"
     },
     {
-      quest: "¿Los dueños tienen juicios en contra o asuntos legales por resolver?",
-      value_quest: "0.14",
-      opts: ["Si", "No"],
-      resp: "",
-      values: ["0", "100"],
-      value: ""
+      dataCode: "los_duenos_tienen_juicios_en_contra_o_asuntos_le",
+      columnId: "campo_6",
+      question: "",
+      options: [],
+      value_quest: "0.14"
     }
   ];
 
@@ -264,46 +240,46 @@ export class QuestionComponent implements OnInit {
 
   qcQc = [
     {
-      quest: "Estado civil",
-      opts: ["Soltero", "Casado", "Viudo", "Divorciado", "Unión Libre", "Separado"],
-      resp: "",
-      value: ""
+      dataCode: "estado_civil",
+      columnId: "campo_1",
+      question: "",
+      options: []
     },
     {
-      quest: "Nivel de Estudios del Solicitante",
-      opts: ["Ninguna", "Primaria incompleta", "Primaria completa", "Secuendaria incompleta", "Secundaria completa", "Preparatoria o bachillerato incompleto", "Preparatoria o bachillerato completo", "Técnica o comercial incompleta", "Técnica o comercial completa", "Licenciatura incompleta", "Licenciatura completa", "Posgrado"],
-      resp: "",
-      value: ""
+      dataCode: "nivel_de_estudios_del_solicitante",
+      columnId: "campo_2",
+      question: "",
+      options: []
     },
     {
-      quest: "¿Habla usted alguna lengua indígena?",
-      opts: ["Sí", "No"],
-      resp: "",
-      value: ""
+      dataCode: "habla_usted_alguna_lengua_indigena",
+      columnId: "campo_3",
+      question: "",
+      options: []
     },
     {
-      quest: "En su vida diaria, ¿tiene dificultad al realizar las siguientes actividades? (Seleccionar una o varias opciones)",
-      opts: ["Caminar, moverse subir o bajar", "Ver, aun usando lentes", "Hablar, comunicarse o conversar", "Oir, aun usando aparato auditivo", "Vestirse, bañarse o comer", "Poner atención o aprender cosas sencillas", "Tiene alguna limitación mental", "No tiene dificultad física o mental"],
-      resp: "",
-      value: ""
+      dataCode: "en_su_vida_diaria_tiene_dificultad_al_realizar_l",
+      columnId: "campo_4",
+      question: "",
+      options: []
     },
     {
-      quest: "¿Usa usted internet habitualmente?",
-      opts: ["Sí", "No"],
-      resp: "",
-      value: ""
+      dataCode: "usa_usted_internet_habitualmente",
+      columnId: "campo_5",
+      question: "",
+      options: []
     },
     {
-      quest: "¿Cuál es su papel en el hogar?",
-      opts: ["Es jefe(a) de familia", "Es esposo(a) del jefe(a) de familia", "Es hijo(a) del jefe(a) de familia", "Otra relación con el jefe(a) de familia"],
-      resp: "",
-      value: ""
+      dataCode: "cual_es_su_papel_en_el_hogar",
+      columnId: "campo_6",
+      question: "",
+      options: []
     },
     {
-      quest: "Su vivienda es:",
-      opts: ["Rentada", "Prestada", "Propia pero la están pagando", "Es propia", "Está intestada o en litigio", "Otra situación"],
-      resp: "",
-      value: ""
+      dataCode: "su_vivienda_es",
+      columnId: "campo_7",
+      question: "",
+      options: []
     }
   ];
 
@@ -969,7 +945,7 @@ export class QuestionComponent implements OnInit {
   }
 
   changedPerNeg(j, i) {
-    this.scrPerNeg[i].value = this.scrPerNeg[i].values[j]
+    //this.scrPerNeg[i].value = this.scrPerNeg[i].values[j]
   }
 
   scrPerNegSend() {
@@ -982,7 +958,7 @@ export class QuestionComponent implements OnInit {
   }
 
   changedPerMer(j, i) {
-    this.scrPerMer[i].value = this.scrPerMer[i].values[j]
+    //this.scrPerMer[i].value = this.scrPerMer[i].values[j]
   }
 
   scrPerMerSend() {
@@ -995,7 +971,7 @@ export class QuestionComponent implements OnInit {
   }
 
   changedRep(j, i) {
-    this.scrRep[i].value = this.scrRep[i].values[j]
+    //this.scrRep[i].value = this.scrRep[i].values[j]
   }
 
   scrRepSend() {
@@ -1021,7 +997,7 @@ export class QuestionComponent implements OnInit {
   }
 
   changedqcQc(j, i) {
-    this.qcQc[i].value = this.qcQc[i].value[j]
+    //this.qcQc[i].value = this.qcQc[i].value[j]
   }
 
   qcQcSend() {

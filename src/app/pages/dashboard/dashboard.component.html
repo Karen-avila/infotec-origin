@@ -182,7 +182,7 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="nombre" type="text" formControlName="nombre" name="Nombre"
+                        <input id="nombre" type="text" formControlName="nombre" name="Nombre" (change)="generateCurp()"
                             (keyup)="form.patchValue({nombre: $event.target.value.toUpperCase()})" required
                             class="validate">
                         <label for="nombre">Nombre *</label>
@@ -196,7 +196,7 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="nombre2" type="text" formControlName="nombre2" name="Segundo Nombre"
+                        <input id="nombre2" type="text" formControlName="nombre2" name="Segundo Nombre" (change)="generateCurp()"
                             (keyup)="form.patchValue({nombre2: $event.target.value.toUpperCase()})" class="validate">
                         <label for="nombre2">Segundo nombre</label>
 
@@ -210,7 +210,7 @@
                         <i class="material-icons prefix">account_circle</i>
                         <input id="apaterno" type="text" name="Apellido Paterno" formControlName="apaterno"
                             (keyup)="form.patchValue({apaterno: $event.target.value.toUpperCase()})" required
-                            class="validate">
+                            class="validate" (change)="generateCurp()">
                         <label for="apaterno">Apellido paterno *</label>
                         <div class="blue-text" *ngIf="f.apaterno.errors?.minlength">Debe tener un minimo de 2 carácteres
                         </div>
@@ -222,7 +222,7 @@
                         <i class="material-icons prefix">account_circle</i>
                         <input id="amaterno" type="text" name="Apellido materno" formControlName="amaterno"
                             (keyup)="form.patchValue({amaterno: $event.target.value.toUpperCase()})" required
-                            class="validate">
+                            class="validate" (change)="generateCurp()">
                         <label for="amaterno">Apellido materno *</label>
                         <div class="blue-text" *ngIf="f.amaterno.errors?.minlength">Debe tener un minimo de 2 carácteres
                         </div>
@@ -233,7 +233,7 @@
 
                     <div class="input-field col s12 m6 l6">
                         <input type="date" class="fecha validate" formControlName="fechanac" name="Fecha de Nacimiento"
-                            id="fechanac" min="1960-12-31" max="2002-01-01" required>
+                            id="fechanac" min="1960-12-31" max="2002-01-01" required (change)="generateCurp()">
                         <label>Fecha de Nacimiento *</label>
                     </div>
 
@@ -251,7 +251,7 @@
                     </div>
 
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="genero" name="Genero" id="genero" class="validate">
+                        <select formControlName="genero" name="Genero" id="genero" class="validate" (change)="generateCurp()">
                             <option value="" disabled selected>Selecciona una opción</option>
                             <option value="Femenino">Femenino</option>
                             <option value="Masculino">Masculino</option>
@@ -281,7 +281,7 @@
 
                     <div class="input-field col s12 m6 l6">
                         <select formControlName="entidadfednaci" name="Entidad Federativa de Nacimiento" id="entidadfednaci"
-                            class="validate">
+                            class="validate" (change)="generateCurp()">
                             <option *ngFor="let state of stateOptions" [value]="state.name">{{state.name}}</option>
                         </select>
                         <label>Entidad Federativa de Nacimiento *</label>
