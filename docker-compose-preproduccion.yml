@@ -8,8 +8,8 @@ services:
     image: harbor.infotec.mx/mifosio/com.mx.infotec.fineract.cn.creditosimple.se.preproduccion
     mem_limit: 2048m
     volumes:
-      - /opt/mifosio/certificates/bambi.pem:/etc/ssl/certs/fullchain.pem
-      - /opt/mifosio/certificates/bambi.key:/etc/ssl/private/privkey.pem
+      - /opt/mifosio/certificates/bambi.pem:/usr/local/lsws/admin/conf/webadmin.crt
+      - /opt/mifosio/certificates/bambi.key:/usr/local/lsws/admin/conf/webadmin.key
     restart: always
     extra_hosts:
       - "eureka:172.22.216.195"
@@ -27,4 +27,4 @@ services:
       - "61616:61616"
       - "7090:7080"
     networks:
-      - mifos   
+      - mifos
