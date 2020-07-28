@@ -29,19 +29,19 @@ export class ApplyComponent implements OnInit {
   ]
   passType = "password";
   rePassType = "password";
-  icon: boolean = true;
-  reIcon: boolean = true;
+  icon:boolean=true;
+  reIcon:boolean=true;
+  reCaptchaKey:string;
 
-  resolved(captchaResponse: any[]) {
-    this.recaptcha = captchaResponse;
-    // console.log(this.recaptcha);
-  }
+
 
   constructor(public userService: UserService, private router: Router) {
 
   }
 
   ngOnInit() {
+
+    this.reCaptchaKey = environment.reCaptchaKey;
 
     var elems = document.querySelectorAll('.modal');
     this.instance = M.Modal.init(elems,{opacity:0.7});
@@ -68,20 +68,23 @@ export class ApplyComponent implements OnInit {
       feedbackPreloader: '<div class="spinner-layer spinner-blue-only">...</div>'
     })
 
-    //----------------------
-    this.form = new FormGroup({
-      email: new FormControl(null, [Validators.required, Validators.email]),
-      password: new FormControl(null, [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$')]),
-      rePassword: new FormControl(null, [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$')])
-    }, { validators: this.equalPass('password', 'rePassword') });
 
-    //validators: this.pbaDict('password') 
-    //------------------------   
-    this.formval = new FormGroup({
-      codigo: new FormControl(null, [Validators.required, Validators.minLength(3), Validators.maxLength(3), Validators.pattern('[0-9]{3}')]),
-      token: new FormControl(null, [Validators.required, Validators.minLength(3), Validators.maxLength(3), Validators.pattern('[0-9]{3}')])
-    }
-    );
+   this.form = new FormGroup({
+      email: new FormControl(null,[Validators.required, Validators.email]),
+      password: new FormControl(null, [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$')]),
+      rePassword: new FormControl(null, [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$')]),
+      // token: new FormControl('', [Validators.required]),
+      // paso: new FormControl(0)
+    }, { validators: this.equalPass('password','rePassword') });
+
+   //validators: this.pbaDict('password')
+
+//------------------------
+   this.formval = new FormGroup({
+    codigo: new FormControl(null,[Validators.required, Validators.minLength(3),  Validators.maxLength(3), Validators.pattern('[0-9]{3}')]),
+    token: new FormControl(null, [Validators.required, Validators.minLength(3),  Validators.maxLength(3), Validators.pattern('[0-9]{3}')])
+ }
+ );
 
   }
 
@@ -89,7 +92,15 @@ export class ApplyComponent implements OnInit {
   get fo() { return this.formval.controls; }
   //------------
 
-  equalPass(p1: string, p2: string) {
+  resolved(captchaResponse: string) {
+    console.log(`Resolved response token: ${captchaResponse}`);
+    // this.form.get('token').setValue(captchaResponse);
+
+    console.log(this.form.value);
+
+  }
+
+equalPass(p1:string,p2:string){
 
     return (group: FormGroup) => {
       let pass1 = group.controls[p1].value;
@@ -122,12 +133,11 @@ export class ApplyComponent implements OnInit {
     var user:User;
     if(environment.passwordShaded){
       user = new User(this.form.value.email,
-        this.userService.createHash(this.form.value.password), true, "1",
+        this.userService.createHash(this.form.value.password), 'true', "1",
         this.userService.createHash(this.form.value.rePassword));
-    }
-     else {
+    } else {
       user = new User(this.form.value.email,
-        this.form.value.password, false, "1",
+        this.form.value.password, 'false', "1",
         this.form.value.rePassword);
      }
      
