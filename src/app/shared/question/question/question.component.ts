@@ -53,7 +53,7 @@ export class QuestionComponent implements OnInit {
       value_quest: "0.2"
     },
     {
-      dataCode: "normalmente_como_compone_el_inventario_de_negoci",
+      dataCode: "normalmente_como_se_compone_el_inventario_del_ne",
       columnId: "campo_4",
       question: "",
       options: [],
@@ -285,484 +285,253 @@ export class QuestionComponent implements OnInit {
 
   qcQc1 = [
     {
-      quest: "Número de dependientes económicos",
-      opts: [""],
-      resp: "",
-      value: ""
+      dataCode: "numero_de_dependientes_economicos",
+      columnId: "campo_8",
+      question: "",
+      options: []
     }
   ];
 
   /* Queremos conocer tu negocio */
   preg1 = [
     {
-      quest: "¿Fecha en que inició su actividad productiva?",
-      opts: [""],
-      resp: "",
-      value: ""
+      dataCode: "fecha_en_que_inicio_su_actividad_productiva",
+      columnId: "campo_1",
+      question: "",
+      options: []
     }];
 
-  preg2 = [
+    preg2 = [
     {
-      quest: "Registre el total de ingresos que obtuvo el negocio durante el ejercicio fiscal anterior. Por favor incluya tanto los ingresos derivados como los no derivados de la actividad, además de los apoyos del gobierno que haya recibido",
-      opts: ["No sé", "Si sé, pero prefiero no  declararlo"],
-      resp: "",
-      value: ""
-    }];
-
-  preg2m = [
-    {
-      quest: "Monto",
-      opts: [""],
-      resp: "",
-      value: ""
+      dataCode: "registra_el_total_de_ingresos_que_obtuvo_el_nego",
+      columnId: "campo_2",
+      question: "",
+      options: []
+      
     }];
 
 
   preg3 = [
     {
-      quest: "¿Cuántas personas trabajan en su negocio?",
-      opts: [""],
-      resp: "",
-      value: ""
+      dataCode: "cuantas_personas_trabajan_en_su_negocio",
+      columnId: "campo_3",
+      question: "",
+      options: []
     }];
 
   preg4a5 = [
     {
-      quest: "¿Cuál es el destino del crédito; es decir, específicamente para qué va a usar el crédito en su negocio? Por ejemplo, comprar un vehículo para repartir a domicilio.",
-      opts: [""],
-      resp: "",
-      value: ""
+      dataCode: "cual_es_el_destino_del_credito_es_decir_especifi",
+      columnId: "campo_4",
+      question: "",
+      options: []
     },
 
     {
-      quest: "¿Cuál es el propósito del proyecto; es decir, en qué espera que mejore su negocio debido al crédito que solicita? Por ejemplo, incrementar las ventas con la entrega a domicilio.",
-      opts: [""],
-      resp: "",
-      value: ""
+      dataCode: "cual_es_el_proposito_del_proyecto_es_decir_en_que",
+      columnId: "campo_5",
+      question: "",
+      options: []
     }];
 
   preg6a11 = [
 
     {
-      quest: "¿De cuánto efectivo dispone actualmente para cubrir las operaciones del negocios? Incluya lo que guarda en su casa, en el banco o en el negocio.",
-      opts: [""],
-      resp: "",
-      value: ""
+      dataCode: "de_cuanto_efectivo_dispone_actualmente_para_cubri",
+      columnId: "campo_6",
+      question: "",
+      options: []
     },
     {
-      quest: "¿Al día de hoy cuánto le deben por venta de bienes a crédito o servicios realizados y que aún no le hayan terminado de pagar? ",
-      opts: [""],
-      resp: "",
-      value: ""
+      dataCode: "al_dia_de_hoy_cuato_le_deben_por_venta_de_bienes",
+      columnId: "campo_7",
+      question: "",
+      options: []
+      },
+    {
+      dataCode: "cuanto_obtendria_si_vendiera_el_material_de_ofic",
+      columnId: "campo_8",
+      question: "",
+      options: []
     },
     {
-      quest: "¿Cuánto obtendría si vendiera el material de oficina, la maquinaria que usa en su negocio, aparatos de su propiedad o el local del negocio en caso de que sea suyo?",
-      opts: [""],
-      resp: "",
-      value: ""
+      dataCode: "pensando_en_los_ultimos_6_meses_en_promedio_cuan",
+      columnId: "campo_9",
+      question: "",
+      options: []
     },
     {
-      quest: "Pensando en los últimos 6 meses, en promedio, ¿cuánto vende o ingresa por la realización de sus servicios cada mes sin descontar los gastos?",
-      opts: [""],
-      resp: "",
-      value: ""
+      dataCode: "pensando_en_los_ultimos_6_meses_en_promedio_a_cu",
+      columnId: "campo_10",
+      question: "",
+      options: []
     },
     {
-      quest: "Pensando en los últimos 6 meses, en promedio, ¿a cuánto ascienden, cada mes,  otros ingresos obtenidos además de los generados por su actividad principal del negocio?",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "En promedio ¿cuánto gasta cada vez que surte su negocio con mercancías para la venta de bienes o realización de sus servicios?",
-      opts: [""],
-      resp: "",
-      value: ""
+      dataCode: "en_promedio_cuanto_gasta_cada_vez_que_surte_su_n",
+      columnId: "campo_11",
+      question: "",
+      options: []
     }];
 
   preg12a13 = [
     {
-      quest: "¿Con qué frecuencia surte su negocio con mercancías o materias primas para la venta de bienes o la prestación de sus servicios?",
-      opts: ["Diariamente", "Cada semana", "Cada quincena", "Cada mes", "Cada 2 meses", "Cada 3 meses", "Cada 4 meses", "Cada 6 meses", "Cada año"],
-      resp: "",
-      value: ""
+      dataCode: "con_que_frecuencia_surte_su_negocio_con_mercanci",
+      columnId: "campo_12",
+      question: "",
+      options: []
     },
     {
-      quest: "¿Cuándo fue la última vez que surtió su negocio con mercancías o materias primas para la venta de bienes o prestación de sus servicios?",
-      opts: ["Ayer", "Hace una semana", "Hace dos semanas", "Hace un mes", "Hace 2 meses", "Hace 3 meses", "Hace 4 meses", "Hace 5 meses", "Hace 6 meses", "Hace 1 año", "Hace más de un año"],
-      resp: "",
-      value: ""
+      dataCode: "cuando_fue_la_ultima_vez_que_surtio_su_negocio_c",
+      columnId: "campo_13",
+      question: "",
+      options: []
     }];
 
   preg14 = [
     {
-      quest: "Sueldos, salarios o cualquier otro pago a los trabajadores del negocio",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Renta de locales o espacios comerciales",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Servicios públicos",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Transporte para actividades del negocio",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Pago por franquicias",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Promoción y publicidad",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Pago de servicios contables o legales",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Mantenimiento del negocio",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Licencias de software",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Impuestos",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Otros gastos no incluidos en la lista pero que son necesarios para la operación de su negocio",
-      opts: [""],
-      resp: "",
-      value: ""
+      dataCode: "pensando_en los ultimos_6_meses_en_promedio_iniq",
+      columnId: "campo_14",
+      question: "",
+      options: []
     }
-
   ];
-
-  preg15r = [
-    {
-      quest: "No cuento con ningún financiamiento.",
-      opts: [""],
-      resp: "",
-      value: ""
-    }];
 
   preg15 = [
     {
-      quest: "Recursos propios (dueños, herencia, familia y amigos) o utilidades reinvertidas",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Préstamos de familiares y amigos que no tienen participación en la empresa. ",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Sistema ﬁnanciero formal (bancos  privados, Banco del Bienestar, antes Bansefi, o ﬁnancieras)",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Prestamistas particulares (personas que prestan dinero)",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Crédito de proveedores",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Recursos de inversionistas privados",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Otras",
-      opts: [""],
-      resp: "",
-      value: ""
+      dataCode: "indique_el_monto_de_financiamiento_que_haya_reci",
+      columnId: "campo_15",
+      question: "",
+      options: []
     }
-
   ];
-
-  preg16r = [
-    {
-      quest: "No cuento con ningún financiamiento.",
-      opts: [""],
-      resp: "",
-      value: ""
-    }];
 
   preg16 = [
     {
-      quest: "Recursos propios (dueños, herencia, familia y amigos) o utilidades reinvertidas",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Préstamos de familiares y amigos que no tienen participación en la empresa",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Sistema ﬁnanciero formal (bancos  privados, Banco del Bienestar, antes Bansefi, o ﬁnancieras)",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Prestamistas particulares (personas que prestan dinero)",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Crédito de proveedores ",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Recursos de inversionistas privados",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Otras",
-      opts: [""],
-      resp: "",
-      value: ""
+      dataCode: "cuanto_debe_al_dia_de_hoy_por_los_conceptos_sigu",
+      columnId: "campo_16",
+      question: "",
+      options: []
     }
   ];
 
-  preg17r = [
-    {
-      quest: "No cuento con ningún financiamiento.",
-      opts: [""],
-      resp: "",
-      value: ""
-    }];
-
   preg17 = [
     {
-      quest: "Préstamos de familiares y amigos que no tienen participación en la empresa",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Sistema ﬁnanciero formal (bancos  privados, Banco del Bienestar, antes Bansefi, o ﬁnancieras)",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Prestamistas particulares (personas que prestan dinero)",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Crédito de proveedores",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Recursos de inversionistas privados",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Otras",
-      opts: [""],
-      resp: "",
-      value: ""
+      dataCode: "en_promedio_cuanto_paga_cada_mes_por_los_concept",
+      columnId: "campo_17",
+      question: "",
+      options: []
     }
   ];
 
   preg18 = [
     {
-      quest: "Luz",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Gas o algún combustible",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Telecomunicaciones (teléfono fijo o celular para el negocio e internet)",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Materias primas consumidas (a costo de adquisición)",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Mercancías compradas para reventa",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Materiales consumidos para la prestación del servicio",
-      opts: [""],
-      resp: "",
-      value: ""
-    },
-    {
-      quest: "Otros",
-      opts: [""],
-      resp: "",
-      value: ""
+      dataCode: "registre_la_cantidad_que_pago_la_empresa_por_los",
+      columnId: "campo_18",
+      question: "",
+      options: []
     }
   ];
 
   preg19a28 = [
     {
-      quest: "¿Participó en la convocatoria 2.1 Desarrollo y Fortalecimiento Empresarial de la SE?",
-      opts: ["Sí", "No"],
-      resp: "",
-      value: ""
+      dataCode: "participo_en_la_convocatoria_2.1_desarrollo_y_fo",
+      columnId: "campo_19",
+      question: "",
+      options: []
     },
     {
-      quest: "¿Recibió capacitación vinculada a su crédito proveniente de alguna organización?",
-      opts: ["Sí", "No"],
-      resp: "",
-      value: ""
+      dataCode: "recibio_capacitacion_vinculada_a_su_credito_prov",
+      columnId: "campo_20",
+      question: "",
+      options: []
     },
     {
-      quest: "¿Ha solicitado crédito anteriormente?",
-      opts: ["Sí", "No"],
-      resp: "",
-      value: ""
+      dataCode: "ha_solicitado_credito_anteriormente",
+      columnId: "campo_21",
+      question: "",
+      options: []
     },
     {
-      quest: "¿Sus ingresos han mejorado después de recibir un crédito?",
-      opts: ["Sí", "No", "No aplica"],
-      resp: "",
-      value: ""
+      dataCode: "sus_ingresos_han_mejorado_despues_de_recibir_un_",
+      columnId: "campo_22",
+      question: "",
+      options: []
     },
     {
-      quest: "Además de su oficina, comercio, o local principal, ¿tiene otra(s) oficina(s), comercio(s), local(es) o sucursal(es)?",
-      opts: ["Sí", "No"],
-      resp: "",
-      value: ""
+      dataCode: "ademas_de_su_oficina_comercio_o_local_principal_",
+      columnId: "campo_23",
+      question: "",
+      options: []
     },
     {
-      quest: "¿Cómo se lleva la contabilidad de la empresa?",
-      opts: ["Se utiliza un cuaderno o una libreta de apuntes para llevar la contabilidad", "Se utiliza los servicios de un contador o profesional para llevar la contabilidad", "Se utiliza el “Portal Mis Cuentas” del SAT", "Se utiliza un paquete de contabilidad por parte de la empresa", "No se lleva la contabilidad de la empresa", "Otro"],
-      resp: "",
-      value: ""
+      dataCode: "como_se_lleva_la_contabilidad_de_la_empresa",
+      columnId: "campo_24",
+      question: "",
+      options: []
     },
     {
-      quest: "¿La empresa tiene cuenta bancaria exclusiva para el manejo del dinero del negocio?",
-      opts: ["Sí", "No"],
-      resp: "",
-      value: ""
+      dataCode: "la_empresa_tiene_cuenta_bancaria_exclusiva_para_",
+      columnId: "campo_25",
+      question: "",
+      options: []
     },
     {
-      quest: "Durante el ejercicio fiscal anterior, ¿la empresa tuvo necesidad de invertir en equipo, vehículos, inmuebles, capacitación, etcétera y no pudo por falta de dinero?",
-      opts: ["Sí", "No"],
-      resp: "",
-      value: ""
+      dataCode: "durante_el_ejercicio_fiscal_anterior_la_empresa_",
+      columnId: "campo_26",
+      question: "",
+      options: []
     },
     {
-      quest: "¿Durante el ejercicio fiscal anterior se otorgó capacitación al personal de la empresa (usando capacitadores internos o externos)?",
-      opts: ["Sí", "No"],
-      resp: "",
-      value: ""
+      dataCode: "durante_el_ejercicio_fiscal_anterior_se_otorgo_c",
+      columnId: "campo_27",
+      question: "",
+      options: []
     },
     {
-      quest: "¿Cuál fue la principal causa por la que durante el ejercicio fiscal anterior no se otorgó capacitación al personal de la empresa?",
-      opts: ["Capacitar interrumpe la producción", "Capacitar hace que el personal demande un salario mayor, busque otro trabajo o se independice", "No se encontró capacitador conforme a las necesidades de la empresa", "Se tenía la intención de capacitar pero es muy caro", "Se consideró que el conocimiento y las habilidades técnicas del personal son adecuadas", "No vale la pena porque la empresa tiene muy alta rotación de personal", "En años previos se impartió la capacitación necesaria", "Se solicitó la capacitación a instituciones públicas, pero no se pudo obtener", "No hay beneﬁcios palpables como resultado de la capacitación", "Se utiliza gente externa que ya viene capacitada", "El horario de la empresa no lo permite", "Otra"],
-      resp: "",
-      value: ""
+      dataCode: "cual_fue_la_principal_causa_por_la_que_durante_e",
+      columnId: "campo_28",
+      question: "",
+      options: []
     }];
 
   preg29 = [
     {
-      quest: "¿En la empresa se realizan actualmente algunas de las siguientes actividades? (seleccionar una o más de las siguientes opciones)",
-      opts: ["Se lleva registros escritos del negocio. Es decir, se tiene un lugar, cuaderno, archivo o computadora donde se concentra la información de las operaciones diarias del negocio", "Se sabe cuánto dinero en efectivo tiene el negocio en un momento determinado", "Se sabe si las ventas de un producto (bien o servicio) en particular están subiendo o bajando de un mes a otro", "Se sabe cuánto le cuesta al negocio generar cada uno de sus principales productos (bienes o servicios). Por ejemplo, si tiene que calcular cuánto le cuesta producir una galleta, se hacen las cuentas de cuánto gasta en comprar harina, azúcar, leche, luz para usar la batidora, gas para el horno, renta del local, etcétera; otro ejemplo: si se ofrece un servicio de transporte, se hacen las cuentas de cuánto se gasta en el consumo de gasolina, casetas de peaje, etcétera", "Se sabe de qué productos (bienes o servicios) se obtienen más ganancias por cada uno que vende", "El negocio no lleva registros y no cuenta con información que permita conocer a detalle su operación"],
-      resp: "",
-      value: ""
+      dataCode: "en_la_empresa_se_realizan_actualmente_algunas_de",
+      columnId: "campo_29",
+      question: "",
+      options: []
     }];
 
   preg30 = [
     {
-      quest: "¿Cuál es el motivo principal por el que se inició en este negocio o actividad? (Seleccionar una o varias opciones)",
-      opts: ["Por tradición familiar o lo heredó", "Para complementar el ingreso familiar", "Para mejorar el ingreso", "Tenía dinero y encontró una buena oportuindad", "Para ejercer su oficio, carrera o profesión", "Fue la única manera que tuvo para obtener un ingreso", "No tenía la experiencia requerida para un empleo", "No tenía la escolaridad o capacitación requerida para un empleo", "Estaba sobrecapacitado para un empleo", "Los empleos que encontró estaban mal pagados", "Requería un horario flexible", "No había oportunidades de empleo", "Otra razón"],
-      resp: "",
-      value: ""
+      dataCode: "cual_es_el_motivo_principal_por_el_que_se_inicio",
+      columnId: "campo_30",
+      question: "",
+      options: []
     }];
 
   preg31 = [
     {
-      quest: "En su negocio o actividad, ¿cuenta con un local para trabajar sea o no de su propiedad? (Seleccione una opción o más de una si tiene varios locales)",
-      opts: ["Sí, es un local independiente", "Sí, es un local o instalación que forma parte de un conjunto de locales", "No"],
-      resp: "",
-      value: ""
+      dataCode: "en_su_negocio_o_actividad_cuanta_con_un_local_pa",
+      columnId: "campo_31",
+      question: "",
+      options: []
     }];
 
   preg32 = [
     {
-      quest: "En caso de ser local independiente (fuera de un techo común), ¿éste es? (Seleccionar una o varias opciones)",
-      opts: ["Tienda, accesoria o tendajón", "Taller (de servicios o de reparación)", "Fábrica, tortillería, panadería", "Oficina, despacho, consultorio"],
-      resp: "",
-      value: ""
+      dataCode: "en_caso_de_ser_local_independiente_fuera_de_un_t",
+      columnId: "campo_32",
+      question: "",
+      options: []
     }];
 
   preg33 = [
     {
-      quest: "Si no cuenta con un local, ¿en dónde se realizan las actividades de su negocio? (Seleccionar una o varias opciones)",
-      opts: ["Vehículo con o sin motor", "Puesto fijo fuera de un techo común", "Puesto semifijo bajo un techo común en pasillos de un centro comercial", "Puesto semifijo en un tianguis", "En un domicilio particular con una instalación especial", "En un domicilio particular sin una instalación especial", "Otro lugar"],
-      resp: "",
-      value: ""
+      dataCode: "si_no_cuenta_con_un_local_en_donde_se_realizan_l",
+      columnId: "campo_33",
+      question: "",
+      options: []
     }];
 
   formScrPerNeg: FormGroup;
