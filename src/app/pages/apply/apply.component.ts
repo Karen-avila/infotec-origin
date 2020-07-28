@@ -133,11 +133,11 @@ equalPass(p1:string,p2:string){
     var user:User;
     if(environment.passwordShaded){
       user = new User(this.form.value.email,
-        this.userService.createHash(this.form.value.password), 'true', "1",
+        this.userService.createHash(this.form.value.password), true, "1",
         this.userService.createHash(this.form.value.rePassword));
     } else {
       user = new User(this.form.value.email,
-        this.form.value.password, 'false', "1",
+        this.form.value.password, false, "1",
         this.form.value.rePassword);
      }
      

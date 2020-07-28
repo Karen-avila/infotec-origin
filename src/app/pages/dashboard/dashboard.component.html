@@ -285,6 +285,7 @@
                         <select formControlName="entidadfednaci" name="Entidad Federativa de Nacimiento" id="entidadfednaci"
                             class="validate" (change)="generateCurp()">
                             <option *ngFor="let state of stateOptions" [value]="state.name">{{state.name}}</option>
+                            <option value="CIUDAD DE MEXICO">CIUDAD DE MEXICO</option>
                         </select>
                         <label>Entidad Federativa de Nacimiento *</label>
                         <div class="blue-text" *ngIf="f.entidadfednaci.errors"></div>

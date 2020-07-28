@@ -8,6 +8,7 @@ import { UserService } from '../../services/user/user.service';
 })
 export class FooterComponent implements OnInit {
   isLogged: string;
+  
   constructor(public userService: UserService) { 
     this.isLogged = this.userService.isLogged();
   }

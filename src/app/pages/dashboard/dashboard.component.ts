@@ -507,6 +507,7 @@ export class DashboardComponent implements OnInit {
   }
 
   generateCurp() {
+    console.log("se llama generar curp");
     var nombre = this.form.get('nombre').value;
     const nombre2 = this.form.get('nombre2').value;
     if (nombre2 !== '') {
