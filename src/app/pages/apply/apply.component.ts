@@ -4,11 +4,11 @@ import * as M from 'materialize-css';
 
 import swal from 'sweetalert';
 import { Router } from '@angular/router';
-
-//-------------
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from '../../services/service.index';
 import { User } from '../../models/user.model';
+
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-apply',
@@ -19,7 +19,6 @@ export class ApplyComponent implements OnInit {
   instance
   popup;
   recaptcha: any[];
-  //-----
   form: FormGroup;
   formval: FormGroup;
   dic = [
@@ -28,7 +27,6 @@ export class ApplyComponent implements OnInit {
     "cojo",
     "chingada"
   ]
-  //-------
   passType = "password";
   rePassType = "password";
   icon: boolean = true;
@@ -46,7 +44,7 @@ export class ApplyComponent implements OnInit {
   ngOnInit() {
 
     var elems = document.querySelectorAll('.modal');
-    this.instance = M.Modal.init(elems);
+    this.instance = M.Modal.init(elems,{opacity:0.7});
 
     var select = document.querySelectorAll('select');
     var instances = M.FormSelect.init(select);
@@ -121,24 +119,35 @@ export class ApplyComponent implements OnInit {
 
   //-------------
   register() {
-    let user = new User(this.form.value.email,
-      this.userService.createHash(this.form.value.password), true, "1",
-      this.userService.createHash(this.form.value.rePassword));
-
+    var user:User;
+    if(environment.passwordShaded){
+      user = new User(this.form.value.email,
+        this.userService.createHash(this.form.value.password), true, "1",
+        this.userService.createHash(this.form.value.rePassword));
+    }
+     else {
+      user = new User(this.form.value.email,
+        this.form.value.password, false, "1",
+        this.form.value.rePassword);
+     }
+     
     if (this.form.valid) {
+      this.instance[1].open();
       /* // console.log("form esto envio", this.form.value); */
       //enviar datos a back
       /* this.userService.createUser(this.form.value) */
       // console.log("apply envia", user);
       this.userService.createUser(user)
         .subscribe(res => {
+          this.instance[0].open(); //revisar donde quedara
           // console.log("esto responde el servicio register",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
+          this.instance[1].close();
         });
 
       //this.userService.createUserL(user);
 
 
-      this.instance[0].open(); //revisar donde quedara
+      
     } else {
       //algo esta mal revisa tus datos
       swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
