@@ -3,7 +3,7 @@
 
         <li>
 
-            <div class="collection-header collapsible-header"><i class="material-icons medium left">keyboard_arrow_down</i>Evaluación de tu negocio</div>
+            <div class="collection-header collapsible-header"><i class="material-icons medium left">keyboard_arrow_down</i>Evaluación de tu Negocio</div>
             <div class="collapsible-body">
                 <ul class="collapsible popout" id="perfilNegocio">
 
@@ -18,7 +18,9 @@
 
                                         <p *ngFor="let resp of scrPerNeg.opts; index as j;">
                                             <label>
-                                            <input class="with-gap" (change)="changedPerNeg(j, i)" [(ngModel)]="scrPerNeg.resp" formControlName="{{'scrPerNeg'+i}}" name="{{'scrPerNeg'+i}}" id="{{'scrPerNeg'+i}}" value="{{resp}}" type="radio" required>
+                                            <input class="with-gap" (change)="changedPerNeg(j, i)" [(ngModel)]="scrPerNeg.resp" 
+                                            formControlName="{{'scrPerNeg'+i}}" name="{{'scrPerNeg'+i}}" id="{{'scrPerNeg'+i}}" 
+                                            value="{{resp}}" type="radio" required>
                                             <span>{{resp}}</span>
                                           </label>
                                         </p>
@@ -26,15 +28,6 @@
 
                                     </li>
 
-                                    <!--INNPUT's-->
-                                    <!--<li class="collection-item avatar">
-                                        <div class="input-field col s12 l6" *ngFor="let pregsc12 of sec12; index as i;">
-                                            <i class="material-icons prefix">phone</i>
-                                            <input formControlName="{{'pregsc12'+i}}" name="{{'pregsc12'+i}}" id="{{'pregsc12'+i}}" type="number">
-                                            <label for="{{'phone'+i}}">{{pregsc12.quest}}</label>
-                                        </div>
-                                    </li>-->
-                                    <!--INNPUT's-->
                                     <br>
                                     <div class="col s12">
                                         <button class="waves-effect teal darken-4 btn left" type="submit">Siguiente
@@ -56,7 +49,9 @@
 
                                         <p *ngFor="let resp of scrPerMer.opts; index as j;">
                                             <label>
-                                            <input class="with-gap" (change)="changedPerMer(j, i)" [(ngModel)]="scrPerMer.resp" formControlName="{{'scrPerMer'+i}}" name="{{'scrPerMer'+i}}" id="{{'scrPerMer'+i}}" value="{{resp}}" type="radio"  />
+                                            <input class="with-gap" (change)="changedPerMer(j, i)" [(ngModel)]="scrPerMer.resp" 
+                                            formControlName="{{'scrPerMer'+i}}" name="{{'scrPerMer'+i}}" id="{{'scrPerMer'+i}}"
+                                            value="{{resp}}" type="radio"  />
                                             <span>{{resp}}</span>
                                           </label>
                                         </p>
@@ -72,6 +67,7 @@
                         </div>
                     </li>
 
+                    
                     <li>
                         <div class="collapsible-header"><i class="material-icons">star_border</i>Reputación</div>
                         <div class="collapsible-body">
@@ -82,7 +78,9 @@
 
                                         <p *ngFor="let resp of scrRep.opts; index as j;">
                                             <label>
-                                            <input class="with-gap" (change)="changedRep(j, i)" [(ngModel)]="scrRep.resp" formControlName="{{'scrRep'+i}}" name="{{'scrRep'+i}}" id="{{'scrRep'+i}}" value="{{resp}}" type="radio"  />
+                                            <input class="with-gap" (change)="changedRep(j, i)" [(ngModel)]="scrRep.resp" 
+                                            formControlName="{{'scrRep'+i}}" name="{{'scrRep'+i}}" id="{{'scrRep'+i}}" 
+                                            value="{{resp}}" type="radio"  />
                                             <span>{{resp}}</span>
                                           </label>
                                         </p>
@@ -132,11 +130,11 @@
         </li>
 
         <li>
-            <div class="collection-header collapsible-header"><i class="material-icons medium left">keyboard_arrow_down</i>Queremos conocerte</div>
+            <div class="collection-header collapsible-header"><i class="material-icons medium left">keyboard_arrow_down</i>Queremos Conocerte</div>
             <div class="collapsible-body">
                 <ul class="collapsible popout" id="queremosConocerte">
                     <li>
-                        <div class="collapsible-header"><i class="material-icons">sentiment_satisfied_alt</i>Queremos conocerte</div>
+                        <div class="collapsible-header"><i class="material-icons">sentiment_satisfied_alt</i>Queremos Conocerte</div>
                         <div class="collapsible-body">
                             <ul class="collection">
                                 <form ngNativeValidate [formGroup]="formQcQc" (ngSubmit)="qcQcSend()">
@@ -146,7 +144,8 @@
 
                                         <p *ngFor="let resp of qcQc.opts">
                                             <label>
-                                                <input class="with-gap" [(ngModel)]="qcQc.resp" formControlName="{{'qcQc'+i}}" name="{{'qcQc'+i}}" id="{{'qcQc'+i}}" value="{{resp}}" type="radio"  />
+                                                <input class="with-gap" [(ngModel)]="qcQc.resp" formControlName="{{'qcQc'+i}}"
+                                                name="{{'qcQc'+i}}" id="{{'qcQc'+i}}" value="{{resp}}" type="radio"  />
                                                 <span>{{resp}}</span>
                                           </label>
                                         </p>
@@ -157,7 +156,7 @@
                                             <span class="title">{{qcQcI.quest}}</span>
 
                                             <label>
-                                                <input  [(ngModel)]="qcQc1[0].resp" formControlName="{{'qcQcI'+i}}" name="{{'qcQcI'+i}}" id="{{'qcQcI'+i}}" max="38" type="number"  min="0" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" >
+                                                <input  formControlName="{{'qcQcI'+i}}" name="{{'qcQcI'+i}}" id="{{'qcQcI'+i}}" max="38" type="number"  min="0" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" >
                                             </label>
                                         </div>
                                     </li>
@@ -174,7 +173,7 @@
                     </li>
 
                     <li>
-                        <div class="collapsible-header"><i class="material-icons">work</i>Queremos conocer tu negocio</div>
+                        <div class="collapsible-header"><i class="material-icons">work</i>Queremos Conocer tu Negocio</div>
                         <div class="collapsible-body">
                             <ul class="collection">
                                 <form ngNativeValidate [formGroup]="formQcQcn" (ngSubmit)="qcQcnSend()">
@@ -331,7 +330,7 @@
                                      <li class="collection-item avatar">
                                         <label class="title black-text">¿En la empresa se realizan actualmente algunas de las siguientes actividades?</label>
                                         <p>
-                                            <select multiple formControlName="preg29" [(ngModel)]="preg29[0].resp" name="preg29" id="preg29" >
+                                            <select multiple formControlName="preg29"  name="preg29" id="preg29" >
                                                 <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
                                                 <option  value="A">Se lleva registros escritos del negocio. Es decir, se tiene un lugar, cuaderno, archivo o computadora donde se concentra la información de las operaciones diarias del negocio</option>
                                                 <option  value="B">Se sabe cuánto dinero en efectivo tiene el negocio en un momento determinado</option>
@@ -346,7 +345,7 @@
                                     <li class="collection-item avatar">
                                         <label class="title black-text">¿Cuál es el motivo principal por el que se inició en este negocio o actividad?</label>
                                         <p>
-                                            <select multiple formControlName="preg30" [(ngModel)]="preg30[0].resp" name="preg30" id="preg30">
+                                            <select multiple formControlName="preg30" name="preg30" id="preg30">
                                                 <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
                                                 <option  value="A">Por tradición familiar o lo heredó</option>
                                                 <option  value="B">Para complementar el ingreso familiar</option>
@@ -368,7 +367,7 @@
                                     <li class="collection-item avatar">
                                         <label class="title black-text">En su negocio o actividad, ¿cuenta con un local para trabajar sea o no de su propiedad?</label>
                                         <p>
-                                            <select multiple formControlName="preg31" [(ngModel)]="preg31[0].resp" name="preg31" id="preg31">
+                                            <select multiple formControlName="preg31" name="preg31" id="preg31">
                                                 <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
                                                 <option  value="A">Sí, es un local independiente</option>
                                                 <option  value="B">Sí, es un local o instalación que forma parte de un conjunto de locales</option>
@@ -380,7 +379,7 @@
                                     <li class="collection-item avatar">
                                         <label class="title black-text">En caso de ser local independiente (fuera de un techo común), ¿éste es?</label>
                                         <p>
-                                            <select multiple formControlName="preg32" [(ngModel)]="preg32[0].resp" name="preg32" id="preg32">
+                                            <select multiple formControlName="preg32" name="preg32" id="preg32">
                                                 <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
                                                 <option  value="A">Tienda, accesoria o tendajón</option>
                                                 <option  value="B">Taller (de servicios o de reparación)</option>
@@ -393,7 +392,7 @@
                                     <li class="collection-item avatar">
                                         <label class="title black-text">Si no cuenta con un local, ¿en dónde se realizan las actividades de su negocio?</label>
                                         <p>
-                                            <select multiple formControlName="preg33" [(ngModel)]="preg33[0].resp" name="preg33" id="preg33">
+                                            <select multiple formControlName="preg33" name="preg33" id="preg33">
                                                 <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
                                                 <option  value="A">Vehículo con o sin motor</option>
                                                 <option  value="B">Puesto fijo fuera de un techo común</option>
