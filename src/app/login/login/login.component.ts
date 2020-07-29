@@ -120,15 +120,18 @@ this.router.navigate(["dashboard"]);
   login(){
 
     console.log("form login is valid?", this.form.valid);
-    if(this.form.valid){
-      const user = new UserLog(this.form.value.email,
-        this.userService.createHash(this.form.value.password));
-      //this.router.navigate(["register",{id:this.step}]);
-      //enviar datos a back
+    if(this.form.valid){    
+      var user:UserLog;
+      if(environment.passwordShaded){
+          user = new UserLog(this.form.value.email,
+          this.userService.createHash(this.form.value.password));
+      }
+       else {
+        user = new UserLog(this.form.value.email,
+          this.form.value.password);
+       }
       this.userService.login(user)
         .subscribe(res=>{
-          // console.log("Is logged?",res);
-          // console.log("Entro al step",this.step)
           this.router.navigate(["dashboard",{email:this.form.value.email}]);
          /*  this.router.navigate(["dashboard"]);  */
           //this.router.navigate(["register",{id:this.step}]); ///revisar donde quedara

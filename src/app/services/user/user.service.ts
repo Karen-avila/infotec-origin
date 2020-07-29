@@ -46,7 +46,7 @@ export class UserService {
 
     return this.http.post(url, object, { headers }).map((res: any) => {
       // console.log("creado", res)
-      swal("¡Felicidades!", "Felicidades usuario creado correctamente.", "success");
+      //swal("¡Felicidades!", "Felicidades usuario creado correctamente.", "success");
 
       return true;
     }).catch(err => {

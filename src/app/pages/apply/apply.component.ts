@@ -134,27 +134,34 @@ equalPass(p1:string,p2:string){
 
   //-------------
   register() {
-
-    console.log('Here');
-
-    let user = new User(this.form.value.email,
-      CryptoJS.AES.encrypt(this.form.value.password, this.form.value.email).toString(),"1",
-      CryptoJS.AES.encrypt(this.form.value.rePassword, this.form.value.email).toString());
-
+    var user:User;
+    if(environment.passwordShaded){
+      user = new User(this.form.value.email,
+        this.userService.createHash(this.form.value.password), true, "1",
+        this.userService.createHash(this.form.value.rePassword));
+    } else {
+      user = new User(this.form.value.email,
+        this.form.value.password, false, "1",
+        this.form.value.rePassword);
+     }
+     
     if (this.form.valid) {
+      this.instance[1].open();
       /* // console.log("form esto envio", this.form.value); */
       //enviar datos a back
       /* this.userService.createUser(this.form.value) */
       // console.log("apply envia", user);
       this.userService.createUser(user)
         .subscribe(res => {
+          this.instance[0].open(); //revisar donde quedara
           // console.log("esto responde el servicio register",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
+          this.instance[1].close();
         });
 
       //this.userService.createUserL(user);
 
 
-      this.instance[0].open(); //revisar donde quedara
+      
     } else {
       //algo esta mal revisa tus datos
       swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
