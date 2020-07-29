@@ -134,12 +134,9 @@ equalPass(p1:string,p2:string){
 
   //-------------
   register() {
-
-    console.log('Here');
-
     let user = new User(this.form.value.email,
-      CryptoJS.AES.encrypt(this.form.value.password, this.form.value.email).toString(),"1",
-      CryptoJS.AES.encrypt(this.form.value.rePassword, this.form.value.email).toString());
+        this.userService.createHash(this.form.value.password), true, "1",
+        this.userService.createHash(this.form.value.rePassword));
 
     if (this.form.valid) {
       /* // console.log("form esto envio", this.form.value); */
