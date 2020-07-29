@@ -727,25 +727,25 @@ export class DashboardComponent implements OnInit {
    reader.onload = () => resolve(reader.result);
    reader.onerror = error => reject(error);
 }); */
-  findInvalidControls() {
-    const invalid = [];
-    const controls = this.form.controls;
-    for (const name in controls) {
-      if (controls[name].invalid) {
-        this.viewError.push(name);
-        console.log("Invalid: " + name);
-        if (document.getElementById(name) != null) {
-          document.getElementById(name).classList.add('invalid');
-          var x = document.getElementById(name);
-          M.toast({ html: x.getAttribute("name") })
-        } else {
-          console.log("Element in null");
-        }
+findInvalidControls() {
+  const invalid = [];
+  const controls = this.form.controls;
+  for (const name in controls) {
+    if (controls[name].invalid) {
+      console.log("Invalid: " + name);
+      if (document.getElementById(name) != null) {
+        document.getElementById(name).classList.add('invalid');
+        var x = document.getElementById(name);
+        this.viewError.push(x.getAttribute("name"));
+        M.toast({ html: x.getAttribute("name") })
+      } else {
+        console.log("Element in null");
       }
     }
-    /* this.popup[0].open(); */
-    return invalid;
   }
+  /* this.popup[0].open(); */
+  return this.viewError;
+}
 
   sortObject(obj) {
     return Object.keys(obj).sort().reduce(function (result, key) {
@@ -795,10 +795,14 @@ export class DashboardComponent implements OnInit {
 
         });
       this.stepper.openStep(3);
-    } else {
-      this.findInvalidControls();
-      swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
-    }
+    } else {      
+      let err=this.findInvalidControls();
+      let message=' ';
+      for(let i=0;i<err.length;i++){
+        message=message+err[i]+', ';
+      }
+      swal('¡Cuidado!',`Para poder continuar, completa correctamente todos los campos:\n ${message}`, 'error');
+     }
   }
 
 
