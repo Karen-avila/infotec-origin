@@ -284,7 +284,7 @@ export class DashboardComponent implements OnInit {
       clientid: new FormControl(localStorage.getItem('clientid'), Validators.required),
       tipopersona: new FormControl(null, Validators.required),
       clabeinter: new FormControl(null, [Validators.required, Validators.minLength(18), Validators.maxLength(18), Validators.pattern('[0-9]{18}')]),
-      clabeinterConf: new FormControl(null, [Validators.required, Validators.minLength(18), Validators.maxLength(18), Validators.pattern('[0-9]{18}'), this.checkClabeInterbank]),
+      clabeinterConf: new FormControl(null, [Validators.required, Validators.minLength(18), Validators.maxLength(18), Validators.pattern('[0-9]{18}')]),
       nombre: new FormControl(null, [Validators.required, Validators.minLength(2)]),
       nombre2: new FormControl(null, [Validators.minLength(0)]),
       apaterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
@@ -583,6 +583,9 @@ export class DashboardComponent implements OnInit {
 
   getBankName(option) {
     var clabe = this.form.get('clabeinter').value;
+    if (clabe == null) {
+      return "";
+    }
     if (option === 2) {
       clabe = this.form.get('clabeinterConf').value;
     }
@@ -692,17 +695,7 @@ export class DashboardComponent implements OnInit {
     }
     return "";
   }
-  
-  checkClabeInterbank(control: AbstractControl) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        var clabeinter = this.form.get('clabeinter').value;
-        if (control.value === clabeinter) {
-          resolve(true)
-        } else { resolve(null) }
-      }, 2000)
-    })
-  }
+
   async activitieChange(value, type, sector = null, subsector = null, rama = null, subrama = null) {
     if (type === 'sector' && value === undefined) { this.activities = await activitiesService.init(this.activities); }
     if (type === 'sector' && value !== undefined) { this.activities = await activitiesService.getSubsector(this.activities, sector); }

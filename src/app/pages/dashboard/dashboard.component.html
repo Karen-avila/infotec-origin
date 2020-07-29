@@ -128,7 +128,7 @@
                             <p>
                                 <label>
                                     <input class="with-gap teal darken-4" (change)="rFiscal()" formControlName="tipopersona"
-                                        name="tipopersonaF" id="tipopersonaF" type="radio" value="pFisica"
+                                        id="tipopersonaF" type="radio" value="pFisica"
                                         [(ngModel)]="model" />
                                     <span>Persona Física con Actividad Empresarial</span>
                                 </label>
@@ -137,8 +137,8 @@
                         <div class="input-field col s12 m4">
                             <p>
                                 <label>
-                                    <input class="with-gap teal darken-4" formControlName="tipopersona" name="tipopersonaM"
-                                        id="tipopersonaM" type="radio" value="rFiscal" [(ngModel)]="model" />
+                                    <input class="with-gap teal darken-4" formControlName="tipopersona"
+                                        type="radio" value="rFiscal" [(ngModel)]="model" />
                                     <span>Régimen de Incorporación Fiscal</span>
                                 </label>
                             </p>
@@ -797,7 +797,7 @@
                             <p>
                                 <label>
                                     <input class="with-gap teal darken-4" (change)="typeIdFun()"
-                                        formControlName="typeId" name="typeId" id="typeId" type="radio" value="ine"
+                                        formControlName="typeId" id="typeId" type="radio" value="ine"
                                         [(ngModel)]="typeId" />
                                     <span>INE</span>
                                 </label>
@@ -807,7 +807,7 @@
                             <p>
                                 <label>
                                     <input class="with-gap teal darken-4" (change)="typeIdFun()"
-                                        formControlName="typeId" name="typeId" id="typeId" type="radio"
+                                        formControlName="typeId" id="typeId" type="radio"
                                         value="pasaporte" [(ngModel)]="typeId" />
                                     <span>Pasaporte</span>
                                 </label>

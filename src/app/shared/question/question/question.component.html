@@ -19,7 +19,7 @@
                                         <p *ngFor="let resp of scrPerNeg.opts; index as j;">
                                             <label>
                                             <input class="with-gap" (change)="changedPerNeg(j, i)" [(ngModel)]="scrPerNeg.resp" 
-                                            formControlName="{{'scrPerNeg'+i}}" name="{{'scrPerNeg'+i}}" id="{{'scrPerNeg'+i}}" 
+                                            formControlName="{{'scrPerNeg'+i}}" id="{{'scrPerNeg'+i}}" 
                                             value="{{resp}}" type="radio" required>
                                             <span>{{resp}}</span>
                                           </label>
@@ -50,8 +50,8 @@
                                         <p *ngFor="let resp of scrPerMer.opts; index as j;">
                                             <label>
                                             <input class="with-gap" (change)="changedPerMer(j, i)" [(ngModel)]="scrPerMer.resp" 
-                                            formControlName="{{'scrPerMer'+i}}" name="{{'scrPerMer'+i}}" id="{{'scrPerMer'+i}}"
-                                            value="{{resp}}" type="radio"  />
+                                            formControlName="{{'scrPerMer'+i}}" id="{{'scrPerMer'+i}}"
+                                            value="{{resp}}" type="radio"/>
                                             <span>{{resp}}</span>
                                           </label>
                                         </p>
@@ -79,8 +79,8 @@
                                         <p *ngFor="let resp of scrRep.opts; index as j;">
                                             <label>
                                             <input class="with-gap" (change)="changedRep(j, i)" [(ngModel)]="scrRep.resp" 
-                                            formControlName="{{'scrRep'+i}}" name="{{'scrRep'+i}}" id="{{'scrRep'+i}}" 
-                                            value="{{resp}}" type="radio"  />
+                                            formControlName="{{'scrRep'+i}}" id="{{'scrRep'+i}}" 
+                                            value="{{resp}}" type="radio"/>
                                             <span>{{resp}}</span>
                                           </label>
                                         </p>
@@ -107,7 +107,7 @@
                                         <p *ngFor="let resp of scrDir.options; index as j;">
                                             <label>
                                             <input class="with-gap" (change)="changedDir(j, i)" [(ngModel)]="scrDir.resp" 
-                                            formControlName="{{'scrDir'+i}}" name="{{'scrDir'+i}}" id="dir_{{'scrDir'+i}}" 
+                                            formControlName="{{'scrDir'+i}}" id="dir_{{'scrDir'+i}}" 
                                             value="{{resp.id}}" type="radio"  />
                                             <span>{{resp.name}}</span>
                                           </label>
@@ -145,7 +145,7 @@
                                         <p *ngFor="let resp of qcQc.opts">
                                             <label>
                                                 <input class="with-gap" [(ngModel)]="qcQc.resp" formControlName="{{'qcQc'+i}}"
-                                                name="{{'qcQc'+i}}" id="{{'qcQc'+i}}" value="{{resp}}" type="radio"  />
+                                                id="{{'qcQc'+i}}" value="{{resp}}" type="radio"  />
                                                 <span>{{resp}}</span>
                                           </label>
                                         </p>
@@ -239,7 +239,7 @@
 
                                         <p *ngFor="let resp of preg12a13.opts">
                                             <label>
-                                                <input class="with-gap" [(ngModel)]="preg12a13.resp" formControlName="{{'preg12a13'+i}}" name="{{'preg12a13'+i}}" id="{{'preg12a13'+i}}" value="{{resp}}" type="radio"  />
+                                                <input class="with-gap" [(ngModel)]="preg12a13.resp" formControlName="{{'preg12a13'+i}}" id="{{'preg12a13'+i}}" value="{{resp}}" type="radio"  />
                                                 <span>{{resp }}</span>
                                               </label>
                                         </p>
@@ -320,7 +320,7 @@
 
                                         <p *ngFor="let resp of preg19a28.opts">
                                             <label>
-                                            <input class="with-gap" [(ngModel)]="preg19a28.resp" formControlName="{{'preg19a28'+i}}" name="{{'preg19a28'+i}}" id="{{'preg19a28'+i}}" value="{{resp}}" type="radio"  />
+                                            <input class="with-gap" [(ngModel)]="preg19a28.resp" formControlName="{{'preg19a28'+i}}" id="{{'preg19a28'+i}}" value="{{resp}}" type="radio"  />
                                             <span>{{resp}}</span>
                                           </label>
                                         </p>
