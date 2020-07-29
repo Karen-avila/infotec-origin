@@ -2,8 +2,8 @@ RewriteEngine on
 
 
 RewriteCond %{HTTPS} off [OR]
-RewriteCond %{HTTP_HOST} !^www.
-RewriteRule ^(.*)$ https://www.%{SERVER_NAME}/$1 [L,R=301]
+RewriteCond %{HTTP_HOST} !^.
+RewriteRule ^(.*)$ https://.%{SERVER_NAME}/$1 [L,R=301]
 
 RewriteCond %{REQUEST_FILENAME} -s [OR]
 RewriteCond %{REQUEST_FILENAME} -l [OR]
