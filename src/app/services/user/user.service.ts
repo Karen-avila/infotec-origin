@@ -1,192 +1,238 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import { HttpClient, HttpRequest, HttpHeaders } from '@angular/common/http';
 
 import { User } from '../../models/user.model';
 import { UserLog } from '../../models/user-log.module';
 import { UserActivate } from '../../models/user-activate.module';
 
-import { URL_SERVICES } from '../../config/config';
-import { URL_AUTH } from '../../config/config';
-
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import swal from 'sweetalert';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
 
+import { environment } from '../../../environments/environment';
+import jsSHA from "jssha";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  token:string;
-  email:string;
-  id:string; 
-  values:any;
+  token: string;
+  email: string;
+  id: string;
+  values: any;
 
-  constructor(public http:HttpClient, private router: Router) { 
+  prosessing: Boolean = false;
+
+  constructor(public http: HttpClient, private router: Router) {
     this.getStorage();
   }
 
-
-  
-  createUser(user:User){
-    console.log("Service create user");
-    /* let url =  '/registros';  */
-    let url = URL_SERVICES + '/registro'; 
-    const object = JSON.stringify(user);
-    /* const body = {"email":"gustavo.espindola@fintecheando.mx",
-                    "password":"passworD1",
-                    "rePassword":"passworD1"} */
-     
-
-    console.log("Esto es lo que enviare a donde lo tenga que enviar",object);
-
-    const headers = new HttpHeaders({'X-Gravitee-Api-Key':'20b1d990-c522-44dc-85bd-ef16d364abc4',
-    'Content-Type': 'application/json'})
-      
-      
-/* 
-    return this.http.post(url,object,{headers}).map((res:any)=>{
-      console.log("creado",res)
-      swal("¡Felicidades!", "felicidades", "success");
-      
-    return true;
-  }).catch(err=>{
-    console.log(err.status);
-    return Observable.throw(err);
-  }); */
-  
-  return this.http.post(url,object,{headers}).map(response => {
-    console.log(response);
-    return response;
-}, err => {
-    throw err;
-});
-
+  createHash(text: any): string {
+    const shaObj = new jsSHA("SHA-256", "TEXT", { encoding: "UTF8" });
+    shaObj.update(text);
+    return shaObj.getHash("HEX");
   }
 
-  activate(user:UserActivate){
-    console.log("Service activate user");
-    /* let url =  '/registros'; */
-    let url = URL_SERVICES + '/registro'; 
+  createUser(user: User) {
+    // console.log("Service create user");
     const object = JSON.stringify(user);
-    /* const body = {"email":"gustavo.espindola@fintecheando.mx",
-                    "password":"passworD1",
-                    "rePassword":"passworD1"} */
-     
 
-    console.log("Esto es lo que enviare a donde lo tenga que enviar",object);
+    let url = environment.apis_url + '/V1.0/banbi/creditosimple/registro';
+    let headers = environment.headers_apis;
+    let api_keys = environment.gravitee_api_keys;
+    headers['X-Gravitee-Api-Key'] = api_keys['registro'];
 
-    const headers = new HttpHeaders({'X-Gravitee-Api-Key':'20b1d990-c522-44dc-85bd-ef16d364abc4',
-    'Content-Type': 'application/json'})
-      
-      
-/* 
-    return this.http.post(url,object,{headers}).map((res:any)=>{
-      console.log("creado",res)
-      swal("¡Felicidades!", "felicidades", "success");
-      
-    return true;
-  }).catch(err=>{
-    console.log(err.status);
-    return Observable.throw(err);
-  }); */
-  
-  return this.http.post(url,object,{headers}).map(response => {
-    console.log(response);
-    return response;
-}, err => {
-    throw err;
-});
+    return this.http.post(url, object, { headers }).map((res: any) => {
+      // console.log("creado", res)
+      swal("¡Felicidades!", "Felicidades usuario creado correctamente.", "success");
 
-  }
-
-  sendPersonalData(data) {
-    console.log("Service create user");
-    /* let url = '/registros'; */ 
-    let url = URL_SERVICES + '/registro'; 
-    const object = JSON.stringify(data);
-
-    console.log("Esto es lo que enviare a donde lo tenga que enviar", object);
-
-    const headers = new HttpHeaders({
-      'X-Gravitee-Api-Key': '20b1d990-c522-44dc-85bd-ef16d364abc4',
-      'Content-Type': 'application/json'
-    })
-
-    return this.http.post(url, object, { headers }).map(response => {
-      console.log(response);
-      return response;
-    }, err => {
-      throw err;
+      return true;
+    }).catch(err => {
+      console.log(err);
+      return err;
     });
 
   }
 
-  createUserL(user:User) {
-    console.log("create user");
-    console.log("Esto es lo que enviare a donde lo tenga que enviar",user);
-    
-    return {as: user};
+  activate(user: UserActivate) {
+    // console.log("Service activate user");
+
+    let url = environment.apis_url + '/V1.0/banbi/creditosimple/registro';
+    let headers = environment.headers_apis;
+    let api_keys = environment.gravitee_api_keys;
+    headers['X-Gravitee-Api-Key'] = api_keys['registro'];
+    const object = JSON.stringify(user);
+
+    return this.http.post(url, object, { headers }).map((res: any) => {
+      // console.log("creado", res)
+      swal("¡Felicidades!", "Felicidades usuario activado correctamente.", "success");
+
+      return true;
+    }).catch(err => {
+      return err;
+    });
   }
 
-  getStorage(){
-    if(localStorage.getItem('token')){
+  sendPersonalData(data) {
+    // console.log("Service create user");
+    let url = environment.apis_url + '/V1.0/banbi/creditosimple/registro';
+    let headers = environment.headers_apis;
+    let api_keys = environment.gravitee_api_keys;
+    headers['X-Gravitee-Api-Key'] = api_keys['registro'];
+
+    const object = JSON.stringify(data);
+    return this.http.post(url, object, { headers }).map((res: any) => {
+      // console.log("creado", res)
+      swal("¡Felicidades!", "Información guardada correctamente.", "success");
+
+      return true;
+    }).catch(err => {
+      swal('Existio un error' + err.status);
+      this.prosessing = false;
+      console.log(err.status);
+      return err;
+    });
+  }
+
+  getStorage() {
+    if (localStorage.getItem('token')) {
       this.token = localStorage.getItem('token');
-    }else{
+    } else {
       this.token = '';
     }
   }
 
-  isLogged(){
-    return (this.token.length > 5) ? true : false;
+  isLogged() {
+    return localStorage.getItem('token');
   }
 
-  logout(){
-      this.token = '';
-      this.email = '';
-      this.id = '';
-      localStorage.clear();
-      this.router.navigate(["home"]);
+  logout() {
+    this.token = '';
+    this.id = '';
+    localStorage.clear();
+    this.router.navigate(["home"]);
   }
 
-  login(user:UserLog){
-
-    console.log("Login Service");
-    /* let url =  '/inicio'; */
-    let url = URL_AUTH + '/authentication';
-
+  login(user: UserLog) {
+    let url = environment.mifos_url + '/fineract-provider/api/v1/self/authentication';
+    let headers = environment.headers_mifos;
+    let api_keys = environment.gravitee_api_keys;
+    headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
+    console.log(user);
     const object = JSON.stringify(user);
-    console.log("Esto es lo que enviare a donde lo tenga que enviar",object);
 
-    const headers = new HttpHeaders({'Fineract-Platform-TenantId':'default',
-    'Content-Type': 'application/json'})
+    // console.log("Esto es lo que enviare a donde lo tenga que enviar", object);
 
-    return this.http.post(url,object,{headers}).map((res:any)=>{
-      localStorage.setItem('clientId',res.clientId);
-        //localStorage.setItem('id',res.id);
-       // localStorage.setItem('email',res.email);
-        //localStorage.setItem('token',res.token);
-        //localStorage.setItem('step','1');
-        //this.token = res.token;
-       // this.email = res.email;
-        //this.id = res.id;
-        swal("¡Felicidades!", "Inicio de sesión exitoso.", "success");
-        //this.router.navigate(["dashboard",{id:this.step}]); ///revisar donde quedara
-        //this.router.navigate(["register"]);
-        console.log(res);
-    
+    return this.http.post(url, object, { headers }).map((res: any) => {
+      // console.log("creado", res)
+      swal("¡Felicidades!", "Inicio de sesión exitoso.", "success");
+      console.log(res)
+      localStorage.setItem('clientid', res.userId);
+      localStorage.setItem('token', res.authenticated);
       return true;
-    })  
-  }
-0
-  localStep(){
-    return this.http.get("http://localhost:3002/step");
+    }).catch(err => {
+      if (err.status == 0) {
+        swal('Existio un error al procesar tu solicitud intentalo más tarde');
+      } else if (err.status == 401) {
+        swal('Verifica que tu usuario/contraseña sean correctos');
+      }
+      this.prosessing = false;
+      console.log(err);
+      return err;
+    });
   }
 
-  
+  sendDocuments(name: any, file: File) {
+    const formData: FormData = new FormData();
+
+    formData.append('file', file);
+    formData.append('name', name);
+    // console.log("Document Service");
+    let clientid = localStorage.getItem('clientid');
+    let url = environment.apis_url + '/V1.0/fineract-protected/clients/' + clientid + '/documents';
+    let api_keys = environment.gravitee_api_keys;
+
+    const httpHeaders = new HttpHeaders({'X-Gravitee-Api-Key':api_keys['fineract']});
+    const req = new HttpRequest('POST', url, formData, {
+      reportProgress: true,
+      responseType: 'json',
+      headers: httpHeaders
+    });
+
+    return this.http.request(req);
+  }
+
+  sendIdentification(data) {
+    // console.log("Document Service");
+    let clientid = localStorage.getItem('clientid');
+    let url = environment.apis_url + '/V1.0/fineract-protected/clients/' + clientid + '/identifiers';
+    let api_keys = environment.gravitee_api_keys;
+    let headers = environment.headers_apis;
+    headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
+
+    const object = JSON.stringify(data);
+
+    //const object = JSON.stringify(userDocs);
+    return this.http.post(url, object, { headers: headers }).map((res: any) => {
+      // console.log("Enviados", res)
+      return res;
+    }).catch(err => {
+      if (err.status == '0') {
+        console.log('Existio un error al procesar tu identificación, intentalo más tarde');
+      }
+      this.prosessing = false;
+      console.log(err);
+      return err;
+    });
+  }
+
+  getDataCode(codeName: String) {
+    this.prosessing = false;
+    let url = environment.apis_url + '/V1.0/fineract-protected/codes/' + codeName + '/options';
+    let api_keys = environment.gravitee_api_keys;
+    let headers = environment.headers_apis;
+    headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
+
+    return this.http.get<any>(url, { headers: headers });
+  }
+
+  validateFileExtension(fileName: String) {
+    var _validFileExtensions = [".jpg", ".jpeg", ".pdf", ".png"];    
+    var isValid = false;
+    if (fileName.length > 0) {
+        for (var j = 0; j < _validFileExtensions.length; j++) {
+            var extension = _validFileExtensions[j];
+            if (fileName.substr(fileName.length - extension.length, extension.length).toLowerCase() == extension.toLowerCase()) {
+              isValid = true;
+              break;
+            }
+        }
+    }
+    return isValid;
+  }
+
+  sendPersonalReferences(data) {
+    let clientid = localStorage.getItem('clientid');/* fineract-provider/api/v1/clients/%7BidCliente%7D/familymembers */
+    let url = environment.apis_url + '/V1.0/fineract-protected/clients/' + clientid + '/familymembers';
+    let api_keys = environment.gravitee_api_keys;
+    let headers = environment.headers_apis;
+    headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
+
+    const object = JSON.stringify(data);
+
+    //const object = JSON.stringify(userDocs);
+    return this.http.post(url, object, { headers: headers }).map((res: any) => {
+      return res;
+    }).catch(err => {
+      if (err.status == '0') {
+        swal('Existio un error al procesar tus referencias personales, intentalo más tarde');
+      }
+      this.prosessing = false;
+      console.log(err);
+      return err;
+    });
+  }
 
 }

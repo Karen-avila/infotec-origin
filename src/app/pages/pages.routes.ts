@@ -12,6 +12,9 @@ import { LegalComponent } from './legal/legal.component';
 import { CcontratoComponent} from './ccontrato/ccontrato.component';
 import { AmortizacionComponent } from './amortizacion/amortizacion.component';
 import { PagareComponent } from './pagare/pagare.component';
+import { CregistroComponent } from './cregistro/cregistro.component';
+import { AutorizacionComponent } from './autorizacion/autorizacion.component';
+import { EstatusComponent } from './estatus/estatus.component';
 
 
 const pagesRoutes: Routes = [
@@ -28,9 +31,12 @@ const pagesRoutes: Routes = [
           {path: 'avisodeprivacidad', component: AvisodeprivacidadComponent},
           {path: 'legal', component: LegalComponent},
           {path: 'ccontrato', component: CcontratoComponent},
+          {path : 'cregistro', component: CregistroComponent },
           {path: '', redirectTo: '/home', pathMatch: 'full' },
           {path: 'amortizacion', component: AmortizacionComponent},
-          {path : 'pagare', component: PagareComponent }
+          {path : 'pagare', component: PagareComponent },
+          {path : 'autorizacion', component: AutorizacionComponent },
+          {path : 'estatus', component: EstatusComponent}
         ]
       },
 ];

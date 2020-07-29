@@ -9,19 +9,23 @@
                     <div class="input-field col s10">
                         <i class="material-icons prefix">no_encryption</i>
                         <input placeholder="xxxxxx-xxxx" class="validate" id="codigo" type="text" formControlName="codigo" name="codigo" maxlength="12" required>
-                        <label for="codigo">Código de activación</label>
+                        <label class="active" for="codigo">Código de activación</label>
                         <!--<div class="blue-text" *ngIf="fo.codigo.errors?.required">Máximo 3 caracteres</div>-->
                     </div>
-                    <!-- <div class="input-field col s10">
-                        <i class="material-icons prefix">no_encryption</i>
-                        <input class="validate" id="token" type="number" formControlName="token" name="token" minlength="3" maxlength="3" required>
-                        <label for="token">Token</label>
-                        /* <div class="blue-text" *ngIf="fo.token.errors?.required">Máximo 3 caracteres</div */
-                    </div> -->
+
+                    <div class="row">
+                      <div class="col s12 col m6 offset-m3" >
+                        <div style="padding-left: 2vw;">
+                          <re-captcha (resolved)="resolved($event)"
+                            [siteKey]="reCaptchaKey">
+                          </re-captcha>
+                        </div>
+                      </div>
+                    </div>
+
                     <div class="input-field col s5 offset-s7">
                         <button class="waves-effect teal darken-4 btn right" type="submit">Aceptar
                             <i class="material-icons right">send</i></button>
-                        <!--<a class="modal-close waves-effect teal darken-4 white-text btn-flat" type>Aceptar</a>-->
                     </div>
                 </div>
                 <br>
@@ -29,9 +33,3 @@
         </div>
     </div>
 </div>
-        
-
-    
-    <!--<div class="footer-copyright teal darken-3">
-        <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
-    </div> -->

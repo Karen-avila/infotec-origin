@@ -8,14 +8,13 @@ import { UserService } from '../../services/user/user.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  
-  isLogged = false;
-
- 
-  constructor(public userService:UserService) { }
-
+  isLogged: string;
+  constructor(
+    public userService: UserService
+  ) {
+    this.isLogged = this.userService.isLogged();
+  }
   ngOnInit() {
     M.AutoInit();
   }
-
 }
