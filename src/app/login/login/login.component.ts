@@ -12,6 +12,7 @@ import { UserLog } from '../../models/user-log.module';
 import swal from 'sweetalert';
 import { environment } from 'src/environments/environment';
 import { User } from 'src/app/models/user.model';
+import { ForgotPassword } from 'src/app/models/forgot-password.module';
 
 @Component({
   selector: 'app-login',
@@ -79,7 +80,13 @@ step
     if(this.form1.valid){
     // console.log("form", this.form1.value);
       //enviar datos a back
-    this.instance[0].open();
+    let data= new ForgotPassword(this.form1.value.email, this.form1.value.curp)
+    this.userService.forgotPassword(data)
+    .subscribe(res => {
+      this.instance[0].open(); //revisar donde quedara
+      // console.log("esto responde el servicio register",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
+      //this.instance[1].close();
+    });
     } else{
       swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
     }

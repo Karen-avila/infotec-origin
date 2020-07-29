@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 
 import { environment } from '../../../environments/environment';
 import jsSHA from "jssha";
+import { ForgotPassword } from 'src/app/models/forgot-password.module';
 
 @Injectable({
   providedIn: 'root'
@@ -38,6 +39,27 @@ export class UserService {
   createUser(user: User) {
     // console.log("Service create user");
     const object = JSON.stringify(user);
+
+    let url = environment.apis_url + '/V1.0/banbi/creditosimple/registro';
+    let headers = environment.headers_apis;
+    let api_keys = environment.gravitee_api_keys;
+    headers['X-Gravitee-Api-Key'] = api_keys['registro'];
+
+    return this.http.post(url, object, { headers }).map((res: any) => {
+      // console.log("creado", res)
+      //swal("¡Felicidades!", "Felicidades usuario creado correctamente.", "success");
+
+      return true;
+    }).catch(err => {
+      console.log(err);
+      return err;
+    });
+
+  }
+
+  forgotPassword(data: ForgotPassword) {
+    // console.log("Service create user");
+    const object = JSON.stringify(data);
 
     let url = environment.apis_url + '/V1.0/banbi/creditosimple/registro';
     let headers = environment.headers_apis;
