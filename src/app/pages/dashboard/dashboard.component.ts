@@ -507,6 +507,7 @@ export class DashboardComponent implements OnInit {
     var curp = this.curpService.generarCURP(nombre, apaterno, amaterno, fechanac, genero, entidadfednaci);
     if (curp !== '') {
       this.form.get('curp').setValue(curp);
+      this.form.get('rfc').setValue(curp.substr(0, 10));
     }
   }
 
