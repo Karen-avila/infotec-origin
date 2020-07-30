@@ -773,6 +773,7 @@ findInvalidControls() {
   dpersonales() {
     //console.log(this.form.value);
     if (this.form.valid) {
+      this.popup[9].open(); //revisar donde se cierra
       let ref1 = new PersonalReferences(this.form.value.entidadfednaci,'25/Junio/19',this.form.value.ref1nombre,this.form.value.ref1apaterno,this.form.value.ref1tel,'93','17','75','33');
       let ref2 = new PersonalReferences(this.form.value.entidadfednaci,'25/Junio/19',this.form.value.ref2nombre,this.form.value.ref2apaterno,this.form.value.ref2tel,'93','17','75','33');
 
@@ -837,6 +838,7 @@ findInvalidControls() {
   dfielFirm() {
     // console.log('formFiel is valid?', this.formFielFirm.valid);
     if (this.formFielFirm.valid) {
+      this.popup[9].open(); //revisar donde cierra
       // console.log('formFiel', this.formFielFirm.value);
       this.router.navigate(["home"]);
       // enviar datos a back
@@ -848,8 +850,9 @@ findInvalidControls() {
 
   ddocumentos() {
     let documents = ['frontal', 'reverso', 'comprobante', 'comprobanten', 'estado', 'declarcion', 'curpd', 'fiscal'];
-    // if (this.formDocumentos.valid) {
-    if (1) {
+    if (this.formDocumentos.valid) {
+      this.popup[9].open(); //revisar donde cierra
+    //if (1) {
       // Loop
 
       for (let i = 0; i < documents.length; i++) {

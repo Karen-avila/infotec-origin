@@ -75,7 +75,7 @@ step
   get f() { return this.form.controls; }
   get fgt() { return this.form1.controls; }
 
-  recuperarpsw(){
+  /* recuperarpsw(){
     // console.log("form is valid?", this.form1.valid);
     if(this.form1.valid){
     // console.log("form", this.form1.value);
@@ -90,7 +90,7 @@ step
     } else{
       swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
     }
-  }
+  } */
 
   onSignInSubmit() {
 
@@ -129,7 +129,8 @@ this.router.navigate(["dashboard"]);
   login(){
 
     console.log("form login is valid?", this.form.valid);
-    if(this.form.valid){    
+    if(this.form.valid){   
+      this.instance[1].open();
       var user:UserLog;
       if(environment.passwordShaded){
           user = new UserLog(this.form.value.email,
@@ -141,7 +142,9 @@ this.router.navigate(["dashboard"]);
        }
       this.userService.login(user)
         .subscribe(res=>{
+          this.instance[0].open();
           this.router.navigate(["dashboard",{email:this.form.value.email}]);
+          this.instance[1].close();
          /*  this.router.navigate(["dashboard"]);  */
           //this.router.navigate(["register",{id:this.step}]); ///revisar donde quedara
 

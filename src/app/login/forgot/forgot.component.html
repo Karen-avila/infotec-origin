@@ -4,7 +4,7 @@
     <div id="forgot" class="col card s6 offset-s3 m6 offset-m3 l6 offset-l4">
         <div class="container">
             <form ngNativeValidate [formGroup]="form" (ngSubmit)="validacion()">
-                <br><br><p>El código de activación fue enviado al correo electrónico registrado anteriormente.</p><br><br>
+                <br><br><p>Se enviaran instrucciones al correo electrónico registrado, para la recuperación de contraseña.</p><br><br>
                 <div class="row">
                     <div class="input-field col s10">
                         <i class="material-icons prefix">no_encryption</i>
@@ -49,7 +49,7 @@
                       </div> -->
 
                     <div class="input-field col s5 offset-s7">
-                        <button class="waves-effect teal darken-4 btn right" type="submit">Aceptar
+                        <button class="waves-light btn red darken-3 right" type="submit">Aceptar
                             <i class="material-icons right">send</i></button>
                     </div>
                 </div>
@@ -57,4 +57,20 @@
             </form>
         </div>
     </div>
+</div>
+
+<div id="loader" class="modal transparent z-depth-0 center">
+    <div class="modal-content" >
+        <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-green-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+    </div>    
 </div>

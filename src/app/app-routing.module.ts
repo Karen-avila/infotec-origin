@@ -8,7 +8,7 @@ import { ForgotComponent } from './login/forgot/forgot.component'
 const routes: Routes = [
                         {path: 'login', component: LoginComponent},
                         {path: 'activacion', component: RegisterComponent},
-                        {path: 'forgot', component: ForgotComponent},
+                        {path: 'recuperar', component: ForgotComponent},
 
                         //{path: '**', redirectTo: '' }
                         ];

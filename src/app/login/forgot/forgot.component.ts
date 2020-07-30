@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import swal from 'sweetalert';
+import * as M from 'materialize-css';
 import { UserService } from '../../services/user/user.service';
 import { UserActivate } from '../../models/user-activate.module'
 import { environment } from 'src/environments/environment';
@@ -19,11 +20,14 @@ export class ForgotComponent implements OnInit {
   rePassType = "password";
   icon:boolean=true;
   reIcon:boolean=true;
+  instance
 
 
   constructor() { }
 
   ngOnInit() {
+    var elems = document.querySelectorAll('.modal');
+    this.instance = M.Modal.init(elems);
   
     this.form = new FormGroup({
       codigo: new FormControl(null, Validators.required),
@@ -91,6 +95,7 @@ let user = new UserActivate(this.form.value.codigo,"2");
 
 console.log("form is valid", this.form.value);
 if(this.form.valid){
+  this.instance[0].open(); //revisar donde se cierra
   
   /* this.userService.activate(user)
     .subscribe(res=>{

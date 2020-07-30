@@ -25,7 +25,7 @@
                     </div>
 
                     <div class="col s12 m8 offset-m4 l8 offset-l4">
-                        <a routerLink="/forgot" class="white-text cursor">¿Olvidaste tu Contraseña?</a>
+                        <a routerLink="/recuperar" class="white-text cursor">¿Olvidaste tu Contraseña?</a>
                     </div>
                 </div>
                 <br>
@@ -63,56 +63,6 @@
         </div>
         <br>
     </div>
-
-    <div id="forgot" class="hide valign-wrapper row login-box ">
-
-        <div class="col card s11 offset-s1 m9 offset-m2 l9 offset-l2 mycolor">
-            <br>
-            <p class="flow-text white-text center-align">Recuperar Contraseña</p>
-            <div class="card-content">
-                <div class="row">
-                    <form ngNativeValidate [formGroup]="form1" (ngSubmit)="recuperarpsw()">
-                        <div class="input-field col s12 l10">
-                            <i class="material-icons prefix icon-white">account_circle</i>
-                          <input id="email" type="email" formControlName="email" name='email' class="validate">
-                            <label class="white-text" for="email">Correo Electrónico</label>
-                            <div class="red-text" *ngIf="fgt.email.errors?.email">El correo electrónico debe de ser valido</div>
-                        </div>
-                        <div class="input-field col s12 l10">
-                            <i class="material-icons prefix icon-white">aspect_ratio</i>
-                            <input id="curp" type="text" formControlName="curp"
-                                (keyup)="form.patchValue({curp: $event.target.value.toUpperCase()})"
-                                pattern="^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$"
-    
-                                required class="validate mayu" name="curp" minlength="18" maxlength="18" />
-                            <label class="white-text" for="curp">CURP</label>
-                            <div class="red-text" *ngIf="fgt.curp.errors?.curp"></div>
-                        </div>
-
-                        <br>
-                        <div class="row">
-                            <div class="col s6 m5 offset-m1">
-                                <!--<button (click)="recuperar()" type="submit" ng-click=”recuperar()” class="waves-effect waves-light btn red darken-3 right">
-                    Recuperar <i class="material-icons right">send</i> </button>-->
-                                <button class="waves-effect red darken-3 btn right" type="submit">Recuperar
-                        <i class="material-icons right">send</i>
-                      </button>
-                            </div>
-                            <div class="col s6  m5 offset-m1">
-                                <a (click)="cancel()" class="waves-effect waves-light btn grey left">Cancelar</a>
-                            </div>
-
-
-                        </div>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-
-
 </div>
 
 
@@ -128,4 +78,20 @@
     <div class="footer-copyright teal darken-3">
         <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
     </div>
+</div>
+
+<div id="loader" class="modal transparent z-depth-0 center">
+    <div class="modal-content" >
+        <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-green-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+    </div>    
 </div>
