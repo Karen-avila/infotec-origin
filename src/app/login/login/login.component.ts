@@ -129,9 +129,7 @@ this.router.navigate(["dashboard"]);
   login(){
 
     console.log("form login is valid?", this.form.valid);
-    if(this.form.valid){
-      
-      
+    if(this.form.valid){    
       var user:UserLog;
       if(environment.passwordShaded){
           user = new UserLog(this.form.value.email,
@@ -141,8 +139,6 @@ this.router.navigate(["dashboard"]);
         user = new UserLog(this.form.value.email,
           this.form.value.password);
        }
-      
-       
       this.userService.login(user)
         .subscribe(res=>{
           this.router.navigate(["dashboard",{email:this.form.value.email}]);

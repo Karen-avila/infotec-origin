@@ -4,3 +4,7 @@ ul.stepper.horizontal {
 .cursor{
     cursor:pointer;
 }
+
+#loader{
+    top: 30% !important;
+}

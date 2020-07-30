@@ -139,8 +139,7 @@ equalPass(p1:string,p2:string){
       user = new User(this.form.value.email,
         this.form.value.password, false, "1",
         this.form.value.rePassword);
-     }
-     
+    }
     if (this.form.valid) {
       this.instance[1].open();
       /* // console.log("form esto envio", this.form.value); */

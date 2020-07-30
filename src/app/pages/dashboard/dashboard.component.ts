@@ -284,7 +284,7 @@ export class DashboardComponent implements OnInit {
       clientid: new FormControl(localStorage.getItem('clientid'), Validators.required),
       tipopersona: new FormControl(null, Validators.required),
       clabeinter: new FormControl(null, [Validators.required, Validators.minLength(18), Validators.maxLength(18), Validators.pattern('[0-9]{18}')]),
-      clabeinterconf: new FormControl(null, [Validators.required, Validators.minLength(18), Validators.maxLength(18), Validators.pattern('[0-9]{18}'), this.checkClabeInterbank]),
+      clabeinterconf: new FormControl(null, [Validators.required, Validators.minLength(18), Validators.maxLength(18), Validators.pattern('[0-9]{18}')]),
       nombre: new FormControl(null, [Validators.required, Validators.minLength(2)]),
       nombre2: new FormControl(null, [Validators.minLength(0)]),
       apaterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
@@ -521,6 +521,7 @@ export class DashboardComponent implements OnInit {
     var curp = this.curpService.generarCURP(nombre, apaterno, amaterno, fechanac, genero, entidadfednaci);
     if (curp !== '') {
       this.form.get('curp').setValue(curp);
+      this.form.get('rfc').setValue(curp.substr(0, 10));
     }
   }
 
@@ -597,6 +598,9 @@ export class DashboardComponent implements OnInit {
 
   getBankName(option) {
     var clabe = this.form.get('clabeinter').value;
+    if (clabe == null) {
+      return "";
+    }
     if (option === 2) {
       clabe = this.form.get('clabeinterconf').value;
     }
@@ -707,17 +711,7 @@ export class DashboardComponent implements OnInit {
     return "";
   
   }
-  
-  checkClabeInterbank(control: AbstractControl) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        var clabeinter = this.form.get('clabeinter').value;
-        if (control.value === clabeinter) {
-          resolve(true)
-        } else { resolve(null) }
-      }, 2000)
-    })
-  }
+
   async activitieChange(value, type, sector = null, subsector = null, rama = null, subrama = null) {
     if (type === 'sector' && value === undefined) { this.activities = await activitiesService.init(this.activities); }
     if (type === 'sector' && value !== undefined) { this.activities = await activitiesService.getSubsector(this.activities, sector); }
@@ -749,25 +743,25 @@ export class DashboardComponent implements OnInit {
    reader.onload = () => resolve(reader.result);
    reader.onerror = error => reject(error);
 }); */
-  findInvalidControls() {
-    const invalid = [];
-    const controls = this.form.controls;
-    for (const name in controls) {
-      if (controls[name].invalid) {
-        this.viewError.push(name);
-        console.log("Invalid: " + name);
-        if (document.getElementById(name) != null) {
-          document.getElementById(name).classList.add('invalid');
-          var x = document.getElementById(name);
-          M.toast({ html: x.getAttribute("name") })
-        } else {
-          console.log("Element in null");
-        }
+findInvalidControls() {
+  const invalid = [];
+  const controls = this.form.controls;
+  for (const name in controls) {
+    if (controls[name].invalid) {
+      console.log("Invalid: " + name);
+      if (document.getElementById(name) != null) {
+        document.getElementById(name).classList.add('invalid');
+        var x = document.getElementById(name);
+        this.viewError.push(x.getAttribute("name"));
+        M.toast({ html: x.getAttribute("name") })
+      } else {
+        console.log("Element in null");
       }
     }
-    /* this.popup[0].open(); */
-    return invalid;
   }
+  /* this.popup[0].open(); */
+  return this.viewError;
+}
 
   sortObject(obj) {
     return Object.keys(obj).sort().reduce(function (result, key) {
@@ -817,10 +811,14 @@ export class DashboardComponent implements OnInit {
 
         });
       this.stepper.openStep(3);
-    } else {
-      this.findInvalidControls();
-      swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
-    }
+    } else {      
+      let err=this.findInvalidControls();
+      let message=' ';
+      for(let i=0;i<err.length;i++){
+        message=message+err[i]+', ';
+      }
+      swal('¡Cuidado!',`Para poder continuar, completa correctamente todos los campos:\n ${message}`, 'error');
+     }
   }
 
 

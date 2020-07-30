@@ -16,6 +16,13 @@ export const environment = {
   headers_apis : {
     'X-Gravitee-Api-Key': '6c7180e6-4855-413a-ba3d-0f8c75b97490',
     'Content-Type': 'application/json'
+  },
+  provisional_header:{
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Content-Encoding': 'gzip',
+      'Fineract-Platform-TenantId': 'default',
+      'Authorization': 'Basic aW5mb3RlYzpwYXNzd29yZA=='
   }
 };
 
