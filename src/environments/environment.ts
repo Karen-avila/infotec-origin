@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  passwordShaded: false,
   apis_url : 'https://apis-pre.bancodelbienestar.com.mx',
   mifos_url : 'https://backoffice-pre.bancodelbienestar.com.mx',
   reCaptchaKey: "6LdQErYZAAAAACb2f4AgheH_SFBH131W8QCKvnvA",
@@ -15,6 +16,13 @@ export const environment = {
   headers_apis : {
     'X-Gravitee-Api-Key': '6c7180e6-4855-413a-ba3d-0f8c75b97490',
     'Content-Type': 'application/json'
+  },
+  provisional_header:{
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Content-Encoding': 'gzip',
+      'Fineract-Platform-TenantId': 'default',
+      'Authorization': 'Basic aW5mb3RlYzpwYXNzd29yZA=='
   }
 };
 

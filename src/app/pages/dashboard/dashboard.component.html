@@ -155,7 +155,7 @@
                         <i class="material-icons prefix">payment</i>
                         <input class="validate" id="clabeinter" type="text" (keypress)="numberOnly($event)"
                             formControlName="clabeinter" name="Clabe interbancaria" minlength="18" maxlength="18" required>
-                        <label for="text">Clabe Interbancaria *</label>
+                        <label for="text" class="active">Clabe Interbancaria *</label>
 
                         <div class="blue-text" *ngIf="f.clabeinter.errors">La clabe interbancaria consta de 18 dígitos
                         </div>
@@ -182,7 +182,7 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="nombre" type="text" formControlName="nombre" name="Nombre" (change)="generateCurp()"
+                        <input id="nombre" type="text" formControlName="nombre" name="Nombre" 
                             (keyup)="form.patchValue({nombre: $event.target.value.toUpperCase()})" required
                             class="validate">
                         <label for="nombre">Nombre *</label>
@@ -196,7 +196,7 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="nombre2" type="text" formControlName="nombre2" name="Segundo Nombre" (change)="generateCurp()"
+                        <input id="nombre2" type="text" formControlName="nombre2" name="Segundo Nombre" 
                             (keyup)="form.patchValue({nombre2: $event.target.value.toUpperCase()})" class="validate">
                         <label for="nombre2">Segundo Nombre</label>
 
@@ -210,7 +210,7 @@
                         <i class="material-icons prefix">account_circle</i>
                         <input id="apaterno" type="text" name="Apellido Paterno" formControlName="apaterno"
                             (keyup)="form.patchValue({apaterno: $event.target.value.toUpperCase()})" required
-                            class="validate" (change)="generateCurp()">
+                            class="validate" >
                         <label for="apaterno">Apellido Paterno *</label>
                         <div class="blue-text" *ngIf="f.apaterno.errors?.minlength">Debe tener un minimo de 2 carácteres
                         </div>
@@ -222,7 +222,7 @@
                         <i class="material-icons prefix">account_circle</i>
                         <input id="amaterno" type="text" name="Apellido materno" formControlName="amaterno"
                             (keyup)="form.patchValue({amaterno: $event.target.value.toUpperCase()})" required
-                            class="validate" (change)="generateCurp()">
+                            class="validate" >
                         <label for="amaterno">Apellido Materno *</label>
                         <div class="blue-text" *ngIf="f.amaterno.errors?.minlength">Debe tener un minimo de 2 carácteres
                         </div>
@@ -233,7 +233,7 @@
 
                     <div class="input-field col s12 m6 l6">
                         <input type="date" class="fecha validate" formControlName="fechanac" name="Fecha de Nacimiento"
-                            id="fechanac" min="1960-12-31" max="2002-01-01" required (change)="generateCurp()">
+                            id="fechanac" min="1960-12-31" max="2002-01-01" required >
                         <label>Fecha de Nacimiento *</label>
                     </div>
 
@@ -251,7 +251,7 @@
                     </div>
 
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="genero" name="Genero" id="genero" class="validate" (change)="generateCurp()">
+                        <select formControlName="genero" name="Genero" id="genero" class="validate" >
                             <option value="" disabled selected>Selecciona una opción</option>
                             <option value="Femenino">Femenino</option>
                             <option value="Masculino">Masculino</option>
@@ -281,7 +281,7 @@
 
                     <div class="input-field col s12 m6 l6">
                         <select formControlName="entidadfednaci" name="Entidad Federativa de Nacimiento" id="entidadfednaci"
-                            class="validate" (change)="generateCurp()">
+                            class="validate" >
                             <option *ngFor="let state of stateOptions" [value]="state.name">{{state.name}}</option>
                         </select>
                         <label>Entidad Federativa de Nacimiento *</label>
@@ -290,12 +290,12 @@
 
                     <div class="input-field col s12 m6 l7">
                         <i class="material-icons prefix">aspect_ratio</i>
-                        <input id="curp" type="text" formControlName="curp"
+                        <input id="curp" type="text" formControlName="curp" (focus)="generateCurp()"
                             (keyup)="form.patchValue({curp: $event.target.value.toUpperCase()})"
                             pattern="^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$"
 
                             required class="validate" name="Curp" minlength="18" maxlength="18" />
-                        <label for="curp">CURP *</label>
+                        <label for="curp" class="active">CURP *</label>
 
                         <div class="blue-text">Únicamente letras mayúsculas</div>
                     </div>
@@ -307,7 +307,7 @@
                             pattern="^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$"
 
                                required class="validate" name="Rfc" minlength="12" maxlength="13" />
-                        <label for="rfc">RFC *</label>
+                        <label for="rfc" class="active">RFC *</label>
 
                         <div class="blue-text">Únicamente letras mayúsculas</div>
                     </div>

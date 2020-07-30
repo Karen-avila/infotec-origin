@@ -12,3 +12,6 @@
     width: 100%;
     height: auto;
 }
+.my-class{
+    pointer-events:none;
+}

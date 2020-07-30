@@ -1,41 +1,23 @@
-<!--NAVAR-->
 <div class="navbar-fixed">
     <nav class="teal darken-4">
         <div class="container">
             <div class="nav-wrapper">
-                <a href="#" class="logoHead">
+                <a href="#" class="logoHead" [ngClass]="{'my-class': isLogged}">
                     <img src="https://framework-gb.cdn.gob.mx/landing/img/logofooter.svg">
                 </a>
-
-                <!-- <a href="#" data-target="mobile-demo" class="sidenav-trigger hide-on-large-only"><i
-                        class="material-icons">menu</i></a>-->
-
                 <ul id="nav-mobile" class="right">
-                    <!--<li><a href="#">Personas</a></li>
-                    <li><a href="#">Empresas y Gobierno</a></li>
-                    <li><a href="#">Sucursales</a></li>-->
-                    <li *ngIf="!isLogged"><a href="/login"><i class="material-icons left">account_circle</i>Ingresar</a></li>
-                    <li *ngIf="isLogged"><a (click)="userService.logout()"><i class="material-icons left">account_circle</i>Cerrar sesión</a></li>
-                    <!--<li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Es<i class="material-icons right">arrow_drop_down</i></a></li>-->
+                    <li *ngIf="!isLogged"><a href="/login"><i class="material-icons left">account_circle</i>Ingresar</a>
+                    </li>
+                    <li *ngIf="isLogged"><a (click)="userService.logout()"><i
+                                class="material-icons left">account_circle</i>Cerrar sesión</a></li>
                 </ul>
             </div>
-
         </div>
     </nav>
-
 </div>
 
-<ul id="dropdown1" class="dropdown-content">
-    <li><a href="#!">Español</a></li>
-    <!--<li class="divider"></li>
-    <li><a href="#!">Es</a></li>
-    <li><a href="#!">Nahuatl</a></li>
-    <li><a href="#!">Otomi</a></li>-->
-</ul>
-
-
 <ul class="sidenav" id="mobile-demo">
-
-    <li><a href="#">Ingresar</a></li>
-
+    <li *ngIf="!isLogged"><a href="/login"><i class="material-icons left">account_circle</i>Ingresar</a></li>
+    <li *ngIf="isLogged"><a (click)="userService.logout()"><i class="material-icons left">account_circle</i>Cerrar
+            sesión</a></li>
 </ul>
