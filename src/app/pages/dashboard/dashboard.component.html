@@ -169,10 +169,12 @@
                     <div class="input-field col s12 m4 l4">
                         <i class="material-icons prefix">payment</i>
                         <input class="validate" id="clabeinter" type="text" (keypress)="numberOnly($event)"
-                            formControlName="clabeinterConf" name="Clabe interbancaria" minlength="18" maxlength="18" required>
-                        <label for="text">Clabe Interbancaria (confirmación)</label>
+                            formControlName="clabeinterconf" name="Clabe interbancaria (Conf) *" minlength="18" maxlength="18" required>
+                        <label for="text">Clabe interbancaria (confirmación)</label>
 
-                        <div class="blue-text" *ngIf="f.clabeinter.errors">La clabe interbancaria no coincide</div>
+                        <div class="red-text col s12" *ngIf="form.errors?.isValid && !form.pristine">
+                            <p>Las clabes interbancarias no son iguales.</p>
+                        </div>
                     </div>
                     <div class="input-field col s12 m2 l2">
                         <i class="material-icons prefix">house</i>
@@ -2213,25 +2215,11 @@
     </div>
 </div>
 
-<div id="termsCond" class="modal">
-    <div class="modal-content">
-        <p class="flow-text center-align">
-            terms
-        </p>
-    </div>
-    <div class="modal-footer">
-        <a class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>
-    </div>
-    <div class="footer-copyright teal darken-3">
-        <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
-    </div>
-</div>
 
-
-<div id="modalMap" class="iframe-container hide">
+<!-- <div id="modalMap" class="iframe-container hide">
     <a (click)="mapOk()" class="waves-effect teal darken-4 btn">Aceptar</a>
     <iframe id="mapFrame" src="/map"></iframe>
-</div>
+</div> -->
 
 <div id="ccontrato" class="modal">
     <div class="modal-content">
@@ -2269,6 +2257,21 @@
     </div>
 </div>
 
+<div id="loader" class="modal transparent z-depth-0 center">
+    <div class="modal-content" >
+        <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-green-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+    </div>    
+</div>
 
 
 <app-footer></app-footer>

@@ -284,7 +284,7 @@ export class DashboardComponent implements OnInit {
       clientid: new FormControl(localStorage.getItem('clientid'), Validators.required),
       tipopersona: new FormControl(null, Validators.required),
       clabeinter: new FormControl(null, [Validators.required, Validators.minLength(18), Validators.maxLength(18), Validators.pattern('[0-9]{18}')]),
-      clabeinterConf: new FormControl(null, [Validators.required, Validators.minLength(18), Validators.maxLength(18), Validators.pattern('[0-9]{18}')]),
+      clabeinterconf: new FormControl(null, [Validators.required, Validators.minLength(18), Validators.maxLength(18), Validators.pattern('[0-9]{18}')]),
       nombre: new FormControl(null, [Validators.required, Validators.minLength(2)]),
       nombre2: new FormControl(null, [Validators.minLength(0)]),
       apaterno: new FormControl(null, [Validators.required, Validators.minLength(2)]),
@@ -335,7 +335,8 @@ export class DashboardComponent implements OnInit {
       montocredito: new FormControl(),
       plazocredito: new FormControl(),
       aprivacidad: new FormControl(null, Validators.required)
-    },
+    }, { validators: this.compareClabe('clabeinter', 'clabeinterconf'), }
+    /* ,
       {
         validators:
           this.pbaDict(
@@ -343,8 +344,8 @@ export class DashboardComponent implements OnInit {
             'apaterno',
             'nombre2',
             'amaterno',
-            /* 'domicilio', */
-            /*       'calle',
+            'domicilio',
+                  'calle',
                   'ext',
                   'int',
                   'municipio',
@@ -361,9 +362,11 @@ export class DashboardComponent implements OnInit {
                   'ref2_name',
                   'ref2_paterno',
                   'ref2_name2',
-                  'ref2_materno' */
+                  'ref2_materno'
           )
-      });
+      } */
+      );
+
     this.formDocumentos = new FormGroup({
       paso: new FormControl("4", Validators.required),
       clientid: new FormControl(localStorage.getItem('clientid'), Validators.required),
@@ -412,6 +415,16 @@ export class DashboardComponent implements OnInit {
   get fi() { return this.formFiel.controls; }
   get fir() { return this.formFielFirm.controls; }
 
+  compareClabe(cbl1: string, cbl2: string){
+    return (group: FormGroup) => {
+      let clabe1 = group.controls[cbl1].value;
+      let clabe2 = group.controls[cbl2].value;
+      if (clabe1 === clabe2) {
+        return null;
+      }
+      return { isValid: true };
+    }
+  }
   pbaDict(
     p1: string,
     p2: string,
@@ -495,6 +508,7 @@ export class DashboardComponent implements OnInit {
   }
 
   generateCurp() {
+    console.log("se llama generar curp");
     var nombre = this.form.get('nombre').value;
     const nombre2 = this.form.get('nombre2').value;
     if (nombre2 !== '') {
@@ -589,7 +603,7 @@ export class DashboardComponent implements OnInit {
       return "";
     }
     if (option === 2) {
-      clabe = this.form.get('clabeinterConf').value;
+      clabe = this.form.get('clabeinterconf').value;
     }
     if (clabe.length > 2) {
       const prefix = clabe.substring(0, 3);
@@ -696,6 +710,7 @@ export class DashboardComponent implements OnInit {
       }
     }
     return "";
+  
   }
 
   async activitieChange(value, type, sector = null, subsector = null, rama = null, subrama = null) {
@@ -759,6 +774,7 @@ findInvalidControls() {
   dpersonales() {
     //console.log(this.form.value);
     if (this.form.valid) {
+      this.popup[9].open(); //revisar donde se cierra
       let ref1 = new PersonalReferences(this.form.value.entidadfednaci,'25/Junio/19',this.form.value.ref1nombre,this.form.value.ref1apaterno,this.form.value.ref1tel,'93','17','75','33');
       let ref2 = new PersonalReferences(this.form.value.entidadfednaci,'25/Junio/19',this.form.value.ref2nombre,this.form.value.ref2apaterno,this.form.value.ref2tel,'93','17','75','33');
 
@@ -823,6 +839,7 @@ findInvalidControls() {
   dfielFirm() {
     // console.log('formFiel is valid?', this.formFielFirm.valid);
     if (this.formFielFirm.valid) {
+      this.popup[9].open(); //revisar donde cierra
       // console.log('formFiel', this.formFielFirm.value);
       this.router.navigate(["home"]);
       // enviar datos a back
@@ -834,8 +851,9 @@ findInvalidControls() {
 
   ddocumentos() {
     let documents = ['frontal', 'reverso', 'comprobante', 'comprobanten', 'estado', 'declarcion', 'curpd', 'fiscal'];
-    // if (this.formDocumentos.valid) {
-    if (1) {
+    if (this.formDocumentos.valid) {
+      this.popup[9].open(); //revisar donde cierra
+    //if (1) {
       // Loop
 
       for (let i = 0; i < documents.length; i++) {
