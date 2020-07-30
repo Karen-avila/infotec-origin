@@ -14,14 +14,14 @@
                                 <form ngNativeValidate [formGroup]="formScrPerNeg" (ngSubmit)="scrPerNegSend()">
 
                                     <li class="collection-item avatar validate" *ngFor="let scrPerNeg of scrPerNeg; index as i;">
-                                        <span class="title">{{scrPerNeg.quest}}</span>
+                                        <span class="title">{{scrPerNeg.question}}</span>
 
-                                        <p *ngFor="let resp of scrPerNeg.opts; index as j;">
+                                        <p *ngFor="let resp of scrPerNeg.options; index as j;">
                                             <label>
                                             <input class="with-gap" (change)="changedPerNeg(j, i)" [(ngModel)]="scrPerNeg.resp" 
-                                            formControlName="{{'scrPerNeg'+i}}" id="{{'scrPerNeg'+i}}" 
-                                            value="{{resp}}" type="radio" required>
-                                            <span>{{resp}}</span>
+                                            formControlName="{{'scrPerNeg'+i}}" id="{{'scrPerNeg'+j}}" 
+                                            value="{{resp.id}}" type="radio" required>
+                                            <span>{{resp.name}}</span>
                                           </label>
                                         </p>
 
@@ -45,14 +45,14 @@
                             <ul class="collection">
                                 <form ngNativeValidate [formGroup]="formScrPerMer" (ngSubmit)="scrPerMerSend()">
                                     <li class="collection-item avatar" *ngFor="let scrPerMer of scrPerMer; index as i;">
-                                        <span class="title">{{scrPerMer.quest}}</span>
+                                        <span class="title">{{scrPerMer.question}}</span>
 
-                                        <p *ngFor="let resp of scrPerMer.opts; index as j;">
+                                        <p *ngFor="let resp of scrPerMer.options; index as j;">
                                             <label>
                                             <input class="with-gap" (change)="changedPerMer(j, i)" [(ngModel)]="scrPerMer.resp" 
-                                            formControlName="{{'scrPerMer'+i}}" id="{{'scrPerMer'+i}}"
-                                            value="{{resp}}" type="radio"/>
-                                            <span>{{resp}}</span>
+                                            formControlName="{{'scrPerMer'+i}}" id="{{'scrPerMer'+j}}"
+                                            value="{{resp.id}}" type="radio"/>
+                                            <span>{{resp.name}}</span>
                                           </label>
                                         </p>
                                     </li>
@@ -74,14 +74,14 @@
                             <ul class="collection">
                                 <form ngNativeValidate [formGroup]="formScrRep" (ngSubmit)="scrRepSend()">
                                     <li class="collection-item avatar" *ngFor="let scrRep of scrRep; index as i;">
-                                        <span class="title">{{scrRep.quest}}</span>
+                                        <span class="title">{{scrRep.question}}</span>
 
-                                        <p *ngFor="let resp of scrRep.opts; index as j;">
+                                        <p *ngFor="let resp of scrRep.options; index as j;">
                                             <label>
                                             <input class="with-gap" (change)="changedRep(j, i)" [(ngModel)]="scrRep.resp" 
-                                            formControlName="{{'scrRep'+i}}" id="{{'scrRep'+i}}" 
-                                            value="{{resp}}" type="radio"/>
-                                            <span>{{resp}}</span>
+                                            formControlName="{{'scrRep'+i}}" id="{{'scrRep'+j}}" 
+                                            value="{{resp.id}}" type="radio"/>
+                                            <span>{{resp.name}}</span>
                                           </label>
                                         </p>
                                     </li>
@@ -107,7 +107,7 @@
                                         <p *ngFor="let resp of scrDir.options; index as j;">
                                             <label>
                                             <input class="with-gap" (change)="changedDir(j, i)" [(ngModel)]="scrDir.resp" 
-                                            formControlName="{{'scrDir'+i}}" id="dir_{{'scrDir'+i}}" 
+                                            formControlName="{{'scrDir'+i}}" id="dir_{{'scrDir'+j}}" 
                                             value="{{resp.id}}" type="radio"  />
                                             <span>{{resp.name}}</span>
                                           </label>
@@ -142,10 +142,10 @@
                                     <li class="collection-item avatar" *ngFor="let qcQc of qcQc; index as i;">
                                         <span class="title">{{qcQc.quest}}</span>
 
-                                        <p *ngFor="let resp of qcQc.opts">
+                                        <p *ngFor="let resp of qcQc.opts; index as j;">
                                             <label>
                                                 <input class="with-gap" [(ngModel)]="qcQc.resp" formControlName="{{'qcQc'+i}}"
-                                                id="{{'qcQc'+i}}" value="{{resp}}" type="radio"  />
+                                                id="{{'qcQc'+j}}" value="{{resp}}" type="radio"  />
                                                 <span>{{resp}}</span>
                                           </label>
                                         </p>
@@ -237,9 +237,9 @@
                                     <li class="collection-item avatar" *ngFor="let preg12a13 of preg12a13; index as i;">
                                         <span class="title">{{preg12a13.quest}}</span>
 
-                                        <p *ngFor="let resp of preg12a13.opts">
+                                        <p *ngFor="let resp of preg12a13.opts; index as j;">
                                             <label>
-                                                <input class="with-gap" [(ngModel)]="preg12a13.resp" formControlName="{{'preg12a13'+i}}" id="{{'preg12a13'+i}}" value="{{resp}}" type="radio"  />
+                                                <input class="with-gap" [(ngModel)]="preg12a13.resp" formControlName="{{'preg12a13'+i}}" id="{{'preg12a13'+j}}" value="{{resp}}" type="radio"  />
                                                 <span>{{resp }}</span>
                                               </label>
                                         </p>
@@ -318,9 +318,9 @@
                                     <li class="collection-item avatar" *ngFor="let preg19a28 of preg19a28; index as i;">
                                         <span class="title">{{preg19a28.quest}}</span>
 
-                                        <p *ngFor="let resp of preg19a28.opts">
+                                        <p *ngFor="let resp of preg19a28.opts; index as j;">
                                             <label>
-                                            <input class="with-gap" [(ngModel)]="preg19a28.resp" formControlName="{{'preg19a28'+i}}" id="{{'preg19a28'+i}}" value="{{resp}}" type="radio"  />
+                                            <input class="with-gap" [(ngModel)]="preg19a28.resp" formControlName="{{'preg19a28'+i}}" id="{{'preg19a28'+j}}" value="{{resp}}" type="radio"  />
                                             <span>{{resp}}</span>
                                           </label>
                                         </p>

@@ -401,9 +401,10 @@ export class DashboardComponent implements OnInit {
     });
 
     var dataCode = 'STATE';
-    this.userService.getDataCode(dataCode).subscribe(
+    this.userService.getDataCode('STATE').subscribe(
       data => {
         this.stateOptions = _.sortBy(data.codeValues, 'name');
+        console.log("states",this.stateOptions)
       },
       error => console.error('There was an error getting code values ' + dataCode, error)
     )
