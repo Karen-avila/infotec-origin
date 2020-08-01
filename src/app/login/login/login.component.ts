@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 import * as M from 'materialize-css';
 
 import { UserService } from '../../services/service.index';
-import { UserLog } from '../../models/user-log.module';
+import { UserLog } from '../../models/user-log.model';
 
 import swal from 'sweetalert';
 import { environment } from 'src/environments/environment';
