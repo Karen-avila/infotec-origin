@@ -7,25 +7,25 @@
           <div class="row" id="PDFpagare">
             <img class="responsive-img logo-bdb" src="../../../assets/logo.png">
             <span class="card-title titulos black-text"><b>PAGARÉ</b></span><br>
-            <div class="valor">VALOR: $XXX,XXX.00</div>
+            <div class="valor">VALOR: {{ loanData.principal | currency:"MXN":"symbol" }}</div>
             <div class="justificacion">
               <div class="col s12 separa">
-                Por el presente pagaré del valor recibido, el suscrito
-                <div class="input-field inline">
-                  <input type="text" class="validate">
-                </div>
+                Por el presente pagaré del valor recibido, el suscrito <b>{{ loanData.clientName }}</b>
+               <!--  <div class="input-field inline">
+                  <input type="text" class="validate" value=>
+                </div> -->
                 , me obligo incondicionalmente pagar a la
                 orden de Banco del Bienestar, Sociedad Nacional de Crédito, Institución de Banca de
                 Desarrollo (el “Tenedor”), la cantidad total de
-                $
-                <div class="input-field inline">
+               <!--  <div class="input-field inline">
                   <input id="cantidad_numero" type="text" class="validate">
-                </div>
-                (
-                <div class="input-field inline">
+                </div> -->
+                <b>({{ loanData.principal | currency:"MXN":"symbol" }} ,
+                <!-- <div class="input-field inline">
                   <input id="cantidad_letra" type="text" class="validate">
-                </div>
-                M.N.), cuya suma será pagadera a la vista. Todas las cantidades pagaderas en términos
+                </div> -->
+                CINCUENTA MIL PESOS 00/100
+                M.N.)</b>, cuya suma será pagadera a la vista. Todas las cantidades pagaderas en términos
                 de este PAGARÉ, serán cubiertas en el domicilio del Tenedor, ubicado en Avenida Río
                 Magdalena 115, Col. Tizapán San Ángel, C.P. 01090,
                 Alcaldía Álvaro Obregón, en la Ciudad de México, o en cualquier otro lugar que el
@@ -33,7 +33,7 @@
               </div>
               <div class="col s12 separa">
                 El pago de la cantidad indicada anteriormente, se deberá efectuar precisamente el
-                día_________ señalada como fecha de vencimiento. Cuando
+                día <b>{{ expiredDate }}</b> señalada como fecha de vencimiento. Cuando
                 la fecha en que debe hacerse el pago no sea un día inhábil, el pago deberá efectuarse al
                 día hábil inmediato siguiente.
               </div>
@@ -78,13 +78,13 @@
                 PAGARÉ.
               </div>
               <div class="col s12 fecha-pagare">
-                ____________,__________ a ___ de _______ de 202_
+                <b>Ciudad de México, {{date}}</b>
               </div>
               <div class="col s12 separa">
                 [ESPACIO PARA INCORPORAR LA CADENA GENERADA AL FIRMARSE EL PAGARÉ]
               </div>
               <div class="col s12 separa">
-                [Nombre del Cliente]
+                <b>{{ loanData.clientName }}</b>
               </div>
               <div class="col s12 separa">
                 El Cliente firma el presente título de crédito con su firma electrónica avanzada vigente

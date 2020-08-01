@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import swal from 'sweetalert';
 import { UserService } from '../../services/user/user.service';
-import { UserActivate } from '../../models/user-activate.module'
+import { UserActivate } from '../../models/user-activate.model';
 import { environment } from 'src/environments/environment';
 
 @Component({

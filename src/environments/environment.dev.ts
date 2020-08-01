@@ -1,5 +1,6 @@
 export const environment = {
   production: true,
+  passwordShaded: false,
   apis_url : 'https://apis.infotec.mx',
   mifos_url : 'https://mifos.infotec.mx',
   reCaptchaKey: "6LdQErYZAAAAACb2f4AgheH_SFBH131W8QCKvnvA",

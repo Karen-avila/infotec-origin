@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserService, CurpService } from '../../services/service.index';
+import { UserService, CurpService, LoanDataService } from '../../services/service.index';
 import { PersonalReferences } from '../../models/personal-references.model' ;
 import { ActivatedRoute } from '@angular/router';
 import { Options, LabelType } from 'ng5-slider';
@@ -17,6 +17,7 @@ declare const MStepper: any;
 
 // Pick Address
 import { MouseEvent } from '@agm/core';
+
 interface Marker {
   lat: number;
   lng: number;
@@ -194,6 +195,7 @@ export class DashboardComponent implements OnInit {
   catPorcentaje = 0;
   // -------------------
   constructor(
+    public loanService: LoanDataService,
     public userService: UserService,
     private curpService: CurpService,
     private route: ActivatedRoute,
@@ -405,6 +407,7 @@ export class DashboardComponent implements OnInit {
       },
       error => console.error('There was an error getting code values ' + dataCode, error)
     )
+
   }
 
   get f() { return this.form.controls; }

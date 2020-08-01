@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpRequest, HttpHeaders } from '@angular/common/http';
 
 import { User } from '../../models/user.model';
-import { UserLog } from '../../models/user-log.module';
-import { UserActivate } from '../../models/user-activate.module';
+import { UserLog } from '../../models/user-log.model';
+import { UserActivate } from '../../models/user-activate.model';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
