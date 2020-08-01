@@ -25,7 +25,7 @@ export class QuestionComponent implements OnInit {
 
   scrPerNeg = [
     {
-      dataCode: "antiguedad_de_negocio",
+      dataCode: "antiguedad_del_negocio",
       columnId: "campo_1",
       question: "",
       options: [],
@@ -46,7 +46,7 @@ export class QuestionComponent implements OnInit {
       value_quest: "0.2"
     },
     {
-      dataCode: "principalmente_a_que_plazo_se_pagan_las_ventas",
+      dataCode: "principalmente_a_que_plazo_se_cobran_las_ventas",
       columnId: "campo_4",
       question: "",
       options: [],
@@ -60,7 +60,7 @@ export class QuestionComponent implements OnInit {
       value_quest: "0.1"
     },
     {
-      dataCode: "desde_hace_cuanto_tiempo_el_negocio_es_formal",
+      dataCode: "desde_hace_cuento_tiempo_el_negocio_es_formal",
       columnId: "campo_5",
       question: "",
       options: [],
@@ -182,14 +182,14 @@ export class QuestionComponent implements OnInit {
       value_quest: "0.15"
     },
     {
-      dataCode: "selecciona_la_opcion_que_describa_mejor_la_relac",
+      dataCode: "seleccione_la_opcion_que_describa_mejor_la_relac",
       columnId: "campo_4",
       question: "",
       options: [],
       value_quest: "0.3"
     },
     {
-      dataCode: "como_calificaria_el_historial_de_credito_de_los_",
+      dataCode: "como_calificaria_el_historial_de_credito_DE",
       columnId: "campo_5",
       question: "",
       options: [],
@@ -543,12 +543,15 @@ export class QuestionComponent implements OnInit {
   instPefNeg;
   instQrmCnct;
   prins;
+  instance
 
   constructor(
     public userService: UserService
   ) { }
 
   ngOnInit() {
+    var elems = document.querySelectorAll('.modal');
+    this.instance = M.Modal.init(elems);
     M.AutoInit();
     let select = document.querySelectorAll('select');
     M.FormSelect.init(select);
@@ -684,15 +687,96 @@ export class QuestionComponent implements OnInit {
       preg33: new FormControl(null, [Validators.required])
     });
   
-    // Read DataCodes Values
-    // Cuestionario Direccion
-    let preConf = this.scrDir;
+   this.llenaDireccion(this.scrDir);
+   this.llenaReputacion(this.scrRep);
+   this.llenaPerfMerc(this.scrPerMer); 
+   this.llenaPerfNeg(this.scrPerNeg); 
+
+
+  }
+
+  llenaPerfNeg(scrPerNeg){
+    // Cuestionario PerfilNegocio -- scrPerNeg
+    let preConf = scrPerNeg;
     let questions:any = []; 
     preConf.forEach(function (element) {
       this.userService.getDataCode(element.dataCode).subscribe(
         data => {
           element.question = data.description;
-          var options = [];
+          let options = [];
+          _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
+            options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+          });
+          element.options = options;
+        },
+        error => {
+          console.error('There was an error getting code values ' + element.dataCode, error);
+        }
+      );
+      questions.push(element);
+    }, this);
+    this.scrPerNeg = questions;
+    // Cuestionario PerfilNegocio -- Fin
+  }
+
+  llenaPerfMerc(scrPerMer){
+    // Cuestionario PerfilMercado -- scrPerMer
+    let preConf = scrPerMer;
+    let questions:any = []; 
+    preConf.forEach(function (element) {
+      this.userService.getDataCode(element.dataCode).subscribe(
+        data => {
+          element.question = data.description;
+          let options = [];
+          _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
+            options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+          });
+          element.options = options;
+        },
+        error => {
+          console.error('There was an error getting code values ' + element.dataCode, error);
+        }
+      );
+      questions.push(element);
+    }, this);
+    this.scrPerMer = questions;
+    // Cuestionario PerfilMercado -- Fin
+  }
+
+  llenaReputacion(scrRep){
+    // Cuestionario Reputacion -- scrRep
+    let preConf = scrRep;
+    let questions:any = []; 
+    preConf.forEach(function (element) {
+      this.userService.getDataCode(element.dataCode).subscribe(
+        data => {
+          element.question = data.description;
+          let options = [];
+          _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
+            options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+          });
+          element.options = options;
+        },
+        error => {
+          console.error('There was an error getting code values ' + element.dataCode, error);
+        }
+      );
+      questions.push(element);
+    }, this);
+    this.scrRep = questions;
+    // Cuestionario Reputacion -- Fin
+  }
+
+llenaDireccion(scrDir){
+   // Read DataCodes Values
+    // Cuestionario Direccion -- scrDir
+    let preConf = scrDir;
+    let questions:any = []; 
+    preConf.forEach(function (element) {
+      this.userService.getDataCode(element.dataCode).subscribe(
+        data => {
+          element.question = data.description;
+          let options = [];
           _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
             options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
           });
@@ -706,12 +790,7 @@ export class QuestionComponent implements OnInit {
     }, this);
     this.scrDir = questions;
     // Cuestionario Direccion -- Fin
-
-    // Cuestionario Reputacion
-    // Cuestionario Reputacion -- Fin
-
-
-  }
+}
 
   changedPerNeg(j, i) {
     //this.scrPerNeg[i].value = this.scrPerNeg[i].values[j]
@@ -821,7 +900,8 @@ export class QuestionComponent implements OnInit {
     if ((this.formScrPerNeg.valid) && (this.formScrPerMer.valid)
       && (this.formScrRep.valid) && (this.formScrDir.valid)
       && (this.formQcQc.valid) && (this.formQcQcn.valid)) {
-      const questionForm = {
+        this.instance[0].open();
+        const questionForm = {
         questions: true,
 
         scrPerNeg: this.scrPerNeg,

@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 
 import { environment } from '../../../environments/environment';
 import jsSHA from "jssha";
+import { ForgotPassword } from 'src/app/models/forgot-password.module';
 
 @Injectable({
   providedIn: 'root'
@@ -43,7 +44,6 @@ export class UserService {
     let headers = environment.headers_apis;
     let api_keys = environment.gravitee_api_keys;
     headers['X-Gravitee-Api-Key'] = api_keys['registro'];
-
     return this.http.post(url, object, { headers }).map((res: any) => {
       // console.log("creado", res)
       //swal("¡Felicidades!", "Felicidades usuario creado correctamente.", "success");

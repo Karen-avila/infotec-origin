@@ -11,6 +11,8 @@ import { UserLog } from '../../models/user-log.module';
 
 import swal from 'sweetalert';
 import { environment } from 'src/environments/environment';
+import { User } from 'src/app/models/user.model';
+import { ForgotPassword } from 'src/app/models/forgot-password.module';
 
 @Component({
   selector: 'app-login',
@@ -64,7 +66,8 @@ step
     });
 
    this.form1 = new FormGroup({
-      email: new FormControl(null,[Validators.required, Validators.email])
+      email: new FormControl(null,[Validators.required, Validators.email]),
+      curp: new FormControl(null, Validators.required)
    });
 
   }
@@ -72,16 +75,22 @@ step
   get f() { return this.form.controls; }
   get fgt() { return this.form1.controls; }
 
-  recuperarpsw(){
+  /* recuperarpsw(){
     // console.log("form is valid?", this.form1.valid);
     if(this.form1.valid){
     // console.log("form", this.form1.value);
       //enviar datos a back
-    this.instance[0].open();
+    let data= new ForgotPassword(this.form1.value.email, this.form1.value.curp)
+    this.userService.forgotPassword(data)
+    .subscribe(res => {
+      this.instance[0].open(); //revisar donde quedara
+      // console.log("esto responde el servicio register",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
+      //this.instance[1].close();
+    });
     } else{
       swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
     }
-  }
+  } */
 
   onSignInSubmit() {
 
@@ -120,7 +129,8 @@ this.router.navigate(["dashboard"]);
   login(){
 
     console.log("form login is valid?", this.form.valid);
-    if(this.form.valid){    
+    if(this.form.valid){   
+      this.instance[1].open();
       var user:UserLog;
       if(environment.passwordShaded){
           user = new UserLog(this.form.value.email,
@@ -132,7 +142,9 @@ this.router.navigate(["dashboard"]);
        }
       this.userService.login(user)
         .subscribe(res=>{
+          this.instance[0].open();
           this.router.navigate(["dashboard",{email:this.form.value.email}]);
+          this.instance[1].close();
          /*  this.router.navigate(["dashboard"]);  */
           //this.router.navigate(["register",{id:this.step}]); ///revisar donde quedara
 
@@ -144,11 +156,9 @@ this.router.navigate(["dashboard"]);
 
   viewPassword(){
     if(this.icon){
-      // console.log("view password");
       this.icon=false;
       this.passType="text";
     }else{
-      // console.log("not view password");
       this.icon=true;
       this.passType="password";
     }

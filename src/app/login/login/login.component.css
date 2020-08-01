@@ -1,3 +1,9 @@
 .cursor{
     cursor:pointer;
 }
+.mayu{
+    text-transform: uppercase;
+}
+#loader{
+    top: 30% !important;
+}
