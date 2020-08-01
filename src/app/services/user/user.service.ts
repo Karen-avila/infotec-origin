@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 
 import { environment } from '../../../environments/environment';
 import jsSHA from "jssha";
+import { ForgotPassword } from 'src/app/models/forgot-password.module';
 
 @Injectable({
   providedIn: 'root'

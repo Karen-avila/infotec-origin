@@ -543,12 +543,15 @@ export class QuestionComponent implements OnInit {
   instPefNeg;
   instQrmCnct;
   prins;
+  instance
 
   constructor(
     public userService: UserService
   ) { }
 
   ngOnInit() {
+    var elems = document.querySelectorAll('.modal');
+    this.instance = M.Modal.init(elems);
     M.AutoInit();
     let select = document.querySelectorAll('select');
     M.FormSelect.init(select);
@@ -897,7 +900,8 @@ llenaDireccion(scrDir){
     if ((this.formScrPerNeg.valid) && (this.formScrPerMer.valid)
       && (this.formScrRep.valid) && (this.formScrDir.valid)
       && (this.formQcQc.valid) && (this.formQcQcn.valid)) {
-      const questionForm = {
+        this.instance[0].open();
+        const questionForm = {
         questions: true,
 
         scrPerNeg: this.scrPerNeg,

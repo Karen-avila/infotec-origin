@@ -157,4 +157,6 @@ th {
   agm-map {
     height: 400px;
   }
-
+#loader{
+    top: 30% !important;
+}

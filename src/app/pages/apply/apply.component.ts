@@ -4,13 +4,11 @@ import * as M from 'materialize-css';
 
 import swal from 'sweetalert';
 import { Router } from '@angular/router';
-
-//-------------
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from '../../services/service.index';
 import { User } from '../../models/user.model';
-import * as CryptoJS from 'crypto-js';
-import { environment } from 'src/environments/environment';
+
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-apply',
@@ -21,7 +19,6 @@ export class ApplyComponent implements OnInit {
   instance
   popup;
   recaptcha: any[];
-  //-----
   form: FormGroup;
   formval: FormGroup;
   dic = [
@@ -30,7 +27,6 @@ export class ApplyComponent implements OnInit {
     "cojo",
     "chingada"
   ]
-  //-------
   passType = "password";
   rePassType = "password";
   icon:boolean=true;
@@ -48,7 +44,7 @@ export class ApplyComponent implements OnInit {
     this.reCaptchaKey = environment.reCaptchaKey;
 
     var elems = document.querySelectorAll('.modal');
-    this.instance = M.Modal.init(elems);
+    this.instance = M.Modal.init(elems,{opacity:0.7});
 
     var select = document.querySelectorAll('select');
     var instances = M.FormSelect.init(select);
