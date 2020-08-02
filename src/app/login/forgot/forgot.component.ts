@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import swal from 'sweetalert';
 import * as M from 'materialize-css';
 import { UserService } from '../../services/user/user.service';
-import { UserActivate } from '../../models/user-activate.module'
+import { UserActivate } from '../../models/user-activate.model'
 import { environment } from 'src/environments/environment';
 
 @Component({
