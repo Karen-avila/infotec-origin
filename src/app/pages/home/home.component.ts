@@ -74,24 +74,24 @@ car = this.carr();
     var plazoCredito = 18;
     // Monto del Pago Mensual
     var pmt = this.finance.PMT(tasaInteresMensual, plazoCredito, montoCapital);
-    //// console.log("PAGO MENSUAL ", pmt.toFixed(2));
+    //// //console.log("PAGO MENSUAL ", pmt.toFixed(2));
     var pagos = [];
     pagos.push(montoCapital);
     for (var i = 0; i < plazoCredito; i++) {
         pagos.push(pmt);
     }
     var tirMensual = this.finance.IRR.apply(this, pagos);
-    //// console.log("TIR MENSUAL " +tirMensual.toFixed(2) +"%");
+    //// //console.log("TIR MENSUAL " +tirMensual.toFixed(2) +"%");
     var tirAnual = tirMensual * 12;
-    //// console.log("TIR ANUAL "+ tirAnual.toFixed(2)+"%");
+    //// //console.log("TIR ANUAL "+ tirAnual.toFixed(2)+"%");
     var cat = (Math.pow((1 + (tirMensual / 100)), 12)) - 1;
-    //// console.log("CAT "+cat.toFixed(2)+"%");
+    //// //console.log("CAT "+cat.toFixed(2)+"%");
     this.catPorcentaje  = ((Math.pow((1 + (tirMensual / 100)), 12)) - 1) * 100;    
-    //// console.log("CAT "+ this.catPorcentaje.toFixed(2)+"%");
+    //// //console.log("CAT "+ this.catPorcentaje.toFixed(2)+"%");
   }
 
   ngOnInit() {
-    // console.log("en home")
+    // //console.log("en home")
        
       let elems = document.querySelectorAll('.carousel');
       M.Carousel.init(elems, {fullWidth: true, duration: 500});
@@ -103,7 +103,7 @@ car = this.carr();
 
 carr(){
     this.tim = setInterval(function(){
-    //// console.log("hi")
+    //// //console.log("hi")
     let carusel = document.querySelector(".carousel");
     let nxt = M.Carousel.getInstance(carusel);
     nxt.next(1);

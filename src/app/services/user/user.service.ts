@@ -37,7 +37,7 @@ export class UserService {
   }
 
   createUser(user: User) {
-    // console.log("Service create user");
+    // //console.log("Service create user");
     const object = JSON.stringify(user);
 
     let url = environment.apis_url + '/V1.0/banbi/creditosimple/registro';
@@ -45,19 +45,19 @@ export class UserService {
     let api_keys = environment.gravitee_api_keys;
     headers['X-Gravitee-Api-Key'] = api_keys['registro'];
     return this.http.post(url, object, { headers }).map((res: any) => {
-      // console.log("creado", res)
+      // //console.log("creado", res)
       //swal("¡Felicidades!", "Felicidades usuario creado correctamente.", "success");
 
       return true;
     }).catch(err => {
-      console.log(err);
+      //console.log(err);
       return err;
     });
 
   }
 
   activate(user: UserActivate) {
-    // console.log("Service activate user");
+    // //console.log("Service activate user");
 
     let url = environment.apis_url + '/V1.0/banbi/creditosimple/registro';
     let headers = environment.headers_apis;
@@ -66,7 +66,7 @@ export class UserService {
     const object = JSON.stringify(user);
 
     return this.http.post(url, object, { headers }).map((res: any) => {
-      // console.log("creado", res)
+      // //console.log("creado", res)
       swal("¡Felicidades!", "Felicidades usuario activado correctamente.", "success");
 
       return true;
@@ -76,7 +76,7 @@ export class UserService {
   }
 
   sendPersonalData(data) {
-    // console.log("Service create user");
+    // //console.log("Service create user");
     let url = environment.apis_url + '/V1.0/banbi/creditosimple/registro';
     let headers = environment.headers_apis;
     let api_keys = environment.gravitee_api_keys;
@@ -84,14 +84,14 @@ export class UserService {
 
     const object = JSON.stringify(data);
     return this.http.post(url, object, { headers }).map((res: any) => {
-      // console.log("creado", res)
+      // //console.log("creado", res)
       swal("¡Felicidades!", "Información guardada correctamente.", "success");
 
       return true;
     }).catch(err => {
       swal('Existio un error' + err.status);
       this.prosessing = false;
-      console.log(err.status);
+      //console.log(err.status);
       return err;
     });
   }
@@ -120,15 +120,15 @@ export class UserService {
     let headers = environment.headers_mifos;
     let api_keys = environment.gravitee_api_keys;
     headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
-    console.log(user);
+    //console.log(user);
     const object = JSON.stringify(user);
 
-    // console.log("Esto es lo que enviare a donde lo tenga que enviar", object);
+    // //console.log("Esto es lo que enviare a donde lo tenga que enviar", object);
 
     return this.http.post(url, object, { headers }).map((res: any) => {
-      // console.log("creado", res)
+      // //console.log("creado", res)
       swal("¡Felicidades!", "Inicio de sesión exitoso.", "success");
-      console.log(res)
+      //console.log(res)
       localStorage.setItem('clientid', res.userId);
       localStorage.setItem('token', res.authenticated);
       return true;
@@ -139,7 +139,7 @@ export class UserService {
         swal('Verifica que tu usuario/contraseña sean correctos');
       }
       this.prosessing = false;
-      console.log(err);
+      //console.log(err);
       return err;
     });
   }
@@ -149,7 +149,7 @@ export class UserService {
 
     formData.append('file', file);
     formData.append('name', name);
-    // console.log("Document Service");
+    // //console.log("Document Service");
     let clientid = localStorage.getItem('clientid');
     let url = environment.apis_url + '/V1.0/fineract-protected/clients/' + clientid + '/documents';
     let api_keys = environment.gravitee_api_keys;
@@ -165,7 +165,7 @@ export class UserService {
   }
 
   sendIdentification(data) {
-    // console.log("Document Service");
+    // //console.log("Document Service");
     let clientid = localStorage.getItem('clientid');
     let url = environment.apis_url + '/V1.0/fineract-protected/clients/' + clientid + '/identifiers';
     let api_keys = environment.gravitee_api_keys;
@@ -176,14 +176,14 @@ export class UserService {
 
     //const object = JSON.stringify(userDocs);
     return this.http.post(url, object, { headers: headers }).map((res: any) => {
-      // console.log("Enviados", res)
+      // //console.log("Enviados", res)
       return res;
     }).catch(err => {
       if (err.status == '0') {
-        console.log('Existio un error al procesar tu identificación, intentalo más tarde');
+        //console.log('Existio un error al procesar tu identificación, intentalo más tarde');
       }
       this.prosessing = false;
-      console.log(err);
+      //console.log(err);
       return err;
     });
   }
@@ -230,7 +230,7 @@ export class UserService {
         swal('Existio un error al procesar tus referencias personales, intentalo más tarde');
       }
       this.prosessing = false;
-      console.log(err);
+      //console.log(err);
       return err;
     });
   }

@@ -19,20 +19,17 @@ export class PagareComponent implements OnInit {
   constructor(public loanService: LoanDataService) { }
 
   ngOnInit() {
-/*     this.expiredDate = moment() */
     this.date = moment().locale('es').format('Do MMMM YYYY');
-        /*  */
+        
         this.loanService.getLoanData().subscribe(
           data => {
             this.loanData = data;
-            console.log("view data loan",data.repaymentSchedule)
             this.expiredDate = moment(data.timeline.expectedMaturityDate[0] + "/" + data.timeline.expectedMaturityDate[1] + "/" + data.timeline.expectedMaturityDate[2]).locale('es').format('Do MMMM YYYY');
             this.date = moment().locale('es').format('Do MMMM YYYY');
-            console.log("viewwwwww",this.expiredDate)
           },
           error => console.error('Terror en data loan ')
         )
-        /*  */
+        
   }
 
   downloadPDF($event, target) {
@@ -41,9 +38,15 @@ export class PagareComponent implements OnInit {
     }).then(async (canvas) => {
       const imgData = await canvas.toDataURL('image/png');
       const doc = new jsPDF('p', 'mm');
+      
       doc.addImage(imgData, 'PNG', 10, 10);
+      var base = doc.output('datauristring');
+      //console.log("ver estooo",imgData);
+      /* //console.log("ver estooo",base); */
       doc.save(`${target}.pdf`);
     });
   }
 
 }
+
+

@@ -50,7 +50,7 @@ export class ApplyComponent implements OnInit {
     var instances = M.FormSelect.init(select);
 
     var stepperDiv = document.querySelector('.stepper');
-    //// console.log(stepperDiv);
+    //// //console.log(stepperDiv);
     var stepper = new MStepper(stepperDiv, {
       // Default active step.
       firstActive: 0,
@@ -93,10 +93,10 @@ export class ApplyComponent implements OnInit {
   //------------
 
   resolved(captchaResponse: string) {
-    console.log(`Resolved response token: ${captchaResponse}`);
+    //console.log(`Resolved response token: ${captchaResponse}`);
     // this.form.get('token').setValue(captchaResponse);
 
-    console.log(this.form.value);
+    //console.log(this.form.value);
 
   }
 
@@ -118,7 +118,7 @@ equalPass(p1:string,p2:string){
       let val1 = group.controls[p1].value;
 
       for (let i of this.dic) {
-        //// console.log("compare",val1,"vs",i)
+        //// //console.log("compare",val1,"vs",i)
         if (val1 === i) {
           return { isMatch: true };
         }
@@ -142,14 +142,14 @@ equalPass(p1:string,p2:string){
     }
     if (this.form.valid) {
       this.instance[1].open();
-      /* // console.log("form esto envio", this.form.value); */
+      /* // //console.log("form esto envio", this.form.value); */
       //enviar datos a back
       /* this.userService.createUser(this.form.value) */
-      // console.log("apply envia", user);
+      // //console.log("apply envia", user);
       this.userService.createUser(user)
         .subscribe(res => {
           this.instance[0].open(); //revisar donde quedara
-          // console.log("esto responde el servicio register",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
+          // //console.log("esto responde el servicio register",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
           this.instance[1].close();
         });
 
@@ -166,11 +166,11 @@ equalPass(p1:string,p2:string){
   //-------------
   viewRePassword() {
     if (this.reIcon) {
-      //// console.log("view repassword");
+      //// //console.log("view repassword");
       this.reIcon = false;
       this.rePassType = "text";
     } else {
-      //// console.log("not view repassword");
+      //// //console.log("not view repassword");
       this.reIcon = true;
       this.rePassType = "password";
     }
@@ -178,11 +178,11 @@ equalPass(p1:string,p2:string){
 
   viewPassword() {
     if (this.icon) {
-      //// console.log("view password");
+      //// //console.log("view password");
       this.icon = false;
       this.passType = "text";
     } else {
-      //// console.log("not view password");
+      //// //console.log("not view password");
       this.icon = true;
       this.passType = "password";
     }
@@ -190,7 +190,7 @@ equalPass(p1:string,p2:string){
 
   validacion() {
     if (this.formval.valid) {
-      // console.log("formval", this.formval.value);
+      // //console.log("formval", this.formval.value);
       this.router.navigate(["home"]);
       //enviar datos a back
       //this.popup[0].open();

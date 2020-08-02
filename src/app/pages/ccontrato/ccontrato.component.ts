@@ -13,6 +13,10 @@ export class CcontratoComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    //anualInterestRate  --> interes anual
+    //totalRepaymentExpected --> MOnto total a pagar
+    //numberOfRepayments --> numero de pagos
+    //humanReadable --> fecha limite depago
   }
 
   downloadPDF($event, target) {
