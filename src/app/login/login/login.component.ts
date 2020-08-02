@@ -40,7 +40,7 @@ step
     //this.step="2";
     /* localStorage.setItem('step','2');
     this.step = localStorage.getItem('step'); */
-// console.log("")
+// //console.log("")
     if(localStorage.getItem('step')){
       this.step = localStorage.getItem('step');
     }else{
@@ -76,15 +76,15 @@ step
   get fgt() { return this.form1.controls; }
 
   /* recuperarpsw(){
-    // console.log("form is valid?", this.form1.valid);
+    // //console.log("form is valid?", this.form1.valid);
     if(this.form1.valid){
-    // console.log("form", this.form1.value);
+    // //console.log("form", this.form1.value);
       //enviar datos a back
     let data= new ForgotPassword(this.form1.value.email, this.form1.value.curp)
     this.userService.forgotPassword(data)
     .subscribe(res => {
       this.instance[0].open(); //revisar donde quedara
-      // console.log("esto responde el servicio register",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
+      // //console.log("esto responde el servicio register",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
       //this.instance[1].close();
     });
     } else{
@@ -96,41 +96,41 @@ step
 
    // this.output = null;
 
-// console.log("login component")
+// //console.log("login component")
 this.router.navigate(["dashboard"]);
   }
 
 
   recuperar(){
-    // console.log("Recuperar");
+    // //console.log("Recuperar");
     //M.Modal.open(); //Abrir pop up de cambio de contraseña
   }
 
   resolved(captchaResponse: string) {
-    console.log(`Resolved response token: ${captchaResponse}`);
+    //console.log(`Resolved response token: ${captchaResponse}`);
     // this.form.get('token').setValue(captchaResponse);
 
-    console.log(this.form.value);
+    //console.log(this.form.value);
 
   }
 
   cancel(){
-    // console.log("cancelar");
+    // //console.log("cancelar");
     document.getElementById("login").classList.remove("hide");
     document.getElementById("forgot").classList.add("hide");
   }
 
   forgot(){
-    // console.log("forgot");
+    // //console.log("forgot");
     document.getElementById("login").classList.add("hide");
     document.getElementById("forgot").classList.remove("hide");
   }
 
   login(){
-
-    console.log("form login is valid?", this.form.valid);
+    this.instance[1].open();
+    //console.log("form login is valid?", this.form.valid);
     if(this.form.valid){   
-      this.instance[1].open();
+      
       var user:UserLog;
       if(environment.passwordShaded){
           user = new UserLog(this.form.value.email,
@@ -150,6 +150,7 @@ this.router.navigate(["dashboard"]);
 
         });
     } else{
+      this.instance[1].close();
       swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
     }
   }

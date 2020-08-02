@@ -283,7 +283,7 @@
                     <div class="input-field col s12 m6 l6">
                         <select class="validate browser-default" formControlName="entidadfednaci" name="Entidad Federativa de Nacimiento" id="entidadfednaci">
                             <option value="" disabled selected>Selecciona una opcion</option>
-                            <option value="state.id" *ngFor="let state of stateOptions">{{state.name}}</option>
+                            <option [value]="state.name" *ngFor="let state of stateOptions">{{state.name}}</option>
                         </select>
                         <label>Entidad Federativa de Nacimiento *</label>
                         <div class="blue-text" *ngIf="f.entidadfednaci.errors"></div>
