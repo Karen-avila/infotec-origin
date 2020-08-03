@@ -128,7 +128,6 @@ this.router.navigate(["dashboard"]);
 
   login(){
     this.instance[1].open();
-    //console.log("form login is valid?", this.form.valid);
     if(this.form.valid){   
       
       var user:UserLog;
@@ -140,6 +139,7 @@ this.router.navigate(["dashboard"]);
         user = new UserLog(this.form.value.email,
           this.form.value.password);
        }
+
       this.userService.login(user)
         .subscribe(res=>{
           this.instance[0].open();
@@ -148,6 +148,8 @@ this.router.navigate(["dashboard"]);
          /*  this.router.navigate(["dashboard"]);  */
           //this.router.navigate(["register",{id:this.step}]); ///revisar donde quedara
 
+        },err=>{
+          this.instance[1].close();
         });
     } else{
       this.instance[1].close();
