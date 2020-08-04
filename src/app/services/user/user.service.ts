@@ -71,14 +71,17 @@ export class UserService {
     headers['X-Gravitee-Api-Key'] = api_keys['registro'];
     const object = JSON.stringify(user);
 
-    return this.http.post(url, object, { headers }).map((res: any) => {
-      // //console.log("creado", res)
-      swal("¡Felicidades!", "Felicidades usuario activado correctamente.", "success");
+    return this.http.post(url, object, { headers }).pipe(
+      map((res: any) => {
+        swal("¡Felicidades!", "Felicidades usuario activado correctamente.", "success");
+        return true;
+      }),
+      catchError(err => {
+        return throwError(err);
+      })
+    );
 
-      return true;
-    }).catch(err => {
-      return err;
-    });
+
   }
 
   sendPersonalData(data) {
