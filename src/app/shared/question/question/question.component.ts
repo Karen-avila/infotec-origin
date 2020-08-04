@@ -797,9 +797,9 @@ llenaDireccion(scrDir){
   }
 
   scrPerNegSend() {
-    // console.log("form is valid? formScrPerNeg", this.formScrPerNeg.valid);
+    // //console.log("form is valid? formScrPerNeg", this.formScrPerNeg.valid);
     if (this.formScrPerNeg.valid) {
-      // console.log("form", this.formScrPerNeg.value);
+      // //console.log("form", this.formScrPerNeg.value);
       //enviar datos a back
       this.instPefNeg.open(1); //aqui ira
     }
@@ -810,9 +810,9 @@ llenaDireccion(scrDir){
   }
 
   scrPerMerSend() {
-    // console.log("form is valid? formScrPerMer", this.formScrPerMer.valid);
+    // //console.log("form is valid? formScrPerMer", this.formScrPerMer.valid);
     if (this.formScrPerMer.valid) {
-      // console.log("form", this.formScrPerMer.value);
+      // //console.log("form", this.formScrPerMer.value);
       //enviar datos a back
       this.instPefNeg.open(2); //aqui ira
     }
@@ -823,9 +823,9 @@ llenaDireccion(scrDir){
   }
 
   scrRepSend() {
-    // console.log("form is valid? formScrRep", this.formScrRep.valid);
+    // //console.log("form is valid? formScrRep", this.formScrRep.valid);
     if (this.formScrRep.valid) {
-      // console.log("form", this.formScrRep.value);
+      // //console.log("form", this.formScrRep.value);
       //enviar datos a back
       this.instPefNeg.open(3); //aqui ira
     }
@@ -836,9 +836,9 @@ llenaDireccion(scrDir){
   }
 
   scrDirSend() {
-    // console.log("form is valid? formScrDir", this.formScrDir.valid);
+    // //console.log("form is valid? formScrDir", this.formScrDir.valid);
     if (this.formScrDir.valid) {
-      // console.log("form", this.formScrDir.value);
+      // //console.log("form", this.formScrDir.value);
       //enviar datos a back
       this.prins.open(1); //aqui ira
     }
@@ -849,58 +849,59 @@ llenaDireccion(scrDir){
   }
 
   qcQcSend() {
-    // console.log("form is valid? formQcQc", this.formQcQc.valid);
+    // //console.log("form is valid? formQcQc", this.formQcQc.valid);
     if (this.formQcQc.valid) {
-      // console.log("form", this.formQcQc.value);
+      // //console.log("form", this.formQcQc.value);
       //enviar datos a back
       this.instQrmCnct.open(1); //aqui ira
     }
   }
 
   qcQcnSend() {
-    // console.log("formQcQcn", this.formQcQcn.valid);
-    // console.log("form", this.formQcQcn.value);
+    // //console.log("formQcQcn", this.formQcQcn.valid);
+    // //console.log("form", this.formQcQcn.value);
     if (this.formQcQcn.valid) {
-      // console.log("form", this.formQcQcn.value);
+      // //console.log("form", this.formQcQcn.value);
       //enviar datos a back
     }
   }
 
   b5() {
-    // console.log("Reviso valor de check", this.sfina5);
+    // //console.log("Reviso valor de check", this.sfina5);
     if (this.sfina5) {
       this.formQcQcn.get("qcQcnr05").setValue(" ")
     }
   }
 
   b6() {
-    // console.log("Reviso valor de check", this.sfina6);
+    // //console.log("Reviso valor de check", this.sfina6);
     if (this.sfina6) {
       this.formQcQcn.get("qcQcnr06").setValue(" ")
     }
   }
 
   b7() {
-    // console.log("Reviso valor de check", this.sfina7);
+    // //console.log("Reviso valor de check", this.sfina7);
     if (this.sfina7) {
       this.formQcQcn.get("qcQcnr07").setValue(" ")
     }
   }
 
   monto() {
-    // console.log("Reviso valor de check", this.sfina8);
+    // //console.log("Reviso valor de check", this.sfina8);
     if (this.sfina8) {
       this.formQcQcn.get("qcqcnmo").setValue(" ")
     }
   }
 
   sendQuestions() {
-    // console.log(this.formScrPerNeg.valid,this.formScrPerMer.valid,this.formScrRep.valid,this.formScrDir.valid,this.formQcQc.valid,this.formQcQcn.valid)
+    this.instance[0].open();
+    // //console.log(this.formScrPerNeg.valid,this.formScrPerMer.valid,this.formScrRep.valid,this.formScrDir.valid,this.formQcQc.valid,this.formQcQcn.valid)
     /* if (this.formScrPerNeg.valid){ */
     if ((this.formScrPerNeg.valid) && (this.formScrPerMer.valid)
       && (this.formScrRep.valid) && (this.formScrDir.valid)
       && (this.formQcQc.valid) && (this.formQcQcn.valid)) {
-        this.instance[0].open();
+        this.instance[0].close();
         const questionForm = {
         questions: true,
 
@@ -930,6 +931,7 @@ llenaDireccion(scrDir){
     }
 
     else {
+      this.instance[0].close();
       swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
       //this.instQrmCnct.open(1); // no ira aqui solo para no completar form
     }

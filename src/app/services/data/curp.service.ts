@@ -267,7 +267,7 @@ export class CurpService {
         curp = this.calculaCURP(true, apPaterno, apMaterno, nombre, fechaNacimiento, sexoCurp, lugarCurp);
       }
     } catch (err) {
-      console.log(err);
+      //console.log(err);
     }
     return curp;
   }

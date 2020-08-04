@@ -6,7 +6,8 @@ export const environment = {
   reCaptchaKey: "6LdQErYZAAAAACb2f4AgheH_SFBH131W8QCKvnvA",
   gravitee_api_keys : {
     'registro': '6c7180e6-4855-413a-ba3d-0f8c75b97490',
-    'fineract': '9e2a3bba-a89f-405d-a56d-236d9671a99d'
+    'fineract': '9e2a3bba-a89f-405d-a56d-236d9671a99d',
+    'curp': 'e0d2074e-ab85-4ada-b48f-ee23a766d4bd'
   },
   headers_mifos : {
     'Fineract-Platform-TenantId': 'default',

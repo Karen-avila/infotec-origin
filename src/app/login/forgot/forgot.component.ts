@@ -46,10 +46,10 @@ export class ForgotComponent implements OnInit {
   get f() { return this.form.controls; }
 
   resolved(captchaResponse: string) {
-    console.log(`Resolved response token: ${captchaResponse}`);
+    //console.log(`Resolved response token: ${captchaResponse}`);
     // this.form.get('token').setValue(captchaResponse);
 
-    console.log(this.form.value);
+    //console.log(this.form.value);
 
   }
 
@@ -67,11 +67,11 @@ export class ForgotComponent implements OnInit {
 
   viewRePassword() {
     if (this.reIcon) {
-      //// console.log("view repassword");
+      //// //console.log("view repassword");
       this.reIcon = false;
       this.rePassType = "text";
     } else {
-      //// console.log("not view repassword");
+      //// //console.log("not view repassword");
       this.reIcon = true;
       this.rePassType = "password";
     }
@@ -79,23 +79,23 @@ export class ForgotComponent implements OnInit {
 
   viewPassword() {
     if (this.icon) {
-      //// console.log("view password");
+      //// //console.log("view password");
       this.icon = false;
       this.passType = "text";
     } else {
-      //// console.log("not view password");
+      //// //console.log("not view password");
       this.icon = true;
       this.passType = "password";
     }
   }
 
   validacion(){
-
+    this.instance[0].open();
 let user = new UserActivate(this.form.value.codigo,"2");
 
-console.log("form is valid", this.form.value);
+//console.log("form is valid", this.form.value);
 if(this.form.valid){
-  this.instance[0].open(); //revisar donde se cierra
+  this.instance[0].close(); //revisar donde se cierra
   
   /* this.userService.activate(user)
     .subscribe(res=>{
@@ -107,6 +107,7 @@ if(this.form.valid){
 
 
 }else{
+  this.instance[0].close(); //revisar donde se cierra
   swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
 }
 
