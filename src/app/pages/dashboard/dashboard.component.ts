@@ -17,6 +17,7 @@ declare const MStepper: any;
 
 // Pick Address
 import { MouseEvent } from '@agm/core';
+import { Sign } from 'src/app/models/sign.model';
 
 interface Marker {
   lat: number;
@@ -33,6 +34,8 @@ declare var google;
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+
+  pagare;
 
   viewError: Array<string> = [];
   sector;
@@ -730,7 +733,7 @@ export class DashboardComponent implements OnInit {
     const fl = (document.getElementById(file) as HTMLInputElement);
     const FileSize = fl.files[0].size / 1024 / 1024; // in MB
     if (!this.userService.validateFileExtension(fl.files[0].name)) {
-      swal('¡Cuidado!', 'Tu archivo debe no es del tipo válido', 'warning');
+      swal('¡Cuidado!', 'Tu archivo no es del tipo válido', 'warning');
       fl.value = null;
       return;
     }
@@ -739,6 +742,21 @@ export class DashboardComponent implements OnInit {
       swal('¡Cuidado!', 'Tu archivo debe ser menor a 2Mb', 'warning');
       fl.value = null;
     }
+  }
+
+  validaCurp(){
+    if(this.form.get('curp').valid){
+      console.log("valida curp");
+      this.userService.validateCurp(this.form.get('curp').value).subscribe(
+        data => {
+          
+          console.log("validate curp",data)
+        },
+        error => console.error('error validate curp', error)
+      )
+
+    }
+   
   }
 
   /* toBase64 = file => new Promise((resolve, reject) => {
@@ -843,17 +861,24 @@ findInvalidControls() {
 
   dfielFirm() {
     this.popup[9].open();
-    // //console.log('formFiel is valid?', this.formFielFirm.valid);
+    const docs = new Sign(this.pagare,'amortizacion');
     if (this.formFielFirm.valid) {
-       //revisar donde cierra
-      // //console.log('formFiel', this.formFielFirm.value);
+
+      this.userService.sendContract(docs).subscribe(res => {
+        
+      });
+      /*  */
       this.router.navigate(["home"]);
-      // enviar datos a back
       this.popup[0].open();
       this.popup[9].close();
     } else {
       swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
     }
+  }
+
+  recibePagare(mensaje) {
+    /* console.log("el pagare en png B64",mensaje); */
+    this.pagare = mensaje;
   }
 
   ddocumentos() {

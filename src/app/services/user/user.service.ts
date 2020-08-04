@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpRequest, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpRequest, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 
 import { User } from '../../models/user.model';
 import { UserLog } from '../../models/user-log.model';
@@ -13,6 +13,8 @@ import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import jsSHA from "jssha";
 import { ForgotPassword } from 'src/app/models/forgot-password.module';
+import { map, catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -115,6 +117,7 @@ export class UserService {
     this.router.navigate(["home"]);
   }
 
+
   login(user: UserLog) {
     let url = environment.mifos_url + '/fineract-provider/api/v1/self/authentication';
     let headers = environment.headers_mifos;
@@ -125,24 +128,26 @@ export class UserService {
 
     // //console.log("Esto es lo que enviare a donde lo tenga que enviar", object);
 
-    return this.http.post(url, object, { headers }).map((res: any) => {
-      // //console.log("creado", res)
-      swal("¡Felicidades!", "Inicio de sesión exitoso.", "success");
-      //console.log(res)
-      localStorage.setItem('clientid', res.userId);
-      localStorage.setItem('token', res.authenticated);
-      return true;
-    }).catch(err => {
-      if (err.status == 0) {
-        swal('Existio un error al procesar tu solicitud intentalo más tarde');
-      } else if (err.status == 401) {
-        swal('Verifica que tu usuario/contraseña sean correctos');
-      }
-      this.prosessing = false;
-      //console.log(err);
-      return err;
-    });
+    return this.http.post(url, object, { headers }).pipe(
+      map((res: any) => {
+        console.log(res)
+        swal("¡Felicidades!", "Inicio de sesión exitoso.", "success");
+        localStorage.setItem('clientid', res.userId);
+        localStorage.setItem('token', res.authenticated);
+        return true;
+      }),
+      catchError(err => {
+        if (err.status == 0) {
+          swal('Existio un error al procesar tu solicitud intentalo más tarde');
+        } else if (err.status == 401) {
+          swal('Verifica que tu usuario/contraseña sean correctos');
+        }
+        this.prosessing = false;
+        return throwError(err);
+      })
+    );
   }
+
 
   sendDocuments(name: any, file: File) {
     const formData: FormData = new FormData();
@@ -154,7 +159,7 @@ export class UserService {
     let url = environment.apis_url + '/V1.0/fineract-protected/clients/' + clientid + '/documents';
     let api_keys = environment.gravitee_api_keys;
 
-    const httpHeaders = new HttpHeaders({'X-Gravitee-Api-Key':api_keys['fineract']});
+    const httpHeaders = new HttpHeaders({ 'X-Gravitee-Api-Key': api_keys['fineract'] });
     const req = new HttpRequest('POST', url, formData, {
       reportProgress: true,
       responseType: 'json',
@@ -199,16 +204,16 @@ export class UserService {
   }
 
   validateFileExtension(fileName: String) {
-    var _validFileExtensions = [".jpg", ".jpeg", ".pdf", ".png"];    
+    var _validFileExtensions = [".jpg", ".jpeg", ".pdf", ".png", ".cer", ".key"];
     var isValid = false;
     if (fileName.length > 0) {
-        for (var j = 0; j < _validFileExtensions.length; j++) {
-            var extension = _validFileExtensions[j];
-            if (fileName.substr(fileName.length - extension.length, extension.length).toLowerCase() == extension.toLowerCase()) {
-              isValid = true;
-              break;
-            }
+      for (var j = 0; j < _validFileExtensions.length; j++) {
+        var extension = _validFileExtensions[j];
+        if (fileName.substr(fileName.length - extension.length, extension.length).toLowerCase() == extension.toLowerCase()) {
+          isValid = true;
+          break;
         }
+      }
     }
     return isValid;
   }
@@ -231,6 +236,45 @@ export class UserService {
       }
       this.prosessing = false;
       //console.log(err);
+      return err;
+    });
+  }
+
+  validateCurp(curp) {
+    const object = JSON.stringify(curp);
+    let url = environment.apis_url + '/V1.0/curp/consulta';
+    let headers = environment.headers_apis;
+    let api_keys = environment.gravitee_api_keys;
+    headers['X-Gravitee-Api-Key'] = api_keys['curp'];
+
+    /* return this.http.post(url,object, { headers: headers }); */
+
+    return this.http.post(url,object, { headers: headers }).pipe(
+      map((res: any) => {
+        console.log(res)
+        swal("Validación de curp", "¡Curp Valida!", "success");
+      }),
+      catchError(err => {
+        return throwError(err);
+      })
+    );
+
+  }
+
+  sendContract(data){
+    let url = environment.apis_url + '/V1.0/banbi/creditosimple/firmadocumentos';
+    let headers = environment.headers_apis;
+    let api_keys = environment.gravitee_api_keys;
+    headers['X-Gravitee-Api-Key'] = api_keys['sign']; //falta api de firma
+
+    const object = JSON.stringify(data);
+    return this.http.post(url, object, { headers }).map((res: any) => {
+      // //console.log("creado", res)
+      swal("¡Felicidades!", "Documentos Firmados correctamente.", "success");
+
+      return true;
+    }).catch(err => {
+      swal('Existio un error' + err.status);
       return err;
     });
   }

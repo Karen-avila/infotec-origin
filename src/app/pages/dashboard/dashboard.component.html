@@ -95,8 +95,9 @@
                             </p>
                         </div>
                     </div>
-
-                    <button class="waves-effect waves-dark teal darken-4 btn next-step">Continuar</button>
+<div>
+                    <button class="waves-effect waves-dark teal darken-4 btn next-step right">Continuar</button>
+                </div>
 
                 </div>
                 <!-- Here goes your actions buttons -->
@@ -291,14 +292,14 @@
 
                     <div class="input-field col s12 m6 l7">
                         <i class="material-icons prefix">aspect_ratio</i>
-                        <input id="curp" type="text" formControlName="curp" (focus)="generateCurp()"
+                        <input id="curp" type="text" (blur)=validaCurp() formControlName="curp" (focus)="generateCurp()"
                             (keyup)="form.patchValue({curp: $event.target.value.toUpperCase()})"
                             pattern="^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$"
 
                             required class="validate" name="Curp" minlength="18" maxlength="18" />
                         <label for="curp" class="active">CURP *</label>
 
-                        <div class="blue-text">Únicamente letras mayúsculas</div>
+                        <div class="blue-text" *ngIf="f.curp.errors">Curp inválido</div>
                     </div>
                     <!--<div class="input-field col s12 m6 l6" *ngIf="model=='pFisica'">-->
                     <div class="input-field col s12 m6 l5">
@@ -2247,11 +2248,11 @@
 
 <div id="pagare" class="modal">
     <div class="modal-content">
-        <app-pagare></app-pagare>
+        <app-pagare (prpPagare)="recibePagare($event)"></app-pagare>
     </div>
-    <div class="modal-footer">
+    <!-- <div class="modal-footer">
         <a class="modal-close waves-effect teal darken-4 white-text btn-flat">Cerrar</a>
-    </div>
+    </div> -->
     <div class="footer-copyright teal darken-3">
         <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
     </div>
