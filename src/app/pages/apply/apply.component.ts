@@ -130,6 +130,7 @@ equalPass(p1:string,p2:string){
 
   //-------------
   register() {
+    this.instance[1].open();
     var user:User;
     if(environment.passwordShaded){
       user = new User(this.form.value.email,
@@ -141,7 +142,6 @@ equalPass(p1:string,p2:string){
         this.form.value.rePassword);
     }
     if (this.form.valid) {
-      this.instance[1].open();
       /* // //console.log("form esto envio", this.form.value); */
       //enviar datos a back
       /* this.userService.createUser(this.form.value) */
@@ -151,6 +151,8 @@ equalPass(p1:string,p2:string){
           this.instance[0].open(); //revisar donde quedara
           // //console.log("esto responde el servicio register",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
           this.instance[1].close();
+        },err=>{
+          this.instance[1].close();
         });
 
       //this.userService.createUserL(user);
@@ -159,6 +161,7 @@ equalPass(p1:string,p2:string){
       
     } else {
       //algo esta mal revisa tus datos
+      this.instance[1].close();
       swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
     }
 

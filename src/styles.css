@@ -91,3 +91,7 @@ input[type=number] {
     -moz-appearance:textfield;
 
 }
+
+#loader{
+    top: 30% !important;
+}
