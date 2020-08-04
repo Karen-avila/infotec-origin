@@ -15,6 +15,7 @@ import { PagareComponent } from './pagare/pagare.component';
 import { CregistroComponent } from './cregistro/cregistro.component';
 import { AutorizacionComponent } from './autorizacion/autorizacion.component';
 import { EstatusComponent } from './estatus/estatus.component';
+import { AvisodeprivacidadintegralComponent } from './avisodeprivacidadintegral/avisodeprivacidadintegral.component';
 
 
 const pagesRoutes: Routes = [
@@ -36,7 +37,8 @@ const pagesRoutes: Routes = [
           {path: 'amortizacion', component: AmortizacionComponent},
           {path : 'pagare', component: PagareComponent },
           {path : 'autorizacion', component: AutorizacionComponent },
-          {path : 'estatus', component: EstatusComponent}
+          {path : 'estatus', component: EstatusComponent},
+          {path : 'avisodeprivacidadintegral', component: AvisodeprivacidadintegralComponent}
         ]
       },
 ];

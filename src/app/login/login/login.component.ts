@@ -75,22 +75,16 @@ step
   get f() { return this.form.controls; }
   get fgt() { return this.form1.controls; }
 
-  /* recuperarpsw(){
-    // //console.log("form is valid?", this.form1.valid);
+  recuperarpsw(){
+    // console.log("form is valid?", this.form1.valid);
     if(this.form1.valid){
-    // //console.log("form", this.form1.value);
+    //console.log("form", this.form1.value);
       //enviar datos a back
-    let data= new ForgotPassword(this.form1.value.email, this.form1.value.curp)
-    this.userService.forgotPassword(data)
-    .subscribe(res => {
-      this.instance[0].open(); //revisar donde quedara
-      // //console.log("esto responde el servicio register",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
-      //this.instance[1].close();
-    });
+    this.instance[0].open();
     } else{
       swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
     }
-  } */
+  }
 
   onSignInSubmit() {
 
