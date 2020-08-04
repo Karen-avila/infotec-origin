@@ -16,7 +16,7 @@ import { CregistroComponent } from './cregistro/cregistro.component';
 import { AutorizacionComponent } from './autorizacion/autorizacion.component';
 import { EstatusComponent } from './estatus/estatus.component';
 import { AvisodeprivacidadintegralComponent } from './avisodeprivacidadintegral/avisodeprivacidadintegral.component';
-
+import { CreditodirectoComponent } from './creditodirecto/creditodirecto.component';
 
 const pagesRoutes: Routes = [
     {
@@ -38,7 +38,8 @@ const pagesRoutes: Routes = [
           {path : 'pagare', component: PagareComponent },
           {path : 'autorizacion', component: AutorizacionComponent },
           {path : 'estatus', component: EstatusComponent},
-          {path : 'avisodeprivacidadintegral', component: AvisodeprivacidadintegralComponent}
+          {path : 'avisodeprivacidadintegral', component: AvisodeprivacidadintegralComponent},
+          {path : 'credito', component: CreditodirectoComponent}
         ]
       },
 ];
