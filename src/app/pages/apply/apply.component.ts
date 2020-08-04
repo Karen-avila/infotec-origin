@@ -21,6 +21,8 @@ export class ApplyComponent implements OnInit {
   recaptcha: any[];
   form: FormGroup;
   formval: FormGroup;
+  term;
+  aviso;
   dic = [
     "apañar",
     "cagar",
@@ -73,6 +75,8 @@ export class ApplyComponent implements OnInit {
       email: new FormControl(null,[Validators.required, Validators.email]),
       password: new FormControl(null, [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$')]),
       rePassword: new FormControl(null, [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$')]),
+      termcond: new FormControl(false, Validators.required),
+      aprivacidad: new FormControl(null, Validators.required)
       // token: new FormControl('', [Validators.required]),
       // paso: new FormControl(0)
     }, { validators: this.equalPass('password','rePassword') });

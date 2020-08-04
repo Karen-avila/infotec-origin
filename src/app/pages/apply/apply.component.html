@@ -80,6 +80,38 @@
                               </div>
                             </div>
 
+                            <div class="row">
+                                <div class="input-field col s12 m12 l12">
+                                    <label> <input class="with-gap teal darken-4" required formControlName="termcond" name="termcond"
+                                            type="checkbox" [(ngModel)]="term" />
+                                        <span>
+    
+                                            <label class="waves-effect modal-trigger subrayar" href="#terminos">
+                                                <span class="blue-text text-darken-4" style="font-size: 14px;">Acepto
+                                                    Términos y condiciones</span>
+                                            </label>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="input-field col s12 m12 l12">
+                                    <label><input class="with-gap teal darken-4" formControlName="aprivacidad"
+                                            name="A privacidad" id="aprivacidad" type="checkbox" [(ngModel)]="aviso" required/>
+                                        <span>
+        
+                                            <label class="waves-effect modal-trigger subrayar" href="#aviso">
+                                                <span class="blue-text text-darken-4" style="font-size: 14px;">He leído la
+                                                    política de privacidad. </span>
+                                            </label>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <br>
+
                             <div class="col s12 m4 l3">
                                 <br>
                                 <a routerLink="/home" class="waves-effect teal darken-4 btn left">Cancelar</a>
