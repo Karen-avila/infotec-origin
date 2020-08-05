@@ -795,7 +795,8 @@ findInvalidControls() {
   dpersonales() {
     this.popup[9].open(); //revisar donde se cierra
     ////console.log(this.form.value);
-    if (this.form.valid) {
+    /* if (this.form.valid) */
+    if (1) {
       let ref1 = new PersonalReferences(this.form.value.entidadfednaci,'25/Junio/19',this.form.value.ref1nombre,this.form.value.ref1apaterno,this.form.value.ref1tel,'93','17','75','33');
       let ref2 = new PersonalReferences(this.form.value.entidadfednaci,'25/Junio/19',this.form.value.ref2nombre,this.form.value.ref2apaterno,this.form.value.ref2tel,'93','17','75','33');
 

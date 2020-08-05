@@ -21,12 +21,12 @@ export const environment = {
     'Content-Encoding': 'gzip'
   },
   provisional_header:{
-      'Content-Type': 'application/json',
-      'Accept': 'application/json',
-      'Content-Encoding': 'gzip',
-      'Fineract-Platform-TenantId': 'default',
-      'Authorization': 'Basic aW5mb3RlYzpwYXNzd29yZA=='
-  }
+    'Content-Type': 'application/json',
+    'Accept': 'application/json',
+    'Content-Encoding': 'gzip',
+    'Fineract-Platform-TenantId': 'default',
+    'Authorization': 'Basic aW5mb3RlYzpwYXNzd29yZA=='
+}
 };
 
 
