@@ -31,8 +31,13 @@ import { PagareComponent } from './pagare/pagare.component';
 import { CregistroComponent } from './cregistro/cregistro.component';
 import { AutorizacionComponent } from './autorizacion/autorizacion.component';
 import { EstatusComponent } from './estatus/estatus.component';
+<<<<<<< HEAD
 import { AvisodeprivacidadintegralComponent } from './avisodeprivacidadintegral/avisodeprivacidadintegral.component';
+import { CreditodirectoComponent } from './creditodirecto/creditodirecto.component';
+=======
+import { CreditodirectoComponent } from './creditodirecto/creditodirecto.component';
 
+>>>>>>> 9548199d1f72f886e620b11a3d63bc751b12b241
 
 @NgModule({
     declarations:[
@@ -53,7 +58,11 @@ import { AvisodeprivacidadintegralComponent } from './avisodeprivacidadintegral/
         CregistroComponent,
         AutorizacionComponent,
         EstatusComponent,
-        AvisodeprivacidadintegralComponent
+<<<<<<< HEAD
+        AvisodeprivacidadintegralComponent,
+=======
+>>>>>>> 9548199d1f72f886e620b11a3d63bc751b12b241
+        CreditodirectoComponent
     ],
     imports:[
         GooglePlaceModule,
