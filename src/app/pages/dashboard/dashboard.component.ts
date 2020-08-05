@@ -339,6 +339,7 @@ export class DashboardComponent implements OnInit {
       ref2tiporelacion: new FormControl(null, Validators.required),
       montocredito: new FormControl(),
       plazocredito: new FormControl(),
+      termcond: new FormControl(false, Validators.required),
       aprivacidad: new FormControl(null, Validators.required)
     }, { validators: this.compareClabe('clabeinter', 'clabeinterconf'), }
     /* ,
@@ -389,8 +390,8 @@ export class DashboardComponent implements OnInit {
       //fiel: new FormControl(null, Validators.required),
       //cer: new FormControl(null, Validators.required),
       //password: new FormControl(null, Validators.required)
-      buro: new FormControl(null, Validators.required)
-
+      buro: new FormControl(null, Validators.required),
+      aprivacidad: new FormControl(null, Validators.required)
     });
 
     this.formFiel = new FormGroup({
@@ -402,7 +403,9 @@ export class DashboardComponent implements OnInit {
     this.formFielFirm = new FormGroup({
       fielFirm: new FormControl(null, Validators.required),
       cerFirm: new FormControl(null, Validators.required),
-      passwordFirm: new FormControl(null, Validators.required)
+      passwordFirm: new FormControl(null, Validators.required),
+      termcond: new FormControl(false, Validators.required),
+      aprivacidad: new FormControl(null, Validators.required)
     });
 
     var dataCode = 'STATE';

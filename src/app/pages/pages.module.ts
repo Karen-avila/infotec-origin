@@ -31,6 +31,7 @@ import { PagareComponent } from './pagare/pagare.component';
 import { CregistroComponent } from './cregistro/cregistro.component';
 import { AutorizacionComponent } from './autorizacion/autorizacion.component';
 import { EstatusComponent } from './estatus/estatus.component';
+import { AvisodeprivacidadintegralComponent } from './avisodeprivacidadintegral/avisodeprivacidadintegral.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { EstatusComponent } from './estatus/estatus.component';
         PagareComponent,
         CregistroComponent,
         AutorizacionComponent,
-        EstatusComponent
+        EstatusComponent,
+        AvisodeprivacidadintegralComponent
     ],
     imports:[
         GooglePlaceModule,
