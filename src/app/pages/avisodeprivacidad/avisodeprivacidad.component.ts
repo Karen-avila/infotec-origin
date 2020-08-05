@@ -7,10 +7,12 @@ import * as M from 'materialize-css';
   styleUrls: ['./avisodeprivacidad.component.css']
 })
 export class AvisodeprivacidadComponent implements OnInit {
-
+popup;
   constructor() { }
 
   ngOnInit() {
+    let elems = document.querySelectorAll('.modal');
+    this.popup = M.Modal.init(elems);
   }
 
 }
