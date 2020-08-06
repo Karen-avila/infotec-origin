@@ -129,7 +129,7 @@
 
         </li>
 
-        <li>
+       <!--  <li>
             <div class="collection-header collapsible-header"><i class="material-icons medium left">keyboard_arrow_down</i>Queremos Conocerte</div>
             <div class="collapsible-body">
                 <ul class="collapsible popout" id="queremosConocerte">
@@ -187,7 +187,7 @@
                                             <input type="date"  [(ngModel)]="preg1.resp" formControlName="preg1" name="preg1" id="preg1"  max="2020-01-01"></i>
                                         </label>
                                         </div>
-                                    </li>
+                                    </li> -->
 
                                     <!-- <li class="collection-item avatar" *ngFor="let preg2 of preg2; index as i;">
 
@@ -211,7 +211,7 @@
                                       
                                     </li> -->
 
-                                    <li class="collection-item avatar">
+                                <!--     <li class="collection-item avatar">
                                         <div *ngFor="let preg3 of preg3; index as i;">
                                             <label class="title black-text" >{{preg3.quest}}</label>
                                             <input [(ngModel)]="preg3.resp" formControlName="preg3" name="preg3" id="preg3" type="number" min='0' maxlength='10'
@@ -254,7 +254,7 @@
                                         </div>
 
                                     </li>
-
+ -->
                                      <!--
 
                                     <li class="collection-item avatar">
@@ -307,7 +307,7 @@
                                         </div>
                                     </li>-->
 
-                                    <li class="collection-item avatar">
+                           <!--          <li class="collection-item avatar">
                                         <span class="title">Registre la cantidad que pagó la empresa por los siguientes conceptos durante el ejercicio fiscal anterior:</span>
                                         <div *ngFor="let preg18 of preg18; index as i;">
                                             <label for="{{'preg18'+i}}"><span class="title">{{preg18.quest}}</span></label>
@@ -412,13 +412,13 @@
                                 </form>
                             </ul>
                         </div>
-                    </li>
+                    </li> 
 
 
                 </ul>
 
             </div>
-        </li>
+        </li>-->
     </ul>
     <!--pruebas-->
     <div class="col s12">
@@ -449,6 +449,19 @@
     </div>    
 </div>
 
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <h4 class="zz">¡Felicidades!, Solicitud Registrada.</h4>
+        <!--<p class="flow-text"><b>N° de Registro: </b>KJF986JHH32</p>-->
+        <p class="floe-text">Tu solicitud ha sido enviada a un proceso de evaluación, te mantendremos al tanto a través del correo registrado.</p>
+    </div>
+    <div class="modal-footer">
+        <a routerLink="/home" (click)="userService.logout()" class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>
+    </div>
+    <div class="footer-copyright teal darken-3">
+        <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
+    </div>
+</div>
 
 
 
