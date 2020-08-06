@@ -137,7 +137,7 @@ export class UserService {
 
     return this.http.post(url, object, { headers }).pipe(
       map((res: any) => {
-        console.log(res)
+        //console.log("login",res)
         swal("¡Felicidades!", "Inicio de sesión exitoso.", "success");
         localStorage.setItem('clientid', res.userId);
         localStorage.setItem('token', res.authenticated);
@@ -258,7 +258,7 @@ export class UserService {
 
     return this.http.post(url,object, { headers: headers }).pipe(
       map((res: any) => {
-        console.log(res)
+        //console.log(res)
         swal("Validación de curp", "¡Curp Valida!", "success");
       }),
       catchError(err => {
