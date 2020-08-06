@@ -38,13 +38,8 @@ const pagesRoutes: Routes = [
           {path : 'pagare', component: PagareComponent },
           {path : 'autorizacion', component: AutorizacionComponent },
           {path : 'estatus', component: EstatusComponent},
-<<<<<<< HEAD
           {path : 'avisodeprivacidadintegral', component: AvisodeprivacidadintegralComponent},
           {path : 'credito', component: CreditodirectoComponent}
-=======
-          {path : 'credito', component: CreditodirectoComponent}
-
->>>>>>> 9548199d1f72f886e620b11a3d63bc751b12b241
         ]
       },
 ];
