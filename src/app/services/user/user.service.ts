@@ -139,7 +139,7 @@ export class UserService {
       map((res: any) => {
         //console.log("login",res)
         swal("¡Felicidades!", "Inicio de sesión exitoso.", "success");
-        localStorage.setItem('clientid', res.userId);
+        localStorage.setItem('clientid', res.clientId);
         localStorage.setItem('token', res.authenticated);
         return true;
       }),
@@ -199,7 +199,7 @@ export class UserService {
       return err;
     });
   }
-
+  
   getDataCode(codeName: String) {
     this.prosessing = false;
     let url = environment.apis_url + '/V1.0/fineract-protected/codes/' + codeName + '/options';
@@ -208,6 +208,17 @@ export class UserService {
     headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
 
     return this.http.get<any>(url, { headers: headers });
+  }
+
+  postDataTable(data) {
+    let clientid = localStorage.getItem('clientid');
+    /* const object = JSON.stringify(data); */
+    let url = environment.apis_url + '/V1.0/fineract-protected/datatables/Direccion/' + clientid;
+    let api_keys = environment.gravitee_api_keys;
+    let headers = environment.headers_apis;
+    headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
+
+    return this.http.post(url, data, { headers: headers });
   }
 
   validateFileExtension(fileName: String) {
