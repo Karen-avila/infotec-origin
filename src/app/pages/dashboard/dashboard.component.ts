@@ -390,7 +390,7 @@ export class DashboardComponent implements OnInit {
       //fiel: new FormControl(null, Validators.required),
       //cer: new FormControl(null, Validators.required),
       //password: new FormControl(null, Validators.required)
-      buro: new FormControl(null, Validators.required),
+      //buro: new FormControl(null, Validators.required),
       aprivacidad: new FormControl(null, Validators.required)
     });
 
