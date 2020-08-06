@@ -139,7 +139,7 @@ export class UserService {
       map((res: any) => {
         console.log(res)
         swal("¡Felicidades!", "Inicio de sesión exitoso.", "success");
-        localStorage.setItem('clientid', res.userId);
+        localStorage.setItem('clientid', res.clientId);
         localStorage.setItem('token', res.authenticated);
         return true;
       }),
