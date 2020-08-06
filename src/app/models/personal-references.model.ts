@@ -1,15 +1,19 @@
 export class PersonalReferences{
 
   constructor(
+      public firstName:string,
+      public lastName:string, 
+      public relationshipId:number,
+      public genderId:number,
+      public professionId:number,
+      public maritalStatusId:number,
+      public dateOfBirth:string,
       public locale:string,
       public dateFormat:string,
-      public firstName:string,
-      public lastName:string,
       public mobileNumber:string,
-      public relationshiId:string,
-      public genderId:string,
-      public profesionId:string,
-      public maritalStatusId:string
+      public middleName?:string
       ){}
 
+  
+  
 }

@@ -838,7 +838,8 @@ llenaDireccion(scrDir){
   scrDirSend() {
     // //console.log("form is valid? formScrDir", this.formScrDir.valid);
     if (this.formScrDir.valid) {
-      // //console.log("form", this.formScrDir.value);
+      console.log("form direccion", this.formScrDir.value);
+      console.log("forma direccion", this.scrDir);
       //enviar datos a back
       this.prins.open(1); //aqui ira
     }
