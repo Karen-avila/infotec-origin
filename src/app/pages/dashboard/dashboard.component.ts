@@ -392,6 +392,7 @@ export class DashboardComponent implements OnInit {
       //password: new FormControl(null, Validators.required)
       //buro: new FormControl(null, Validators.required),
       aprivacidad: new FormControl(null, Validators.required)
+      
     });
 
     this.formFiel = new FormGroup({

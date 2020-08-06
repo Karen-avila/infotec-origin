@@ -600,7 +600,7 @@ export class QuestionComponent implements OnInit {
       scrDir3: new FormControl(null, [Validators.required])
     });
 
-    this.formQcQc = new FormGroup({
+    /* this.formQcQc = new FormGroup({
       qcQc0: new FormControl(null, [Validators.required]),
       qcQc1: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(38)]),
       qcQc2: new FormControl(null, [Validators.required]),
@@ -609,14 +609,14 @@ export class QuestionComponent implements OnInit {
       qcQc5: new FormControl(null, [Validators.required]),
       qcQc6: new FormControl(null, [Validators.required]),
       qcQcI0: new FormControl(null, [Validators.required])
-    });
+    }); */
 
-    this.formQcQcn = new FormGroup({
-      preg1: new FormControl(null, [Validators.required]),
+    //this.formQcQcn = new FormGroup({
+      //preg1: new FormControl(null, [Validators.required]),
       /*preg20: new FormControl(' ',[Validators.required]), //2
       preg20: new FormControl(' ',[Validators.required]), //2
       preg2m: new FormControl(' ',[Validators.required]),//2*/
-      preg3: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(10)]),
+     /*  preg3: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(10)]),
       preg4a50: new FormControl(null, [Validators.required]),
       preg4a51: new FormControl(null, [Validators.required]),
       preg6a110: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
@@ -637,7 +637,7 @@ export class QuestionComponent implements OnInit {
       preg147: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg148: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg149: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
-      preg1410: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
+      preg1410: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]), */
 
       /*preg15r: new FormControl(' ',[Validators.required]), //15
       preg150: new FormControl(' ',[Validators.required]),//15
@@ -663,7 +663,7 @@ export class QuestionComponent implements OnInit {
       qcQcn074: new FormControl(' ',[Validators.required]),//17
       qcQcn075: new FormControl(' ',[Validators.required]),//17
       */
-      preg180: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
+     /*  preg180: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg181: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg182: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg183: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
@@ -685,7 +685,7 @@ export class QuestionComponent implements OnInit {
       preg31: new FormControl(null, [Validators.required]),
       preg32: new FormControl(null, [Validators.required]),
       preg33: new FormControl(null, [Validators.required])
-    });
+    }); */
   
    this.llenaDireccion(this.scrDir);
    this.llenaReputacion(this.scrRep);
@@ -900,8 +900,9 @@ llenaDireccion(scrDir){
     // //console.log(this.formScrPerNeg.valid,this.formScrPerMer.valid,this.formScrRep.valid,this.formScrDir.valid,this.formQcQc.valid,this.formQcQcn.valid)
     /* if (this.formScrPerNeg.valid){ */
     if ((this.formScrPerNeg.valid) && (this.formScrPerMer.valid)
-      && (this.formScrRep.valid) && (this.formScrDir.valid)
-      && (this.formQcQc.valid) && (this.formQcQcn.valid)) {
+      && (this.formScrRep.valid) && (this.formScrDir.valid)){
+        this.instance[1].open();
+      //&& (this.formQcQc.valid) && (this.formQcQcn.valid)) {
         this.instance[0].close();
         const questionForm = {
         questions: true,
@@ -911,10 +912,10 @@ llenaDireccion(scrDir){
         scrRep: this.scrRep,
         scrDir: this.scrDir,
         //Queremos conocerte
-        qcQc: this.qcQc,
-        qcQc1: this.qcQc1,
+        //qcQc: this.qcQc,
+        //qcQc1: this.qcQc1,
         //Queremos conocer tu negocio 
-        preg1: this.preg1,
+        /* preg1: this.preg1,
         preg3: this.preg3,
         preg4a5: this.preg4a5,
         preg6a11: this.preg6a11,
@@ -925,7 +926,7 @@ llenaDireccion(scrDir){
         preg30: this.preg30,
         preg31: this.preg31,
         preg32: this.preg32,
-        preg33: this.preg33,
+        preg33: this.preg33, */
 
       }
       window.parent.postMessage(questionForm, '*');
