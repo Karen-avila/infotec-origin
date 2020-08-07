@@ -44,9 +44,9 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
+                <tr *ngFor="let pagos of loanData.repaymentSchedule.periods | slice:1; let i = index;"> 
+                  <td>{{pagos.period}}</td>
+                  <td>{{pagos.dueDate}}</td>
                   <td></td>
                   <td></td>
                   <td></td>
