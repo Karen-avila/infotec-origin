@@ -35,6 +35,7 @@ declare var google;
 })
 export class DashboardComponent implements OnInit {
 
+  entidadNac;
   pagare;
 
   viewError: Array<string> = [];
