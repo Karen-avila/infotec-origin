@@ -1,0 +1,31 @@
+.justificacion{
+    text-align: justify;
+}
+
+.titulos {
+    font-weight: 600;
+}
+p{
+    font-size: small;
+    margin:0;
+}
+
+.subrayar{
+    text-decoration: underline;
+    font-weight:600;
+}
+.cursiva{
+    font-style: italic;
+    font-weight:600;
+}
+.cursiva2{
+    font-style: italic;
+}
+.roman li{
+    list-style-type: lower-roman;
+    font-size: 13px;
+    text-align: justify;
+}
+.letra{
+font-size: 9px;
+}

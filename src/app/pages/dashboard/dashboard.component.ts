@@ -546,7 +546,7 @@ export class DashboardComponent implements OnInit {
           ////console.log('codigo error',json.code_error)
           if (json.code_error === 105) {
             swal("Lo sentimos!", "Tu código postal no esta dentro de los participantes para este apoyo, revisa constantemente para validar si existen otros apoyos.", "info");
-            this.userService.logout();
+            //this.userService.logout();
           } else {
             if (target === 'negocio') {
               this.negocio.tipo_asentamiento = json.response.tipo_asentamiento;
