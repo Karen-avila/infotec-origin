@@ -305,7 +305,7 @@ export class QuestionComponent implements OnInit {
 
     preg2 = [
     {
-      dataCode: "registra_el_total_de_ingresos_que_obtuvo_el_nego",
+      dataCode: "registre_el_total_de_ingresos_que_obtuvo_el",
       columnId: "campo_2",
       question: "",
       options: []
@@ -314,9 +314,9 @@ export class QuestionComponent implements OnInit {
 
     preg2_0 = [
       {
-        dataCode: "registre_el_monto_total_de_ingresos_que_obtuvo_e",
+        dataCode: "",
         columnId: "campo_3",
-        question: "",
+        question: "Monto:",
         options: []
         
       }];
@@ -472,7 +472,7 @@ export class QuestionComponent implements OnInit {
 
   preg15 = [
     {
-      dataCode: "indique_el_monto_de_financiamiento_o_no_cuenta_c",
+      dataCode: "indique_el_monto_de_financiamiento_que_haya_reci",
       columnId: "campo_26",
       question: "",
       options: []
@@ -481,52 +481,52 @@ export class QuestionComponent implements OnInit {
 
   preg15_0 = [
     {
-      dataCode: "indique_el_monto_de_financiamiento_de_recursos_p",
+      dataCode: "",
       columnId: "campo_27",
-      question: "",
+      question: "¿Monto por Recursos propios (dueños, herencia, familia y amigos) o utilidades reinvertidas?",
       options: []
     },
     {
-      dataCode: "indique_el_monto_de_financiamiento_de_prestamos_",
+      dataCode: "",
       columnId: "campo_28",
-      question: "",
+      question: "¿Monto por Préstamos de familiares y amigos que no tienen participación en la empresa?",
       options: []
     },
     {
-      dataCode: "indique_el_monto_de_financiamiento_de_sistema_fi",
+      dataCode: "",
       columnId: "campo_29",
-      question: "",
+      question: "¿Monto por Sistema ﬁnanciero formal ( bancos  privados, Banco del Bienestar, antes Bansefi, o ﬁnancieras)?",
       options: []
     },
     {
-      dataCode: "indique_el_monto_de_financiamiento_de_prestamist",
+      dataCode: "",
       columnId: "campo_30",
-      question: "",
+      question: "¿Monto por Prestamistas particulares (personas que prestan dinero)?",
       options: []
     },
     {
-      dataCode: "indique_el_monto_de_financiamiento_de_credito_de",
+      dataCode: "",
       columnId: "campo_31",
-      question: "",
+      question: "¿Monto por Crédito de proveedores?",
       options: []
     },
     {
-      dataCode: "indique_el_monto_de_financiamiento_de_recursos_d",
+      dataCode: "",
       columnId: "campo_32",
-      question: "",
+      question: "¿Monto por Recursos de inversionistas privados?",
       options: []
     },
     {
-      dataCode: "indique_el_monto_de_financiamiento_de_otras",
+      dataCode: "",
       columnId: "campo_33",
-      question: "",
+      question: "¿Monto por Otras?",
       options: []
     }
   ];
 
   preg16 = [
     {
-      dataCode: "cuanto_debe_al_dia_de_hoy_o_no_cuenta_con_ningun",
+      dataCode: "cuanto_debe_al_dia_de_hoy_por_los_conceptos_sigu",
       columnId: "campo_34",
       question: "",
       options: []
@@ -535,52 +535,52 @@ export class QuestionComponent implements OnInit {
 
   preg16_0 = [
     {
-      dataCode: "cuanto_debe_al_dia_de_hoy_por_recursos_propios_d",
+      dataCode: "",
       columnId: "campo_35",
-      question: "",
+      question: "¿Monto por recursos propios (dueños, herencia, familia y amigos) o utilidades reinvertidas? ",
       options: []
     },
     {
-      dataCode: "cuanto_debe_al_dia_de_hoy_por_prestamos_de_famil",
+      dataCode: "",
       columnId: "campo_36",
-      question: "",
+      question: "¿Monto por préstamos de familiares y amigos que no tienen participación en la empresa?",
       options: []
     },
     {
-      dataCode: "cuanto_debe_al_dia_de_hoy_por_sistema_financiero",
+      dataCode: "",
       columnId: "campo_37",
-      question: "",
+      question: "¿Monto por sistema ﬁnanciero formal ( bancos  privados, Banco del Bienestar, antes Bansefi, o ﬁnancieras)?",
       options: []
     },
     {
-      dataCode: "cuanto_debe_al_dia_de_hoy_por_prestamistas_parti",
+      dataCode: "",
       columnId: "campo_38",
-      question: "",
+      question: "¿Monto por Prestamistas particulares (personas que prestan dinero)?",
       options: []
     },
     {
-      dataCode: "cuanto_debe_al_dia_de_hoy_por_creditos_de_provee",
+      dataCode: "",
       columnId: "campo_39",
-      question: "",
+      question: "¿Monto por crédito de proveedores?",
       options: []
     },
     {
-      dataCode: "cuanto_debe_al_dia_de_hoy_por_recursos_de_invers",
+      dataCode: "",
       columnId: "campo_40",
-      question: "",
+      question: "¿Monto por recursos de inversionistas privados?",
       options: []
     },
     {
-      dataCode: "cuanto_debe_al_dia_de_hoy_por_otras",
+      dataCode: "",
       columnId: "campo_41",
-      question: "",
+      question: "¿Monto por otras?",
       options: []
     }
   ];
 
   preg17 = [
     {
-      dataCode: "en_promedio_cuanto_paga_cada_mes_o_no_conto_con_",
+      dataCode: "en_promedio_cuanto_paga_cada_mes_por_los_concept",
       columnId: "campo_42",
       question: "",
       options: []
@@ -589,39 +589,39 @@ export class QuestionComponent implements OnInit {
 
   preg17_0 = [
     {
-      dataCode: "en_promedio_cuanto_paga_cada_mes_por_prestamos_d",
+      dataCode: "",
       columnId: "campo_43",
-      question: "",
+      question: "¿Monto por préstamos de familiares y amigos que no tienen participación en la empresa?",
       options: []
     },
     {
-      dataCode: "en_promedio_cuanto_paga_cada_mes_por_sistema_fin",
+      dataCode: "",
       columnId: "campo_44",
-      question: "",
+      question: "¿Monto por sistema ﬁnanciero formal ( bancos  privados, Banco del Bienestar, antes Bansefi, o ﬁnancieras)?",
       options: []
     },
     {
-      dataCode: "en_promedio_cuanto_paga_cada_mes_por_prestamista",
+      dataCode: "",
       columnId: "campo_45",
-      question: "",
+      question: "¿Monto por prestamistas particulares (personas que prestan dinero)?",
       options: []
     },
     {
-      dataCode: "en_promedio_cuanto_paga_cada_mes_por_creditos_de",
+      dataCode: "",
       columnId: "campo_46",
-      question: "",
+      question: "¿Monto por crédito de proveedores?",
       options: []
     },
     {
-      dataCode: "en_promedio_cuanto_paga_cada_mes_por_recursos_de",
+      dataCode: "",
       columnId: "campo_47",
-      question: "",
+      question: "¿Monto por recursos de inversionistas privados?",
       options: []
     },
     {
-      dataCode: "en_promedio_cuanto_paga_cada_mes_por_otras",
+      dataCode: "",
       columnId: "campo_48",
-      question: "",
+      question: "¿Monto por otras?",
       options: []
     }
   ];
@@ -733,46 +733,39 @@ export class QuestionComponent implements OnInit {
       options: []
     }];
 
-  preg29 = [
+  preg29a33 = [
     {
       dataCode: "en_la_empresa_se_realizan_actualmente_algunas_de",
       columnId: "campo_66",
       question: "",
       options: [],
       resp: ""
-    }];
-
-  preg30 = [
+    },
     {
       dataCode: "cual_es_el_motivo_principal_por_el_que_se_inicio",
       columnId: "campo_67",
       question: "",
       options: []
-    }];
-
-  preg31 = [
+    },
     {
       dataCode: "en_su_negocio_o_actividad_cuanta_con_un_local_pa",
       columnId: "campo_68",
       question: "",
       options: []
-    }];
-
-  preg32 = [
+    },
     {
       dataCode: "en_caso_de_ser_local_independiente_fuera_de_un_t",
       columnId: "campo_69",
       question: "",
       options: []
-    }];
-
-  preg33 = [
+    },
     {
       dataCode: "si_no_cuenta_con_un_local_en_donde_se_realizan_l",
       columnId: "campo_70",
       question: "",
       options: []
-    }];
+    }
+  ];
 
   formScrPerNeg: FormGroup;
   formScrPerMer: FormGroup;
@@ -852,9 +845,9 @@ export class QuestionComponent implements OnInit {
 
     this.formQcQcn = new FormGroup({
       preg1: new FormControl(null, [Validators.required]),
-      /*preg20: new FormControl(' ',[Validators.required]), //2
-      preg20: new FormControl(' ',[Validators.required]), //2
-      preg2m: new FormControl(' ',[Validators.required]),//2*/
+      preg20: new FormControl(' ',[Validators.required]), 
+      preg21: new FormControl(' ',[Validators.required]), 
+      preg2_0: new FormControl(' ',[Validators.required]),
       preg3: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(10)]),
       preg4a50: new FormControl(null, [Validators.required]),
       preg4a51: new FormControl(null, [Validators.required]),
@@ -878,30 +871,30 @@ export class QuestionComponent implements OnInit {
       preg149: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg1410: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]), 
 
-      /*preg15r: new FormControl(' ',[Validators.required]), //15
-      preg150: new FormControl(' ',[Validators.required]),//15
-      preg151: new FormControl(' ',[Validators.required]),//15
-      preg152: new FormControl(' ',[Validators.required]),//15
-      preg153: new FormControl(' ',[Validators.required]),//15
-      preg154: new FormControl(' ',[Validators.required]),//15
-      preg155: new FormControl(' ',[Validators.required]),//15
-      preg156: new FormControl(' ',[Validators.required]),//15
-      preg16r: new FormControl(' ',[Validators.required]),//16
-      qcQcn060: new FormControl(' ',[Validators.required]),//16
-      qcQcn061: new FormControl(' ',[Validators.required]),//16
-      qcQcn062: new FormControl(' ',[Validators.required]),//16
-      qcQcn063: new FormControl(' ',[Validators.required]),//16
-      qcQcn064: new FormControl(' ',[Validators.required]),//16
-      qcQcn065: new FormControl(' ',[Validators.required]),//16
-      qcQcn066: new FormControl(' ',[Validators.required]),//16
-      qcQcnr07: new FormControl(' ',[Validators.required]),//17
-      qcQcn070: new FormControl(' ',[Validators.required]),//17
-      qcQcn071: new FormControl(' ',[Validators.required]),//17
-      qcQcn072: new FormControl(' ',[Validators.required]),//17
-      qcQcn073: new FormControl(' ',[Validators.required]),//17
-      qcQcn074: new FormControl(' ',[Validators.required]),//17
-      qcQcn075: new FormControl(' ',[Validators.required]),//17
-      */
+      preg15: new FormControl(' ',[Validators.required]), 
+      preg15_00: new FormControl(' ',[Validators.required]),
+      preg15_01: new FormControl(' ',[Validators.required]),
+      preg15_02: new FormControl(' ',[Validators.required]),
+      preg15_03: new FormControl(' ',[Validators.required]),
+      preg15_04: new FormControl(' ',[Validators.required]),
+      preg15_05: new FormControl(' ',[Validators.required]),
+      preg15_06: new FormControl(' ',[Validators.required]),
+      preg16: new FormControl(' ',[Validators.required]),
+      preg16_00: new FormControl(' ',[Validators.required]),
+      preg16_01: new FormControl(' ',[Validators.required]),
+      preg16_02: new FormControl(' ',[Validators.required]),
+      preg16_03: new FormControl(' ',[Validators.required]),
+      preg16_04: new FormControl(' ',[Validators.required]),
+      preg16_05: new FormControl(' ',[Validators.required]),
+      preg16_06: new FormControl(' ',[Validators.required]),
+      preg17: new FormControl(' ',[Validators.required]),
+      preg17_00: new FormControl(' ',[Validators.required]),
+      preg17_01: new FormControl(' ',[Validators.required]),
+      preg17_02: new FormControl(' ',[Validators.required]),
+      preg17_03: new FormControl(' ',[Validators.required]),
+      preg17_04: new FormControl(' ',[Validators.required]),
+      preg17_05: new FormControl(' ',[Validators.required]),
+      
       preg180: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg181: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg182: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
@@ -919,7 +912,11 @@ export class QuestionComponent implements OnInit {
       preg19a287: new FormControl(null, [Validators.required]),
       preg19a288: new FormControl(null, [Validators.required]),
       preg19a289: new FormControl(null, [Validators.required]),
-      preg29: new FormControl(null, [Validators.required])
+      preg29a330: new FormControl(null, [Validators.required]),
+      preg29a331: new FormControl(null, [Validators.required]),
+      preg29a332: new FormControl(null, [Validators.required]),
+      preg29a333: new FormControl(null, [Validators.required]),
+      preg29a334: new FormControl(null, [Validators.required])
       /*preg30: new FormControl(null, [Validators.required]),
       preg31: new FormControl(null, [Validators.required]),
       preg32: new FormControl(null, [Validators.required]),
@@ -933,15 +930,22 @@ export class QuestionComponent implements OnInit {
    this.llenaquerconocerte(this.qcQc);
    this.llenaquerconocerte0(this.qcQc10); 
    this.llenaqctn1(this.preg1); 
+   this.llenaqctn2(this.preg2); 
+   this.llenaqctn2_0(this.preg2_0); 
    this.llenaqctn3(this.preg3); 
    this.llenaqctn4a5(this.preg4a5); 
    this.llenaqctn6a11(this.preg6a11); 
    this.llenaqctn12a13(this.preg12a13); 
    this.llenaqctn14(this.preg14); 
    this.llenaqctn15(this.preg15); 
+   this.llenaqctn15_0(this.preg15_0); 
+   this.llenaqctn16(this.preg16); 
+   this.llenaqctn16_0(this.preg16_0);
+   this.llenaqctn17(this.preg17); 
+   this.llenaqctn17_0(this.preg17_0);
    this.llenaqctn18(this.preg18); 
    this.llenaqctn19a28(this.preg19a28); 
-   this.llenaqctn29(this.preg29); 
+   this.llenaqctn29a33(this.preg29a33); 
 
 
   }
@@ -1088,138 +1092,6 @@ llenaquerconocerte0(qcQc10){
   this.qcQc10 = questions;
 }
 
-llenaqctn12a13(preg12a13){
-  let preConf = preg12a13;
-  let questions:any = []; 
-  preConf.forEach(function (element) {
-    this.userService.getDataCode(element.dataCode).subscribe(
-      data => {
-        element.question = data.description;
-        let options = [];
-        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
-          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
-        });
-        element.options = options;
-      },
-      error => {
-        console.error('There was an error getting code values ' + element.dataCode, error);
-      }
-    );
-    questions.push(element);
-  }, this);
-  this.preg12a13 = questions;
-}
-
-llenaqctn14(preg14){
-  let preConf = preg14;
-  let questions:any = []; 
-  preConf.forEach(function (element) {
-    this.userService.getDataCode(element.dataCode).subscribe(
-      data => {
-        element.question = data.description;
-        let options = [];
-        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
-          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
-        });
-        element.options = options;
-      },
-      error => {
-        console.error('There was an error getting code values ' + element.dataCode, error);
-      }
-    );
-    questions.push(element);
-  }, this);
-  this.preg14 = questions;
-}
-
-llenaqctn15(preg15){
-  let preConf = preg15;
-  let questions:any = []; 
-  preConf.forEach(function (element) {
-    this.userService.getDataCode(element.dataCode).subscribe(
-      data => {
-        element.question = data.description;
-        let options = [];
-        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
-          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
-        });
-        element.options = options;
-      },
-      error => {
-        console.error('There was an error getting code values ' + element.dataCode, error);
-      }
-    );
-    questions.push(element);
-  }, this);
-  this.preg15 = questions;
-}
-
-llenaqctn18(preg18){
-  let preConf = preg18;
-  let questions:any = []; 
-  preConf.forEach(function (element) {
-    this.userService.getDataCode(element.dataCode).subscribe(
-      data => {
-        element.question = data.description;
-        let options = [];
-        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
-          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
-        });
-        element.options = options;
-      },
-      error => {
-        console.error('There was an error getting code values ' + element.dataCode, error);
-      }
-    );
-    questions.push(element);
-  }, this);
-  this.preg18 = questions;
-}
-
-llenaqctn19a28(preg19a28){
-  let preConf = preg19a28;
-  let questions:any = []; 
-  preConf.forEach(function (element) {
-    this.userService.getDataCode(element.dataCode).subscribe(
-      data => {
-        element.question = data.description;
-        let options = [];
-        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
-          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
-        });
-        element.options = options;
-      },
-      error => {
-        console.error('There was an error getting code values ' + element.dataCode, error);
-      }
-    );
-    questions.push(element);
-  }, this);
-  this.preg19a28 = questions;
-}
-
-llenaqctn29(preg29){
-  let preConf = preg29;
-  let questions:any = []; 
-  preConf.forEach(function (element) {
-    this.userService.getDataCode(element.dataCode).subscribe(
-      data => {
-        element.question = data.description;
-        let options = [];
-        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
-          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
-        });
-        element.options = options;
-      },
-      error => {
-        console.error('There was an error getting code values ' + element.dataCode, error);
-      }
-    );
-    questions.push(element);
-  }, this);
-  this.preg29 = questions;
-}
-
 llenaqctn1(preg1){
   let preConf = preg1;
   let questions:any = []; 
@@ -1240,6 +1112,51 @@ llenaqctn1(preg1){
     questions.push(element);
   }, this);
   this.preg1 = questions;
+}
+
+llenaqctn2(preg2){
+  let preConf = preg2;
+  let questions:any = []; 
+  preConf.forEach(function (element) {
+    this.userService.getDataCode(element.dataCode).subscribe(
+      data => {
+        element.question = data.description;
+        let options = [];
+        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
+          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+        });
+        element.options = options;
+      },
+      error => {
+        console.error('There was an error getting code values ' + element.dataCode, error);
+      }
+    );
+    questions.push(element);
+  }, this);
+  this.preg2 = questions;
+}
+
+
+llenaqctn2_0(preg2_0){
+  let preConf = preg2_0;
+  let questions:any = []; 
+  preConf.forEach(function (element) {
+    this.userService.getDataCode(element.dataCode).subscribe(
+      data => {
+        element.question = data.description;
+        let options = [];
+        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
+          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+        });
+        element.options = options;
+      },
+      error => {
+        console.error('There was an error getting code values ' + element.dataCode, error);
+      }
+    );
+    questions.push(element);
+  }, this);
+  this.preg2_0 = questions;
 }
 
 llenaqctn3(preg3){
@@ -1306,6 +1223,250 @@ llenaqctn6a11(preg6a11){
     questions.push(element);
   }, this);
   this.preg6a11 = questions;
+}
+
+llenaqctn12a13(preg12a13){
+  let preConf = preg12a13;
+  let questions:any = []; 
+  preConf.forEach(function (element) {
+    this.userService.getDataCode(element.dataCode).subscribe(
+      data => {
+        element.question = data.description;
+        let options = [];
+        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
+          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+        });
+        element.options = options;
+      },
+      error => {
+        console.error('There was an error getting code values ' + element.dataCode, error);
+      }
+    );
+    questions.push(element);
+  }, this);
+  this.preg12a13 = questions;
+}
+
+llenaqctn14(preg14){
+  let preConf = preg14;
+  let questions:any = []; 
+  preConf.forEach(function (element) {
+    this.userService.getDataCode(element.dataCode).subscribe(
+      data => {
+        element.question = data.description;
+        let options = [];
+        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
+          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+        });
+        element.options = options;
+      },
+      error => {
+        console.error('There was an error getting code values ' + element.dataCode, error);
+      }
+    );
+    questions.push(element);
+  }, this);
+  this.preg14 = questions;
+}
+
+llenaqctn15(preg15){
+  let preConf = preg15;
+  let questions:any = []; 
+  preConf.forEach(function (element) {
+    this.userService.getDataCode(element.dataCode).subscribe(
+      data => {
+        element.question = data.description;
+        let options = [];
+        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
+          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+        });
+        element.options = options;
+      },
+      error => {
+        console.error('There was an error getting code values ' + element.dataCode, error);
+      }
+    );
+    questions.push(element);
+  }, this);
+  this.preg15 = questions;
+}
+
+
+llenaqctn15_0(preg15_0){
+  let preConf = preg15_0;
+  let questions:any = []; 
+  preConf.forEach(function (element) {
+    this.userService.getDataCode(element.dataCode).subscribe(
+      data => {
+        element.question = data.description;
+        let options = [];
+        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
+          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+        });
+        element.options = options;
+      },
+      error => {
+        console.error('There was an error getting code values ' + element.dataCode, error);
+      }
+    );
+    questions.push(element);
+  }, this);
+  this.preg15_0 = questions;
+}
+
+llenaqctn16(preg16){
+  let preConf = preg16;
+  let questions:any = []; 
+  preConf.forEach(function (element) {
+    this.userService.getDataCode(element.dataCode).subscribe(
+      data => {
+        element.question = data.description;
+        let options = [];
+        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
+          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+        });
+        element.options = options;
+      },
+      error => {
+        console.error('There was an error getting code values ' + element.dataCode, error);
+      }
+    );
+    questions.push(element);
+  }, this);
+  this.preg16 = questions;
+}
+
+llenaqctn16_0(preg16_0){
+  let preConf = preg16_0;
+  let questions:any = []; 
+  preConf.forEach(function (element) {
+    this.userService.getDataCode(element.dataCode).subscribe(
+      data => {
+        element.question = data.description;
+        let options = [];
+        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
+          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+        });
+        element.options = options;
+      },
+      error => {
+        console.error('There was an error getting code values ' + element.dataCode, error);
+      }
+    );
+    questions.push(element);
+  }, this);
+  this.preg16_0 = questions;
+}
+
+llenaqctn17(preg17){
+  let preConf = preg17;
+  let questions:any = []; 
+  preConf.forEach(function (element) {
+    this.userService.getDataCode(element.dataCode).subscribe(
+      data => {
+        element.question = data.description;
+        let options = [];
+        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
+          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+        });
+        element.options = options;
+      },
+      error => {
+        console.error('There was an error getting code values ' + element.dataCode, error);
+      }
+    );
+    questions.push(element);
+  }, this);
+  this.preg17 = questions;
+}
+
+llenaqctn17_0(preg17_0){
+  let preConf = preg17_0;
+  let questions:any = []; 
+  preConf.forEach(function (element) {
+    this.userService.getDataCode(element.dataCode).subscribe(
+      data => {
+        element.question = data.description;
+        let options = [];
+        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
+          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+        });
+        element.options = options;
+      },
+      error => {
+        console.error('There was an error getting code values ' + element.dataCode, error);
+      }
+    );
+    questions.push(element);
+  }, this);
+  this.preg17_0 = questions;
+}
+
+llenaqctn18(preg18){
+  let preConf = preg18;
+  let questions:any = []; 
+  preConf.forEach(function (element) {
+    this.userService.getDataCode(element.dataCode).subscribe(
+      data => {
+        element.question = data.description;
+        let options = [];
+        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
+          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+        });
+        element.options = options;
+      },
+      error => {
+        console.error('There was an error getting code values ' + element.dataCode, error);
+      }
+    );
+    questions.push(element);
+  }, this);
+  this.preg18 = questions;
+}
+
+llenaqctn19a28(preg19a28){
+  let preConf = preg19a28;
+  let questions:any = []; 
+  preConf.forEach(function (element) {
+    this.userService.getDataCode(element.dataCode).subscribe(
+      data => {
+        element.question = data.description;
+        let options = [];
+        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
+          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+        });
+        element.options = options;
+      },
+      error => {
+        console.error('There was an error getting code values ' + element.dataCode, error);
+      }
+    );
+    questions.push(element);
+  }, this);
+  this.preg19a28 = questions;
+}
+
+llenaqctn29a33(preg29a33){
+  let preConf = preg29a33;
+  let questions:any = []; 
+  preConf.forEach(function (element) {
+    this.userService.getDataCode(element.dataCode).subscribe(
+      data => {
+        element.question = data.description;
+        let options = [];
+        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
+          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+        });
+        element.options = options;
+      },
+      error => {
+        console.error('There was an error getting code values ' + element.dataCode, error);
+      }
+    );
+    questions.push(element);
+  }, this);
+  this.preg29a33 = questions;
+  //console.log("ver",this.preg29)
 }
 
   changedPerNeg(j, i) {
@@ -1399,28 +1560,28 @@ llenaqctn6a11(preg6a11){
   b5() {
     // //console.log("Reviso valor de check", this.sfina5);
     if (this.sfina5) {
-      this.formQcQcn.get("qcQcnr05").setValue(" ")
+      this.formQcQcn.get("preg15").setValue(" ")
     }
   }
 
   b6() {
     // //console.log("Reviso valor de check", this.sfina6);
     if (this.sfina6) {
-      this.formQcQcn.get("qcQcnr06").setValue(" ")
+      this.formQcQcn.get("preg16").setValue(" ")
     }
   }
 
   b7() {
     // //console.log("Reviso valor de check", this.sfina7);
     if (this.sfina7) {
-      this.formQcQcn.get("qcQcnr07").setValue(" ")
+      this.formQcQcn.get("preg17").setValue(" ")
     }
   }
 
   monto() {
     // //console.log("Reviso valor de check", this.sfina8);
     if (this.sfina8) {
-      this.formQcQcn.get("qcqcnmo").setValue(" ")
+      this.formQcQcn.get("preg2_0").setValue(" ")
     }
   }
 
@@ -1429,7 +1590,7 @@ llenaqctn6a11(preg6a11){
     // //console.log(this.formScrPerNeg.valid,this.formScrPerMer.valid,this.formScrRep.valid,this.formScrDir.valid,this.formQcQc.valid,this.formQcQcn.valid)
     /* if (this.formScrPerNeg.valid){ */
     if ((this.formScrPerNeg.valid) && (this.formScrPerMer.valid)
-      && (this.formScrRep.valid) && (this.formScrDir.valid)){
+      && (this.formScrRep.valid) && (this.formScrDir.valid)&& (this.formQcQc.valid)){
         this.instance[1].open();
       //&& (this.formQcQc.valid) && (this.formQcQcn.valid)) {
         this.instance[0].close();
@@ -1441,22 +1602,27 @@ llenaqctn6a11(preg6a11){
         scrRep: this.scrRep,
         scrDir: this.scrDir,
         //Queremos conocerte
-        //qcQc: this.qcQc,
-        //qcQc1: this.qcQc1,
+        qcQc: this.qcQc,
+        qcQc10: this.qcQc10
         //Queremos conocer tu negocio 
         /* preg1: this.preg1,
+        preg2:this.preg2,
+        preg2_0:this.preg2_0,
         preg3: this.preg3,
         preg4a5: this.preg4a5,
         preg6a11: this.preg6a11,
         preg12a13: this.preg12a13,
         preg14: this.preg14,
+        preg15: this.preg15,
+        preg15_0:this.preg15_0,
+        preg16:this.preg16,
+        preg16_0:this.preg16_0,
+        preg17:this.preg17,
+        preg17_0:this.preg17_0,
+        preg18:this.preg18,
         preg19a28: this.preg19a28,
-        preg29: this.preg29,
-        preg30: this.preg30,
-        preg31: this.preg31,
-        preg32: this.preg32,
-        preg33: this.preg33, */
-
+        preg29a33: this.preg29a33,
+        */
       }
       window.parent.postMessage(questionForm, '*');
     }
