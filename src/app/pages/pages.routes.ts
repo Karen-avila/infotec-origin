@@ -17,6 +17,7 @@ import { AutorizacionComponent } from './autorizacion/autorizacion.component';
 import { EstatusComponent } from './estatus/estatus.component';
 import { AvisodeprivacidadintegralComponent } from './avisodeprivacidadintegral/avisodeprivacidadintegral.component';
 import { CreditodirectoComponent } from './creditodirecto/creditodirecto.component';
+import { ContratodecreditoComponent } from './contratodecredito/contratodecredito.component';
 
 const pagesRoutes: Routes = [
     {
@@ -35,16 +36,12 @@ const pagesRoutes: Routes = [
           {path : 'cregistro', component: CregistroComponent },
           {path: '', redirectTo: '/home', pathMatch: 'full' },
           {path: 'amortizacion', component: AmortizacionComponent},
-          {path : 'pagare', component: PagareComponent },
-          {path : 'autorizacion', component: AutorizacionComponent },
-          {path : 'estatus', component: EstatusComponent},
-<<<<<<< HEAD
-          {path : 'avisodeprivacidadintegral', component: AvisodeprivacidadintegralComponent},
-          {path : 'credito', component: CreditodirectoComponent}
-=======
-          {path : 'credito', component: CreditodirectoComponent}
-
->>>>>>> 9548199d1f72f886e620b11a3d63bc751b12b241
+          {path: 'pagare', component: PagareComponent },
+          {path: 'autorizacion', component: AutorizacionComponent },
+          {path: 'estatus', component: EstatusComponent},
+          {path: 'avisodeprivacidadintegral', component: AvisodeprivacidadintegralComponent},
+          {path: 'credito', component: CreditodirectoComponent},
+          {path: 'contratodecredito', component: ContratodecreditoComponent }
         ]
       },
 ];
