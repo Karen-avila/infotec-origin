@@ -128,39 +128,44 @@
             </div>
 
         </li>
-
-       <!--  <li>
+        
+        
+        <li>
             <div class="collection-header collapsible-header"><i class="material-icons medium left">keyboard_arrow_down</i>Queremos Conocerte</div>
             <div class="collapsible-body">
                 <ul class="collapsible popout" id="queremosConocerte">
+
+                    <!--QUEREMOS CONOCERTE-->
+
                     <li>
                         <div class="collapsible-header"><i class="material-icons">sentiment_satisfied_alt</i>Queremos Conocerte</div>
                         <div class="collapsible-body">
                             <ul class="collection">
                                 <form ngNativeValidate [formGroup]="formQcQc" (ngSubmit)="qcQcSend()">
-
                                     <li class="collection-item avatar" *ngFor="let qcQc of qcQc; index as i;">
-                                        <span class="title">{{qcQc.quest}}</span>
+                                        <span class="title">{{qcQc.question}}</span>
 
-                                        <p *ngFor="let resp of qcQc.opts; index as j;">
+                                        <p *ngFor="let resp of qcQc.options; index as j;">
                                             <label>
-                                                <input class="with-gap" [(ngModel)]="qcQc.resp" formControlName="{{'qcQc'+i}}"
-                                                id="{{'qcQc'+j}}" value="{{resp}}" type="radio"  />
-                                                <span>{{resp}}</span>
+                                            <input class="with-gap" [(ngModel)]="qcQc.resp" 
+                                            formControlName="{{'qcQc'+i}}" id="{{'qcQc'+j}}" 
+                                            value="{{resp.id}}" type="radio" />
+                                            <span>{{resp.name}}</span>
                                           </label>
                                         </p>
+
                                     </li>
 
                                     <li class="collection-item avatar">
-                                        <div class="input-field " *ngFor="let qcQcI of qcQc1; index as i;">
-                                            <span class="title">{{qcQcI.quest}}</span>
+                                        <div class="input-field " *ngFor="let qcQc10 of qcQc10; index as i;">
+                                            <span class="title">{{qcQc10.question}}</span>
 
                                             <label>
-                                                <input  formControlName="{{'qcQcI'+i}}" name="{{'qcQcI'+i}}" id="{{'qcQcI'+i}}" max="38" type="number"  min="0" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" >
+                                                <input  formControlName="qcQc10" name="qcQc10" id="qcQc10" max="38" type="number"  min="0" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" >
                                             </label>
                                         </div>
                                     </li>
-                                    <br>
+
                                     <br>
                                     <div class="col s12">
                                         <button class="waves-effect teal darken-4 btn left" type="submit">Siguiente
@@ -171,8 +176,210 @@
                             </ul>
                         </div>
                     </li>
+        
 
-                    <li>
+        <!--QUEREMOS CONOCER TU NEGOCIO-->
+        <li>
+            <div class="collapsible-header"><i class="material-icons">work</i>Queremos Conocer tu Negocio</div>
+            <div class="collapsible-body">
+                <ul class="collection">
+                    <form ngNativeValidate [formGroup]="formQcQcn" (ngSubmit)="qcQcnSend()">
+
+                        <li class="collection-item avatar" *ngFor="let preg1 of preg1; index as i;">
+                                <span class="title">{{preg1.question}}</span>
+                            <p>
+                                <label>
+                                    <input  formControlName="preg1" name="preg1" id="preg1" type="date" max="2020-01-01" >
+                                </label>
+                            </p>
+                        </li>
+                        
+<!--FALTA PREGUNTA 2-->
+                        <li class="collection-item avatar" *ngFor="let preg3 of preg3; index as i;">
+                                <span class="title">{{preg3.question}}</span>
+                            <p>
+                                <label>
+                                    <input  formControlName="preg3" name="preg3" id="preg3" type="number" min='0' maxlength='10'
+                                    oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" >
+                                </label>
+                            </p>
+                        </li>
+                        
+
+                        <li class="collection-item avatar" *ngFor="let preg4a5 of preg4a5; index as i;">
+                                <span class="title">{{preg4a5.question}}</span>
+                              <p>
+                                <label>
+                                    <input  formControlName="{{'preg4a5'+i}}" name="{{'preg4a5'+i}}" id="{{'preg4a5'+i}}" type="text">
+                                </label>
+                              </p>
+                        </li>
+
+                    <li class="collection-item avatar" *ngFor="let preg6a11 of preg6a11; index as i;">
+                            <span class="title">{{preg6a11.question}}</span>
+                          <p>
+                            <label>
+                                <input  formControlName="{{'preg6a11'+i}}" name="{{'preg6a11'+i}}" id="{{'preg6a11'+i}}" type="number"
+                                min='0' max='1' step='0.01' placeholder='$'>
+                            </label>
+                          </p>
+                    </li>
+                        
+
+                        <li class="collection-item avatar" *ngFor="let preg12a13 of preg12a13; index as i;">
+                            <span class="title">{{preg12a13.question}}</span>
+
+                            <p *ngFor="let resp of preg12a13.options; index as j;">
+                                <label>
+                                <input class="with-gap" [(ngModel)]="preg12a13.resp" 
+                                formControlName="{{'preg12a13'+i}}" id="{{'preg12a13'+j}}" 
+                                value="{{resp.id}}" type="radio" />
+                                <span>{{resp.name}}</span>
+                              </label>
+                            </p>
+
+                        </li>
+
+                        <li class="collection-item avatar" *ngFor="let preg14 of preg14; index as i;">
+                            <span class="title">{{preg14.question}}</span>
+                          <p>
+                            <label>
+                                <input  formControlName="{{'preg14'+i}}" name="{{'preg14'+i}}" id="{{'preg14'+i}}" type="number"
+                                min='0' max='1' step='0.01' placeholder='$'>
+                            </label>
+                          </p>
+                        </li>
+<!--FALTA PTEGUNTA 15, 16 Y 17-->
+
+                        <li class="collection-item avatar" *ngFor="let preg15 of preg15; index as i;">
+                                <span class="title">{{preg15.question}}</span>
+
+                                <p *ngFor="let resp of preg15.options; index as j;">
+                                <label>
+                                    <input class="with-gap" [(ngModel)]="preg15.resp" 
+                                     formControlName="{{'preg15'+i}}" id="{{'preg15'+j}}" 
+                                    value="{{resp.id}}" type="checkbox" />
+                                 <span>{{resp.name}}</span>
+                                </label>
+                                </p>
+
+                        </li>
+
+                        <li class="collection-item avatar" *ngFor="let preg18 of preg18; index as i;">
+                            <span class="title">{{preg18.question}}</span>
+                          <p>
+                            <label>
+                                <input  formControlName="{{'preg18'+i}}" name="{{'preg18'+i}}" id="{{'preg18'+i}}" type="number"
+                                min='0' max='1' step='0.01' placeholder='$'>
+                            </label>
+                          </p>
+                        </li>
+
+                        <li class="collection-item avatar" *ngFor="let preg19a28 of preg19a28; index as i;">
+                            <span class="title">{{preg19a28.question}}</span>
+
+                            <p *ngFor="let resp of preg19a28.options; index as j;">
+                                <label>
+                                <input class="with-gap" [(ngModel)]="preg19a28.resp" 
+                                formControlName="{{'preg19a28'+i}}" id="{{'preg19a28'+j}}" 
+                                value="{{resp.id}}" type="radio" />
+                                <span>{{resp.name}}</span>
+                              </label>
+                            </p>
+
+                        </li>
+
+                       <!--  <li class="collection-item avatar" *ngFor="let preg29 of preg29; index as i;">
+                            <span class="title">{{preg29.question}}</span>
+
+                            <p *ngFor="let resp of preg29.options; index as j;">
+                                <label>
+                                <input class="with-gap" [(ngModel)]="preg29.resp" 
+                                formControlName="{{'preg29'+i}}" id="{{'preg29'+j}}" 
+                                value="{{resp.id}}" type="radio" />
+                                <span>{{resp.name}}</span>
+                              </label>
+                            </p>
+
+                        </li> -->
+                        <li class="collection-item avatar" *ngFor="let preg29 of preg29; index as i;">
+                            <label class="title black-text">{{preg29.question}}</label>
+                            <p>
+                                <select multiple formControlName="preg29"  name="preg29" id="preg29" [(ngModel)]="preg29.resp">
+                                    <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
+                                    <option  value="{{resp.id}}" *ngFor="let resp of preg29.options; index as j;">{{resp.name}}</option>
+                                  </select>
+                            </p>
+                        </li>
+
+                       
+                    </form>
+                </ul>
+            </div>
+        </li>
+            
+
+
+        </ul>
+    </div>
+
+
+
+
+    </li>
+</ul>
+
+
+      
+    <!--pruebas-->
+    <div class="col s12">
+      <a class="waves-effect teal darken-4 btn previous-step left">Atras
+        <i class="material-icons prefix left">arrow_back_ios</i>
+      </a>
+      <a class="waves-effect  teal darken-4 btn modal-trigger right" (click)="sendQuestions()">
+          <i class="material-icons prefix right">send</i> Continuar
+      </a>
+    </div>
+</div>
+
+
+
+<div id="loader" class="modal transparent z-depth-0 center">
+    <div class="modal-content" >
+        <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-green-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+    </div>    
+</div>
+
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <h4 class="zz">¡Felicidades!, Solicitud Registrada.</h4>
+        <!--<p class="flow-text"><b>N° de Registro: </b>KJF986JHH32</p>-->
+        <p class="floe-text">Tu solicitud ha sido enviada a un proceso de evaluación, te mantendremos al tanto a través del correo registrado.</p>
+    </div>
+    <div class="modal-footer">
+        <a routerLink="/home" (click)="userService.logout()" class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>
+    </div>
+    <div class="footer-copyright teal darken-3">
+        <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
+    </div>
+</div>
+
+
+
+
+     
+
+                   <!-- ok  <li>
                         <div class="collapsible-header"><i class="material-icons">work</i>Queremos Conocer tu Negocio</div>
                         <div class="collapsible-body">
                             <ul class="collection">
@@ -181,19 +388,19 @@
 
                                     <li class="collection-item avatar">
                                         <div *ngFor="let preg1 of preg1; index as i;">
-                                            <span class="title">{{preg1.quest}}</span>
+                                            <span class="title">{{preg1.question}}</span>
                                             <label>
                                         <i class="material-icons prefix">calendar_today
                                             <input type="date"  [(ngModel)]="preg1.resp" formControlName="preg1" name="preg1" id="preg1"  max="2020-01-01"></i>
                                         </label>
                                         </div>
-                                    </li> -->
+                                    </li>  -->
 
-                                    <!-- <li class="collection-item avatar" *ngFor="let preg2 of preg2; index as i;">
+                                    <!-- <li class="collection-item avatar" *ngFor="let preg2_0 of preg2_0; index as i;">
 
-                                        <span class="title">{{preg2.quest}}</span>
+                                        <span class="title">{{preg2_0.question}}</span>
 
-                                        <p *ngFor="let resp of preg2.opts">
+                                        <p *ngFor="let resp of preg2_0.options">
                                             <label>
                                                 <input class="with-gap" [(ngModel)]="preg2.resp" (change)="monto()" formControlName="{{'preg2'+i}}" name="{{'preg2'+i}}" id="{{'preg2'+i}}" value="{{resp}}" type="radio"  />
                                                 <span>{{resp }}</span>
@@ -211,9 +418,9 @@
                                       
                                     </li> -->
 
-                                <!--     <li class="collection-item avatar">
+                                <!-- ok  <li class="collection-item avatar">
                                         <div *ngFor="let preg3 of preg3; index as i;">
-                                            <label class="title black-text" >{{preg3.quest}}</label>
+                                            <label class="title black-text" >{{preg3.question}}</label>
                                             <input [(ngModel)]="preg3.resp" formControlName="preg3" name="preg3" id="preg3" type="number" min='0' maxlength='10'
                                             oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" >
                                         </div>
@@ -221,7 +428,7 @@
 
                                     <li class="collection-item avatar">
                                         <div *ngFor="let preg4a5 of preg4a5; index as i;">
-                                            <label class="title black-text" for="{{'preg4a5'+i}}">{{preg4a5.quest}}</label>
+                                            <label class="title black-text" for="{{'preg4a5'+i}}">{{preg4a5.question}}</label>
                                             <input [(ngModel)]="preg4a5.resp" formControlName="{{'preg4a5'+i}}" name="{{'preg4a5'+i}}" id="{{'preg4a5'+i}}" type="text">
 
                                         </div>
@@ -229,23 +436,96 @@
 
                                     <li class="collection-item avatar">
                                         <div *ngFor="let preg6a11 of preg6a11; index as i;">
-                                            <label class="title black-text" for="{{'preg6a11'+i}}">{{preg6a11.quest}}</label>
+                                            <label class="title black-text" for="{{'preg6a11'+i}}">{{preg6a11.question}}</label>
                                             <input [(ngModel)]="preg6a11.resp" formControlName="{{'preg6a11'+i}}" name="{{'preg6a11'+i}}" id="{{'preg6a11'+i}}" type="number" min='0' max='1' step='0.01' placeholder='$'>
                                         </div>
                                     </li>
                                 
                                     <li class="collection-item avatar" *ngFor="let preg12a13 of preg12a13; index as i;">
-                                        <span class="title">{{preg12a13.quest}}</span>
+                                        <span class="title">{{preg12a13.question}}</span>
 
-                                        <p *ngFor="let resp of preg12a13.opts; index as j;">
+                                        <p *ngFor="let resp of preg12a13.options; index as j;">
                                             <label>
-                                                <input class="with-gap" [(ngModel)]="preg12a13.resp" formControlName="{{'preg12a13'+i}}" id="{{'preg12a13'+j}}" value="{{resp}}" type="radio"  />
-                                                <span>{{resp }}</span>
+                                                <input class="with-gap" [(ngModel)]="preg12a13.resp" formControlName="{{'preg12a13'+i}}" id="{{'preg12a13'+j}}" value="{{resp.id}}" type="radio"  />
+                                                <span>{{resp.name}}</span>
+                                              </label>
+                                        </p>
+                                    </li>
+
+
+                                    <li class="collection-item avatar" *ngFor="let preg14 of preg14; index as i;">
+                                        <span class="title">{{preg14.question}}</span>
+
+                                        <p *ngFor="let resp of preg14.options; index as j;">
+                                            <label>
+                                                <input class="with-gap" [(ngModel)]="preg14.resp" formControlName="{{'preg14'+i}}" id="{{'preg14'+j}}" value="{{resp.id}}" type="radio"  />
+                                                <span>{{resp.name}}</span>
                                               </label>
                                         </p>
                                     </li>
 
                                     <li class="collection-item avatar">
+                                        <div *ngFor="let preg14_0 of preg14_0; index as i;">
+                                            <label class="title black-text" for="{{'preg14_0'+i}}">{{preg14_0.question}}</label>
+                                            <input [(ngModel)]="preg14_0.resp" formControlName="{{'preg14_0'+i}}" name="{{'preg14_0'+i}}" id="{{'preg14_0'+i}}" type="number" min='0' max='1' step='0.01' placeholder='$'>
+                                        </div>
+                                    </li>
+
+                                    <li class="collection-item avatar" *ngFor="let preg15 of preg15; index as i;">
+                                        <span class="title">{{preg15.question}}</span>
+
+                                        <p *ngFor="let resp of preg15.options; index as j;">
+                                            <label>
+                                                <input class="with-gap" [(ngModel)]="preg15.resp" formControlName="{{'preg15'+i}}" id="{{'preg15'+j}}" value="{{resp.id}}" type="radio"  />
+                                                <span>{{resp.name}}</span>
+                                              </label>
+                                        </p>
+                                    </li>
+
+                                    <li class="collection-item avatar">
+                                        <div *ngFor="let preg15_0 of preg15_0; index as i;">
+                                            <label class="title black-text" for="{{'preg15_0'+i}}">{{preg15_0.question}}</label>
+                                            <input [(ngModel)]="preg15_0.resp" formControlName="{{'preg15_0'+i}}" name="{{'preg15_0'+i}}" id="{{'preg15_0'+i}}" type="number" min='0' max='1' step='0.01' placeholder='$'>
+                                        </div>
+                                    </li>
+
+                                    <li class="collection-item avatar" *ngFor="let preg16 of preg16; index as i;">
+                                        <span class="title">{{preg16.question}}</span>
+
+                                        <p *ngFor="let resp of preg16.options; index as j;">
+                                            <label>
+                                                <input class="with-gap" [(ngModel)]="preg16.resp" formControlName="{{'preg16'+i}}" id="{{'preg16'+j}}" value="{{resp.id}}" type="radio"  />
+                                                <span>{{resp.name}}</span>
+                                              </label>
+                                        </p>
+                                    </li>
+
+                                    <li class="collection-item avatar">
+                                        <div *ngFor="let preg16_0 of preg16_0; index as i;">
+                                            <label class="title black-text" for="{{'preg16_0'+i}}">{{preg16_0.question}}</label>
+                                            <input [(ngModel)]="preg16_0.resp" formControlName="{{'preg16_0'+i}}" name="{{'preg16_0'+i}}" id="{{'preg16_0'+i}}" type="number" min='0' max='1' step='0.01' placeholder='$'>
+                                        </div>
+                                    </li>
+
+                                    <li class="collection-item avatar" *ngFor="let preg17 of preg17; index as i;">
+                                        <span class="title">{{preg17.question}}</span>
+
+                                        <p *ngFor="let resp of preg17.options; index as j;">
+                                            <label>
+                                                <input class="with-gap" [(ngModel)]="preg17.resp" formControlName="{{'preg17'+i}}" id="{{'preg17'+j}}" value="{{resp.id}}" type="radio"  />
+                                                <span>{{resp.name}}</span>
+                                              </label>
+                                        </p>
+                                    </li>
+
+                                    <li class="collection-item avatar">
+                                        <div *ngFor="let preg17_0 of preg17_0; index as i;">
+                                            <label class="title black-text" for="{{'preg17_0'+i}}">{{preg17_0.question}}</label>
+                                            <input [(ngModel)]="preg17_0.resp" formControlName="{{'preg17_0'+i}}" name="{{'preg17_0'+i}}" id="{{'preg17_0'+i}}" type="number" min='0' max='1' step='0.01' placeholder='$'>
+                                        </div>
+                                    </li> -->
+
+                                   <!--  <li class="collection-item avatar">
                                         <span class="title">Pensando en los últimos 6 meses, en promedio, indique cuánto paga cada mes por los siguientes conceptos:</span>
 
                                         <div *ngFor="let preg14 of preg14; index as i;">
@@ -253,8 +533,8 @@
                                             <input  [(ngModel)]="preg14.resp" formControlName="{{'preg14'+i}}" name="{{'preg14'+i}}" id="{{'preg14'+i}}" type="number" min='0' max='1' step='0.01' placeholder='$'>
                                         </div>
 
-                                    </li>
- -->
+                                    </li> -->
+ 
                                      <!--
 
                                     <li class="collection-item avatar">
@@ -285,7 +565,7 @@
                                         </p>
                                         <div *ngIf="!sfina6">
                                             <div *ngFor="let preg16 of preg16; index as i;">
-                                                <label for="{{'preg16'+i}}"><span class="title">{{preg16.quest}}</span></label>
+                                                <label for="{{'preg16'+i}}"><span class="title">{{preg16.question}}</span></label>
                                                 <input [(ngModel)]="preg16.resp" formControlName="{{'preg16'+i}}" name="{{'preg16'+i}}" id="{{'preg16'+i}}" type="number" min='0' max='1' step='0.01' placeholder='$'>
                                             </div>
                                         </div>
@@ -301,32 +581,83 @@
                                         </p>
                                         <div *ngIf="!sfina7">
                                             <div *ngFor="let preg17 of preg17; index as i;">
-                                                <label for="{{'preg17'+i}}"><span class="title">{{preg17.quest}}</span></label>
+                                                <label for="{{'preg17'+i}}"><span class="title">{{preg17.question}}</span></label>
                                                 <input [(ngModel)]="preg17.resp" formControlName="{{'preg17'+i}}" name="{{'preg17'+i}}" id="{{'preg17'+i}}" type="number" min='0' max='1' step='0.01' placeholder='$'>
                                             </div>
                                         </div>
                                     </li>-->
 
-                           <!--          <li class="collection-item avatar">
+                                     <!--<li class="collection-item avatar">
                                         <span class="title">Registre la cantidad que pagó la empresa por los siguientes conceptos durante el ejercicio fiscal anterior:</span>
                                         <div *ngFor="let preg18 of preg18; index as i;">
-                                            <label for="{{'preg18'+i}}"><span class="title">{{preg18.quest}}</span></label>
+                                            <label for="{{'preg18'+i}}"><span class="title">{{preg18.question}}</span></label>
                                             <input  [(ngModel)]="preg18.resp" formControlName="{{'preg18'+i}}" name="{{'preg18'+i}}" id="{{'preg18'+i}}" type="number" min='0' max='2000000' step='0.01' placeholder='$'>
+                                        </div>
+                                    </li>-->
+
+                                 <!-- ok   <li class="collection-item avatar">
+                                        <div *ngFor="let preg18 of preg18; index as i;">
+                                            <label class="title black-text" for="{{'preg18'+i}}">{{preg18.question}}</label>
+                                            <input [(ngModel)]="preg18.resp" formControlName="{{'preg18'+i}}" name="{{'preg18'+i}}" id="{{'preg18'+i}}" type="number" min='0' max='1' step='0.01' placeholder='$'>
                                         </div>
                                     </li>
 
                                     <li class="collection-item avatar" *ngFor="let preg19a28 of preg19a28; index as i;">
-                                        <span class="title">{{preg19a28.quest}}</span>
+                                        <span class="title">{{preg19a28.question}}</span>
 
-                                        <p *ngFor="let resp of preg19a28.opts; index as j;">
+                                        <p *ngFor="let resp of preg19a28.options; index as j;">
                                             <label>
-                                            <input class="with-gap" [(ngModel)]="preg19a28.resp" formControlName="{{'preg19a28'+i}}" id="{{'preg19a28'+j}}" value="{{resp}}" type="radio"  />
-                                            <span>{{resp}}</span>
+                                            <input class="with-gap" [(ngModel)]="preg19a28.resp" formControlName="{{'preg19a28'+i}}" id="{{'preg19a28'+j}}" value="{{resp.id}}" type="radio"  />
+                                            <span>{{resp.name}}</span>
                                           </label>
                                         </p>
                                     </li>
 
-                                    
+                                    <li class="collection-item avatar" *ngFor="let preg29 of preg29; index as i;">
+                                        <span class="title">{{preg29.question}}</span>
+
+                                        <p *ngFor="let resp of preg29.options; index as j;">
+                                            <label>
+                                            <input class="with-gap" [(ngModel)]="preg29.resp" formControlName="{{'preg29'+i}}" id="{{'preg29'+j}}" value="{{resp.id}}" type="radio"  />
+                                            <span>{{resp.name}}</span>
+                                          </label>
+                                        </p>
+                                    </li>
+
+                                    <li class="collection-item avatar" *ngFor="let preg30 of preg30; index as i;">
+                                        <span class="title">{{preg30.question}}</span>
+
+                                        <p *ngFor="let resp of preg30.options; index as j;">
+                                            <label>
+                                            <input class="with-gap" [(ngModel)]="preg30.resp" formControlName="{{'preg30'+i}}" id="{{'preg30'+j}}" value="{{resp.id}}" type="radio"  />
+                                            <span>{{resp.name}}</span>
+                                          </label>
+                                        </p>
+                                    </li>
+
+                                    <li class="collection-item avatar" *ngFor="let preg31 of preg31; index as i;">
+                                        <span class="title">{{preg31.question}}</span>
+
+                                        <p *ngFor="let resp of preg31.options; index as j;">
+                                            <label>
+                                            <input class="with-gap" [(ngModel)]="preg31.resp" formControlName="{{'preg31'+i}}" id="{{'preg31'+j}}" value="{{resp.id}}" type="radio"  />
+                                            <span>{{resp.name}}</span>
+                                          </label>
+                                        </p>
+                                    </li>
+
+                                    <li class="collection-item avatar" *ngFor="let preg32 of preg32; index as i;">
+                                        <span class="title">{{preg32.question}}</span>
+
+                                        <p *ngFor="let resp of preg32.options; index as j;">
+                                            <label>
+                                            <input class="with-gap" [(ngModel)]="preg32.resp" formControlName="{{'preg32'+i}}" id="{{'preg32'+j}}" value="{{resp.id}}" type="radio"  />
+                                            <span>{{resp.name}}</span>
+                                          </label>
+                                        </p>
+                                    </li>
+ -->
+                                    <!--
                                      <li class="collection-item avatar">
                                         <label class="title black-text">¿En la empresa se realizan actualmente algunas de las siguientes actividades?</label>
                                         <p>
@@ -403,65 +734,12 @@
                                                 <option  value="G">Otro lugar</option>
                                               </select>
                                         </p>
-                                    </li>
-                                     
-                                    <br>
-                                    <br> 
-                                 
-
-                                </form>
-                            </ul>
-                        </div>
-                    </li> 
-
-
-                </ul>
-
-            </div>
-        </li>-->
-    </ul>
-    <!--pruebas-->
-    <div class="col s12">
-      <a class="waves-effect teal darken-4 btn previous-step left">Atras
-        <i class="material-icons prefix left">arrow_back_ios</i>
-      </a>
-      <a class="waves-effect  teal darken-4 btn modal-trigger right" (click)="sendQuestions()">
-          <i class="material-icons prefix right">send</i> Continuar
-      </a>
-    </div>
-</div>
+                                    </li>-->
 
 
 
-<div id="loader" class="modal transparent z-depth-0 center">
-    <div class="modal-content" >
-        <div class="preloader-wrapper big active">
-            <div class="spinner-layer spinner-green-only">
-              <div class="circle-clipper left">
-                <div class="circle"></div>
-              </div><div class="gap-patch">
-                <div class="circle"></div>
-              </div><div class="circle-clipper right">
-                <div class="circle"></div>
-              </div>
-            </div>
-          </div>
-    </div>    
-</div>
 
-<div id="modal1" class="modal">
-    <div class="modal-content">
-        <h4 class="zz">¡Felicidades!, Solicitud Registrada.</h4>
-        <!--<p class="flow-text"><b>N° de Registro: </b>KJF986JHH32</p>-->
-        <p class="floe-text">Tu solicitud ha sido enviada a un proceso de evaluación, te mantendremos al tanto a través del correo registrado.</p>
-    </div>
-    <div class="modal-footer">
-        <a routerLink="/home" (click)="userService.logout()" class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>
-    </div>
-    <div class="footer-copyright teal darken-3">
-        <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
-    </div>
-</div>
+
 
 
 

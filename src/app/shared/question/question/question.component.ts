@@ -240,7 +240,7 @@ export class QuestionComponent implements OnInit {
 
   qcQc = [
     {
-      dataCode: "estado_civil",
+      dataCode: "MARITAL_STATUS",
       columnId: "campo_1",
       question: "",
       options: []
@@ -276,18 +276,18 @@ export class QuestionComponent implements OnInit {
       options: []
     },
     {
-      dataCode: "su_vivienda_es",
+      dataCode: "ADDRESS_TYPE",
       columnId: "campo_7",
       question: "",
       options: []
     }
   ];
 
-  qcQc1 = [
+  qcQc10 = [
     {
-      dataCode: "numero_de_dependientes_economicos",
+      dataCode: "",
       columnId: "campo_8",
-      question: "",
+      question: "¿Número de dependientes economicos? *",
       options: []
     }
   ];
@@ -295,9 +295,9 @@ export class QuestionComponent implements OnInit {
   /* Queremos conocer tu negocio */
   preg1 = [
     {
-      dataCode: "fecha_en_que_inicio_su_actividad_productiva",
+      dataCode: "",
       columnId: "campo_1",
-      question: "",
+      question: "¿Fecha en que inició su actividad productiva? *",
       options: []
     }];
 
@@ -310,96 +310,213 @@ export class QuestionComponent implements OnInit {
       
     }];
 
+    preg2_0 = [
+      {
+        dataCode: "registre_el_monto_total_de_ingresos_que_obtuvo_e",
+        columnId: "campo_3",
+        question: "",
+        options: []
+        
+      }];
+
 
   preg3 = [
     {
-      dataCode: "cuantas_personas_trabajan_en_su_negocio",
-      columnId: "campo_3",
-      question: "",
+      dataCode: "",
+      columnId: "campo_4",
+      question: "¿Cuántas personas trabajan en su negocio? *",
       options: []
     }];
 
   preg4a5 = [
     {
-      dataCode: "cual_es_el_destino_del_credito_es_decir_especifi",
-      columnId: "campo_4",
-      question: "",
+      dataCode: "",
+      columnId: "campo_5",
+      question: "¿Cuál es el destino del crédito; es decir, específicamente para qué va a usar el crédito en su negocio? Por ejemplo, comprar un vehículo para repartir a domicilio.*",
       options: []
     },
 
     {
-      dataCode: "cual_es_el_proposito_del_proyecto_es_decir_en_que",
-      columnId: "campo_5",
-      question: "",
+      dataCode: "",
+      columnId: "campo_6",
+      question: "¿Cuál es el propósito del proyecto; es decir, en qué espera que mejore su negocio debido al crédito que solicita? Por ejemplo, incrementar las ventas con la entrega a domicilio. *",
       options: []
     }];
 
   preg6a11 = [
 
     {
-      dataCode: "de_cuanto_efectivo_dispone_actualmente_para_cubri",
-      columnId: "campo_6",
-      question: "",
+      dataCode: "",
+      columnId: "campo_7",
+      question: "¿De cuánto efectivo dispone actualmente para cubrir las operaciones del negocios? Incluya lo que guarda en su casa, en el banco o en el negocio. *",
       options: []
     },
     {
-      dataCode: "al_dia_de_hoy_cuato_le_deben_por_venta_de_bienes",
-      columnId: "campo_7",
-      question: "",
+      dataCode: "",
+      columnId: "campo_8",
+      question: "¿Al día de hoy cuánto le deben por venta de bienes a crédito o servicios realizados y que aún no le hayan terminado de pagar? *",
       options: []
       },
     {
-      dataCode: "cuanto_obtendria_si_vendiera_el_material_de_ofic",
-      columnId: "campo_8",
-      question: "",
-      options: []
-    },
-    {
-      dataCode: "pensando_en_los_ultimos_6_meses_en_promedio_cuan",
+      dataCode: "",
       columnId: "campo_9",
-      question: "",
+      question: "Cuánto obtendría si vendiera el material de oficina, la maquinaria que usa en su negocio, aparatos de su propiedad o el local del negocio en caso de que sea suyo? *",
       options: []
     },
     {
-      dataCode: "pensando_en_los_ultimos_6_meses_en_promedio_a_cu",
+      dataCode: "",
       columnId: "campo_10",
-      question: "",
+      question: "Pensando en los últimos 6 meses, en promedio, ¿a cuánto ascienden, cada mes, otros ingresos obtenidos además de los generados por su actividad principal del negocio? *",
       options: []
     },
     {
-      dataCode: "en_promedio_cuanto_gasta_cada_vez_que_surte_su_n",
+      dataCode: "",
       columnId: "campo_11",
-      question: "",
+      question: "Pensando en los últimos 6 meses, en promedio, ¿cuánto vende o ingresa por la realización de sus servicios cada mes sin descontar los gastos? *",
+      options: []
+    },
+    {
+      dataCode: "",
+      columnId: "campo_12",
+      question: "En promedio ¿cuánto gasta cada vez que surte su negocio con mercancías para la venta de bienes o realización de sus servicios? *",
       options: []
     }];
 
   preg12a13 = [
     {
       dataCode: "con_que_frecuencia_surte_su_negocio_con_mercanci",
-      columnId: "campo_12",
+      columnId: "campo_13",
       question: "",
       options: []
     },
     {
       dataCode: "cuando_fue_la_ultima_vez_que_surtio_su_negocio_c",
-      columnId: "campo_13",
+      columnId: "campo_14",
       question: "",
       options: []
     }];
 
+ /*  preg14 = [
+    {
+      dataCode: "pensando_en los ultimos_6_meses_en_sueldos_salar",
+      columnId: "campo_15",
+      question: "",
+      options: []
+    }
+  ]; */
+
   preg14 = [
     {
-      dataCode: "pensando_en los ultimos_6_meses_en_promedio_iniq",
-      columnId: "campo_14",
-      question: "",
+      dataCode: "",
+      columnId: "campo_15",
+      question: "¿Pensando en los últimos 6 meses, en promedio, indique cuánto paga cada mes por: Sueldos, salarios o cualquier otro pago a los trabajadores del negocio? *",
+      options: []
+    },
+    {
+      dataCode: "",
+      columnId: "campo_16",
+      question: "¿Servicios públicos? *",
+      options: []
+    },
+    {
+      dataCode: "",
+      columnId: "campo_17",
+      question: "¿Transporte para actividades del negocio? *",
+      options: []
+    },
+    {
+      dataCode: "",
+      columnId: "campo_18",
+      question: "¿Pago por franquicias? *",
+      options: []
+    },
+    {
+      dataCode: "",
+      columnId: "campo_19",
+      question: "¿Promoción y publicidad? *",
+      options: []
+    },
+    {
+      dataCode: "",
+      columnId: "campo_20",
+      question: "¿Servicios contables o legales? *",
+      options: []
+    },
+    {
+      dataCode: "",
+      columnId: "campo_21",
+      question: "¿Mantenimiento del negocio? *",
+      options: []
+    },
+    {
+      dataCode: "",
+      columnId: "campo_22",
+      question: "¿Licencias de software? *",
+      options: []
+    },
+    {
+      dataCode: "",
+      columnId: "campo_23",
+      question: "¿Impuestos? *",
+      options: []
+    },
+    {
+      dataCode: "",
+      columnId: "campo_24",
+      question: "¿Otros gastos no incluidos en la lista pero que son necesarios para la operación de su negocio? *",
       options: []
     }
   ];
 
   preg15 = [
     {
-      dataCode: "indique_el_monto_de_financiamiento_que_haya_reci",
-      columnId: "campo_15",
+      dataCode: "indique_el_monto_de_financiamiento_o_no_cuenta_c",
+      columnId: "campo_26",
+      question: "",
+      options: []
+    }
+  ];
+
+  preg15_0 = [
+    {
+      dataCode: "indique_el_monto_de_financiamiento_de_recursos_p",
+      columnId: "campo_27",
+      question: "",
+      options: []
+    },
+    {
+      dataCode: "indique_el_monto_de_financiamiento_de_prestamos_",
+      columnId: "campo_28",
+      question: "",
+      options: []
+    },
+    {
+      dataCode: "indique_el_monto_de_financiamiento_de_sistema_fi",
+      columnId: "campo_29",
+      question: "",
+      options: []
+    },
+    {
+      dataCode: "indique_el_monto_de_financiamiento_de_prestamist",
+      columnId: "campo_30",
+      question: "",
+      options: []
+    },
+    {
+      dataCode: "indique_el_monto_de_financiamiento_de_credito_de",
+      columnId: "campo_31",
+      question: "",
+      options: []
+    },
+    {
+      dataCode: "indique_el_monto_de_financiamiento_de_recursos_d",
+      columnId: "campo_32",
+      question: "",
+      options: []
+    },
+    {
+      dataCode: "indique_el_monto_de_financiamiento_de_otras",
+      columnId: "campo_33",
       question: "",
       options: []
     }
@@ -407,8 +524,53 @@ export class QuestionComponent implements OnInit {
 
   preg16 = [
     {
-      dataCode: "cuanto_debe_al_dia_de_hoy_por_los_conceptos_sigu",
-      columnId: "campo_16",
+      dataCode: "cuanto_debe_al_dia_de_hoy_o_no_cuenta_con_ningun",
+      columnId: "campo_34",
+      question: "",
+      options: []
+    }
+  ];
+
+  preg16_0 = [
+    {
+      dataCode: "cuanto_debe_al_dia_de_hoy_por_recursos_propios_d",
+      columnId: "campo_35",
+      question: "",
+      options: []
+    },
+    {
+      dataCode: "cuanto_debe_al_dia_de_hoy_por_prestamos_de_famil",
+      columnId: "campo_36",
+      question: "",
+      options: []
+    },
+    {
+      dataCode: "cuanto_debe_al_dia_de_hoy_por_sistema_financiero",
+      columnId: "campo_37",
+      question: "",
+      options: []
+    },
+    {
+      dataCode: "cuanto_debe_al_dia_de_hoy_por_prestamistas_parti",
+      columnId: "campo_38",
+      question: "",
+      options: []
+    },
+    {
+      dataCode: "cuanto_debe_al_dia_de_hoy_por_creditos_de_provee",
+      columnId: "campo_39",
+      question: "",
+      options: []
+    },
+    {
+      dataCode: "cuanto_debe_al_dia_de_hoy_por_recursos_de_invers",
+      columnId: "campo_40",
+      question: "",
+      options: []
+    },
+    {
+      dataCode: "cuanto_debe_al_dia_de_hoy_por_otras",
+      columnId: "campo_41",
       question: "",
       options: []
     }
@@ -416,8 +578,47 @@ export class QuestionComponent implements OnInit {
 
   preg17 = [
     {
-      dataCode: "en_promedio_cuanto_paga_cada_mes_por_los_concept",
-      columnId: "campo_17",
+      dataCode: "en_promedio_cuanto_paga_cada_mes_o_no_conto_con_",
+      columnId: "campo_42",
+      question: "",
+      options: []
+    }
+  ];
+
+  preg17_0 = [
+    {
+      dataCode: "en_promedio_cuanto_paga_cada_mes_por_prestamos_d",
+      columnId: "campo_43",
+      question: "",
+      options: []
+    },
+    {
+      dataCode: "en_promedio_cuanto_paga_cada_mes_por_sistema_fin",
+      columnId: "campo_44",
+      question: "",
+      options: []
+    },
+    {
+      dataCode: "en_promedio_cuanto_paga_cada_mes_por_prestamista",
+      columnId: "campo_45",
+      question: "",
+      options: []
+    },
+    {
+      dataCode: "en_promedio_cuanto_paga_cada_mes_por_creditos_de",
+      columnId: "campo_46",
+      question: "",
+      options: []
+    },
+    {
+      dataCode: "en_promedio_cuanto_paga_cada_mes_por_recursos_de",
+      columnId: "campo_47",
+      question: "",
+      options: []
+    },
+    {
+      dataCode: "en_promedio_cuanto_paga_cada_mes_por_otras",
+      columnId: "campo_48",
       question: "",
       options: []
     }
@@ -425,9 +626,45 @@ export class QuestionComponent implements OnInit {
 
   preg18 = [
     {
-      dataCode: "registre_la_cantidad_que_pago_la_empresa_por_los",
-      columnId: "campo_18",
-      question: "",
+      dataCode: "",
+      columnId: "campo_49",
+      question: "¿Registre la cantidad que pagó la empresa por los siguientes conceptos durante el ejercicio fiscal anterior: Luz? *",
+      options: []
+    },
+    {
+      dataCode: "",
+      columnId: "campo_50",
+      question: "¿Gas? *",
+      options: []
+    },
+    {
+      dataCode: "",
+      columnId: "campo_51",
+      question: "¿Telecomunicaciones (teléfono fijo o celular para el negocio e internet)? *",
+      options: []
+    },
+    {
+      dataCode: "",
+      columnId: "campo_52",
+      question: "¿Materias primas consumidas (a costo de adquisición)? *",
+      options: []
+    },
+    {
+      dataCode: "",
+      columnId: "campo_53",
+      question: "¿Mercancías compradas para reventa? *",
+      options: []
+    },
+    {
+      dataCode: "",
+      columnId: "campo_54",
+      question: "¿Materiales consumidos para la prestación del servicio? *",
+      options: []
+    },
+    {
+      dataCode: "",
+      columnId: "campo_55",
+      question: "¿Otros? *",
       options: []
     }
   ];
@@ -435,61 +672,61 @@ export class QuestionComponent implements OnInit {
   preg19a28 = [
     {
       dataCode: "participo_en_la_convocatoria_2.1_desarrollo_y_fo",
-      columnId: "campo_19",
+      columnId: "campo_56",
       question: "",
       options: []
     },
     {
       dataCode: "recibio_capacitacion_vinculada_a_su_credito_prov",
-      columnId: "campo_20",
+      columnId: "campo_57",
       question: "",
       options: []
     },
     {
       dataCode: "ha_solicitado_credito_anteriormente",
-      columnId: "campo_21",
+      columnId: "campo_58",
       question: "",
       options: []
     },
     {
-      dataCode: "sus_ingresos_han_mejorado_despues_de_recibir_un_",
-      columnId: "campo_22",
+      dataCode: "sus_ingresos_han_mejorado_despues_de_recibir_un",
+      columnId: "campo_59",
       question: "",
       options: []
     },
     {
-      dataCode: "ademas_de_su_oficina_comercio_o_local_principal_",
-      columnId: "campo_23",
+      dataCode: "ademas_de_su_oficina_comercio_o_local_principal",
+      columnId: "campo_60",
       question: "",
       options: []
     },
     {
       dataCode: "como_se_lleva_la_contabilidad_de_la_empresa",
-      columnId: "campo_24",
+      columnId: "campo_61",
       question: "",
       options: []
     },
     {
-      dataCode: "la_empresa_tiene_cuenta_bancaria_exclusiva_para_",
-      columnId: "campo_25",
+      dataCode: "la_empresa_tiene_cuenta_bancaria_exclusiva_para",
+      columnId: "campo_62",
       question: "",
       options: []
     },
     {
-      dataCode: "durante_el_ejercicio_fiscal_anterior_la_empresa_",
-      columnId: "campo_26",
+      dataCode: "durante_el_ejercicio_fiscal_anterior_la_empresa",
+      columnId: "campo_63",
       question: "",
       options: []
     },
     {
       dataCode: "durante_el_ejercicio_fiscal_anterior_se_otorgo_c",
-      columnId: "campo_27",
+      columnId: "campo_64",
       question: "",
       options: []
     },
     {
       dataCode: "cual_fue_la_principal_causa_por_la_que_durante_e",
-      columnId: "campo_28",
+      columnId: "campo_65",
       question: "",
       options: []
     }];
@@ -497,15 +734,16 @@ export class QuestionComponent implements OnInit {
   preg29 = [
     {
       dataCode: "en_la_empresa_se_realizan_actualmente_algunas_de",
-      columnId: "campo_29",
+      columnId: "campo_66",
       question: "",
-      options: []
+      options: [],
+      resp: ""
     }];
 
   preg30 = [
     {
       dataCode: "cual_es_el_motivo_principal_por_el_que_se_inicio",
-      columnId: "campo_30",
+      columnId: "campo_67",
       question: "",
       options: []
     }];
@@ -513,7 +751,7 @@ export class QuestionComponent implements OnInit {
   preg31 = [
     {
       dataCode: "en_su_negocio_o_actividad_cuanta_con_un_local_pa",
-      columnId: "campo_31",
+      columnId: "campo_68",
       question: "",
       options: []
     }];
@@ -521,7 +759,7 @@ export class QuestionComponent implements OnInit {
   preg32 = [
     {
       dataCode: "en_caso_de_ser_local_independiente_fuera_de_un_t",
-      columnId: "campo_32",
+      columnId: "campo_69",
       question: "",
       options: []
     }];
@@ -529,7 +767,7 @@ export class QuestionComponent implements OnInit {
   preg33 = [
     {
       dataCode: "si_no_cuenta_con_un_local_en_donde_se_realizan_l",
-      columnId: "campo_33",
+      columnId: "campo_70",
       question: "",
       options: []
     }];
@@ -600,7 +838,7 @@ export class QuestionComponent implements OnInit {
       scrDir3: new FormControl(null, [Validators.required])
     });
 
-    /* this.formQcQc = new FormGroup({
+    this.formQcQc = new FormGroup({
       qcQc0: new FormControl(null, [Validators.required]),
       qcQc1: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(38)]),
       qcQc2: new FormControl(null, [Validators.required]),
@@ -608,15 +846,15 @@ export class QuestionComponent implements OnInit {
       qcQc4: new FormControl(null, [Validators.required]),
       qcQc5: new FormControl(null, [Validators.required]),
       qcQc6: new FormControl(null, [Validators.required]),
-      qcQcI0: new FormControl(null, [Validators.required])
-    }); */
+      qcQc10: new FormControl(null, [Validators.required])
+    }); 
 
-    //this.formQcQcn = new FormGroup({
-      //preg1: new FormControl(null, [Validators.required]),
+    this.formQcQcn = new FormGroup({
+      preg1: new FormControl(null, [Validators.required]),
       /*preg20: new FormControl(' ',[Validators.required]), //2
       preg20: new FormControl(' ',[Validators.required]), //2
       preg2m: new FormControl(' ',[Validators.required]),//2*/
-     /*  preg3: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(10)]),
+      preg3: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(10)]),
       preg4a50: new FormControl(null, [Validators.required]),
       preg4a51: new FormControl(null, [Validators.required]),
       preg6a110: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
@@ -637,7 +875,7 @@ export class QuestionComponent implements OnInit {
       preg147: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg148: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg149: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
-      preg1410: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]), */
+      preg1410: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]), 
 
       /*preg15r: new FormControl(' ',[Validators.required]), //15
       preg150: new FormControl(' ',[Validators.required]),//15
@@ -663,7 +901,7 @@ export class QuestionComponent implements OnInit {
       qcQcn074: new FormControl(' ',[Validators.required]),//17
       qcQcn075: new FormControl(' ',[Validators.required]),//17
       */
-     /*  preg180: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
+      preg180: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg181: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg182: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg183: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
@@ -680,17 +918,29 @@ export class QuestionComponent implements OnInit {
       preg19a287: new FormControl(null, [Validators.required]),
       preg19a288: new FormControl(null, [Validators.required]),
       preg19a289: new FormControl(null, [Validators.required]),
-      preg29: new FormControl(null, [Validators.required]),
-      preg30: new FormControl(null, [Validators.required]),
+      preg29: new FormControl(null, [Validators.required])
+      /*preg30: new FormControl(null, [Validators.required]),
       preg31: new FormControl(null, [Validators.required]),
       preg32: new FormControl(null, [Validators.required]),
-      preg33: new FormControl(null, [Validators.required])
-    }); */
+      preg33: new FormControl(null, [Validators.required])*/
+    }); 
   
    this.llenaDireccion(this.scrDir);
    this.llenaReputacion(this.scrRep);
    this.llenaPerfMerc(this.scrPerMer); 
    this.llenaPerfNeg(this.scrPerNeg); 
+   this.llenaquerconocerte(this.qcQc);
+   this.llenaquerconocerte0(this.qcQc10); 
+   this.llenaqctn1(this.preg1); 
+   this.llenaqctn3(this.preg3); 
+   this.llenaqctn4a5(this.preg4a5); 
+   this.llenaqctn6a11(this.preg6a11); 
+   this.llenaqctn12a13(this.preg12a13); 
+   this.llenaqctn14(this.preg14); 
+   this.llenaqctn15(this.preg15); 
+   this.llenaqctn18(this.preg18); 
+   this.llenaqctn19a28(this.preg19a28); 
+   this.llenaqctn29(this.preg29); 
 
 
   }
@@ -791,10 +1041,276 @@ llenaDireccion(scrDir){
     this.scrDir = questions;
     // Cuestionario Direccion -- Fin
 }
+llenaquerconocerte(qcQc){
+  // Cuestionario PerfilNegocio -- scrPerNeg
+  let preConf = qcQc;
+  let questions:any = []; 
+  preConf.forEach(function (element) {
+    this.userService.getDataCode(element.dataCode).subscribe(
+      data => {
+        element.question = data.description;
+        let options = [];
+        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
+          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+        });
+        element.options = options;
+      },
+      error => {
+        console.error('There was an error getting code values ' + element.dataCode, error);
+      }
+    );
+    questions.push(element);
+  }, this);
+  this.qcQc = questions;
+  // Cuestionario PerfilNegocio -- Fin
+}
+
+llenaquerconocerte0(qcQc10){
+  let preConf = qcQc10;
+  let questions:any = []; 
+  preConf.forEach(function (element) {
+    this.userService.getDataCode(element.dataCode).subscribe(
+      data => {
+        element.question = data.description;
+        let options = [];
+        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
+          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+        });
+        element.options = options;
+      },
+      error => {
+        console.error('There was an error getting code values ' + element.dataCode, error);
+      }
+    );
+    questions.push(element);
+  }, this);
+  this.qcQc10 = questions;
+}
+
+llenaqctn12a13(preg12a13){
+  let preConf = preg12a13;
+  let questions:any = []; 
+  preConf.forEach(function (element) {
+    this.userService.getDataCode(element.dataCode).subscribe(
+      data => {
+        element.question = data.description;
+        let options = [];
+        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
+          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+        });
+        element.options = options;
+      },
+      error => {
+        console.error('There was an error getting code values ' + element.dataCode, error);
+      }
+    );
+    questions.push(element);
+  }, this);
+  this.preg12a13 = questions;
+}
+
+llenaqctn14(preg14){
+  let preConf = preg14;
+  let questions:any = []; 
+  preConf.forEach(function (element) {
+    this.userService.getDataCode(element.dataCode).subscribe(
+      data => {
+        element.question = data.description;
+        let options = [];
+        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
+          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+        });
+        element.options = options;
+      },
+      error => {
+        console.error('There was an error getting code values ' + element.dataCode, error);
+      }
+    );
+    questions.push(element);
+  }, this);
+  this.preg14 = questions;
+}
+
+llenaqctn15(preg15){
+  let preConf = preg15;
+  let questions:any = []; 
+  preConf.forEach(function (element) {
+    this.userService.getDataCode(element.dataCode).subscribe(
+      data => {
+        element.question = data.description;
+        let options = [];
+        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
+          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+        });
+        element.options = options;
+      },
+      error => {
+        console.error('There was an error getting code values ' + element.dataCode, error);
+      }
+    );
+    questions.push(element);
+  }, this);
+  this.preg15 = questions;
+}
+
+llenaqctn18(preg18){
+  let preConf = preg18;
+  let questions:any = []; 
+  preConf.forEach(function (element) {
+    this.userService.getDataCode(element.dataCode).subscribe(
+      data => {
+        element.question = data.description;
+        let options = [];
+        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
+          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+        });
+        element.options = options;
+      },
+      error => {
+        console.error('There was an error getting code values ' + element.dataCode, error);
+      }
+    );
+    questions.push(element);
+  }, this);
+  this.preg18 = questions;
+}
+
+llenaqctn19a28(preg19a28){
+  let preConf = preg19a28;
+  let questions:any = []; 
+  preConf.forEach(function (element) {
+    this.userService.getDataCode(element.dataCode).subscribe(
+      data => {
+        element.question = data.description;
+        let options = [];
+        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
+          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+        });
+        element.options = options;
+      },
+      error => {
+        console.error('There was an error getting code values ' + element.dataCode, error);
+      }
+    );
+    questions.push(element);
+  }, this);
+  this.preg19a28 = questions;
+}
+
+llenaqctn29(preg29){
+  let preConf = preg29;
+  let questions:any = []; 
+  preConf.forEach(function (element) {
+    this.userService.getDataCode(element.dataCode).subscribe(
+      data => {
+        element.question = data.description;
+        let options = [];
+        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
+          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+        });
+        element.options = options;
+      },
+      error => {
+        console.error('There was an error getting code values ' + element.dataCode, error);
+      }
+    );
+    questions.push(element);
+  }, this);
+  this.preg29 = questions;
+}
+
+llenaqctn1(preg1){
+  let preConf = preg1;
+  let questions:any = []; 
+  preConf.forEach(function (element) {
+    this.userService.getDataCode(element.dataCode).subscribe(
+      data => {
+        element.question = data.description;
+        let options = [];
+        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
+          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+        });
+        element.options = options;
+      },
+      error => {
+        console.error('There was an error getting code values ' + element.dataCode, error);
+      }
+    );
+    questions.push(element);
+  }, this);
+  this.preg1 = questions;
+}
+
+llenaqctn3(preg3){
+  let preConf = preg3;
+  let questions:any = []; 
+  preConf.forEach(function (element) {
+    this.userService.getDataCode(element.dataCode).subscribe(
+      data => {
+        element.question = data.description;
+        let options = [];
+        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
+          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+        });
+        element.options = options;
+      },
+      error => {
+        console.error('There was an error getting code values ' + element.dataCode, error);
+      }
+    );
+    questions.push(element);
+  }, this);
+  this.preg3 = questions;
+}
+
+llenaqctn4a5(preg4a5){
+  let preConf = preg4a5;
+  let questions:any = []; 
+  preConf.forEach(function (element) {
+    this.userService.getDataCode(element.dataCode).subscribe(
+      data => {
+        element.question = data.description;
+        let options = [];
+        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
+          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+        });
+        element.options = options;
+      },
+      error => {
+        console.error('There was an error getting code values ' + element.dataCode, error);
+      }
+    );
+    questions.push(element);
+  }, this);
+  this.preg4a5 = questions;
+}
+
+llenaqctn6a11(preg6a11){
+  let preConf = preg6a11;
+  let questions:any = []; 
+  preConf.forEach(function (element) {
+    this.userService.getDataCode(element.dataCode).subscribe(
+      data => {
+        element.question = data.description;
+        let options = [];
+        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
+          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+        });
+        element.options = options;
+      },
+      error => {
+        console.error('There was an error getting code values ' + element.dataCode, error);
+      }
+    );
+    questions.push(element);
+  }, this);
+  this.preg6a11 = questions;
+}
 
   changedPerNeg(j, i) {
     //this.scrPerNeg[i].value = this.scrPerNeg[i].values[j]
   }
+
 
   scrPerNegSend() {
     // //console.log("form is valid? formScrPerNeg", this.formScrPerNeg.valid);
