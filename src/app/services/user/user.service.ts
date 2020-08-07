@@ -137,10 +137,11 @@ export class UserService {
 
     return this.http.post(url, object, { headers }).pipe(
       map((res: any) => {
-        //console.log("login",res)
+        console.log("login",res)
         swal("¡Felicidades!", "Inicio de sesión exitoso.", "success");
         localStorage.setItem('clientid', res.clientId);
         localStorage.setItem('token', res.authenticated);
+        localStorage.setItem('authkey', res.base64EncodedAuthenticationKey);
         return true;
       }),
       catchError(err => {

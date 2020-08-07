@@ -10,40 +10,26 @@ import { throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class QuestionsService {
-
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient) { 
+    
+  }
 
 /* SCORE */
 
-  scoreDirSend(data) {
-/*     let url = environment.mifos_url + '/fineract-provider/api/v1/self/authentication';
-    let headers = environment.headers_mifos;
-    let api_keys = environment.gravitee_api_keys;
-    headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
-    //console.log(user);
-    const object = JSON.stringify(user);
+scoreDirSend(payload) {
 
-    // //console.log("Esto es lo que enviare a donde lo tenga que enviar", object);
+  let clientid = localStorage.getItem('clientid');
+  let url = environment.apis_url + '/V1.0/fineract-protected/datatables/Direccion/' + clientid;
+  let api_keys = environment.gravitee_api_keys;
+  let headers = environment.headers_apis;
+  headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
+  return this.http.post(url, payload, { headers: headers }).map((res: any) => {
+    return res;
+  }).catch(err => {
+    return err;
+  });
 
-    return this.http.post(url, object, { headers }).pipe(
-      map((res: any) => {
-        console.log("login",res)
-        swal("¡Felicidades!", "Inicio de sesión exitoso.", "success");
-        localStorage.setItem('clientid', res.clientId);
-        localStorage.setItem('token', res.authenticated);
-        return true;
-      }),
-      catchError(err => {
-        if (err.status == 0) {
-          swal('Existio un error al procesar tu solicitud intentalo más tarde');
-        } else if (err.status == 401) {
-          swal('Verifica que tu usuario/contraseña sean correctos');
-        }
-        this.prosessing = false;
-        return throwError(err);
-      })
-    ); */
-  }
+}
 
 
 }
