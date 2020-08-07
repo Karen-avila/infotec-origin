@@ -33,6 +33,7 @@ import { AutorizacionComponent } from './autorizacion/autorizacion.component';
 import { EstatusComponent } from './estatus/estatus.component';
 import { AvisodeprivacidadintegralComponent } from './avisodeprivacidadintegral/avisodeprivacidadintegral.component';
 import { CreditodirectoComponent } from './creditodirecto/creditodirecto.component';
+import { ContratodecreditoComponent } from './contratodecredito/contratodecredito.component';
 
 @NgModule({
     declarations:[
@@ -54,7 +55,8 @@ import { CreditodirectoComponent } from './creditodirecto/creditodirecto.compone
         AutorizacionComponent,
         EstatusComponent,
         AvisodeprivacidadintegralComponent,
-        CreditodirectoComponent
+        CreditodirectoComponent,
+        ContratodecreditoComponent
     ],
     imports:[
         GooglePlaceModule,

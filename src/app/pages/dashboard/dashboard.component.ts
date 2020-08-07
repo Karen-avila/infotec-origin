@@ -35,6 +35,7 @@ declare var google;
 })
 export class DashboardComponent implements OnInit {
 
+  entidadNac;
   pagare;
 
   viewError: Array<string> = [];
@@ -545,7 +546,7 @@ export class DashboardComponent implements OnInit {
           ////console.log('codigo error',json.code_error)
           if (json.code_error === 105) {
             swal("Lo sentimos!", "Tu código postal no esta dentro de los participantes para este apoyo, revisa constantemente para validar si existen otros apoyos.", "info");
-            this.userService.logout();
+            //this.userService.logout();
           } else {
             if (target === 'negocio') {
               this.negocio.tipo_asentamiento = json.response.tipo_asentamiento;
@@ -799,9 +800,10 @@ findInvalidControls() {
   dpersonales() {
     this.popup[9].open(); //revisar donde se cierra
     ////console.log(this.form.value);
+    /* if (this.form.valid) */
     if (this.form.valid) {
-      let ref1 = new PersonalReferences(this.form.value.entidadfednaci,'25/Junio/19',this.form.value.ref1nombre,this.form.value.ref1apaterno,this.form.value.ref1tel,'93','17','75','33');
-      let ref2 = new PersonalReferences(this.form.value.entidadfednaci,'25/Junio/19',this.form.value.ref2nombre,this.form.value.ref2apaterno,this.form.value.ref2tel,'93','17','75','33');
+      let ref1 = new PersonalReferences(this.form.value.ref1nombre,this.form.value.ref1apaterno + " " + this.form.value.ref1amaterno, 93, 17, 31, 120060, "31 octubre 1991", "es-mx", "dd MMM yyyy", "551212121212", this.form.value.ref1nombre2);
+      let ref2 = new PersonalReferences(this.form.value.ref2nombre,this.form.value.ref2apaterno + " " + this.form.value.ref2amaterno, 93, 17, 31, 120060, "31 octubre 1991", "es-mx", "dd MMM yyyy", "51212121212", this.form.value.ref2nombre2);
 
       this.userService.sendPersonalData(this.form.value)
         .subscribe(res => {
@@ -886,8 +888,9 @@ findInvalidControls() {
   }
 
   ddocumentos() {
+    console.log("documents",this.formDocumentos.value)
     this.popup[9].open(); //revisar donde cierra
-    let documents = ['frontal', 'reverso', 'comprobante', 'comprobanten', 'estado', 'declarcion', 'curpd', 'fiscal'];
+    let documents = ['frontal', 'reverso', 'comprobante', 'comprobanten', 'estado', 'declaracion', 'curpd', 'fiscal'];
     if (this.formDocumentos.valid) {
       
     //if (1) {

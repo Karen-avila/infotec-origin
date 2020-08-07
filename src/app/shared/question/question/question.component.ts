@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from '../../../services/service.index';
+import { QuestionsService } from '../../../services/service.index';
 
 import * as _ from 'underscore';
 
@@ -211,6 +212,7 @@ export class QuestionComponent implements OnInit {
       columnId: "campo_1",
       question: "",
       options: [],
+      resp: "",
       value_quest: "0.35"
     },
     {
@@ -784,8 +786,7 @@ export class QuestionComponent implements OnInit {
   instance
 
   constructor(
-    public userService: UserService
-  ) { }
+    public userService: UserService, public questionsServices:QuestionsService) { }
 
   ngOnInit() {
     var elems = document.querySelectorAll('.modal');
@@ -1354,9 +1355,22 @@ llenaqctn6a11(preg6a11){
   scrDirSend() {
     // //console.log("form is valid? formScrDir", this.formScrDir.valid);
     if (this.formScrDir.valid) {
-      // //console.log("form", this.formScrDir.value);
+      console.log("form direccion", this.formScrDir.value);
+      console.log("forma direccion", this.scrDir);
       //enviar datos a back
-      this.prins.open(1); //aqui ira
+      let payload="{";
+      for (const key in this.scrDir) {
+        payload = payload+`"${this.scrDir[key].dataCode}_cd_${this.scrDir[key].columnId}":${this.scrDir[key].resp},`
+       
+      }
+      payload = payload + `"locale": "es-mx", "dateFormat": "dd MMMM yyyy"}`
+      console.log("view", payload)
+      this.questionsServices.scoreDirSend(payload).subscribe(res=>{
+        console.log("res senddir",res)
+      },err=>{
+        console.log("err senddir",err)
+      });
+      this.prins.open(1); 
     }
   }
 
