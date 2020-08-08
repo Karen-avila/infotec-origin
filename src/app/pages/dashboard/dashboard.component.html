@@ -116,6 +116,7 @@
                     <input type="text" hidden formControlName="lngdomic" class="validate" [(ngModel)]="lng">
                     <input type="text" hidden formControlName="latneg" class="validate" [(ngModel)]="lat2">
                     <input type="text" hidden formControlName="lngneg" class="validate" [(ngModel)]="lng2">
+                    <input type="text" hidden formControlName="authkey" class="validate">
 
                     <div class="input-field col s12 m12 l12">
                         <i class="material-icons prefix icon-gold">person</i>
@@ -268,7 +269,7 @@
                         <input class="validate" id="telpersonal" type="text" formControlName="telpersonal"
 
                         (keypress)="numberOnly($event)" name="Número de Teléfono" minlength="10" maxlength="10" required>
-                        <label for="text">Número de Teléfono *</label>
+                        <label for="text">Número de Celular *</label>
 
                         <div class="blue-text" *ngIf="f.telpersonal.errors">El teléfono debe ser de 10 digitos</div>
                     </div>
@@ -485,6 +486,15 @@
                                     placeholder="Entidad federativa">
                                 <div class="blue-text" *ngIf="f.entidadfedneg.errors"></div>
                             </div>
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">phone</i>
+                                <input class="validate" id="phoneneg" type="text" formControlName="phoneneg"
+        
+                                (keypress)="numberOnly($event)" name="Número de Teléfono Negocio" minlength="10" maxlength="10" required>
+                                <label for="text">Teléfono de Negocio *</label>
+        
+                                <div class="blue-text" *ngIf="f.phoneneg.errors">El teléfono debe ser de 10 digitos</div>
+                            </div>
                         </div>
                         <div class="col s6">
                             <div class="input-field col s12">
@@ -633,7 +643,7 @@
                         <i class="material-icons prefix">phone</i>
                         <input class="validate" id="ref1tel" type="text" formControlName="ref1tel" name="Teléfono Referencia 1"
                         (keypress)="numberOnly($event)" minlength="10" maxlength="10" required>
-                        <label for="text">Número de Teléfono *</label>
+                        <label for="text">Número de Celular *</label>
                         <div class="blue-text" *ngIf="f.ref1tel.errors">El teléfono debe ser de 10 digitos</div>
                     </div>
 
@@ -706,7 +716,7 @@
                         <i class="material-icons prefix">phone</i>
                         <input class="validate" id="ref2tel" type="text" formControlName="ref2tel" name="Teléfono Referencia 2"
                         (keypress)="numberOnly($event)" minlength="10" maxlength="10" required>
-                        <label for="text">Número de Teléfono *</label>
+                        <label for="text">Número de Celular *</label>
                         <div class="blue-text" *ngIf="f.ref2tel.errors">El teléfono debe ser de 10 digitos</div>
                     </div>
 
