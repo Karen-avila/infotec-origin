@@ -30,6 +30,7 @@ export class QuestionComponent implements OnInit {
       columnId: "campo_1",
       question: "",
       options: [],
+      resp: "",
       value_quest: "0.2"
     },
     {
@@ -37,6 +38,7 @@ export class QuestionComponent implements OnInit {
       columnId: "campo_2",
       question: "",
       options: [],
+      resp: "",
       value_quest: "0.1"
     },
     {
@@ -44,6 +46,7 @@ export class QuestionComponent implements OnInit {
       columnId: "campo_3",
       question: "",
       options: [],
+      resp: "",
       value_quest: "0.2"
     },
     {
@@ -51,27 +54,31 @@ export class QuestionComponent implements OnInit {
       columnId: "campo_4",
       question: "",
       options: [],
+      resp: "",
       value_quest: "0.2"
     },
     {
       dataCode: "normalmente_como_se_compone_el_inventario_del_ne",
-      columnId: "campo_4",
+      columnId: "campo_5",
       question: "",
       options: [],
+      resp: "",
       value_quest: "0.1"
     },
     {
       dataCode: "desde_hace_cuento_tiempo_el_negocio_es_formal",
-      columnId: "campo_5",
+      columnId: "campo_6",
       question: "",
       options: [],
+      resp: "",
       value_quest: "0.1"
     },
     {
       dataCode: "seleccione_la_opcion_que_describa_mejor_a_los_pr",
-      columnId: "campo_6",
+      columnId: "campo_7",
       question: "",
       options: [],
+      resp: "",
       value_quest: "0.1"
     }
   ];
@@ -84,6 +91,7 @@ export class QuestionComponent implements OnInit {
       columnId: "campo_1",
       question: "",
       options: [],
+      resp: "",
       value_quest: "0.1"
     },
     {
@@ -91,6 +99,7 @@ export class QuestionComponent implements OnInit {
       columnId: "campo_2",
       question: "",
       options: [],
+      resp: "",
       value_quest: "0.1"
     },
     {
@@ -98,6 +107,7 @@ export class QuestionComponent implements OnInit {
       columnId: "campo_3",
       question: "",
       options: [],
+      resp: "",
       value_quest: "0.1"
     },
     {
@@ -105,6 +115,7 @@ export class QuestionComponent implements OnInit {
       columnId: "campo_4",
       question: "",
       options: [],
+      resp: "",
       value_quest: "0.1"
     },
     {
@@ -112,6 +123,7 @@ export class QuestionComponent implements OnInit {
       columnId: "campo_5",
       question: "",
       options: [],
+      resp: "",
       value_quest: "0.05"
     },
     {
@@ -119,6 +131,7 @@ export class QuestionComponent implements OnInit {
       columnId: "campo_6",
       question: "",
       options: [],
+      resp: "",
       value_quest: "0.05"
     },
     {
@@ -126,6 +139,7 @@ export class QuestionComponent implements OnInit {
       columnId: "campo_7",
       question: "",
       options: [],
+      resp: "",
       value_quest: "0.05"
     },
     {
@@ -133,13 +147,15 @@ export class QuestionComponent implements OnInit {
       columnId: "campo_8",
       question: "",
       options: [],
+      resp: "",
       value_quest: "0.05"
     },
     {
-      dataCode: "seleccione_la_opcion_que_describa_mejor_el_secto",
+      dataCode: "seleccione_la_opcion_que_describa_mejor_a_los_pr",
       columnId: "campo_9",
       question: "",
       options: [],
+      resp: "",
       value_quest: "0.1"
     },
     {
@@ -147,6 +163,7 @@ export class QuestionComponent implements OnInit {
       columnId: "campo_10",
       question: "",
       options: [],
+      resp: "",
       value_quest: "0.2"
     },
     {
@@ -154,6 +171,7 @@ export class QuestionComponent implements OnInit {
       columnId: "campo_11",
       question: "",
       options: [],
+      resp: "",
       value_quest: "0.1"
     }
   ];
@@ -166,6 +184,7 @@ export class QuestionComponent implements OnInit {
       columnId: "campo_1",
       question: "",
       options: [],
+      resp: "",
       value_quest: "0.13"
     },
     {
@@ -173,6 +192,7 @@ export class QuestionComponent implements OnInit {
       columnId: "campo_2",
       question: "",
       options: [],
+      resp: "",
       value_quest: "0.13"
     },
     {
@@ -180,6 +200,7 @@ export class QuestionComponent implements OnInit {
       columnId: "campo_3",
       question: "",
       options: [],
+      resp: "",
       value_quest: "0.15"
     },
     {
@@ -187,6 +208,7 @@ export class QuestionComponent implements OnInit {
       columnId: "campo_4",
       question: "",
       options: [],
+      resp: "",
       value_quest: "0.3"
     },
     {
@@ -194,6 +216,7 @@ export class QuestionComponent implements OnInit {
       columnId: "campo_5",
       question: "",
       options: [],
+      resp: "",
       value_quest: "0.15"
     },
     {
@@ -201,6 +224,7 @@ export class QuestionComponent implements OnInit {
       columnId: "campo_6",
       question: "",
       options: [],
+      resp: "",
       value_quest: "0.14"
     }
   ];
@@ -1467,10 +1491,28 @@ llenaqctn29a33(preg29a33){
 
 
   scrPerNegSend() {
-    // //console.log("form is valid? formScrPerNeg", this.formScrPerNeg.valid);
+    // ////console.log("form is valid? formScrPerNeg", this.formScrPerNeg.valid);
     if (this.formScrPerNeg.valid) {
-      // //console.log("form", this.formScrPerNeg.value);
+      // ////console.log("form", this.formScrPerNeg.value);
       //enviar datos a back
+
+      //console.log("form PerNeg", this.formScrPerNeg.value);
+      //console.log("forma PerNeg", this.scrPerNeg);
+      //enviar datos a back
+      let payload="{";
+      for (const key in this.scrPerNeg) {
+        payload = payload+`"${this.scrPerNeg[key].dataCode}_cd_${this.scrPerNeg[key].columnId}":${this.scrPerNeg[key].resp},`
+       
+      }
+      payload = payload + `"locale": "es-mx", "dateFormat": "dd MMMM yyyy"}`
+      //console.log("view", payload)
+      this.questionsServices.scorePerfNeg(payload).subscribe(res=>{
+        //console.log("res PerNeg",res)
+      },err=>{
+        //console.log("err PerNeg",err)
+      });
+
+
       this.instPefNeg.open(1); //aqui ira
     }
   }
@@ -1480,10 +1522,26 @@ llenaqctn29a33(preg29a33){
   }
 
   scrPerMerSend() {
-    // //console.log("form is valid? formScrPerMer", this.formScrPerMer.valid);
+    // ////console.log("form is valid? formScrPerMer", this.formScrPerMer.valid);
     if (this.formScrPerMer.valid) {
-      // //console.log("form", this.formScrPerMer.value);
+      // ////console.log("form", this.formScrPerMer.value);
       //enviar datos a back
+      //console.log("form PerMer", this.formScrPerMer.value);
+      //console.log("forma PerMer", this.scrPerMer);
+      //enviar datos a back
+      let payload="{";
+      for (const key in this.scrPerMer) {
+        payload = payload+`"${this.scrPerMer[key].dataCode}_cd_${this.scrPerMer[key].columnId}":${this.scrPerMer[key].resp},`
+       
+      }
+      payload = payload + `"locale": "es-mx", "dateFormat": "dd MMMM yyyy"}`
+      //console.log("view", payload)
+      this.questionsServices.scorePerfMerc(payload).subscribe(res=>{
+        //console.log("res PerMer",res)
+      },err=>{
+        //console.log("err PerMer",err)
+      });
+
       this.instPefNeg.open(2); //aqui ira
     }
   }
@@ -1493,10 +1551,25 @@ llenaqctn29a33(preg29a33){
   }
 
   scrRepSend() {
-    // //console.log("form is valid? formScrRep", this.formScrRep.valid);
+    // ////console.log("form is valid? formScrRep", this.formScrRep.valid);
     if (this.formScrRep.valid) {
-      // //console.log("form", this.formScrRep.value);
+      // ////console.log("form", this.formScrRep.value);
       //enviar datos a back
+      //console.log("form rep", this.formScrRep.value);
+      //console.log("forma rep", this.scrRep);
+      //enviar datos a back
+      let payload="{";
+      for (const key in this.scrRep) {
+        payload = payload+`"${this.scrRep[key].dataCode}_cd_${this.scrRep[key].columnId}":${this.scrRep[key].resp},`
+       
+      }
+      payload = payload + `"locale": "es-mx", "dateFormat": "dd MMMM yyyy"}`
+      //console.log("view", payload)
+      this.questionsServices.scoreRepSend(payload).subscribe(res=>{
+        //console.log("res rep",res)
+      },err=>{
+        //console.log("err rep",err)
+      });
       this.instPefNeg.open(3); //aqui ira
     }
   }
@@ -1506,10 +1579,10 @@ llenaqctn29a33(preg29a33){
   }
 
   scrDirSend() {
-    // //console.log("form is valid? formScrDir", this.formScrDir.valid);
+    // ////console.log("form is valid? formScrDir", this.formScrDir.valid);
     if (this.formScrDir.valid) {
-      console.log("form direccion", this.formScrDir.value);
-      console.log("forma direccion", this.scrDir);
+      //console.log("form direccion", this.formScrDir.value);
+      //console.log("forma direccion", this.scrDir);
       //enviar datos a back
       let payload="{";
       for (const key in this.scrDir) {
@@ -1517,11 +1590,11 @@ llenaqctn29a33(preg29a33){
        
       }
       payload = payload + `"locale": "es-mx", "dateFormat": "dd MMMM yyyy"}`
-      console.log("view", payload)
+      //console.log("view", payload)
       this.questionsServices.scoreDirSend(payload).subscribe(res=>{
-        console.log("res senddir",res)
+        //console.log("res senddir",res)
       },err=>{
-        console.log("err senddir",err)
+        //console.log("err senddir",err)
       });
       this.prins.open(1); 
     }
@@ -1532,46 +1605,46 @@ llenaqctn29a33(preg29a33){
   }
 
   qcQcSend() {
-    // //console.log("form is valid? formQcQc", this.formQcQc.valid);
+    // ////console.log("form is valid? formQcQc", this.formQcQc.valid);
     if (this.formQcQc.valid) {
-      // //console.log("form", this.formQcQc.value);
+      // ////console.log("form", this.formQcQc.value);
       //enviar datos a back
       this.instQrmCnct.open(1); //aqui ira
     }
   }
 
   qcQcnSend() {
-    // //console.log("formQcQcn", this.formQcQcn.valid);
-    // //console.log("form", this.formQcQcn.value);
+    // ////console.log("formQcQcn", this.formQcQcn.valid);
+    // ////console.log("form", this.formQcQcn.value);
     if (this.formQcQcn.valid) {
-      // //console.log("form", this.formQcQcn.value);
+      // ////console.log("form", this.formQcQcn.value);
       //enviar datos a back
     }
   }
 
   b5() {
-    // //console.log("Reviso valor de check", this.sfina5);
+    // ////console.log("Reviso valor de check", this.sfina5);
     if (this.sfina5) {
       this.formQcQcn.get("preg15").setValue(" ")
     }
   }
 
   b6() {
-    // //console.log("Reviso valor de check", this.sfina6);
+    // ////console.log("Reviso valor de check", this.sfina6);
     if (this.sfina6) {
       this.formQcQcn.get("preg16").setValue(" ")
     }
   }
 
   b7() {
-    // //console.log("Reviso valor de check", this.sfina7);
+    // ////console.log("Reviso valor de check", this.sfina7);
     if (this.sfina7) {
       this.formQcQcn.get("preg17").setValue(" ")
     }
   }
 
   monto() {
-    // //console.log("Reviso valor de check", this.sfina8);
+    // ////console.log("Reviso valor de check", this.sfina8);
     if (this.sfina8) {
       this.formQcQcn.get("preg2_0").setValue(" ")
     }
@@ -1579,7 +1652,7 @@ llenaqctn29a33(preg29a33){
 
   sendQuestions() {
     this.instance[0].open();
-    // //console.log(this.formScrPerNeg.valid,this.formScrPerMer.valid,this.formScrRep.valid,this.formScrDir.valid,this.formQcQc.valid,this.formQcQcn.valid)
+    // ////console.log(this.formScrPerNeg.valid,this.formScrPerMer.valid,this.formScrRep.valid,this.formScrDir.valid,this.formQcQc.valid,this.formQcQcn.valid)
     /* if (this.formScrPerNeg.valid){ */
       console.log(this.formQcQcn)
     if (((this.formScrPerNeg.valid) && (this.formScrPerMer.valid)

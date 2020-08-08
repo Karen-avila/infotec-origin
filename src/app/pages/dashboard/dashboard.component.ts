@@ -221,7 +221,7 @@ export class DashboardComponent implements OnInit {
         this.mapOk();
         if (msg.data.questions) {
           this.popup[0].open();
-          // //console.log(msg.data);
+          // ////console.log(msg.data);
         }
       }
     );
@@ -236,25 +236,25 @@ export class DashboardComponent implements OnInit {
     const plazoCredito = 18;
     // Monto del Pago Mensual
     const pmt = this.finance.PMT(tasaInteresMensual, plazoCredito, montoCapital);
-    // // //console.log("PAGO MENSUAL ", pmt.toFixed(2));
+    // // ////console.log("PAGO MENSUAL ", pmt.toFixed(2));
     const pagos = [];
     pagos.push(montoCapital);
     for (let i = 0; i < plazoCredito; i++) {
       pagos.push(pmt);
     }
     const tirMensual = this.finance.IRR.apply(this, pagos);
-    // // //console.log("TIR MENSUAL " +tirMensual.toFixed(2) +"%");
+    // // ////console.log("TIR MENSUAL " +tirMensual.toFixed(2) +"%");
     const tirAnual = tirMensual * 12;
-    // // //console.log("TIR ANUAL "+ tirAnual.toFixed(2)+"%");
+    // // ////console.log("TIR ANUAL "+ tirAnual.toFixed(2)+"%");
     const cat = (Math.pow((1 + (tirMensual / 100)), 12)) - 1;
-    // // //console.log("CAT "+cat.toFixed(2)+"%");
+    // // ////console.log("CAT "+cat.toFixed(2)+"%");
     this.catPorcentaje = ((Math.pow((1 + (tirMensual / 100)), 12)) - 1) * 100;
-    // // //console.log("CAT "+ this.catPorcentaje.toFixed(2)+"%");
+    // // ////console.log("CAT "+ this.catPorcentaje.toFixed(2)+"%");
   }
 
   ngOnInit() {
     this.route.params.subscribe( params => this.email=params.email);
-    //// //console.log("comienza ngOnInit",this.alrt);
+    //// ////console.log("comienza ngOnInit",this.alrt);
     let elems = document.querySelectorAll('.modal');
     this.popup = M.Modal.init(elems);
 
@@ -262,7 +262,7 @@ export class DashboardComponent implements OnInit {
     M.FormSelect.init(select);
 
     let stepperDiv = document.getElementById('api_nav_demo');
-    //// //console.log(stepperDiv);
+    //// ////console.log(stepperDiv);
     this.stepper = new MStepper(stepperDiv, {
       // Default active step.
       firstActive: this.re, //api regresa paso a activar siempre debe empezar minimo en 1
@@ -414,7 +414,7 @@ export class DashboardComponent implements OnInit {
     this.userService.getDataCode('STATE').subscribe(
       data => {
         this.stateOptions = _.sortBy(data.codeValues, 'name');
-        //console.log("states",this.stateOptions)
+        ////console.log("states",this.stateOptions)
       },
       error => console.error('There was an error getting code values ' + dataCode, error)
     )
@@ -486,7 +486,7 @@ export class DashboardComponent implements OnInit {
           const val22 = group.controls[p22].value;
           const val23 = group.controls[p23].value; */
       for (const i of this.dic) {
-        // // //console.log("compare",val1,"vs",i)
+        // // ////console.log("compare",val1,"vs",i)
         if (
           val1 === i ||
           val2 === i ||
@@ -519,7 +519,7 @@ export class DashboardComponent implements OnInit {
   }
 
   generateCurp() {
-    //console.log("se llama generar curp");
+    ////console.log("se llama generar curp");
     var nombre = this.form.get('nombre').value;
     const nombre2 = this.form.get('nombre2').value;
     if (nombre2 !== '') {
@@ -543,7 +543,7 @@ export class DashboardComponent implements OnInit {
         .then((response) => {
           return response.json();
         }).then((json) => {
-          ////console.log('codigo error',json.code_error)
+          //////console.log('codigo error',json.code_error)
           if (json.code_error === 105) {
             swal("Lo sentimos!", "Tu código postal no esta dentro de los participantes para este apoyo, revisa constantemente para validar si existen otros apoyos.", "info");
             //this.userService.logout();
@@ -734,7 +734,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ValidateSize(file) {
-    // // //console.log("onchanges")
+    // // ////console.log("onchanges")
     const fl = (document.getElementById(file) as HTMLInputElement);
     const FileSize = fl.files[0].size / 1024 / 1024; // in MB
     if (!this.userService.validateFileExtension(fl.files[0].name)) {
@@ -751,11 +751,11 @@ export class DashboardComponent implements OnInit {
 
   validaCurp(){
     if(this.form.get('curp').valid){
-      console.log("valida curp");
+      //console.log("valida curp");
       this.userService.validateCurp(this.form.get('curp').value).subscribe(
         data => {
           
-          console.log("validate curp",data)
+          //console.log("validate curp",data)
         },
         error => console.error('error validate curp', error)
       )
@@ -775,14 +775,14 @@ findInvalidControls() {
   const controls = this.form.controls;
   for (const name in controls) {
     if (controls[name].invalid) {
-      //console.log("Invalid: " + name);
+      ////console.log("Invalid: " + name);
       if (document.getElementById(name) != null) {
         document.getElementById(name).classList.add('invalid');
         var x = document.getElementById(name);
         this.viewError.push(x.getAttribute("name"));
         M.toast({ html: x.getAttribute("name") })
       } else {
-        //console.log("Element in null");
+        ////console.log("Element in null");
       }
     }
   }
@@ -799,7 +799,7 @@ findInvalidControls() {
 
   dpersonales() {
     this.popup[9].open(); //revisar donde se cierra
-    ////console.log(this.form.value);
+    //////console.log(this.form.value);
     /* if (this.form.valid) */
     if (this.form.valid) {
       let ref1 = new PersonalReferences(this.form.value.ref1nombre,this.form.value.ref1apaterno + " " + this.form.value.ref1amaterno, 93, 17, 31, 120060, "31 octubre 1991", "es-mx", "dd MMM yyyy", "551212121212", this.form.value.ref1nombre2);
@@ -824,18 +824,18 @@ findInvalidControls() {
             description: "Curp"
           }
           this.userService.sendIdentification(payload).subscribe(res => {
-            //console.log("sube clave elector", res);
+            ////console.log("sube clave elector", res);
           });
           this.userService.sendIdentification(payload2).subscribe(res => {
-            //console.log("sube curp",res);
+            ////console.log("sube curp",res);
           });
 
           //send references
           this.userService.sendPersonalReferences(ref1).subscribe(res => {
-            //console.log("manda referencias1",res);
+            ////console.log("manda referencias1",res);
           });
           this.userService.sendPersonalReferences(ref2).subscribe(res => {
-            //console.log("manda referencias2",res);
+            ////console.log("manda referencias2",res);
           });
 
         });
@@ -854,9 +854,9 @@ findInvalidControls() {
 
 
   dfiel() {
-    // //console.log('formFiel is valid?', this.formFiel.valid);
+    // ////console.log('formFiel is valid?', this.formFiel.valid);
     if (this.formFiel.valid) {
-      // //console.log('formFiel', this.formFiel.value);
+      // ////console.log('formFiel', this.formFiel.value);
       this.router.navigate(["home"]);
       // enviar datos a back
       this.popup[0].open();
@@ -883,12 +883,12 @@ findInvalidControls() {
   }
 
   recibePagare(mensaje) {
-    /* console.log("el pagare en png B64",mensaje); */
+    /* //console.log("el pagare en png B64",mensaje); */
     this.pagare = mensaje;
   }
 
   ddocumentos() {
-    console.log("documents",this.formDocumentos.value)
+    //console.log("documents",this.formDocumentos.value)
     this.popup[9].open(); //revisar donde cierra
     let documents = ['frontal', 'reverso', 'comprobante', 'comprobanten', 'estado', 'declaracion', 'curpd', 'fiscal'];
     if (this.formDocumentos.valid) {
@@ -900,7 +900,7 @@ findInvalidControls() {
 
         this.userService.sendDocuments(documents[i], (<HTMLInputElement>document.getElementById(documents[i])).files[0])
           .subscribe(res => {
-            //console.log("esto responde el servicio documents", res); //revisar res.user p.ej y hacer un if(uid){openmodal}
+            ////console.log("esto responde el servicio documents", res); //revisar res.user p.ej y hacer un if(uid){openmodal}
             //swal("¡Documentos Guardados!", "Continuar", "success");
           });
         swal("¡Documentos Guardados!", "Continuar", "success");
@@ -949,37 +949,37 @@ findInvalidControls() {
     });
   }
   viewMap() {
-    // // //console.log("map")
+    // // ////console.log("map")
     document.getElementById('steps').classList.add('hide');
     document.getElementById('modalMap').classList.remove('hide');
     // this.router.navigate(["map"]);
   }
   mapOk() {
-    // // //console.log("map")
+    // // ////console.log("map")
     document.getElementById('steps').classList.remove('hide');
     document.getElementById('modalMap').classList.add('hide');
     // this.router.navigate(["map"]);
   }
   rFiscal() {
-    // // //console.log("Reviso valor de check", this.model);
+    // // ////console.log("Reviso valor de check", this.model);
     if (this.model) {
       this.form.get('pFisica').setValue(' ');
     }
   }
 
   rechazar() {
-    // //console.log("Rechazado");
+    // ////console.log("Rechazado");
 
   }
 
   typeIdFun() {
-    /* // //console.log("cambiando..");
+    /* // ////console.log("cambiando..");
     if (this.typeId === 'pasaporte') {
       this.typeId = 'ine'
-      // //console.log("cambiooo..",this.typeId);
+      // ////console.log("cambiooo..",this.typeId);
     } else {
       this.typeId = 'pasaporte'
-      // //console.log("cambiooo..",this.typeId);
+      // ////console.log("cambiooo..",this.typeId);
     } */
     if (this.typeId) {
       this.formDocumentos.get('reverso').setValue('N/A');
