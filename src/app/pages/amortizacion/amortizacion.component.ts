@@ -22,7 +22,7 @@ export class AmortizacionComponent implements OnInit {
     this.loanService.getLoanData().subscribe(
       data => {
         this.loanData = data;
-        console.log("amortizacion",this.loanData);
+        //console.log("amortizacion",this.loanData);
       },
       error => console.error('error en data loan ')
     )
@@ -37,7 +37,7 @@ export class AmortizacionComponent implements OnInit {
       doc.addImage(imgData, 'PNG', 10, 10);
       var base = doc.output('datauristring');  //Base 64 pdf
       /* var base = imgData; */
-      //console.log("base64 amort png",base);
+      ////console.log("base64 amort png",base);
       this.pagareB64 = base;
       /* doc.save(`${target}.pdf`); */  //descarga Pdf
     });

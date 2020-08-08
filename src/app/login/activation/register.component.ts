@@ -37,10 +37,10 @@ export class RegisterComponent implements OnInit {
   get fo() { return this.form.controls; }
 
   resolved(captchaResponse: string) {
-    //console.log(`Resolved response token: ${captchaResponse}`);
+    ////console.log(`Resolved response token: ${captchaResponse}`);
     // this.form.get('token').setValue(captchaResponse);
 
-    //console.log(this.form.value);
+    ////console.log(this.form.value);
 
   }
 
@@ -48,16 +48,16 @@ export class RegisterComponent implements OnInit {
     this.instance[0].open();
 /* let user = new UserActivate(this.form.value.codigo,this.form.value.token,"2"); */
 let user = new UserActivate(this.form.value.codigo,"2");
-// // //console.log("form is valid?", this.form.valid);
+// // ////console.log("form is valid?", this.form.valid);
 
 if(this.form.valid){
-  /* // //console.log("form esto envio", this.form.value); */
+  /* // ////console.log("form esto envio", this.form.value); */
   //enviar datos a back
   /* this.userService.createUser(this.form.value) */
-  // //console.log("register envia", user);
+  // ////console.log("register envia", user);
   this.userService.activate(user)
     .subscribe(res=>{
-      // //console.log("esto responde el servicio register",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
+      // ////console.log("esto responde el servicio register",res); //revisar res.user p.ej y hacer un if(uid){openmodal}
       swal("¡Felicidades!", "Usuario activo.", "success");
       this.router.navigate(["login"]);
       this.instance[0].close();

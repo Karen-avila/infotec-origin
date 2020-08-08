@@ -53,7 +53,7 @@ export class PagareComponent implements OnInit {
       doc.addImage(imgData, 'PNG', 10, 10);
       /* var base = doc.output('datauristring'); */  //Base 64 pdf
       var base = imgData;
-      //console.log("base64 png",base);
+      ////console.log("base64 png",base);
       this.pagareB64 = base;
       this.sendPagare();
       /* doc.save(`${target}.pdf`); */  //descarga Pdf
