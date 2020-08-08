@@ -847,7 +847,7 @@ export class QuestionComponent implements OnInit {
       preg1: new FormControl(null, [Validators.required]),
       preg20: new FormControl(' ',[Validators.required]), 
       preg21: new FormControl(' ',[Validators.required]), 
-      preg2_0: new FormControl(' ',[Validators.required]),
+      /*preg2_0: new FormControl(' ',[Validators.required]), */
       preg3: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(10)]),
       preg4a50: new FormControl(null, [Validators.required]),
       preg4a51: new FormControl(null, [Validators.required]),
@@ -869,32 +869,29 @@ export class QuestionComponent implements OnInit {
       preg147: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg148: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg149: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
-      preg1410: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]), 
-
-      preg15: new FormControl(' ',[Validators.required]), 
-      preg15_00: new FormControl(' ',[Validators.required]),
-      preg15_01: new FormControl(' ',[Validators.required]),
-      preg15_02: new FormControl(' ',[Validators.required]),
-      preg15_03: new FormControl(' ',[Validators.required]),
-      preg15_04: new FormControl(' ',[Validators.required]),
-      preg15_05: new FormControl(' ',[Validators.required]),
-      preg15_06: new FormControl(' ',[Validators.required]),
+      preg15: new FormControl('', Validators.required), 
+      /* preg15_00: new FormControl('',[Validators.required]),
+      preg15_01: new FormControl('',[Validators.required]),
+      preg15_02: new FormControl('',[Validators.required]),
+      preg15_03: new FormControl('',[Validators.required]),
+      preg15_04: new FormControl('',[Validators.required]),
+      preg15_05: new FormControl('',[Validators.required]),
+      preg15_06: new FormControl('',[Validators.required]) */
       preg16: new FormControl(' ',[Validators.required]),
-      preg16_00: new FormControl(' ',[Validators.required]),
+      /*preg16_00: new FormControl(' ',[Validators.required]),
       preg16_01: new FormControl(' ',[Validators.required]),
       preg16_02: new FormControl(' ',[Validators.required]),
       preg16_03: new FormControl(' ',[Validators.required]),
       preg16_04: new FormControl(' ',[Validators.required]),
       preg16_05: new FormControl(' ',[Validators.required]),
-      preg16_06: new FormControl(' ',[Validators.required]),
+      preg16_06: new FormControl(' ',[Validators.required]),*/
       preg17: new FormControl(' ',[Validators.required]),
-      preg17_00: new FormControl(' ',[Validators.required]),
+      /*preg17_00: new FormControl(' ',[Validators.required]),
       preg17_01: new FormControl(' ',[Validators.required]),
       preg17_02: new FormControl(' ',[Validators.required]),
       preg17_03: new FormControl(' ',[Validators.required]),
       preg17_04: new FormControl(' ',[Validators.required]),
-      preg17_05: new FormControl(' ',[Validators.required]),
-      
+      preg17_05: new FormControl(' ',[Validators.required]), */
       preg180: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg181: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg182: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
@@ -915,12 +912,7 @@ export class QuestionComponent implements OnInit {
       preg29a330: new FormControl(null, [Validators.required]),
       preg29a331: new FormControl(null, [Validators.required]),
       preg29a332: new FormControl(null, [Validators.required]),
-      preg29a333: new FormControl(null, [Validators.required]),
-      preg29a334: new FormControl(null, [Validators.required])
-      /*preg30: new FormControl(null, [Validators.required]),
-      preg31: new FormControl(null, [Validators.required]),
-      preg32: new FormControl(null, [Validators.required]),
-      preg33: new FormControl(null, [Validators.required])*/
+      preg29a333: new FormControl(null, [Validators.required]) 
     }); 
   
    this.llenaDireccion(this.scrDir);
@@ -1589,10 +1581,14 @@ llenaqctn29a33(preg29a33){
     this.instance[0].open();
     // //console.log(this.formScrPerNeg.valid,this.formScrPerMer.valid,this.formScrRep.valid,this.formScrDir.valid,this.formQcQc.valid,this.formQcQcn.valid)
     /* if (this.formScrPerNeg.valid){ */
-    if ((this.formScrPerNeg.valid) && (this.formScrPerMer.valid)
-      && (this.formScrRep.valid) && (this.formScrDir.valid)&& (this.formQcQc.valid)){
+      console.log(this.formQcQcn)
+    if (((this.formScrPerNeg.valid) && (this.formScrPerMer.valid)
+    && (this.formScrRep.valid) && (this.formScrDir.valid)&&
+    this.formQcQcn.valid)&& (this.formQcQcn.valid)){
         this.instance[1].open();
-      //&& (this.formQcQc.valid) && (this.formQcQcn.valid)) {
+      /* (this.formScrPerNeg.valid) && (this.formScrPerMer.valid)
+      && (this.formScrRep.valid) && (this.formScrDir.valid)&& 
+      (this.formQcQc.valid) && (this.formQcQc.valid) && (this.formQcQcn.valid)) { */
         this.instance[0].close();
         const questionForm = {
         questions: true,

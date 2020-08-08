@@ -162,7 +162,7 @@
 
                                             <label>
                                                 <input  [(ngModel)]="qcQc10.resp" formControlName="qcQc10" name="qcQc10" id="qcQc10" max="38" type="number" 
-                                                 min="0" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" >
+                                                 min="0" >
                                             </label>
                                         </div>
                                     </li>
@@ -195,7 +195,7 @@
                             </p>
                         </li>
                         
-            <!--PREGUNTA 2-->
+            
                             <li class="collection-item avatar" *ngFor="let preg2 of preg2; index as i;">
                                     <span class="title">{{preg2.question}}</span>
 
@@ -212,7 +212,7 @@
 
                             <div *ngIf="!sfina8" >
                                      <li class="collection-item avatar" *ngFor="let preg2_0 of preg2_0; index as i;">
-                                    <span class="title">{{preg2_0.question}}</span>
+                                        <label for="preg2_0"><span class="title">{{preg2_0.question}}</span></label>
                                 <p>
                                 <label>
                                     <input  [(ngModel)]="preg2_0.resp" formControlName="preg2_0" name="preg2_0" id="preg2_0" type="number"
@@ -228,8 +228,7 @@
                                 <span class="title">{{preg3.question}}</span>
                             <p>
                                 <label>
-                                    <input  [(ngModel)]="preg3.resp" formControlName="preg3" name="preg3" id="preg3" type="number" min='0' maxlength='10'
-                                    oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" >
+                                    <input  [(ngModel)]="preg3.resp" formControlName="preg3" name="preg3" id="preg3" type="number" min='0' maxlength='10'>
                                 </label>
                             </p>
                         </li>
@@ -285,9 +284,9 @@
 
                                 <p *ngFor="let resp of preg15.options; index as j;">
                                 <label>
-                                    <input class="with-gap" [(ngModel)]="preg15.resp" (change)="b5()" [(ngModel)]="sfina5"
-                                    formControlName="preg15" id="preg15" 
-                                    value="{{resp.id}}" type="checkbox" />
+                                    <input class="with-gap" (change)="b5()" [(ngModel)]="sfina5"
+                                    formControlName="preg15" id="preg15" name="preg15" 
+                                    value="{{resp.id}}" type="checkbox" >
                                 <span>{{resp.name}}</span>
                                 </label>
                                 </p>
@@ -296,7 +295,7 @@
 
                         <div *ngIf="!sfina5" >
                             <li class="collection-item avatar" *ngFor="let preg15_0 of preg15_0; index as i;">
-                            <span class="title">{{preg15_0.question}}</span>
+                                <label for="{{'preg15_0'+i}}"><span class="title">{{preg15_0.question}}</span></label>
                             <p>
                                 <label>
                                 <input  [(ngModel)]="preg15_0.resp" formControlName="{{'preg15_0'+i}}" name="{{'preg15_0'+i}}" id="{{'preg15_0'+i}}" type="number"
@@ -322,7 +321,7 @@
 
                     <div *ngIf="!sfina6" >
                         <li class="collection-item avatar" *ngFor="let preg16_0 of preg16_0; index as i;">
-                        <span class="title">{{preg16_0.question}}</span>
+                            <label for="{{'preg16_0'+i}}"><span class="title">{{preg16_0.question}}</span></label>
                         <p>
                             <label>
                             <input  [(ngModel)]="preg16_0.resp" formControlName="{{'preg16_0'+i}}" name="{{'preg16_0'+i}}" id="{{'preg16_0'+i}}" type="number"
@@ -349,7 +348,7 @@
 
                 <div *ngIf="!sfina7" >
                     <li class="collection-item avatar" *ngFor="let preg17_0 of preg17_0; index as i;">
-                    <span class="title">{{preg17_0.question}}</span>
+                        <label for="{{'preg17_0'+i}}"><span class="title">{{preg17_0.question}}</span></label>
                     <p>
                         <label>
                         <input  [(ngModel)]="preg17_0.resp" formControlName="{{'preg17_0'+i}}" name="{{'preg17_0'+i}}" id="{{'preg17_0'+i}}" type="number"
