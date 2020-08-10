@@ -18,6 +18,7 @@ import { EstatusComponent } from './estatus/estatus.component';
 import { AvisodeprivacidadintegralComponent } from './avisodeprivacidadintegral/avisodeprivacidadintegral.component';
 import { CreditodirectoComponent } from './creditodirecto/creditodirecto.component';
 import { ContratodecreditoComponent } from './contratodecredito/contratodecredito.component';
+import { SolicituddecreditoComponent } from './solicituddecredito/solicituddecredito.component';
 
 const pagesRoutes: Routes = [
     {
@@ -41,7 +42,8 @@ const pagesRoutes: Routes = [
           {path: 'estatus', component: EstatusComponent},
           {path: 'avisodeprivacidadintegral', component: AvisodeprivacidadintegralComponent},
           {path: 'credito', component: CreditodirectoComponent},
-          {path: 'contratodecredito', component: ContratodecreditoComponent }
+          {path: 'contratodecredito', component: ContratodecreditoComponent },
+          {path: 'solicituddecredito', component: SolicituddecreditoComponent}
         ]
       },
 ];

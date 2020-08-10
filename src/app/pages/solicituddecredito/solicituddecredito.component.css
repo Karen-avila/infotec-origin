@@ -1,0 +1,58 @@
+.justificacion{
+    text-align: justify;
+}
+
+.subrayar{
+    text-decoration: underline;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    width: 25%;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    padding: 0.3em;
+    caption-side: bottom;
+}
+
+
+th {
+    background: #eee;
+}
+.trr{
+    background-color:#E6E6E6;
+}
+.titulos {
+    text-align: center;
+    font-weight: 600;
+}
+
+.titulo {
+    text-align: center;
+}
+
+.espacio {
+    height: 100px;
+}
+
+i.icon-gold {
+    color: #BC955C;
+}
+
+p{
+    font-size: small;
+    margin:0;
+}
+hr{
+    width: 190px;
+    size: 5;
+}
+.logo-bdb {
+    width: 300px;
+}
