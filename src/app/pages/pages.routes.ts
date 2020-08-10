@@ -19,6 +19,7 @@ import { AvisodeprivacidadintegralComponent } from './avisodeprivacidadintegral/
 import { CreditodirectoComponent } from './creditodirecto/creditodirecto.component';
 import { ContratodecreditoComponent } from './contratodecredito/contratodecredito.component';
 import { SolicituddecreditoComponent } from './solicituddecredito/solicituddecredito.component';
+import { TerminosycondicionesComponent } from './terminosycondiciones/terminosycondiciones.component';
 
 const pagesRoutes: Routes = [
     {
@@ -43,7 +44,7 @@ const pagesRoutes: Routes = [
           {path: 'avisodeprivacidadintegral', component: AvisodeprivacidadintegralComponent},
           {path: 'credito', component: CreditodirectoComponent},
           {path: 'contratodecredito', component: ContratodecreditoComponent },
-          {path: 'solicituddecredito', component: SolicituddecreditoComponent}
+          {path: 'terminosycondiciones', component: TerminosycondicionesComponent}
         ]
       },
 ];

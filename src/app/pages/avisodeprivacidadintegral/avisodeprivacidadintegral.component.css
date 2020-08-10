@@ -5,11 +5,34 @@
 .subrayar{
     text-decoration: underline;
 }
-table {
+/* table {
     width: 940px;
     border-collapse: collapse;
     margin: 0 auto;
 }
+ */
+
+ @media (min-width: 768px) {
+    .table {
+      width: 100px;
+      border-collapse: collapse;
+    margin: 0 auto;
+    }
+  }
+  @media (min-width: 992px) {
+    .table {
+      width: 970px;
+      border-collapse: collapse;
+    margin: 0 auto;
+    }
+  }
+  @media (min-width: 1200px) {
+    .table {
+       width: 1170px;
+       border-collapse: collapse;
+    margin: 0 auto;
+    }
+  }
 
 th,
 td {
