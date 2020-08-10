@@ -289,7 +289,7 @@ export class DashboardComponent implements OnInit {
       lngneg: new FormControl(null, Validators.required),
       paso: new FormControl("3", Validators.required),
       clientid: new FormControl(localStorage.getItem('clientid'), Validators.required),
-      authkey: new FormControl(localStorage.getItem('authkey'), Validators.required),
+      base64EncodedAuthenticationKey: new FormControl(localStorage.getItem('authkey'), Validators.required),
       tipopersona: new FormControl(null, Validators.required),
       clabeinter: new FormControl(null, [Validators.required, Validators.minLength(18), Validators.maxLength(18), Validators.pattern('[0-9]{18}')]),
       clabeinterconf: new FormControl(null, [Validators.required, Validators.minLength(18), Validators.maxLength(18), Validators.pattern('[0-9]{18}')]),
