@@ -116,7 +116,7 @@
                     <input type="text" hidden formControlName="lngdomic" class="validate" [(ngModel)]="lng">
                     <input type="text" hidden formControlName="latneg" class="validate" [(ngModel)]="lat2">
                     <input type="text" hidden formControlName="lngneg" class="validate" [(ngModel)]="lng2">
-                    <input type="text" hidden formControlName="authkey" class="validate">
+                    <input type="text" hidden formControlName="base64EncodedAuthenticationKey" class="validate">
 
                     <div class="input-field col s12 m12 l12">
                         <i class="material-icons prefix icon-gold">person</i>
@@ -1228,7 +1228,7 @@
             <div class="step-content">
                 <br>
                 <!--  -->
-                <div class="card col s12" id="nanoo">
+                <div class="card col s12" id="approval">
                     <div class="card-content">
                         <div class="row center">
                             <h3><b>¡Felicidades tu crédito fue aprobado!</b></h3>
@@ -1249,7 +1249,8 @@
                 </div>
                 <!--  -->
 
-                <div class=" hide" id="nano">
+               <div class="hide" id="approval2">
+                    <div class="hide" id="view-docs">
                     <div class="row">
                         <div class="input-field col s12 m12 l12">
                             <i class="material-icons prefix icon-gold">vpn_key</i>
@@ -1291,14 +1292,18 @@
                             </div>
                         </div>
                     </div>
+                </div>
 
+                <div class="" id="sign">
+
+                
                     <div class="row">
                         <div class="input-field col s12 m12 l12">
                             <i class="material-icons prefix icon-gold">vpn_key</i>
                             <label class="title black-text"><b class="title col s12 m12 l12">Firma tus
                                     Documentos</b></label>
                             <p><br></p>
-                            <p>Selecciona los archivos de tu firma electrónica avanzada (FIEL)</p>
+                            <p>Para continuar selecciona los archivos de tu firma electrónica avanzada (FIEL)</p>
                         </div>
                     </div>
 
@@ -1384,15 +1389,12 @@
 
                                     <div class="col s12">
                                         <br><br>
-                                        <button class="waves-effect teal darken-4 btn right" type="submit">Firmar
+                                        <button class="waves-effect teal darken-4 btn right" type="submit">Continuar
                                             <!--revisar nextstep igual en ts-->
                                             <i class="material-icons prefix right">arrow_forward_ios</i>
                                         </button>
 
-                                        <button class="waves-effect teal darken-4 btn left"
-                                            (click)="cancelaCred()">Cancelar
-
-                                        </button>
+                                        
 
                                         <!--<a routerLink="/home" class="waves-effect  teal darken-4 btn right ">
                                                     <i class="material-icons prefix right">send</i> Terminar
@@ -1403,9 +1405,17 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
+
+                <button class="waves-effect teal darken-4 btn left"
+                                            (click)="cancelaCred()">Cancelar
+
+                                        </button>
+                                    </div>
             </div>
         </li>
+
     </ul>
 </div>
 

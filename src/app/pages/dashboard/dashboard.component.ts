@@ -289,7 +289,7 @@ export class DashboardComponent implements OnInit {
       lngneg: new FormControl(null, Validators.required),
       paso: new FormControl("3", Validators.required),
       clientid: new FormControl(localStorage.getItem('clientid'), Validators.required),
-      authkey: new FormControl(localStorage.getItem('authkey'), Validators.required),
+      base64EncodedAuthenticationKey: new FormControl(localStorage.getItem('authkey'), Validators.required),
       tipopersona: new FormControl(null, Validators.required),
       clabeinter: new FormControl(null, [Validators.required, Validators.minLength(18), Validators.maxLength(18), Validators.pattern('[0-9]{18}')]),
       clabeinterconf: new FormControl(null, [Validators.required, Validators.minLength(18), Validators.maxLength(18), Validators.pattern('[0-9]{18}')]),
@@ -871,13 +871,15 @@ findInvalidControls() {
     this.popup[9].open();
     const docs = new Sign(this.pagare,'amortizacion');
     if (this.formFielFirm.valid) {
-
-      this.userService.sendContract(docs).subscribe(res => {
+      console.log("fiel form",this.formFielFirm.value)
+      /* this.userService.sendContract(docs).subscribe(res => {
         
-      });
+      }); */
+      document.getElementById('sign').classList.add('hide');
+      document.getElementById('view-docs').classList.remove('hide');
       /*  */
-      this.router.navigate(["home"]);
-      this.popup[0].open();
+      /* this.router.navigate(["home"]); */
+      /* this.popup[0].open(); */
       this.popup[9].close();
     } else {
       swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
@@ -1056,17 +1058,19 @@ findInvalidControls() {
   // end Pick Address
 
   aceptaCred() {
-    document.getElementById('nano').classList.remove('hide');
-    document.getElementById('nanoo').classList.add('hide');
+    document.getElementById('approval').classList.add('hide');
+    document.getElementById('approval2').classList.remove('hide');
   }
 
   cancelaCred() {
-    document.getElementById('nano').classList.add('hide');
-    document.getElementById('nanoo').classList.remove('hide');
+    document.getElementById('approval2').classList.add('hide');
+    document.getElementById('approval').classList.remove('hide');
+    document.getElementById('view-docs').classList.add('hide');
+    document.getElementById('sign').classList.remove('hide');
   }
 
   rechazaCred() {
-
+    this.router.navigate(["home"]);
   }
 
 }
