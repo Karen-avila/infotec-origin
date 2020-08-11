@@ -75,7 +75,7 @@ ul.stepper.horizontal .step.done .step-title::before {
 
 @media (min-width: 768px) {
     .modal {
-      width: 100%;
+      width: 100px;
     }
   }
   @media (min-width: 992px) {
