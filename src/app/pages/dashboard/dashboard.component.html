@@ -330,10 +330,13 @@
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">aspect_ratio</i>
                         <input id="claveelector" type="text" formControlName="claveelector"
-                            (keyup)="form.patchValue({claveelector: $event.target.value.toUpperCase()})" required
+                            (keyup)="form.patchValue({claveelector: $event.target.value.toUpperCase()})" 
+                            pattern="^(([B-D]|[F-H]|[J-N]|[P-T]|[V-Z]){6})([0-9]{6})([0-9]{2})([HM]{1})([0-9]{3})$"
+                            required
 
                             minlength="18" maxlength="18" class="validate" name="Clave de Elector" />
                             <label for="rfc">Clave de Elector *</label>
+                            <div class="blue-text" *ngIf="f.claveelector.errors">Clave de Elector invalida</div>
                         <a class="modal-trigger" href="#helpIne"><i
                                 class="material-icons prefix icon-black">help_outline</i></a>
                     </div>
@@ -1158,10 +1161,15 @@
                                 <label><input class="with-gap teal darken-4" required formControlName="autorizobc"
                                         name="autorizobc" type="checkbox" [(ngModel)]="bc" />
                                     <span>
-                                        <label>
-                                            <span class="black-text" style="font-size: 14px;">Autorizo la consulta a
+                                        <label class="waves-effect modal-trigger subrayar" href="#autorizo">
+                                            <span class="blue-text text-darken-4" style="font-size: 14px;">Autorizo la consulta a
                                                 sociedades de información crediticia</span>
                                         </label>
+
+                                       <!--  <label>
+                                            <span class="black-text" style="font-size: 14px;">Autorizo la consulta a
+                                                sociedades de información crediticia</span>
+                                        </label> -->
                                     </span>
                                 </label>
                             </div>
@@ -1679,6 +1687,17 @@
     </div>    
 </div>
 
+<div id="autorizo" class="modal">
+    <div class="modal-content">
+        <app-autorizacion></app-autorizacion>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect teal darken-4 white-text btn-flat">Cerrar</a>
+    </div>
+    <div class="footer-copyright teal darken-3">
+        <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
+    </div>
+</div>
 
 
 <app-footer></app-footer>

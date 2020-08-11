@@ -966,7 +966,7 @@ export class QuestionComponent implements OnInit {
 
 
   }
-  get f1() { return this.formQcQc.controls; }
+  
   get f() { return this.formQcQcn.controls; }
 
   llenaPerfNeg(scrPerNeg){
