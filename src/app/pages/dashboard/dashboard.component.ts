@@ -1070,7 +1070,50 @@ findInvalidControls() {
   }
 
   rechazaCred() {
-    this.router.navigate(["home"]);
+/*     swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this imaginary file!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        this.router.navigate(["home"]);
+      } else {
+        
+      }
+    }); */
+
+    /*  */
+    swal({
+      title: 'Cuidado',
+      // tslint:disable-next-line: max-line-length
+      text: 'Al rechazar tu crédito deberas volver a completar todo el proceso.',
+      icon: 'info',
+      buttons: {
+        d: {
+          text: 'Cancelar',
+          value: false,
+          visible: true,
+          className: '',
+          closeModal: true,
+        },
+        j: {
+          text: 'Aceptar',
+          value: true,
+          visible: true,
+          className: 'red darken-4',
+          closeModal: true,
+        }
+      }
+    }).then((value) => {
+      if (value) {
+        this.userService.logout();
+        this.router.navigate(["home"]);
+      }
+    });
+    
   }
 
 }

@@ -14,20 +14,21 @@
               </div>
               <div class="col s6">
                 <p center class="card-title titulos2 black-text"><b>No. RECA. 0298-439-033296/01-02385-0720</b></p>
-                <p center class="card-title titulos2 black-text"><b>FECHA DE ELABORACIÓN:</b></p>
+                <p center class="card-title titulos2 black-text">FECHA DE ELABORACIÓN: <b>{{date}}</b></p>
               </div>
               <div class="col s6">
-                <p class="titulo"><b>Nombre del CLIENTE</b></p>
+                <p class="titulo">Nombre del CLIENTE: <b>{{ loanData.clientName }}</b></p>
+                <!-- <p class="titulo"><b>{{ loanData.clientName }}</b></p> -->
                 <br>
-                <p class="titulo"><b>Monto del Crédito:</b></p>
-                <p class="titulo"><b>$</b></p>
+                <p class="titulo">Monto del Crédito: <b>{{ loanData.principal | currency:"MXN":"symbol" }}</b></p>
+                <!-- <p class="titulo"><b>{{ loanData.principal | currency:"MXN":"symbol" }}</b></p> -->
               </div>
               <div class="col s6">
-                <p class="titulo"><b>Plazo:</b></p>
-                <p class="titulo"><b>Periodicidad del pago:</b></p>
+                <p class="titulo">Plazo: <b>{{ loanData.numberOfRepayments }} Meses.</b></p>
+                <p class="titulo">Periodicidad del pago: <b>Mensual</b></p>
                 <br>
-                <p class="titulo"><b>Total:</b></p>
-                <p class="titulo"><b>=</b></p>
+                <p class="titulo">Total: <b>{{ loanData.summary.totalExpectedRepayment | currency:"MXN":"symbol" }}</b></p>
+                <!-- <p class="titulo"><b>{{ loanData.summary.totalExpectedRepayment | currency:"MXN":"symbol" }}</b></p> -->
               </div>
             </div>
             <table>
@@ -44,23 +45,27 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let pagos of loanData.repaymentSchedule.periods | slice:1; let i = index;"> 
+                <tr *ngFor="let pagos of loanData.originalSchedule.periods | slice:1; let i = index;"> 
                   <td>{{pagos.period}}</td>
                   <td>{{pagos.dueDate}}</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{{pagos.principalLoanBalanceOutstanding | currency:"MXN":"symbol"}}</td>
+                  <td>{{pagos.principalOriginalDue | currency:"MXN":"symbol"}}</td>
+                  <td>{{pagos.interestDue | currency:"MXN":"symbol"}}</td>
+                  <td>{{pagos.taxOnInterestDue | currency:"MXN":"symbol"}}</td>
+                  <td>{{pagos.principalLoanBalanceOutstanding | currency:"MXN":"symbol"}}</td>
+                  <td>{{pagos.totalDueForPeriod | currency:"MXN":"symbol"}}</td>
                 </tr>
               </tbody>
             </table>
-            <div class="col s8">
-              <p class="right-align"><b>Total a pagar:$</b></p>
+            <br>
+            <div class="col s12">
+              <p class="right"><b>Total a pagar: </b>{{ loanData.summary.totalExpectedRepayment | currency:"MXN":"symbol" }}</p>
             </div>
+            <br>
+            <br>
             <p class="parrafo">SALDOS Y PAGOS CONSIDERANDO QUE SE REALIZAN EN LAS FECHAS MOSTRADAS. CUALQUIER
               ATRASO CAUSARÁ INTERESES MORATORIOS.</p>
+              <br>
             <p class="parrafo"><b>Fecha de cálculo de intereses.</b></p>
             <p class="parrafo"> Los días de cálculo de intereses serán los días últimos de cada mes, por lo que
               a partir del día siguiente hábil se computarán los intereses respectivos. </p>
