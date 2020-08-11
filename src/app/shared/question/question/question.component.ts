@@ -869,8 +869,8 @@ export class QuestionComponent implements OnInit {
 
     this.formQcQcn = new FormGroup({
       preg1: new FormControl(null, [Validators.required]),
-      preg20: new FormControl(' ',[Validators.required]), 
-      preg21: new FormControl(' ',[Validators.required]), 
+      //preg20: new FormControl(' ',[Validators.required]), 
+      //preg21: new FormControl(' ',[Validators.required]), 
       /*preg2_0: new FormControl(' ',[Validators.required]), */
       preg3: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(10)]),
       preg4a50: new FormControl(null, [Validators.required]),
@@ -938,6 +938,7 @@ export class QuestionComponent implements OnInit {
       preg29a332: new FormControl(null, [Validators.required]),
       preg29a333: new FormControl(null, [Validators.required]) 
     }); 
+
   
    this.llenaDireccion(this.scrDir);
    this.llenaReputacion(this.scrRep);
@@ -965,6 +966,8 @@ export class QuestionComponent implements OnInit {
 
 
   }
+  
+  get f() { return this.formQcQcn.controls; }
 
   llenaPerfNeg(scrPerNeg){
     // Cuestionario PerfilNegocio -- scrPerNeg

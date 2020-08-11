@@ -19,6 +19,7 @@ import { AvisodeprivacidadintegralComponent } from './avisodeprivacidadintegral/
 import { CreditodirectoComponent } from './creditodirecto/creditodirecto.component';
 import { ContratodecreditoComponent } from './contratodecredito/contratodecredito.component';
 import { SolicituddecreditoComponent } from './solicituddecredito/solicituddecredito.component';
+import { TerminosycondicionesComponent } from './terminosycondiciones/terminosycondiciones.component';
 
 const pagesRoutes: Routes = [
     {
@@ -29,8 +30,8 @@ const pagesRoutes: Routes = [
           {path: 'home', component: HomeComponent},
           {path: 'apply', component: ApplyComponent},
           {path: 'map', component: MapComponent},
-          /* {path: 'dashboard', component: DashboardComponent, canActivate: [LoginGuardGuard]}, */
-          {path: 'dashboard', component: DashboardComponent},
+          {path: 'dashboard', component: DashboardComponent, canActivate: [LoginGuardGuard]},
+         /*  {path: 'dashboard', component: DashboardComponent}, */
           {path: 'avisodeprivacidad', component: AvisodeprivacidadComponent},
           {path: 'legal', component: LegalComponent},
           {path: 'ccontrato', component: CcontratoComponent},
@@ -43,7 +44,7 @@ const pagesRoutes: Routes = [
           {path: 'avisodeprivacidadintegral', component: AvisodeprivacidadintegralComponent},
           {path: 'credito', component: CreditodirectoComponent},
           {path: 'contratodecredito', component: ContratodecreditoComponent },
-          {path: 'solicituddecredito', component: SolicituddecreditoComponent}
+          {path: 'terminosycondiciones', component: TerminosycondicionesComponent}
         ]
       },
 ];
