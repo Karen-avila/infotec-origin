@@ -30,8 +30,8 @@ const pagesRoutes: Routes = [
           {path: 'home', component: HomeComponent},
           {path: 'apply', component: ApplyComponent},
           {path: 'map', component: MapComponent},
-          /* {path: 'dashboard', component: DashboardComponent, canActivate: [LoginGuardGuard]}, */
-          {path: 'dashboard', component: DashboardComponent},
+          {path: 'dashboard', component: DashboardComponent, canActivate: [LoginGuardGuard]},
+         /*  {path: 'dashboard', component: DashboardComponent}, */
           {path: 'avisodeprivacidad', component: AvisodeprivacidadComponent},
           {path: 'legal', component: LegalComponent},
           {path: 'ccontrato', component: CcontratoComponent},
