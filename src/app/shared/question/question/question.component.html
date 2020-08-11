@@ -161,8 +161,8 @@
                                             <span class="title">{{qcQc10.question}}</span>
 
                                             <label>
-                                                <input  [(ngModel)]="qcQc10.resp" formControlName="qcQc10" name="qcQc10" id="qcQc10" max="38" type="number" 
-                                                 min="0" >
+                                                <input  [(ngModel)]="qcQc10.resp" class="validate" formControlName="qcQc10" name="qcQc10" id="qcQc10" max="38" 
+                                                type="number" min='0' title="El número de máximo de dependientes económicos por hogar es 38." >
                                             </label>
                                         </div>
                                     </li>
@@ -196,7 +196,7 @@
                         </li>
                         
             
-                            <li class="collection-item avatar" *ngFor="let preg2 of preg2; index as i;">
+                           <!--  <li class="collection-item avatar" *ngFor="let preg2 of preg2; index as i;">
                                     <span class="title">{{preg2.question}}</span>
 
                                     <p *ngFor="let resp of preg2.options; index as j;">
@@ -221,16 +221,18 @@
                                 </p>
                                     </li>
                             </div>
-
+ -->
 
 
                         <li class="collection-item avatar" *ngFor="let preg3 of preg3; index as i;">
                                 <span class="title">{{preg3.question}}</span>
                             <p>
                                 <label>
-                                    <input  [(ngModel)]="preg3.resp" formControlName="preg3" name="preg3" id="preg3" type="number" min='0' maxlength='10'>
+                                    <input  [(ngModel)]="preg3.resp" class="validate" formControlName="preg3" name="preg3" id="preg3" type="number" min='0'
+                                     maxlength='10' title="Que el número no rebase el límite de 10 (diez) trabajadores.">
                                 </label>
                             </p>
+                            <div class="blue-text" *ngIf="f.preg3.errors">Que el número no rebase el límite de 10 (diez) trabajadores.</div>
                         </li>
                         
 
