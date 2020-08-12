@@ -77,7 +77,6 @@ scorePerfNeg(payload) {
 
 }
 
-
 scoreQueremosConocerte(payload) {
 
   let clientid = localStorage.getItem('clientid');
