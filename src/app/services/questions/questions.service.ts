@@ -14,6 +14,7 @@ export class QuestionsService {
     
   }
 
+  
 /* SCORE */
 
 scoreDirSend(payload) {
@@ -76,5 +77,36 @@ scorePerfNeg(payload) {
 
 }
 
+
+scoreQueremosConocerte(payload) {
+
+  let clientid = localStorage.getItem('clientid');
+  let url = environment.apis_url + '/V1.0/fineract-protected/datatables/queremos_conocerte/' + clientid;
+  let api_keys = environment.gravitee_api_keys;
+  let headers = environment.headers_apis;
+  headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
+  return this.http.post(url, payload, { headers: headers }).map((res: any) => {
+    return res;
+  }).catch(err => {
+    return err;
+  });
+
+}
+
+
+scoreQueremosConocerNegocio(payload) {
+
+  let clientid = localStorage.getItem('clientid');
+  let url = environment.apis_url + '/V1.0/fineract-protected/datatables/analisis_de_negocio/' + clientid;
+  let api_keys = environment.gravitee_api_keys;
+  let headers = environment.headers_apis;
+  headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
+  return this.http.post(url, payload, { headers: headers }).map((res: any) => {
+    return res;
+  }).catch(err => {
+    return err;
+  });
+
+}
 
 }

@@ -76,14 +76,24 @@ step
   get fgt() { return this.form1.controls; }
 
   recuperarpsw(){
-    // //console.log("form is valid?", this.form1.valid);
     if(this.form1.valid){
-    ////console.log("form", this.form1.value);
       //enviar datos a back
-    this.instance[0].open();
-    } else{
-      swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
-    }
+ /*  this.userService.login(data)
+    .subscribe(res=>{
+      this.instance[0].open();
+      this.router.navigate(["dashboard",{email:this.form.value.email}]);
+      this.instance[1].close();
+     /*  this.router.navigate(["dashboard"]);  */
+      //this.router.navigate(["register",{id:this.step}]); ///revisar donde quedara
+
+   /*  },err=>{
+      this.instance[1].close();
+    }); */
+   
+} else{
+  this.instance[1].close();
+  swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
+}
   }
 
   onSignInSubmit() {
