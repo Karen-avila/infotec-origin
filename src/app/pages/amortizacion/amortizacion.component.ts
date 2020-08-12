@@ -33,6 +33,7 @@ export class AmortizacionComponent implements OnInit {
       error => console.error('error en data loan ')
     )
   }
+  
 
   downloadPDF($event, target) {
     html2canvas(document.querySelector(`#PDF${target}`), {
@@ -50,6 +51,14 @@ doc.save(`${target}.pdf`);  //descarga Pdf
 
  
     });
+  }
+
+  chageDate(date){
+    console.log("dare",date)
+    let cambio;
+    cambio = moment(date).locale('es').format('Do MMMM YYYY')
+    console.log("view",cambio)
+    return cambio
   }
 
  

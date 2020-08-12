@@ -47,7 +47,7 @@
               <tbody>
                 <tr *ngFor="let pagos of loanData.originalSchedule.periods | slice:1; let i = index;"> 
                   <td>{{pagos.period}}</td>
-                  <td>{{pagos.dueDate}}</td>
+                  <td>{{pagos.dueDate[2] + "/" + pagos.dueDate[1] + "/" + pagos.dueDate[0]}}</td>
                   <td>{{pagos.principalLoanBalanceOutstanding | currency:"MXN":"symbol"}}</td>
                   <td>{{pagos.principalOriginalDue | currency:"MXN":"symbol"}}</td>
                   <td>{{pagos.interestDue | currency:"MXN":"symbol"}}</td>

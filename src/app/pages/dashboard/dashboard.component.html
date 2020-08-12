@@ -331,7 +331,7 @@
                         <i class="material-icons prefix">aspect_ratio</i>
                         <input id="claveelector" type="text" formControlName="claveelector"
                             (keyup)="form.patchValue({claveelector: $event.target.value.toUpperCase()})" 
-                            pattern="^(([B-D]|[F-H]|[J-N]|[P-T]|[V-Z]){6})([0-9]{6})([0-9]{2})([HM]{1})([0-9]{3})$"
+                            pattern=""
                             required
 
                             minlength="18" maxlength="18" class="validate" name="Clave de Elector" />
@@ -1330,6 +1330,10 @@
                                         </label>
                                     </li>
                                 </ul>
+                                <button class="waves-effect teal darken-4 btn right" (click)=sendSign()>Firmar
+                                    <!--revisar nextstep igual en ts-->
+                                    <i class="material-icons prefix right">arrow_forward_ios</i>
+                                </button>
                             </div>
                         </div>
                     </div>

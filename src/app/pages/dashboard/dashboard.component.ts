@@ -1116,4 +1116,9 @@ findInvalidControls() {
     
   }
 
+  sendSign(){
+    let view = document.getElementById("PDFpagare");
+    console.log("ververver",view.innerText)
+  }
+
 }
