@@ -156,6 +156,37 @@ export class UserService {
     );
   }
 
+  /* forgot(data) {
+    let url = environment.mifos_url + '/fineract-provider/api/v1/self/password/request';
+    let headers = environment.headers_mifos;
+    let api_keys = environment.gravitee_api_keys;
+    headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
+    
+    const object = JSON.stringify(data);
+
+    
+
+    return this.http.post(url, object, { headers }).pipe(
+      map((res: any) => {
+       
+        swal("Solicitud recibida", "Envio de Recuperación de Contraseña.", "success");
+        localStorage.setItem('clientid', res.clientId);
+        localStorage.setItem('token', res.authenticated);
+        localStorage.setItem('authkey', res.base64EncodedAuthenticationKey);
+        return true;
+      }),
+      catchError(err => {
+        if (err.status == 0) {
+          swal('Existio un error al procesar tu solicitud intentalo más tarde');
+        } else if (err.status == 401) {
+          swal('Verifica que tu usuario/contraseña sean correctos');
+        }
+        this.prosessing = false;
+        return throwError(err);
+      })
+    );
+  } */
+
 
   sendDocuments(name: any, file: File) {
     const formData: FormData = new FormData();

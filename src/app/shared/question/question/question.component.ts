@@ -244,6 +244,7 @@ export class QuestionComponent implements OnInit {
       columnId: "campo_2",
       question: "",
       options: [],
+      resp: "",
       value_quest: "0.15"
     },
     {
@@ -251,6 +252,7 @@ export class QuestionComponent implements OnInit {
       columnId: "campo_3",
       question: "",
       options: [],
+      resp: "",
       value_quest: "0.20"
     },
     {
@@ -258,6 +260,7 @@ export class QuestionComponent implements OnInit {
       columnId: "campo_4",
       question: "",
       options: [],
+      resp: "",
       value_quest: "0.3"
     } 
   ];
@@ -269,42 +272,49 @@ export class QuestionComponent implements OnInit {
       dataCode: "MARITAL_STATUS",
       columnId: "campo_1",
       question: "",
+      resp: "",
       options: []
     },
     {
       dataCode: "nivel_de_estudios_del_solicitante",
       columnId: "campo_2",
       question: "",
+      resp: "",
       options: []
     },
     {
       dataCode: "habla_usted_alguna_lengua_indigena",
       columnId: "campo_3",
       question: "",
+      resp: "",
       options: []
     },
     {
       dataCode: "en_su_vida_diaria_tiene_dificultad_al_realizar_l",
       columnId: "campo_4",
       question: "",
+      resp: "",
       options: []
     },
     {
       dataCode: "usa_usted_internet_habitualmente",
       columnId: "campo_5",
       question: "",
+      resp: "",
       options: []
     },
     {
       dataCode: "cual_es_su_papel_en_el_hogar",
       columnId: "campo_6",
       question: "",
+      resp: "",
       options: []
     },
     {
       dataCode: "ADDRESS_TYPE",
       columnId: "campo_7",
       question: "",
+      resp: "",
       options: []
     }
   ];
@@ -314,6 +324,7 @@ export class QuestionComponent implements OnInit {
       dataCode: "",
       columnId: "campo_8",
       question: "¿Número de dependientes economicos? *",
+      resp: "",
       options: []
     }
   ];
@@ -324,6 +335,7 @@ export class QuestionComponent implements OnInit {
       dataCode: "",
       columnId: "campo_1",
       question: "¿Fecha en que inició su actividad productiva? *",
+      resp: "",
       options: []
     }];
 
@@ -858,13 +870,13 @@ export class QuestionComponent implements OnInit {
 
     this.formQcQc = new FormGroup({
       qcQc0: new FormControl(null, [Validators.required]),
-      qcQc1: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(38)]),
+      qcQc1: new FormControl(null, [Validators.required]),
       qcQc2: new FormControl(null, [Validators.required]),
       qcQc3: new FormControl(null, [Validators.required]),
       qcQc4: new FormControl(null, [Validators.required]),
       qcQc5: new FormControl(null, [Validators.required]),
       qcQc6: new FormControl(null, [Validators.required]),
-      qcQc10: new FormControl(null, [Validators.required])
+      qcQc10: new FormControl(null, [Validators.required,Validators.min(0), Validators.max(38)])
     }); 
 
     this.formQcQcn = new FormGroup({
@@ -1066,7 +1078,7 @@ llenaDireccion(scrDir){
     // Cuestionario Direccion -- Fin
 }
 llenaquerconocerte(qcQc){
-  // Cuestionario PerfilNegocio -- scrPerNeg
+  
   let preConf = qcQc;
   let questions:any = []; 
   preConf.forEach(function (element) {
@@ -1086,7 +1098,7 @@ llenaquerconocerte(qcQc){
     questions.push(element);
   }, this);
   this.qcQc = questions;
-  // Cuestionario PerfilNegocio -- Fin
+  
 }
 
 llenaquerconocerte0(qcQc10){
@@ -1600,6 +1612,7 @@ llenaqctn29a33(preg29a33){
         //console.log("err senddir",err)
       });
       this.prins.open(1); 
+      
     }
   }
 
@@ -1607,21 +1620,56 @@ llenaqctn29a33(preg29a33){
     //this.qcQc[i].value = this.qcQc[i].value[j]
   }
 
-  qcQcSend() {
-    // ////console.log("form is valid? formQcQc", this.formQcQc.valid);
+  queremosConocerteSend() {
+    // ////console.log("form is valid? formScrDir", this.formScrDir.valid);
+    //console.log("antes del valid", this.formQcQc.value);
     if (this.formQcQc.valid) {
-      // ////console.log("form", this.formQcQc.value);
+      //console.log("despues del valid", this.formQcQc.value);
+      
       //enviar datos a back
-      this.instQrmCnct.open(1); //aqui ira
+      let payload="{";
+      for (const key in this.qcQc) {
+        payload = payload+`"${this.qcQc[key].dataCode}_cd_${this.qcQc[key].columnId}":${this.qcQc[key].resp},`
+       
+      }
+      for (const key in this.qcQc10) {
+        payload = payload+`"${this.qcQc10[key].dataCode}_cd_${this.qcQc10[key].columnId}":${this.qcQc10[key].resp},`
+       
+      }
+      payload = payload + `"locale": "es-mx", "dateFormat": "dd MMMM yyyy"}`
+      //console.log("view", payload)
+      this.questionsServices.scoreQueremosConocerte(payload).subscribe(res=>{
+        console.log("res senddir",res)
+      },err=>{
+        console.log("err senddir",err)
+      });
+      this.instQrmCnct.open(1); 
+      
     }
   }
-
+  
   qcQcnSend() {
-    // ////console.log("formQcQcn", this.formQcQcn.valid);
-    // ////console.log("form", this.formQcQcn.value);
+     // ////console.log("form is valid? formScrDir", this.formScrDir.valid);
+    //console.log("antes del valid", this.formQcQcn.value);
     if (this.formQcQcn.valid) {
-      // ////console.log("form", this.formQcQcn.value);
+      console.log("despues del valid", this.formQcQcn.value);
+      
       //enviar datos a back
+      let payload="{";
+      for (const key in this.preg1) {
+        payload = payload+`"${this.preg1[key].dataCode}_cd_${this.preg1[key].columnId}":${this.preg1[key].resp},`
+       
+      }
+      
+      payload = payload + `"locale": "es-mx", "dateFormat": "dd MMMM yyyy"}`
+      //console.log("view", payload)
+      this.questionsServices.scoreQueremosConocerNegocio(payload).subscribe(res=>{
+        console.log("res senddir",res)
+      },err=>{
+        console.log("err senddir",err)
+      });
+      //this.instQrmCnct.open(1); 
+      
     }
   }
 
@@ -1657,14 +1705,13 @@ llenaqctn29a33(preg29a33){
     this.instance[0].open();
     // ////console.log(this.formScrPerNeg.valid,this.formScrPerMer.valid,this.formScrRep.valid,this.formScrDir.valid,this.formQcQc.valid,this.formQcQcn.valid)
     /* if (this.formScrPerNeg.valid){ */
-      console.log(this.formQcQcn)
+     // console.log(this.formQcQcn)
     if (((this.formScrPerNeg.valid) && (this.formScrPerMer.valid)
     && (this.formScrRep.valid) && (this.formScrDir.valid)&&
-    this.formQcQcn.valid)&& (this.formQcQcn.valid)){
+    this.formQcQcn.valid)&& (this.formQcQcn.valid)) {
+
+
         this.instance[1].open();
-      /* (this.formScrPerNeg.valid) && (this.formScrPerMer.valid)
-      && (this.formScrRep.valid) && (this.formScrDir.valid)&& 
-      (this.formQcQc.valid) && (this.formQcQc.valid) && (this.formQcQcn.valid)) { */
         this.instance[0].close();
         const questionForm = {
         questions: true,
