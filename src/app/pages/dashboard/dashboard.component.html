@@ -180,7 +180,7 @@
                         <i class="material-icons prefix">payment</i>
                         <input class="validate" id="clabeinter" type="text" (keypress)="numberOnly($event)"
                             formControlName="clabeinterconf" name="Clabe Interbancaria (Confirmación) *" minlength="18" maxlength="18" required>
-                        <label for="text">Clabe interbancaria (Confirmación)</label>
+                        <label for="text">Clabe Interbancaria (Confirmación)</label>
 
                         <div class="red-text col s12" *ngIf="form.errors?.isValid && !form.pristine">
                             <p>Las clabes interbancarias no son iguales.</p>
@@ -336,9 +336,10 @@
 
                             minlength="18" maxlength="18" class="validate" name="Clave de Elector" />
                             <label for="rfc">Clave de Elector *</label>
-                            <div class="blue-text" *ngIf="f.claveelector.errors">Clave de Elector invalida</div>
-                        <a class="modal-trigger" href="#helpIne"><i
+                            
+                            <a class="modal-trigger" href="#helpIne"><i
                                 class="material-icons prefix icon-black">help_outline</i></a>
+                        <div class="blue-text" *ngIf="f.claveelector.errors">Clave de Elector invalida</div>
                     </div>
 
                     <!--<div class="input-field col s12 m6 l6">
