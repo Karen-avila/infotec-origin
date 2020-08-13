@@ -50,7 +50,7 @@ scoreRepSend(payload) {
 scorePerfMerc(payload) {
 
   let clientid = localStorage.getItem('clientid');
-  let url = environment.apis_url + '/V1.0/fineract-protected/datatables/perfil_de_mercado/' + clientid;
+  let url = environment.apis_url + '/V1.0/fineract-protected/datatables/perfil_de_mercado/' + clientid ;
   let api_keys = environment.gravitee_api_keys;
   let headers = environment.headers_apis;
   headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
@@ -77,7 +77,7 @@ scorePerfNeg(payload) {
 
 }
 
-scoreQueremosConocerte(payload) {
+queremosConocerte(payload) {
 
   let clientid = localStorage.getItem('clientid');
   let url = environment.apis_url + '/V1.0/fineract-protected/datatables/queremos_conocerte/' + clientid;
@@ -93,7 +93,7 @@ scoreQueremosConocerte(payload) {
 }
 
 
-scoreQueremosConocerNegocio(payload) {
+queremosConocerNegocio(payload) {
 
   let clientid = localStorage.getItem('clientid');
   let url = environment.apis_url + '/V1.0/fineract-protected/datatables/analisis_de_negocio/' + clientid;
