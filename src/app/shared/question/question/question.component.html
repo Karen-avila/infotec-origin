@@ -142,19 +142,21 @@
                         <div class="collapsible-body">
                             <ul class="collection">
                                 <form ngNativeValidate [formGroup]="formQcQc" (ngSubmit)="queremosConocerteSend()">
+
                                     <li class="collection-item avatar" *ngFor="let qcQc of qcQc; index as i;">
-                                        <span class="title">{{qcQc.question}}</span>
+                                        <span class="title">{{qcQc.question}}*</span>
 
                                         <p *ngFor="let resp of qcQc.options; index as j;">
                                             <label>
-                                            <input class="with-gap" [(ngModel)]="qcQc.resp" 
+                                            <input class="with-gap" (change)="changedqcQc(j, i)" [(ngModel)]="qcQc.resp" 
                                             formControlName="{{'qcQc'+i}}" id="{{'qcQc'+j}}" 
-                                            value="{{resp.id}}" type="radio" />
+                                            value="{{resp.id}}" type="radio"  />
                                             <span>{{resp.name}}</span>
                                           </label>
                                         </p>
 
                                     </li>
+
 
                                     <li class="collection-item avatar">
                                         <div class="input-field " *ngFor="let qcQc10 of qcQc10; index as i;">
@@ -184,7 +186,7 @@
             <div class="collapsible-header"><i class="material-icons">work</i>Queremos Conocer tu Negocio</div>
             <div class="collapsible-body">
                 <ul class="collection">
-                    <form ngNativeValidate [formGroup]="formQcQcn" (ngSubmit)="qcQcnSend()">
+                    <form ngNativeValidate [formGroup]="formQcQcn" (ngSubmit)="queremosConocerteNegocioSend()">
 
                         <li class="collection-item avatar" *ngFor="let preg1 of preg1; index as i;">
                                 <span class="title">{{preg1.question}}</span>
@@ -194,35 +196,39 @@
                                 </label>
                             </p>
                         </li>
-                        
-            
-                           <!--  <li class="collection-item avatar" *ngFor="let preg2 of preg2; index as i;">
+                            
+                               <!--  <li class="collection-item avatar" *ngFor="let preg2 of preg2; index as i;">
                                     <span class="title">{{preg2.question}}</span>
+        
+                                        <p>
+                                        <label>
+                                            <input class="with-gap" (change)="monto()" [(ngModel)]="sfina10"
+                                            formControlName="preg2" id="preg2" name="preg2" 
+                                            value="NO SÉ" type="radio" >
+                                        <span>NO SÉ</span>
+                                        </label>
 
-                                    <p *ngFor="let resp of preg2.options; index as j;">
-                                    <label>
-                                        <input class="with-gap" [(ngModel)]="preg2.resp" (change)="monto()" [(ngModel)]="sfina8"
-                                        formControlName="{{'preg2'+i}}" id="{{'preg2'+i}}" 
-                                    value="{{resp.id}}" type="radio" />
-                                    <span>{{resp.name}}</span>
-                                    </label>
+                                        <label>
+                                            <input class="with-gap" (change)="monto()" [(ngModel)]="sfina11"
+                                            formControlName="preg2" id="preg2" name="preg2" 
+                                            value="NO SÉ" type="radio" >
+                                        <span>SI SE, PERO PREFIERO NO DECIRLO</span>
+                                        </label>
+                                        </p>
+        
+                                
+        
+                                <div *ngIf="!sfina10" >
+                                    
+                                    <p>
+                                        <label>
+                                        <input  formControlName="preg2" name="preg2" id="preg2" type="number"
+                                        min='0' max='2000000' step='0.01' placeholder='$ MONTO'>
+                                        </label>
                                     </p>
-
-                            </li>
-
-                            <div *ngIf="!sfina8" >
-                                     <li class="collection-item avatar" *ngFor="let preg2_0 of preg2_0; index as i;">
-                                        <label for="preg2_0"><span class="title">{{preg2_0.question}}</span></label>
-                                <p>
-                                <label>
-                                    <input  [(ngModel)]="preg2_0.resp" formControlName="preg2_0" name="preg2_0" id="preg2_0" type="number"
-                                    min='0' max='1' step='0.01' placeholder='$'>
-                                </label>
-                                </p>
-                                    </li>
-                            </div>
- -->
-
+                                </div>
+                                </li> -->
+                            
 
                         <li class="collection-item avatar" *ngFor="let preg3 of preg3; index as i;">
                                 <span class="title">{{preg3.question}}</span>
@@ -250,7 +256,7 @@
                           <p>
                             <label>
                                 <input  [(ngModel)]="preg6a11.resp" formControlName="{{'preg6a11'+i}}" name="{{'preg6a11'+i}}" id="{{'preg6a11'+i}}" type="number"
-                                min='0' max='1' step='0.01' placeholder='$'>
+                                min='0' max='2000000' step='0.01' placeholder='$'>
                             </label>
                           </p>
                     </li>
@@ -275,7 +281,7 @@
                           <p>
                             <label>
                                 <input  [(ngModel)]="preg14.resp" formControlName="{{'preg14'+i}}" name="{{'preg14'+i}}" id="{{'preg14'+i}}" type="number"
-                                min='0' max='1' step='0.01' placeholder='$'>
+                                min='0' max='2000000' step='0.01' placeholder='$'>
                             </label>
                           </p>
                         </li>
@@ -301,7 +307,7 @@
                             <p>
                                 <label>
                                 <input  [(ngModel)]="preg15_0.resp" formControlName="{{'preg15_0'+i}}" name="{{'preg15_0'+i}}" id="{{'preg15_0'+i}}" type="number"
-                                min='0' max='1' step='0.01' placeholder='$'>
+                                min='0' max='10000000' step='0.01' placeholder='$'>
                                 </label>
                             </p>
                         </li>
@@ -327,7 +333,7 @@
                         <p>
                             <label>
                             <input  [(ngModel)]="preg16_0.resp" formControlName="{{'preg16_0'+i}}" name="{{'preg16_0'+i}}" id="{{'preg16_0'+i}}" type="number"
-                            min='0' max='1' step='0.01' placeholder='$'>
+                            min='0' max='10000000' step='0.01' placeholder='$'>
                             </label>
                         </p>
                     </li>
@@ -354,7 +360,7 @@
                     <p>
                         <label>
                         <input  [(ngModel)]="preg17_0.resp" formControlName="{{'preg17_0'+i}}" name="{{'preg17_0'+i}}" id="{{'preg17_0'+i}}" type="number"
-                        min='0' max='1' step='0.01' placeholder='$'>
+                        min='0' max='10000000' step='0.01' placeholder='$'>
                         </label>
                     </p>
                 </li>
@@ -365,7 +371,7 @@
                           <p>
                             <label>
                                 <input  [(ngModel)]="preg18.resp" formControlName="{{'preg18'+i}}" name="{{'preg18'+i}}" id="{{'preg18'+i}}" type="number"
-                                min='0' max='1' step='0.01' placeholder='$'>
+                                min='0' max='2000000' step='0.01' placeholder='$'>
                             </label>
                           </p>
                         </li>
@@ -385,7 +391,7 @@
                         </li>
 
                         <!--MULTIPLE SELECT-->
-                        <!-- <li class="collection-item avatar" *ngFor="let preg29 of preg29; index as i;">
+                       <!--  <li class="collection-item avatar" *ngFor="let preg29 of preg29; index as i;">
                             <label class="title black-text">{{preg29.question}}</label>
                             <p>
                                 <select multiple formControlName="preg29"  name="preg29" id="preg29" [(ngModel)]="preg29.resp">
@@ -393,7 +399,7 @@
                                     <option  value="{{resp.id}}" *ngFor="let resp of preg29.options; index as j;">{{resp.name}}</option>
                                   </select>
                             </p>
-                        </li> -->
+                        </li>  -->
 
                         <li class="collection-item avatar" *ngFor="let preg29a33 of preg29a33; index as i;">
                             <span class="title">{{preg29a33.question}}</span>
@@ -409,6 +415,11 @@
 
                         </li>
 
+                        <div class="col s12">
+                            <button class="waves-effect teal darken-4 btn left" type="submit">Siguiente
+                            <i class="material-icons prefix right">send</i>
+                        </button>
+                        </div>
                        
                     </form>
                 </ul>
@@ -429,14 +440,18 @@
 
       
     <!--pruebas-->
-    <div class="col s12">
-      <a class="waves-effect teal darken-4 btn previous-step left">Atrás
-        <i class="material-icons prefix left">arrow_back_ios</i>
-      </a>
+    <div class="row center">
+        <a class="waves-effect teal darken-4 btn previous-step left">Atrás
+            <i class="material-icons prefix left">arrow_back_ios</i>
+        </a>
+
       <a class="waves-effect  teal darken-4 btn modal-trigger right" (click)="sendQuestions()">
           <i class="material-icons prefix right">send</i> Continuar
       </a>
     </div>
+
+    
+
 </div>
 
 

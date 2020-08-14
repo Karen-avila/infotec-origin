@@ -360,7 +360,7 @@
                         </label>
                     </div>
                     <div class="row">
-                        <div class="col s6">
+                        <div class="col s12 m6">
                             <div class="input-field col s12">
                                 <span class="grey-text in">Calle *</span>
                                 <input id="calle" type="text" [(ngModel)]="personal.calle"
@@ -368,20 +368,20 @@
                                     formControlName="calle" required class="validate" name="Calle Domicilio" />
                                 <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                             </div>
-                            <div class="input-field col s4">
+                            <div class="input-field col s12 m4">
                                 <span class="grey-text in">Número Exterior *</span>
                                 <input id="numextdomic" type="text" [(ngModel)]="personal.ext"
                                     formControlName="numextdomic" required class="validate"
                                     name="Número Exterior Domicilio" placeholder="Número exterior" />
                                 <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                             </div>
-                            <div class="input-field col s4">
+                            <div class="input-field col s12 m4">
                                 <span class="grey-text in">Número Interior</span>
                                 <input id="numint" type="text" [(ngModel)]="personal.int" formControlName="numint"
                                     name="Número Interior Domicilio" placeholder="Número interior domicilio" />
                                 <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                             </div>
-                            <div class="input-field col s4">
+                            <div class="input-field col s12 m4">
                                 <span class="grey-text in">Código Postal *</span>
                                 <input #cp id="cp" type="text" formControlName="cp" required class="validate"
                                     name="Código Postal Domicilio" maxlength="5" [(ngModel)]="personal.cp"
@@ -390,7 +390,7 @@
                                 <!--<label for="cp">Codigo Postal</label>-->
                                 <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                             </div>
-                            <div class="input-field col s6">
+                            <div class="input-field col s12 m6">
                                 <span class="grey-text in">Tipo de Asentamiento *</span>
                                 <input [(ngModel)]="personal.tipo_asentamiento" type="text"
                                     formControlName="tipoasentamiento" disabled name="Tipo de Asentamiento Domicilio"
@@ -398,7 +398,7 @@
                                 <!--<label for="tipoasentamiento">Tipo de asentamiento</label>-->
                                 <div class="blue-text" *ngIf="f.tipoasentamiento.errors"></div>
                             </div>
-                            <div class="input-field col s6">
+                            <div class="input-field col s12 m6">
 
                                 <span class="grey-text in">Asentamiento</span>
                                 <select [(ngModel)]="asentamiento" formControlName="asentamiento"
@@ -408,14 +408,14 @@
                                     </option>
                                 </select>
                             </div>
-                            <div class="input-field col s6">
+                            <div class="input-field col s12 m6">
                                 <span class="grey-text in">Municipio *</span>
                                 <input [(ngModel)]="personal.municipio" id="municipio" type="text"
                                     formControlName="municipio" name="Municipio Domicilio" class="validate"
                                     placeholder="Municipio" disabled required class="validate" />
                                 <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                             </div>
-                            <div class="input-field col s6">
+                            <div class="input-field col s12 m6">
                                 <span class="grey-text in">Entidad Federativa *</span>
                                 <input type="text" [(ngModel)]="personal.estado" formControlName="entidadfeddomic"
                                     name="Entidad Federativa Domicilio" id="entidadfeddomic" class="validate"
@@ -423,8 +423,8 @@
                                 <div class="blue-text" *ngIf="f.entidadfeddomic.errors"></div>
                             </div>
                         </div>
-                        <div class="col s6">
-                            <div class="input-field col s12">
+                        <div class="col s12 m6">
+                            <div class="input-field col s12 m12">
                                 <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [zoomControl]="true"
                                     (mapClick)="mapClicked($event, 'personal')">
                                     <agm-marker *ngFor="let m of markers; let i = index" [latitude]="m.lat"
@@ -444,7 +444,7 @@
                                 <b class="title col s12 m12 l12">Información del Negocio</b>
                             </label>
                         </div>
-                        <div class="col s6">
+                        <div class="col s12 m6">
                             <div class="input-field col s12">
                                 <span class="grey-text in">Calle *</span>
                                 <input id="calleneg" [(ngModel)]="negocio.calle" type="text" formControlName="calleneg"
@@ -452,20 +452,20 @@
                                     (keyup)="form.patchValue({calleneg: $event.target.value.toUpperCase()})" />
                                 <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                             </div>
-                            <div class="input-field col s4">
+                            <div class="input-field col s12 m4">
                                 <span class="grey-text in">Número Exterior *</span>
                                 <input id="numextneg" [(ngModel)]="negocio.ext" type="text" formControlName="numextneg"
                                     required class="validate" name="Número Exterior Negocio"
                                     placeholder="Número exterior" />
                                 <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                             </div>
-                            <div class="input-field col s4">
+                            <div class="input-field col s12 m4">
                                 <span class="grey-text in">Número Interior</span>
                                 <input id="numintneg" [(ngModel)]="negocio.int" type="text" formControlName="numintneg"
                                     name="Número Interior Negocio" placeholder="Número interior" />
                                 <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                             </div>
-                            <div class="input-field col s4">
+                            <div class="input-field col s12 m4">
                                 <span class="grey-text in">Código Postal *</span>
                                 <input #cpneg id="cpneg" [(ngModel)]="negocio.cp" type="number" formControlName="cpneg"
                                     required class="validate" name="Código Postal Negocio" maxlength="5"
@@ -473,14 +473,14 @@
                                     (keyup)="cpneg.value.length == 5 && searchCP(cpneg.value, 'negocio')" />
                                 <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                             </div>
-                            <div class="input-field col s6">
+                            <div class="input-field col s12 m6">
                                 <span class="grey-text in">Tipo de Asentamiento *</span>
                                 <input type="text" [(ngModel)]="negocio.tipo_asentamiento"
                                     formControlName="tipoasentamientoneg" disabled name="Tipo de Asentamiento Negocio"
                                     id="tipoasentamientoneg" class="validate" placeholder="Tipo de asentamiento">
                                 <div class="blue-text" *ngIf="f.tipoasentamientoneg.errors"></div>
                             </div>
-                            <div class="input-field col s6">
+                            <div class="input-field col s12 m6">
                                 <span class="grey-text in">Asentamiento *</span>
                                 <select [(ngModel)]="asentamientoneg" formControlName="asentamientoneg"
                                     name="Asentamiento Negocio" id="asentamientoneg" class="negocio validate">
@@ -488,14 +488,14 @@
                                     <option [ngValue]="item" *ngFor="let item of negocio.asentamiento">{{item}}</option>
                                 </select>
                             </div>
-                            <div class="input-field col s6">
+                            <div class="input-field col s12 m6">
                                 <span class="grey-text in">Municipio *</span>
                                 <input type="text" [(ngModel)]="negocio.municipio" id="municipioneg"
                                     formControlName="municipioneg" disabled name="Municipio Negocio" class="validate"
                                     placeholder="Ciudad">
                                 <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                             </div>
-                            <div class="input-field col s6">
+                            <div class="input-field col s12 m6">
                                 <span class="grey-text in">Entidad Federativa *</span>
                                 <input type="text" [(ngModel)]="negocio.estado" formControlName="entidadfedneg"
                                     name="Entidad Federativa Negocio" disabled id="entidadfedneg" class="validate"
@@ -513,7 +513,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col s6">
+                        <div class="col s12 m6">
                             <div class="input-field col s12">
                                 <agm-map [latitude]="lat2" [longitude]="lng2" [zoom]="zoom2" [zoomControl]="true"
                                     (mapClick)="mapClicked($event, 'negocio')">
@@ -1230,16 +1230,18 @@
                         </div>
 
                         <br><br>
-
+                
                         <div class="col s12">
                             <a class="waves-effect teal darken-4 btn previous-step left">Atrás
                                 <i class="material-icons prefix left">arrow_back_ios</i>
                             </a>
+                       
                             <button class="waves-effect teal darken-4 btn right " type="submit">Continuar
                                 <!--revisar nextstep igual en ts-->
                                 <i class="material-icons prefix right">arrow_forward_ios</i>
                             </button>
                         </div>
+                           
                     </div>
 
                 </form>
@@ -1253,7 +1255,7 @@
                     <div class="col m2 s8 offset-s1">
                         <img class="responsive-img img0" src="../../../assets/5.png">
                     </div>
-                    <div class="col m9 offset-s1">
+                    <div class="col m9">
                         <p class="justificacion">Al responder las siguientes preguntas te recomendamos ser fiel a la
                             situación de tu negocio. Tus respuestas sirven para evaluar tu solicitud de crédito. La
                             información se validará con la documentación que nos proporcionaste.</p>
@@ -1305,30 +1307,32 @@
                         <!--  <div class="card col s12">
                         <div class="card-content">
 
-                            <div class="row">
-                                <ul>
-                                    <li>
-                                      <button class="waves-effect teal btn darken-4 modal-trigger left ml-3" href="#ccontrato">
+                            <div class="row center">
+                                
+                                    <div class="col s12 m4">
+                                      <button class="waves-effect teal btn darken-4 modal-trigger" href="#ccontrato">
                                         <span class="white-text text-darken-4" style="font-size: 14px;">
                                           Ver Caratula de Contrato
                                         </span>
                                       </button>
-                                    </li>
-                                    <li>
-                                      <button class="waves-effect teal btn darken-4 modal-trigger left ml-3" href="#tamortizacion">
+                                    </div> &nbsp;
+                                    
+                                    <div class="col s12 m4">
+                                      <button class="waves-effect teal btn darken-4 modal-trigger" href="#tamortizacion">
                                         <span class="white-text text-darken-4" style="font-size: 14px;">
                                           Ver Tabla de Amortización
                                         </span>
                                       </button>
-                                    </li>
-                                    <li>
-                                      <button class="waves-effect teal btn darken-4 modal-trigger left ml-3" href="#pagare">
+                                    </div>&nbsp;
+                                    
+                                    <div class="col s12 m4">
+                                      <button class="waves-effect teal btn darken-4 modal-trigger" href="#pagare">
                                         <span class="white-text text-darken-3" style="font-size: 14px;">
                                           Ver Pagaré
                                         </span>
                                       </button>
-                                    </li>
-                                </ul>
+                                    </div>
+                                
 
 
                             </div>

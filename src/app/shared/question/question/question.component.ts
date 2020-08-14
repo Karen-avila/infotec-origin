@@ -341,21 +341,21 @@ export class QuestionComponent implements OnInit {
 
     preg2 = [
     {
-      dataCode: "registre_el_total_de_ingresos_que_obtuvo_el",
-      columnId: "campo_2",
-      question: "",
+      dataCode: "",
+      columnId: "campo_3",
+      question: "¿Registre el total de ingresos que obtuvo el negocio durante el ejercicio fiscal anterior. Por favor incluya tanto los ingresos derivados como los no derivados de la actividad, además de los apoyos del gobierno que haya recibido.?*",
+      resp: "",
       options: []
-      
     }];
 
-    preg2_0 = [
+    /* preg2_0 = [
       {
-        dataCode: "",
-        columnId: "campo_3",
-        question: "Monto:",
+        dataCode: "registre_el_total_de_ingresos_no",
+        columnId: "campo_2",
+        question: "",
         options: []
         
-      }];
+      }]; */
 
 
   preg3 = [
@@ -363,6 +363,7 @@ export class QuestionComponent implements OnInit {
       dataCode: "",
       columnId: "campo_4",
       question: "¿Cuántas personas trabajan en su negocio? *",
+      resp: "",
       options: []
     }];
 
@@ -371,6 +372,7 @@ export class QuestionComponent implements OnInit {
       dataCode: "",
       columnId: "campo_5",
       question: "¿Cuál es el destino del crédito; es decir, específicamente para qué va a usar el crédito en su negocio? Por ejemplo, comprar un vehículo para repartir a domicilio.*",
+      resp: "",
       options: []
     },
 
@@ -378,6 +380,7 @@ export class QuestionComponent implements OnInit {
       dataCode: "",
       columnId: "campo_6",
       question: "¿Cuál es el propósito del proyecto; es decir, en qué espera que mejore su negocio debido al crédito que solicita? Por ejemplo, incrementar las ventas con la entrega a domicilio. *",
+      resp: "",
       options: []
     }];
 
@@ -387,12 +390,14 @@ export class QuestionComponent implements OnInit {
       dataCode: "",
       columnId: "campo_7",
       question: "¿De cuánto efectivo dispone actualmente para cubrir las operaciones del negocios? Incluya lo que guarda en su casa, en el banco o en el negocio. *",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_8",
       question: "¿Al día de hoy cuánto le deben por venta de bienes a crédito o servicios realizados y que aún no le hayan terminado de pagar? *",
+      resp: "",
       options: []
       },
     {
@@ -405,18 +410,21 @@ export class QuestionComponent implements OnInit {
       dataCode: "",
       columnId: "campo_10",
       question: "Pensando en los últimos 6 meses, en promedio, ¿a cuánto ascienden, cada mes, otros ingresos obtenidos además de los generados por su actividad principal del negocio? *",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_11",
       question: "Pensando en los últimos 6 meses, en promedio, ¿cuánto vende o ingresa por la realización de sus servicios cada mes sin descontar los gastos? *",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_12",
       question: "En promedio ¿cuánto gasta cada vez que surte su negocio con mercancías para la venta de bienes o realización de sus servicios? *",
+      resp: "",
       options: []
     }];
 
@@ -425,83 +433,86 @@ export class QuestionComponent implements OnInit {
       dataCode: "con_que_frecuencia_surte_su_negocio_con_mercanci",
       columnId: "campo_13",
       question: "",
+      resp: "",
       options: []
     },
     {
       dataCode: "cuando_fue_la_ultima_vez_que_surtio_su_negocio_c",
       columnId: "campo_14",
       question: "",
+      resp: "",
       options: []
     }];
-
- /*  preg14 = [
-    {
-      dataCode: "pensando_en los ultimos_6_meses_en_sueldos_salar",
-      columnId: "campo_15",
-      question: "",
-      options: []
-    }
-  ]; */
 
   preg14 = [
     {
       dataCode: "",
       columnId: "campo_15",
       question: "¿Pensando en los últimos 6 meses, en promedio, indique cuánto paga cada mes por: Sueldos, salarios o cualquier otro pago a los trabajadores del negocio? *",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_16",
       question: "¿Servicios públicos? *",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_17",
       question: "¿Transporte para actividades del negocio? *",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_18",
       question: "¿Pago por franquicias? *",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_19",
       question: "¿Promoción y publicidad? *",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_20",
       question: "¿Servicios contables o legales? *",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_21",
       question: "¿Mantenimiento del negocio? *",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_22",
       question: "¿Licencias de software? *",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_23",
       question: "¿Impuestos? *",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_24",
       question: "¿Otros gastos no incluidos en la lista pero que son necesarios para la operación de su negocio? *",
+      resp: "",
       options: []
     }
   ];
@@ -511,6 +522,7 @@ export class QuestionComponent implements OnInit {
       dataCode: "indique_el_monto_de_financiamiento_que_haya_reci",
       columnId: "campo_26",
       question: "",
+      resp: "",
       options: []
     }
   ];
@@ -520,42 +532,49 @@ export class QuestionComponent implements OnInit {
       dataCode: "",
       columnId: "campo_27",
       question: "¿Monto por Recursos propios (dueños, herencia, familia y amigos) o utilidades reinvertidas?",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_28",
       question: "¿Monto por Préstamos de familiares y amigos que no tienen participación en la empresa?",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_29",
       question: "¿Monto por Sistema ﬁnanciero formal ( bancos  privados, Banco del Bienestar, antes Bansefi, o ﬁnancieras)?",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_30",
       question: "¿Monto por Prestamistas particulares (personas que prestan dinero)?",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_31",
       question: "¿Monto por Crédito de proveedores?",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_32",
       question: "¿Monto por Recursos de inversionistas privados?",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_33",
       question: "¿Monto por Otras?",
+      resp: "",
       options: []
     }
   ];
@@ -565,6 +584,7 @@ export class QuestionComponent implements OnInit {
       dataCode: "cuanto_debe_al_dia_de_hoy_por_los_conceptos_sigu",
       columnId: "campo_34",
       question: "",
+      resp: "",
       options: []
     }
   ];
@@ -574,42 +594,49 @@ export class QuestionComponent implements OnInit {
       dataCode: "",
       columnId: "campo_35",
       question: "¿Monto por recursos propios (dueños, herencia, familia y amigos) o utilidades reinvertidas? ",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_36",
       question: "¿Monto por préstamos de familiares y amigos que no tienen participación en la empresa?",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_37",
       question: "¿Monto por sistema ﬁnanciero formal ( bancos  privados, Banco del Bienestar, antes Bansefi, o ﬁnancieras)?",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_38",
       question: "¿Monto por Prestamistas particulares (personas que prestan dinero)?",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_39",
       question: "¿Monto por crédito de proveedores?",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_40",
       question: "¿Monto por recursos de inversionistas privados?",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_41",
       question: "¿Monto por otras?",
+      resp: "",
       options: []
     }
   ];
@@ -619,6 +646,7 @@ export class QuestionComponent implements OnInit {
       dataCode: "en_promedio_cuanto_paga_cada_mes_por_los_concept",
       columnId: "campo_42",
       question: "",
+      resp: "",
       options: []
     }
   ];
@@ -628,36 +656,42 @@ export class QuestionComponent implements OnInit {
       dataCode: "",
       columnId: "campo_43",
       question: "¿Monto por préstamos de familiares y amigos que no tienen participación en la empresa?",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_44",
       question: "¿Monto por sistema ﬁnanciero formal ( bancos  privados, Banco del Bienestar, antes Bansefi, o ﬁnancieras)?",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_45",
       question: "¿Monto por prestamistas particulares (personas que prestan dinero)?",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_46",
       question: "¿Monto por crédito de proveedores?",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_47",
       question: "¿Monto por recursos de inversionistas privados?",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_48",
       question: "¿Monto por otras?",
+      resp: "",
       options: []
     }
   ];
@@ -667,42 +701,49 @@ export class QuestionComponent implements OnInit {
       dataCode: "",
       columnId: "campo_49",
       question: "¿Registre la cantidad que pagó la empresa por los siguientes conceptos durante el ejercicio fiscal anterior: Luz? *",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_50",
-      question: "¿Gas? *",
+      question: "¿Gas o algún combustible? *",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_51",
       question: "¿Telecomunicaciones (teléfono fijo o celular para el negocio e internet)? *",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_52",
       question: "¿Materias primas consumidas (a costo de adquisición)? *",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_53",
       question: "¿Mercancías compradas para reventa? *",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_54",
       question: "¿Materiales consumidos para la prestación del servicio? *",
+      resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_55",
       question: "¿Otros? *",
+      resp: "",
       options: []
     }
   ];
@@ -712,63 +753,74 @@ export class QuestionComponent implements OnInit {
       dataCode: "participo_en_la_convocatoria_2.1_desarrollo_y_fo",
       columnId: "campo_56",
       question: "",
+      resp: "",
       options: []
     },
     {
       dataCode: "recibio_capacitacion_vinculada_a_su_credito_prov",
       columnId: "campo_57",
       question: "",
+      resp: "",
       options: []
     },
     {
       dataCode: "ha_solicitado_credito_anteriormente",
       columnId: "campo_58",
       question: "",
+      resp: "",
       options: []
     },
     {
       dataCode: "sus_ingresos_han_mejorado_despues_de_recibir_un",
       columnId: "campo_59",
       question: "",
+      resp: "",
       options: []
     },
     {
       dataCode: "ademas_de_su_oficina_comercio_o_local_principal",
       columnId: "campo_60",
       question: "",
+      resp: "",
       options: []
     },
     {
       dataCode: "como_se_lleva_la_contabilidad_de_la_empresa",
       columnId: "campo_61",
       question: "",
+      resp: "",
       options: []
     },
     {
       dataCode: "la_empresa_tiene_cuenta_bancaria_exclusiva_para",
       columnId: "campo_62",
       question: "",
+      resp: "",
       options: []
     },
     {
       dataCode: "durante_el_ejercicio_fiscal_anterior_la_empresa",
       columnId: "campo_63",
       question: "",
+      resp: "",
       options: []
     },
     {
       dataCode: "durante_el_ejercicio_fiscal_anterior_se_otorgo_c",
       columnId: "campo_64",
       question: "",
+      resp: "",
       options: []
     },
     {
       dataCode: "cual_fue_la_principal_causa_por_la_que_durante_e",
       columnId: "campo_65",
       question: "",
+      resp: "",
       options: []
     }];
 
+  
   preg29a33 = [
     {
       dataCode: "en_la_empresa_se_realizan_actualmente_algunas_de",
@@ -781,24 +833,28 @@ export class QuestionComponent implements OnInit {
       dataCode: "cual_es_el_motivo_principal_por_el_que_se_inicio",
       columnId: "campo_67",
       question: "",
+      resp: "",
       options: []
     },
     {
       dataCode: "en_su_negocio_o_actividad_cuanta_con_un_local_pa",
       columnId: "campo_68",
       question: "",
+      resp: "",
       options: []
     },
     {
       dataCode: "en_caso_de_ser_local_independiente_fuera_de_un_t",
       columnId: "campo_69",
       question: "",
+      resp: "",
       options: []
     },
     {
       dataCode: "si_no_cuenta_con_un_local_en_donde_se_realizan_l",
       columnId: "campo_70",
       question: "",
+      resp: "",
       options: []
     }
   ];
@@ -960,7 +1016,7 @@ export class QuestionComponent implements OnInit {
    this.llenaquerconocerte0(this.qcQc10); 
    this.llenaqctn1(this.preg1); 
    this.llenaqctn2(this.preg2); 
-   this.llenaqctn2_0(this.preg2_0); 
+   /* this.llenaqctn2_0(this.preg2_1); */ 
    this.llenaqctn3(this.preg3); 
    this.llenaqctn4a5(this.preg4a5); 
    this.llenaqctn6a11(this.preg6a11); 
@@ -1165,29 +1221,6 @@ llenaqctn2(preg2){
     questions.push(element);
   }, this);
   this.preg2 = questions;
-}
-
-
-llenaqctn2_0(preg2_0){
-  let preConf = preg2_0;
-  let questions:any = []; 
-  preConf.forEach(function (element) {
-    this.userService.getDataCode(element.dataCode).subscribe(
-      data => {
-        element.question = data.description;
-        let options = [];
-        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
-          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
-        });
-        element.options = options;
-      },
-      error => {
-        console.error('There was an error getting code values ' + element.dataCode, error);
-      }
-    );
-    questions.push(element);
-  }, this);
-  this.preg2_0 = questions;
 }
 
 llenaqctn3(preg3){
@@ -1624,8 +1657,8 @@ llenaqctn29a33(preg29a33){
     // ////console.log("form is valid? formScrDir", this.formScrDir.valid);
     //console.log("antes del valid", this.formQcQc.value);
     if (this.formQcQc.valid) {
-      //console.log("despues del valid", this.formQcQc.value);
-      
+      //console.log("form direccion", this.formScrDir.value);
+      //console.log("forma direccion", this.scrDir);
       //enviar datos a back
       let payload="{";
       for (const key in this.qcQc) {
@@ -1633,22 +1666,23 @@ llenaqctn29a33(preg29a33){
        
       }
       for (const key in this.qcQc10) {
-        payload = payload+`"${this.qcQc10[key].dataCode}_cd_${this.qcQc10[key].columnId}":${this.qcQc10[key].resp},`
+        payload = payload+`"${this.qcQc10[key].columnId}":${this.qcQc10[key].resp},`
        
       }
       payload = payload + `"locale": "es-mx", "dateFormat": "dd MMMM yyyy"}`
-      //console.log("view", payload)
-      this.questionsServices.scoreQueremosConocerte(payload).subscribe(res=>{
-        console.log("res senddir",res)
+      console.log("view", payload)
+      this.questionsServices.queremosConocerte(payload).subscribe(res=>{
+        //console.log("res senddir",res)
       },err=>{
-        console.log("err senddir",err)
+        //console.log("err senddir",err)
       });
       this.instQrmCnct.open(1); 
       
     }
+      
   }
   
-  qcQcnSend() {
+  queremosConocerteNegocioSend() {
      // ////console.log("form is valid? formScrDir", this.formScrDir.valid);
     //console.log("antes del valid", this.formQcQcn.value);
     if (this.formQcQcn.valid) {
@@ -1662,13 +1696,13 @@ llenaqctn29a33(preg29a33){
       }
       
       payload = payload + `"locale": "es-mx", "dateFormat": "dd MMMM yyyy"}`
-      //console.log("view", payload)
-      this.questionsServices.scoreQueremosConocerNegocio(payload).subscribe(res=>{
+      console.log("view", payload)
+      this.questionsServices.queremosConocerNegocio(payload).subscribe(res=>{
         console.log("res senddir",res)
       },err=>{
         console.log("err senddir",err)
       });
-      //this.instQrmCnct.open(1); 
+      this.instQrmCnct.close(1); 
       
     }
   }
@@ -1697,7 +1731,7 @@ llenaqctn29a33(preg29a33){
   monto() {
     // ////console.log("Reviso valor de check", this.sfina8);
     if (this.sfina8) {
-      this.formQcQcn.get("preg2_0").setValue(" ")
+      this.formQcQcn.get("preg2").setValue(" ")
     }
   }
 
