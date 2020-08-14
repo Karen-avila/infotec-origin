@@ -2,6 +2,6 @@ export class Sign {
 
     constructor(
         public pagare: string,
-        public amorrtizacion: string,
+        public amortizacion: string,
     ) { }
 }

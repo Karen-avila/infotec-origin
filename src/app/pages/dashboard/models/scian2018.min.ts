@@ -1,386 +1,137 @@
 export const scian = {
   sector: [
+
     {
-      codigo: '11',
-      titulo: 'Agricultura, cría y explotación de animales, aprovechamiento forestal, pesca y caza',
+      codigo: '46',
+      titulo: 'Comercio al por menor',
       subsector: [
         {
-          codigo: '111',
-          titulo: 'Agricultura',
+          codigo: '461',
+          titulo: 'Comercio al por menor de abarrotes, alimentos, bebidas, hielo y tabaco',
           rama: [
             {
-              codigo: '1111',
-              titulo: 'Cultivo de semillas oleaginosas, leguminosas y cereales',
+              codigo: '4611',
+              titulo: 'Comercio al por menor de abarrotes y alimentos',
               subrama: [
                 {
-                  codigo: '11111',
-                  titulo: 'Cultivo de soya',
+                  codigo: '46111',
+                  titulo: 'Comercio al por menor en tiendas de abarrotes, ultramarinos y misceláneas',
                   giro: [
                     {
-                      codigo: '111110',
-                      titulo: 'Cultivo de soya'
+                      codigo: '461110',
+                      titulo: 'Comercio al por menor en tiendas de abarrotes, ultramarinos y misceláneas'
                     }
                   ]
                 },
                 {
-                  codigo: '11112',
-                  titulo: 'Cultivo de semillas oleaginosas, excepto soya',
+                  codigo: '46112',
+                  titulo: 'Comercio al por menor de carnes',
                   giro: [
                     {
-                      codigo: '111121',
-                      titulo: 'Cultivo de cártamo'
+                      codigo: '461121',
+                      titulo: 'Comercio al por menor de carnes rojas'
                     },
                     {
-                      codigo: '111122',
-                      titulo: 'Cultivo de girasol'
+                      codigo: '461122',
+                      titulo: 'Comercio al por menor de carne de aves'
                     },
                     {
-                      codigo: '111129',
-                      titulo: 'Cultivo anual de otras semillas oleaginosas'
+                      codigo: '461123',
+                      titulo: 'Comercio al por menor de pescados y mariscos'
                     }
                   ]
                 },
                 {
-                  codigo: '11113',
-                  titulo: 'Cultivo de leguminosas',
+                  codigo: '46113',
+                  titulo: 'Comercio al por menor de frutas y verduras frescas',
                   giro: [
                     {
-                      codigo: '111131',
-                      titulo: 'Cultivo de frijol grano'
-                    },
-                    {
-                      codigo: '111132',
-                      titulo: 'Cultivo de garbanzo grano'
-                    },
-                    {
-                      codigo: '111139',
-                      titulo: 'Cultivo de otras leguminosas'
+                      codigo: '461130',
+                      titulo: 'Comercio al por menor de frutas y verduras frescas'
                     }
                   ]
                 },
                 {
-                  codigo: '11114',
-                  titulo: 'Cultivo de trigo',
+                  codigo: '46114',
+                  titulo: 'Comercio al por menor de semillas y granos alimenticios, especias y chiles secos',
                   giro: [
                     {
-                      codigo: '111140',
-                      titulo: 'Cultivo de trigo'
+                      codigo: '461140',
+                      titulo: 'Comercio al por menor de semillas y granos alimenticios, especias y chiles secos'
                     }
                   ]
                 },
                 {
-                  codigo: '11115',
-                  titulo: 'Cultivo de maíz',
+                  codigo: '46115',
+                  titulo: 'Comercio al por menor de leche, otros productos lácteos y embutidos',
                   giro: [
                     {
-                      codigo: '111151',
-                      titulo: 'Cultivo de maíz grano'
-                    },
-                    {
-                      codigo: '111152',
-                      titulo: 'Cultivo de maíz forrajero'
+                      codigo: '461150',
+                      titulo: 'Comercio al por menor de leche, otros productos lácteos y embutidos'
                     }
                   ]
                 },
                 {
-                  codigo: '11116',
-                  titulo: 'Cultivo de arroz',
+                  codigo: '46116',
+                  titulo: 'Comercio al por menor de dulces y materias primas para repostería',
                   giro: [
                     {
-                      codigo: '111160',
-                      titulo: 'Cultivo de arroz'
+                      codigo: '461160',
+                      titulo: 'Comercio al por menor de dulces y materias primas para repostería'
                     }
                   ]
                 },
                 {
-                  codigo: '11119',
-                  titulo: 'Cultivo de otros cereales',
+                  codigo: '46117',
+                  titulo: 'Comercio al por menor de paletas de hielo y helados',
                   giro: [
                     {
-                      codigo: '111191',
-                      titulo: 'Cultivo de sorgo grano'
-                    },
+                      codigo: '461170',
+                      titulo: 'Comercio al por menor de paletas de hielo y helados'
+                    }
+                  ]
+                },
+                {
+                  codigo: '46119',
+                  titulo: 'Comercio al por menor de otros alimentos',
+                  giro: [
                     {
-                      codigo: '111192',
-                      titulo: 'Cultivo de avena grano'
-                    },
-                    {
-                      codigo: '111193',
-                      titulo: 'Cultivo de cebada grano'
-                    },
-                    {
-                      codigo: '111194',
-                      titulo: 'Cultivo de sorgo forrajero'
-                    },
-                    {
-                      codigo: '111195',
-                      titulo: 'Cultivo de avena forrajera'
-                    },
-                    {
-                      codigo: '111199',
-                      titulo: 'Cultivo de otros cereales'
+                      codigo: '461190',
+                      titulo: 'Comercio al por menor de otros alimentos'
                     }
                   ]
                 }
               ]
             },
             {
-              codigo: '1112',
-              titulo: 'Cultivo de hortalizas',
+              codigo: '4612',
+              titulo: 'Comercio al por menor de bebidas, hielo y tabaco',
               subrama: [
                 {
-                  codigo: '11121',
-                  titulo: 'Cultivo de hortalizas',
+                  codigo: '46121',
+                  titulo: 'Comercio al por menor de bebidas y hielo',
                   giro: [
                     {
-                      codigo: '111211',
-                      titulo: 'Cultivo de jitomate o tomate rojo'
+                      codigo: '461211',
+                      titulo: 'Comercio al por menor de vinos y licores'
                     },
                     {
-                      codigo: '111212',
-                      titulo: 'Cultivo de chile'
+                      codigo: '461212',
+                      titulo: 'Comercio al por menor de cerveza'
                     },
                     {
-                      codigo: '111213',
-                      titulo: 'Cultivo de cebolla'
-                    },
-                    {
-                      codigo: '111214',
-                      titulo: 'Cultivo de melón'
-                    },
-                    {
-                      codigo: '111215',
-                      titulo: 'Cultivo de tomate verde'
-                    },
-                    {
-                      codigo: '111216',
-                      titulo: 'Cultivo de papa'
-                    },
-                    {
-                      codigo: '111217',
-                      titulo: 'Cultivo de calabaza'
-                    },
-                    {
-                      codigo: '111218',
-                      titulo: 'Cultivo de sandía'
-                    },
-                    {
-                      codigo: '111219',
-                      titulo: 'Cultivo de otras hortalizas'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '1113',
-              titulo: 'Cultivo de frutales y nueces',
-              subrama: [
-                {
-                  codigo: '11131',
-                  titulo: 'Cultivo de naranja',
-                  giro: [
-                    {
-                      codigo: '111310',
-                      titulo: 'Cultivo de naranja'
+                      codigo: '461213',
+                      titulo: 'Comercio al por menor de bebidas no alcohólicas y hielo'
                     }
                   ]
                 },
                 {
-                  codigo: '11132',
-                  titulo: 'Cultivo de otros cítricos',
+                  codigo: '46122',
+                  titulo: 'Comercio al por menor de cigarros, puros y tabaco',
                   giro: [
                     {
-                      codigo: '111321',
-                      titulo: 'Cultivo de limón'
-                    },
-                    {
-                      codigo: '111329',
-                      titulo: 'Cultivo de otros cítricos'
-                    }
-                  ]
-                },
-                {
-                  codigo: '11133',
-                  titulo: 'Cultivo de frutales no cítricos y de nueces',
-                  giro: [
-                    {
-                      codigo: '111331',
-                      titulo: 'Cultivo de café'
-                    },
-                    {
-                      codigo: '111332',
-                      titulo: 'Cultivo de plátano'
-                    },
-                    {
-                      codigo: '111333',
-                      titulo: 'Cultivo de mango'
-                    },
-                    {
-                      codigo: '111334',
-                      titulo: 'Cultivo de aguacate'
-                    },
-                    {
-                      codigo: '111335',
-                      titulo: 'Cultivo de uva'
-                    },
-                    {
-                      codigo: '111336',
-                      titulo: 'Cultivo de manzana'
-                    },
-                    {
-                      codigo: '111337',
-                      titulo: 'Cultivo de cacao'
-                    },
-                    {
-                      codigo: '111338',
-                      titulo: 'Cultivo de coco'
-                    },
-                    {
-                      codigo: '111339',
-                      titulo: 'Cultivo de otros frutales no cítricos y de nueces'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '1114',
-              titulo: 'Cultivo en invernaderos y otras estructuras agrícolas protegidas, y floricultura',
-              subrama: [
-                {
-                  codigo: '11141',
-                  titulo: 'Cultivo de productos alimenticios en invernaderos y otras estructuras agrícolas protegidas',
-                  giro: [
-                    {
-                      codigo: '111411',
-                      titulo: 'Cultivo de jitomate en invernaderos y otras estructuras agrícolas protegidas'
-                    },
-                    {
-                      codigo: '111412',
-                      titulo: 'Cultivo de fresa en invernaderos y otras estructuras agrícolas protegidas'
-                    },
-                    {
-                      codigo: '111413',
-                      titulo: 'Cultivo de bayas (berries) en invernaderos y otras estructuras agrícolas protegidas, excepto fresas'
-                    },
-                    {
-                      codigo: '111414',
-                      titulo: 'Cultivo de chile en invernaderos y otras estructuras agrícolas protegidas'
-                    },
-                    {
-                      codigo: '111415',
-                      titulo: 'Cultivo de manzana en invernaderos y otras estructuras agrícolas protegidas'
-                    },
-                    {
-                      codigo: '111416',
-                      titulo: 'Cultivo de pepino en invernaderos y otras estructuras agrícolas protegidas'
-                    },
-                    {
-                      codigo: '111419',
-                      titulo: 'Cultivo de otros productos alimenticios en invernaderos y otras estructuras agrícolas protegidas'
-                    }
-                  ]
-                },
-                {
-                  codigo: '11142',
-                  titulo: 'Floricultura, y otros cultivos de productos no alimenticios en invernaderos y otras estructuras agrícolas protegidas',
-                  giro: [
-                    {
-                      codigo: '111421',
-                      titulo: 'Floricultura a cielo abierto'
-                    },
-                    {
-                      codigo: '111422',
-                      titulo: 'Floricultura en invernaderos y otras estructuras agrícolas protegidas'
-                    },
-                    {
-                      codigo: '111423',
-                      titulo: 'Cultivo de árboles de ciclo productivo de 10 años o menos'
-                    },
-                    {
-                      codigo: '111429',
-                      titulo: 'Otros cultivos no alimenticios en invernaderos y otras estructuras agrícolas protegidas'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '1119',
-              titulo: 'Otros cultivos',
-              subrama: [
-                {
-                  codigo: '11191',
-                  titulo: 'Cultivo de tabaco',
-                  giro: [
-                    {
-                      codigo: '111910',
-                      titulo: 'Cultivo de tabaco'
-                    }
-                  ]
-                },
-                {
-                  codigo: '11192',
-                  titulo: 'Cultivo de algodón',
-                  giro: [
-                    {
-                      codigo: '111920',
-                      titulo: 'Cultivo de algodón'
-                    }
-                  ]
-                },
-                {
-                  codigo: '11193',
-                  titulo: 'Cultivo de caña de azúcar',
-                  giro: [
-                    {
-                      codigo: '111930',
-                      titulo: 'Cultivo de caña de azúcar'
-                    }
-                  ]
-                },
-                {
-                  codigo: '11194',
-                  titulo: 'Cultivo de alfalfa y pastos',
-                  giro: [
-                    {
-                      codigo: '111941',
-                      titulo: 'Cultivo de alfalfa'
-                    },
-                    {
-                      codigo: '111942',
-                      titulo: 'Cultivo de pastos'
-                    }
-                  ]
-                },
-                {
-                  codigo: '11199',
-                  titulo: 'Otros cultivos',
-                  giro: [
-                    {
-                      codigo: '111991',
-                      titulo: 'Cultivo de agaves alcoholeros'
-                    },
-                    {
-                      codigo: '111992',
-                      titulo: 'Cultivo de cacahuate'
-                    },
-                    {
-                      codigo: '111993',
-                      titulo: 'Actividades agrícolas combinadas con explotación de animales'
-                    },
-                    {
-                      codigo: '111994',
-                      titulo: 'Actividades agrícolas combinadas con aprovechamiento forestal'
-                    },
-                    {
-                      codigo: '111995',
-                      titulo: 'Actividades agrícolas combinadas con explotación de animales y aprovechamiento forestal'
-                    },
-                    {
-                      codigo: '111999',
-                      titulo: 'Otros cultivos'
+                      codigo: '461220',
+                      titulo: 'Comercio al por menor de cigarros, puros y tabaco'
                     }
                   ]
                 }
@@ -389,220 +140,40 @@ export const scian = {
           ]
         },
         {
-          codigo: '112',
-          titulo: 'Cría y explotación de animales',
+          codigo: '462',
+          titulo: 'Comercio al por menor en tiendas de autoservicio y departamentales',
           rama: [
             {
-              codigo: '1121',
-              titulo: 'Explotación de bovinos',
+              codigo: '4621',
+              titulo: 'Comercio al por menor en tiendas de autoservicio',
               subrama: [
                 {
-                  codigo: '11211',
-                  titulo: 'Explotación de bovinos para la producción de carne',
+                  codigo: '46211',
+                  titulo: 'Comercio al por menor en tiendas de autoservicio',
                   giro: [
                     {
-                      codigo: '112110',
-                      titulo: 'Explotación de bovinos para la producción de carne'
-                    }
-                  ]
-                },
-                {
-                  codigo: '11212',
-                  titulo: 'Explotación de bovinos para la producción de leche',
-                  giro: [
-                    {
-                      codigo: '112120',
-                      titulo: 'Explotación de bovinos para la producción de leche'
-                    }
-                  ]
-                },
-                {
-                  codigo: '11213',
-                  titulo: 'Explotación de bovinos sin especialización y para otros propósitos',
-                  giro: [
-                    {
-                      codigo: '112131',
-                      titulo: 'Explotación de bovinos para la producción conjunta de leche y carne'
+                      codigo: '462111',
+                      titulo: 'Comercio al por menor en supermercados'
                     },
                     {
-                      codigo: '112139',
-                      titulo: 'Explotación de bovinos para otros propósitos'
+                      codigo: '462112',
+                      titulo: 'Comercio al por menor en minisupers'
                     }
                   ]
                 }
               ]
             },
             {
-              codigo: '1122',
-              titulo: 'Explotación de porcinos',
+              codigo: '4622',
+              titulo: 'Comercio al por menor en tiendas departamentales',
               subrama: [
                 {
-                  codigo: '11221',
-                  titulo: 'Explotación de porcinos',
+                  codigo: '46221',
+                  titulo: 'Comercio al por menor en tiendas departamentales',
                   giro: [
                     {
-                      codigo: '112211',
-                      titulo: 'Explotación de porcinos en granja'
-                    },
-                    {
-                      codigo: '112212',
-                      titulo: 'Explotación de porcinos en traspatio'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '1123',
-              titulo: 'Explotación avícola',
-              subrama: [
-                {
-                  codigo: '11231',
-                  titulo: 'Explotación de gallinas para la producción de huevo',
-                  giro: [
-                    {
-                      codigo: '112311',
-                      titulo: 'Explotación de gallinas para la producción de huevo fértil'
-                    },
-                    {
-                      codigo: '112312',
-                      titulo: 'Explotación de gallinas para la producción de huevo para plato'
-                    }
-                  ]
-                },
-                {
-                  codigo: '11232',
-                  titulo: 'Explotación de pollos para la producción de carne',
-                  giro: [
-                    {
-                      codigo: '112320',
-                      titulo: 'Explotación de pollos para la producción de carne'
-                    }
-                  ]
-                },
-                {
-                  codigo: '11233',
-                  titulo: 'Explotación de guajolotes o pavos',
-                  giro: [
-                    {
-                      codigo: '112330',
-                      titulo: 'Explotación de guajolotes o pavos'
-                    }
-                  ]
-                },
-                {
-                  codigo: '11234',
-                  titulo: 'Producción de aves en incubadora',
-                  giro: [
-                    {
-                      codigo: '112340',
-                      titulo: 'Producción de aves en incubadora'
-                    }
-                  ]
-                },
-                {
-                  codigo: '11239',
-                  titulo: 'Explotación de otras aves para producción de carne y huevo',
-                  giro: [
-                    {
-                      codigo: '112390',
-                      titulo: 'Explotación de otras aves para producción de carne y huevo'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '1124',
-              titulo: 'Explotación de ovinos y caprinos',
-              subrama: [
-                {
-                  codigo: '11241',
-                  titulo: 'Explotación de ovinos',
-                  giro: [
-                    {
-                      codigo: '112410',
-                      titulo: 'Explotación de ovinos'
-                    }
-                  ]
-                },
-                {
-                  codigo: '11242',
-                  titulo: 'Explotación de caprinos',
-                  giro: [
-                    {
-                      codigo: '112420',
-                      titulo: 'Explotación de caprinos'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '1125',
-              titulo: 'Acuicultura',
-              subrama: [
-                {
-                  codigo: '11251',
-                  titulo: 'Acuicultura',
-                  giro: [
-                    {
-                      codigo: '112511',
-                      titulo: 'Camaronicultura'
-                    },
-                    {
-                      codigo: '112512',
-                      titulo: 'Piscicultura y otra acuicultura, excepto camaronicultura'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '1129',
-              titulo: 'Explotación de otros animales',
-              subrama: [
-                {
-                  codigo: '11291',
-                  titulo: 'Apicultura',
-                  giro: [
-                    {
-                      codigo: '112910',
-                      titulo: 'Apicultura'
-                    }
-                  ]
-                },
-                {
-                  codigo: '11292',
-                  titulo: 'Explotación de équidos',
-                  giro: [
-                    {
-                      codigo: '112920',
-                      titulo: 'Explotación de équidos'
-                    }
-                  ]
-                },
-                {
-                  codigo: '11293',
-                  titulo: 'Cunicultura y explotación de animales con pelaje fino',
-                  giro: [
-                    {
-                      codigo: '112930',
-                      titulo: 'Cunicultura y explotación de animales con pelaje fino'
-                    }
-                  ]
-                },
-                {
-                  codigo: '11299',
-                  titulo: 'Explotación de otros animales',
-                  giro: [
-                    {
-                      codigo: '112991',
-                      titulo: 'Explotación de animales combinada con aprovechamiento forestal'
-                    },
-                    {
-                      codigo: '112999',
-                      titulo: 'Explotación de otros animales'
+                      codigo: '462210',
+                      titulo: 'Comercio al por menor en tiendas departamentales'
                     }
                   ]
                 }
@@ -611,56 +182,88 @@ export const scian = {
           ]
         },
         {
-          codigo: '113',
-          titulo: 'Aprovechamiento forestal',
+          codigo: '463',
+          titulo: 'Comercio al por menor de productos textiles, bisutería, accesorios de vestir y calzado',
           rama: [
             {
-              codigo: '1131',
-              titulo: 'Silvicultura',
+              codigo: '4631',
+              titulo: 'Comercio al por menor de productos textiles, excepto ropa',
               subrama: [
                 {
-                  codigo: '11311',
-                  titulo: 'Silvicultura',
+                  codigo: '46311',
+                  titulo: 'Comercio al por menor de productos textiles, excepto ropa',
                   giro: [
                     {
-                      codigo: '113110',
-                      titulo: 'Silvicultura'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '1132',
-              titulo: 'Viveros forestales y recolección de productos forestales',
-              subrama: [
-                {
-                  codigo: '11321',
-                  titulo: 'Viveros forestales y recolección de productos forestales',
-                  giro: [
-                    {
-                      codigo: '113211',
-                      titulo: 'Viveros forestales'
+                      codigo: '463111',
+                      titulo: 'Comercio al por menor de telas'
                     },
                     {
-                      codigo: '113212',
-                      titulo: 'Recolección de productos forestales'
+                      codigo: '463112',
+                      titulo: 'Comercio al por menor de blancos'
+                    },
+                    {
+                      codigo: '463113',
+                      titulo: 'Comercio al por menor de artículos de mercería y bonetería'
                     }
                   ]
                 }
               ]
             },
             {
-              codigo: '1133',
-              titulo: 'Tala de árboles',
+              codigo: '4632',
+              titulo: 'Comercio al por menor de ropa, bisutería y accesorios de vestir',
               subrama: [
                 {
-                  codigo: '11331',
-                  titulo: 'Tala de árboles',
+                  codigo: '46321',
+                  titulo: 'Comercio al por menor de ropa, bisutería y accesorios de vestir',
                   giro: [
                     {
-                      codigo: '113310',
-                      titulo: 'Tala de árboles'
+                      codigo: '463211',
+                      titulo: 'Comercio al por menor de ropa, excepto de bebé y lencería'
+                    },
+                    {
+                      codigo: '463212',
+                      titulo: 'Comercio al por menor de ropa de bebé'
+                    },
+                    {
+                      codigo: '463213',
+                      titulo: 'Comercio al por menor de lencería'
+                    },
+                    {
+                      codigo: '463214',
+                      titulo: 'Comercio al por menor de disfraces, vestimenta regional y vestidos de novia'
+                    },
+                    {
+                      codigo: '463215',
+                      titulo: 'Comercio al por menor de bisutería y accesorios de vestir'
+                    },
+                    {
+                      codigo: '463216',
+                      titulo: 'Comercio al por menor de ropa de cuero y piel y de otros artículos de estos materiales'
+                    },
+                    {
+                      codigo: '463217',
+                      titulo: 'Comercio al por menor de pañales desechables'
+                    },
+                    {
+                      codigo: '463218',
+                      titulo: 'Comercio al por menor de sombreros'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '4633',
+              titulo: 'Comercio al por menor de calzado',
+              subrama: [
+                {
+                  codigo: '46331',
+                  titulo: 'Comercio al por menor de calzado',
+                  giro: [
+                    {
+                      codigo: '463310',
+                      titulo: 'Comercio al por menor de calzado'
                     }
                   ]
                 }
@@ -669,48 +272,42 @@ export const scian = {
           ]
         },
         {
-          codigo: '114',
-          titulo: 'Pesca, caza y captura',
+          codigo: '464',
+          titulo: 'Comercio al por menor de artículos para el cuidado de la salud',
           rama: [
             {
-              codigo: '1141',
-              titulo: 'Pesca',
+              codigo: '4641',
+              titulo: 'Comercio al por menor de artículos para el cuidado de la salud',
               subrama: [
                 {
-                  codigo: '11411',
-                  titulo: 'Pesca',
+                  codigo: '46411',
+                  titulo: 'Comercio al por menor de productos farmacéuticos y naturistas',
                   giro: [
                     {
-                      codigo: '114111',
-                      titulo: 'Pesca de camarón'
+                      codigo: '464111',
+                      titulo: 'Farmacias sin minisúper'
                     },
                     {
-                      codigo: '114112',
-                      titulo: 'Pesca de túnidos'
+                      codigo: '464112',
+                      titulo: 'Farmacias con minisúper'
                     },
                     {
-                      codigo: '114113',
-                      titulo: 'Pesca de sardina y anchoveta'
-                    },
-                    {
-                      codigo: '114119',
-                      titulo: 'Pesca y captura de otros peces, crustáceos, moluscos y otras especies'
+                      codigo: '464113',
+                      titulo: 'Comercio al por menor de productos naturistas, medicamentos homeopáticos y de complementos alimenticios'
                     }
                   ]
-                }
-              ]
-            },
-            {
-              codigo: '1142',
-              titulo: 'Caza y captura',
-              subrama: [
+                },
                 {
-                  codigo: '11421',
-                  titulo: 'Caza y captura',
+                  codigo: '46412',
+                  titulo: 'Comercio al por menor de lentes y artículos ortopédicos',
                   giro: [
                     {
-                      codigo: '114210',
-                      titulo: 'Caza y captura'
+                      codigo: '464121',
+                      titulo: 'Comercio al por menor de lentes'
+                    },
+                    {
+                      codigo: '464122',
+                      titulo: 'Comercio al por menor de artículos ortopédicos'
                     }
                   ]
                 }
@@ -719,64 +316,402 @@ export const scian = {
           ]
         },
         {
-          codigo: '115',
-          titulo: 'Servicios relacionados con las actividades agropecuarias y forestales',
+          codigo: '465',
+          titulo: 'Comercio al por menor de artículos de papelería, para el esparcimiento y otros artículos de uso personal',
           rama: [
             {
-              codigo: '1151',
-              titulo: 'Servicios relacionados con la agricultura',
+              codigo: '4651',
+              titulo: 'Comercio al por menor de artículos de perfumería y joyería',
               subrama: [
                 {
-                  codigo: '11511',
-                  titulo: 'Servicios relacionados con la agricultura',
+                  codigo: '46511',
+                  titulo: 'Comercio al por menor de artículos de perfumería y joyería',
                   giro: [
                     {
-                      codigo: '115111',
-                      titulo: 'Servicios de fumigación agrícola'
+                      codigo: '465111',
+                      titulo: 'Comercio al por menor de artículos de perfumería y cosméticos'
                     },
                     {
-                      codigo: '115112',
-                      titulo: 'Despepite de algodón'
-                    },
-                    {
-                      codigo: '115113',
-                      titulo: 'Beneficio de productos agrícolas'
-                    },
-                    {
-                      codigo: '115119',
-                      titulo: 'Otros servicios relacionados con la agricultura'
+                      codigo: '465112',
+                      titulo: 'Comercio al por menor de artículos de joyería y relojes'
                     }
                   ]
                 }
               ]
             },
             {
-              codigo: '1152',
-              titulo: 'Servicios relacionados con la cría y explotación de animales',
+              codigo: '4652',
+              titulo: 'Comercio al por menor de artículos para el esparcimiento',
               subrama: [
                 {
-                  codigo: '11521',
-                  titulo: 'Servicios relacionados con la cría y explotación de animales',
+                  codigo: '46521',
+                  titulo: 'Comercio al por menor de artículos para el esparcimiento',
                   giro: [
                     {
-                      codigo: '115210',
-                      titulo: 'Servicios relacionados con la cría y explotación de animales'
+                      codigo: '465211',
+                      titulo: 'Comercio al por menor de discos y casetes'
+                    },
+                    {
+                      codigo: '465212',
+                      titulo: 'Comercio al por menor de juguetes'
+                    },
+                    {
+                      codigo: '465213',
+                      titulo: 'Comercio al por menor de bicicletas y triciclos'
+                    },
+                    {
+                      codigo: '465214',
+                      titulo: 'Comercio al por menor de equipo y material fotográfico'
+                    },
+                    {
+                      codigo: '465215',
+                      titulo: 'Comercio al por menor de artículos y aparatos deportivos'
+                    },
+                    {
+                      codigo: '465216',
+                      titulo: 'Comercio al por menor de instrumentos musicales'
                     }
                   ]
                 }
               ]
             },
             {
-              codigo: '1153',
-              titulo: 'Servicios relacionados con el aprovechamiento forestal',
+              codigo: '4653',
+              titulo: 'Comercio al por menor de artículos de papelería, libros, revistas y periódicos',
               subrama: [
                 {
-                  codigo: '11531',
-                  titulo: 'Servicios relacionados con el aprovechamiento forestal',
+                  codigo: '46531',
+                  titulo: 'Comercio al por menor de artículos de papelería, libros, revistas y periódicos',
                   giro: [
                     {
-                      codigo: '115310',
-                      titulo: 'Servicios relacionados con el aprovechamiento forestal'
+                      codigo: '465311',
+                      titulo: 'Comercio al por menor de artículos de papelería'
+                    },
+                    {
+                      codigo: '465312',
+                      titulo: 'Comercio al por menor de libros'
+                    },
+                    {
+                      codigo: '465313',
+                      titulo: 'Comercio al por menor de revistas y periódicos'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '4659',
+              titulo: 'Comercio al por menor de mascotas, regalos, artículos religiosos, desechables, artesanías y otros artículos de uso personal',
+              subrama: [
+                {
+                  codigo: '46591',
+                  titulo: 'Comercio al por menor de mascotas, regalos, artículos religiosos, desechables, artesanías y otros artículos de uso personal',
+                  giro: [
+                    {
+                      codigo: '465911',
+                      titulo: 'Comercio al por menor de mascotas'
+                    },
+                    {
+                      codigo: '465912',
+                      titulo: 'Comercio al por menor de regalos'
+                    },
+                    {
+                      codigo: '465913',
+                      titulo: 'Comercio al por menor de artículos religiosos'
+                    },
+                    {
+                      codigo: '465914',
+                      titulo: 'Comercio al por menor de artículos desechables'
+                    },
+                    {
+                      codigo: '465915',
+                      titulo: 'Comercio al por menor en tiendas de artesanías'
+                    },
+                    {
+                      codigo: '465919',
+                      titulo: 'Comercio al por menor de otros artículos de uso personal'
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          codigo: '466',
+          titulo: 'Comercio al por menor de enseres domésticos, computadoras, artículos para la decoración de interiores y artículos usados',
+          rama: [
+            {
+              codigo: '4661',
+              titulo: 'Comercio al por menor de muebles para el hogar y otros enseres domésticos',
+              subrama: [
+                {
+                  codigo: '46611',
+                  titulo: 'Comercio al por menor de muebles para el hogar y otros enseres domésticos',
+                  giro: [
+                    {
+                      codigo: '466111',
+                      titulo: 'Comercio al por menor de muebles para el hogar'
+                    },
+                    {
+                      codigo: '466112',
+                      titulo: 'Comercio al por menor de electrodomésticos menores y aparatos de línea blanca'
+                    },
+                    {
+                      codigo: '466113',
+                      titulo: 'Comercio al por menor de muebles para jardín'
+                    },
+                    {
+                      codigo: '466114',
+                      titulo: 'Comercio al por menor de cristalería, loza y utensilios de cocina'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '4662',
+              titulo: 'Comercio al por menor de mobiliario, equipo y accesorios de cómputo, teléfonos y otros aparatos de comunicación',
+              subrama: [
+                {
+                  codigo: '46621',
+                  titulo: 'Comercio al por menor de mobiliario, equipo y accesorios de cómputo, teléfonos y otros aparatos de comunicación',
+                  giro: [
+                    {
+                      codigo: '466211',
+                      titulo: 'Comercio al por menor de mobiliario, equipo y accesorios de cómputo'
+                    },
+                    {
+                      codigo: '466212',
+                      titulo: 'Comercio al por menor de teléfonos y otros aparatos de comunicación'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '4663',
+              titulo: 'Comercio al por menor de artículos para la decoración de interiores',
+              subrama: [
+                {
+                  codigo: '46631',
+                  titulo: 'Comercio al por menor de artículos para la decoración de interiores',
+                  giro: [
+                    {
+                      codigo: '466311',
+                      titulo: 'Comercio al por menor de alfombras, cortinas, tapices y similares'
+                    },
+                    {
+                      codigo: '466312',
+                      titulo: 'Comercio al por menor de plantas y flores naturales'
+                    },
+                    {
+                      codigo: '466313',
+                      titulo: 'Comercio al por menor de antigüedades y obras de arte'
+                    },
+                    {
+                      codigo: '466314',
+                      titulo: 'Comercio al por menor de lámparas ornamentales y candiles'
+                    },
+                    {
+                      codigo: '466319',
+                      titulo: 'Comercio al por menor de otros artículos para la decoración de interiores'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '4664',
+              titulo: 'Comercio al por menor de artículos usados',
+              subrama: [
+                {
+                  codigo: '46641',
+                  titulo: 'Comercio al por menor de artículos usados',
+                  giro: [
+                    {
+                      codigo: '466410',
+                      titulo: 'Comercio al por menor de artículos usados'
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          codigo: '467',
+          titulo: 'Comercio al por menor de artículos de ferretería, tlapalería y vidrios',
+          rama: [
+            {
+              codigo: '4671',
+              titulo: 'Comercio al por menor de artículos de ferretería, tlapalería y vidrios',
+              subrama: [
+                {
+                  codigo: '46711',
+                  titulo: 'Comercio al por menor de artículos de ferretería, tlapalería y vidrios',
+                  giro: [
+                    {
+                      codigo: '467111',
+                      titulo: 'Comercio al por menor en ferreterías y tlapalerías'
+                    },
+                    {
+                      codigo: '467112',
+                      titulo: 'Comercio al por menor de pisos y recubrimientos cerámicos'
+                    },
+                    {
+                      codigo: '467113',
+                      titulo: 'Comercio al por menor de pintura'
+                    },
+                    {
+                      codigo: '467114',
+                      titulo: 'Comercio al por menor de vidrios y espejos'
+                    },
+                    {
+                      codigo: '467115',
+                      titulo: 'Comercio al por menor de artículos para la limpieza'
+                    },
+                    {
+                      codigo: '467116',
+                      titulo: 'Comercio al por menor de materiales para la construcción en tiendas de autoservicio especializadas'
+                    },
+                    {
+                      codigo: '467117',
+                      titulo: 'Comercio al por menor de artículos para albercas y otros artículos'
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          codigo: '468',
+          titulo: 'Comercio al por menor de vehículos de motor, refacciones, combustibles y lubricantes',
+          rama: [
+            {
+              codigo: '4681',
+              titulo: 'Comercio al por menor de automóviles y camionetas',
+              subrama: [
+                {
+                  codigo: '46811',
+                  titulo: 'Comercio al por menor de automóviles y camionetas',
+                  giro: [
+                    {
+                      codigo: '468111',
+                      titulo: 'Comercio al por menor de automóviles y camionetas nuevos'
+                    },
+                    {
+                      codigo: '468112',
+                      titulo: 'Comercio al por menor de automóviles y camionetas usados'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '4682',
+              titulo: 'Comercio al por menor de partes y refacciones para automóviles, camionetas y camiones',
+              subrama: [
+                {
+                  codigo: '46821',
+                  titulo: 'Comercio al por menor de partes y refacciones para automóviles, camionetas y camiones',
+                  giro: [
+                    {
+                      codigo: '468211',
+                      titulo: 'Comercio al por menor de partes y refacciones nuevas para automóviles, camionetas y camiones'
+                    },
+                    {
+                      codigo: '468212',
+                      titulo: 'Comercio al por menor de partes y refacciones usadas para automóviles, camionetas y camiones'
+                    },
+                    {
+                      codigo: '468213',
+                      titulo: 'Comercio al por menor de llantas y cámaras para automóviles, camionetas y camiones'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '4683',
+              titulo: 'Comercio al por menor de motocicletas y otros vehículos de motor',
+              subrama: [
+                {
+                  codigo: '46831',
+                  titulo: 'Comercio al por menor de motocicletas y otros vehículos de motor',
+                  giro: [
+                    {
+                      codigo: '468311',
+                      titulo: 'Comercio al por menor de motocicletas'
+                    },
+                    {
+                      codigo: '468319',
+                      titulo: 'Comercio al por menor de otros vehículos de motor'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '4684',
+              titulo: 'Comercio al por menor de combustibles, aceites y grasas lubricantes',
+              subrama: [
+                {
+                  codigo: '46841',
+                  titulo: 'Comercio al por menor de combustibles',
+                  giro: [
+                    {
+                      codigo: '468411',
+                      titulo: 'Comercio al por menor de gasolina y diésel'
+                    },
+                    {
+                      codigo: '468412',
+                      titulo: 'Comercio al por menor de gas L.P. en cilindros y para tanques estacionarios'
+                    },
+                    {
+                      codigo: '468413',
+                      titulo: 'Comercio al por menor de gas L.P. en estaciones de carburación'
+                    },
+                    {
+                      codigo: '468414',
+                      titulo: 'Comercio al por menor en estaciones de gas natural vehicular'
+                    },
+                    {
+                      codigo: '468419',
+                      titulo: 'Comercio al por menor de otros combustibles'
+                    }
+                  ]
+                },
+                {
+                  codigo: '46842',
+                  titulo: 'Comercio al por menor de aceites y grasas lubricantes, aditivos y similares para vehículos de motor',
+                  giro: [
+                    {
+                      codigo: '468420',
+                      titulo: 'Comercio al por menor de aceites y grasas lubricantes, aditivos y similares para vehículos de motor'
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          codigo: '469',
+          titulo: 'Comercio al por menor exclusivamente a través de internet, y catálogos impresos, televisión y similares',
+          rama: [
+            {
+              codigo: '4691',
+              titulo: 'Comercio al por menor exclusivamente a través de internet, y catálogos impresos, televisión y similares',
+              subrama: [
+                {
+                  codigo: '46911',
+                  titulo: 'Comercio al por menor exclusivamente a través de internet, y catálogos impresos, televisión y similares',
+                  giro: [
+                    {
+                      codigo: '469110',
+                      titulo: 'Comercio al por menor exclusivamente a través de internet, y catálogos impresos, televisión y similares'
                     }
                   ]
                 }
@@ -787,28 +722,162 @@ export const scian = {
       ]
     },
     {
-      codigo: '21',
-      titulo: 'Minería',
+      codigo: '43',
+      titulo: 'Comercio al por mayor',
       subsector: [
         {
-          codigo: '211',
-          titulo: 'Extracción de petróleo y gas',
+          codigo: '431',
+          titulo: 'Comercio al por mayor de abarrotes, alimentos, bebidas, hielo y tabaco',
           rama: [
             {
-              codigo: '2111',
-              titulo: 'Extracción de petróleo y gas',
+              codigo: '4311',
+              titulo: 'Comercio al por mayor de abarrotes y alimentos',
               subrama: [
                 {
-                  codigo: '21111',
-                  titulo: 'Extracción de petróleo y gas',
+                  codigo: '43111',
+                  titulo: 'Comercio al por mayor de abarrotes',
                   giro: [
                     {
-                      codigo: '211111',
-                      titulo: 'Extracción de petróleo y gas natural asociado'
+                      codigo: '431110',
+                      titulo: 'Comercio al por mayor de abarrotes'
+                    }
+                  ]
+                },
+                {
+                  codigo: '43112',
+                  titulo: 'Comercio al por mayor de carnes',
+                  giro: [
+                    {
+                      codigo: '431121',
+                      titulo: 'Comercio al por mayor de carnes rojas'
                     },
                     {
-                      codigo: '211112',
-                      titulo: 'Extracción de gas natural no asociado'
+                      codigo: '431122',
+                      titulo: 'Comercio al por mayor de carne de aves'
+                    },
+                    {
+                      codigo: '431123',
+                      titulo: 'Comercio al por mayor de pescados y mariscos'
+                    }
+                  ]
+                },
+                {
+                  codigo: '43113',
+                  titulo: 'Comercio al por mayor de frutas y verduras frescas',
+                  giro: [
+                    {
+                      codigo: '431130',
+                      titulo: 'Comercio al por mayor de frutas y verduras frescas'
+                    }
+                  ]
+                },
+                {
+                  codigo: '43114',
+                  titulo: 'Comercio al por mayor de huevo',
+                  giro: [
+                    {
+                      codigo: '431140',
+                      titulo: 'Comercio al por mayor de huevo'
+                    }
+                  ]
+                },
+                {
+                  codigo: '43115',
+                  titulo: 'Comercio al por mayor de semillas y granos alimenticios, especias y chiles secos',
+                  giro: [
+                    {
+                      codigo: '431150',
+                      titulo: 'Comercio al por mayor de semillas y granos alimenticios, especias y chiles secos'
+                    }
+                  ]
+                },
+                {
+                  codigo: '43116',
+                  titulo: 'Comercio al por mayor de leche y otros productos lácteos',
+                  giro: [
+                    {
+                      codigo: '431160',
+                      titulo: 'Comercio al por mayor de leche y otros productos lácteos'
+                    }
+                  ]
+                },
+                {
+                  codigo: '43117',
+                  titulo: 'Comercio al por mayor de embutidos',
+                  giro: [
+                    {
+                      codigo: '431170',
+                      titulo: 'Comercio al por mayor de embutidos'
+                    }
+                  ]
+                },
+                {
+                  codigo: '43118',
+                  titulo: 'Comercio al por mayor de dulces y materias primas para repostería',
+                  giro: [
+                    {
+                      codigo: '431180',
+                      titulo: 'Comercio al por mayor de dulces y materias primas para repostería'
+                    }
+                  ]
+                },
+                {
+                  codigo: '43119',
+                  titulo: 'Comercio al por mayor de otros alimentos',
+                  giro: [
+                    {
+                      codigo: '431191',
+                      titulo: 'Comercio al por mayor de pan y pasteles'
+                    },
+                    {
+                      codigo: '431192',
+                      titulo: 'Comercio al por mayor de botanas y frituras'
+                    },
+                    {
+                      codigo: '431193',
+                      titulo: 'Comercio al por mayor de conservas alimenticias'
+                    },
+                    {
+                      codigo: '431194',
+                      titulo: 'Comercio al por mayor de miel'
+                    },
+                    {
+                      codigo: '431199',
+                      titulo: 'Comercio al por mayor de otros alimentos'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '4312',
+              titulo: 'Comercio al por mayor de bebidas, hielo y tabaco',
+              subrama: [
+                {
+                  codigo: '43121',
+                  titulo: 'Comercio al por mayor de bebidas y hielo',
+                  giro: [
+                    {
+                      codigo: '431211',
+                      titulo: 'Comercio al por mayor de bebidas no alcohólicas y hielo'
+                    },
+                    {
+                      codigo: '431212',
+                      titulo: 'Comercio al por mayor de vinos y licores'
+                    },
+                    {
+                      codigo: '431213',
+                      titulo: 'Comercio al por mayor de cerveza'
+                    }
+                  ]
+                },
+                {
+                  codigo: '43122',
+                  titulo: 'Comercio al por mayor de cigarros, puros y tabaco',
+                  giro: [
+                    {
+                      codigo: '431220',
+                      titulo: 'Comercio al por mayor de cigarros, puros y tabaco'
                     }
                   ]
                 }
@@ -817,182 +886,52 @@ export const scian = {
           ]
         },
         {
-          codigo: '212',
-          titulo: 'Minería de minerales metálicos y no metálicos, excepto petróleo y gas',
+          codigo: '432',
+          titulo: 'Comercio al por mayor de productos textiles y calzado',
           rama: [
             {
-              codigo: '2121',
-              titulo: 'Minería de carbón mineral',
+              codigo: '4321',
+              titulo: 'Comercio al por mayor de productos textiles y calzado',
               subrama: [
                 {
-                  codigo: '21211',
-                  titulo: 'Minería de carbón mineral',
+                  codigo: '43211',
+                  titulo: 'Comercio al por mayor de productos textiles, excepto ropa',
                   giro: [
                     {
-                      codigo: '212110',
-                      titulo: 'Minería de carbón mineral'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '2122',
-              titulo: 'Minería de minerales metálicos',
-              subrama: [
-                {
-                  codigo: '21221',
-                  titulo: 'Minería de hierro',
-                  giro: [
+                      codigo: '432111',
+                      titulo: 'Comercio al por mayor de fibras, hilos y telas'
+                    },
                     {
-                      codigo: '212210',
-                      titulo: 'Minería de hierro'
+                      codigo: '432112',
+                      titulo: 'Comercio al por mayor de blancos'
+                    },
+                    {
+                      codigo: '432113',
+                      titulo: 'Comercio al por mayor de cueros y pieles'
+                    },
+                    {
+                      codigo: '432119',
+                      titulo: 'Comercio al por mayor de otros productos textiles'
                     }
                   ]
                 },
                 {
-                  codigo: '21222',
-                  titulo: 'Minería de oro y plata',
+                  codigo: '43212',
+                  titulo: 'Comercio al por mayor de ropa, bisutería y accesorios de vestir',
                   giro: [
                     {
-                      codigo: '212221',
-                      titulo: 'Minería de oro'
-                    },
-                    {
-                      codigo: '212222',
-                      titulo: 'Minería de plata'
+                      codigo: '432120',
+                      titulo: 'Comercio al por mayor de ropa, bisutería y accesorios de vestir'
                     }
                   ]
                 },
                 {
-                  codigo: '21223',
-                  titulo: 'Minería de cobre, plomo y zinc',
+                  codigo: '43213',
+                  titulo: 'Comercio al por mayor de calzado',
                   giro: [
                     {
-                      codigo: '212231',
-                      titulo: 'Minería de cobre'
-                    },
-                    {
-                      codigo: '212232',
-                      titulo: 'Minería de plomo y zinc'
-                    }
-                  ]
-                },
-                {
-                  codigo: '21229',
-                  titulo: 'Minería de otros minerales metálicos',
-                  giro: [
-                    {
-                      codigo: '212291',
-                      titulo: 'Minería de manganeso'
-                    },
-                    {
-                      codigo: '212292',
-                      titulo: 'Minería de mercurio y antimonio'
-                    },
-                    {
-                      codigo: '212293',
-                      titulo: 'Minería de uranio y minerales radiactivos'
-                    },
-                    {
-                      codigo: '212299',
-                      titulo: 'Minería de otros minerales metálicos'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '2123',
-              titulo: 'Minería de minerales no metálicos',
-              subrama: [
-                {
-                  codigo: '21231',
-                  titulo: 'Minería de piedra caliza, mármol y otras piedras dimensionadas',
-                  giro: [
-                    {
-                      codigo: '212311',
-                      titulo: 'Minería de piedra caliza'
-                    },
-                    {
-                      codigo: '212312',
-                      titulo: 'Minería de mármol'
-                    },
-                    {
-                      codigo: '212319',
-                      titulo: 'Minería de otras piedras dimensionadas'
-                    }
-                  ]
-                },
-                {
-                  codigo: '21232',
-                  titulo: 'Minería de arena, grava, tezontle, tepetate, arcillas y de otros minerales refractarios',
-                  giro: [
-                    {
-                      codigo: '212321',
-                      titulo: 'Minería de arena y grava para la construcción'
-                    },
-                    {
-                      codigo: '212322',
-                      titulo: 'Minería de tezontle y tepetate'
-                    },
-                    {
-                      codigo: '212323',
-                      titulo: 'Minería de feldespato'
-                    },
-                    {
-                      codigo: '212324',
-                      titulo: 'Minería de sílice'
-                    },
-                    {
-                      codigo: '212325',
-                      titulo: 'Minería de caolín'
-                    },
-                    {
-                      codigo: '212329',
-                      titulo: 'Minería de otras arcillas y de otros minerales refractarios'
-                    }
-                  ]
-                },
-                {
-                  codigo: '21239',
-                  titulo: 'Minería de otros minerales no metálicos',
-                  giro: [
-                    {
-                      codigo: '212391',
-                      titulo: 'Minería de sal'
-                    },
-                    {
-                      codigo: '212392',
-                      titulo: 'Minería de piedra de yeso'
-                    },
-                    {
-                      codigo: '212393',
-                      titulo: 'Minería de barita'
-                    },
-                    {
-                      codigo: '212394',
-                      titulo: 'Minería de roca fosfórica'
-                    },
-                    {
-                      codigo: '212395',
-                      titulo: 'Minería de fluorita'
-                    },
-                    {
-                      codigo: '212396',
-                      titulo: 'Minería de grafito'
-                    },
-                    {
-                      codigo: '212397',
-                      titulo: 'Minería de azufre'
-                    },
-                    {
-                      codigo: '212398',
-                      titulo: 'Minería de minerales no metálicos para productos químicos'
-                    },
-                    {
-                      codigo: '212399',
-                      titulo: 'Minería de otros minerales no metálicos'
+                      codigo: '432130',
+                      titulo: 'Comercio al por mayor de calzado'
                     }
                   ]
                 }
@@ -1001,192 +940,122 @@ export const scian = {
           ]
         },
         {
-          codigo: '213',
-          titulo: 'Servicios relacionados con la minería',
+          codigo: '433',
+          titulo: 'Comercio al por mayor de productos farmacéuticos, de perfumería, artículos para el esparcimiento, electrodomésticos menores y aparatos de línea blanca',
           rama: [
             {
-              codigo: '2131',
-              titulo: 'Servicios relacionados con la minería',
+              codigo: '4331',
+              titulo: 'Comercio al por mayor de productos farmacéuticos',
               subrama: [
                 {
-                  codigo: '21311',
-                  titulo: 'Servicios relacionados con la minería',
+                  codigo: '43311',
+                  titulo: 'Comercio al por mayor de productos farmacéuticos',
                   giro: [
                     {
-                      codigo: '213111',
-                      titulo: 'Perforación de pozos petroleros y de gas'
-                    },
-                    {
-                      codigo: '213119',
-                      titulo: 'Otros servicios relacionados con la minería'
+                      codigo: '433110',
+                      titulo: 'Comercio al por mayor de productos farmacéuticos'
                     }
                   ]
                 }
               ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      codigo: '22',
-      titulo: 'Generación, transmisión, distribución y comercialización de energía eléctrica, suministro de agua y de gas natural por ductos al consumidor final',
-      subsector: [
-        {
-          codigo: '221',
-          titulo: 'Generación, transmisión, distribución y comercialización de energía eléctrica, suministro de agua y de gas natural por ductos al consumidor final',
-          rama: [
+            },
             {
-              codigo: '2211',
-              titulo: 'Generación, transmisión, distribución y comercialización de energía eléctrica',
+              codigo: '4332',
+              titulo: 'Comercio al por mayor de artículos de perfumería, cosméticos y joyería',
               subrama: [
                 {
-                  codigo: '22111',
-                  titulo: 'Generación de energía eléctrica',
+                  codigo: '43321',
+                  titulo: 'Comercio al por mayor de artículos de perfumería y cosméticos',
                   giro: [
                     {
-                      codigo: '221111',
-                      titulo: 'Generación de electricidad a partir de combustibles fósiles'
-                    },
-                    {
-                      codigo: '221112',
-                      titulo: 'Generación de electricidad a partir de energía hidráulica'
-                    },
-                    {
-                      codigo: '221113',
-                      titulo: 'Generación de electricidad a partir de energía solar'
-                    },
-                    {
-                      codigo: '221114',
-                      titulo: 'Generación de electricidad a partir de energía eólica'
-                    },
-                    {
-                      codigo: '221119',
-                      titulo: 'Generación de electricidad a partir de otro tipo de energía'
+                      codigo: '433210',
+                      titulo: 'Comercio al por mayor de artículos de perfumería y cosméticos'
                     }
                   ]
                 },
                 {
-                  codigo: '22112',
-                  titulo: 'Transmisión, distribución y comercialización de energía eléctrica',
+                  codigo: '43322',
+                  titulo: 'Comercio al por mayor de artículos de joyería y relojes',
                   giro: [
                     {
-                      codigo: '221121',
-                      titulo: 'Transmisión de energía eléctrica'
-                    },
-                    {
-                      codigo: '221122',
-                      titulo: 'Distribución de energía eléctrica'
-                    },
-                    {
-                      codigo: '221123',
-                      titulo: 'Comercialización de energía eléctrica'
+                      codigo: '433220',
+                      titulo: 'Comercio al por mayor de artículos de joyería y relojes'
                     }
                   ]
                 }
               ]
             },
             {
-              codigo: '2212',
-              titulo: 'Suministro de gas natural por ductos al consumidor final',
+              codigo: '4333',
+              titulo: 'Comercio al por mayor de discos, juguetes y artículos deportivos',
               subrama: [
                 {
-                  codigo: '22121',
-                  titulo: 'Suministro de gas natural por ductos al consumidor final',
+                  codigo: '43331',
+                  titulo: 'Comercio al por mayor de discos, juguetes y artículos deportivos',
                   giro: [
                     {
-                      codigo: '221210',
-                      titulo: 'Suministro de gas natural por ductos al consumidor final'
+                      codigo: '433311',
+                      titulo: 'Comercio al por mayor de discos y casetes'
+                    },
+                    {
+                      codigo: '433312',
+                      titulo: 'Comercio al por mayor de juguetes y bicicletas'
+                    },
+                    {
+                      codigo: '433313',
+                      titulo: 'Comercio al por mayor de artículos y aparatos deportivos'
                     }
                   ]
                 }
               ]
             },
             {
-              codigo: '2213',
-              titulo: 'Captación, tratamiento y suministro de agua',
+              codigo: '4334',
+              titulo: 'Comercio al por mayor de artículos de papelería, libros, revistas y periódicos',
               subrama: [
                 {
-                  codigo: '22131',
-                  titulo: 'Captación, tratamiento y suministro de agua',
+                  codigo: '43341',
+                  titulo: 'Comercio al por mayor de artículos de papelería',
                   giro: [
                     {
-                      codigo: '221311',
-                      titulo: 'Captación, tratamiento y suministro de agua realizados por el sector privado'
-                    },
-                    {
-                      codigo: '221312',
-                      titulo: 'Captación, tratamiento y suministro de agua realizados por el sector público'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      codigo: '23',
-      titulo: 'Construcción',
-      subsector: [
-        {
-          codigo: '236',
-          titulo: 'Edificación',
-          rama: [
-            {
-              codigo: '2361',
-              titulo: 'Edificación residencial',
-              subrama: [
-                {
-                  codigo: '23611',
-                  titulo: 'Edificación residencial',
-                  giro: [
-                    {
-                      codigo: '236111',
-                      titulo: 'Edificación de vivienda unifamiliar'
-                    },
-                    {
-                      codigo: '236112',
-                      titulo: 'Edificación de vivienda multifamiliar'
-                    },
-                    {
-                      codigo: '236113',
-                      titulo: 'Supervisión de edificación residencial'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '2362',
-              titulo: 'Edificación no residencial',
-              subrama: [
-                {
-                  codigo: '23621',
-                  titulo: 'Edificación de naves y plantas industriales',
-                  giro: [
-                    {
-                      codigo: '236211',
-                      titulo: 'Edificación de naves y plantas industriales, excepto la supervisión'
-                    },
-                    {
-                      codigo: '236212',
-                      titulo: 'Supervisión de edificación de naves y plantas industriales'
+                      codigo: '433410',
+                      titulo: 'Comercio al por mayor de artículos de papelería'
                     }
                   ]
                 },
                 {
-                  codigo: '23622',
-                  titulo: 'Edificación de inmuebles comerciales y de servicios',
+                  codigo: '43342',
+                  titulo: 'Comercio al por mayor de libros',
                   giro: [
                     {
-                      codigo: '236221',
-                      titulo: 'Edificación de inmuebles comerciales y de servicios, excepto la supervisión'
-                    },
+                      codigo: '433420',
+                      titulo: 'Comercio al por mayor de libros'
+                    }
+                  ]
+                },
+                {
+                  codigo: '43343',
+                  titulo: 'Comercio al por mayor de revistas y periódicos',
+                  giro: [
                     {
-                      codigo: '236222',
-                      titulo: 'Supervisión de edificación de inmuebles comerciales y de servicios'
+                      codigo: '433430',
+                      titulo: 'Comercio al por mayor de revistas y periódicos'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '4335',
+              titulo: 'Comercio al por mayor de electrodomésticos menores y aparatos de línea blanca',
+              subrama: [
+                {
+                  codigo: '43351',
+                  titulo: 'Comercio al por mayor de electrodomésticos menores y aparatos de línea blanca',
+                  giro: [
+                    {
+                      codigo: '433510',
+                      titulo: 'Comercio al por mayor de electrodomésticos menores y aparatos de línea blanca'
                     }
                   ]
                 }
@@ -1195,144 +1064,138 @@ export const scian = {
           ]
         },
         {
-          codigo: '237',
-          titulo: 'Construcción de obras de ingeniería civil',
+          codigo: '434',
+          titulo: 'Comercio al por mayor de materias primas agropecuarias y forestales, para la industria, y materiales de desecho',
           rama: [
             {
-              codigo: '2371',
-              titulo: 'Construcción de obras para el suministro de agua, petróleo, gas, energía eléctrica y telecomunicaciones',
+              codigo: '4341',
+              titulo: 'Comercio al por mayor de materias primas agropecuarias y forestales',
               subrama: [
                 {
-                  codigo: '23711',
-                  titulo: 'Construcción de obras para el tratamiento, distribución y suministro de agua, drenaje y riego',
+                  codigo: '43411',
+                  titulo: 'Comercio al por mayor de materias primas agropecuarias y forestales',
                   giro: [
                     {
-                      codigo: '237111',
-                      titulo: 'Construcción de obras para el tratamiento, distribución y suministro de agua y drenaje'
+                      codigo: '434111',
+                      titulo: 'Comercio al por mayor de fertilizantes, plaguicidas y semillas para siembra'
                     },
                     {
-                      codigo: '237112',
-                      titulo: 'Construcción de sistemas de riego agrícola'
+                      codigo: '434112',
+                      titulo: 'Comercio al por mayor de medicamentos veterinarios y alimentos para animales, excepto mascotas'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '4342',
+              titulo: 'Comercio al por mayor de materias primas para la industria',
+              subrama: [
+                {
+                  codigo: '43421',
+                  titulo: 'Comercio al por mayor de materiales para la construcción, excepto de madera y metálicos',
+                  giro: [
+                    {
+                      codigo: '434211',
+                      titulo: 'Comercio al por mayor de cemento, tabique y grava'
                     },
                     {
-                      codigo: '237113',
-                      titulo: 'Supervisión de construcción de obras para el tratamiento, distribución y suministro de agua, drenaje y riego'
+                      codigo: '434219',
+                      titulo: 'Comercio al por mayor de otros materiales para la construcción, excepto de madera y metálicos'
                     }
                   ]
                 },
                 {
-                  codigo: '23712',
-                  titulo: 'Construcción de obras para petróleo y gas',
+                  codigo: '43422',
+                  titulo: 'Comercio al por mayor de otros materiales para la construcción y materias primas para otras industrias',
                   giro: [
                     {
-                      codigo: '237121',
-                      titulo: 'Construcción de sistemas de distribución de petróleo y gas'
+                      codigo: '434221',
+                      titulo: 'Comercio al por mayor de materiales metálicos para la construcción y la manufactura'
                     },
                     {
-                      codigo: '237122',
-                      titulo: 'Construcción de plantas de refinería y petroquímica'
+                      codigo: '434222',
+                      titulo: 'Comercio al por mayor de productos químicos para la industria farmacéutica y para otro uso industrial'
                     },
                     {
-                      codigo: '237123',
-                      titulo: 'Supervisión de construcción de obras para petróleo y gas'
+                      codigo: '434223',
+                      titulo: 'Comercio al por mayor de envases en general, papel y cartón para la industria'
+                    },
+                    {
+                      codigo: '434224',
+                      titulo: 'Comercio al por mayor de madera para la construcción y la industria'
+                    },
+                    {
+                      codigo: '434225',
+                      titulo: 'Comercio al por mayor de equipo y material eléctrico'
+                    },
+                    {
+                      codigo: '434226',
+                      titulo: 'Comercio al por mayor de pintura'
+                    },
+                    {
+                      codigo: '434227',
+                      titulo: 'Comercio al por mayor de vidrios y espejos'
+                    },
+                    {
+                      codigo: '434228',
+                      titulo: 'Comercio al por mayor de ganado y aves en pie'
+                    },
+                    {
+                      codigo: '434229',
+                      titulo: 'Comercio al por mayor de otras materias primas para otras industrias'
                     }
                   ]
                 },
                 {
-                  codigo: '23713',
-                  titulo: 'Construcción de obras de generación y conducción de energía eléctrica y de obras para telecomunicaciones',
+                  codigo: '43423',
+                  titulo: 'Comercio al por mayor de combustibles de uso industrial',
                   giro: [
                     {
-                      codigo: '237131',
-                      titulo: 'Construcción de obras de generación y conducción de energía eléctrica'
-                    },
+                      codigo: '434230',
+                      titulo: 'Comercio al por mayor de combustibles de uso industrial'
+                    }
+                  ]
+                },
+                {
+                  codigo: '43424',
+                  titulo: 'Comercio al por mayor de artículos desechables',
+                  giro: [
                     {
-                      codigo: '237132',
-                      titulo: 'Construcción de obras para telecomunicaciones'
-                    },
-                    {
-                      codigo: '237133',
-                      titulo: 'Supervisión de construcción de obras de generación y conducción de energía eléctrica y de obras para telecomunicaciones'
+                      codigo: '434240',
+                      titulo: 'Comercio al por mayor de artículos desechables'
                     }
                   ]
                 }
               ]
             },
             {
-              codigo: '2372',
-              titulo: 'División de terrenos y construcción de obras de urbanización',
+              codigo: '4343',
+              titulo: 'Comercio al por mayor de materiales de desecho',
               subrama: [
                 {
-                  codigo: '23721',
-                  titulo: 'División de terrenos y construcción de obras de urbanización',
+                  codigo: '43431',
+                  titulo: 'Comercio al por mayor de materiales de desecho',
                   giro: [
                     {
-                      codigo: '237211',
-                      titulo: 'División de terrenos'
+                      codigo: '434311',
+                      titulo: 'Comercio al por mayor de desechos metálicos'
                     },
                     {
-                      codigo: '237212',
-                      titulo: 'Construcción de obras de urbanización'
+                      codigo: '434312',
+                      titulo: 'Comercio al por mayor de desechos de papel y de cartón'
                     },
                     {
-                      codigo: '237213',
-                      titulo: 'Supervisión de división de terrenos y de construcción de obras de urbanización'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '2373',
-              titulo: 'Construcción de vías de comunicación',
-              subrama: [
-                {
-                  codigo: '23731',
-                  titulo: 'Construcción de vías de comunicación',
-                  giro: [
-                    {
-                      codigo: '237311',
-                      titulo: 'Instalación de señalamientos y protecciones en obras viales'
+                      codigo: '434313',
+                      titulo: 'Comercio al por mayor de desechos de vidrio'
                     },
                     {
-                      codigo: '237312',
-                      titulo: 'Construcción de carreteras, puentes y similares'
+                      codigo: '434314',
+                      titulo: 'Comercio al por mayor de desechos de plástico'
                     },
                     {
-                      codigo: '237313',
-                      titulo: 'Supervisión de construcción de vías de comunicación'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '2379',
-              titulo: 'Otras construcciones de ingeniería civil',
-              subrama: [
-                {
-                  codigo: '23799',
-                  titulo: 'Otras construcciones de ingeniería civil',
-                  giro: [
-                    {
-                      codigo: '237991',
-                      titulo: 'Construcción de presas y represas'
-                    },
-                    {
-                      codigo: '237992',
-                      titulo: 'Construcción de obras marítimas, fluviales y subacuáticas'
-                    },
-                    {
-                      codigo: '237993',
-                      titulo: 'Construcción de obras para transporte eléctrico y ferroviario'
-                    },
-                    {
-                      codigo: '237994',
-                      titulo: 'Supervisión de construcción de otras obras de ingeniería civil'
-                    },
-                    {
-                      codigo: '237999',
-                      titulo: 'Otras construcciones de ingeniería civil'
+                      codigo: '434319',
+                      titulo: 'Comercio al por mayor de otros materiales de desecho'
                     }
                   ]
                 }
@@ -1341,190 +1204,170 @@ export const scian = {
           ]
         },
         {
-          codigo: '238',
-          titulo: 'Trabajos especializados para la construcción',
+          codigo: '435',
+          titulo: 'Comercio al por mayor de maquinaria, equipo y mobiliario para actividades agropecuarias, industriales, de servicios y comerciales, y de otra maquinaria y equipo de uso general',
           rama: [
             {
-              codigo: '2381',
-              titulo: 'Cimentaciones, montaje de estructuras prefabricadas y trabajos en exteriores',
+              codigo: '4351',
+              titulo: 'Comercio al por mayor de maquinaria y equipo agropecuario, forestal y para la pesca',
               subrama: [
                 {
-                  codigo: '23811',
-                  titulo: 'Trabajos de cimentaciones',
+                  codigo: '43511',
+                  titulo: 'Comercio al por mayor de maquinaria y equipo agropecuario, forestal y para la pesca',
                   giro: [
                     {
-                      codigo: '238110',
-                      titulo: 'Trabajos de cimentaciones'
-                    }
-                  ]
-                },
-                {
-                  codigo: '23812',
-                  titulo: 'Montaje de estructuras prefabricadas',
-                  giro: [
-                    {
-                      codigo: '238121',
-                      titulo: 'Montaje de estructuras de concreto prefabricadas'
-                    },
-                    {
-                      codigo: '238122',
-                      titulo: 'Montaje de estructuras de acero prefabricadas'
-                    }
-                  ]
-                },
-                {
-                  codigo: '23813',
-                  titulo: 'Trabajos de albañilería',
-                  giro: [
-                    {
-                      codigo: '238130',
-                      titulo: 'Trabajos de albañilería'
-                    }
-                  ]
-                },
-                {
-                  codigo: '23819',
-                  titulo: 'Otros trabajos en exteriores',
-                  giro: [
-                    {
-                      codigo: '238190',
-                      titulo: 'Otros trabajos en exteriores'
+                      codigo: '435110',
+                      titulo: 'Comercio al por mayor de maquinaria y equipo agropecuario, forestal y para la pesca'
                     }
                   ]
                 }
               ]
             },
             {
-              codigo: '2382',
-              titulo: 'Instalaciones y equipamiento en construcciones',
+              codigo: '4352',
+              titulo: 'Comercio al por mayor de maquinaria y equipo para la industria',
               subrama: [
                 {
-                  codigo: '23821',
-                  titulo: 'Instalaciones eléctricas en construcciones',
+                  codigo: '43521',
+                  titulo: 'Comercio al por mayor de maquinaria y equipo para la construcción y la minería',
                   giro: [
                     {
-                      codigo: '238210',
-                      titulo: 'Instalaciones eléctricas en construcciones'
+                      codigo: '435210',
+                      titulo: 'Comercio al por mayor de maquinaria y equipo para la construcción y la minería'
                     }
                   ]
                 },
                 {
-                  codigo: '23822',
-                  titulo: 'Instalaciones hidrosanitarias, de gas, sistemas centrales de aire acondicionado y calefacción',
+                  codigo: '43522',
+                  titulo: 'Comercio al por mayor de maquinaria y equipo para la industria manufacturera',
                   giro: [
                     {
-                      codigo: '238221',
-                      titulo: 'Instalaciones hidrosanitarias y de gas'
-                    },
-                    {
-                      codigo: '238222',
-                      titulo: 'Instalaciones de sistemas centrales de aire acondicionado y calefacción'
-                    }
-                  ]
-                },
-                {
-                  codigo: '23829',
-                  titulo: 'Otras instalaciones y equipamiento en construcciones',
-                  giro: [
-                    {
-                      codigo: '238290',
-                      titulo: 'Otras instalaciones y equipamiento en construcciones'
+                      codigo: '435220',
+                      titulo: 'Comercio al por mayor de maquinaria y equipo para la industria manufacturera'
                     }
                   ]
                 }
               ]
             },
             {
-              codigo: '2383',
-              titulo: 'Trabajos de acabados en edificaciones',
+              codigo: '4353',
+              titulo: 'Comercio al por mayor de maquinaria y equipo para los servicios y para actividades comerciales',
               subrama: [
                 {
-                  codigo: '23831',
-                  titulo: 'Colocación de muros falsos, aislamiento y enyesado',
+                  codigo: '43531',
+                  titulo: 'Comercio al por mayor de maquinaria y equipo para los servicios y para actividades comerciales',
                   giro: [
                     {
-                      codigo: '238311',
-                      titulo: 'Colocación de muros falsos y aislamiento'
+                      codigo: '435311',
+                      titulo: 'Comercio al por mayor de equipo de telecomunicaciones, fotografía y cinematografía'
                     },
                     {
-                      codigo: '238312',
-                      titulo: 'Trabajos de enyesado, empastado y tiroleado'
-                    }
-                  ]
-                },
-                {
-                  codigo: '23832',
-                  titulo: 'Trabajos de pintura y otros cubrimientos de paredes',
-                  giro: [
+                      codigo: '435312',
+                      titulo: 'Comercio al por mayor de artículos y accesorios para diseño y pintura artística'
+                    },
                     {
-                      codigo: '238320',
-                      titulo: 'Trabajos de pintura y otros cubrimientos de paredes'
-                    }
-                  ]
-                },
-                {
-                  codigo: '23833',
-                  titulo: 'Colocación de pisos flexibles y de madera',
-                  giro: [
+                      codigo: '435313',
+                      titulo: 'Comercio al por mayor de mobiliario, equipo e instrumental médico y de laboratorio'
+                    },
                     {
-                      codigo: '238330',
-                      titulo: 'Colocación de pisos flexibles y de madera'
-                    }
-                  ]
-                },
-                {
-                  codigo: '23834',
-                  titulo: 'Colocación de pisos cerámicos y azulejos',
-                  giro: [
-                    {
-                      codigo: '238340',
-                      titulo: 'Colocación de pisos cerámicos y azulejos'
-                    }
-                  ]
-                },
-                {
-                  codigo: '23835',
-                  titulo: 'Realización de trabajos de carpintería en el lugar de la construcción',
-                  giro: [
-                    {
-                      codigo: '238350',
-                      titulo: 'Realización de trabajos de carpintería en el lugar de la construcción'
-                    }
-                  ]
-                },
-                {
-                  codigo: '23839',
-                  titulo: 'Otros trabajos de acabados en edificaciones',
-                  giro: [
-                    {
-                      codigo: '238390',
-                      titulo: 'Otros trabajos de acabados en edificaciones'
+                      codigo: '435319',
+                      titulo: 'Comercio al por mayor de maquinaria y equipo para otros servicios y para actividades comerciales'
                     }
                   ]
                 }
               ]
             },
             {
-              codigo: '2389',
-              titulo: 'Otros trabajos especializados para la construcción',
+              codigo: '4354',
+              titulo: 'Comercio al por mayor de mobiliario y equipo de cómputo y de oficina, y de otra maquinaria y equipo de uso general',
               subrama: [
                 {
-                  codigo: '23891',
-                  titulo: 'Preparación de terrenos para la construcción',
+                  codigo: '43541',
+                  titulo: 'Comercio al por mayor de mobiliario y equipo de cómputo y de oficina, y de otra maquinaria y equipo de uso general',
                   giro: [
                     {
-                      codigo: '238910',
-                      titulo: 'Preparación de terrenos para la construcción'
+                      codigo: '435411',
+                      titulo: 'Comercio al por mayor de mobiliario, equipo, y accesorios de cómputo'
+                    },
+                    {
+                      codigo: '435412',
+                      titulo: 'Comercio al por mayor de mobiliario y equipo de oficina'
+                    },
+                    {
+                      codigo: '435419',
+                      titulo: 'Comercio al por mayor de otra maquinaria y equipo de uso general'
                     }
                   ]
-                },
+                }
+              ]
+            }
+          ]
+        },
+        {
+          codigo: '436',
+          titulo: 'Comercio al por mayor de camiones y de partes y refacciones nuevas para automóviles, camionetas y camiones',
+          rama: [
+            {
+              codigo: '4361',
+              titulo: 'Comercio al por mayor de camiones y de partes y refacciones nuevas para automóviles, camionetas y camiones',
+              subrama: [
                 {
-                  codigo: '23899',
-                  titulo: 'Otros trabajos especializados para la construcción',
+                  codigo: '43611',
+                  titulo: 'Comercio al por mayor de camiones y de partes y refacciones nuevas para automóviles, camionetas y camiones',
                   giro: [
                     {
-                      codigo: '238990',
-                      titulo: 'Otros trabajos especializados para la construcción'
+                      codigo: '436111',
+                      titulo: 'Comercio al por mayor de camiones'
+                    },
+                    {
+                      codigo: '436112',
+                      titulo: 'Comercio al por mayor de partes y refacciones nuevas para automóviles, camionetas y camiones'
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          codigo: '437',
+          titulo: 'Intermediación de comercio al por mayor',
+          rama: [
+            {
+              codigo: '4371',
+              titulo: 'Intermediación de comercio al por mayor, excepto a través de internet y de otros medios electrónicos',
+              subrama: [
+                {
+                  codigo: '43711',
+                  titulo: 'Intermediación de comercio al por mayor, excepto a través de internet y de otros medios electrónicos',
+                  giro: [
+                    {
+                      codigo: '437111',
+                      titulo: 'Intermediación de comercio al por mayor de productos agropecuarios, excepto a través de internet y de otros medios electrónicos'
+                    },
+                    {
+                      codigo: '437112',
+                      titulo: 'Intermediación de comercio al por mayor de productos para la industria, el comercio y los servicios, excepto a través de internet y de otros medios electrónicos'
+                    },
+                    {
+                      codigo: '437113',
+                      titulo: 'Intermediación de comercio al por mayor para productos de uso doméstico y personal, excepto a través de internet y de otros medios electrónicos'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '4372',
+              titulo: 'Intermediación de comercio al por mayor exclusivamente a través de internet y otros medios electrónicos',
+              subrama: [
+                {
+                  codigo: '43721',
+                  titulo: 'Intermediación de comercio al por mayor exclusivamente a través de internet y otros medios electrónicos',
+                  giro: [
+                    {
+                      codigo: '437210',
+                      titulo: 'Intermediación de comercio al por mayor exclusivamente a través de internet y otros medios electrónicos'
                     }
                   ]
                 }
@@ -4425,162 +4268,66 @@ export const scian = {
       ]
     },
     {
-      codigo: '43',
-      titulo: 'Comercio al por mayor',
+      codigo: '23',
+      titulo: 'Construcción',
       subsector: [
         {
-          codigo: '431',
-          titulo: 'Comercio al por mayor de abarrotes, alimentos, bebidas, hielo y tabaco',
+          codigo: '236',
+          titulo: 'Edificación',
           rama: [
             {
-              codigo: '4311',
-              titulo: 'Comercio al por mayor de abarrotes y alimentos',
+              codigo: '2361',
+              titulo: 'Edificación residencial',
               subrama: [
                 {
-                  codigo: '43111',
-                  titulo: 'Comercio al por mayor de abarrotes',
+                  codigo: '23611',
+                  titulo: 'Edificación residencial',
                   giro: [
                     {
-                      codigo: '431110',
-                      titulo: 'Comercio al por mayor de abarrotes'
-                    }
-                  ]
-                },
-                {
-                  codigo: '43112',
-                  titulo: 'Comercio al por mayor de carnes',
-                  giro: [
-                    {
-                      codigo: '431121',
-                      titulo: 'Comercio al por mayor de carnes rojas'
+                      codigo: '236111',
+                      titulo: 'Edificación de vivienda unifamiliar'
                     },
                     {
-                      codigo: '431122',
-                      titulo: 'Comercio al por mayor de carne de aves'
+                      codigo: '236112',
+                      titulo: 'Edificación de vivienda multifamiliar'
                     },
                     {
-                      codigo: '431123',
-                      titulo: 'Comercio al por mayor de pescados y mariscos'
-                    }
-                  ]
-                },
-                {
-                  codigo: '43113',
-                  titulo: 'Comercio al por mayor de frutas y verduras frescas',
-                  giro: [
-                    {
-                      codigo: '431130',
-                      titulo: 'Comercio al por mayor de frutas y verduras frescas'
-                    }
-                  ]
-                },
-                {
-                  codigo: '43114',
-                  titulo: 'Comercio al por mayor de huevo',
-                  giro: [
-                    {
-                      codigo: '431140',
-                      titulo: 'Comercio al por mayor de huevo'
-                    }
-                  ]
-                },
-                {
-                  codigo: '43115',
-                  titulo: 'Comercio al por mayor de semillas y granos alimenticios, especias y chiles secos',
-                  giro: [
-                    {
-                      codigo: '431150',
-                      titulo: 'Comercio al por mayor de semillas y granos alimenticios, especias y chiles secos'
-                    }
-                  ]
-                },
-                {
-                  codigo: '43116',
-                  titulo: 'Comercio al por mayor de leche y otros productos lácteos',
-                  giro: [
-                    {
-                      codigo: '431160',
-                      titulo: 'Comercio al por mayor de leche y otros productos lácteos'
-                    }
-                  ]
-                },
-                {
-                  codigo: '43117',
-                  titulo: 'Comercio al por mayor de embutidos',
-                  giro: [
-                    {
-                      codigo: '431170',
-                      titulo: 'Comercio al por mayor de embutidos'
-                    }
-                  ]
-                },
-                {
-                  codigo: '43118',
-                  titulo: 'Comercio al por mayor de dulces y materias primas para repostería',
-                  giro: [
-                    {
-                      codigo: '431180',
-                      titulo: 'Comercio al por mayor de dulces y materias primas para repostería'
-                    }
-                  ]
-                },
-                {
-                  codigo: '43119',
-                  titulo: 'Comercio al por mayor de otros alimentos',
-                  giro: [
-                    {
-                      codigo: '431191',
-                      titulo: 'Comercio al por mayor de pan y pasteles'
-                    },
-                    {
-                      codigo: '431192',
-                      titulo: 'Comercio al por mayor de botanas y frituras'
-                    },
-                    {
-                      codigo: '431193',
-                      titulo: 'Comercio al por mayor de conservas alimenticias'
-                    },
-                    {
-                      codigo: '431194',
-                      titulo: 'Comercio al por mayor de miel'
-                    },
-                    {
-                      codigo: '431199',
-                      titulo: 'Comercio al por mayor de otros alimentos'
+                      codigo: '236113',
+                      titulo: 'Supervisión de edificación residencial'
                     }
                   ]
                 }
               ]
             },
             {
-              codigo: '4312',
-              titulo: 'Comercio al por mayor de bebidas, hielo y tabaco',
+              codigo: '2362',
+              titulo: 'Edificación no residencial',
               subrama: [
                 {
-                  codigo: '43121',
-                  titulo: 'Comercio al por mayor de bebidas y hielo',
+                  codigo: '23621',
+                  titulo: 'Edificación de naves y plantas industriales',
                   giro: [
                     {
-                      codigo: '431211',
-                      titulo: 'Comercio al por mayor de bebidas no alcohólicas y hielo'
+                      codigo: '236211',
+                      titulo: 'Edificación de naves y plantas industriales, excepto la supervisión'
                     },
                     {
-                      codigo: '431212',
-                      titulo: 'Comercio al por mayor de vinos y licores'
-                    },
-                    {
-                      codigo: '431213',
-                      titulo: 'Comercio al por mayor de cerveza'
+                      codigo: '236212',
+                      titulo: 'Supervisión de edificación de naves y plantas industriales'
                     }
                   ]
                 },
                 {
-                  codigo: '43122',
-                  titulo: 'Comercio al por mayor de cigarros, puros y tabaco',
+                  codigo: '23622',
+                  titulo: 'Edificación de inmuebles comerciales y de servicios',
                   giro: [
                     {
-                      codigo: '431220',
-                      titulo: 'Comercio al por mayor de cigarros, puros y tabaco'
+                      codigo: '236221',
+                      titulo: 'Edificación de inmuebles comerciales y de servicios, excepto la supervisión'
+                    },
+                    {
+                      codigo: '236222',
+                      titulo: 'Supervisión de edificación de inmuebles comerciales y de servicios'
                     }
                   ]
                 }
@@ -4589,52 +4336,144 @@ export const scian = {
           ]
         },
         {
-          codigo: '432',
-          titulo: 'Comercio al por mayor de productos textiles y calzado',
+          codigo: '237',
+          titulo: 'Construcción de obras de ingeniería civil',
           rama: [
             {
-              codigo: '4321',
-              titulo: 'Comercio al por mayor de productos textiles y calzado',
+              codigo: '2371',
+              titulo: 'Construcción de obras para el suministro de agua, petróleo, gas, energía eléctrica y telecomunicaciones',
               subrama: [
                 {
-                  codigo: '43211',
-                  titulo: 'Comercio al por mayor de productos textiles, excepto ropa',
+                  codigo: '23711',
+                  titulo: 'Construcción de obras para el tratamiento, distribución y suministro de agua, drenaje y riego',
                   giro: [
                     {
-                      codigo: '432111',
-                      titulo: 'Comercio al por mayor de fibras, hilos y telas'
+                      codigo: '237111',
+                      titulo: 'Construcción de obras para el tratamiento, distribución y suministro de agua y drenaje'
                     },
                     {
-                      codigo: '432112',
-                      titulo: 'Comercio al por mayor de blancos'
+                      codigo: '237112',
+                      titulo: 'Construcción de sistemas de riego agrícola'
                     },
                     {
-                      codigo: '432113',
-                      titulo: 'Comercio al por mayor de cueros y pieles'
-                    },
-                    {
-                      codigo: '432119',
-                      titulo: 'Comercio al por mayor de otros productos textiles'
+                      codigo: '237113',
+                      titulo: 'Supervisión de construcción de obras para el tratamiento, distribución y suministro de agua, drenaje y riego'
                     }
                   ]
                 },
                 {
-                  codigo: '43212',
-                  titulo: 'Comercio al por mayor de ropa, bisutería y accesorios de vestir',
+                  codigo: '23712',
+                  titulo: 'Construcción de obras para petróleo y gas',
                   giro: [
                     {
-                      codigo: '432120',
-                      titulo: 'Comercio al por mayor de ropa, bisutería y accesorios de vestir'
+                      codigo: '237121',
+                      titulo: 'Construcción de sistemas de distribución de petróleo y gas'
+                    },
+                    {
+                      codigo: '237122',
+                      titulo: 'Construcción de plantas de refinería y petroquímica'
+                    },
+                    {
+                      codigo: '237123',
+                      titulo: 'Supervisión de construcción de obras para petróleo y gas'
                     }
                   ]
                 },
                 {
-                  codigo: '43213',
-                  titulo: 'Comercio al por mayor de calzado',
+                  codigo: '23713',
+                  titulo: 'Construcción de obras de generación y conducción de energía eléctrica y de obras para telecomunicaciones',
                   giro: [
                     {
-                      codigo: '432130',
-                      titulo: 'Comercio al por mayor de calzado'
+                      codigo: '237131',
+                      titulo: 'Construcción de obras de generación y conducción de energía eléctrica'
+                    },
+                    {
+                      codigo: '237132',
+                      titulo: 'Construcción de obras para telecomunicaciones'
+                    },
+                    {
+                      codigo: '237133',
+                      titulo: 'Supervisión de construcción de obras de generación y conducción de energía eléctrica y de obras para telecomunicaciones'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '2372',
+              titulo: 'División de terrenos y construcción de obras de urbanización',
+              subrama: [
+                {
+                  codigo: '23721',
+                  titulo: 'División de terrenos y construcción de obras de urbanización',
+                  giro: [
+                    {
+                      codigo: '237211',
+                      titulo: 'División de terrenos'
+                    },
+                    {
+                      codigo: '237212',
+                      titulo: 'Construcción de obras de urbanización'
+                    },
+                    {
+                      codigo: '237213',
+                      titulo: 'Supervisión de división de terrenos y de construcción de obras de urbanización'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '2373',
+              titulo: 'Construcción de vías de comunicación',
+              subrama: [
+                {
+                  codigo: '23731',
+                  titulo: 'Construcción de vías de comunicación',
+                  giro: [
+                    {
+                      codigo: '237311',
+                      titulo: 'Instalación de señalamientos y protecciones en obras viales'
+                    },
+                    {
+                      codigo: '237312',
+                      titulo: 'Construcción de carreteras, puentes y similares'
+                    },
+                    {
+                      codigo: '237313',
+                      titulo: 'Supervisión de construcción de vías de comunicación'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '2379',
+              titulo: 'Otras construcciones de ingeniería civil',
+              subrama: [
+                {
+                  codigo: '23799',
+                  titulo: 'Otras construcciones de ingeniería civil',
+                  giro: [
+                    {
+                      codigo: '237991',
+                      titulo: 'Construcción de presas y represas'
+                    },
+                    {
+                      codigo: '237992',
+                      titulo: 'Construcción de obras marítimas, fluviales y subacuáticas'
+                    },
+                    {
+                      codigo: '237993',
+                      titulo: 'Construcción de obras para transporte eléctrico y ferroviario'
+                    },
+                    {
+                      codigo: '237994',
+                      titulo: 'Supervisión de construcción de otras obras de ingeniería civil'
+                    },
+                    {
+                      codigo: '237999',
+                      titulo: 'Otras construcciones de ingeniería civil'
                     }
                   ]
                 }
@@ -4643,1154 +4482,190 @@ export const scian = {
           ]
         },
         {
-          codigo: '433',
-          titulo: 'Comercio al por mayor de productos farmacéuticos, de perfumería, artículos para el esparcimiento, electrodomésticos menores y aparatos de línea blanca',
+          codigo: '238',
+          titulo: 'Trabajos especializados para la construcción',
           rama: [
             {
-              codigo: '4331',
-              titulo: 'Comercio al por mayor de productos farmacéuticos',
+              codigo: '2381',
+              titulo: 'Cimentaciones, montaje de estructuras prefabricadas y trabajos en exteriores',
               subrama: [
                 {
-                  codigo: '43311',
-                  titulo: 'Comercio al por mayor de productos farmacéuticos',
+                  codigo: '23811',
+                  titulo: 'Trabajos de cimentaciones',
                   giro: [
                     {
-                      codigo: '433110',
-                      titulo: 'Comercio al por mayor de productos farmacéuticos'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '4332',
-              titulo: 'Comercio al por mayor de artículos de perfumería, cosméticos y joyería',
-              subrama: [
-                {
-                  codigo: '43321',
-                  titulo: 'Comercio al por mayor de artículos de perfumería y cosméticos',
-                  giro: [
-                    {
-                      codigo: '433210',
-                      titulo: 'Comercio al por mayor de artículos de perfumería y cosméticos'
+                      codigo: '238110',
+                      titulo: 'Trabajos de cimentaciones'
                     }
                   ]
                 },
                 {
-                  codigo: '43322',
-                  titulo: 'Comercio al por mayor de artículos de joyería y relojes',
+                  codigo: '23812',
+                  titulo: 'Montaje de estructuras prefabricadas',
                   giro: [
                     {
-                      codigo: '433220',
-                      titulo: 'Comercio al por mayor de artículos de joyería y relojes'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '4333',
-              titulo: 'Comercio al por mayor de discos, juguetes y artículos deportivos',
-              subrama: [
-                {
-                  codigo: '43331',
-                  titulo: 'Comercio al por mayor de discos, juguetes y artículos deportivos',
-                  giro: [
-                    {
-                      codigo: '433311',
-                      titulo: 'Comercio al por mayor de discos y casetes'
+                      codigo: '238121',
+                      titulo: 'Montaje de estructuras de concreto prefabricadas'
                     },
                     {
-                      codigo: '433312',
-                      titulo: 'Comercio al por mayor de juguetes y bicicletas'
-                    },
-                    {
-                      codigo: '433313',
-                      titulo: 'Comercio al por mayor de artículos y aparatos deportivos'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '4334',
-              titulo: 'Comercio al por mayor de artículos de papelería, libros, revistas y periódicos',
-              subrama: [
-                {
-                  codigo: '43341',
-                  titulo: 'Comercio al por mayor de artículos de papelería',
-                  giro: [
-                    {
-                      codigo: '433410',
-                      titulo: 'Comercio al por mayor de artículos de papelería'
+                      codigo: '238122',
+                      titulo: 'Montaje de estructuras de acero prefabricadas'
                     }
                   ]
                 },
                 {
-                  codigo: '43342',
-                  titulo: 'Comercio al por mayor de libros',
+                  codigo: '23813',
+                  titulo: 'Trabajos de albañilería',
                   giro: [
                     {
-                      codigo: '433420',
-                      titulo: 'Comercio al por mayor de libros'
+                      codigo: '238130',
+                      titulo: 'Trabajos de albañilería'
                     }
                   ]
                 },
                 {
-                  codigo: '43343',
-                  titulo: 'Comercio al por mayor de revistas y periódicos',
+                  codigo: '23819',
+                  titulo: 'Otros trabajos en exteriores',
                   giro: [
                     {
-                      codigo: '433430',
-                      titulo: 'Comercio al por mayor de revistas y periódicos'
+                      codigo: '238190',
+                      titulo: 'Otros trabajos en exteriores'
                     }
                   ]
                 }
               ]
             },
             {
-              codigo: '4335',
-              titulo: 'Comercio al por mayor de electrodomésticos menores y aparatos de línea blanca',
+              codigo: '2382',
+              titulo: 'Instalaciones y equipamiento en construcciones',
               subrama: [
                 {
-                  codigo: '43351',
-                  titulo: 'Comercio al por mayor de electrodomésticos menores y aparatos de línea blanca',
+                  codigo: '23821',
+                  titulo: 'Instalaciones eléctricas en construcciones',
                   giro: [
                     {
-                      codigo: '433510',
-                      titulo: 'Comercio al por mayor de electrodomésticos menores y aparatos de línea blanca'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          codigo: '434',
-          titulo: 'Comercio al por mayor de materias primas agropecuarias y forestales, para la industria, y materiales de desecho',
-          rama: [
-            {
-              codigo: '4341',
-              titulo: 'Comercio al por mayor de materias primas agropecuarias y forestales',
-              subrama: [
-                {
-                  codigo: '43411',
-                  titulo: 'Comercio al por mayor de materias primas agropecuarias y forestales',
-                  giro: [
-                    {
-                      codigo: '434111',
-                      titulo: 'Comercio al por mayor de fertilizantes, plaguicidas y semillas para siembra'
-                    },
-                    {
-                      codigo: '434112',
-                      titulo: 'Comercio al por mayor de medicamentos veterinarios y alimentos para animales, excepto mascotas'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '4342',
-              titulo: 'Comercio al por mayor de materias primas para la industria',
-              subrama: [
-                {
-                  codigo: '43421',
-                  titulo: 'Comercio al por mayor de materiales para la construcción, excepto de madera y metálicos',
-                  giro: [
-                    {
-                      codigo: '434211',
-                      titulo: 'Comercio al por mayor de cemento, tabique y grava'
-                    },
-                    {
-                      codigo: '434219',
-                      titulo: 'Comercio al por mayor de otros materiales para la construcción, excepto de madera y metálicos'
+                      codigo: '238210',
+                      titulo: 'Instalaciones eléctricas en construcciones'
                     }
                   ]
                 },
                 {
-                  codigo: '43422',
-                  titulo: 'Comercio al por mayor de otros materiales para la construcción y materias primas para otras industrias',
+                  codigo: '23822',
+                  titulo: 'Instalaciones hidrosanitarias, de gas, sistemas centrales de aire acondicionado y calefacción',
                   giro: [
                     {
-                      codigo: '434221',
-                      titulo: 'Comercio al por mayor de materiales metálicos para la construcción y la manufactura'
+                      codigo: '238221',
+                      titulo: 'Instalaciones hidrosanitarias y de gas'
                     },
                     {
-                      codigo: '434222',
-                      titulo: 'Comercio al por mayor de productos químicos para la industria farmacéutica y para otro uso industrial'
-                    },
-                    {
-                      codigo: '434223',
-                      titulo: 'Comercio al por mayor de envases en general, papel y cartón para la industria'
-                    },
-                    {
-                      codigo: '434224',
-                      titulo: 'Comercio al por mayor de madera para la construcción y la industria'
-                    },
-                    {
-                      codigo: '434225',
-                      titulo: 'Comercio al por mayor de equipo y material eléctrico'
-                    },
-                    {
-                      codigo: '434226',
-                      titulo: 'Comercio al por mayor de pintura'
-                    },
-                    {
-                      codigo: '434227',
-                      titulo: 'Comercio al por mayor de vidrios y espejos'
-                    },
-                    {
-                      codigo: '434228',
-                      titulo: 'Comercio al por mayor de ganado y aves en pie'
-                    },
-                    {
-                      codigo: '434229',
-                      titulo: 'Comercio al por mayor de otras materias primas para otras industrias'
+                      codigo: '238222',
+                      titulo: 'Instalaciones de sistemas centrales de aire acondicionado y calefacción'
                     }
                   ]
                 },
                 {
-                  codigo: '43423',
-                  titulo: 'Comercio al por mayor de combustibles de uso industrial',
+                  codigo: '23829',
+                  titulo: 'Otras instalaciones y equipamiento en construcciones',
                   giro: [
                     {
-                      codigo: '434230',
-                      titulo: 'Comercio al por mayor de combustibles de uso industrial'
+                      codigo: '238290',
+                      titulo: 'Otras instalaciones y equipamiento en construcciones'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '2383',
+              titulo: 'Trabajos de acabados en edificaciones',
+              subrama: [
+                {
+                  codigo: '23831',
+                  titulo: 'Colocación de muros falsos, aislamiento y enyesado',
+                  giro: [
+                    {
+                      codigo: '238311',
+                      titulo: 'Colocación de muros falsos y aislamiento'
+                    },
+                    {
+                      codigo: '238312',
+                      titulo: 'Trabajos de enyesado, empastado y tiroleado'
                     }
                   ]
                 },
                 {
-                  codigo: '43424',
-                  titulo: 'Comercio al por mayor de artículos desechables',
+                  codigo: '23832',
+                  titulo: 'Trabajos de pintura y otros cubrimientos de paredes',
                   giro: [
                     {
-                      codigo: '434240',
-                      titulo: 'Comercio al por mayor de artículos desechables'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '4343',
-              titulo: 'Comercio al por mayor de materiales de desecho',
-              subrama: [
-                {
-                  codigo: '43431',
-                  titulo: 'Comercio al por mayor de materiales de desecho',
-                  giro: [
-                    {
-                      codigo: '434311',
-                      titulo: 'Comercio al por mayor de desechos metálicos'
-                    },
-                    {
-                      codigo: '434312',
-                      titulo: 'Comercio al por mayor de desechos de papel y de cartón'
-                    },
-                    {
-                      codigo: '434313',
-                      titulo: 'Comercio al por mayor de desechos de vidrio'
-                    },
-                    {
-                      codigo: '434314',
-                      titulo: 'Comercio al por mayor de desechos de plástico'
-                    },
-                    {
-                      codigo: '434319',
-                      titulo: 'Comercio al por mayor de otros materiales de desecho'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          codigo: '435',
-          titulo: 'Comercio al por mayor de maquinaria, equipo y mobiliario para actividades agropecuarias, industriales, de servicios y comerciales, y de otra maquinaria y equipo de uso general',
-          rama: [
-            {
-              codigo: '4351',
-              titulo: 'Comercio al por mayor de maquinaria y equipo agropecuario, forestal y para la pesca',
-              subrama: [
-                {
-                  codigo: '43511',
-                  titulo: 'Comercio al por mayor de maquinaria y equipo agropecuario, forestal y para la pesca',
-                  giro: [
-                    {
-                      codigo: '435110',
-                      titulo: 'Comercio al por mayor de maquinaria y equipo agropecuario, forestal y para la pesca'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '4352',
-              titulo: 'Comercio al por mayor de maquinaria y equipo para la industria',
-              subrama: [
-                {
-                  codigo: '43521',
-                  titulo: 'Comercio al por mayor de maquinaria y equipo para la construcción y la minería',
-                  giro: [
-                    {
-                      codigo: '435210',
-                      titulo: 'Comercio al por mayor de maquinaria y equipo para la construcción y la minería'
+                      codigo: '238320',
+                      titulo: 'Trabajos de pintura y otros cubrimientos de paredes'
                     }
                   ]
                 },
                 {
-                  codigo: '43522',
-                  titulo: 'Comercio al por mayor de maquinaria y equipo para la industria manufacturera',
+                  codigo: '23833',
+                  titulo: 'Colocación de pisos flexibles y de madera',
                   giro: [
                     {
-                      codigo: '435220',
-                      titulo: 'Comercio al por mayor de maquinaria y equipo para la industria manufacturera'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '4353',
-              titulo: 'Comercio al por mayor de maquinaria y equipo para los servicios y para actividades comerciales',
-              subrama: [
-                {
-                  codigo: '43531',
-                  titulo: 'Comercio al por mayor de maquinaria y equipo para los servicios y para actividades comerciales',
-                  giro: [
-                    {
-                      codigo: '435311',
-                      titulo: 'Comercio al por mayor de equipo de telecomunicaciones, fotografía y cinematografía'
-                    },
-                    {
-                      codigo: '435312',
-                      titulo: 'Comercio al por mayor de artículos y accesorios para diseño y pintura artística'
-                    },
-                    {
-                      codigo: '435313',
-                      titulo: 'Comercio al por mayor de mobiliario, equipo e instrumental médico y de laboratorio'
-                    },
-                    {
-                      codigo: '435319',
-                      titulo: 'Comercio al por mayor de maquinaria y equipo para otros servicios y para actividades comerciales'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '4354',
-              titulo: 'Comercio al por mayor de mobiliario y equipo de cómputo y de oficina, y de otra maquinaria y equipo de uso general',
-              subrama: [
-                {
-                  codigo: '43541',
-                  titulo: 'Comercio al por mayor de mobiliario y equipo de cómputo y de oficina, y de otra maquinaria y equipo de uso general',
-                  giro: [
-                    {
-                      codigo: '435411',
-                      titulo: 'Comercio al por mayor de mobiliario, equipo, y accesorios de cómputo'
-                    },
-                    {
-                      codigo: '435412',
-                      titulo: 'Comercio al por mayor de mobiliario y equipo de oficina'
-                    },
-                    {
-                      codigo: '435419',
-                      titulo: 'Comercio al por mayor de otra maquinaria y equipo de uso general'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          codigo: '436',
-          titulo: 'Comercio al por mayor de camiones y de partes y refacciones nuevas para automóviles, camionetas y camiones',
-          rama: [
-            {
-              codigo: '4361',
-              titulo: 'Comercio al por mayor de camiones y de partes y refacciones nuevas para automóviles, camionetas y camiones',
-              subrama: [
-                {
-                  codigo: '43611',
-                  titulo: 'Comercio al por mayor de camiones y de partes y refacciones nuevas para automóviles, camionetas y camiones',
-                  giro: [
-                    {
-                      codigo: '436111',
-                      titulo: 'Comercio al por mayor de camiones'
-                    },
-                    {
-                      codigo: '436112',
-                      titulo: 'Comercio al por mayor de partes y refacciones nuevas para automóviles, camionetas y camiones'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          codigo: '437',
-          titulo: 'Intermediación de comercio al por mayor',
-          rama: [
-            {
-              codigo: '4371',
-              titulo: 'Intermediación de comercio al por mayor, excepto a través de internet y de otros medios electrónicos',
-              subrama: [
-                {
-                  codigo: '43711',
-                  titulo: 'Intermediación de comercio al por mayor, excepto a través de internet y de otros medios electrónicos',
-                  giro: [
-                    {
-                      codigo: '437111',
-                      titulo: 'Intermediación de comercio al por mayor de productos agropecuarios, excepto a través de internet y de otros medios electrónicos'
-                    },
-                    {
-                      codigo: '437112',
-                      titulo: 'Intermediación de comercio al por mayor de productos para la industria, el comercio y los servicios, excepto a través de internet y de otros medios electrónicos'
-                    },
-                    {
-                      codigo: '437113',
-                      titulo: 'Intermediación de comercio al por mayor para productos de uso doméstico y personal, excepto a través de internet y de otros medios electrónicos'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '4372',
-              titulo: 'Intermediación de comercio al por mayor exclusivamente a través de internet y otros medios electrónicos',
-              subrama: [
-                {
-                  codigo: '43721',
-                  titulo: 'Intermediación de comercio al por mayor exclusivamente a través de internet y otros medios electrónicos',
-                  giro: [
-                    {
-                      codigo: '437210',
-                      titulo: 'Intermediación de comercio al por mayor exclusivamente a través de internet y otros medios electrónicos'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      codigo: '46',
-      titulo: 'Comercio al por menor',
-      subsector: [
-        {
-          codigo: '461',
-          titulo: 'Comercio al por menor de abarrotes, alimentos, bebidas, hielo y tabaco',
-          rama: [
-            {
-              codigo: '4611',
-              titulo: 'Comercio al por menor de abarrotes y alimentos',
-              subrama: [
-                {
-                  codigo: '46111',
-                  titulo: 'Comercio al por menor en tiendas de abarrotes, ultramarinos y misceláneas',
-                  giro: [
-                    {
-                      codigo: '461110',
-                      titulo: 'Comercio al por menor en tiendas de abarrotes, ultramarinos y misceláneas'
+                      codigo: '238330',
+                      titulo: 'Colocación de pisos flexibles y de madera'
                     }
                   ]
                 },
                 {
-                  codigo: '46112',
-                  titulo: 'Comercio al por menor de carnes',
+                  codigo: '23834',
+                  titulo: 'Colocación de pisos cerámicos y azulejos',
                   giro: [
                     {
-                      codigo: '461121',
-                      titulo: 'Comercio al por menor de carnes rojas'
-                    },
-                    {
-                      codigo: '461122',
-                      titulo: 'Comercio al por menor de carne de aves'
-                    },
-                    {
-                      codigo: '461123',
-                      titulo: 'Comercio al por menor de pescados y mariscos'
+                      codigo: '238340',
+                      titulo: 'Colocación de pisos cerámicos y azulejos'
                     }
                   ]
                 },
                 {
-                  codigo: '46113',
-                  titulo: 'Comercio al por menor de frutas y verduras frescas',
+                  codigo: '23835',
+                  titulo: 'Realización de trabajos de carpintería en el lugar de la construcción',
                   giro: [
                     {
-                      codigo: '461130',
-                      titulo: 'Comercio al por menor de frutas y verduras frescas'
+                      codigo: '238350',
+                      titulo: 'Realización de trabajos de carpintería en el lugar de la construcción'
                     }
                   ]
                 },
                 {
-                  codigo: '46114',
-                  titulo: 'Comercio al por menor de semillas y granos alimenticios, especias y chiles secos',
+                  codigo: '23839',
+                  titulo: 'Otros trabajos de acabados en edificaciones',
                   giro: [
                     {
-                      codigo: '461140',
-                      titulo: 'Comercio al por menor de semillas y granos alimenticios, especias y chiles secos'
+                      codigo: '238390',
+                      titulo: 'Otros trabajos de acabados en edificaciones'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '2389',
+              titulo: 'Otros trabajos especializados para la construcción',
+              subrama: [
+                {
+                  codigo: '23891',
+                  titulo: 'Preparación de terrenos para la construcción',
+                  giro: [
+                    {
+                      codigo: '238910',
+                      titulo: 'Preparación de terrenos para la construcción'
                     }
                   ]
                 },
                 {
-                  codigo: '46115',
-                  titulo: 'Comercio al por menor de leche, otros productos lácteos y embutidos',
+                  codigo: '23899',
+                  titulo: 'Otros trabajos especializados para la construcción',
                   giro: [
                     {
-                      codigo: '461150',
-                      titulo: 'Comercio al por menor de leche, otros productos lácteos y embutidos'
-                    }
-                  ]
-                },
-                {
-                  codigo: '46116',
-                  titulo: 'Comercio al por menor de dulces y materias primas para repostería',
-                  giro: [
-                    {
-                      codigo: '461160',
-                      titulo: 'Comercio al por menor de dulces y materias primas para repostería'
-                    }
-                  ]
-                },
-                {
-                  codigo: '46117',
-                  titulo: 'Comercio al por menor de paletas de hielo y helados',
-                  giro: [
-                    {
-                      codigo: '461170',
-                      titulo: 'Comercio al por menor de paletas de hielo y helados'
-                    }
-                  ]
-                },
-                {
-                  codigo: '46119',
-                  titulo: 'Comercio al por menor de otros alimentos',
-                  giro: [
-                    {
-                      codigo: '461190',
-                      titulo: 'Comercio al por menor de otros alimentos'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '4612',
-              titulo: 'Comercio al por menor de bebidas, hielo y tabaco',
-              subrama: [
-                {
-                  codigo: '46121',
-                  titulo: 'Comercio al por menor de bebidas y hielo',
-                  giro: [
-                    {
-                      codigo: '461211',
-                      titulo: 'Comercio al por menor de vinos y licores'
-                    },
-                    {
-                      codigo: '461212',
-                      titulo: 'Comercio al por menor de cerveza'
-                    },
-                    {
-                      codigo: '461213',
-                      titulo: 'Comercio al por menor de bebidas no alcohólicas y hielo'
-                    }
-                  ]
-                },
-                {
-                  codigo: '46122',
-                  titulo: 'Comercio al por menor de cigarros, puros y tabaco',
-                  giro: [
-                    {
-                      codigo: '461220',
-                      titulo: 'Comercio al por menor de cigarros, puros y tabaco'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          codigo: '462',
-          titulo: 'Comercio al por menor en tiendas de autoservicio y departamentales',
-          rama: [
-            {
-              codigo: '4621',
-              titulo: 'Comercio al por menor en tiendas de autoservicio',
-              subrama: [
-                {
-                  codigo: '46211',
-                  titulo: 'Comercio al por menor en tiendas de autoservicio',
-                  giro: [
-                    {
-                      codigo: '462111',
-                      titulo: 'Comercio al por menor en supermercados'
-                    },
-                    {
-                      codigo: '462112',
-                      titulo: 'Comercio al por menor en minisupers'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '4622',
-              titulo: 'Comercio al por menor en tiendas departamentales',
-              subrama: [
-                {
-                  codigo: '46221',
-                  titulo: 'Comercio al por menor en tiendas departamentales',
-                  giro: [
-                    {
-                      codigo: '462210',
-                      titulo: 'Comercio al por menor en tiendas departamentales'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          codigo: '463',
-          titulo: 'Comercio al por menor de productos textiles, bisutería, accesorios de vestir y calzado',
-          rama: [
-            {
-              codigo: '4631',
-              titulo: 'Comercio al por menor de productos textiles, excepto ropa',
-              subrama: [
-                {
-                  codigo: '46311',
-                  titulo: 'Comercio al por menor de productos textiles, excepto ropa',
-                  giro: [
-                    {
-                      codigo: '463111',
-                      titulo: 'Comercio al por menor de telas'
-                    },
-                    {
-                      codigo: '463112',
-                      titulo: 'Comercio al por menor de blancos'
-                    },
-                    {
-                      codigo: '463113',
-                      titulo: 'Comercio al por menor de artículos de mercería y bonetería'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '4632',
-              titulo: 'Comercio al por menor de ropa, bisutería y accesorios de vestir',
-              subrama: [
-                {
-                  codigo: '46321',
-                  titulo: 'Comercio al por menor de ropa, bisutería y accesorios de vestir',
-                  giro: [
-                    {
-                      codigo: '463211',
-                      titulo: 'Comercio al por menor de ropa, excepto de bebé y lencería'
-                    },
-                    {
-                      codigo: '463212',
-                      titulo: 'Comercio al por menor de ropa de bebé'
-                    },
-                    {
-                      codigo: '463213',
-                      titulo: 'Comercio al por menor de lencería'
-                    },
-                    {
-                      codigo: '463214',
-                      titulo: 'Comercio al por menor de disfraces, vestimenta regional y vestidos de novia'
-                    },
-                    {
-                      codigo: '463215',
-                      titulo: 'Comercio al por menor de bisutería y accesorios de vestir'
-                    },
-                    {
-                      codigo: '463216',
-                      titulo: 'Comercio al por menor de ropa de cuero y piel y de otros artículos de estos materiales'
-                    },
-                    {
-                      codigo: '463217',
-                      titulo: 'Comercio al por menor de pañales desechables'
-                    },
-                    {
-                      codigo: '463218',
-                      titulo: 'Comercio al por menor de sombreros'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '4633',
-              titulo: 'Comercio al por menor de calzado',
-              subrama: [
-                {
-                  codigo: '46331',
-                  titulo: 'Comercio al por menor de calzado',
-                  giro: [
-                    {
-                      codigo: '463310',
-                      titulo: 'Comercio al por menor de calzado'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          codigo: '464',
-          titulo: 'Comercio al por menor de artículos para el cuidado de la salud',
-          rama: [
-            {
-              codigo: '4641',
-              titulo: 'Comercio al por menor de artículos para el cuidado de la salud',
-              subrama: [
-                {
-                  codigo: '46411',
-                  titulo: 'Comercio al por menor de productos farmacéuticos y naturistas',
-                  giro: [
-                    {
-                      codigo: '464111',
-                      titulo: 'Farmacias sin minisúper'
-                    },
-                    {
-                      codigo: '464112',
-                      titulo: 'Farmacias con minisúper'
-                    },
-                    {
-                      codigo: '464113',
-                      titulo: 'Comercio al por menor de productos naturistas, medicamentos homeopáticos y de complementos alimenticios'
-                    }
-                  ]
-                },
-                {
-                  codigo: '46412',
-                  titulo: 'Comercio al por menor de lentes y artículos ortopédicos',
-                  giro: [
-                    {
-                      codigo: '464121',
-                      titulo: 'Comercio al por menor de lentes'
-                    },
-                    {
-                      codigo: '464122',
-                      titulo: 'Comercio al por menor de artículos ortopédicos'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          codigo: '465',
-          titulo: 'Comercio al por menor de artículos de papelería, para el esparcimiento y otros artículos de uso personal',
-          rama: [
-            {
-              codigo: '4651',
-              titulo: 'Comercio al por menor de artículos de perfumería y joyería',
-              subrama: [
-                {
-                  codigo: '46511',
-                  titulo: 'Comercio al por menor de artículos de perfumería y joyería',
-                  giro: [
-                    {
-                      codigo: '465111',
-                      titulo: 'Comercio al por menor de artículos de perfumería y cosméticos'
-                    },
-                    {
-                      codigo: '465112',
-                      titulo: 'Comercio al por menor de artículos de joyería y relojes'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '4652',
-              titulo: 'Comercio al por menor de artículos para el esparcimiento',
-              subrama: [
-                {
-                  codigo: '46521',
-                  titulo: 'Comercio al por menor de artículos para el esparcimiento',
-                  giro: [
-                    {
-                      codigo: '465211',
-                      titulo: 'Comercio al por menor de discos y casetes'
-                    },
-                    {
-                      codigo: '465212',
-                      titulo: 'Comercio al por menor de juguetes'
-                    },
-                    {
-                      codigo: '465213',
-                      titulo: 'Comercio al por menor de bicicletas y triciclos'
-                    },
-                    {
-                      codigo: '465214',
-                      titulo: 'Comercio al por menor de equipo y material fotográfico'
-                    },
-                    {
-                      codigo: '465215',
-                      titulo: 'Comercio al por menor de artículos y aparatos deportivos'
-                    },
-                    {
-                      codigo: '465216',
-                      titulo: 'Comercio al por menor de instrumentos musicales'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '4653',
-              titulo: 'Comercio al por menor de artículos de papelería, libros, revistas y periódicos',
-              subrama: [
-                {
-                  codigo: '46531',
-                  titulo: 'Comercio al por menor de artículos de papelería, libros, revistas y periódicos',
-                  giro: [
-                    {
-                      codigo: '465311',
-                      titulo: 'Comercio al por menor de artículos de papelería'
-                    },
-                    {
-                      codigo: '465312',
-                      titulo: 'Comercio al por menor de libros'
-                    },
-                    {
-                      codigo: '465313',
-                      titulo: 'Comercio al por menor de revistas y periódicos'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '4659',
-              titulo: 'Comercio al por menor de mascotas, regalos, artículos religiosos, desechables, artesanías y otros artículos de uso personal',
-              subrama: [
-                {
-                  codigo: '46591',
-                  titulo: 'Comercio al por menor de mascotas, regalos, artículos religiosos, desechables, artesanías y otros artículos de uso personal',
-                  giro: [
-                    {
-                      codigo: '465911',
-                      titulo: 'Comercio al por menor de mascotas'
-                    },
-                    {
-                      codigo: '465912',
-                      titulo: 'Comercio al por menor de regalos'
-                    },
-                    {
-                      codigo: '465913',
-                      titulo: 'Comercio al por menor de artículos religiosos'
-                    },
-                    {
-                      codigo: '465914',
-                      titulo: 'Comercio al por menor de artículos desechables'
-                    },
-                    {
-                      codigo: '465915',
-                      titulo: 'Comercio al por menor en tiendas de artesanías'
-                    },
-                    {
-                      codigo: '465919',
-                      titulo: 'Comercio al por menor de otros artículos de uso personal'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          codigo: '466',
-          titulo: 'Comercio al por menor de enseres domésticos, computadoras, artículos para la decoración de interiores y artículos usados',
-          rama: [
-            {
-              codigo: '4661',
-              titulo: 'Comercio al por menor de muebles para el hogar y otros enseres domésticos',
-              subrama: [
-                {
-                  codigo: '46611',
-                  titulo: 'Comercio al por menor de muebles para el hogar y otros enseres domésticos',
-                  giro: [
-                    {
-                      codigo: '466111',
-                      titulo: 'Comercio al por menor de muebles para el hogar'
-                    },
-                    {
-                      codigo: '466112',
-                      titulo: 'Comercio al por menor de electrodomésticos menores y aparatos de línea blanca'
-                    },
-                    {
-                      codigo: '466113',
-                      titulo: 'Comercio al por menor de muebles para jardín'
-                    },
-                    {
-                      codigo: '466114',
-                      titulo: 'Comercio al por menor de cristalería, loza y utensilios de cocina'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '4662',
-              titulo: 'Comercio al por menor de mobiliario, equipo y accesorios de cómputo, teléfonos y otros aparatos de comunicación',
-              subrama: [
-                {
-                  codigo: '46621',
-                  titulo: 'Comercio al por menor de mobiliario, equipo y accesorios de cómputo, teléfonos y otros aparatos de comunicación',
-                  giro: [
-                    {
-                      codigo: '466211',
-                      titulo: 'Comercio al por menor de mobiliario, equipo y accesorios de cómputo'
-                    },
-                    {
-                      codigo: '466212',
-                      titulo: 'Comercio al por menor de teléfonos y otros aparatos de comunicación'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '4663',
-              titulo: 'Comercio al por menor de artículos para la decoración de interiores',
-              subrama: [
-                {
-                  codigo: '46631',
-                  titulo: 'Comercio al por menor de artículos para la decoración de interiores',
-                  giro: [
-                    {
-                      codigo: '466311',
-                      titulo: 'Comercio al por menor de alfombras, cortinas, tapices y similares'
-                    },
-                    {
-                      codigo: '466312',
-                      titulo: 'Comercio al por menor de plantas y flores naturales'
-                    },
-                    {
-                      codigo: '466313',
-                      titulo: 'Comercio al por menor de antigüedades y obras de arte'
-                    },
-                    {
-                      codigo: '466314',
-                      titulo: 'Comercio al por menor de lámparas ornamentales y candiles'
-                    },
-                    {
-                      codigo: '466319',
-                      titulo: 'Comercio al por menor de otros artículos para la decoración de interiores'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '4664',
-              titulo: 'Comercio al por menor de artículos usados',
-              subrama: [
-                {
-                  codigo: '46641',
-                  titulo: 'Comercio al por menor de artículos usados',
-                  giro: [
-                    {
-                      codigo: '466410',
-                      titulo: 'Comercio al por menor de artículos usados'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          codigo: '467',
-          titulo: 'Comercio al por menor de artículos de ferretería, tlapalería y vidrios',
-          rama: [
-            {
-              codigo: '4671',
-              titulo: 'Comercio al por menor de artículos de ferretería, tlapalería y vidrios',
-              subrama: [
-                {
-                  codigo: '46711',
-                  titulo: 'Comercio al por menor de artículos de ferretería, tlapalería y vidrios',
-                  giro: [
-                    {
-                      codigo: '467111',
-                      titulo: 'Comercio al por menor en ferreterías y tlapalerías'
-                    },
-                    {
-                      codigo: '467112',
-                      titulo: 'Comercio al por menor de pisos y recubrimientos cerámicos'
-                    },
-                    {
-                      codigo: '467113',
-                      titulo: 'Comercio al por menor de pintura'
-                    },
-                    {
-                      codigo: '467114',
-                      titulo: 'Comercio al por menor de vidrios y espejos'
-                    },
-                    {
-                      codigo: '467115',
-                      titulo: 'Comercio al por menor de artículos para la limpieza'
-                    },
-                    {
-                      codigo: '467116',
-                      titulo: 'Comercio al por menor de materiales para la construcción en tiendas de autoservicio especializadas'
-                    },
-                    {
-                      codigo: '467117',
-                      titulo: 'Comercio al por menor de artículos para albercas y otros artículos'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          codigo: '468',
-          titulo: 'Comercio al por menor de vehículos de motor, refacciones, combustibles y lubricantes',
-          rama: [
-            {
-              codigo: '4681',
-              titulo: 'Comercio al por menor de automóviles y camionetas',
-              subrama: [
-                {
-                  codigo: '46811',
-                  titulo: 'Comercio al por menor de automóviles y camionetas',
-                  giro: [
-                    {
-                      codigo: '468111',
-                      titulo: 'Comercio al por menor de automóviles y camionetas nuevos'
-                    },
-                    {
-                      codigo: '468112',
-                      titulo: 'Comercio al por menor de automóviles y camionetas usados'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '4682',
-              titulo: 'Comercio al por menor de partes y refacciones para automóviles, camionetas y camiones',
-              subrama: [
-                {
-                  codigo: '46821',
-                  titulo: 'Comercio al por menor de partes y refacciones para automóviles, camionetas y camiones',
-                  giro: [
-                    {
-                      codigo: '468211',
-                      titulo: 'Comercio al por menor de partes y refacciones nuevas para automóviles, camionetas y camiones'
-                    },
-                    {
-                      codigo: '468212',
-                      titulo: 'Comercio al por menor de partes y refacciones usadas para automóviles, camionetas y camiones'
-                    },
-                    {
-                      codigo: '468213',
-                      titulo: 'Comercio al por menor de llantas y cámaras para automóviles, camionetas y camiones'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '4683',
-              titulo: 'Comercio al por menor de motocicletas y otros vehículos de motor',
-              subrama: [
-                {
-                  codigo: '46831',
-                  titulo: 'Comercio al por menor de motocicletas y otros vehículos de motor',
-                  giro: [
-                    {
-                      codigo: '468311',
-                      titulo: 'Comercio al por menor de motocicletas'
-                    },
-                    {
-                      codigo: '468319',
-                      titulo: 'Comercio al por menor de otros vehículos de motor'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '4684',
-              titulo: 'Comercio al por menor de combustibles, aceites y grasas lubricantes',
-              subrama: [
-                {
-                  codigo: '46841',
-                  titulo: 'Comercio al por menor de combustibles',
-                  giro: [
-                    {
-                      codigo: '468411',
-                      titulo: 'Comercio al por menor de gasolina y diésel'
-                    },
-                    {
-                      codigo: '468412',
-                      titulo: 'Comercio al por menor de gas L.P. en cilindros y para tanques estacionarios'
-                    },
-                    {
-                      codigo: '468413',
-                      titulo: 'Comercio al por menor de gas L.P. en estaciones de carburación'
-                    },
-                    {
-                      codigo: '468414',
-                      titulo: 'Comercio al por menor en estaciones de gas natural vehicular'
-                    },
-                    {
-                      codigo: '468419',
-                      titulo: 'Comercio al por menor de otros combustibles'
-                    }
-                  ]
-                },
-                {
-                  codigo: '46842',
-                  titulo: 'Comercio al por menor de aceites y grasas lubricantes, aditivos y similares para vehículos de motor',
-                  giro: [
-                    {
-                      codigo: '468420',
-                      titulo: 'Comercio al por menor de aceites y grasas lubricantes, aditivos y similares para vehículos de motor'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          codigo: '469',
-          titulo: 'Comercio al por menor exclusivamente a través de internet, y catálogos impresos, televisión y similares',
-          rama: [
-            {
-              codigo: '4691',
-              titulo: 'Comercio al por menor exclusivamente a través de internet, y catálogos impresos, televisión y similares',
-              subrama: [
-                {
-                  codigo: '46911',
-                  titulo: 'Comercio al por menor exclusivamente a través de internet, y catálogos impresos, televisión y similares',
-                  giro: [
-                    {
-                      codigo: '469110',
-                      titulo: 'Comercio al por menor exclusivamente a través de internet, y catálogos impresos, televisión y similares'
+                      codigo: '238990',
+                      titulo: 'Otros trabajos especializados para la construcción'
                     }
                   ]
                 }
@@ -6559,762 +5434,6 @@ export const scian = {
       ]
     },
     {
-      codigo: '51',
-      titulo: 'Información en medios masivos',
-      subsector: [
-        {
-          codigo: '511',
-          titulo: 'Edición de periódicos, revistas, libros, software y otros materiales, y edición de estas publicaciones integrada con la impresión',
-          rama: [
-            {
-              codigo: '5111',
-              titulo: 'Edición de periódicos, revistas, libros y similares, y edición de estas publicaciones integrada con la impresión',
-              subrama: [
-                {
-                  codigo: '51111',
-                  titulo: 'Edición de periódicos y edición de estas publicaciones integrada con la impresión',
-                  giro: [
-                    {
-                      codigo: '511111',
-                      titulo: 'Edición de periódicos'
-                    },
-                    {
-                      codigo: '511112',
-                      titulo: 'Edición de periódicos integrada con la impresión'
-                    }
-                  ]
-                },
-                {
-                  codigo: '51112',
-                  titulo: 'Edición de revistas y otras publicaciones periódicas y edición de estas publicaciones integrada con la impresión',
-                  giro: [
-                    {
-                      codigo: '511121',
-                      titulo: 'Edición de revistas y otras publicaciones periódicas'
-                    },
-                    {
-                      codigo: '511122',
-                      titulo: 'Edición de revistas y otras publicaciones periódicas integrada con la impresión'
-                    }
-                  ]
-                },
-                {
-                  codigo: '51113',
-                  titulo: 'Edición de libros y edición de estas publicaciones integrada con la impresión',
-                  giro: [
-                    {
-                      codigo: '511131',
-                      titulo: 'Edición de libros'
-                    },
-                    {
-                      codigo: '511132',
-                      titulo: 'Edición de libros integrada con la impresión'
-                    }
-                  ]
-                },
-                {
-                  codigo: '51114',
-                  titulo: 'Edición de directorios y de listas de correo, y edición de estas publicaciones integrada con la impresión',
-                  giro: [
-                    {
-                      codigo: '511141',
-                      titulo: 'Edición de directorios y de listas de correo'
-                    },
-                    {
-                      codigo: '511142',
-                      titulo: 'Edición de directorios y de listas de correo integrada con la impresión'
-                    }
-                  ]
-                },
-                {
-                  codigo: '51119',
-                  titulo: 'Edición de otros materiales y edición de estas publicaciones integrada con la impresión',
-                  giro: [
-                    {
-                      codigo: '511191',
-                      titulo: 'Edición de otros materiales'
-                    },
-                    {
-                      codigo: '511192',
-                      titulo: 'Edición de otros materiales integrada con la impresión'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '5112',
-              titulo: 'Edición de software y edición de software integrada con la reproducción',
-              subrama: [
-                {
-                  codigo: '51121',
-                  titulo: 'Edición de software y edición de software integrada con la reproducción',
-                  giro: [
-                    {
-                      codigo: '511210',
-                      titulo: 'Edición de software y edición de software integrada con la reproducción'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          codigo: '512',
-          titulo: 'Industria fílmica y del video, e industria del sonido',
-          rama: [
-            {
-              codigo: '5121',
-              titulo: 'Industria fílmica y del video',
-              subrama: [
-                {
-                  codigo: '51211',
-                  titulo: 'Producción de películas, programas para la televisión y otros materiales audiovisuales',
-                  giro: [
-                    {
-                      codigo: '512111',
-                      titulo: 'Producción de películas'
-                    },
-                    {
-                      codigo: '512112',
-                      titulo: 'Producción de programas para la televisión'
-                    },
-                    {
-                      codigo: '512113',
-                      titulo: 'Producción de videoclips, comerciales y otros materiales audiovisuales'
-                    }
-                  ]
-                },
-                {
-                  codigo: '51212',
-                  titulo: 'Distribución de películas y de otros materiales audiovisuales',
-                  giro: [
-                    {
-                      codigo: '512120',
-                      titulo: 'Distribución de películas y de otros materiales audiovisuales'
-                    }
-                  ]
-                },
-                {
-                  codigo: '51213',
-                  titulo: 'Exhibición de películas y otros materiales audiovisuales',
-                  giro: [
-                    {
-                      codigo: '512130',
-                      titulo: 'Exhibición de películas y otros materiales audiovisuales'
-                    }
-                  ]
-                },
-                {
-                  codigo: '51219',
-                  titulo: 'Servicios de postproducción y otros servicios para la industria fílmica y del video',
-                  giro: [
-                    {
-                      codigo: '512190',
-                      titulo: 'Servicios de postproducción y otros servicios para la industria fílmica y del video'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '5122',
-              titulo: 'Industria del sonido',
-              subrama: [
-                {
-                  codigo: '51223',
-                  titulo: 'Editoras de música',
-                  giro: [
-                    {
-                      codigo: '512230',
-                      titulo: 'Editoras de música'
-                    }
-                  ]
-                },
-                {
-                  codigo: '51224',
-                  titulo: 'Grabación de discos compactos (CD) y de video digital (DVD) o casetes musicales',
-                  giro: [
-                    {
-                      codigo: '512240',
-                      titulo: 'Grabación de discos compactos (CD) y de video digital (DVD) o casetes musicales'
-                    }
-                  ]
-                },
-                {
-                  codigo: '51225',
-                  titulo: 'Productoras y distribuidoras discográficas',
-                  giro: [
-                    {
-                      codigo: '512250',
-                      titulo: 'Productoras y distribuidoras discográficas'
-                    }
-                  ]
-                },
-                {
-                  codigo: '51229',
-                  titulo: 'Otros servicios de grabación del sonido',
-                  giro: [
-                    {
-                      codigo: '512290',
-                      titulo: 'Otros servicios de grabación del sonido'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          codigo: '515',
-          titulo: 'Radio y televisión',
-          rama: [
-            {
-              codigo: '5151',
-              titulo: 'Transmisión de programas de radio y televisión',
-              subrama: [
-                {
-                  codigo: '51511',
-                  titulo: 'Transmisión de programas de radio',
-                  giro: [
-                    {
-                      codigo: '515110',
-                      titulo: 'Transmisión de programas de radio'
-                    }
-                  ]
-                },
-                {
-                  codigo: '51512',
-                  titulo: 'Transmisión de programas de televisión',
-                  giro: [
-                    {
-                      codigo: '515120',
-                      titulo: 'Transmisión de programas de televisión'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '5152',
-              titulo: 'Producción de programación de canales para sistemas de televisión por cable o satelitales',
-              subrama: [
-                {
-                  codigo: '51521',
-                  titulo: 'Producción de programación de canales para sistemas de televisión por cable o satelitales',
-                  giro: [
-                    {
-                      codigo: '515210',
-                      titulo: 'Producción de programación de canales para sistemas de televisión por cable o satelitales'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          codigo: '517',
-          titulo: 'Telecomunicaciones',
-          rama: [
-            {
-              codigo: '5173',
-              titulo: 'Operadores de servicios de telecomunicaciones alámbricas e inalámbricas',
-              subrama: [
-                {
-                  codigo: '51731',
-                  titulo: 'Operadores de servicios de telecomunicaciones alámbricas e inalámbricas',
-                  giro: [
-                    {
-                      codigo: '517311',
-                      titulo: 'Operadores de servicios de telecomunicaciones alámbricas'
-                    },
-                    {
-                      codigo: '517312',
-                      titulo: 'Operadores de servicios de telecomunicaciones inalámbricas'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '5174',
-              titulo: 'Operadores de servicios de telecomunicaciones vía satélite',
-              subrama: [
-                {
-                  codigo: '51741',
-                  titulo: 'Operadores de servicios de telecomunicaciones vía satélite',
-                  giro: [
-                    {
-                      codigo: '517410',
-                      titulo: 'Operadores de servicios de telecomunicaciones vía satélite'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '5179',
-              titulo: 'Otros servicios de telecomunicaciones',
-              subrama: [
-                {
-                  codigo: '51791',
-                  titulo: 'Otros servicios de telecomunicaciones',
-                  giro: [
-                    {
-                      codigo: '517910',
-                      titulo: 'Otros servicios de telecomunicaciones'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          codigo: '518',
-          titulo: 'Procesamiento electrónico de información, hospedaje y otros servicios relacionados',
-          rama: [
-            {
-              codigo: '5182',
-              titulo: 'Procesamiento electrónico de información, hospedaje y otros servicios relacionados',
-              subrama: [
-                {
-                  codigo: '51821',
-                  titulo: 'Procesamiento electrónico de información, hospedaje y otros servicios relacionados',
-                  giro: [
-                    {
-                      codigo: '518210',
-                      titulo: 'Procesamiento electrónico de información, hospedaje y otros servicios relacionados'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          codigo: '519',
-          titulo: 'Otros servicios de información',
-          rama: [
-            {
-              codigo: '5191',
-              titulo: 'Otros servicios de información',
-              subrama: [
-                {
-                  codigo: '51911',
-                  titulo: 'Agencias noticiosas',
-                  giro: [
-                    {
-                      codigo: '519110',
-                      titulo: 'Agencias noticiosas'
-                    }
-                  ]
-                },
-                {
-                  codigo: '51912',
-                  titulo: 'Bibliotecas y archivos',
-                  giro: [
-                    {
-                      codigo: '519121',
-                      titulo: 'Bibliotecas y archivos del sector privado'
-                    },
-                    {
-                      codigo: '519122',
-                      titulo: 'Bibliotecas y archivos del sector público'
-                    }
-                  ]
-                },
-                {
-                  codigo: '51913',
-                  titulo: 'Edición y difusión de contenido exclusivamente a través de internet y servicios de búsqueda en la red',
-                  giro: [
-                    {
-                      codigo: '519130',
-                      titulo: 'Edición y difusión de contenido exclusivamente a través de internet y servicios de búsqueda en la red'
-                    }
-                  ]
-                },
-                {
-                  codigo: '51919',
-                  titulo: 'Otros servicios de suministro de información',
-                  giro: [
-                    {
-                      codigo: '519190',
-                      titulo: 'Otros servicios de suministro de información'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      codigo: '52',
-      titulo: 'Servicios financieros y de seguros',
-      subsector: [
-        {
-          codigo: '521',
-          titulo: 'Banca central',
-          rama: [
-            {
-              codigo: '5211',
-              titulo: 'Banca central',
-              subrama: [
-                {
-                  codigo: '52111',
-                  titulo: 'Banca central',
-                  giro: [
-                    {
-                      codigo: '521110',
-                      titulo: 'Banca central'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          codigo: '522',
-          titulo: 'Instituciones de intermediación crediticia y financiera no bursátil',
-          rama: [
-            {
-              codigo: '5221',
-              titulo: 'Banca múltiple',
-              subrama: [
-                {
-                  codigo: '52211',
-                  titulo: 'Banca múltiple',
-                  giro: [
-                    {
-                      codigo: '522110',
-                      titulo: 'Banca múltiple'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '5222',
-              titulo: 'Instituciones financieras de fomento económico',
-              subrama: [
-                {
-                  codigo: '52221',
-                  titulo: 'Banca de desarrollo',
-                  giro: [
-                    {
-                      codigo: '522210',
-                      titulo: 'Banca de desarrollo'
-                    }
-                  ]
-                },
-                {
-                  codigo: '52222',
-                  titulo: 'Fondos y fideicomisos financieros',
-                  giro: [
-                    {
-                      codigo: '522220',
-                      titulo: 'Fondos y fideicomisos financieros'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '5223',
-              titulo: 'Uniones de crédito e instituciones de ahorro',
-              subrama: [
-                {
-                  codigo: '52231',
-                  titulo: 'Uniones de crédito',
-                  giro: [
-                    {
-                      codigo: '522310',
-                      titulo: 'Uniones de crédito'
-                    }
-                  ]
-                },
-                {
-                  codigo: '52232',
-                  titulo: 'Cajas de ahorro popular',
-                  giro: [
-                    {
-                      codigo: '522320',
-                      titulo: 'Cajas de ahorro popular'
-                    }
-                  ]
-                },
-                {
-                  codigo: '52239',
-                  titulo: 'Otras instituciones de ahorro y préstamo',
-                  giro: [
-                    {
-                      codigo: '522390',
-                      titulo: 'Otras instituciones de ahorro y préstamo'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '5224',
-              titulo: 'Otras instituciones de intermediación crediticia y financiera no bursátil',
-              subrama: [
-                {
-                  codigo: '52244',
-                  titulo: 'Compañías de autofinanciamiento',
-                  giro: [
-                    {
-                      codigo: '522440',
-                      titulo: 'Compañías de autofinanciamiento'
-                    }
-                  ]
-                },
-                {
-                  codigo: '52245',
-                  titulo: 'Montepíos y casas de empeño',
-                  giro: [
-                    {
-                      codigo: '522451',
-                      titulo: 'Montepíos'
-                    },
-                    {
-                      codigo: '522452',
-                      titulo: 'Casas de empeño'
-                    }
-                  ]
-                },
-                {
-                  codigo: '52246',
-                  titulo: 'Sociedades financieras de objeto múltiple',
-                  giro: [
-                    {
-                      codigo: '522460',
-                      titulo: 'Sociedades financieras de objeto múltiple'
-                    }
-                  ]
-                },
-                {
-                  codigo: '52249',
-                  titulo: 'Otras instituciones de intermediación crediticia y financiera no bursátil',
-                  giro: [
-                    {
-                      codigo: '522490',
-                      titulo: 'Otras instituciones de intermediación crediticia y financiera no bursátil'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '5225',
-              titulo: 'Servicios relacionados con la intermediación crediticia no bursátil',
-              subrama: [
-                {
-                  codigo: '52251',
-                  titulo: 'Servicios relacionados con la intermediación crediticia no bursátil',
-                  giro: [
-                    {
-                      codigo: '522510',
-                      titulo: 'Servicios relacionados con la intermediación crediticia no bursátil'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          codigo: '523',
-          titulo: 'Actividades bursátiles, cambiarias y de inversión financiera',
-          rama: [
-            {
-              codigo: '5231',
-              titulo: 'Casas de bolsa, casas de cambio y centros cambiarios',
-              subrama: [
-                {
-                  codigo: '52311',
-                  titulo: 'Casas de bolsa',
-                  giro: [
-                    {
-                      codigo: '523110',
-                      titulo: 'Casas de bolsa'
-                    }
-                  ]
-                },
-                {
-                  codigo: '52312',
-                  titulo: 'Casas de cambio y centros cambiarios',
-                  giro: [
-                    {
-                      codigo: '523121',
-                      titulo: 'Casas de cambio'
-                    },
-                    {
-                      codigo: '523122',
-                      titulo: 'Centros cambiarios'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '5232',
-              titulo: 'Bolsa de valores',
-              subrama: [
-                {
-                  codigo: '52321',
-                  titulo: 'Bolsa de valores',
-                  giro: [
-                    {
-                      codigo: '523210',
-                      titulo: 'Bolsa de valores'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '5239',
-              titulo: 'Asesoría en inversiones y otros servicios relacionados con la intermediación bursátil',
-              subrama: [
-                {
-                  codigo: '52391',
-                  titulo: 'Asesoría en inversiones',
-                  giro: [
-                    {
-                      codigo: '523910',
-                      titulo: 'Asesoría en inversiones'
-                    }
-                  ]
-                },
-                {
-                  codigo: '52399',
-                  titulo: 'Otros servicios relacionados con la intermediación bursátil',
-                  giro: [
-                    {
-                      codigo: '523990',
-                      titulo: 'Otros servicios relacionados con la intermediación bursátil'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          codigo: '524',
-          titulo: 'Compañías de seguros, fianzas, y administración de fondos para el retiro',
-          rama: [
-            {
-              codigo: '5241',
-              titulo: 'Compañías de seguros y fianzas',
-              subrama: [
-                {
-                  codigo: '52411',
-                  titulo: 'Compañías de seguros',
-                  giro: [
-                    {
-                      codigo: '524110',
-                      titulo: 'Compañías de seguros'
-                    }
-                  ]
-                },
-                {
-                  codigo: '52412',
-                  titulo: 'Fondos de aseguramiento campesino',
-                  giro: [
-                    {
-                      codigo: '524120',
-                      titulo: 'Fondos de aseguramiento campesino'
-                    }
-                  ]
-                },
-                {
-                  codigo: '52413',
-                  titulo: 'Compañías afianzadoras',
-                  giro: [
-                    {
-                      codigo: '524130',
-                      titulo: 'Compañías afianzadoras'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '5242',
-              titulo: 'Servicios relacionados con los seguros y las fianzas, y administración de fondos para el retiro',
-              subrama: [
-                {
-                  codigo: '52421',
-                  titulo: 'Agentes, ajustadores y gestores de seguros y fianzas',
-                  giro: [
-                    {
-                      codigo: '524210',
-                      titulo: 'Agentes, ajustadores y gestores de seguros y fianzas'
-                    }
-                  ]
-                },
-                {
-                  codigo: '52422',
-                  titulo: 'Administración de fondos para el retiro',
-                  giro: [
-                    {
-                      codigo: '524220',
-                      titulo: 'Administración de fondos para el retiro'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          codigo: '525',
-          titulo: 'Sociedades de inversión especializadas en fondos para el retiro y fondos de inversión',
-          rama: [
-            {
-              codigo: '5251',
-              titulo: 'Sociedades de inversión especializadas en fondos para el retiro',
-              subrama: [
-                {
-                  codigo: '52511',
-                  titulo: 'Sociedades de inversión especializadas en fondos para el retiro',
-                  giro: [
-                    {
-                      codigo: '525110',
-                      titulo: 'Sociedades de inversión especializadas en fondos para el retiro'
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              codigo: '5252',
-              titulo: 'Fondos de inversión',
-              subrama: [
-                {
-                  codigo: '52521',
-                  titulo: 'Fondos de inversión',
-                  giro: [
-                    {
-                      codigo: '525210',
-                      titulo: 'Fondos de inversión'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
       codigo: '53',
       titulo: 'Servicios inmobiliarios y de alquiler de bienes muebles e intangibles',
       subsector: [
@@ -7998,6 +6117,8 @@ export const scian = {
         }
       ]
     },
+
+
     {
       codigo: '55',
       titulo: 'Corporativos',
@@ -8030,6 +6151,8 @@ export const scian = {
         }
       ]
     },
+
+
     {
       codigo: '56',
       titulo: 'Servicios de apoyo a los negocios y manejo de residuos, y servicios de remediación',
@@ -8460,6 +6583,8 @@ export const scian = {
         }
       ]
     },
+
+
     {
       codigo: '61',
       titulo: 'Servicios educativos',
@@ -8780,6 +6905,8 @@ export const scian = {
         }
       ]
     },
+
+
     {
       codigo: '62',
       titulo: 'Servicios de salud y de asistencia social',
@@ -9354,6 +7481,8 @@ export const scian = {
         }
       ]
     },
+
+
     {
       codigo: '71',
       titulo: 'Servicios de esparcimiento culturales y deportivos, y otros servicios recreativos',
@@ -9734,6 +7863,8 @@ export const scian = {
         }
       ]
     },
+
+
     {
       codigo: '72',
       titulo: 'Servicios de alojamiento temporal y de preparación de alimentos y bebidas',
@@ -9936,6 +8067,1895 @@ export const scian = {
         }
       ]
     },
+    {
+      codigo: '51',
+      titulo: 'Información en medios masivos',
+      subsector: [
+        {
+          codigo: '511',
+          titulo: 'Edición de periódicos, revistas, libros, software y otros materiales, y edición de estas publicaciones integrada con la impresión',
+          rama: [
+            {
+              codigo: '5111',
+              titulo: 'Edición de periódicos, revistas, libros y similares, y edición de estas publicaciones integrada con la impresión',
+              subrama: [
+                {
+                  codigo: '51111',
+                  titulo: 'Edición de periódicos y edición de estas publicaciones integrada con la impresión',
+                  giro: [
+                    {
+                      codigo: '511111',
+                      titulo: 'Edición de periódicos'
+                    },
+                    {
+                      codigo: '511112',
+                      titulo: 'Edición de periódicos integrada con la impresión'
+                    }
+                  ]
+                },
+                {
+                  codigo: '51112',
+                  titulo: 'Edición de revistas y otras publicaciones periódicas y edición de estas publicaciones integrada con la impresión',
+                  giro: [
+                    {
+                      codigo: '511121',
+                      titulo: 'Edición de revistas y otras publicaciones periódicas'
+                    },
+                    {
+                      codigo: '511122',
+                      titulo: 'Edición de revistas y otras publicaciones periódicas integrada con la impresión'
+                    }
+                  ]
+                },
+                {
+                  codigo: '51113',
+                  titulo: 'Edición de libros y edición de estas publicaciones integrada con la impresión',
+                  giro: [
+                    {
+                      codigo: '511131',
+                      titulo: 'Edición de libros'
+                    },
+                    {
+                      codigo: '511132',
+                      titulo: 'Edición de libros integrada con la impresión'
+                    }
+                  ]
+                },
+                {
+                  codigo: '51114',
+                  titulo: 'Edición de directorios y de listas de correo, y edición de estas publicaciones integrada con la impresión',
+                  giro: [
+                    {
+                      codigo: '511141',
+                      titulo: 'Edición de directorios y de listas de correo'
+                    },
+                    {
+                      codigo: '511142',
+                      titulo: 'Edición de directorios y de listas de correo integrada con la impresión'
+                    }
+                  ]
+                },
+                {
+                  codigo: '51119',
+                  titulo: 'Edición de otros materiales y edición de estas publicaciones integrada con la impresión',
+                  giro: [
+                    {
+                      codigo: '511191',
+                      titulo: 'Edición de otros materiales'
+                    },
+                    {
+                      codigo: '511192',
+                      titulo: 'Edición de otros materiales integrada con la impresión'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '5112',
+              titulo: 'Edición de software y edición de software integrada con la reproducción',
+              subrama: [
+                {
+                  codigo: '51121',
+                  titulo: 'Edición de software y edición de software integrada con la reproducción',
+                  giro: [
+                    {
+                      codigo: '511210',
+                      titulo: 'Edición de software y edición de software integrada con la reproducción'
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          codigo: '512',
+          titulo: 'Industria fílmica y del video, e industria del sonido',
+          rama: [
+            {
+              codigo: '5121',
+              titulo: 'Industria fílmica y del video',
+              subrama: [
+                {
+                  codigo: '51211',
+                  titulo: 'Producción de películas, programas para la televisión y otros materiales audiovisuales',
+                  giro: [
+                    {
+                      codigo: '512111',
+                      titulo: 'Producción de películas'
+                    },
+                    {
+                      codigo: '512112',
+                      titulo: 'Producción de programas para la televisión'
+                    },
+                    {
+                      codigo: '512113',
+                      titulo: 'Producción de videoclips, comerciales y otros materiales audiovisuales'
+                    }
+                  ]
+                },
+                {
+                  codigo: '51212',
+                  titulo: 'Distribución de películas y de otros materiales audiovisuales',
+                  giro: [
+                    {
+                      codigo: '512120',
+                      titulo: 'Distribución de películas y de otros materiales audiovisuales'
+                    }
+                  ]
+                },
+                {
+                  codigo: '51213',
+                  titulo: 'Exhibición de películas y otros materiales audiovisuales',
+                  giro: [
+                    {
+                      codigo: '512130',
+                      titulo: 'Exhibición de películas y otros materiales audiovisuales'
+                    }
+                  ]
+                },
+                {
+                  codigo: '51219',
+                  titulo: 'Servicios de postproducción y otros servicios para la industria fílmica y del video',
+                  giro: [
+                    {
+                      codigo: '512190',
+                      titulo: 'Servicios de postproducción y otros servicios para la industria fílmica y del video'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '5122',
+              titulo: 'Industria del sonido',
+              subrama: [
+                {
+                  codigo: '51223',
+                  titulo: 'Editoras de música',
+                  giro: [
+                    {
+                      codigo: '512230',
+                      titulo: 'Editoras de música'
+                    }
+                  ]
+                },
+                {
+                  codigo: '51224',
+                  titulo: 'Grabación de discos compactos (CD) y de video digital (DVD) o casetes musicales',
+                  giro: [
+                    {
+                      codigo: '512240',
+                      titulo: 'Grabación de discos compactos (CD) y de video digital (DVD) o casetes musicales'
+                    }
+                  ]
+                },
+                {
+                  codigo: '51225',
+                  titulo: 'Productoras y distribuidoras discográficas',
+                  giro: [
+                    {
+                      codigo: '512250',
+                      titulo: 'Productoras y distribuidoras discográficas'
+                    }
+                  ]
+                },
+                {
+                  codigo: '51229',
+                  titulo: 'Otros servicios de grabación del sonido',
+                  giro: [
+                    {
+                      codigo: '512290',
+                      titulo: 'Otros servicios de grabación del sonido'
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          codigo: '515',
+          titulo: 'Radio y televisión',
+          rama: [
+            {
+              codigo: '5151',
+              titulo: 'Transmisión de programas de radio y televisión',
+              subrama: [
+                {
+                  codigo: '51511',
+                  titulo: 'Transmisión de programas de radio',
+                  giro: [
+                    {
+                      codigo: '515110',
+                      titulo: 'Transmisión de programas de radio'
+                    }
+                  ]
+                },
+                {
+                  codigo: '51512',
+                  titulo: 'Transmisión de programas de televisión',
+                  giro: [
+                    {
+                      codigo: '515120',
+                      titulo: 'Transmisión de programas de televisión'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '5152',
+              titulo: 'Producción de programación de canales para sistemas de televisión por cable o satelitales',
+              subrama: [
+                {
+                  codigo: '51521',
+                  titulo: 'Producción de programación de canales para sistemas de televisión por cable o satelitales',
+                  giro: [
+                    {
+                      codigo: '515210',
+                      titulo: 'Producción de programación de canales para sistemas de televisión por cable o satelitales'
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          codigo: '517',
+          titulo: 'Telecomunicaciones',
+          rama: [
+            {
+              codigo: '5173',
+              titulo: 'Operadores de servicios de telecomunicaciones alámbricas e inalámbricas',
+              subrama: [
+                {
+                  codigo: '51731',
+                  titulo: 'Operadores de servicios de telecomunicaciones alámbricas e inalámbricas',
+                  giro: [
+                    {
+                      codigo: '517311',
+                      titulo: 'Operadores de servicios de telecomunicaciones alámbricas'
+                    },
+                    {
+                      codigo: '517312',
+                      titulo: 'Operadores de servicios de telecomunicaciones inalámbricas'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '5174',
+              titulo: 'Operadores de servicios de telecomunicaciones vía satélite',
+              subrama: [
+                {
+                  codigo: '51741',
+                  titulo: 'Operadores de servicios de telecomunicaciones vía satélite',
+                  giro: [
+                    {
+                      codigo: '517410',
+                      titulo: 'Operadores de servicios de telecomunicaciones vía satélite'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '5179',
+              titulo: 'Otros servicios de telecomunicaciones',
+              subrama: [
+                {
+                  codigo: '51791',
+                  titulo: 'Otros servicios de telecomunicaciones',
+                  giro: [
+                    {
+                      codigo: '517910',
+                      titulo: 'Otros servicios de telecomunicaciones'
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          codigo: '518',
+          titulo: 'Procesamiento electrónico de información, hospedaje y otros servicios relacionados',
+          rama: [
+            {
+              codigo: '5182',
+              titulo: 'Procesamiento electrónico de información, hospedaje y otros servicios relacionados',
+              subrama: [
+                {
+                  codigo: '51821',
+                  titulo: 'Procesamiento electrónico de información, hospedaje y otros servicios relacionados',
+                  giro: [
+                    {
+                      codigo: '518210',
+                      titulo: 'Procesamiento electrónico de información, hospedaje y otros servicios relacionados'
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          codigo: '519',
+          titulo: 'Otros servicios de información',
+          rama: [
+            {
+              codigo: '5191',
+              titulo: 'Otros servicios de información',
+              subrama: [
+                {
+                  codigo: '51911',
+                  titulo: 'Agencias noticiosas',
+                  giro: [
+                    {
+                      codigo: '519110',
+                      titulo: 'Agencias noticiosas'
+                    }
+                  ]
+                },
+                {
+                  codigo: '51912',
+                  titulo: 'Bibliotecas y archivos',
+                  giro: [
+                    {
+                      codigo: '519121',
+                      titulo: 'Bibliotecas y archivos del sector privado'
+                    },
+                    {
+                      codigo: '519122',
+                      titulo: 'Bibliotecas y archivos del sector público'
+                    }
+                  ]
+                },
+                {
+                  codigo: '51913',
+                  titulo: 'Edición y difusión de contenido exclusivamente a través de internet y servicios de búsqueda en la red',
+                  giro: [
+                    {
+                      codigo: '519130',
+                      titulo: 'Edición y difusión de contenido exclusivamente a través de internet y servicios de búsqueda en la red'
+                    }
+                  ]
+                },
+                {
+                  codigo: '51919',
+                  titulo: 'Otros servicios de suministro de información',
+                  giro: [
+                    {
+                      codigo: '519190',
+                      titulo: 'Otros servicios de suministro de información'
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+
+    {
+      codigo: '52',
+      titulo: 'Servicios financieros y de seguros',
+      subsector: [
+        {
+          codigo: '521',
+          titulo: 'Banca central',
+          rama: [
+            {
+              codigo: '5211',
+              titulo: 'Banca central',
+              subrama: [
+                {
+                  codigo: '52111',
+                  titulo: 'Banca central',
+                  giro: [
+                    {
+                      codigo: '521110',
+                      titulo: 'Banca central'
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          codigo: '522',
+          titulo: 'Instituciones de intermediación crediticia y financiera no bursátil',
+          rama: [
+            {
+              codigo: '5221',
+              titulo: 'Banca múltiple',
+              subrama: [
+                {
+                  codigo: '52211',
+                  titulo: 'Banca múltiple',
+                  giro: [
+                    {
+                      codigo: '522110',
+                      titulo: 'Banca múltiple'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '5222',
+              titulo: 'Instituciones financieras de fomento económico',
+              subrama: [
+                {
+                  codigo: '52221',
+                  titulo: 'Banca de desarrollo',
+                  giro: [
+                    {
+                      codigo: '522210',
+                      titulo: 'Banca de desarrollo'
+                    }
+                  ]
+                },
+                {
+                  codigo: '52222',
+                  titulo: 'Fondos y fideicomisos financieros',
+                  giro: [
+                    {
+                      codigo: '522220',
+                      titulo: 'Fondos y fideicomisos financieros'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '5223',
+              titulo: 'Uniones de crédito e instituciones de ahorro',
+              subrama: [
+                {
+                  codigo: '52231',
+                  titulo: 'Uniones de crédito',
+                  giro: [
+                    {
+                      codigo: '522310',
+                      titulo: 'Uniones de crédito'
+                    }
+                  ]
+                },
+                {
+                  codigo: '52232',
+                  titulo: 'Cajas de ahorro popular',
+                  giro: [
+                    {
+                      codigo: '522320',
+                      titulo: 'Cajas de ahorro popular'
+                    }
+                  ]
+                },
+                {
+                  codigo: '52239',
+                  titulo: 'Otras instituciones de ahorro y préstamo',
+                  giro: [
+                    {
+                      codigo: '522390',
+                      titulo: 'Otras instituciones de ahorro y préstamo'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '5224',
+              titulo: 'Otras instituciones de intermediación crediticia y financiera no bursátil',
+              subrama: [
+                {
+                  codigo: '52244',
+                  titulo: 'Compañías de autofinanciamiento',
+                  giro: [
+                    {
+                      codigo: '522440',
+                      titulo: 'Compañías de autofinanciamiento'
+                    }
+                  ]
+                },
+                {
+                  codigo: '52245',
+                  titulo: 'Montepíos y casas de empeño',
+                  giro: [
+                    {
+                      codigo: '522451',
+                      titulo: 'Montepíos'
+                    },
+                    {
+                      codigo: '522452',
+                      titulo: 'Casas de empeño'
+                    }
+                  ]
+                },
+                {
+                  codigo: '52246',
+                  titulo: 'Sociedades financieras de objeto múltiple',
+                  giro: [
+                    {
+                      codigo: '522460',
+                      titulo: 'Sociedades financieras de objeto múltiple'
+                    }
+                  ]
+                },
+                {
+                  codigo: '52249',
+                  titulo: 'Otras instituciones de intermediación crediticia y financiera no bursátil',
+                  giro: [
+                    {
+                      codigo: '522490',
+                      titulo: 'Otras instituciones de intermediación crediticia y financiera no bursátil'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '5225',
+              titulo: 'Servicios relacionados con la intermediación crediticia no bursátil',
+              subrama: [
+                {
+                  codigo: '52251',
+                  titulo: 'Servicios relacionados con la intermediación crediticia no bursátil',
+                  giro: [
+                    {
+                      codigo: '522510',
+                      titulo: 'Servicios relacionados con la intermediación crediticia no bursátil'
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          codigo: '523',
+          titulo: 'Actividades bursátiles, cambiarias y de inversión financiera',
+          rama: [
+            {
+              codigo: '5231',
+              titulo: 'Casas de bolsa, casas de cambio y centros cambiarios',
+              subrama: [
+                {
+                  codigo: '52311',
+                  titulo: 'Casas de bolsa',
+                  giro: [
+                    {
+                      codigo: '523110',
+                      titulo: 'Casas de bolsa'
+                    }
+                  ]
+                },
+                {
+                  codigo: '52312',
+                  titulo: 'Casas de cambio y centros cambiarios',
+                  giro: [
+                    {
+                      codigo: '523121',
+                      titulo: 'Casas de cambio'
+                    },
+                    {
+                      codigo: '523122',
+                      titulo: 'Centros cambiarios'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '5232',
+              titulo: 'Bolsa de valores',
+              subrama: [
+                {
+                  codigo: '52321',
+                  titulo: 'Bolsa de valores',
+                  giro: [
+                    {
+                      codigo: '523210',
+                      titulo: 'Bolsa de valores'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '5239',
+              titulo: 'Asesoría en inversiones y otros servicios relacionados con la intermediación bursátil',
+              subrama: [
+                {
+                  codigo: '52391',
+                  titulo: 'Asesoría en inversiones',
+                  giro: [
+                    {
+                      codigo: '523910',
+                      titulo: 'Asesoría en inversiones'
+                    }
+                  ]
+                },
+                {
+                  codigo: '52399',
+                  titulo: 'Otros servicios relacionados con la intermediación bursátil',
+                  giro: [
+                    {
+                      codigo: '523990',
+                      titulo: 'Otros servicios relacionados con la intermediación bursátil'
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          codigo: '524',
+          titulo: 'Compañías de seguros, fianzas, y administración de fondos para el retiro',
+          rama: [
+            {
+              codigo: '5241',
+              titulo: 'Compañías de seguros y fianzas',
+              subrama: [
+                {
+                  codigo: '52411',
+                  titulo: 'Compañías de seguros',
+                  giro: [
+                    {
+                      codigo: '524110',
+                      titulo: 'Compañías de seguros'
+                    }
+                  ]
+                },
+                {
+                  codigo: '52412',
+                  titulo: 'Fondos de aseguramiento campesino',
+                  giro: [
+                    {
+                      codigo: '524120',
+                      titulo: 'Fondos de aseguramiento campesino'
+                    }
+                  ]
+                },
+                {
+                  codigo: '52413',
+                  titulo: 'Compañías afianzadoras',
+                  giro: [
+                    {
+                      codigo: '524130',
+                      titulo: 'Compañías afianzadoras'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '5242',
+              titulo: 'Servicios relacionados con los seguros y las fianzas, y administración de fondos para el retiro',
+              subrama: [
+                {
+                  codigo: '52421',
+                  titulo: 'Agentes, ajustadores y gestores de seguros y fianzas',
+                  giro: [
+                    {
+                      codigo: '524210',
+                      titulo: 'Agentes, ajustadores y gestores de seguros y fianzas'
+                    }
+                  ]
+                },
+                {
+                  codigo: '52422',
+                  titulo: 'Administración de fondos para el retiro',
+                  giro: [
+                    {
+                      codigo: '524220',
+                      titulo: 'Administración de fondos para el retiro'
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          codigo: '525',
+          titulo: 'Sociedades de inversión especializadas en fondos para el retiro y fondos de inversión',
+          rama: [
+            {
+              codigo: '5251',
+              titulo: 'Sociedades de inversión especializadas en fondos para el retiro',
+              subrama: [
+                {
+                  codigo: '52511',
+                  titulo: 'Sociedades de inversión especializadas en fondos para el retiro',
+                  giro: [
+                    {
+                      codigo: '525110',
+                      titulo: 'Sociedades de inversión especializadas en fondos para el retiro'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '5252',
+              titulo: 'Fondos de inversión',
+              subrama: [
+                {
+                  codigo: '52521',
+                  titulo: 'Fondos de inversión',
+                  giro: [
+                    {
+                      codigo: '525210',
+                      titulo: 'Fondos de inversión'
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      codigo: '11',
+      titulo: 'Agricultura, cría y explotación de animales, aprovechamiento forestal, pesca y caza',
+      subsector: [
+        {
+          codigo: '111',
+          titulo: 'Agricultura',
+          rama: [
+            {
+              codigo: '1111',
+              titulo: 'Cultivo de semillas oleaginosas, leguminosas y cereales',
+              subrama: [
+                {
+                  codigo: '11111',
+                  titulo: 'Cultivo de soya',
+                  giro: [
+                    {
+                      codigo: '111110',
+                      titulo: 'Cultivo de soya'
+                    }
+                  ]
+                },
+                {
+                  codigo: '11112',
+                  titulo: 'Cultivo de semillas oleaginosas, excepto soya',
+                  giro: [
+                    {
+                      codigo: '111121',
+                      titulo: 'Cultivo de cártamo'
+                    },
+                    {
+                      codigo: '111122',
+                      titulo: 'Cultivo de girasol'
+                    },
+                    {
+                      codigo: '111129',
+                      titulo: 'Cultivo anual de otras semillas oleaginosas'
+                    }
+                  ]
+                },
+                {
+                  codigo: '11113',
+                  titulo: 'Cultivo de leguminosas',
+                  giro: [
+                    {
+                      codigo: '111131',
+                      titulo: 'Cultivo de frijol grano'
+                    },
+                    {
+                      codigo: '111132',
+                      titulo: 'Cultivo de garbanzo grano'
+                    },
+                    {
+                      codigo: '111139',
+                      titulo: 'Cultivo de otras leguminosas'
+                    }
+                  ]
+                },
+                {
+                  codigo: '11114',
+                  titulo: 'Cultivo de trigo',
+                  giro: [
+                    {
+                      codigo: '111140',
+                      titulo: 'Cultivo de trigo'
+                    }
+                  ]
+                },
+                {
+                  codigo: '11115',
+                  titulo: 'Cultivo de maíz',
+                  giro: [
+                    {
+                      codigo: '111151',
+                      titulo: 'Cultivo de maíz grano'
+                    },
+                    {
+                      codigo: '111152',
+                      titulo: 'Cultivo de maíz forrajero'
+                    }
+                  ]
+                },
+                {
+                  codigo: '11116',
+                  titulo: 'Cultivo de arroz',
+                  giro: [
+                    {
+                      codigo: '111160',
+                      titulo: 'Cultivo de arroz'
+                    }
+                  ]
+                },
+                {
+                  codigo: '11119',
+                  titulo: 'Cultivo de otros cereales',
+                  giro: [
+                    {
+                      codigo: '111191',
+                      titulo: 'Cultivo de sorgo grano'
+                    },
+                    {
+                      codigo: '111192',
+                      titulo: 'Cultivo de avena grano'
+                    },
+                    {
+                      codigo: '111193',
+                      titulo: 'Cultivo de cebada grano'
+                    },
+                    {
+                      codigo: '111194',
+                      titulo: 'Cultivo de sorgo forrajero'
+                    },
+                    {
+                      codigo: '111195',
+                      titulo: 'Cultivo de avena forrajera'
+                    },
+                    {
+                      codigo: '111199',
+                      titulo: 'Cultivo de otros cereales'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '1112',
+              titulo: 'Cultivo de hortalizas',
+              subrama: [
+                {
+                  codigo: '11121',
+                  titulo: 'Cultivo de hortalizas',
+                  giro: [
+                    {
+                      codigo: '111211',
+                      titulo: 'Cultivo de jitomate o tomate rojo'
+                    },
+                    {
+                      codigo: '111212',
+                      titulo: 'Cultivo de chile'
+                    },
+                    {
+                      codigo: '111213',
+                      titulo: 'Cultivo de cebolla'
+                    },
+                    {
+                      codigo: '111214',
+                      titulo: 'Cultivo de melón'
+                    },
+                    {
+                      codigo: '111215',
+                      titulo: 'Cultivo de tomate verde'
+                    },
+                    {
+                      codigo: '111216',
+                      titulo: 'Cultivo de papa'
+                    },
+                    {
+                      codigo: '111217',
+                      titulo: 'Cultivo de calabaza'
+                    },
+                    {
+                      codigo: '111218',
+                      titulo: 'Cultivo de sandía'
+                    },
+                    {
+                      codigo: '111219',
+                      titulo: 'Cultivo de otras hortalizas'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '1113',
+              titulo: 'Cultivo de frutales y nueces',
+              subrama: [
+                {
+                  codigo: '11131',
+                  titulo: 'Cultivo de naranja',
+                  giro: [
+                    {
+                      codigo: '111310',
+                      titulo: 'Cultivo de naranja'
+                    }
+                  ]
+                },
+                {
+                  codigo: '11132',
+                  titulo: 'Cultivo de otros cítricos',
+                  giro: [
+                    {
+                      codigo: '111321',
+                      titulo: 'Cultivo de limón'
+                    },
+                    {
+                      codigo: '111329',
+                      titulo: 'Cultivo de otros cítricos'
+                    }
+                  ]
+                },
+                {
+                  codigo: '11133',
+                  titulo: 'Cultivo de frutales no cítricos y de nueces',
+                  giro: [
+                    {
+                      codigo: '111331',
+                      titulo: 'Cultivo de café'
+                    },
+                    {
+                      codigo: '111332',
+                      titulo: 'Cultivo de plátano'
+                    },
+                    {
+                      codigo: '111333',
+                      titulo: 'Cultivo de mango'
+                    },
+                    {
+                      codigo: '111334',
+                      titulo: 'Cultivo de aguacate'
+                    },
+                    {
+                      codigo: '111335',
+                      titulo: 'Cultivo de uva'
+                    },
+                    {
+                      codigo: '111336',
+                      titulo: 'Cultivo de manzana'
+                    },
+                    {
+                      codigo: '111337',
+                      titulo: 'Cultivo de cacao'
+                    },
+                    {
+                      codigo: '111338',
+                      titulo: 'Cultivo de coco'
+                    },
+                    {
+                      codigo: '111339',
+                      titulo: 'Cultivo de otros frutales no cítricos y de nueces'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '1114',
+              titulo: 'Cultivo en invernaderos y otras estructuras agrícolas protegidas, y floricultura',
+              subrama: [
+                {
+                  codigo: '11141',
+                  titulo: 'Cultivo de productos alimenticios en invernaderos y otras estructuras agrícolas protegidas',
+                  giro: [
+                    {
+                      codigo: '111411',
+                      titulo: 'Cultivo de jitomate en invernaderos y otras estructuras agrícolas protegidas'
+                    },
+                    {
+                      codigo: '111412',
+                      titulo: 'Cultivo de fresa en invernaderos y otras estructuras agrícolas protegidas'
+                    },
+                    {
+                      codigo: '111413',
+                      titulo: 'Cultivo de bayas (berries) en invernaderos y otras estructuras agrícolas protegidas, excepto fresas'
+                    },
+                    {
+                      codigo: '111414',
+                      titulo: 'Cultivo de chile en invernaderos y otras estructuras agrícolas protegidas'
+                    },
+                    {
+                      codigo: '111415',
+                      titulo: 'Cultivo de manzana en invernaderos y otras estructuras agrícolas protegidas'
+                    },
+                    {
+                      codigo: '111416',
+                      titulo: 'Cultivo de pepino en invernaderos y otras estructuras agrícolas protegidas'
+                    },
+                    {
+                      codigo: '111419',
+                      titulo: 'Cultivo de otros productos alimenticios en invernaderos y otras estructuras agrícolas protegidas'
+                    }
+                  ]
+                },
+                {
+                  codigo: '11142',
+                  titulo: 'Floricultura, y otros cultivos de productos no alimenticios en invernaderos y otras estructuras agrícolas protegidas',
+                  giro: [
+                    {
+                      codigo: '111421',
+                      titulo: 'Floricultura a cielo abierto'
+                    },
+                    {
+                      codigo: '111422',
+                      titulo: 'Floricultura en invernaderos y otras estructuras agrícolas protegidas'
+                    },
+                    {
+                      codigo: '111423',
+                      titulo: 'Cultivo de árboles de ciclo productivo de 10 años o menos'
+                    },
+                    {
+                      codigo: '111429',
+                      titulo: 'Otros cultivos no alimenticios en invernaderos y otras estructuras agrícolas protegidas'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '1119',
+              titulo: 'Otros cultivos',
+              subrama: [
+                {
+                  codigo: '11191',
+                  titulo: 'Cultivo de tabaco',
+                  giro: [
+                    {
+                      codigo: '111910',
+                      titulo: 'Cultivo de tabaco'
+                    }
+                  ]
+                },
+                {
+                  codigo: '11192',
+                  titulo: 'Cultivo de algodón',
+                  giro: [
+                    {
+                      codigo: '111920',
+                      titulo: 'Cultivo de algodón'
+                    }
+                  ]
+                },
+                {
+                  codigo: '11193',
+                  titulo: 'Cultivo de caña de azúcar',
+                  giro: [
+                    {
+                      codigo: '111930',
+                      titulo: 'Cultivo de caña de azúcar'
+                    }
+                  ]
+                },
+                {
+                  codigo: '11194',
+                  titulo: 'Cultivo de alfalfa y pastos',
+                  giro: [
+                    {
+                      codigo: '111941',
+                      titulo: 'Cultivo de alfalfa'
+                    },
+                    {
+                      codigo: '111942',
+                      titulo: 'Cultivo de pastos'
+                    }
+                  ]
+                },
+                {
+                  codigo: '11199',
+                  titulo: 'Otros cultivos',
+                  giro: [
+                    {
+                      codigo: '111991',
+                      titulo: 'Cultivo de agaves alcoholeros'
+                    },
+                    {
+                      codigo: '111992',
+                      titulo: 'Cultivo de cacahuate'
+                    },
+                    {
+                      codigo: '111993',
+                      titulo: 'Actividades agrícolas combinadas con explotación de animales'
+                    },
+                    {
+                      codigo: '111994',
+                      titulo: 'Actividades agrícolas combinadas con aprovechamiento forestal'
+                    },
+                    {
+                      codigo: '111995',
+                      titulo: 'Actividades agrícolas combinadas con explotación de animales y aprovechamiento forestal'
+                    },
+                    {
+                      codigo: '111999',
+                      titulo: 'Otros cultivos'
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          codigo: '112',
+          titulo: 'Cría y explotación de animales',
+          rama: [
+            {
+              codigo: '1121',
+              titulo: 'Explotación de bovinos',
+              subrama: [
+                {
+                  codigo: '11211',
+                  titulo: 'Explotación de bovinos para la producción de carne',
+                  giro: [
+                    {
+                      codigo: '112110',
+                      titulo: 'Explotación de bovinos para la producción de carne'
+                    }
+                  ]
+                },
+                {
+                  codigo: '11212',
+                  titulo: 'Explotación de bovinos para la producción de leche',
+                  giro: [
+                    {
+                      codigo: '112120',
+                      titulo: 'Explotación de bovinos para la producción de leche'
+                    }
+                  ]
+                },
+                {
+                  codigo: '11213',
+                  titulo: 'Explotación de bovinos sin especialización y para otros propósitos',
+                  giro: [
+                    {
+                      codigo: '112131',
+                      titulo: 'Explotación de bovinos para la producción conjunta de leche y carne'
+                    },
+                    {
+                      codigo: '112139',
+                      titulo: 'Explotación de bovinos para otros propósitos'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '1122',
+              titulo: 'Explotación de porcinos',
+              subrama: [
+                {
+                  codigo: '11221',
+                  titulo: 'Explotación de porcinos',
+                  giro: [
+                    {
+                      codigo: '112211',
+                      titulo: 'Explotación de porcinos en granja'
+                    },
+                    {
+                      codigo: '112212',
+                      titulo: 'Explotación de porcinos en traspatio'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '1123',
+              titulo: 'Explotación avícola',
+              subrama: [
+                {
+                  codigo: '11231',
+                  titulo: 'Explotación de gallinas para la producción de huevo',
+                  giro: [
+                    {
+                      codigo: '112311',
+                      titulo: 'Explotación de gallinas para la producción de huevo fértil'
+                    },
+                    {
+                      codigo: '112312',
+                      titulo: 'Explotación de gallinas para la producción de huevo para plato'
+                    }
+                  ]
+                },
+                {
+                  codigo: '11232',
+                  titulo: 'Explotación de pollos para la producción de carne',
+                  giro: [
+                    {
+                      codigo: '112320',
+                      titulo: 'Explotación de pollos para la producción de carne'
+                    }
+                  ]
+                },
+                {
+                  codigo: '11233',
+                  titulo: 'Explotación de guajolotes o pavos',
+                  giro: [
+                    {
+                      codigo: '112330',
+                      titulo: 'Explotación de guajolotes o pavos'
+                    }
+                  ]
+                },
+                {
+                  codigo: '11234',
+                  titulo: 'Producción de aves en incubadora',
+                  giro: [
+                    {
+                      codigo: '112340',
+                      titulo: 'Producción de aves en incubadora'
+                    }
+                  ]
+                },
+                {
+                  codigo: '11239',
+                  titulo: 'Explotación de otras aves para producción de carne y huevo',
+                  giro: [
+                    {
+                      codigo: '112390',
+                      titulo: 'Explotación de otras aves para producción de carne y huevo'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '1124',
+              titulo: 'Explotación de ovinos y caprinos',
+              subrama: [
+                {
+                  codigo: '11241',
+                  titulo: 'Explotación de ovinos',
+                  giro: [
+                    {
+                      codigo: '112410',
+                      titulo: 'Explotación de ovinos'
+                    }
+                  ]
+                },
+                {
+                  codigo: '11242',
+                  titulo: 'Explotación de caprinos',
+                  giro: [
+                    {
+                      codigo: '112420',
+                      titulo: 'Explotación de caprinos'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '1125',
+              titulo: 'Acuicultura',
+              subrama: [
+                {
+                  codigo: '11251',
+                  titulo: 'Acuicultura',
+                  giro: [
+                    {
+                      codigo: '112511',
+                      titulo: 'Camaronicultura'
+                    },
+                    {
+                      codigo: '112512',
+                      titulo: 'Piscicultura y otra acuicultura, excepto camaronicultura'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '1129',
+              titulo: 'Explotación de otros animales',
+              subrama: [
+                {
+                  codigo: '11291',
+                  titulo: 'Apicultura',
+                  giro: [
+                    {
+                      codigo: '112910',
+                      titulo: 'Apicultura'
+                    }
+                  ]
+                },
+                {
+                  codigo: '11292',
+                  titulo: 'Explotación de équidos',
+                  giro: [
+                    {
+                      codigo: '112920',
+                      titulo: 'Explotación de équidos'
+                    }
+                  ]
+                },
+                {
+                  codigo: '11293',
+                  titulo: 'Cunicultura y explotación de animales con pelaje fino',
+                  giro: [
+                    {
+                      codigo: '112930',
+                      titulo: 'Cunicultura y explotación de animales con pelaje fino'
+                    }
+                  ]
+                },
+                {
+                  codigo: '11299',
+                  titulo: 'Explotación de otros animales',
+                  giro: [
+                    {
+                      codigo: '112991',
+                      titulo: 'Explotación de animales combinada con aprovechamiento forestal'
+                    },
+                    {
+                      codigo: '112999',
+                      titulo: 'Explotación de otros animales'
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          codigo: '113',
+          titulo: 'Aprovechamiento forestal',
+          rama: [
+            {
+              codigo: '1131',
+              titulo: 'Silvicultura',
+              subrama: [
+                {
+                  codigo: '11311',
+                  titulo: 'Silvicultura',
+                  giro: [
+                    {
+                      codigo: '113110',
+                      titulo: 'Silvicultura'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '1132',
+              titulo: 'Viveros forestales y recolección de productos forestales',
+              subrama: [
+                {
+                  codigo: '11321',
+                  titulo: 'Viveros forestales y recolección de productos forestales',
+                  giro: [
+                    {
+                      codigo: '113211',
+                      titulo: 'Viveros forestales'
+                    },
+                    {
+                      codigo: '113212',
+                      titulo: 'Recolección de productos forestales'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '1133',
+              titulo: 'Tala de árboles',
+              subrama: [
+                {
+                  codigo: '11331',
+                  titulo: 'Tala de árboles',
+                  giro: [
+                    {
+                      codigo: '113310',
+                      titulo: 'Tala de árboles'
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          codigo: '114',
+          titulo: 'Pesca, caza y captura',
+          rama: [
+            {
+              codigo: '1141',
+              titulo: 'Pesca',
+              subrama: [
+                {
+                  codigo: '11411',
+                  titulo: 'Pesca',
+                  giro: [
+                    {
+                      codigo: '114111',
+                      titulo: 'Pesca de camarón'
+                    },
+                    {
+                      codigo: '114112',
+                      titulo: 'Pesca de túnidos'
+                    },
+                    {
+                      codigo: '114113',
+                      titulo: 'Pesca de sardina y anchoveta'
+                    },
+                    {
+                      codigo: '114119',
+                      titulo: 'Pesca y captura de otros peces, crustáceos, moluscos y otras especies'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '1142',
+              titulo: 'Caza y captura',
+              subrama: [
+                {
+                  codigo: '11421',
+                  titulo: 'Caza y captura',
+                  giro: [
+                    {
+                      codigo: '114210',
+                      titulo: 'Caza y captura'
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          codigo: '115',
+          titulo: 'Servicios relacionados con las actividades agropecuarias y forestales',
+          rama: [
+            {
+              codigo: '1151',
+              titulo: 'Servicios relacionados con la agricultura',
+              subrama: [
+                {
+                  codigo: '11511',
+                  titulo: 'Servicios relacionados con la agricultura',
+                  giro: [
+                    {
+                      codigo: '115111',
+                      titulo: 'Servicios de fumigación agrícola'
+                    },
+                    {
+                      codigo: '115112',
+                      titulo: 'Despepite de algodón'
+                    },
+                    {
+                      codigo: '115113',
+                      titulo: 'Beneficio de productos agrícolas'
+                    },
+                    {
+                      codigo: '115119',
+                      titulo: 'Otros servicios relacionados con la agricultura'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '1152',
+              titulo: 'Servicios relacionados con la cría y explotación de animales',
+              subrama: [
+                {
+                  codigo: '11521',
+                  titulo: 'Servicios relacionados con la cría y explotación de animales',
+                  giro: [
+                    {
+                      codigo: '115210',
+                      titulo: 'Servicios relacionados con la cría y explotación de animales'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '1153',
+              titulo: 'Servicios relacionados con el aprovechamiento forestal',
+              subrama: [
+                {
+                  codigo: '11531',
+                  titulo: 'Servicios relacionados con el aprovechamiento forestal',
+                  giro: [
+                    {
+                      codigo: '115310',
+                      titulo: 'Servicios relacionados con el aprovechamiento forestal'
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+
+    {
+      codigo: '21',
+      titulo: 'Minería',
+      subsector: [
+        {
+          codigo: '211',
+          titulo: 'Extracción de petróleo y gas',
+          rama: [
+            {
+              codigo: '2111',
+              titulo: 'Extracción de petróleo y gas',
+              subrama: [
+                {
+                  codigo: '21111',
+                  titulo: 'Extracción de petróleo y gas',
+                  giro: [
+                    {
+                      codigo: '211111',
+                      titulo: 'Extracción de petróleo y gas natural asociado'
+                    },
+                    {
+                      codigo: '211112',
+                      titulo: 'Extracción de gas natural no asociado'
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          codigo: '212',
+          titulo: 'Minería de minerales metálicos y no metálicos, excepto petróleo y gas',
+          rama: [
+            {
+              codigo: '2121',
+              titulo: 'Minería de carbón mineral',
+              subrama: [
+                {
+                  codigo: '21211',
+                  titulo: 'Minería de carbón mineral',
+                  giro: [
+                    {
+                      codigo: '212110',
+                      titulo: 'Minería de carbón mineral'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '2122',
+              titulo: 'Minería de minerales metálicos',
+              subrama: [
+                {
+                  codigo: '21221',
+                  titulo: 'Minería de hierro',
+                  giro: [
+                    {
+                      codigo: '212210',
+                      titulo: 'Minería de hierro'
+                    }
+                  ]
+                },
+                {
+                  codigo: '21222',
+                  titulo: 'Minería de oro y plata',
+                  giro: [
+                    {
+                      codigo: '212221',
+                      titulo: 'Minería de oro'
+                    },
+                    {
+                      codigo: '212222',
+                      titulo: 'Minería de plata'
+                    }
+                  ]
+                },
+                {
+                  codigo: '21223',
+                  titulo: 'Minería de cobre, plomo y zinc',
+                  giro: [
+                    {
+                      codigo: '212231',
+                      titulo: 'Minería de cobre'
+                    },
+                    {
+                      codigo: '212232',
+                      titulo: 'Minería de plomo y zinc'
+                    }
+                  ]
+                },
+                {
+                  codigo: '21229',
+                  titulo: 'Minería de otros minerales metálicos',
+                  giro: [
+                    {
+                      codigo: '212291',
+                      titulo: 'Minería de manganeso'
+                    },
+                    {
+                      codigo: '212292',
+                      titulo: 'Minería de mercurio y antimonio'
+                    },
+                    {
+                      codigo: '212293',
+                      titulo: 'Minería de uranio y minerales radiactivos'
+                    },
+                    {
+                      codigo: '212299',
+                      titulo: 'Minería de otros minerales metálicos'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '2123',
+              titulo: 'Minería de minerales no metálicos',
+              subrama: [
+                {
+                  codigo: '21231',
+                  titulo: 'Minería de piedra caliza, mármol y otras piedras dimensionadas',
+                  giro: [
+                    {
+                      codigo: '212311',
+                      titulo: 'Minería de piedra caliza'
+                    },
+                    {
+                      codigo: '212312',
+                      titulo: 'Minería de mármol'
+                    },
+                    {
+                      codigo: '212319',
+                      titulo: 'Minería de otras piedras dimensionadas'
+                    }
+                  ]
+                },
+                {
+                  codigo: '21232',
+                  titulo: 'Minería de arena, grava, tezontle, tepetate, arcillas y de otros minerales refractarios',
+                  giro: [
+                    {
+                      codigo: '212321',
+                      titulo: 'Minería de arena y grava para la construcción'
+                    },
+                    {
+                      codigo: '212322',
+                      titulo: 'Minería de tezontle y tepetate'
+                    },
+                    {
+                      codigo: '212323',
+                      titulo: 'Minería de feldespato'
+                    },
+                    {
+                      codigo: '212324',
+                      titulo: 'Minería de sílice'
+                    },
+                    {
+                      codigo: '212325',
+                      titulo: 'Minería de caolín'
+                    },
+                    {
+                      codigo: '212329',
+                      titulo: 'Minería de otras arcillas y de otros minerales refractarios'
+                    }
+                  ]
+                },
+                {
+                  codigo: '21239',
+                  titulo: 'Minería de otros minerales no metálicos',
+                  giro: [
+                    {
+                      codigo: '212391',
+                      titulo: 'Minería de sal'
+                    },
+                    {
+                      codigo: '212392',
+                      titulo: 'Minería de piedra de yeso'
+                    },
+                    {
+                      codigo: '212393',
+                      titulo: 'Minería de barita'
+                    },
+                    {
+                      codigo: '212394',
+                      titulo: 'Minería de roca fosfórica'
+                    },
+                    {
+                      codigo: '212395',
+                      titulo: 'Minería de fluorita'
+                    },
+                    {
+                      codigo: '212396',
+                      titulo: 'Minería de grafito'
+                    },
+                    {
+                      codigo: '212397',
+                      titulo: 'Minería de azufre'
+                    },
+                    {
+                      codigo: '212398',
+                      titulo: 'Minería de minerales no metálicos para productos químicos'
+                    },
+                    {
+                      codigo: '212399',
+                      titulo: 'Minería de otros minerales no metálicos'
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          codigo: '213',
+          titulo: 'Servicios relacionados con la minería',
+          rama: [
+            {
+              codigo: '2131',
+              titulo: 'Servicios relacionados con la minería',
+              subrama: [
+                {
+                  codigo: '21311',
+                  titulo: 'Servicios relacionados con la minería',
+                  giro: [
+                    {
+                      codigo: '213111',
+                      titulo: 'Perforación de pozos petroleros y de gas'
+                    },
+                    {
+                      codigo: '213119',
+                      titulo: 'Otros servicios relacionados con la minería'
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+
+    {
+      codigo: '22',
+      titulo: 'Generación, transmisión, distribución y comercialización de energía eléctrica, suministro de agua y de gas natural por ductos al consumidor final',
+      subsector: [
+        {
+          codigo: '221',
+          titulo: 'Generación, transmisión, distribución y comercialización de energía eléctrica, suministro de agua y de gas natural por ductos al consumidor final',
+          rama: [
+            {
+              codigo: '2211',
+              titulo: 'Generación, transmisión, distribución y comercialización de energía eléctrica',
+              subrama: [
+                {
+                  codigo: '22111',
+                  titulo: 'Generación de energía eléctrica',
+                  giro: [
+                    {
+                      codigo: '221111',
+                      titulo: 'Generación de electricidad a partir de combustibles fósiles'
+                    },
+                    {
+                      codigo: '221112',
+                      titulo: 'Generación de electricidad a partir de energía hidráulica'
+                    },
+                    {
+                      codigo: '221113',
+                      titulo: 'Generación de electricidad a partir de energía solar'
+                    },
+                    {
+                      codigo: '221114',
+                      titulo: 'Generación de electricidad a partir de energía eólica'
+                    },
+                    {
+                      codigo: '221119',
+                      titulo: 'Generación de electricidad a partir de otro tipo de energía'
+                    }
+                  ]
+                },
+                {
+                  codigo: '22112',
+                  titulo: 'Transmisión, distribución y comercialización de energía eléctrica',
+                  giro: [
+                    {
+                      codigo: '221121',
+                      titulo: 'Transmisión de energía eléctrica'
+                    },
+                    {
+                      codigo: '221122',
+                      titulo: 'Distribución de energía eléctrica'
+                    },
+                    {
+                      codigo: '221123',
+                      titulo: 'Comercialización de energía eléctrica'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '2212',
+              titulo: 'Suministro de gas natural por ductos al consumidor final',
+              subrama: [
+                {
+                  codigo: '22121',
+                  titulo: 'Suministro de gas natural por ductos al consumidor final',
+                  giro: [
+                    {
+                      codigo: '221210',
+                      titulo: 'Suministro de gas natural por ductos al consumidor final'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              codigo: '2213',
+              titulo: 'Captación, tratamiento y suministro de agua',
+              subrama: [
+                {
+                  codigo: '22131',
+                  titulo: 'Captación, tratamiento y suministro de agua',
+                  giro: [
+                    {
+                      codigo: '221311',
+                      titulo: 'Captación, tratamiento y suministro de agua realizados por el sector privado'
+                    },
+                    {
+                      codigo: '221312',
+                      titulo: 'Captación, tratamiento y suministro de agua realizados por el sector público'
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
     {
       codigo: '81',
       titulo: 'Otros servicios excepto actividades gubernamentales',
@@ -10374,6 +10394,8 @@ export const scian = {
         }
       ]
     },
+
+
     {
       codigo: '93',
       titulo: 'Actividades legislativas, gubernamentales, de impartición de justicia y de organismos internacionales y extraterritoriales',
@@ -10546,5 +10568,7 @@ export const scian = {
         }
       ]
     }
+
+
   ]
 };

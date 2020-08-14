@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/fo
 import { Router } from '@angular/router';
 import { UserService, CurpService, LoanDataService } from '../../services/service.index';
 import { PersonalReferences } from '../../models/personal-references.model' ;
+import { ListaDocs } from '../../models/lista-docs.model' ;
 import { ActivatedRoute } from '@angular/router';
 import { Options, LabelType } from 'ng5-slider';
 import { Finance } from 'financejs';
@@ -34,6 +35,8 @@ declare var google;
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+
+  listaDocs=new ListaDocs();
 
   entidadNac;
   pagare;
@@ -871,13 +874,15 @@ findInvalidControls() {
     this.popup[9].open();
     const docs = new Sign(this.pagare,'amortizacion');
     if (this.formFielFirm.valid) {
-
-      this.userService.sendContract(docs).subscribe(res => {
+      //console.log("fiel form",this.formFielFirm.value)
+      /* this.userService.sendContract(docs).subscribe(res => {
         
-      });
+      }); */
+      document.getElementById('sign').classList.add('hide');
+      document.getElementById('view-docs').classList.remove('hide');
       /*  */
-      this.router.navigate(["home"]);
-      this.popup[0].open();
+      /* this.router.navigate(["home"]); */
+      /* this.popup[0].open(); */
       this.popup[9].close();
     } else {
       swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
@@ -1056,17 +1061,92 @@ findInvalidControls() {
   // end Pick Address
 
   aceptaCred() {
-    document.getElementById('nano').classList.remove('hide');
-    document.getElementById('nanoo').classList.add('hide');
+    document.getElementById('approval').classList.add('hide');
+    document.getElementById('approval2').classList.remove('hide');
   }
 
   cancelaCred() {
-    document.getElementById('nano').classList.add('hide');
-    document.getElementById('nanoo').classList.remove('hide');
+    document.getElementById('approval2').classList.add('hide');
+    document.getElementById('approval').classList.remove('hide');
+    document.getElementById('view-docs').classList.add('hide');
+    document.getElementById('sign').classList.remove('hide');
   }
 
   rechazaCred() {
+/*     swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this imaginary file!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        this.router.navigate(["home"]);
+      } else {
+        
+      }
+    }); */
+
+    /*  */
+    swal({
+      title: 'Cuidado',
+      // tslint:disable-next-line: max-line-length
+      text: 'Al rechazar tu crédito deberas volver a completar todo el proceso.',
+      icon: 'info',
+      buttons: {
+        d: {
+          text: 'Cancelar',
+          value: false,
+          visible: true,
+          className: '',
+          closeModal: true,
+        },
+        j: {
+          text: 'Aceptar',
+          value: true,
+          visible: true,
+          className: 'red darken-4',
+          closeModal: true,
+        }
+      }
+    }).then((value) => {
+      if (value) {
+        this.userService.logout();
+        this.router.navigate(["home"]);
+      }
+    });
+    
+  }
+
+  sendSign(){
+    
+    const flcer = (<HTMLInputElement>document.getElementById("cerFirm")).files[0]
+    const flkey = (<HTMLInputElement>document.getElementById("fielFirm")).files[0]
+     
+    //console.log("entre a firma")
+    let payload = {
+      cartcontrato : document.getElementById("PDFpagare").innerText,
+      tabamortizacion: document.getElementById("PDFpagare").innerText,
+      pagare: document.getElementById("PDFpagare").innerText,
+      avprivintegral: document.getElementById("PDFpagare").innerText,
+      autcirccred: document.getElementById("PDFpagare").innerText,
+      solcontratacion: document.getElementById("PDFpagare").innerText,
+      contradhecion: document.getElementById("PDFpagare").innerText,
+      cer: flcer,
+      key: flkey,
+      passwordfirm: this.formFielFirm.value.passwordFirm,
+      base64EncodedAuthenticationKey: localStorage.getItem('authkey'),
+      clientid: localStorage.getItem('clientid'),
+    };
+
+
+
+    //console.log("sefirmara",payload)
 
   }
 
+
 }
+
+

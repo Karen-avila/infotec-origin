@@ -54,7 +54,7 @@ i.icon-gold {
     width: 100%;
 }
 
-table {
+/* table {
     width: 100%;
     border-collapse: collapse;
 }
@@ -68,7 +68,7 @@ td {
     border-collapse: collapse;
     padding: 0.3em;
     caption-side: bottom;
-}
+} */
 
 caption {
     padding: 0.3em;
