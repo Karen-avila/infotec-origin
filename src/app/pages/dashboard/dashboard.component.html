@@ -103,7 +103,7 @@
                             </p>
                         </div>
                     </div>
-                <!-- <div class="center-align">
+                    <!-- <div class="center-align">
                     <button class="waves-effect waves-dark teal darken-4 btn next-step">Continuar</button>
                 </div> -->
 
@@ -137,8 +137,8 @@
                         <div class="input-field col s12 m4">
                             <p>
                                 <label>
-                                    <input class="with-gap teal darken-4" (change)="rFiscal()" formControlName="tipopersona"
-                                        id="tipopersonaF" type="radio" value="pFisica"
+                                    <input class="with-gap teal darken-4" (change)="rFiscal()"
+                                        formControlName="tipopersona" id="tipopersonaF" type="radio" value="pFisica"
                                         [(ngModel)]="model" />
                                     <span>Persona Física con Actividad Empresarial</span>
                                 </label>
@@ -147,8 +147,8 @@
                         <div class="input-field col s12 m4">
                             <p>
                                 <label>
-                                    <input class="with-gap teal darken-4" formControlName="tipopersona"
-                                        type="radio" value="rFiscal" [(ngModel)]="model" />
+                                    <input class="with-gap teal darken-4" formControlName="tipopersona" type="radio"
+                                        value="rFiscal" [(ngModel)]="model" />
                                     <span>Régimen de Incorporación Fiscal</span>
                                 </label>
                             </p>
@@ -164,7 +164,8 @@
                     <div class="input-field col s12 m4 l4">
                         <i class="material-icons prefix">payment</i>
                         <input class="validate" id="clabeinter" type="text" (keypress)="numberOnly($event)"
-                            formControlName="clabeinter" name="Clabe interbancaria" minlength="18" maxlength="18" required>
+                            formControlName="clabeinter" name="Clabe interbancaria" minlength="18" maxlength="18"
+                            required>
                         <label for="text" class="active">Clabe Interbancaria *</label>
 
                         <div class="blue-text" *ngIf="f.clabeinter.errors">La clabe interbancaria consta de 18 dígitos
@@ -179,7 +180,8 @@
                     <div class="input-field col s12 m4 l4">
                         <i class="material-icons prefix">payment</i>
                         <input class="validate" id="clabeinter" type="text" (keypress)="numberOnly($event)"
-                            formControlName="clabeinterconf" name="Clabe Interbancaria (Confirmación) *" minlength="18" maxlength="18" required>
+                            formControlName="clabeinterconf" name="Clabe Interbancaria (Confirmación) *" minlength="18"
+                            maxlength="18" required>
                         <label for="text">Clabe Interbancaria (Confirmación)</label>
 
                         <div class="red-text col s12" *ngIf="form.errors?.isValid && !form.pristine">
@@ -191,12 +193,12 @@
 
                         <label for="text">{{getBankName(2)}}</label>
                     </div>
-                    
+
                     <div class="input-field col s12"></div>
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="nombre" type="text" formControlName="nombre" name="Nombre" 
+                        <input id="nombre" type="text" formControlName="nombre" name="Nombre"
                             (keyup)="form.patchValue({nombre: $event.target.value.toUpperCase()})" required
                             class="validate">
                         <label for="nombre">Nombre *</label>
@@ -210,7 +212,7 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="nombre2" type="text" formControlName="nombre2" name="Segundo Nombre" 
+                        <input id="nombre2" type="text" formControlName="nombre2" name="Segundo Nombre"
                             (keyup)="form.patchValue({nombre2: $event.target.value.toUpperCase()})" class="validate">
                         <label for="nombre2">Segundo Nombre</label>
 
@@ -224,7 +226,7 @@
                         <i class="material-icons prefix">account_circle</i>
                         <input id="apaterno" type="text" name="Apellido Paterno" formControlName="apaterno"
                             (keyup)="form.patchValue({apaterno: $event.target.value.toUpperCase()})" required
-                            class="validate" >
+                            class="validate">
                         <label for="apaterno">Apellido Paterno *</label>
                         <div class="blue-text" *ngIf="f.apaterno.errors?.minlength">Debe tener un minimo de 2 carácteres
                         </div>
@@ -236,7 +238,7 @@
                         <i class="material-icons prefix">account_circle</i>
                         <input id="amaterno" type="text" name="Apellido Materno" formControlName="amaterno"
                             (keyup)="form.patchValue({amaterno: $event.target.value.toUpperCase()})" required
-                            class="validate" >
+                            class="validate">
                         <label for="amaterno">Apellido Materno *</label>
                         <div class="blue-text" *ngIf="f.amaterno.errors?.minlength">Debe tener un minimo de 2 carácteres
                         </div>
@@ -247,7 +249,7 @@
 
                     <div class="input-field col s12 m6 l6">
                         <input type="date" class="fecha validate" formControlName="fechanac" name="Fecha de Nacimiento"
-                            id="fechanac" min="1960-12-31" max="2002-01-01" required >
+                            id="fechanac" min="1960-12-31" max="2002-01-01" required>
                         <label>Fecha de Nacimiento *</label>
                     </div>
 
@@ -265,7 +267,7 @@
                     </div>
 
                     <div class="input-field col s12 m6 l6">
-                        <select formControlName="genero" name="Genero" id="genero" class="validate" >
+                        <select formControlName="genero" name="Genero" id="genero" class="validate">
                             <option value="" disabled selected>Selecciona una opción</option>
                             <option value="Femenino">Femenino</option>
                             <option value="Masculino">Masculino</option>
@@ -277,8 +279,8 @@
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">phone</i>
                         <input class="validate" id="telpersonal" type="text" formControlName="telpersonal"
-
-                        (keypress)="numberOnly($event)" name="Número de Teléfono" minlength="10" maxlength="10" required>
+                            (keypress)="numberOnly($event)" name="Número de Teléfono" minlength="10" maxlength="10"
+                            required>
                         <label for="text">Número de Celular *</label>
 
                         <div class="blue-text" *ngIf="f.telpersonal.errors">El teléfono debe ser de 10 digitos</div>
@@ -292,10 +294,11 @@
                         <label>País de Nacimiento *</label>
                         <div class="blue-text" *ngIf="f.paisnaci.errors">Debes seleccionar una opción.</div>
                     </div>
-                    
+
                     <div class="input-field col s12 m6 l6">
                         <label *ngIf="!entidadNac">Entidad Federativa de Nacimiento *</label>
-                        <select class="browser-default" [(ngModel)]="entidadNac" formControlName="entidadfednaci" name="Entidad Federativa de Nacimiento" id="entidadfednaci">
+                        <select class="browser-default" [(ngModel)]="entidadNac" formControlName="entidadfednaci"
+                            name="Entidad Federativa de Nacimiento" id="entidadfednaci">
                             <option value="" disabled selected>Selecciona una opción</option>
                             <option [value]="state.name" *ngFor="let state of stateOptions">{{state.name}}</option>
                         </select>
@@ -308,7 +311,6 @@
                         <input id="curp" type="text" (blur)=validaCurp() formControlName="curp" (focus)="generateCurp()"
                             (keyup)="form.patchValue({curp: $event.target.value.toUpperCase()})"
                             pattern="^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$"
-
                             required class="validate" name="CURP" minlength="18" maxlength="18" />
                         <label for="curp" class="active">CURP *</label>
 
@@ -320,8 +322,7 @@
                         <input id="rfc" type="text" formControlName="rfc"
                             (keyup)="form.patchValue({rfc: $event.target.value.toUpperCase()})"
                             pattern="^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$"
-
-                               required class="validate" name="RFC" minlength="12" maxlength="13" />
+                            required class="validate" name="RFC" minlength="12" maxlength="13" />
                         <label for="rfc" class="active">RFC *</label>
 
                         <div class="blue-text">Completa tu homoclave</div>
@@ -330,14 +331,12 @@
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">aspect_ratio</i>
                         <input id="claveelector" type="text" formControlName="claveelector"
-                            (keyup)="form.patchValue({claveelector: $event.target.value.toUpperCase()})" 
+                            (keyup)="form.patchValue({claveelector: $event.target.value.toUpperCase()})"
                             pattern="^(([B-D]|[F-H]|[J-N]|[P-T]|[V-Z]){4})([A-Z]{2})([0-9]{6})([0-9]{2})([HM]{1})([0-9]{3})$"
-                            required
+                            required minlength="18" maxlength="18" class="validate" name="Clave de Elector" />
+                        <label for="rfc">Clave de Elector *</label>
 
-                            minlength="18" maxlength="18" class="validate" name="Clave de Elector" />
-                            <label for="rfc">Clave de Elector *</label>
-                            
-                            <a class="modal-trigger" href="#helpIne"><i
+                        <a class="modal-trigger" href="#helpIne"><i
                                 class="material-icons prefix icon-black">help_outline</i></a>
                         <div class="blue-text" *ngIf="f.claveelector.errors">Clave de Elector invalida</div>
                     </div>
@@ -372,8 +371,8 @@
                             <div class="input-field col s4">
                                 <span class="grey-text in">Número Exterior *</span>
                                 <input id="numextdomic" type="text" [(ngModel)]="personal.ext"
-                                    formControlName="numextdomic" required class="validate" name="Número Exterior Domicilio"
-                                    placeholder="Número exterior" />
+                                    formControlName="numextdomic" required class="validate"
+                                    name="Número Exterior Domicilio" placeholder="Número exterior" />
                                 <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                             </div>
                             <div class="input-field col s4">
@@ -385,8 +384,9 @@
                             <div class="input-field col s4">
                                 <span class="grey-text in">Código Postal *</span>
                                 <input #cp id="cp" type="text" formControlName="cp" required class="validate"
-                                    name="Código Postal Domicilio" maxlength="5" [(ngModel)]="personal.cp" placeholder="Código Postal"
-                                    (keypress)="numberOnly($event)" (keyup)="cp.value.length == 5 && searchCP(cp.value, 'personal')" />
+                                    name="Código Postal Domicilio" maxlength="5" [(ngModel)]="personal.cp"
+                                    placeholder="Código Postal" (keypress)="numberOnly($event)"
+                                    (keyup)="cp.value.length == 5 && searchCP(cp.value, 'personal')" />
                                 <!--<label for="cp">Codigo Postal</label>-->
                                 <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                             </div>
@@ -401,9 +401,8 @@
                             <div class="input-field col s6">
 
                                 <span class="grey-text in">Asentamiento</span>
-                                <select [(ngModel)]="asentamiento" formControlName="asentamiento" name="Asentamiento Domicilio"
-
-                                    id="asentamiento" class="validate">
+                                <select [(ngModel)]="asentamiento" formControlName="asentamiento"
+                                    name="Asentamiento Domicilio" id="asentamiento" class="validate">
                                     <option value="" disabled selected>Selecciona una opción</option>
                                     <option [ngValue]="item" *ngFor="let item of personal.asentamiento">{{item}}
                                     </option>
@@ -449,13 +448,15 @@
                             <div class="input-field col s12">
                                 <span class="grey-text in">Calle *</span>
                                 <input id="calleneg" [(ngModel)]="negocio.calle" type="text" formControlName="calleneg"
-                                    required class="validate" name="Calle Negocio" (keyup)="form.patchValue({calleneg: $event.target.value.toUpperCase()})"/>
+                                    required class="validate" name="Calle Negocio"
+                                    (keyup)="form.patchValue({calleneg: $event.target.value.toUpperCase()})" />
                                 <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                             </div>
                             <div class="input-field col s4">
                                 <span class="grey-text in">Número Exterior *</span>
                                 <input id="numextneg" [(ngModel)]="negocio.ext" type="text" formControlName="numextneg"
-                                    required class="validate" name="Número Exterior Negocio" placeholder="Número exterior" />
+                                    required class="validate" name="Número Exterior Negocio"
+                                    placeholder="Número exterior" />
                                 <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                             </div>
                             <div class="input-field col s4">
@@ -467,8 +468,9 @@
                             <div class="input-field col s4">
                                 <span class="grey-text in">Código Postal *</span>
                                 <input #cpneg id="cpneg" [(ngModel)]="negocio.cp" type="number" formControlName="cpneg"
-                                    required class="validate" name="Código Postal Negocio" maxlength="5" placeholder="Codigo Postal"
-                                    (keypress)="numberOnly($event)" (keyup)="cpneg.value.length == 5 && searchCP(cpneg.value, 'negocio')" />
+                                    required class="validate" name="Código Postal Negocio" maxlength="5"
+                                    placeholder="Codigo Postal" (keypress)="numberOnly($event)"
+                                    (keyup)="cpneg.value.length == 5 && searchCP(cpneg.value, 'negocio')" />
                                 <div class="red-text" *ngIf="form.errors?.isMatch"></div>
                             </div>
                             <div class="input-field col s6">
@@ -503,11 +505,12 @@
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">phone</i>
                                 <input class="validate" id="phoneneg" type="text" formControlName="phoneneg"
-        
-                                (keypress)="numberOnly($event)" name="Número de Teléfono Negocio" minlength="10" maxlength="10" required>
+                                    (keypress)="numberOnly($event)" name="Número de Teléfono Negocio" minlength="10"
+                                    maxlength="10" required>
                                 <label for="text">Teléfono de Negocio *</label>
-        
-                                <div class="blue-text" *ngIf="f.phoneneg.errors">El teléfono debe ser de 10 digitos</div>
+
+                                <div class="blue-text" *ngIf="f.phoneneg.errors">El teléfono debe ser de 10 digitos
+                                </div>
                             </div>
                         </div>
                         <div class="col s6">
@@ -608,8 +611,9 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="ref1nombre" type="text" formControlName="ref1nombre" name="Nombre Referencia 1" required
-                        (keyup)="form.patchValue({ref1nombre: $event.target.value.toUpperCase()})" class="validate">
+                        <input id="ref1nombre" type="text" formControlName="ref1nombre" name="Nombre Referencia 1"
+                            required (keyup)="form.patchValue({ref1nombre: $event.target.value.toUpperCase()})"
+                            class="validate">
                         <label for="ref1nombre">Nombre *</label>
 
                         <div class="blue-text" *ngIf="f.ref1nombre.errors?.minlength">Debe tener un mínimo de 2
@@ -621,7 +625,8 @@
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
                         <input id="ref1nombre2" type="text" formControlName="ref1nombre2" name="ref1nombre2"
-                        (keyup)="form.patchValue({ref1nombre2: $event.target.value.toUpperCase()})" class="validate">
+                            (keyup)="form.patchValue({ref1nombre2: $event.target.value.toUpperCase()})"
+                            class="validate">
                         <label for="ref1nombre2">Segundo Nombre</label>
 
                         <div class="blue-text" *ngIf="f.ref1nombre2.errors?.minlength">Debe tener un minimo de 2
@@ -632,8 +637,10 @@
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="ref1apaterno" type="text" name="Apellido Paterno Referencia 1" formControlName="ref1apaterno"
-                        (keyup)="form.patchValue({ref1apaterno: $event.target.value.toUpperCase()})" required class="validate">
+                        <input id="ref1apaterno" type="text" name="Apellido Paterno Referencia 1"
+                            formControlName="ref1apaterno"
+                            (keyup)="form.patchValue({ref1apaterno: $event.target.value.toUpperCase()})" required
+                            class="validate">
                         <label for="ref1apaterno">Apellido Paterno *</label>
                         <div class="blue-text" *ngIf="f.ref1apaterno.errors?.minlength">Debe tener un minimo de 2
                             carácteres</div>
@@ -643,8 +650,10 @@
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="ref1amaterno" type="text" name="Apellido Materno Referencia 1" formControlName="ref1amaterno"
-                        (keyup)="form.patchValue({ref1amaterno: $event.target.value.toUpperCase()})" required class="validate">
+                        <input id="ref1amaterno" type="text" name="Apellido Materno Referencia 1"
+                            formControlName="ref1amaterno"
+                            (keyup)="form.patchValue({ref1amaterno: $event.target.value.toUpperCase()})" required
+                            class="validate">
                         <label for="ref1amaterno">Apellido Materno *</label>
                         <div class="blue-text" *ngIf="f.ref1amaterno.errors?.minlength">Debe tener un minimo de 2
                             carácteres</div>
@@ -655,8 +664,9 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">phone</i>
-                        <input class="validate" id="ref1tel" type="text" formControlName="ref1tel" name="Teléfono Referencia 1"
-                        (keypress)="numberOnly($event)" minlength="10" maxlength="10" required>
+                        <input class="validate" id="ref1tel" type="text" formControlName="ref1tel"
+                            name="Teléfono Referencia 1" (keypress)="numberOnly($event)" minlength="10" maxlength="10"
+                            required>
                         <label for="text">Número de Celular *</label>
                         <div class="blue-text" *ngIf="f.ref1tel.errors">El teléfono debe ser de 10 digitos</div>
                     </div>
@@ -681,8 +691,9 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="ref2nombre" type="text" formControlName="ref2nombre" name="Nombre Referencia 2" required
-                        (keyup)="form.patchValue({ref2nombre: $event.target.value.toUpperCase()})" class="validate">
+                        <input id="ref2nombre" type="text" formControlName="ref2nombre" name="Nombre Referencia 2"
+                            required (keyup)="form.patchValue({ref2nombre: $event.target.value.toUpperCase()})"
+                            class="validate">
                         <label for="ref2nombre">Nombre *</label>
 
                         <div class="blue-text" *ngIf="f.ref2nombre.errors?.minlength">Debe tener un mínimo de 2
@@ -694,7 +705,8 @@
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
                         <input id="ref2nombre2" type="text" formControlName="ref2nombre2" name="ref2nombre2"
-                        (keyup)="form.patchValue({ref2nombre2: $event.target.value.toUpperCase()})" class="validate">
+                            (keyup)="form.patchValue({ref2nombre2: $event.target.value.toUpperCase()})"
+                            class="validate">
                         <label for="ref2nombre2">Segundo Nombre</label>
 
                         <div class="blue-text" *ngIf="f.ref2nombre2.errors?.minlength">Debe tener un minimo de 2
@@ -705,8 +717,10 @@
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="ref2apaterno" type="text" name="Apellido Paterno Referencia 2" formControlName="ref2apaterno"
-                        (keyup)="form.patchValue({ref2apaterno: $event.target.value.toUpperCase()})" required class="validate">
+                        <input id="ref2apaterno" type="text" name="Apellido Paterno Referencia 2"
+                            formControlName="ref2apaterno"
+                            (keyup)="form.patchValue({ref2apaterno: $event.target.value.toUpperCase()})" required
+                            class="validate">
                         <label for="ref2apaterno">Apellido Paterno *</label>
                         <div class="blue-text" *ngIf="f.ref2apaterno.errors?.minlength">Debe tener un minimo de 2
                             carácteres</div>
@@ -716,8 +730,10 @@
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="ref2amaterno" type="text" name="Apellido Materno Referencia 2" formControlName="ref2amaterno"
-                        (keyup)="form.patchValue({ref2amaterno: $event.target.value.toUpperCase()})" required class="validate">
+                        <input id="ref2amaterno" type="text" name="Apellido Materno Referencia 2"
+                            formControlName="ref2amaterno"
+                            (keyup)="form.patchValue({ref2amaterno: $event.target.value.toUpperCase()})" required
+                            class="validate">
                         <label for="ref2amaterno">Apellido Materno *</label>
                         <div class="blue-text" *ngIf="f.ref2amaterno.errors?.minlength">Debe tener un minimo de 2
                             carácteres</div>
@@ -728,8 +744,9 @@
 
                     <div class="input-field col s12 m6 l6">
                         <i class="material-icons prefix">phone</i>
-                        <input class="validate" id="ref2tel" type="text" formControlName="ref2tel" name="Teléfono Referencia 2"
-                        (keypress)="numberOnly($event)" minlength="10" maxlength="10" required>
+                        <input class="validate" id="ref2tel" type="text" formControlName="ref2tel"
+                            name="Teléfono Referencia 2" (keypress)="numberOnly($event)" minlength="10" maxlength="10"
+                            required>
                         <label for="text">Número de Celular *</label>
                         <div class="blue-text" *ngIf="f.ref2tel.errors">El teléfono debe ser de 10 digitos</div>
                     </div>
@@ -754,7 +771,8 @@
                     <div class="row">
                         <div class="input-field col s12 m12 l12">
                             <label><input class="with-gap teal darken-4" formControlName="aprivacidad"
-                                    name="Aviso de Privacidad" id="aprivacidad" type="checkbox" [(ngModel)]="aviso" required/>
+                                    name="Aviso de Privacidad" id="aprivacidad" type="checkbox" [(ngModel)]="aviso"
+                                    required />
                                 <span>
 
                                     <label class="waves-effect modal-trigger subrayar" href="#aviso">
@@ -768,8 +786,8 @@
                     <br>
                     <div class="row">
                         <div class="input-field col s12 m12 l12">
-                            <label> <input class="with-gap teal darken-4" required formControlName="termcond" id="termcond" name="Términos y condiciones"
-                                    type="checkbox" [(ngModel)]="term" />
+                            <label> <input class="with-gap teal darken-4" required formControlName="termcond"
+                                    id="termcond" name="Términos y condiciones" type="checkbox" [(ngModel)]="term" />
                                 <span>
 
                                     <label class="waves-effect modal-trigger subrayar" href="#terminos">
@@ -850,8 +868,8 @@
                             <p>
                                 <label>
                                     <input class="with-gap teal darken-4" (change)="typeIdFun()"
-                                        formControlName="typeId" id="typeId" type="radio"
-                                        value="pasaporte" [(ngModel)]="typeId" />
+                                        formControlName="typeId" id="typeId" type="radio" value="pasaporte"
+                                        [(ngModel)]="typeId" />
                                     <span>Pasaporte</span>
                                 </label>
                             </p>
@@ -894,7 +912,8 @@
                                 <div class="file-field input-field col s12 m4 l4">
                                     <div class="teal darken-4 btn">
                                         <i class="material-icons right">attachment</i>cargar
-                                        <input type="file" required formControlName="reverso" (change)="ValidateSize('reverso')"
+                                        <input type="file" required formControlName="reverso"
+                                            (change)="ValidateSize('reverso')"
                                             accept="image/jpg, image/jpeg, image/png, application/pdf" id="reverso"
                                             class="validate">
                                     </div>
@@ -919,7 +938,8 @@
                             <div class="file-field input-field col s12 m4 l4">
                                 <div class="teal darken-4 btn">
                                     <i class="material-icons right">attachment</i>cargar
-                                    <input type="file" required formControlName="frontal" (change)="ValidateSize('frontal')"
+                                    <input type="file" required formControlName="frontal"
+                                        (change)="ValidateSize('frontal')"
                                         accept="image/jpg, image/jpeg, image/png, application/pdf" id="frontal"
                                         class="validate">
                                 </div>
@@ -928,7 +948,7 @@
                                 </div>
                                 <div class="file-path-wrapper">
                                     <input class="file-path validate" type="text"
-                                    placeholder="Archivos permitidos PDF, JPG">
+                                        placeholder="Archivos permitidos PDF, JPG">
                                 </div>
                             </div>
 
@@ -982,7 +1002,8 @@
                                     <i class="material-icons right">attachment</i>cargar
 
 
-                                    <input type="file" required title="Recibo CFE del Negocio con antigüedad no mayor a 3 meses."
+                                    <input type="file" required
+                                        title="Recibo CFE del Negocio con antigüedad no mayor a 3 meses."
                                         (change)="ValidateSize('comprobanten')" formControlName="comprobanten"
                                         accept="image/jpg, image/jpeg, image/png, application/pdf" id="comprobanten"
                                         class="validate">
@@ -1043,8 +1064,7 @@
                                 <input type="file" id="declaracion" formControlName="declaracion" required
                                     title="Si eres PERSONA FÍSICA CON ACTIVIDAD EMPRESARIAL envía tu última DECLARACIÓN DEL EJERCICIO DE IMPUESTOS FEDERALES; si eres PERSONA FÍSICA EN EL RÉGIMEN DE INCORPORACIÓN FISCAL envía el último ACUSE DE RECIBO DECLARACIÓN DE IMPUESTOS FEDERALES."
                                     (change)="ValidateSize('declaracion')"
-                                    accept="image/jpg, image/jpeg, image/png, application/pdf"
-                                    class="validate">
+                                    accept="image/jpg, image/jpeg, image/png, application/pdf" class="validate">
                             </div>
                             <div class="col s1 m1 l1" *ngIf="doc.declaracion.errors?.required">
                                 <i class="material-icons icon-red">error_outline</i>
@@ -1063,8 +1083,8 @@
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>cargar
 
-                                <input type="file" id="curpd" formControlName="curpd" required (change)="ValidateSize('curpd')" accept="application/pdf"
-                                    class="validate">
+                                <input type="file" id="curpd" formControlName="curpd" required
+                                    (change)="ValidateSize('curpd')" accept="application/pdf" class="validate">
                             </div>
                             <div class="col s1 m1 l1" *ngIf="doc.curpd.errors?.required">
                                 <i class="material-icons icon-red">error_outline</i>
@@ -1083,8 +1103,9 @@
                             <div class="teal darken-4 btn">
                                 <i class="material-icons right">attachment</i>cargar
 
-                                <input type="file" id="fiscal" formControlName="fiscal" required (change)="ValidateSize('fiscal')" accept="application/pdf"
-                                     name="fiscal" class="validate">
+                                <input type="file" id="fiscal" formControlName="fiscal" required
+                                    (change)="ValidateSize('fiscal')" accept="application/pdf" name="fiscal"
+                                    class="validate">
                             </div>
                             <div class="col s1 m1 l1" *ngIf="doc.fiscal.errors?.required">
                                 <i class="material-icons icon-red">error_outline</i>
@@ -1113,7 +1134,7 @@
 
 
                                 <input type="file" (change)="ValidateSize('fiel')" accept=".key" id="fiel" required
-                                    class="validate" > <!-- formControlName="fiel" -->
+                                    class="validate"> <!-- formControlName="fiel" -->
 
                                 <div class="red-text" *ngIf="fi.fiel.errors?.required">
                                 </div>
@@ -1129,7 +1150,7 @@
                                     <i class="material-icons right">attachment</i>Archivo .cer
 
                                     <input type="file" (change)="ValidateSize('cer')" id="cer" accept=".cer" required
-                                        class="validate" > <!-- formControlName="cer" -->
+                                        class="validate"> <!-- formControlName="cer" -->
 
                                     <div class="red-text" *ngIf="fi.cer.errors?.required">
                                     </div>
@@ -1142,8 +1163,8 @@
 
                         <div class="input-field col s12 m12 l12">
                             <i class="material-icons prefix">lock</i>
-                            <input id="password" type="password" name="password"  required
-                                class="validate"> <!-- formControlName="password" -->
+                            <input id="password" type="password" name="password" required class="validate">
+                            <!-- formControlName="password" -->
                             <label for="password">Contraseña de tu FIEL</label>
                             <div class="col s1 m1 l1" *ngIf="fi.password.errors?.required"></div>
                         </div>
@@ -1163,11 +1184,12 @@
                                         name="autorizobc" type="checkbox" [(ngModel)]="bc" />
                                     <span>
                                         <label class="waves-effect modal-trigger subrayar" href="#autorizo">
-                                            <span class="blue-text text-darken-4" style="font-size: 14px;">Autorizo la consulta a
+                                            <span class="blue-text text-darken-4" style="font-size: 14px;">Autorizo la
+                                                consulta a
                                                 sociedades de información crediticia</span>
                                         </label>
 
-                                       <!--  <label>
+                                        <!--  <label>
                                             <span class="black-text" style="font-size: 14px;">Autorizo la consulta a
                                                 sociedades de información crediticia</span>
                                         </label> -->
@@ -1178,8 +1200,8 @@
                         <br>
                         <div class="row">
                             <div class="input-field col s12 m12 l12">
-                                <label> <input class="with-gap teal darken-4" required formControlName="termcond" name="termcond"
-                                        type="checkbox" [(ngModel)]="term" />
+                                <label> <input class="with-gap teal darken-4" required formControlName="termcond"
+                                        name="termcond" type="checkbox" [(ngModel)]="term" />
                                     <span>
 
                                         <label class="waves-effect modal-trigger subrayar" href="#terminos">
@@ -1194,9 +1216,10 @@
                         <div class="row">
                             <div class="input-field col s12 m12 l12">
                                 <label><input class="with-gap teal darken-4" formControlName="aprivacidad"
-                                        name="A privacidad" id="aprivacidad" type="checkbox" [(ngModel)]="aviso" required/>
+                                        name="A privacidad" id="aprivacidad" type="checkbox" [(ngModel)]="aviso"
+                                        required />
                                     <span>
-    
+
                                         <label class="waves-effect modal-trigger subrayar" href="#aviso">
                                             <span class="blue-text text-darken-4" style="font-size: 14px;">He Leído la
                                                 Política de Privacidad. </span>
@@ -1268,18 +1291,18 @@
                 </div>
                 <!--  -->
 
-               <div class="hide" id="approval2">
+                <div class="hide" id="approval2">
                     <div class="hide" id="view-docs">
-                    <div class="row">
-                        <div class="input-field col s12 m12 l12">
-                            <i class="material-icons prefix icon-gold">vpn_key</i>
-                            <label class="title black-text"><b class="title col s12 m12 l12">Revisa tus
-                                    Documentos</b></label>
-                            <p><br></p>
-                            <p>Revisa cada uno de tus documentos, y si estas de acuerdo fírmalos.</p>
+                        <div class="row">
+                            <div class="input-field col s12 m12 l12">
+                                <i class="material-icons prefix icon-gold">vpn_key</i>
+                                <label class="title black-text"><b class="title col s12 m12 l12">Revisa tus
+                                        Documentos</b></label>
+                                <p><br></p>
+                                <p>Revisa cada uno de tus documentos, y si estas de acuerdo fírmalos.</p>
+                            </div>
                         </div>
-                    </div>
-                   <!--  <div class="card col s12">
+                        <!--  <div class="card col s12">
                         <div class="card-content">
 
                             <div class="row">
@@ -1311,10 +1334,31 @@
                             </div>
                         </div>
                     </div> -->
-                    <div class="card col s12">
-                        <div class="card-content">
-                            <div class="row">
-                                <ul>
+                        <div class="card col s12">
+                            <div class="card-content">
+                                <div class="row">
+                                    <table class="responsive-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Documento</th>
+                                                <th class="center">¿Documento Firmado?</th>
+                                                <th class="center">Descarga</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let docs of listaDocs">
+                                                <td>
+                                                    <a class="modal-trigger subrayar" [href]="docs.ref">
+                                                        <span class="blue-text text-darken-4" style="font-size: 14px;">{{docs.name}}</span>
+                                                    </a>
+                                                </td>
+                                                <td class="center"><i class="material-icons">close</i></td><!-- check -->
+                                                <td class="center"><i class="material-icons">block</i></td><!-- cloud_download -->
+                                    
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!--                                 <ul>
                                     <li><label class="waves-effect modal-trigger subrayar" href="#ccontrato">
                                             <span class="blue-text text-darken-4" style="font-size: 14px;">Ver Caratula
                                                 de Contrato</span>
@@ -1330,136 +1374,167 @@
                                                 Pagaré</span>
                                         </label>
                                     </li>
-                                </ul>
-                                <button class="waves-effect teal darken-4 btn right" (click)=sendSign()>Firmar
-                                    <!--revisar nextstep igual en ts-->
-                                    <i class="material-icons prefix right">arrow_forward_ios</i>
-                                </button>
+                                    <li><label class="waves-effect modal-trigger subrayar" href="#pagare">
+                                            <span class="blue-text text-darken-4" style="font-size: 14px;">Ver
+                                                Aviso de Privacidad Integral</span>
+                                        </label>
+                                    </li>
+                                    <li><label class="waves-effect modal-trigger subrayar" href="#pagare">
+                                            <span class="blue-text text-darken-4" style="font-size: 14px;">Ver Autorización
+                                                para investigación de Crédito
+                                            </span>
+                                        </label>
+                                    </li>
+                                    <li><label class="waves-effect modal-trigger subrayar" href="#pagare">
+                                            <span class="blue-text text-darken-4" style="font-size: 14px;">Ver Solicitud
+                                                de Contratación
+                                            </span>
+                                        </label>
+                                    </li>
+                                    <li><label class="waves-effect modal-trigger subrayar" href="#pagare">
+                                            <span class="blue-text text-darken-4" style="font-size: 14px;">Ver Contrato
+                                                de Adheción
+                                            </span>
+                                        </label>
+                                    </li>
+                                </ul> -->
+                                <br>
+                                    <button class="waves-effect teal darken-4 btn right" (click)=sendSign()>Firmar
+                                        <!--revisar nextstep igual en ts-->
+                                        <i class="material-icons prefix right">arrow_forward_ios</i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
+
                     </div>
 
-                </div>
+                    <div class="" id="sign">
 
-                <div class="" id="sign">
 
-                
-                    <div class="row">
-                        <div class="input-field col s12 m12 l12">
-                            <i class="material-icons prefix icon-gold">vpn_key</i>
-                            <label class="title black-text"><b class="title col s12 m12 l12">Firma tus
-                                    Documentos</b></label>
-                            <p><br></p>
-                            <p>Para continuar selecciona los archivos de tu firma electrónica avanzada (FIEL)</p>
+                        <div class="row">
+                            <div class="input-field col s12 m12 l12">
+                                <i class="material-icons prefix icon-gold">vpn_key</i>
+                                <label class="title black-text"><b class="title col s12 m12 l12">Firma tus
+                                        Documentos</b></label>
+                                <p><br></p>
+                                <p>Para continuar selecciona los archivos de tu firma electrónica avanzada (FIEL)</p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="card col s12">
-                        <div class="card-content">
-                            <div class="row">
-                                <br>
-                                <form ngNativeValidate [formGroup]="formFielFirm" (ngSubmit)="dfielFirm()">
+                        <div class="card col s12">
+                            <div class="card-content">
+                                <div class="row">
+                                    <br>
+                                    <form ngNativeValidate [formGroup]="formFielFirm" (ngSubmit)="dfielFirm()">
 
-                                    <div class="file-field input-field col s12 m4 l4">
-                                        <div class="teal darken-4 btn">
-                                            <i class="material-icons right">attachment</i>Archivo .key
-                                            <input type="file" (change)="ValidateSize('fielFirm')" accept=".key"
-                                                id="fielFirm" formControlName="fielFirm"  required class="validate">
+                                        <div class="file-field input-field col s12 m4 l4">
+                                            <div class="teal darken-4 btn">
+                                                <i class="material-icons right">attachment</i>Archivo .key
+                                                <input type="file" (change)="ValidateSize('fielFirm')" accept=".key"
+                                                    id="fielFirm" formControlName="fielFirm" required class="validate">
 
-                                            <div class="red-text" *ngIf="fir.fielFirm.errors?.required">Archivo
-                                                requerido</div>
-                                        </div>
-                                        <div class="file-path-wrapper">
-                                            <input class="file-path validate" type="text">
-                                        </div>
-                                    </div>
-
-                                    <div class="file-field input-field col s12 m4 l4">
-                                        <div class="teal darken-4 btn">
-                                            <i class="material-icons right">attachment</i>Archivo .cer
-                                            <input type="file" formControlName="cerFirm"  (change)="ValidateSize('cerFirm')" accept=".cer"
-                                                id="cerFirm" required class="validate">
-
-                                            <div class="red-text" *ngIf="fir.cerFirm.errors?.required">Archivo requerido
+                                                <div class="red-text" *ngIf="fir.fielFirm.errors?.required">Archivo
+                                                    requerido</div>
+                                            </div>
+                                            <div class="file-path-wrapper">
+                                                <input class="file-path validate" type="text">
                                             </div>
                                         </div>
-                                        <div class="file-path-wrapper">
-                                            <input class="file-path validate" type="text">
+
+                                        <div class="file-field input-field col s12 m4 l4">
+                                            <div class="teal darken-4 btn">
+                                                <i class="material-icons right">attachment</i>Archivo .cer
+                                                <input type="file" formControlName="cerFirm"
+                                                    (change)="ValidateSize('cerFirm')" accept=".cer" id="cerFirm"
+                                                    required class="validate">
+
+                                                <div class="red-text" *ngIf="fir.cerFirm.errors?.required">Archivo
+                                                    requerido
+                                                </div>
+                                            </div>
+                                            <div class="file-path-wrapper">
+                                                <input class="file-path validate" type="text">
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="input-field col s12 m4 l4">
-                                        <i class="material-icons prefix">lock</i>
-                                        <input id="passwordFirm" type="password" name="passwordFirm"
-                                            formControlName="passwordFirm" required class="validate">
-                                        <label for="password">Contraseña de tu FIEL</label>
-                                        <div class="col s1 m1 l1" *ngIf="fir.passwordFirm.errors?.required"></div>
-                                    </div>
+                                        <div class="input-field col s12 m4 l4">
+                                            <i class="material-icons prefix">lock</i>
+                                            <input id="passwordFirm" type="password" name="passwordFirm"
+                                                formControlName="passwordFirm" required class="validate">
+                                            <label for="password">Contraseña de tu FIEL</label>
+                                            <div class="col s1 m1 l1" *ngIf="fir.passwordFirm.errors?.required"></div>
+                                        </div>
 
 
-                                    <!--   <div class="input-field col s12 m4 l4">
+                                        <!--   <div class="input-field col s12 m4 l4">
                                     <a class="waves-effect teal darken-4 btn modal-trigger" href="#modalContr">Ver Carátula Informativa
                                         <i class="medium material-icons icon-gold right">visibility</i>
                                     </a>
                                 </div> -->
 
-                                <div class="row">
-                                    <div class="input-field col s12 m12 l12">
-                                        <label> <input class="with-gap teal darken-4" required formControlName="termcond" name="termcond"
-                                                type="checkbox" [(ngModel)]="term" />
-                                            <span>
-        
-                                                <label class="waves-effect modal-trigger subrayar" href="#terminos">
-                                                    <span class="blue-text text-darken-4" style="font-size: 14px;">Acepto
-                                                        Términos y Condiciones</span>
+                                        <div class="row">
+                                            <div class="input-field col s12 m12 l12">
+                                                <label> <input class="with-gap teal darken-4" required
+                                                        formControlName="termcond" name="termcond" type="checkbox"
+                                                        [(ngModel)]="term" />
+                                                    <span>
+
+                                                        <label class="waves-effect modal-trigger subrayar"
+                                                            href="#terminos">
+                                                            <span class="blue-text text-darken-4"
+                                                                style="font-size: 14px;">Acepto
+                                                                Términos y Condiciones</span>
+                                                        </label>
+                                                    </span>
                                                 </label>
-                                            </span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="input-field col s12 m12 l12">
-                                        <label><input class="with-gap teal darken-4" formControlName="aprivacidad"
-                                                name="A privacidad" id="aprivacidad" type="checkbox" [(ngModel)]="aviso" required/>
-                                            <span>
-            
-                                                <label class="waves-effect modal-trigger subrayar" href="#aviso">
-                                                    <span class="blue-text text-darken-4" style="font-size: 14px;">He Leído la
-                                                        Política de Privacidad. </span>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="input-field col s12 m12 l12">
+                                                <label><input class="with-gap teal darken-4"
+                                                        formControlName="aprivacidad" name="A privacidad"
+                                                        id="aprivacidad" type="checkbox" [(ngModel)]="aviso" required />
+                                                    <span>
+
+                                                        <label class="waves-effect modal-trigger subrayar"
+                                                            href="#aviso">
+                                                            <span class="blue-text text-darken-4"
+                                                                style="font-size: 14px;">He Leído la
+                                                                Política de Privacidad. </span>
+                                                        </label>
+                                                    </span>
                                                 </label>
-                                            </span>
-                                        </label>
-                                    </div>
-                                </div>
+                                            </div>
+                                        </div>
 
 
-                                    <div class="col s12">
-                                        <br><br>
-                                        <button class="waves-effect teal darken-4 btn right" type="submit">Continuar
-                                            <!--revisar nextstep igual en ts-->
-                                            <i class="material-icons prefix right">arrow_forward_ios</i>
-                                        </button>
+                                        <div class="col s12">
+                                            <br><br>
+                                            <button class="waves-effect teal darken-4 btn right" type="submit">Continuar
+                                                <!--revisar nextstep igual en ts-->
+                                                <i class="material-icons prefix right">arrow_forward_ios</i>
+                                            </button>
 
-                                        
 
-                                        <!--<a routerLink="/home" class="waves-effect  teal darken-4 btn right ">
+
+                                            <!--<a routerLink="/home" class="waves-effect  teal darken-4 btn right ">
                                                     <i class="material-icons prefix right">send</i> Terminar
                                                 </a>-->
 
-                                    </div>
-                                </form>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
+
                     </div>
 
+                    <button class="waves-effect teal darken-4 btn left" (click)="cancelaCred()">Cancelar
+
+                    </button>
                 </div>
-
-                <button class="waves-effect teal darken-4 btn left"
-                                            (click)="cancelaCred()">Cancelar
-
-                                        </button>
-                                    </div>
             </div>
         </li>
 
@@ -1470,10 +1545,12 @@
     <div class="modal-content">
         <h4 class="zz">¡Felicidades!, Solicitud Registrada.</h4>
         <!--<p class="flow-text"><b>N° de Registro: </b>KJF986JHH32</p>-->
-        <p class="floe-text">Tu solicitud ha sido enviada a un proceso de evaluación, te mantendremos al tanto a través del correo registrado.</p>
+        <p class="floe-text">Tu solicitud ha sido enviada a un proceso de evaluación, te mantendremos al tanto a través
+            del correo registrado.</p>
     </div>
     <div class="modal-footer">
-        <a routerLink="/home" (click)="userService.logout()" class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>
+        <a routerLink="/home" (click)="userService.logout()"
+            class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>
     </div>
     <div class="footer-copyright teal darken-3">
         <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
@@ -1519,154 +1596,7 @@
 </div>
 
 
-<div id="modalContr" class="modal">
-    <div class="modal-content">
 
-        <!-- Aqui va -->
-
-        <table id="convert" style='width:980px;'>
-            <tr>
-                <td style='padding: 0px 8px 8px;'>
-                    <div style='font-family: Arial,Helvetica,sans-serif; font-size: 12px; color: rgb(0, 0, 0);'>
-
-                        <img class="img" src="https://www.cetesdirecto.com/imagenes/shcp1.jpg">
-                        <img class="img2"
-                            src="https://www.bancodelbienestar.com.mx/Banca/_imagenes/BansefiNew/logo_bancodelbienestar_2.png">
-                        <table width='100%' style='width:100%;' cellspacing='0' cellpadding='2' align='center'
-                            border='0'>
-                            <tbody>
-
-                                <table class="table" style='width:980px'>
-                                    <tr class="primero">
-                                        <th colspan="5" class="titulos">CARÁTULA INFORMATIVA</th>
-                                    </tr>
-
-                                    <tr>
-                                        <td colspan="3" class="titulo">Número de Crédito: {{ hugo }}</td>
-                                        <td colspan="3"> </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td colspan="5">
-                                            <p>Nombre comercial del Producto:</p>
-                                            <p>Tipo de Crédito: Crédito Simple en Moneda Nacional.</p>
-                                    </tr>
-
-                                    <tr>
-                                        <td colspan="1">Tasa de interés anualordinaria</td>
-                                        <td colspan="1">CAT (Costo Anual Total / SinIVA)</td>
-                                        <td colspan="1">CAT (Costo Anual Total)</td>
-                                        <td colspan="1">MONTO O LÍNEA DE CRÉDITO</td>
-                                        <td colspan="1">MONTO MENSUAL A PAGAR</td>
-                                    </tr>
-
-                                    <tr class="espacio">
-                                        <td> {{ catPorcentaje }} </td>
-                                        <td> {{ catPorcentaje }} </td>
-                                        <!-- <td> {{ tasaInteresMensual }} </td> -->
-                                        <td> {{ valueMon }} </td>
-                                        <td> {{ finance }} </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td colspan="5" class="titulo">COMISIONES RELEVANTES</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td colspan="2">
-                                            <ul>
-                                                <li>Apertura: $0.00</li>
-                                                <li>Anualidad: $0.00</li>
-                                                <li>Prepago: $0.00</li>
-                                                <li>Pago tardío (mora): 1.5 veces la tasa de interés anual ordinaria
-                                                </li>
-                                            </ul>
-                                        </td>
-
-                                        <td colspan="3">
-                                            <ul>
-                                                <li>Reclamación improcedente: $0.00</li>
-                                                <li>Cobranza:</li>
-                                                Para otras comisiones consulte: Contrato de Crédito
-                                            </ul>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td colspan="2" class="titulo">PLAZO DEL CRÉDITO:
-                                            <p>___{{valuePlaz}}___meses</p>
-                                        </td>
-                                        <td colspan="3">Fecha límite de primer pago: _____________________ y las
-                                            subsecuentes, en términos de la Tabla de Amortización:</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td colspan="5">ADVERTENCIAS:
-                                            <p>Contratar créditos que excedan tu capacidad de pago afecta tu historial
-                                                crediticio.</p>
-                                        </td>
-
-                                    </tr>
-
-                                    <tr>
-                                        <td colspan="5">ESTADO DE CUENTA:
-                                            <li>Consulta: vía internet X</li>
-                                            <li>Envío por correo electrónico: X</li>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td colspan="5">ACLARACIONES Y RECLAMACIONES:
-                                            <p>Unidad Especializada de Atención a Usuarios:</p>
-                                            <p>Domicilio: Avenida Río Magdalena #115, Colonia Tizapán San Ángel,
-                                                Delegación Álvaro Obregón, C.P. 01090, México, Distrito Federal.</p>
-                                            <p>Teléfono (01 55) 54813300 extensión 3578 en el horario de 9:00 a.m. a
-                                                18:00 p.m. Correo electrónico: ueau@bansefi.gob.mx</p>
-                                            <p>Página de Internet: www.bancodelbienestar.gob.mx</p>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td colspan="5">REGISTRO DE CONTRATOS DE ADHESIÓN NÚM:
-                                            <p>Comisión Nacional para la Protección y Defensa de los Usuarios de
-                                                Servicios Financieros (CONDUSEF):</p>
-                                            <p>Teléfono: 01 800 999 8080 y 53400999. Página de Internet.
-                                                www.condusef.gob.mx Correo electrónico: opinion@condusef.gob.mx.</p>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td class="titulo" colspan="2">
-                                            <p>___________________________________________</p>Nombre y firma de
-                                            consentimiento del Acreditado
-                                        </td>
-                                        <td class="titulo" colspan="3">
-                                            <p>_______________________________</p>Por "Banco del Bienetar"
-                                        </td>
-                                    </tr>
-
-                                </table>
-
-                            </tbody>
-                        </table>
-                        <br />
-                        <br />
-
-                    </div>
-                </td>
-            </tr>
-
-        </table>
-        <!-- Aqui cierra -->
-
-    </div>
-    <div class="modal-footer">
-        <a class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>
-    </div>
-    <div class="footer-copyright teal darken-3">
-        <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
-    </div>
-</div>
 
 
 <!-- <div id="modalMap" class="iframe-container hide">
@@ -1711,19 +1641,21 @@
 </div>
 
 <div id="loader" class="modal transparent z-depth-0 center">
-    <div class="modal-content" >
+    <div class="modal-content">
         <div class="preloader-wrapper big active">
             <div class="spinner-layer spinner-green-only">
-              <div class="circle-clipper left">
-                <div class="circle"></div>
-              </div><div class="gap-patch">
-                <div class="circle"></div>
-              </div><div class="circle-clipper right">
-                <div class="circle"></div>
-              </div>
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
             </div>
-          </div>
-    </div>    
+        </div>
+    </div>
 </div>
 
 <div id="autorizo" class="modal">
@@ -1738,5 +1670,40 @@
     </div>
 </div>
 
+<div id="aprivintegral" class="modal">
+    <div class="modal-content">
+        <app-avisodeprivacidadintegral></app-avisodeprivacidadintegral>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect teal darken-4 white-text btn-flat">Cerrar</a>
+    </div>
+    <div class="footer-copyright teal darken-3">
+        <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
+    </div>
+</div>
+
+<div id="solcred" class="modal">
+    <div class="modal-content">
+        <app-solicituddecredito></app-solicituddecredito>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect teal darken-4 white-text btn-flat">Cerrar</a>
+    </div>
+    <div class="footer-copyright teal darken-3">
+        <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
+    </div>
+</div>
+
+<div id="contratcred" class="modal">
+    <div class="modal-content">
+        <app-contratodecredito></app-contratodecredito>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect teal darken-4 white-text btn-flat">Cerrar</a>
+    </div>
+    <div class="footer-copyright teal darken-3">
+        <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
+    </div>
+</div>
 
 <app-footer></app-footer>

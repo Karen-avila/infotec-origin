@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/fo
 import { Router } from '@angular/router';
 import { UserService, CurpService, LoanDataService } from '../../services/service.index';
 import { PersonalReferences } from '../../models/personal-references.model' ;
+import { ListaDocs } from '../../models/lista-docs.model' ;
 import { ActivatedRoute } from '@angular/router';
 import { Options, LabelType } from 'ng5-slider';
 import { Finance } from 'financejs';
@@ -34,6 +35,8 @@ declare var google;
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+
+  listaDocs=new ListaDocs();
 
   entidadNac;
   pagare;
@@ -871,7 +874,7 @@ findInvalidControls() {
     this.popup[9].open();
     const docs = new Sign(this.pagare,'amortizacion');
     if (this.formFielFirm.valid) {
-      console.log("fiel form",this.formFielFirm.value)
+      //console.log("fiel form",this.formFielFirm.value)
       /* this.userService.sendContract(docs).subscribe(res => {
         
       }); */
@@ -1117,8 +1120,33 @@ findInvalidControls() {
   }
 
   sendSign(){
-    let view = document.getElementById("PDFpagare");
-    console.log("ververver",view.innerText)
+    
+    const flcer = (<HTMLInputElement>document.getElementById("cerFirm")).files[0]
+    const flkey = (<HTMLInputElement>document.getElementById("fielFirm")).files[0]
+     
+    //console.log("entre a firma")
+    let payload = {
+      cartcontrato : document.getElementById("PDFpagare").innerText,
+      tabamortizacion: document.getElementById("PDFpagare").innerText,
+      pagare: document.getElementById("PDFpagare").innerText,
+      avprivintegral: document.getElementById("PDFpagare").innerText,
+      autcirccred: document.getElementById("PDFpagare").innerText,
+      solcontratacion: document.getElementById("PDFpagare").innerText,
+      contradhecion: document.getElementById("PDFpagare").innerText,
+      cer: flcer,
+      key: flkey,
+      passwordfirm: this.formFielFirm.value.passwordFirm,
+      base64EncodedAuthenticationKey: localStorage.getItem('authkey'),
+      clientid: localStorage.getItem('clientid'),
+    };
+
+
+
+    //console.log("sefirmara",payload)
+
   }
 
+
 }
+
+

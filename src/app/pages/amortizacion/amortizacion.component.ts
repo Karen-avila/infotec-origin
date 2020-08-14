@@ -30,7 +30,7 @@ export class AmortizacionComponent implements OnInit {
         this.loanData = data;
         console.log("amortizacion",this.loanData);
       },
-      error => console.error('error en data loan ')
+      error => console.error('error en data loan')
     )
   }
   
@@ -53,13 +53,7 @@ doc.save(`${target}.pdf`);  //descarga Pdf
     });
   }
 
-  chageDate(date){
-    console.log("dare",date)
-    let cambio;
-    cambio = moment(date).locale('es').format('Do MMMM YYYY')
-    console.log("view",cambio)
-    return cambio
-  }
+
 
  
 }
