@@ -209,6 +209,9 @@ export class DashboardComponent implements OnInit {
     private router: Router,
     private eventManager: EventManager
   ) {
+    /*  */
+    this.loanService.getLoanData(); //Esto ira en login cuando reciba loanid
+    /*  */
     this.re = localStorage.getItem('step');
     /* this.re=5; */
 
@@ -1141,6 +1144,13 @@ findInvalidControls() {
     };
 
 
+    /* this.userService.sendContract(payload).subscribe(res=>{
+
+    },err=>{
+
+    }); */
+
+    
 
     //console.log("sefirmara",payload)
 

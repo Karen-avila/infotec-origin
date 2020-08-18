@@ -5,12 +5,12 @@
 export const environment = {
   production: true,
   passwordShaded: true,
-  apis_url : 'https://apis-pre.bancodelbienestar.com.mx',
+  apis_url : 'https://sandbox-api.bancodelbienestar.com.mx',
   mifos_url : 'https://backoffice-pre.bancodelbienestar.com.mx',
   reCaptchaKey: "6LdQErYZAAAAACb2f4AgheH_SFBH131W8QCKvnvA",
   gravitee_api_keys : {
     'registro': '6c7180e6-4855-413a-ba3d-0f8c75b97490',
-    'fineract': '9e2a3bba-a89f-405d-a56d-236d9671a99d',
+    'fineract': 'd9d19371-ab0c-47f1-a524-c4aa4cc71d43',
     'curp': 'e0d2074e-ab85-4ada-b48f-ee23a766d4bd'
   },
   headers_mifos : {

@@ -28,14 +28,14 @@ export class PagareComponent implements OnInit {
   ngOnInit() {
     this.date = moment().locale('es').format('Do MMMM YYYY');
         
-        this.loanService.getLoanData().subscribe(
+        /* this.loanService.getLoanData().subscribe(
           data => {
             this.loanData = data;
             this.expiredDate = moment(data.timeline.expectedMaturityDate[0] + "/" + data.timeline.expectedMaturityDate[1] + "/" + data.timeline.expectedMaturityDate[2]).locale('es').format('Do MMMM YYYY');
             this.date = moment().locale('es').format('Do MMMM YYYY');
           },
           error => console.error('error en data loan ')
-        )
+        ) */
         
   }
 

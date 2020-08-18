@@ -1,15 +1,40 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpRequest, HttpHeaders } from '@angular/common/http';
 
+import {Subject} from 'rxjs/Subject';
+
 import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoanDataService {
-
+  
+  data;
+  execChange: Subject<any> = new Subject<any>();
+  /*  */
+  nombre: Subject<any> = new Subject<any>();
+  monto: Subject<any> = new Subject<any>();
+  totalPagar: Subject<any> = new Subject<any>();
+  noPago: Subject<any> = new Subject<any>();
+  fechaLimite: Subject<any> = new Subject<any>();
+  saldoInicial: Subject<any> = new Subject<any>();
+  pagoCapital: Subject<any> = new Subject<any>();
+  interesesPeriodo: Subject<any> = new Subject<any>();
+  ivaInteres: Subject<any> = new Subject<any>();
+  saldoInsoluto: Subject<any> = new Subject<any>();
+  montoPago: Subject<any> = new Subject<any>();
+  /*  */
   constructor(public http: HttpClient) { 
 
+  }
+
+    /**
+     * Use to change user name 
+     * @data type: string
+     */
+    userNameChange() {
+      return this.data;
   }
 
   getLoanData() {
@@ -29,7 +54,14 @@ export class LoanDataService {
       let headers = environment.headers_apis;
       headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
   
-      return this.http.get<any>(url, { headers: headers });
+      /* return this.http.get<any>(url, { headers: headers }); */
+      this.http.get<any>(url, { headers: headers }).subscribe(res=>{
+        //console.log("amortizacion",res);
+        this.data=res;
+        this.nombre.next(res);
+      },err=>{
+
+      })
   }
 
 }
