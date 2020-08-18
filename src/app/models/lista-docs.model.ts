@@ -1,12 +1,13 @@
 export class ListaDocs{
 
     constructor(){
+
+
         return this.docs();
     }
 
         docs(){
-            let ret:any;
-            ret = [
+            let docs:any = [
                 {
                     name: "Ver Caratula de Contrato",
                     ref: "#ccontrato"
@@ -36,8 +37,8 @@ export class ListaDocs{
                     ref: "#contratcred"
                 }
             ]
-            return ret;
+            return docs;
         }
-  
-  
+
+
   }

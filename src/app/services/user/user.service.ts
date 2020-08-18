@@ -137,7 +137,7 @@ export class UserService {
 
     return this.http.post(url, object, { headers }).pipe(
       map((res: any) => {
-        //console.log("login",res)
+        console.log("login",res)
         swal("¡Felicidades!", "Inicio de sesión exitoso.", "success");
         localStorage.setItem('clientid', res.clientId);
         localStorage.setItem('token', res.authenticated);
@@ -311,14 +311,20 @@ export class UserService {
 
   }
 
-  sendContract(data){
+  sendContract(payload){
+    const formData: FormData = new FormData();
+
+    for (const key in payload) {
+      formData.append(key, payload[key]);    
+    }
+
     let url = environment.apis_url + '/V1.0/banbi/creditosimple/firmadocumentos';
     let headers = environment.headers_apis;
     let api_keys = environment.gravitee_api_keys;
     headers['X-Gravitee-Api-Key'] = api_keys['sign']; //falta api de firma
 
-    const object = JSON.stringify(data);
-    return this.http.post(url, object, { headers }).map((res: any) => {
+   
+    return this.http.post(url, formData, { headers }).map((res: any) => {
       // ////console.log("creado", res)
       swal("¡Felicidades!", "Documentos Firmados correctamente.", "success");
 
@@ -327,6 +333,8 @@ export class UserService {
       swal('Existio un error' + err.status);
       return err;
     });
+
+
   }
 
 }

@@ -17,21 +17,29 @@ export class AmortizacionComponent implements OnInit {
   loanData;
   pagareB64;
   date;
-  y = 500
-  x;
 
-  constructor(public loanService: LoanDataService) { }
+  constructor(public loanService: LoanDataService) { 
+    
+  }
 
   ngOnInit() {
+    this.loanService.nombre.subscribe((value) => {
+      this.loanData = value; 
+  });
+
+    
     this.date = moment().locale('es').format('Do MMMM YYYY');
 
-    this.loanService.getLoanData().subscribe(
+         
+    /*this.loanService.getLoanData().subscribe(
       data => {
         this.loanData = data;
         console.log("amortizacion",this.loanData);
       },
       error => console.error('error en data loan')
-    )
+    ) */
+
+
   }
   
 
