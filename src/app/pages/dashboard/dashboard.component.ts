@@ -169,7 +169,7 @@ export class DashboardComponent implements OnInit {
           });
           return '<b>Si te Prestamos: </b>MX' + this.monte;
         case LabelType.Ceil:
-          return '<b>Monto Maximo: </b>MX' + value.toLocaleString('es-MX', {
+          return '<b>Monto Máximo: </b>MX' + value.toLocaleString('es-MX', {
             style: 'currency',
             currency: 'MXN',
           });
