@@ -196,39 +196,39 @@
                                 </label>
                             </p>
                         </li>
-                            
-                               <!--  <li class="collection-item avatar" *ngFor="let preg2 of preg2; index as i;">
-                                    <span class="title">{{preg2.question}}</span>
-        
-                                        <p>
-                                        <label>
-                                            <input class="with-gap" (change)="monto()" [(ngModel)]="sfina10"
-                                            formControlName="preg2" id="preg2" name="preg2" 
-                                            value="NO SÉ" type="radio" >
-                                        <span>NO SÉ</span>
-                                        </label>
 
-                                        <label>
-                                            <input class="with-gap" (change)="monto()" [(ngModel)]="sfina11"
-                                            formControlName="preg2" id="preg2" name="preg2" 
-                                            value="NO SÉ" type="radio" >
-                                        <span>SI SE, PERO PREFIERO NO DECIRLO</span>
-                                        </label>
-                                        </p>
-        
-                                
-        
-                                <div *ngIf="!sfina10" >
-                                    
-                                    <p>
-                                        <label>
-                                        <input  formControlName="preg2" name="preg2" id="preg2" type="number"
-                                        min='0' max='2000000' step='0.01' placeholder='$ MONTO'>
-                                        </label>
-                                    </p>
-                                </div>
-                                </li> -->
+                        <li class="collection-item avatar" *ngFor="let preg2 of preg2; index as i;">
+                            <span class="title">{{preg2.question}}</span>
+                        
+                             <p>
+                                <label>
+                                    <input type="checkbox" change="monto()" [(ngModel)]="sfina2" formControlName="preg2" id="preg2"
+                                    name="preg2" value="NO SÉ"/>
+                                    <span>NO SÉ</span>
+                                </label>
+                            </p>
                             
+                            <p>
+                                <label>
+                                    <input type="checkbox" change="monto()" [(ngModel)]="sfina2_0" formControlName="preg2" id="preg2"
+                                    name="preg2" value="SI SE PREFIERO NO DECLARARLO"/>
+                                    <span>SI SE PERO PREFIERO NO DECLARARLO</span>
+                                </label>
+                            </p>
+                            
+                            
+                                <div *ngIf="!(sfina2 || sfina2_0)" > 
+                                    <p> 
+                                        <span>MONTO</span>
+                                        <label>
+                                            <input  [(ngModel)]="preg2.resp" formControlName="preg2" name="preg2" id="preg2" type="number"
+                                             placeholder='$' min='0' max='2000000' step='0.01'>
+                                        </label>
+                                      </p> 
+                                </div>
+                            
+                        </li>
+
 
                         <li class="collection-item avatar" *ngFor="let preg3 of preg3; index as i;">
                                 <span class="title">{{preg3.question}}</span>
@@ -269,7 +269,7 @@
                                 <label>
                                 <input class="with-gap" [(ngModel)]="preg12a13.resp" 
                                 formControlName="{{'preg12a13'+i}}" id="{{'preg12a13'+j}}" 
-                                value="{{resp.id}}" type="radio" />
+                                value="{{resp.id}}" type="radio" >
                                 <span>{{resp.name}}</span>
                               </label>
                             </p>
@@ -286,22 +286,21 @@
                           </p>
                         </li>
 
-
                         <li class="collection-item avatar" *ngFor="let preg15 of preg15; index as i;">
                             <span class="title">{{preg15.question}}</span>
-
-                                <p *ngFor="let resp of preg15.options; index as j;">
-                                <label>
-                                    <input class="with-gap" (change)="b5()" [(ngModel)]="sfina5"
-                                    formControlName="preg15" id="preg15" name="preg15" 
-                                    value="{{resp.id}}" type="checkbox" >
-                                <span>{{resp.name}}</span>
-                                </label>
+                        
+                         
+                                <p>
+                                    <label>
+                                        <input type="checkbox" change="b5()" [(ngModel)]="sfina5" formControlName="preg15" id="preg15"
+                                        name="preg15" value="NO CUENTO CON NINGÚN FINANCIAMIENTO"/>
+                                        <span>NO CUENTO CON NINGÚN FINANCIAMIENTO</span>
+                                    </label>
                                 </p>
-
+                      
                         </li>
 
-                        <div *ngIf="!sfina5" >
+                      <div *ngIf="!sfina5" > 
                             <li class="collection-item avatar" *ngFor="let preg15_0 of preg15_0; index as i;">
                                 <label for="{{'preg15_0'+i}}"><span class="title">{{preg15_0.question}}</span></label>
                             <p>
@@ -315,16 +314,17 @@
 
                     <li class="collection-item avatar" *ngFor="let preg16 of preg16; index as i;">
                         <span class="title">{{preg16.question}}</span>
-
-                            <p *ngFor="let resp of preg16.options; index as j;">
-                            <label>
-                                <input class="with-gap" [(ngModel)]="preg16.resp" (change)="b6()" [(ngModel)]="sfina6"
-                                formControlName="preg16" id="preg16" 
-                                value="{{resp.id}}" type="checkbox" />
-                            <span>{{resp.name}}</span>
-                            </label>
+                    
+                      
+                            <p>
+                                <label>
+                                    <input type="checkbox" change="b6()" [(ngModel)]="sfina6" formControlName="preg16" id="preg16"
+                                    name="preg16" value="NO CUENTO CON NINGÚN FINANCIAMIENTO"/>
+                                    <span>NO CUENTO CON NINGÚN FINANCIAMIENTO</span>
+                                </label>
                             </p>
-
+                            
+                       
                     </li>
 
                     <div *ngIf="!sfina6" >
@@ -339,19 +339,17 @@
                     </li>
                 </div>
 
-
                 <li class="collection-item avatar" *ngFor="let preg17 of preg17; index as i;">
                     <span class="title">{{preg17.question}}</span>
-
-                        <p *ngFor="let resp of preg17.options; index as j;">
+                
+                    <p>
                         <label>
-                            <input class="with-gap" [(ngModel)]="preg17.resp" (change)="b7()" [(ngModel)]="sfina7"
-                            formControlName="preg17" id="preg17" 
-                            value="{{resp.id}}" type="checkbox" />
-                        <span>{{resp.name}}</span>
+                            <input type="checkbox" change="b7()" [(ngModel)]="sfina7" formControlName="preg17" id="preg17"
+                            name="preg17" value="NO CUENTO CON NINGÚN FINANCIAMIENTO"/>
+                            <span>NO CUENTO CON NINGÚN FINANCIAMIENTO</span>
                         </label>
-                        </p>
-
+                     
+                    </p>
                 </li>
 
                 <div *ngIf="!sfina7" >

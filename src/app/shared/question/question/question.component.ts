@@ -19,8 +19,9 @@ export class QuestionComponent implements OnInit {
   sfina5 = false;
   sfina6 = false;
   sfina7 = false;
-  sfina8 = false;
-  sfina9 = false;
+  sfina2 = false;
+  sfina2_0 = false;
+  preg15check
 
   /* Perfil de negocio */
 
@@ -151,7 +152,7 @@ export class QuestionComponent implements OnInit {
       value_quest: "0.05"
     },
     {
-      dataCode: "seleccione_la_opcion_que_describa_mejor_a_los_pr",
+      dataCode: "seleccione_la_opcion_que_describa_mejor_el_secto",
       columnId: "campo_9",
       question: "",
       options: [],
@@ -212,7 +213,7 @@ export class QuestionComponent implements OnInit {
       value_quest: "0.3"
     },
     {
-      dataCode: "como_calificaria_el_historial_de_credito_DE",
+      dataCode: "como_calificaria_el_historial_de_credito_de",
       columnId: "campo_5",
       question: "",
       options: [],
@@ -321,7 +322,7 @@ export class QuestionComponent implements OnInit {
 
   qcQc10 = [
     {
-      dataCode: "",
+      //dataCode: "",
       columnId: "campo_8",
       question: "¿Número de dependientes economicos? *",
       resp: "",
@@ -347,16 +348,6 @@ export class QuestionComponent implements OnInit {
       resp: "",
       options: []
     }];
-
-    /* preg2_0 = [
-      {
-        dataCode: "registre_el_total_de_ingresos_no",
-        columnId: "campo_2",
-        question: "",
-        options: []
-        
-      }]; */
-
 
   preg3 = [
     {
@@ -455,62 +446,69 @@ export class QuestionComponent implements OnInit {
     {
       dataCode: "",
       columnId: "campo_16",
-      question: "¿Servicios públicos? *",
+      question: "¿Renta de locales o espacios comerciales? *",
       resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_17",
-      question: "¿Transporte para actividades del negocio? *",
+      question: "¿Servicios públicos? *",
       resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_18",
-      question: "¿Pago por franquicias? *",
+      question: "¿Transporte para actividades del negocio? *",
       resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_19",
-      question: "¿Promoción y publicidad? *",
+      question: "¿Pago por franquicias? *",
       resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_20",
-      question: "¿Servicios contables o legales? *",
+      question: "¿Promoción y publicidad? *",
       resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_21",
-      question: "¿Mantenimiento del negocio? *",
+      question: "¿Servicios contables o legales? *",
       resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_22",
-      question: "¿Licencias de software? *",
+      question: "¿Mantenimiento del negocio? *",
       resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_23",
-      question: "¿Impuestos? *",
+      question: "¿Licencias de software? *",
       resp: "",
       options: []
     },
     {
       dataCode: "",
       columnId: "campo_24",
+      question: "¿Impuestos? *",
+      resp: "",
+      options: []
+    },
+    {
+      dataCode: "",
+      columnId: "campo_25",
       question: "¿Otros gastos no incluidos en la lista pero que son necesarios para la operación de su negocio? *",
       resp: "",
       options: []
@@ -519,9 +517,9 @@ export class QuestionComponent implements OnInit {
 
   preg15 = [
     {
-      dataCode: "indique_el_monto_de_financiamiento_que_haya_reci",
+      dataCode: "",
       columnId: "campo_26",
-      question: "",
+      question: "¿Indique el monto de financiamiento que haya recibido de cada una de las fuentes siguientes durante el ejercicio fiscal anterior o indique sino contó con alguno? *",
       resp: "",
       options: []
     }
@@ -581,9 +579,9 @@ export class QuestionComponent implements OnInit {
 
   preg16 = [
     {
-      dataCode: "cuanto_debe_al_dia_de_hoy_por_los_conceptos_sigu",
+      dataCode: "",
       columnId: "campo_34",
-      question: "",
+      question: "¿Cuánto debe al día de hoy por los conceptos siguientes o indique sino contó con alguno? *",
       resp: "",
       options: []
     }
@@ -643,9 +641,9 @@ export class QuestionComponent implements OnInit {
 
   preg17 = [
     {
-      dataCode: "en_promedio_cuanto_paga_cada_mes_por_los_concept",
+      dataCode: "",
       columnId: "campo_42",
-      question: "",
+      question: "En promedio, ¿cuánto paga cada mes por los conceptos siguientes o indique sino contó con alguno? *",
       resp: "",
       options: []
     }
@@ -750,7 +748,7 @@ export class QuestionComponent implements OnInit {
 
   preg19a28 = [
     {
-      dataCode: "participo_en_la_convocatoria_2.1_desarrollo_y_fo",
+      dataCode: "participo_en_la_convocatoria_2_1_desarrollo_y_fo",
       columnId: "campo_56",
       question: "",
       resp: "",
@@ -937,9 +935,7 @@ export class QuestionComponent implements OnInit {
 
     this.formQcQcn = new FormGroup({
       preg1: new FormControl(null, [Validators.required]),
-      //preg20: new FormControl(' ',[Validators.required]), 
-      //preg21: new FormControl(' ',[Validators.required]), 
-      /*preg2_0: new FormControl(' ',[Validators.required]), */
+      preg2: new FormControl(null,[Validators.required]), 
       preg3: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(10)]),
       preg4a50: new FormControl(null, [Validators.required]),
       preg4a51: new FormControl(null, [Validators.required]),
@@ -961,29 +957,30 @@ export class QuestionComponent implements OnInit {
       preg147: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg148: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg149: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
-      preg15: new FormControl('', Validators.required), 
+      preg1410: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
+      preg15: new FormControl('', Validators.required),  
       /* preg15_00: new FormControl('',[Validators.required]),
       preg15_01: new FormControl('',[Validators.required]),
       preg15_02: new FormControl('',[Validators.required]),
       preg15_03: new FormControl('',[Validators.required]),
       preg15_04: new FormControl('',[Validators.required]),
       preg15_05: new FormControl('',[Validators.required]),
-      preg15_06: new FormControl('',[Validators.required]) */
-      preg16: new FormControl(' ',[Validators.required]),
-      /*preg16_00: new FormControl(' ',[Validators.required]),
+      preg15_06: new FormControl('',[Validators.required]),  */
+      preg16: new FormControl('',[Validators.required]), 
+      /* preg16_00: new FormControl(' ',[Validators.required]),
       preg16_01: new FormControl(' ',[Validators.required]),
       preg16_02: new FormControl(' ',[Validators.required]),
       preg16_03: new FormControl(' ',[Validators.required]),
       preg16_04: new FormControl(' ',[Validators.required]),
       preg16_05: new FormControl(' ',[Validators.required]),
-      preg16_06: new FormControl(' ',[Validators.required]),*/
-      preg17: new FormControl(' ',[Validators.required]),
-      /*preg17_00: new FormControl(' ',[Validators.required]),
+      preg16_06: new FormControl(' ',[Validators.required]),  */
+      preg17: new FormControl('',[Validators.required]), 
+      /* preg17_00: new FormControl(' ',[Validators.required]),
       preg17_01: new FormControl(' ',[Validators.required]),
       preg17_02: new FormControl(' ',[Validators.required]),
       preg17_03: new FormControl(' ',[Validators.required]),
       preg17_04: new FormControl(' ',[Validators.required]),
-      preg17_05: new FormControl(' ',[Validators.required]), */
+      preg17_05: new FormControl(' ',[Validators.required]),  */
       preg180: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg181: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg182: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
@@ -1004,7 +1001,8 @@ export class QuestionComponent implements OnInit {
       preg29a330: new FormControl(null, [Validators.required]),
       preg29a331: new FormControl(null, [Validators.required]),
       preg29a332: new FormControl(null, [Validators.required]),
-      preg29a333: new FormControl(null, [Validators.required]) 
+      preg29a333: new FormControl(null, [Validators.required]),
+      preg29a334: new FormControl(null, [Validators.required]) 
     }); 
 
   
@@ -1016,7 +1014,6 @@ export class QuestionComponent implements OnInit {
    this.llenaquerconocerte0(this.qcQc10); 
    this.llenaqctn1(this.preg1); 
    this.llenaqctn2(this.preg2); 
-   /* this.llenaqctn2_0(this.preg2_1); */ 
    this.llenaqctn3(this.preg3); 
    this.llenaqctn4a5(this.preg4a5); 
    this.llenaqctn6a11(this.preg6a11); 
@@ -1161,19 +1158,7 @@ llenaquerconocerte0(qcQc10){
   let preConf = qcQc10;
   let questions:any = []; 
   preConf.forEach(function (element) {
-    this.userService.getDataCode(element.dataCode).subscribe(
-      data => {
-        element.question = data.description;
-        let options = [];
-        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
-          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
-        });
-        element.options = options;
-      },
-      error => {
-        console.error('There was an error getting code values ' + element.dataCode, error);
-      }
-    );
+    
     questions.push(element);
   }, this);
   this.qcQc10 = questions;
@@ -1183,19 +1168,7 @@ llenaqctn1(preg1){
   let preConf = preg1;
   let questions:any = []; 
   preConf.forEach(function (element) {
-    this.userService.getDataCode(element.dataCode).subscribe(
-      data => {
-        element.question = data.description;
-        let options = [];
-        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
-          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
-        });
-        element.options = options;
-      },
-      error => {
-        console.error('There was an error getting code values ' + element.dataCode, error);
-      }
-    );
+ 
     questions.push(element);
   }, this);
   this.preg1 = questions;
@@ -1205,19 +1178,7 @@ llenaqctn2(preg2){
   let preConf = preg2;
   let questions:any = []; 
   preConf.forEach(function (element) {
-    this.userService.getDataCode(element.dataCode).subscribe(
-      data => {
-        element.question = data.description;
-        let options = [];
-        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
-          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
-        });
-        element.options = options;
-      },
-      error => {
-        console.error('There was an error getting code values ' + element.dataCode, error);
-      }
-    );
+ 
     questions.push(element);
   }, this);
   this.preg2 = questions;
@@ -1227,19 +1188,7 @@ llenaqctn3(preg3){
   let preConf = preg3;
   let questions:any = []; 
   preConf.forEach(function (element) {
-    this.userService.getDataCode(element.dataCode).subscribe(
-      data => {
-        element.question = data.description;
-        let options = [];
-        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
-          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
-        });
-        element.options = options;
-      },
-      error => {
-        console.error('There was an error getting code values ' + element.dataCode, error);
-      }
-    );
+   
     questions.push(element);
   }, this);
   this.preg3 = questions;
@@ -1249,19 +1198,7 @@ llenaqctn4a5(preg4a5){
   let preConf = preg4a5;
   let questions:any = []; 
   preConf.forEach(function (element) {
-    this.userService.getDataCode(element.dataCode).subscribe(
-      data => {
-        element.question = data.description;
-        let options = [];
-        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
-          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
-        });
-        element.options = options;
-      },
-      error => {
-        console.error('There was an error getting code values ' + element.dataCode, error);
-      }
-    );
+ 
     questions.push(element);
   }, this);
   this.preg4a5 = questions;
@@ -1271,19 +1208,7 @@ llenaqctn6a11(preg6a11){
   let preConf = preg6a11;
   let questions:any = []; 
   preConf.forEach(function (element) {
-    this.userService.getDataCode(element.dataCode).subscribe(
-      data => {
-        element.question = data.description;
-        let options = [];
-        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
-          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
-        });
-        element.options = options;
-      },
-      error => {
-        console.error('There was an error getting code values ' + element.dataCode, error);
-      }
-    );
+  
     questions.push(element);
   }, this);
   this.preg6a11 = questions;
@@ -1315,19 +1240,7 @@ llenaqctn14(preg14){
   let preConf = preg14;
   let questions:any = []; 
   preConf.forEach(function (element) {
-    this.userService.getDataCode(element.dataCode).subscribe(
-      data => {
-        element.question = data.description;
-        let options = [];
-        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
-          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
-        });
-        element.options = options;
-      },
-      error => {
-        console.error('There was an error getting code values ' + element.dataCode, error);
-      }
-    );
+   
     questions.push(element);
   }, this);
   this.preg14 = questions;
@@ -1337,19 +1250,7 @@ llenaqctn15(preg15){
   let preConf = preg15;
   let questions:any = []; 
   preConf.forEach(function (element) {
-    this.userService.getDataCode(element.dataCode).subscribe(
-      data => {
-        element.question = data.description;
-        let options = [];
-        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
-          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
-        });
-        element.options = options;
-      },
-      error => {
-        console.error('There was an error getting code values ' + element.dataCode, error);
-      }
-    );
+
     questions.push(element);
   }, this);
   this.preg15 = questions;
@@ -1360,19 +1261,7 @@ llenaqctn15_0(preg15_0){
   let preConf = preg15_0;
   let questions:any = []; 
   preConf.forEach(function (element) {
-    this.userService.getDataCode(element.dataCode).subscribe(
-      data => {
-        element.question = data.description;
-        let options = [];
-        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
-          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
-        });
-        element.options = options;
-      },
-      error => {
-        console.error('There was an error getting code values ' + element.dataCode, error);
-      }
-    );
+ 
     questions.push(element);
   }, this);
   this.preg15_0 = questions;
@@ -1382,19 +1271,7 @@ llenaqctn16(preg16){
   let preConf = preg16;
   let questions:any = []; 
   preConf.forEach(function (element) {
-    this.userService.getDataCode(element.dataCode).subscribe(
-      data => {
-        element.question = data.description;
-        let options = [];
-        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
-          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
-        });
-        element.options = options;
-      },
-      error => {
-        console.error('There was an error getting code values ' + element.dataCode, error);
-      }
-    );
+
     questions.push(element);
   }, this);
   this.preg16 = questions;
@@ -1404,19 +1281,7 @@ llenaqctn16_0(preg16_0){
   let preConf = preg16_0;
   let questions:any = []; 
   preConf.forEach(function (element) {
-    this.userService.getDataCode(element.dataCode).subscribe(
-      data => {
-        element.question = data.description;
-        let options = [];
-        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
-          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
-        });
-        element.options = options;
-      },
-      error => {
-        console.error('There was an error getting code values ' + element.dataCode, error);
-      }
-    );
+  
     questions.push(element);
   }, this);
   this.preg16_0 = questions;
@@ -1426,19 +1291,7 @@ llenaqctn17(preg17){
   let preConf = preg17;
   let questions:any = []; 
   preConf.forEach(function (element) {
-    this.userService.getDataCode(element.dataCode).subscribe(
-      data => {
-        element.question = data.description;
-        let options = [];
-        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
-          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
-        });
-        element.options = options;
-      },
-      error => {
-        console.error('There was an error getting code values ' + element.dataCode, error);
-      }
-    );
+ 
     questions.push(element);
   }, this);
   this.preg17 = questions;
@@ -1448,19 +1301,7 @@ llenaqctn17_0(preg17_0){
   let preConf = preg17_0;
   let questions:any = []; 
   preConf.forEach(function (element) {
-    this.userService.getDataCode(element.dataCode).subscribe(
-      data => {
-        element.question = data.description;
-        let options = [];
-        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
-          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
-        });
-        element.options = options;
-      },
-      error => {
-        console.error('There was an error getting code values ' + element.dataCode, error);
-      }
-    );
+
     questions.push(element);
   }, this);
   this.preg17_0 = questions;
@@ -1470,19 +1311,7 @@ llenaqctn18(preg18){
   let preConf = preg18;
   let questions:any = []; 
   preConf.forEach(function (element) {
-    this.userService.getDataCode(element.dataCode).subscribe(
-      data => {
-        element.question = data.description;
-        let options = [];
-        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
-          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
-        });
-        element.options = options;
-      },
-      error => {
-        console.error('There was an error getting code values ' + element.dataCode, error);
-      }
-    );
+
     questions.push(element);
   }, this);
   this.preg18 = questions;
@@ -1686,21 +1515,98 @@ llenaqctn29a33(preg29a33){
      // ////console.log("form is valid? formScrDir", this.formScrDir.valid);
     //console.log("antes del valid", this.formQcQcn.value);
     if (this.formQcQcn.valid) {
-      console.log("despues del valid", this.formQcQcn.value);
+      //console.log("despues del valid", this.formQcQcn.value);
       
       //enviar datos a back
       let payload="{";
       for (const key in this.preg1) {
-        payload = payload+`"${this.preg1[key].dataCode}_cd_${this.preg1[key].columnId}":${this.preg1[key].resp},`
+        payload = payload+`"${this.preg1[key].columnId}":"${this.preg1[key].resp}",`
        
       }
       
-      payload = payload + `"locale": "es-mx", "dateFormat": "dd MMMM yyyy"}`
-      console.log("view", payload)
+      for (const key in this.preg2) {
+        payload = payload+`"${this.preg2[key].columnId}":"${this.preg2[key].resp}",`
+       
+      }
+
+      for (const key in this.preg3) {
+        payload = payload+`"${this.preg3[key].columnId}":"${this.preg3[key].resp}",`
+       
+      }
+
+      for (const key in this.preg4a5) {
+        payload = payload+`"${this.preg4a5[key].columnId}":"${this.preg4a5[key].resp}",`
+       
+      }
+
+      for (const key in this.preg6a11) {
+        payload = payload+`"${this.preg6a11[key].columnId}":"${this.preg6a11[key].resp}",`
+       
+      }
+      
+      for (const key in this.preg12a13) {
+        payload = payload+`"${this.preg12a13[key].dataCode}_cd_${this.preg12a13[key].columnId}":${this.preg12a13[key].resp},`
+       
+      }
+
+      for (const key in this.preg14) {
+        payload = payload+`"${this.preg14[key].columnId}":"${this.preg14[key].resp}",`
+       
+      }
+
+      for (const key in this.preg15) {
+        payload = payload+`"${this.preg15[key].columnId}":"${this.preg15[key].resp}",`
+        this.preg15check= this.preg15[key].resp
+      }
+
+      for (const key in this.preg15_0) {
+        /* if(this.preg15check){
+          console.log("check",this.preg15check)
+          payload = payload+`"${this.preg15_0[key].columnId}":"${this.preg15_0[key].resp='0000'}",`
+        }else{ */
+          payload = payload+`"${this.preg15_0[key].columnId}":"${this.preg15_0[key].resp}",`
+      }
+
+      for (const key in this.preg16) {
+        payload = payload+`"${this.preg16[key].columnId}":"${this.preg16[key].resp}",`
+       
+      }
+
+      for (const key in this.preg16_0) {
+        payload = payload+`"${this.preg16_0[key].columnId}":"${this.preg16_0[key].resp}",`
+       
+      }
+
+      for (const key in this.preg17) {
+        payload = payload+`"${this.preg17[key].columnId}":"${this.preg17[key].resp}",`
+       
+      }
+
+      for (const key in this.preg17_0) {
+        payload = payload+`"${this.preg17_0[key].columnId}":"${this.preg17_0[key].resp}",`
+       
+      }
+
+     for (const key in this.preg18) {
+      payload = payload+`"${this.preg18[key].columnId}":"${this.preg18[key].resp}",`
+     
+    }
+
+    for (const key in this.preg19a28) {
+      payload = payload+`"${this.preg19a28[key].dataCode}_cd_${this.preg19a28[key].columnId}":${this.preg19a28[key].resp},`
+     
+    }
+
+    for (const key in this.preg29a33) {
+      payload = payload+`"${this.preg29a33[key].dataCode}_cd_${this.preg29a33[key].columnId}":${this.preg29a33[key].resp},`
+     
+    }
+      payload = payload + `"locale": "es-mx", "dateFormat": "yyyy-MM-dd"}`
+      //console.log("view", payload)
       this.questionsServices.queremosConocerNegocio(payload).subscribe(res=>{
-        console.log("res senddir",res)
+        //console.log("res senddir",res)
       },err=>{
-        console.log("err senddir",err)
+        //console.log("err senddir",err)
       });
       this.instQrmCnct.close(1); 
       
@@ -1730,7 +1636,7 @@ llenaqctn29a33(preg29a33){
 
   monto() {
     // ////console.log("Reviso valor de check", this.sfina8);
-    if (this.sfina8) {
+    if (this.sfina2) {
       this.formQcQcn.get("preg2").setValue(" ")
     }
   }
