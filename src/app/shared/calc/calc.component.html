@@ -1,0 +1,99 @@
+<div class="row">
+    <div class="cono2 special col xl5 offset-xl1 l5 offset-l1 m5 offset-m1 s9 offset-s1">
+
+        <p class="flow-text center-align">Crédito Directo Productivo desde
+            {{20000|currency:"MXN":"symbol"}} hasta {{50000|currency:"MXN":"symbol"}}</p>
+
+
+        <div>
+            <p class="white-text white hide">.</p>
+            <br><br>
+        </div>
+
+        <div class="custom-slider">
+            <ng5-slider [(value)]="valueMon" [options]="optionsMon"></ng5-slider>
+        </div>
+        <br><br>
+        <div class="custom-slider">
+            <ng5-slider [(value)]="valuePlaz" disabled [options]="optionsPlaz"></ng5-slider>
+        </div>
+        <br><br>
+        <div>
+
+            <div class="chip hide-on-small-only">
+                Costo Anual Total Informativo (CAT): {{ catPorcentaje.toFixed(2) }} %
+            </div>
+            <div class="chip hide-on-med-and-up">
+                CAT: {{ catPorcentaje.toFixed(2) }} %
+            </div>
+        </div>
+        <div class="center-align">
+            <p class="white-text flow-text cr">Total a Pagar:<b>
+                    {{((finance.PMT(0.0125,valuePlaz,-valueMon))*valuePlaz).toFixed(2) | currency:"MXN":"symbol"}}</b>
+            </p>
+        </div>
+        <br>
+
+        <div class="center-align hide-on-small-only">
+            <button class="waves-effect waves-dark teal darken-4 btn next-step" (click)="sendMonto()">Continuar</button>
+        </div>
+
+        <div class="center-align hide-on-med-and-up">
+            <button class="waves-effect waves-dark gold btn next-step" (click)="sendMonto()">Continuar</button>
+        </div>
+    </div>
+
+    <div class="crono1 col m5 offset-m1 l5 offset-l1 s10 offset-s1 hide-on-small-only">
+        <div class="card crd teal darken-4 white-text z-depth-3">
+            <div class="card-content">
+                <i class="material-icons medium icon-gold">monetization_on</i>
+                <p>Monto</p>
+                <p>{{valueMon | currency:"MXN":"symbol" }}</p>
+            </div>
+        </div>
+
+        <div class="card crd teal darken-4 white-text z-depth-3">
+            <div class="card-content">
+                <i class="material-icons medium icon-gold">date_range</i>
+                <p>Plazo</p>
+                <p>{{valuePlaz}} Meses</p>
+            </div>
+        </div>
+
+        <div class="card crd teal darken-4 white-text z-depth-3">
+            <div class="card-content">
+                <i class="material-icons medium icon-gold">local_atm</i>
+                <p>Parcialidad</p>
+                <p>{{ finance.PMT(0.0125,valuePlaz,-valueMon).toFixed(2) | currency:"MXN":"symbol" }}
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="crono1 col s12 hide-on-med-and-up">
+        <div class="center-align">
+            <p class="white-text flow-text teal darken-4">
+                <i class="small material-icons icon-gold left">monetization_on</i> Monto <b>
+                    {{ valueMon | currency:"MXN":"symbol" }}</b>
+            </p>
+
+        </div>
+        <div class="center-align">
+            <p class="white-text flow-text teal darken-4">
+                <i class="small material-icons icon-gold left">date_range</i> Plazo <b> {{valuePlaz}}
+                    Meses</b></p>
+
+        </div>
+        <div class="center-align">
+            <p class="white-text flow-text teal darken-4">
+                <i class="small material-icons icon-gold left">local_atm</i> Parcialidad <b>
+                    {{ finance.PMT(0.0125,valuePlaz,-valueMon).toFixed(2) | currency:"MXN":"symbol" }}</b>
+            </p>
+        </div>
+    </div>
+    <!-- <div class="center-align">
+    <button class="waves-effect waves-dark teal darken-4 btn next-step">Continuar</button>
+</div> -->
+
+</div>

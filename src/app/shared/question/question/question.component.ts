@@ -1163,7 +1163,6 @@ llenaquerconocerte0(qcQc10){
   }, this);
   this.qcQc10 = questions;
 }
-
 llenaqctn1(preg1){
   let preConf = preg1;
   let questions:any = []; 

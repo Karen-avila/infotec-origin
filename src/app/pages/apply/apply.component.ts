@@ -205,4 +205,14 @@ equalPass(p1:string,p2:string){
       swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
     }
   }
+
+  capturamail(){
+    swal("Para crear tu cuenta proporciona el mismo correo electrónico que diste de alta en el Buzón Tributario del SAT; de lo contrario, no podremos otorgarte el crédito para tu negocio. Escribe tu correo electronico:", {
+      content:{ element:"input"},
+    })
+    .then((value) => {
+      this.form.get('email').setValue(value);
+      //swal(`Tu correo electronico es: ${value}`);
+    });
+  }
 }
