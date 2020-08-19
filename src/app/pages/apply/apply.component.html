@@ -36,8 +36,7 @@
                         <form ngNativeValidate [formGroup]="form" (ngSubmit)="register()">
                             <div class="input-field col s10">
                                 <i class="material-icons prefix">email</i>
-                                <input formControlName="email" name='email' id="email" type="email" class="validate">
-                                <label for="email">Correo Electrónico</label>
+                                  <input (focus)="capturamail()" formControlName="email" name='email' id="email" type="email" placeholder="Correo electrónico">
                                 <div class="red-text" *ngIf="f.email.errors?.email">El correo electrónico debe de ser valido</div>
                             </div>
                             <div class="input-field col s10">
@@ -198,7 +197,8 @@
     <div class="footer-copyright teal darken-3">
         <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
     </div>
-  </div>
+</div>
+
 
 <!--Modal de token -->
 
