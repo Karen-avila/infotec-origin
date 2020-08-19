@@ -311,7 +311,7 @@ export class UserService {
 
   }
 
-  sendContract(payload){
+/*   sendContract(payload){
     const formData: FormData = new FormData();
 
     for (const key in payload) {
@@ -335,6 +335,6 @@ export class UserService {
     });
 
 
-  }
+  } */
 
 }
