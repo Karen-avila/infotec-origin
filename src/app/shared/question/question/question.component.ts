@@ -151,7 +151,7 @@ export class QuestionComponent implements OnInit {
       value_quest: "0.05"
     },
     {
-      dataCode: "seleccione_la_opcion_que_describa_mejor_a_los_pr",
+      dataCode: "seleccione_la_opcion_que_describa_mejor_el_secto",
       columnId: "campo_9",
       question: "",
       options: [],
@@ -1161,24 +1161,11 @@ llenaquerconocerte0(qcQc10){
   let preConf = qcQc10;
   let questions:any = []; 
   preConf.forEach(function (element) {
-    this.userService.getDataCode(element.dataCode).subscribe(
-      data => {
-        element.question = data.description;
-        let options = [];
-        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
-          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
-        });
-        element.options = options;
-      },
-      error => {
-        console.error('There was an error getting code values ' + element.dataCode, error);
-      }
-    );
+    
     questions.push(element);
   }, this);
   this.qcQc10 = questions;
 }
-
 llenaqctn1(preg1){
   let preConf = preg1;
   let questions:any = []; 

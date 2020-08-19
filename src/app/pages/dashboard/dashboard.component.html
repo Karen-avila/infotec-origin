@@ -423,6 +423,9 @@
                         </div>
                         <div class="col s12 m6">
                             <div class="input-field col s12 m12">
+                               
+                                <p class="grey-text text-darken-2">Ayúdanos a agilizar la revisión de tu solicitud. Si tu dirección no se indica correctamente en el mapa, por favor, especifica la ubicación de tu domicilio con un clic sobre el sitio exacto. Toda la información será validada.</p>
+                                
                                 <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [zoomControl]="true"
                                     (mapClick)="mapClicked($event, 'personal')">
                                     <agm-marker *ngFor="let m of markers; let i = index" [latitude]="m.lat"
@@ -513,6 +516,9 @@
                         </div>
                         <div class="col s12 m6">
                             <div class="input-field col s12">
+
+                                <p class="grey-text text-darken-2">Ayúdanos a agilizar la revisión de tu solicitud. Si la dirección de tu negocio no se indica correctamente en el mapa, por favor, especifica la ubicación de tu negocio con un clic sobre el sitio exacto. Toda la información será validada.</p>
+
                                 <agm-map [latitude]="lat2" [longitude]="lng2" [zoom]="zoom2" [zoomControl]="true"
                                     (mapClick)="mapClicked($event, 'negocio')">
                                     <agm-marker *ngFor="let m of markers2; let i = index" [latitude]="m.lat"

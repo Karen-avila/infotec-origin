@@ -206,13 +206,13 @@ equalPass(p1:string,p2:string){
     }
   }
 
-  view(){
-    swal("Write something here:", {
+  capturamail(){
+    swal("Para crear tu cuenta proporciona el mismo correo electrónico que diste de alta en el Buzón Tributario del SAT; de lo contrario, no podremos otorgarte el crédito para tu negocio. Escribe tu correo electronico:", {
       content:{ element:"input"},
     })
     .then((value) => {
-      swal(`You typed: ${value}`);
+      this.form.get('email').setValue(value);
+      //swal(`Tu correo electronico es: ${value}`);
     });
   }
-
 }
