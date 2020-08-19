@@ -14,6 +14,8 @@ import { EventManager } from '@angular/platform-browser';
 
 import * as _ from 'underscore';
 
+import {Subject} from 'rxjs/Subject';
+
 declare const MStepper: any;
 
 // Pick Address
@@ -36,6 +38,8 @@ declare var google;
 })
 export class DashboardComponent implements OnInit {
 
+  valuePlaz='';
+  valueMon='';
   listaDocs=new ListaDocs();
 
   entidadNac;
@@ -154,52 +158,8 @@ export class DashboardComponent implements OnInit {
   ];
   re;
   //-------------------
-  valueMon: number = 20000;
-  optionsMon: Options = {
-    floor: 0,
-    ceil: 50000,
-    step: 10000,
-    minLimit: 20000,
-    translate: (value: number, label: LabelType): string => {
-      switch (label) {
-        case LabelType.Low:
-          this.monte = value.toLocaleString('es-MX', {
-            style: 'currency',
-            currency: 'MXN',
-          });
-          return '<b>Si te Prestamos: </b>MX' + this.monte;
-        case LabelType.Ceil:
-          return '<b>Monto Máximo: </b>MX' + value.toLocaleString('es-MX', {
-            style: 'currency',
-            currency: 'MXN',
-          });
-        default:
-          return '<b>Monto</b>';
-      }
-      //return '<b>Si te Prestamos:</b> $' + value;
-    }
-  };
-  valuePlaz: number = 18;
-  optionsPlaz: Options = {
-    floor: 0,
-    ceil: 36,
-    step: 18,
-    minLimit: 18,
-    maxLimit: 18,
-    translate: (value: number, label: LabelType): string => {
-      switch (label) {
-        case LabelType.Low:
-          return '<b>' + value + ' Meses + 3 meses de gracia</b>';
-        case LabelType.Ceil:
-          return '<b> Total 21 Meses </b>';
-        default:
-          return '<b>Plazo</b>';
-      }
-      //return '<b>Si te Prestamos:</b> $' + value;
-    }
-  };
+
   finance = new Finance();
-  catPorcentaje = 0;
   // -------------------
   constructor(
     public loanService: LoanDataService,
@@ -232,30 +192,7 @@ export class DashboardComponent implements OnInit {
       }
     );
 
-    // Monto del Prestamo
-    const montoCapital = 20000 * -1;
-    // Tasa de Interes Anual
-    const tasaInteresAnual = 0.12; // cambio a 12
-    // Tasa de Interes Mensual
-    const tasaInteresMensual = tasaInteresAnual / 12;
-    // Plazo del Credito
-    const plazoCredito = 18;
-    // Monto del Pago Mensual
-    const pmt = this.finance.PMT(tasaInteresMensual, plazoCredito, montoCapital);
-    // // ////console.log("PAGO MENSUAL ", pmt.toFixed(2));
-    const pagos = [];
-    pagos.push(montoCapital);
-    for (let i = 0; i < plazoCredito; i++) {
-      pagos.push(pmt);
-    }
-    const tirMensual = this.finance.IRR.apply(this, pagos);
-    // // ////console.log("TIR MENSUAL " +tirMensual.toFixed(2) +"%");
-    const tirAnual = tirMensual * 12;
-    // // ////console.log("TIR ANUAL "+ tirAnual.toFixed(2)+"%");
-    const cat = (Math.pow((1 + (tirMensual / 100)), 12)) - 1;
-    // // ////console.log("CAT "+cat.toFixed(2)+"%");
-    this.catPorcentaje = ((Math.pow((1 + (tirMensual / 100)), 12)) - 1) * 100;
-    // // ////console.log("CAT "+ this.catPorcentaje.toFixed(2)+"%");
+   
   }
 
   ngOnInit() {
@@ -1150,10 +1087,16 @@ findInvalidControls() {
 
     }); */
 
+    this.loanService.sendContract();
+    
     
 
-    //console.log("sefirmara",payload)
+  }
 
+  montPlaz(mensaje) {
+    console.log(mensaje);
+    this.valuePlaz = mensaje.valuePlaz;
+    this.valueMon = mensaje.valueMon;
   }
 
 

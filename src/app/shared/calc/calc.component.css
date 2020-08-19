@@ -1,0 +1,23 @@
+.crd {
+    border: 1px solid #6F7271;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.cr {
+    background-color: #DDC9A3;
+}
+
+i.icon-gold {
+    color: #BC955C;
+}
+
+
+.gold {
+  background-color: #BC955C;
+}
+
+::ng-deep .custom-slider .ng5-slider .ng5-slider-pointer-min {
+    background: #235B4E;
+}

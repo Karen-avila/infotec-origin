@@ -205,4 +205,14 @@ equalPass(p1:string,p2:string){
       swal("¡Cuidado!", "Para poder continuar, completa correctamente todos los campos.", "error");
     }
   }
+
+  view(){
+    swal("Write something here:", {
+      content:{ element:"input"},
+    })
+    .then((value) => {
+      swal(`You typed: ${value}`);
+    });
+  }
+
 }

@@ -8,21 +8,27 @@ import { QuestionComponent } from './question/question/question.component';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CalcComponent } from './calc/calc.component';
+
+import { Ng5SliderModule } from 'ng5-slider';
 
 @NgModule({
     declarations:[
         HeaderComponent,
         FooterComponent,
         PdfComponent,
-        QuestionComponent
+        QuestionComponent,
+        CalcComponent
     ],
     exports:[
         HeaderComponent,
         FooterComponent,
         PdfComponent,
-        QuestionComponent   
+        QuestionComponent,
+        CalcComponent   
     ],
     imports:[
+        Ng5SliderModule,
         PdfViewerModule,
         BrowserModule,
         FormsModule, 

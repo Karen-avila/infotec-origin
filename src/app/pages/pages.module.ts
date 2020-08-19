@@ -19,7 +19,7 @@ import { MapComponent } from './map/map/map.component';
 import { GeocodingComponent } from './map/geocoding/geocoding.component';
 import { MapPointFormComponent } from './map/map-point-form/map-point-form.component';
 import { ResultsListComponent } from './map/results-list/results-list.component';
-import {LeafletModule} from '@asymmetrik/ngx-leaflet';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
 import { AgmCoreModule } from '@agm/core';
 import { PickAddressComponent } from './pick-address/pick-address.component';

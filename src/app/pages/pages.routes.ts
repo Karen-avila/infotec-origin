@@ -10,6 +10,7 @@ import { MapComponent } from './map/map/map.component';
 import { AvisodeprivacidadComponent } from './avisodeprivacidad/avisodeprivacidad.component';
 import { LegalComponent } from './legal/legal.component';
 import { CcontratoComponent} from './ccontrato/ccontrato.component';
+import { CalcComponent } from '../shared/calc/calc.component';
 import { AmortizacionComponent } from './amortizacion/amortizacion.component';
 import { PagareComponent } from './pagare/pagare.component';
 import { CregistroComponent } from './cregistro/cregistro.component';
@@ -44,7 +45,8 @@ const pagesRoutes: Routes = [
           {path: 'avisodeprivacidadintegral', component: AvisodeprivacidadintegralComponent},
           {path: 'credito', component: CreditodirectoComponent},
           {path: 'contratodecredito', component: ContratodecreditoComponent },
-          {path: 'terminosycondiciones', component: TerminosycondicionesComponent}
+          {path: 'terminosycondiciones', component: TerminosycondicionesComponent},
+          {path: 'calc', component: CalcComponent}
         ]
       },
 ];

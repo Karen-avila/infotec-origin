@@ -17,6 +17,7 @@ export class AmortizacionComponent implements OnInit {
   loanData;
   pagareB64;
   date;
+  firma;
 
   constructor(public loanService: LoanDataService) { 
     
@@ -26,6 +27,10 @@ export class AmortizacionComponent implements OnInit {
     this.loanService.nombre.subscribe((value) => {
       this.loanData = value; 
   });
+
+  this.loanService.firma.subscribe((value) => {
+    this.firma = value; 
+});
 
     
     this.date = moment().locale('es').format('Do MMMM YYYY');
