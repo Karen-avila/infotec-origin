@@ -157,6 +157,36 @@
 
                                     </li>
 
+                                    <li class="collection-item avatar"  *ngFor="let qcQc01 of qcQc01; index as i;">
+                                        <label class="title black-text">{{qcQc01.question}}</label>
+                                        <p>
+                                            <select multiple formControlName="qcQc01" name="qcQc01" id="qcQc01">
+                                                <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
+                                                <option  value="Caminar, moverse subir o bajar">Caminar, moverse subir o bajar</option>
+                                                <option  value="Ver, aun usando lentes">Ver, aun usando lentes</option>
+                                                <option  value="Hablar, comunicarse o conversar">Hablar, comunicarse o conversar</option>
+                                                <option  value="Oir, aun usando aparato auditivo">Oir, aun usando aparato auditivo</option>
+                                                <option value="Vestirse, bañarse o comer">Vestirse, bañarse o comer</option>
+                                                <option value="Poner atención o aprender cosas sencillas">Poner atención o aprender cosas sencillas</option>
+                                                <option  value="Tiene alguna limitación mental">Tiene alguna limitación mental</option>
+                                                <option  value="No tiene dificultad física o mental">No tiene dificultad física o mental</option>
+                                              </select>
+                                        </p>
+                                    </li>
+
+                                    <li class="collection-item avatar" *ngFor="let qcQc02 of qcQc02; index as i;">
+                                        <span class="title">{{qcQc02.question}}*</span>
+
+                                        <p *ngFor="let resp of qcQc02.options; index as j;">
+                                            <label>
+                                            <input class="with-gap"  [(ngModel)]="qcQc02.resp" 
+                                            formControlName="{{'qcQc02'+i}}" id="{{'qcQc02'+j}}" 
+                                            value="{{resp.id}}" type="radio"  />
+                                            <span>{{resp.name}}</span>
+                                          </label>
+                                        </p>
+
+                                    </li>
 
                                     <li class="collection-item avatar">
                                         <div class="input-field " *ngFor="let qcQc10 of qcQc10; index as i;">
@@ -202,7 +232,7 @@
                         
                              <p>
                                 <label>
-                                    <input type="checkbox" change="monto()" [(ngModel)]="sfina2" formControlName="preg2" id="preg2"
+                                    <input type="radio" change="monto()" [(ngModel)]="sfina2" formControlName="preg2" id="preg2"
                                     name="preg2" value="NO SÉ"/>
                                     <span>NO SÉ</span>
                                 </label>
@@ -210,22 +240,19 @@
                             
                             <p>
                                 <label>
-                                    <input type="checkbox" change="monto()" [(ngModel)]="sfina2_0" formControlName="preg2" id="preg2"
-                                    name="preg2" value="SI SE PREFIERO NO DECLARARLO"/>
+                                    <input type="radio" [(ngModel)]="sfina2" formControlName="preg2" id="preg2"
+                                    name="preg2" value="SI SE PERO PREFIERO NO DECLARARLO"/>
                                     <span>SI SE PERO PREFIERO NO DECLARARLO</span>
                                 </label>
                             </p>
                             
-                            
-                                <div *ngIf="!(sfina2 || sfina2_0)" > 
                                     <p> 
                                         <span>MONTO</span>
                                         <label>
-                                            <input  [(ngModel)]="preg2.resp" formControlName="preg2" name="preg2" id="preg2" type="number"
+                                            <input  [(ngModel)]="sfina2" formControlName="preg2" name="preg2" id="preg2" type="number"
                                              placeholder='$' min='0' max='2000000' step='0.01'>
                                         </label>
                                       </p> 
-                                </div>
                             
                         </li>
 
@@ -238,7 +265,7 @@
                                      maxlength='10' title="Que el número no rebase el límite de 10 (diez) trabajadores.">
                                 </label>
                             </p>
-                            <div class="blue-text" *ngIf="f.preg3.errors">Que el número no rebase el límite de 10 (diez) trabajadores.</div>
+                            <div class="blue-text" *ngIf="f.preg3.errors">Revisa la información; las microempresas no tienen más de 10 empleados.</div>
                         </li>
                         
 
@@ -300,7 +327,7 @@
                       
                         </li>
 
-                      <div *ngIf="!sfina5" > 
+                      <!-- <div *ngIf="sfina5" >  -->
                             <li class="collection-item avatar" *ngFor="let preg15_0 of preg15_0; index as i;">
                                 <label for="{{'preg15_0'+i}}"><span class="title">{{preg15_0.question}}</span></label>
                             <p>
@@ -310,7 +337,7 @@
                                 </label>
                             </p>
                         </li>
-                    </div>
+                     <!-- </div> -->
 
                     <li class="collection-item avatar" *ngFor="let preg16 of preg16; index as i;">
                         <span class="title">{{preg16.question}}</span>
@@ -327,7 +354,7 @@
                        
                     </li>
 
-                    <div *ngIf="!sfina6" >
+                    <!-- <div *ngIf="!sfina6" > -->
                         <li class="collection-item avatar" *ngFor="let preg16_0 of preg16_0; index as i;">
                             <label for="{{'preg16_0'+i}}"><span class="title">{{preg16_0.question}}</span></label>
                         <p>
@@ -337,7 +364,7 @@
                             </label>
                         </p>
                     </li>
-                </div>
+                <!-- </div> -->
 
                 <li class="collection-item avatar" *ngFor="let preg17 of preg17; index as i;">
                     <span class="title">{{preg17.question}}</span>
@@ -352,7 +379,7 @@
                     </p>
                 </li>
 
-                <div *ngIf="!sfina7" >
+                <!-- <div *ngIf="!sfina7" > -->
                     <li class="collection-item avatar" *ngFor="let preg17_0 of preg17_0; index as i;">
                         <label for="{{'preg17_0'+i}}"><span class="title">{{preg17_0.question}}</span></label>
                     <p>
@@ -362,7 +389,7 @@
                         </label>
                     </p>
                 </li>
-            </div>
+            <!-- </div> -->
 
                         <li class="collection-item avatar" *ngFor="let preg18 of preg18; index as i;">
                             <span class="title">{{preg18.question}}</span>
@@ -388,29 +415,82 @@
 
                         </li>
 
-                        <!--MULTIPLE SELECT-->
-                       <!--  <li class="collection-item avatar" *ngFor="let preg29 of preg29; index as i;">
+                        <li class="collection-item avatar"  *ngFor="let preg29 of preg29; index as i;">
                             <label class="title black-text">{{preg29.question}}</label>
                             <p>
-                                <select multiple formControlName="preg29"  name="preg29" id="preg29" [(ngModel)]="preg29.resp">
+                                <select multiple formControlName="preg29" name="preg29" id="preg29">
                                     <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
-                                    <option  value="{{resp.id}}" *ngFor="let resp of preg29.options; index as j;">{{resp.name}}</option>
+                                    <option  value="Se lleva registros escritos del negocio. Es decir, se tiene un lugar, cuaderno, archivo o computadora donde se concentra la información de las operaciones diarias del negocio">Se lleva registros escritos del negocio. Es decir, se tiene un lugar, cuaderno, archivo o computadora donde se concentra la información de las operaciones diarias del negocio</option>
+                                    <option  value="Se sabe cuánto dinero en efectivo tiene el negocio en un momento determinado">Se sabe cuánto dinero en efectivo tiene el negocio en un momento determinado</option>
+                                    <option  value="Se sabe si las ventas de un producto (bien o servicio) en particular están subiendo o bajando de un mes a otro">Se sabe si las ventas de un producto (bien o servicio) en particular están subiendo o bajando de un mes a otro</option>
+                                    <option  value="Se sabe cuánto le cuesta al negocio generar cada uno de sus principales productos (bienes o servicios). Por ejemplo, si tiene que calcular cuánto le cuesta producir una galleta, se hacen las cuentas de cuánto gasta en comprar harina, azúcar, leche, luz para usar la batidora, gas para el horno, renta del local, etcétera; otro ejemplo: si se ofrece un servicio de transporte, se hacen las cuentas de cuánto se gasta en el consumo de gasolina, casetas de peaje, etcétera.">Se sabe cuánto le cuesta al negocio generar cada uno de sus principales productos (bienes o servicios). Por ejemplo, si tiene que calcular cuánto le cuesta producir una galleta, se hacen las cuentas de cuánto gasta en comprar harina, azúcar, leche, luz para usar la batidora, gas para el horno, renta del local, etcétera; otro ejemplo: si se ofrece un servicio de transporte, se hacen las cuentas de cuánto se gasta en el consumo de gasolina, casetas de peaje, etcétera. </option>
+                                    <option value="Se sabe de qué productos (bienes o servicios) se obtienen más ganancias por cada uno que vende">Se sabe de qué productos (bienes o servicios) se obtienen más ganancias por cada uno que vende</option>
+                                    <option value="El negocio no lleva registros y no cuenta con información que permita conocer a detalle su operación">El negocio no lleva registros y no cuenta con información que permita conocer a detalle su operación</option>
                                   </select>
                             </p>
-                        </li>  -->
+                        </li>
 
-                        <li class="collection-item avatar" *ngFor="let preg29a33 of preg29a33; index as i;">
-                            <span class="title">{{preg29a33.question}}</span>
-
-                            <p *ngFor="let resp of preg29a33.options; index as j;">
-                                <label>
-                                <input class="with-gap" [(ngModel)]="preg29a33.resp" 
-                                formControlName="{{'preg29a33'+i}}" id="{{'preg29a33'+j}}" 
-                                value="{{resp.id}}" type="radio" />
-                                <span>{{resp.name}}</span>
-                              </label>
+                        <li class="collection-item avatar"  *ngFor="let preg30 of preg30; index as i;">
+                            <label class="title black-text">{{preg30.question}}</label>
+                            <p>
+                                <select multiple formControlName="preg30" name="preg30" id="preg30">
+                                    <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
+                                    <option  value="Por tradición familiar o lo heredó">Por tradición familiar o lo heredó</option>
+                                    <option  value="Para complementar el ingreso familiar">Para complementar el ingreso familiar</option>
+                                    <option  value="Para mejorar el ingreso">Para mejorar el ingreso</option>
+                                    <option  value="Tenía dinero y encontró una buena oportuindad">Tenía dinero y encontró una buena oportuindad</option>
+                                    <option value="Para ejercer su oficio, carrera o profesión">Para ejercer su oficio, carrera o profesión</option>
+                                    <option value="Fue la única manera que tuvo para obtener un ingreso">Fue la única manera que tuvo para obtener un ingreso</option>
+                                    <option  value="No tenía la experiencia requerida para un empleo">No tenía la experiencia requerida para un empleo</option>
+                                    <option  value="No tenía la escolaridad o capacitación requerida para un empleo">No tenía la escolaridad o capacitación requerida para un empleo</option>
+                                    <option  value="Estaba sobrecapacitado para un empleo">Estaba sobrecapacitado para un empleo</option>
+                                    <option  value="Los empleos que encontró estaban mal pagados">Los empleos que encontró estaban mal pagados</option>
+                                    <option  value="Requería un horario flexible">Requería un horario flexible</option>
+                                    <option  value="No había oportunidades de empleo">No había oportunidades de empleo</option>
+                                    <option  value="Otra razón">Otra razón</option>
+                                  </select>
                             </p>
+                        </li>
 
+                        <li class="collection-item avatar"  *ngFor="let preg31 of preg31; index as i;">
+                            <label class="title black-text">{{preg31.question}}</label>
+                            <p>
+                                <select multiple formControlName="preg31" name="preg31" id="preg31">
+                                    <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
+                                    <option  value="Sí, es un local independiente">Sí, es un local independiente</option>
+                                    <option  value="Sí, es un local o instalación que forma parte de un conjunto de locales">Sí, es un local o instalación que forma parte de un conjunto de locales</option>
+                                    <option  value="No">No</option>
+                                  </select>
+                            </p>
+                        </li>
+
+                        <li class="collection-item avatar"  *ngFor="let preg32 of preg32; index as i;">
+                            <label class="title black-text">{{preg32.question}}</label>
+                            <p>
+                                <select multiple formControlName="preg32" name="preg32" id="preg32">
+                                    <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
+                                    <option  value="Tienda, accesoria o tendajón">Tienda, accesoria o tendajón</option>
+                                    <option  value="Taller (de servicios o de reparación)">Taller (de servicios o de reparación)</option>
+                                    <option  value="Fábrica, tortillería, panadería">Fábrica, tortillería, panadería</option>
+                                    <option  value="Oficina, despacho, consultorio">Oficina, despacho, consultorio</option>
+                                  </select>
+                            </p>
+                        </li>
+
+                        <li class="collection-item avatar"  *ngFor="let preg33 of preg33; index as i;">
+                            <label class="title black-text">{{preg33.question}}</label>
+                            <p>
+                                <select multiple formControlName="preg33" name="preg33" id="preg33">
+                                    <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
+                                    <option  value="Vehículo con o sin motor">Vehículo con o sin motor</option>
+                                    <option  value="Puesto fijo fuera de un techo común">Puesto fijo fuera de un techo común</option>
+                                    <option  value="Puesto semifijo bajo un techo común en pasillos de un centro comercial">Puesto semifijo bajo un techo común en pasillos de un centro comercial</option>
+                                    <option  value="Puesto semifijo en un tianguis">Puesto semifijo en un tianguis</option>
+                                    <option value="En un domicilio particular con una instalación especial">En un domicilio particular con una instalación especial</option>
+                                    <option value="En un domicilio particular sin una instalación especial">En un domicilio particular sin una instalación especial</option>
+                                    <option  value="Otro lugar">Otro lugar</option>
+                                  </select>
+                            </p>
                         </li>
 
                         <div class="col s12">
@@ -486,94 +566,4 @@
 
 
 
-<!--original
 
-                <div class="col s12 m9">
-                    <ul class="collapsible popout">
-                        <li>
-                            <div class="collapsible-header"><i class="material-icons">work</i>Perfil del Negocio</div>
-                            <div class="collapsible-body">
-                                <ul class="collection">
-                                    <li class="collection-item avatar" *ngFor="let pregsc1 of sec1; index as i;">
-                                        <span class="title">{{pregsc1.quest}}</span>
-
-                                        <p *ngFor="let resp of pregsc1.opts">
-                                            <label>
-                                                <input class="with-gap" name="{{'group'+[i]}}" type="radio"  />
-                                                <span>{{resp}}</span>
-                                              </label>
-                                        </p>
-
-
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="collapsible-header"><i class="material-icons">card_travel</i>Perfil de Mercado</div>
-                            <div class="collapsible-body">
-                                <ul class="collection">
-                                    <li class="collection-item avatar" *ngFor="let pregsc2 of sec2; index as i;">
-                                        <span class="title">{{pregsc2.quest}}</span>
-
-                                        <p *ngFor="let resp of pregsc2.opts">
-                                            <label>
-                                                <input class="with-gap" name="{{'group'+[i]}}" type="radio"  />
-                                                <span>{{resp}}</span>
-                                              </label>
-                                        </p>
-
-
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="collapsible-header"><i class="material-icons">star_border</i>Reputación</div>
-                            <div class="collapsible-body">
-                                <ul class="collection">
-                                    <li class="collection-item avatar" *ngFor="let pregsc3 of sec3; index as i;">
-                                        <span class="title">{{pregsc3.quest}}</span>
-
-                                        <p *ngFor="let resp of pregsc3.opts">
-                                            <label>
-                                                <input class="with-gap" name="{{'group'+[i]}}" type="radio"  />
-                                                <span>{{resp}}</span>
-                                              </label>
-                                        </p>
-
-
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="collapsible-header"><i class="material-icons">place</i>Dirección</div>
-                            <div class="collapsible-body">
-                                <ul class="collection">
-                                    <li class="collection-item avatar" *ngFor="let pregsc4 of sec4; index as i;">
-                                        <span class="title">{{pregsc4.quest}}</span>
-
-                                        <p *ngFor="let resp of pregsc4.opts">
-                                            <label>
-                                                <input class="with-gap" name="{{'group'+[i]}}" type="radio"  />
-                                                <span>{{resp}}</span>
-                                              </label>
-                                        </p>
-
-
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-
-
-
-                    </ul>
-                </div>
-
--->

@@ -37,13 +37,13 @@
                             <div class="input-field col s10">
                                 <i class="material-icons prefix">email</i>
                                   <input (focus)="capturamail()" formControlName="email" name='email' id="email" type="email" placeholder="Correo electrónico">
-                                <div class="red-text" *ngIf="f.email.errors?.email">El correo electrónico debe de ser valido</div>
+                                <div class="red-text" *ngIf="f.email.errors?.email">Para crear tu cuenta proporciona el mismo correo electrónico que diste de alta al tramitar tu firma electrónica en el SAT; de lo contrario, no podremos otorgarte el crédito para tu negocio.</div>
                             </div>
                             <div class="input-field col s10">
                                 <i class="material-icons prefix">https</i>
                                 <input formControlName="password" name='password' id="password" [type]="passType" class="validate">
                                 <label for="password">Contraseña</label>
-                                <div class="red-text col s12" *ngIf="f.password.errors && !form.pristine">Debe tener un mínimo de 8 caracteres 1 Mayúscula 1 minúscula 1 número 1 carácter especial</div>
+                                <div class="red-text col s12" *ngIf="f.password.errors && !form.pristine">Debe tener un mínimo de 8 caracteres, 1 mayúscula, 1 minúscula, 1 número y 1 carácter especial.</div>
                                 <i class="material-icons prefix cursor" *ngIf="icon" (click)="viewPassword()">visibility_off</i>
                                 <i class="material-icons prefix cursor" *ngIf="!icon" (click)="viewPassword()">visibility</i>
                             </div>

@@ -16,12 +16,12 @@ import swal from 'sweetalert';
 })
 export class QuestionComponent implements OnInit {
   calendar;
-  sfina5 = false;
-  sfina6 = false;
-  sfina7 = false;
-  sfina2 = false;
-  sfina2_0 = false;
-  preg15check
+  sfina5 = 'NO CUENTO CON NINGÚN FINANCIAMIENTO';
+  sfina6 = 'NO CUENTO CON NINGÚN FINANCIAMIENTO';
+  sfina7 = 'NO CUENTO CON NINGÚN FINANCIAMIENTO';
+  sfina2 = 'NO SÉ'
+  
+  
 
   /* Perfil de negocio */
 
@@ -289,14 +289,18 @@ export class QuestionComponent implements OnInit {
       question: "",
       resp: "",
       options: []
-    },
+    }];
+
+    qcQc01 = [
     {
-      dataCode: "en_su_vida_diaria_tiene_dificultad_al_realizar_l",
+      dataCode: "",
       columnId: "campo_4",
-      question: "",
+      question: "En su vida diaria, ¿tiene dificultad al realizar las siguientes actividades? (Seleccionar una o varias opciones)*",
       resp: "",
       options: []
-    },
+    }];
+
+    qcQc02 =[
     {
       dataCode: "usa_usted_internet_habitualmente",
       columnId: "campo_5",
@@ -375,49 +379,50 @@ export class QuestionComponent implements OnInit {
       options: []
     }];
 
-  preg6a11 = [
+    preg6a11 = [
 
-    {
-      dataCode: "",
-      columnId: "campo_7",
-      question: "¿De cuánto efectivo dispone actualmente para cubrir las operaciones del negocios? Incluya lo que guarda en su casa, en el banco o en el negocio. *",
-      resp: "",
-      options: []
-    },
-    {
-      dataCode: "",
-      columnId: "campo_8",
-      question: "¿Al día de hoy cuánto le deben por venta de bienes a crédito o servicios realizados y que aún no le hayan terminado de pagar? *",
-      resp: "",
-      options: []
+      {
+        dataCode: "",
+        columnId: "campo_7",
+        question: "¿De cuánto efectivo dispone actualmente para cubrir las operaciones del negocios? Incluya lo que guarda en su casa, en el banco o en el negocio. *",
+        resp: "",
+        options: []
       },
-    {
-      dataCode: "",
-      columnId: "campo_9",
-      question: "Cuánto obtendría si vendiera el material de oficina, la maquinaria que usa en su negocio, aparatos de su propiedad o el local del negocio en caso de que sea suyo? *",
-      options: []
-    },
-    {
-      dataCode: "",
-      columnId: "campo_10",
-      question: "Pensando en los últimos 6 meses, en promedio, ¿a cuánto ascienden, cada mes, otros ingresos obtenidos además de los generados por su actividad principal del negocio? *",
-      resp: "",
-      options: []
-    },
-    {
-      dataCode: "",
-      columnId: "campo_11",
-      question: "Pensando en los últimos 6 meses, en promedio, ¿cuánto vende o ingresa por la realización de sus servicios cada mes sin descontar los gastos? *",
-      resp: "",
-      options: []
-    },
-    {
-      dataCode: "",
-      columnId: "campo_12",
-      question: "En promedio ¿cuánto gasta cada vez que surte su negocio con mercancías para la venta de bienes o realización de sus servicios? *",
-      resp: "",
-      options: []
-    }];
+      {
+        dataCode: "",
+        columnId: "campo_8",
+        question: "¿Al día de hoy cuánto le deben por venta de bienes a crédito o servicios realizados y que aún no le hayan terminado de pagar? *",
+        resp: "",
+        options: []
+      },
+      {
+        dataCode: "",
+        columnId: "campo_9",
+        question: "Cuánto obtendría si vendiera el material de oficina, la maquinaria que usa en su negocio, aparatos de su propiedad o el local del negocio en caso de que sea suyo? *",
+        options: []
+      },
+      {
+        dataCode: "",
+        columnId: "campo_10",
+        question: "Pensando en los últimos 6 meses, en promedio, ¿a cuánto ascienden, cada mes, otros ingresos obtenidos además de los generados por su actividad principal del negocio? *",
+        resp: "",
+        options: []
+      },
+      {
+        dataCode: "",
+        columnId: "campo_11",
+        question: "Pensando en los últimos 6 meses, en promedio, ¿cuánto vende o ingresa por la realización de sus servicios cada mes sin descontar los gastos? *",
+        resp: "",
+        options: [] 
+      },
+      {
+        dataCode: "",
+        columnId: "campo_12",
+        question: "En promedio ¿cuánto gasta cada vez que surte su negocio con mercancías para la venta de bienes o realización de sus servicios? *",
+        resp: "",
+        options: []
+      }
+    ];
 
   preg12a13 = [
     {
@@ -519,7 +524,7 @@ export class QuestionComponent implements OnInit {
     {
       dataCode: "",
       columnId: "campo_26",
-      question: "¿Indique el monto de financiamiento que haya recibido de cada una de las fuentes siguientes durante el ejercicio fiscal anterior o indique sino contó con alguno? *",
+      question: "¿Indique el monto de financiamiento que haya recibido de cada una de las fuentes siguientes durante el ejercicio fiscal anterior o indique si no contó con alguno? *",
       resp: "",
       options: []
     }
@@ -581,7 +586,7 @@ export class QuestionComponent implements OnInit {
     {
       dataCode: "",
       columnId: "campo_34",
-      question: "¿Cuánto debe al día de hoy por los conceptos siguientes o indique sino contó con alguno? *",
+      question: "¿Cuánto debe al día de hoy por los conceptos siguientes o indique si no contó con alguno? *",
       resp: "",
       options: []
     }
@@ -643,7 +648,7 @@ export class QuestionComponent implements OnInit {
     {
       dataCode: "",
       columnId: "campo_42",
-      question: "En promedio, ¿cuánto paga cada mes por los conceptos siguientes o indique sino contó con alguno? *",
+      question: "En promedio, ¿cuánto paga cada mes por los conceptos siguientes o indique si no contó con alguno? *",
       resp: "",
       options: []
     }
@@ -819,39 +824,48 @@ export class QuestionComponent implements OnInit {
     }];
 
   
-  preg29a33 = [
+  preg29 = [
     {
-      dataCode: "en_la_empresa_se_realizan_actualmente_algunas_de",
+      dataCode: "",
       columnId: "campo_66",
-      question: "",
+      question: "¿En la empresa se realizan actualmente algunas de las siguientes actividades? (seleccionar una o más de las siguientes opciones)*",
       options: [],
       resp: ""
-    },
+    }];
+
+  preg30 = [
     {
-      dataCode: "cual_es_el_motivo_principal_por_el_que_se_inicio",
+      dataCode: "",
       columnId: "campo_67",
-      question: "",
+      question: "¿Cuál es el motivo principal por el que se inició en este negocio o actividad? (Seleccionar una o varias opciones)*",
       resp: "",
       options: []
-    },
+    }
+  ];
+
+  preg31 = [
     {
-      dataCode: "en_su_negocio_o_actividad_cuanta_con_un_local_pa",
+      dataCode: "",
       columnId: "campo_68",
-      question: "",
+      question: "En su negocio o actividad, ¿cuenta con un local para trabajar sea o no de su propiedad? (Seleccione una opción o más de una si tiene varios locales)*",
       resp: "",
       options: []
-    },
+    }];
+
+  preg32 = [
     {
-      dataCode: "en_caso_de_ser_local_independiente_fuera_de_un_t",
+      dataCode: "",
       columnId: "campo_69",
-      question: "",
+      question: "En caso de ser local independiente (fuera de un techo común), ¿éste es? (Seleccionar una o varias opciones)*",
       resp: "",
       options: []
-    },
+    }];
+
+    preg33 =[
     {
-      dataCode: "si_no_cuenta_con_un_local_en_donde_se_realizan_l",
+      dataCode: "",
       columnId: "campo_70",
-      question: "",
+      question: "Si no cuenta con un local, ¿en dónde se realizan las actividades de su negocio? (Seleccionar una o varias opciones)*",
       resp: "",
       options: []
     }
@@ -926,10 +940,10 @@ export class QuestionComponent implements OnInit {
       qcQc0: new FormControl(null, [Validators.required]),
       qcQc1: new FormControl(null, [Validators.required]),
       qcQc2: new FormControl(null, [Validators.required]),
-      qcQc3: new FormControl(null, [Validators.required]),
-      qcQc4: new FormControl(null, [Validators.required]),
-      qcQc5: new FormControl(null, [Validators.required]),
-      qcQc6: new FormControl(null, [Validators.required]),
+      qcQc01: new FormControl(null, [Validators.required]),
+      qcQc020: new FormControl(null, [Validators.required]),
+      qcQc021: new FormControl(null, [Validators.required]),
+      qcQc022: new FormControl(null, [Validators.required]),
       qcQc10: new FormControl(null, [Validators.required,Validators.min(0), Validators.max(38)])
     }); 
 
@@ -959,28 +973,28 @@ export class QuestionComponent implements OnInit {
       preg149: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg1410: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg15: new FormControl('', Validators.required),  
-      /* preg15_00: new FormControl('',[Validators.required]),
-      preg15_01: new FormControl('',[Validators.required]),
-      preg15_02: new FormControl('',[Validators.required]),
-      preg15_03: new FormControl('',[Validators.required]),
-      preg15_04: new FormControl('',[Validators.required]),
-      preg15_05: new FormControl('',[Validators.required]),
-      preg15_06: new FormControl('',[Validators.required]),  */
+      preg15_00: new FormControl('N/A',[Validators.min(0), Validators.max(10000000)]),
+      preg15_01: new FormControl('N/A',[Validators.min(0), Validators.max(10000000)]),
+      preg15_02: new FormControl('N/A',[Validators.min(0), Validators.max(10000000)]),
+      preg15_03: new FormControl('N/A',[Validators.min(0), Validators.max(10000000)]),
+      preg15_04: new FormControl('N/A',[Validators.min(0), Validators.max(10000000)]),
+      preg15_05: new FormControl('N/A',[Validators.min(0), Validators.max(10000000)]),
+      preg15_06: new FormControl('N/A',[Validators.min(0), Validators.max(10000000)]),
       preg16: new FormControl('',[Validators.required]), 
-      /* preg16_00: new FormControl(' ',[Validators.required]),
-      preg16_01: new FormControl(' ',[Validators.required]),
-      preg16_02: new FormControl(' ',[Validators.required]),
-      preg16_03: new FormControl(' ',[Validators.required]),
-      preg16_04: new FormControl(' ',[Validators.required]),
-      preg16_05: new FormControl(' ',[Validators.required]),
-      preg16_06: new FormControl(' ',[Validators.required]),  */
+      preg16_00: new FormControl('N/A',[Validators.min(0), Validators.max(10000000)]),
+      preg16_01: new FormControl('N/A',[Validators.min(0), Validators.max(10000000)]),
+      preg16_02: new FormControl('N/A',[Validators.min(0), Validators.max(10000000)]),
+      preg16_03: new FormControl('N/A',[Validators.min(0), Validators.max(10000000)]),
+      preg16_04: new FormControl('N/A',[Validators.min(0), Validators.max(10000000)]),
+      preg16_05: new FormControl('N/A',[Validators.min(0), Validators.max(10000000)]),
+      preg16_06: new FormControl('N/A',[Validators.min(0), Validators.max(10000000)]),
       preg17: new FormControl('',[Validators.required]), 
-      /* preg17_00: new FormControl(' ',[Validators.required]),
-      preg17_01: new FormControl(' ',[Validators.required]),
-      preg17_02: new FormControl(' ',[Validators.required]),
-      preg17_03: new FormControl(' ',[Validators.required]),
-      preg17_04: new FormControl(' ',[Validators.required]),
-      preg17_05: new FormControl(' ',[Validators.required]),  */
+      preg17_00: new FormControl('N/A',[Validators.min(0), Validators.max(2000000)]),
+      preg17_01: new FormControl('N/A',[Validators.min(0), Validators.max(2000000)]),
+      preg17_02: new FormControl('N/A',[Validators.min(0), Validators.max(2000000)]),
+      preg17_03: new FormControl('N/A',[Validators.min(0), Validators.max(2000000)]),
+      preg17_04: new FormControl('N/A',[Validators.min(0), Validators.max(2000000)]),
+      preg17_05: new FormControl('N/A',[Validators.min(0), Validators.max(2000000)]),
       preg180: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg181: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg182: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
@@ -998,11 +1012,11 @@ export class QuestionComponent implements OnInit {
       preg19a287: new FormControl(null, [Validators.required]),
       preg19a288: new FormControl(null, [Validators.required]),
       preg19a289: new FormControl(null, [Validators.required]),
-      preg29a330: new FormControl(null, [Validators.required]),
-      preg29a331: new FormControl(null, [Validators.required]),
-      preg29a332: new FormControl(null, [Validators.required]),
-      preg29a333: new FormControl(null, [Validators.required]),
-      preg29a334: new FormControl(null, [Validators.required]) 
+      preg29: new FormControl(null, [Validators.required]),
+      preg30: new FormControl(null, [Validators.required]),
+      preg31: new FormControl(null, [Validators.required]),
+      preg32: new FormControl(null, [Validators.required]),
+      preg33: new FormControl(null, [Validators.required]) 
     }); 
 
   
@@ -1011,6 +1025,8 @@ export class QuestionComponent implements OnInit {
    this.llenaPerfMerc(this.scrPerMer); 
    this.llenaPerfNeg(this.scrPerNeg); 
    this.llenaquerconocerte(this.qcQc);
+   this.llenaquerconocerte1(this.qcQc01);
+   this.llenaquerconocerte2(this.qcQc02);
    this.llenaquerconocerte0(this.qcQc10); 
    this.llenaqctn1(this.preg1); 
    this.llenaqctn2(this.preg2); 
@@ -1027,7 +1043,11 @@ export class QuestionComponent implements OnInit {
    this.llenaqctn17_0(this.preg17_0);
    this.llenaqctn18(this.preg18); 
    this.llenaqctn19a28(this.preg19a28); 
-   this.llenaqctn29a33(this.preg29a33); 
+   this.llenaqctn29(this.preg29);
+   this.llenaqctn30(this.preg30); 
+   this.llenaqctn31(this.preg31);
+   this.llenaqctn32(this.preg32);
+   this.llenaqctn33(this.preg33);
 
 
   }
@@ -1153,6 +1173,43 @@ llenaquerconocerte(qcQc){
   this.qcQc = questions;
   
 }
+
+llenaquerconocerte1(qcQc01){
+  
+  let preConf = qcQc01;
+  let questions:any = []; 
+  preConf.forEach(function (element) {
+    
+    questions.push(element);
+  }, this);
+  this.qcQc01 = questions;
+  
+}
+
+llenaquerconocerte2(qcQc02){
+  
+  let preConf = qcQc02;
+  let questions:any = []; 
+  preConf.forEach(function (element) {
+    this.userService.getDataCode(element.dataCode).subscribe(
+      data => {
+        element.question = data.description;
+        let options = [];
+        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
+          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+        });
+        element.options = options;
+      },
+      error => {
+        console.error('There was an error getting code values ' + element.dataCode, error);
+      }
+    );
+    questions.push(element);
+  }, this);
+  this.qcQc02 = questions;
+  
+}
+
 
 llenaquerconocerte0(qcQc10){
   let preConf = qcQc10;
@@ -1338,26 +1395,58 @@ llenaqctn19a28(preg19a28){
   this.preg19a28 = questions;
 }
 
-llenaqctn29a33(preg29a33){
-  let preConf = preg29a33;
+llenaqctn29(preg29){
+  let preConf = preg29;
   let questions:any = []; 
   preConf.forEach(function (element) {
-    this.userService.getDataCode(element.dataCode).subscribe(
-      data => {
-        element.question = data.description;
-        let options = [];
-        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
-          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
-        });
-        element.options = options;
-      },
-      error => {
-        console.error('There was an error getting code values ' + element.dataCode, error);
-      }
-    );
+    
     questions.push(element);
   }, this);
-  this.preg29a33 = questions;
+  this.preg29 = questions;
+  //console.log("ver",this.preg29)
+}
+
+llenaqctn30(preg30){
+  let preConf = preg30;
+  let questions:any = []; 
+  preConf.forEach(function (element) {
+    
+    questions.push(element);
+  }, this);
+  this.preg30 = questions;
+  //console.log("ver",this.preg29)
+}
+
+llenaqctn31(preg31){
+  let preConf = preg31;
+  let questions:any = []; 
+  preConf.forEach(function (element) {
+    
+    questions.push(element);
+  }, this);
+  this.preg31 = questions;
+  //console.log("ver",this.preg29)
+}
+
+llenaqctn32(preg32){
+  let preConf = preg32;
+  let questions:any = []; 
+  preConf.forEach(function (element) {
+    
+    questions.push(element);
+  }, this);
+  this.preg32 = questions;
+  //console.log("ver",this.preg29)
+}
+
+llenaqctn33(preg33){
+  let preConf = preg33;
+  let questions:any = []; 
+  preConf.forEach(function (element) {
+    
+    questions.push(element);
+  }, this);
+  this.preg33 = questions;
   //console.log("ver",this.preg29)
 }
 
@@ -1485,12 +1574,20 @@ llenaqctn29a33(preg29a33){
     // ////console.log("form is valid? formScrDir", this.formScrDir.valid);
     //console.log("antes del valid", this.formQcQc.value);
     if (this.formQcQc.valid) {
-      //console.log("form direccion", this.formScrDir.value);
+      console.log("form direccion", this.formQcQc.value);
       //console.log("forma direccion", this.scrDir);
       //enviar datos a back
       let payload="{";
       for (const key in this.qcQc) {
         payload = payload+`"${this.qcQc[key].dataCode}_cd_${this.qcQc[key].columnId}":${this.qcQc[key].resp},`
+       
+      }
+      for (const key in this.qcQc01) {
+        payload = payload+`"${this.formQcQc.get('qcQc01').value}",`
+       
+      }
+      for (const key in this.qcQc02) {
+        payload = payload+`"${this.qcQc02[key].dataCode}_cd_${this.qcQc02[key].columnId}":${this.qcQc02[key].resp},`
        
       }
       for (const key in this.qcQc10) {
@@ -1512,9 +1609,9 @@ llenaqctn29a33(preg29a33){
   
   queremosConocerteNegocioSend() {
      // ////console.log("form is valid? formScrDir", this.formScrDir.valid);
-    //console.log("antes del valid", this.formQcQcn.value);
+    console.log("antes del valid", this.formQcQcn.value);
     if (this.formQcQcn.valid) {
-      //console.log("despues del valid", this.formQcQcn.value);
+      console.log("despues del valid", this.formQcQcn.value);
       
       //enviar datos a back
       let payload="{";
@@ -1524,7 +1621,7 @@ llenaqctn29a33(preg29a33){
       }
       
       for (const key in this.preg2) {
-        payload = payload+`"${this.preg2[key].columnId}":"${this.preg2[key].resp}",`
+        payload = payload+`"${this.preg2[key].columnId}":"${this.formQcQcn.get('preg2').value}",`
        
       }
 
@@ -1554,20 +1651,15 @@ llenaqctn29a33(preg29a33){
       }
 
       for (const key in this.preg15) {
-        payload = payload+`"${this.preg15[key].columnId}":"${this.preg15[key].resp}",`
-        this.preg15check= this.preg15[key].resp
+        payload = payload+`"${this.preg15[key].columnId}":"${this.formQcQcn.get('preg15').value}",`
       }
 
       for (const key in this.preg15_0) {
-        /* if(this.preg15check){
-          console.log("check",this.preg15check)
-          payload = payload+`"${this.preg15_0[key].columnId}":"${this.preg15_0[key].resp='0000'}",`
-        }else{ */
           payload = payload+`"${this.preg15_0[key].columnId}":"${this.preg15_0[key].resp}",`
       }
 
       for (const key in this.preg16) {
-        payload = payload+`"${this.preg16[key].columnId}":"${this.preg16[key].resp}",`
+        payload = payload+`"${this.preg16[key].columnId}":"${this.formQcQcn.get('preg16').value}",`
        
       }
 
@@ -1577,7 +1669,7 @@ llenaqctn29a33(preg29a33){
       }
 
       for (const key in this.preg17) {
-        payload = payload+`"${this.preg17[key].columnId}":"${this.preg17[key].resp}",`
+        payload = payload+`"${this.preg17[key].columnId}":"${this.formQcQcn.get('preg17').value}",`
        
       }
 
@@ -1596,12 +1688,34 @@ llenaqctn29a33(preg29a33){
      
     }
 
-    for (const key in this.preg29a33) {
-      payload = payload+`"${this.preg29a33[key].dataCode}_cd_${this.preg29a33[key].columnId}":${this.preg29a33[key].resp},`
+    for (const key in this.preg29) {
+      
+      payload = payload+`"${this.formQcQcn.get('preg29').value}",`
+      
+    }
+
+    for (const key in this.preg30) {
+      payload = payload+`"${this.formQcQcn.get('preg30').value}",`
      
     }
+
+    for (const key in this.preg31) {
+      payload = payload+`"${this.formQcQcn.get('preg31').value}",`
+     
+    }
+
+    for (const key in this.preg32) {
+      payload = payload+`"${this.formQcQcn.get('preg32').value}",`
+     
+    }
+
+    for (const key in this.preg33) {
+      payload = payload+`"${this.formQcQcn.get('preg33').value}",`
+     
+    }
+
       payload = payload + `"locale": "es-mx", "dateFormat": "yyyy-MM-dd"}`
-      //console.log("view", payload)
+      console.log("view", payload)
       this.questionsServices.queremosConocerNegocio(payload).subscribe(res=>{
         //console.log("res senddir",res)
       },err=>{
