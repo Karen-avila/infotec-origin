@@ -22,6 +22,7 @@ export class QuestionComponent implements OnInit {
   sfina2 = 'NO SÉ'
   
   
+  
 
   /* Perfil de negocio */
 
@@ -826,7 +827,7 @@ export class QuestionComponent implements OnInit {
   
   preg29 = [
     {
-      dataCode: "",
+      dataCode: "en_la_empresa_se_realizan_actualmente_algunas_de",
       columnId: "campo_66",
       question: "¿En la empresa se realizan actualmente algunas de las siguientes actividades? (seleccionar una o más de las siguientes opciones)*",
       options: [],
@@ -835,7 +836,7 @@ export class QuestionComponent implements OnInit {
 
   preg30 = [
     {
-      dataCode: "",
+      dataCode: "cual_es_el_motivo_principal_por_el_que_se_inicio",
       columnId: "campo_67",
       question: "¿Cuál es el motivo principal por el que se inició en este negocio o actividad? (Seleccionar una o varias opciones)*",
       resp: "",
@@ -845,7 +846,7 @@ export class QuestionComponent implements OnInit {
 
   preg31 = [
     {
-      dataCode: "",
+      dataCode: "en_su_negocio_o_actividad_cuanta_con_un_local_pa",
       columnId: "campo_68",
       question: "En su negocio o actividad, ¿cuenta con un local para trabajar sea o no de su propiedad? (Seleccione una opción o más de una si tiene varios locales)*",
       resp: "",
@@ -854,7 +855,7 @@ export class QuestionComponent implements OnInit {
 
   preg32 = [
     {
-      dataCode: "",
+      dataCode: "en_caso_de_ser_local_independiente_fuera_de_un_t",
       columnId: "campo_69",
       question: "En caso de ser local independiente (fuera de un techo común), ¿éste es? (Seleccionar una o varias opciones)*",
       resp: "",
@@ -863,7 +864,7 @@ export class QuestionComponent implements OnInit {
 
     preg33 =[
     {
-      dataCode: "",
+      dataCode: "si_no_cuenta_con_un_local_en_donde_se_realizan_l",
       columnId: "campo_70",
       question: "Si no cuenta con un local, ¿en dónde se realizan las actividades de su negocio? (Seleccionar una o varias opciones)*",
       resp: "",
@@ -973,28 +974,28 @@ export class QuestionComponent implements OnInit {
       preg149: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg1410: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg15: new FormControl('', Validators.required),  
-      preg15_00: new FormControl('N/A',[Validators.min(0), Validators.max(10000000)]),
-      preg15_01: new FormControl('N/A',[Validators.min(0), Validators.max(10000000)]),
-      preg15_02: new FormControl('N/A',[Validators.min(0), Validators.max(10000000)]),
-      preg15_03: new FormControl('N/A',[Validators.min(0), Validators.max(10000000)]),
-      preg15_04: new FormControl('N/A',[Validators.min(0), Validators.max(10000000)]),
-      preg15_05: new FormControl('N/A',[Validators.min(0), Validators.max(10000000)]),
-      preg15_06: new FormControl('N/A',[Validators.min(0), Validators.max(10000000)]),
+      preg15_00: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
+      preg15_01: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
+      preg15_02: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
+      preg15_03: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
+      preg15_04: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
+      preg15_05: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
+      preg15_06: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
       preg16: new FormControl('',[Validators.required]), 
-      preg16_00: new FormControl('N/A',[Validators.min(0), Validators.max(10000000)]),
-      preg16_01: new FormControl('N/A',[Validators.min(0), Validators.max(10000000)]),
-      preg16_02: new FormControl('N/A',[Validators.min(0), Validators.max(10000000)]),
-      preg16_03: new FormControl('N/A',[Validators.min(0), Validators.max(10000000)]),
-      preg16_04: new FormControl('N/A',[Validators.min(0), Validators.max(10000000)]),
-      preg16_05: new FormControl('N/A',[Validators.min(0), Validators.max(10000000)]),
-      preg16_06: new FormControl('N/A',[Validators.min(0), Validators.max(10000000)]),
+      preg16_00: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
+      preg16_01: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
+      preg16_02: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
+      preg16_03: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
+      preg16_04: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
+      preg16_05: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
+      preg16_06: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
       preg17: new FormControl('',[Validators.required]), 
-      preg17_00: new FormControl('N/A',[Validators.min(0), Validators.max(2000000)]),
-      preg17_01: new FormControl('N/A',[Validators.min(0), Validators.max(2000000)]),
-      preg17_02: new FormControl('N/A',[Validators.min(0), Validators.max(2000000)]),
-      preg17_03: new FormControl('N/A',[Validators.min(0), Validators.max(2000000)]),
-      preg17_04: new FormControl('N/A',[Validators.min(0), Validators.max(2000000)]),
-      preg17_05: new FormControl('N/A',[Validators.min(0), Validators.max(2000000)]),
+      preg17_00: new FormControl(null,[Validators.min(0), Validators.max(2000000)]),
+      preg17_01: new FormControl(null,[Validators.min(0), Validators.max(2000000)]),
+      preg17_02: new FormControl(null,[Validators.min(0), Validators.max(2000000)]),
+      preg17_03: new FormControl(null,[Validators.min(0), Validators.max(2000000)]),
+      preg17_04: new FormControl(null,[Validators.min(0), Validators.max(2000000)]),
+      preg17_05: new FormControl(null,[Validators.min(0), Validators.max(2000000)]),
       preg180: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg181: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg182: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
@@ -1574,7 +1575,7 @@ llenaqctn33(preg33){
     // ////console.log("form is valid? formScrDir", this.formScrDir.valid);
     //console.log("antes del valid", this.formQcQc.value);
     if (this.formQcQc.valid) {
-      console.log("form direccion", this.formQcQc.value);
+      //console.log("form direccion", this.formQcQc.value);
       //console.log("forma direccion", this.scrDir);
       //enviar datos a back
       let payload="{";
@@ -1583,7 +1584,7 @@ llenaqctn33(preg33){
        
       }
       for (const key in this.qcQc01) {
-        payload = payload+`"${this.formQcQc.get('qcQc01').value}",`
+        payload = payload+`"${this.qcQc01[key].columnId}":"${this.formQcQc.get('qcQc01').value}",`
        
       }
       for (const key in this.qcQc02) {
@@ -1594,8 +1595,8 @@ llenaqctn33(preg33){
         payload = payload+`"${this.qcQc10[key].columnId}":${this.qcQc10[key].resp},`
        
       }
-      payload = payload + `"locale": "es-mx", "dateFormat": "dd MMMM yyyy"}`
-      console.log("view", payload)
+      payload = payload + `"locale": "es-mx", "dateFormat": "yyyy-MM-dd"}`
+      //console.log("view", payload)
       this.questionsServices.queremosConocerte(payload).subscribe(res=>{
         //console.log("res senddir",res)
       },err=>{
@@ -1609,9 +1610,9 @@ llenaqctn33(preg33){
   
   queremosConocerteNegocioSend() {
      // ////console.log("form is valid? formScrDir", this.formScrDir.valid);
-    console.log("antes del valid", this.formQcQcn.value);
+    //console.log("antes del valid", this.formQcQcn.value);
     if (this.formQcQcn.valid) {
-      console.log("despues del valid", this.formQcQcn.value);
+      //console.log("despues del valid", this.formQcQcn.value);
       
       //enviar datos a back
       let payload="{";
@@ -1690,32 +1691,32 @@ llenaqctn33(preg33){
 
     for (const key in this.preg29) {
       
-      payload = payload+`"${this.formQcQcn.get('preg29').value}",`
+      payload = payload+`"${this.preg29[key].dataCode}_cd_${this.preg29[key].columnId}":"${this.formQcQcn.get('preg29').value}",`
       
     }
 
     for (const key in this.preg30) {
-      payload = payload+`"${this.formQcQcn.get('preg30').value}",`
+      payload = payload+`"${this.preg30[key].dataCode}_cd_${this.preg30[key].columnId}":"${this.formQcQcn.get('preg30').value}",`
      
     }
 
     for (const key in this.preg31) {
-      payload = payload+`"${this.formQcQcn.get('preg31').value}",`
+      payload = payload+`"${this.preg31[key].dataCode}_cd_${this.preg31[key].columnId}":"${this.formQcQcn.get('preg31').value}",`
      
     }
 
     for (const key in this.preg32) {
-      payload = payload+`"${this.formQcQcn.get('preg32').value}",`
+      payload = payload+`"${this.preg32[key].dataCode}_cd_${this.preg32[key].columnId}":"${this.formQcQcn.get('preg32').value}",`
      
     }
 
     for (const key in this.preg33) {
-      payload = payload+`"${this.formQcQcn.get('preg33').value}",`
+      payload = payload+`"${this.preg33[key].dataCode}_cd_${this.preg33[key].columnId}":"${this.formQcQcn.get('preg33').value}",`
      
     }
 
       payload = payload + `"locale": "es-mx", "dateFormat": "yyyy-MM-dd"}`
-      console.log("view", payload)
+      //console.log("view", payload)
       this.questionsServices.queremosConocerNegocio(payload).subscribe(res=>{
         //console.log("res senddir",res)
       },err=>{
