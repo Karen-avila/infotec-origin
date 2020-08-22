@@ -754,7 +754,7 @@ findInvalidControls() {
         .subscribe(res => {
           // claveelector
           // CURP 
-          var curp = <HTMLInputElement>document.getElementById('curp');
+          /* var curp = <HTMLInputElement>document.getElementById('curp'); */
           var identification = <HTMLInputElement>document.getElementById('claveelector');
           var payload = { // INE 1, CURP 2
             documentTypeId: 1,
@@ -762,18 +762,18 @@ findInvalidControls() {
             documentKey: identification.value,
             description: "Clave Elector"
           };
-          var payload2 = { // INE 1, CURP 2
+          /* var payload2 = { // INE 1, CURP 2
             documentTypeId: 2,
             status: "Active",
             documentKey: curp.value,
             description: "Curp"
-          }
+          } */
           this.userService.sendIdentification(payload).subscribe(res => {
             ////console.log("sube clave elector", res);
           });
-          this.userService.sendIdentification(payload2).subscribe(res => {
+          /* this.userService.sendIdentification(payload2).subscribe(res => {
             ////console.log("sube curp",res);
-          });
+          }); */
 
           //send references
           this.userService.sendPersonalReferences(ref1).subscribe(res => {
@@ -895,6 +895,57 @@ findInvalidControls() {
       }
     });
   }
+
+  sweetDoc(id) {
+  
+    swal({
+      title: 'Importante',
+      // tslint:disable-next-line: max-line-length
+      text: 'Descarga tu ' + this.alrt[id].name + ' en la dirección ' + this.alrt[id].url + ' o puede acceder dando click en el boton de abajo',
+      icon: 'info',
+      buttons: {
+        d: {
+          text: 'Cancelar',
+          value: false,
+          visible: true,
+          className: '',
+          closeModal: true,
+        },
+        j: {
+          text: 'Consultar ' + this.alrt[id].name,
+          value: true,
+          visible: true,
+          className: 'red darken-4',
+          closeModal: true,
+        }
+      }
+    }).then((value) => {
+      if (value) {
+        window.open(this.alrt[id].url, '_blank');
+      }
+    });
+  }
+
+  sweetHelp() {
+  
+    swal({
+      title: 'Ayuda',
+      // tslint:disable-next-line: max-line-length
+      text: 'Si eres PERSONA FÍSICA CON ACTIVIDAD EMPRESARIAL envía tu última DECLARACIÓN DEL EJERCICIO DE IMPUESTOS FEDERALES; si eres PERSONA FÍSICA EN EL RÉGIMEN DE INCORPORACIÓN FISCAL envía el último ',
+      icon: 'info',
+      buttons: {
+        d: {
+          text: 'Aceptar',
+          value: false,
+          visible: true,
+          className: '',
+          closeModal: true,
+        }
+      }
+    });
+    
+  }
+
   viewMap() {
     // // ////console.log("map")
     document.getElementById('steps').classList.add('hide');

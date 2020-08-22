@@ -181,9 +181,9 @@
                         <input class="validate" id="telpersonal" type="text" formControlName="telpersonal"
                             (keypress)="numberOnly($event)" name="Número de Teléfono" minlength="10" maxlength="10"
                             required>
-                        <label for="text">Número de Celular *</label>
+                        <label for="text">Número de Celular Personal *</label>
 
-                        <div class="blue-text" *ngIf="f.telpersonal.errors">El teléfono debe ser de 10 digitos</div>
+                        <div class="blue-text" *ngIf="f.telpersonal.errors">El teléfono debe ser de 10 dígitos</div>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
@@ -238,7 +238,7 @@
 
                         <a class="modal-trigger" href="#helpIne"><i
                                 class="material-icons prefix icon-black">help_outline</i></a>
-                        <div class="blue-text" *ngIf="f.claveelector.errors">Clave de Elector invalida</div>
+                        <div class="blue-text" *ngIf="f.claveelector.errors">Clave de Elector inválida</div>
                     </div>
 
                     <!--<div class="input-field col s12 m6 l6">
@@ -412,7 +412,7 @@
                                     maxlength="10" required>
                                 <label for="text">Teléfono de Negocio *</label>
 
-                                <div class="blue-text" *ngIf="f.phoneneg.errors">El teléfono debe ser de 10 digitos
+                                <div class="blue-text" *ngIf="f.phoneneg.errors">El teléfono debe ser de 10 dígitos
                                 </div>
                             </div>
                         </div>
@@ -574,7 +574,7 @@
                             name="Teléfono Referencia 1" (keypress)="numberOnly($event)" minlength="10" maxlength="10"
                             required>
                         <label for="text">Número de Celular *</label>
-                        <div class="blue-text" *ngIf="f.ref1tel.errors">El teléfono debe ser de 10 digitos</div>
+                        <div class="blue-text" *ngIf="f.ref1tel.errors">El teléfono debe ser de 10 dígitos</div>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
@@ -654,7 +654,7 @@
                             name="Teléfono Referencia 2" (keypress)="numberOnly($event)" minlength="10" maxlength="10"
                             required>
                         <label for="text">Número de Celular *</label>
-                        <div class="blue-text" *ngIf="f.ref2tel.errors">El teléfono debe ser de 10 digitos</div>
+                        <div class="blue-text" *ngIf="f.ref2tel.errors">El teléfono debe ser de 10 dígitos</div>
                     </div>
 
                     <div class="input-field col s12 m6 l6">
@@ -756,7 +756,7 @@
                             <label class="title black-text"><b class="title col s12 m12 l12">Identificación
                                     Oficial</b></label>
                             <p><br></p>
-                            <p>Selecciona el tipo de identificación que usaras, estos archivos podrán ser (PDF, imagen)
+                            <p>Selecciona el tipo de identificación que usarás, estos archivos podrán ser (PDF, imagen).
                             </p>
                         </div>
 
@@ -807,7 +807,7 @@
                                 </div>
                                 <div class="file-path-wrapper">
                                     <input class="file-path validate" type="text"
-                                        placeholder="Archivos permitidos PDF, JPG">
+                                        placeholder="Archivos permitidos (PDF, JPG)">
                                 </div>
                             </div>
 
@@ -828,7 +828,7 @@
                                     </div>
                                     <div class="file-path-wrapper">
                                         <input class="file-path validate" type="text"
-                                            placeholder="Archivos permitidos PDF, JPG">
+                                            placeholder="Archivos permitidos (PDF, JPG)">
                                     </div>
                                 </div>
                             </div>
@@ -854,7 +854,7 @@
                                 </div>
                                 <div class="file-path-wrapper">
                                     <input class="file-path validate" type="text"
-                                        placeholder="Archivos permitidos PDF, JPG">
+                                        placeholder="Archivos permitidos (PDF, JPG)">
                                 </div>
                             </div>
 
@@ -872,8 +872,8 @@
                     <div class="row">
                         <div>
                             <div class="col s12 m2 l2">
-                                <span>Comprobante de Domicilio Personal</span>
-                                <a (click)="sweetHome('1')"><i
+                                <span>Comprobante de Domicilio Personal con Antigüedad No Mayor a 3 Meses</span>
+                                <a (click)="sweetDoc('1')"><i
                                         class="material-icons prefix icon-black">help_outline</i></a>
                             </div>
                             <div class="file-field input-field col s12 m4 l4">
@@ -891,7 +891,7 @@
                                 </div>
                                 <div class="file-path-wrapper">
                                     <input class="file-path validate" type="text"
-                                        placeholder="Archivos permitidos PDF, JPG">
+                                        placeholder="Archivos permitidos (PDF, JPG)">
                                 </div>
                             </div>
                         </div>
@@ -899,8 +899,8 @@
 
                         <div>
                             <div class="col s12 m2 l2">
-                                <span>Comprobante de Domicilio del Negocio</span>
-                                <a (click)="sweetHome('3')"><i
+                                <span>Comprobante de Domicilio del Negocio con Antigüedad No Mayor a 3 Meses</span>
+                                <a (click)="sweetDoc('3')"><i
                                         class="material-icons prefix icon-black">help_outline</i></a>
                             </div>
                             <div class="file-field input-field col s12 m4 l4">
@@ -919,7 +919,7 @@
                                 </div>
                                 <div class="file-path-wrapper">
                                     <input class="file-path validate" type="text"
-                                        placeholder="Archivos permitidos PDF, JPG">
+                                        placeholder="Archivos permitidos (PDF, JPG)">
                                 </div>
                             </div>
                         </div>
@@ -937,7 +937,7 @@
 
                     <div class="row">
                         <div class="col s12 m2 l2">
-                            <span>Estado de Cuenta</span>
+                            <span>Estado de la Cuenta Bancaria a Nombre de Quien Solicita el Crédito</span>
                         </div>
                         <div class="file-field input-field col s12 m4 l4">
                             <div class="teal darken-4 btn">
@@ -955,12 +955,13 @@
                             </div>
                             <div class="file-path-wrapper">
                                 <input class="file-path validate" type="text"
-                                    placeholder="Archivos permitidos PDF, JPG">
+                                    placeholder="Archivos permitidos (PDF, JPG)">
                             </div>
                         </div>
 
                         <div class="col s12 m2 l2">
-                            <span>Última Declaración Anual</span>
+                            <span>Última Declaración Fiscal</span>
+                            <a (click)="sweetHelp()"><i class="material-icons prefix icon-black">help_outline</i></a>
                         </div>
                         <div class="file-field input-field col s12 m4 l4">
                             <div class="teal darken-4 btn">
@@ -977,13 +978,13 @@
                             </div>
                             <div class="file-path-wrapper">
                                 <input class="file-path validate" type="text"
-                                    placeholder="Archivos permitidos PDF, JPG">
+                                    placeholder="Archivos permitidos (PDF, JPG)">
                             </div>
                         </div>
 
                         <div class="col s12 m2 l2">
                             <span>CURP</span>
-                            <a (click)="sweetHome('0')"><i class="material-icons prefix icon-black">help_outline</i></a>
+                            <a (click)="sweetDoc('0')"><i class="material-icons prefix icon-black">help_outline</i></a>
                         </div>
                         <div class="file-field input-field col s12 m4 l4">
                             <div class="teal darken-4 btn">
@@ -997,12 +998,12 @@
                             </div>
                             <div class="file-path-wrapper">
                                 <input class="file-path validate" type="text"
-                                    placeholder="Archivos permitidos PDF, JPG">
+                                    placeholder="Archivos permitidos (PDF)">
                             </div>
                         </div>
 
                         <div class="col s12 m2 l2">
-                            <span>Constancia de Situación Fiscal (32D)</span>
+                            <span>Constancia de Situación Fiscal</span>
                             <a (click)="sweetHome('2')"><i class="material-icons prefix icon-black">help_outline</i></a>
                         </div>
                         <div class="file-field input-field col s12 m4 l4">
@@ -1018,7 +1019,7 @@
                             </div>
                             <div class="file-path-wrapper">
                                 <input class="file-path validate" type="text"
-                                    placeholder="Archivos permitidos PDF, JPG">
+                                    placeholder="Archivos permitidos (PDF)">
                             </div>
                         </div>
                     </div>
@@ -1207,7 +1208,7 @@
                                 <label class="title black-text"><b class="title col s12 m12 l12">Revisa tus
                                         Documentos</b></label>
                                 <p><br></p>
-                                <p>Revisa cada uno de tus documentos, y si estas de acuerdo fírmalos.</p>
+                                <p>Revisa cada uno de tus documentos; y si estás de acuerdo, fírmalos.</p>
                             </div>
                         </div>
                         <div class="card col s12">
