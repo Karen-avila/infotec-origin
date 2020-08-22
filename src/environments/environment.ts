@@ -11,7 +11,8 @@ export const environment = {
   gravitee_api_keys : {
     'registro': 'b338ca04-1360-4ad8-8c57-51ddaf5ea410',
     'fineract': 'd9d19371-ab0c-47f1-a524-c4aa4cc71d43',
-    'curp': 'f9518304-7c90-4a75-8cad-9a3e1779694a'
+    'curp': 'f9518304-7c90-4a75-8cad-9a3e1779694a',
+    'firma': 'f6807c90-76da-46d2-84ec-e9102f4349f7'
   },
   headers_mifos : {
     'Fineract-Platform-TenantId': 'default',

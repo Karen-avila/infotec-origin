@@ -10,105 +10,7 @@
             <div class="step-title waves-effect waves-dark">Datos de Préstamo</div>
             <div class="step-content">
                 <app-calc (montPlaz)="montPlaz($event)"></app-calc>
-<!--                 <div class="row">
-                    <div class="cono2 special col xl5 offset-xl1 l5 offset-l1 m5 offset-m1 s9 offset-s1">
-
-                        <p class="flow-text center-align">Crédito Directo Productivo desde
-                            {{20000|currency:"MXN":"symbol"}} hasta {{50000|currency:"MXN":"symbol"}}</p>
-
-
-                        <div>
-                            <p class="white-text white hide">.</p>
-                            <br><br>
-                        </div>
-
-                        <div class="custom-slider">
-                            <ng5-slider [(value)]="valueMon" [options]="optionsMon"></ng5-slider>
-                        </div>
-                        <br><br>
-                        <div class="custom-slider">
-                            <ng5-slider [(value)]="valuePlaz" disabled [options]="optionsPlaz"></ng5-slider>
-                        </div>
-                        <br><br>
-                        <div>
-
-                            <div class="chip hide-on-small-only">
-                                Costo Anual Total Informativo (CAT): {{ catPorcentaje.toFixed(2) }} %
-                            </div>
-                            <div class="chip hide-on-med-and-up">
-                                CAT: {{ catPorcentaje.toFixed(2) }} %
-                            </div>
-                        </div>
-                        <div class="center-align">
-                            <p class="white-text flow-text cr">Total a Pagar:<b>
-                                    {{((finance.PMT(0.0125,valuePlaz,-valueMon))*valuePlaz).toFixed(2) | currency:"MXN":"symbol"}}</b>
-                            </p>
-                        </div>
-                        <br>
-
-                        <div class="center-align hide-on-small-only">
-                            <button class="waves-effect waves-dark teal darken-4 btn next-step">Continuar</button>
-                        </div>
-
-                        <div class="center-align hide-on-med-and-up">
-                            <button class="waves-effect waves-dark gold btn next-step">Continuar</button>
-                        </div>
-                    </div>
-
-                    <div class="crono1 col m5 offset-m1 l5 offset-l1 s10 offset-s1 hide-on-small-only">
-                        <div class="card crd teal darken-4 white-text z-depth-3">
-                            <div class="card-content">
-                                <i class="material-icons medium icon-gold">monetization_on</i>
-                                <p>Monto</p>
-                                <p>{{valueMon | currency:"MXN":"symbol" }}</p>
-                            </div>
-                        </div>
-
-                        <div class="card crd teal darken-4 white-text z-depth-3">
-                            <div class="card-content">
-                                <i class="material-icons medium icon-gold">date_range</i>
-                                <p>Plazo</p>
-                                <p>{{valuePlaz}} Meses</p>
-                            </div>
-                        </div>
-
-                        <div class="card crd teal darken-4 white-text z-depth-3">
-                            <div class="card-content">
-                                <i class="material-icons medium icon-gold">local_atm</i>
-                                <p>Parcialidad</p>
-                                <p>{{ finance.PMT(0.0125,valuePlaz,-valueMon).toFixed(2) | currency:"MXN":"symbol" }}
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="crono1 col s12 hide-on-med-and-up">
-                        <div class="center-align">
-                            <p class="white-text flow-text teal darken-4">
-                                <i class="small material-icons icon-gold left">monetization_on</i> Monto <b>
-                                    {{ valueMon | currency:"MXN":"symbol" }}</b>
-                            </p>
-
-                        </div>
-                        <div class="center-align">
-                            <p class="white-text flow-text teal darken-4">
-                                <i class="small material-icons icon-gold left">date_range</i> Plazo <b> {{valuePlaz}}
-                                    Meses</b></p>
-
-                        </div>
-                        <div class="center-align">
-                            <p class="white-text flow-text teal darken-4">
-                                <i class="small material-icons icon-gold left">local_atm</i> Parcialidad <b>
-                                    {{ finance.PMT(0.0125,valuePlaz,-valueMon).toFixed(2) | currency:"MXN":"symbol" }}</b>
-                            </p>
-                        </div>
-                    </div>
-
-                </div> -->
-                <!-- Here goes your actions buttons -->
             </div>
-
         </li>
         <li class="step">
             <div class="step-title waves-effect waves-dark">Datos Personales</div>
@@ -1308,40 +1210,6 @@
                                 <p>Revisa cada uno de tus documentos, y si estas de acuerdo fírmalos.</p>
                             </div>
                         </div>
-                        <!--  <div class="card col s12">
-                        <div class="card-content">
-
-                            <div class="row center">
-                                
-                                    <div class="col s12 m4">
-                                      <button class="waves-effect teal btn darken-4 modal-trigger" href="#ccontrato">
-                                        <span class="white-text text-darken-4" style="font-size: 14px;">
-                                          Ver Caratula de Contrato
-                                        </span>
-                                      </button>
-                                    </div> &nbsp;
-                                    
-                                    <div class="col s12 m4">
-                                      <button class="waves-effect teal btn darken-4 modal-trigger" href="#tamortizacion">
-                                        <span class="white-text text-darken-4" style="font-size: 14px;">
-                                          Ver Tabla de Amortización
-                                        </span>
-                                      </button>
-                                    </div>&nbsp;
-                                    
-                                    <div class="col s12 m4">
-                                      <button class="waves-effect teal btn darken-4 modal-trigger" href="#pagare">
-                                        <span class="white-text text-darken-3" style="font-size: 14px;">
-                                          Ver Pagaré
-                                        </span>
-                                      </button>
-                                    </div>
-                                
-
-
-                            </div>
-                        </div>
-                    </div> -->
                         <div class="card col s12">
                             <div class="card-content">
                                 <div class="row">
@@ -1366,51 +1234,11 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <!--                                 <ul>
-                                    <li><label class="waves-effect modal-trigger subrayar" href="#ccontrato">
-                                            <span class="blue-text text-darken-4" style="font-size: 14px;">Ver Caratula
-                                                de Contrato</span>
-                                        </label>
-                                    </li>
-                                    <li><label class="waves-effect modal-trigger subrayar" href="#tamortizacion">
-                                            <span class="blue-text text-darken-4" style="font-size: 14px;">Ver Tabla de
-                                                Amortización</span>
-                                        </label>
-                                    </li>
-                                    <li><label class="waves-effect modal-trigger subrayar" href="#pagare">
-                                            <span class="blue-text text-darken-4" style="font-size: 14px;">Ver
-                                                Pagaré</span>
-                                        </label>
-                                    </li>
-                                    <li><label class="waves-effect modal-trigger subrayar" href="#pagare">
-                                            <span class="blue-text text-darken-4" style="font-size: 14px;">Ver
-                                                Aviso de Privacidad Integral</span>
-                                        </label>
-                                    </li>
-                                    <li><label class="waves-effect modal-trigger subrayar" href="#pagare">
-                                            <span class="blue-text text-darken-4" style="font-size: 14px;">Ver Autorización
-                                                para investigación de Crédito
-                                            </span>
-                                        </label>
-                                    </li>
-                                    <li><label class="waves-effect modal-trigger subrayar" href="#pagare">
-                                            <span class="blue-text text-darken-4" style="font-size: 14px;">Ver Solicitud
-                                                de Contratación
-                                            </span>
-                                        </label>
-                                    </li>
-                                    <li><label class="waves-effect modal-trigger subrayar" href="#pagare">
-                                            <span class="blue-text text-darken-4" style="font-size: 14px;">Ver Contrato
-                                                de Adheción
-                                            </span>
-                                        </label>
-                                    </li>
-                                </ul> -->
                                 <br>
-                                    <button class="waves-effect teal darken-4 btn right" (click)=sendSign()>Firmar
+                                    <a class="waves-effect teal darken-4 btn right" (click)=sendSign()>Firmar
                                         <!--revisar nextstep igual en ts-->
                                         <i class="material-icons prefix right">arrow_forward_ios</i>
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -1473,13 +1301,6 @@
                                             <label for="password">Contraseña de tu FIEL</label>
                                             <div class="col s1 m1 l1" *ngIf="fir.passwordFirm.errors?.required"></div>
                                         </div>
-
-
-                                        <!--   <div class="input-field col s12 m4 l4">
-                                    <a class="waves-effect teal darken-4 btn modal-trigger" href="#modalContr">Ver Carátula Informativa
-                                        <i class="medium material-icons icon-gold right">visibility</i>
-                                    </a>
-                                </div> -->
 
                                         <div class="row">
                                             <div class="input-field col s12 m12 l12">
@@ -1603,15 +1424,6 @@
     </div>
 </div>
 
-
-
-
-
-<!-- <div id="modalMap" class="iframe-container hide">
-    <a (click)="mapOk()" class="waves-effect teal darken-4 btn">Aceptar</a>
-    <iframe id="mapFrame" src="/map"></iframe>
-</div> -->
-
 <div id="ccontrato" class="modal">
     <div class="modal-content">
         <app-ccontrato></app-ccontrato>
@@ -1640,9 +1452,6 @@
     <div class="modal-content">
         <app-pagare (prpPagare)="recibePagare($event)"></app-pagare>
     </div>
-    <!-- <div class="modal-footer">
-        <a class="modal-close waves-effect teal darken-4 white-text btn-flat">Cerrar</a>
-    </div> -->
     <div class="footer-copyright teal darken-3">
         <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
     </div>

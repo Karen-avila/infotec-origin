@@ -1066,28 +1066,33 @@ findInvalidControls() {
      
     //console.log("entre a firma")
     let payload = {
-      cartcontrato : document.getElementById("PDFpagare").innerText,
-      tabamortizacion: document.getElementById("PDFpagare").innerText,
-      pagare: document.getElementById("PDFpagare").innerText,
-      avprivintegral: document.getElementById("PDFpagare").innerText,
-      autcirccred: document.getElementById("PDFpagare").innerText,
-      solcontratacion: document.getElementById("PDFpagare").innerText,
-      contradhecion: document.getElementById("PDFpagare").innerText,
+      cartcontrato : document.getElementById("PDFamortizacion").innerText,
+      tabamortizacion: document.getElementById("PDFamortizacion").innerText,
+      pagare: document.getElementById("PDFamortizacion").innerText,
+      avprivintegral: document.getElementById("PDFamortizacion").innerText,
+      autcirccred: document.getElementById("PDFamortizacion").innerText,
+      solcontratacion: document.getElementById("PDFamortizacion").innerText,
+      contradhecion: document.getElementById("PDFamortizacion").innerText,
       cer: flcer,
       key: flkey,
-      passwordfirm: this.formFielFirm.value.passwordFirm,
+      passwordfirm: this.formFielFirm.value.passwordFirm
+      /* ,
       base64EncodedAuthenticationKey: localStorage.getItem('authkey'),
-      clientid: localStorage.getItem('clientid'),
+      clientid: localStorage.getItem('clientid'), */
     };
 
 
-    /* this.userService.sendContract(payload).subscribe(res=>{
+/*     this.userService.sendContract(payload).subscribe(res=>{
 
     },err=>{
 
     }); */
 
-    this.loanService.sendContract();
+    this.loanService.sendContract(payload).subscribe(res=>{
+      console.log("envias a firmar",res)
+     },err=>{
+       
+     });
     
     
 
