@@ -207,7 +207,7 @@ equalPass(p1:string,p2:string){
   }
 
   capturamail(){
-    swal("Para crear tu cuenta proporciona el mismo correo electrónico que diste de alta al tramitar tu firma electrónica en el SAT; de lo contrario, no podremos otorgarte el crédito para tu negocio. Escribe el correo electrónico:", {
+    swal("Para crear tu cuenta proporciona el mismo correo que diste de alta al tramitar tu firma electrónica; de lo contrario, no podremos otorgarte el crédito para tu negocio. Escribe tu correo electronico:", {
       content:{ element:"input"},
     })
     .then((value) => {
