@@ -1,74 +1,24 @@
 <app-header></app-header>
 <br><br>
-<div class="step-title waves-effect waves-dark">
-    <label class="title black-text"><b class="title col s12 m12 l12">
-        Subir Nuevamente Documentos
-    </b></label>
-</div>
+<div class="step-title waves-effect waves-dark">Subir Documentos</div>
             <div class="step-content">
                 <form ngNativeValidate [formGroup]="formDocumentos" (ngSubmit)="ddocumentos()">
                     <input type="text" hidden formControlName="paso" class="validate">
                     <input type="text" hidden formControlName="clientid" class="validate">
                     <div class="row">
 
-                        <!--                  <div class="col s12">
-                        <div class="input-field col s12 m4">
-                            <p>
-                                <label>
-                            <input class="with-gap teal darken-4"  name="typeId" id="typeId" type="radio" formControlName="typeId" [(ngModel)]="typeId" value="ine" (change)="typeIdFun()"/>
-                            <span>INE</span>
-                        </label>
-                            </p>
-                        </div>
-                        <div class="input-field col s12 m4">
-                            <p>
-                                <label>
-                            <input class="with-gap teal darken-4"  name="typeId" id="typeId" type="radio" formControlName="typeId" [(ngModel)]="typeId" value="pasaporte" (change)="typeIdFun()"/>
-                            <span>Pasaporte</span>
-                        </label>
-                            </p>
-                        </div>
-                    </div> -->
-                        <!--  -->
                         <div class="input-field col s12 m12 l12">
                             <i class="material-icons prefix icon-gold">vpn_key</i>
                             <label class="title black-text"><b class="title col s12 m12 l12">Identificación
                                     Oficial</b></label>
                             <p><br></p>
-                            <p>Selecciona el tipo de identificación que usarás, estos archivos podrán ser (PDF, imagen).
-                            </p>
-                        </div>
-
-                        <div class="input-field col s12 m4">
-                            <p>
-                                <label>
-                                    <input class="with-gap teal darken-4" (change)="typeIdFun()"
-                                        formControlName="typeId" id="typeId" type="radio" value="ine"
-                                        [(ngModel)]="typeId" />
-                                    <span>INE</span>
-                                </label>
-                            </p>
-                        </div>
-                        <div class="input-field col s12 m4">
-                            <p>
-                                <label>
-                                    <input class="with-gap teal darken-4" (change)="typeIdFun()"
-                                        formControlName="typeId" id="typeId" type="radio" value="pasaporte"
-                                        [(ngModel)]="typeId" />
-                                    <span>Pasaporte</span>
-                                </label>
+                            <p>Estos archivos podrán ser (PDF, imagen).
                             </p>
                         </div>
                     </div>
                     <div class="row">
-                        <!--                     <div>
-                        <p class="white-text white hide">.</p>
-                        <br><br>
-
-                    </div>
-
-<br><br> -->
-                        <div *ngIf="typeId==='ine'">
+                       
+                    
 
                             <div class="col s12 m2 l2">
                                 <span>Identificación Oficial Frontal (INE)</span>
@@ -112,32 +62,7 @@
                                 </div>
                             </div>
 
-                        </div>
 
-                        <div *ngIf="typeId==='pasaporte'">
-
-                            <div class="col s12 m2 l2">
-                                <span>Identificación Oficial (Pasaporte)</span>
-                            </div>
-
-                            <div class="file-field input-field col s12 m4 l4">
-                                <div class="teal darken-4 btn">
-                                    <i class="material-icons right">attachment</i>cargar
-                                    <input type="file" required formControlName="frontal"
-                                        (change)="ValidateSize('frontal')"
-                                        accept="image/jpg, image/jpeg, image/png, application/pdf" id="frontal"
-                                        class="validate">
-                                </div>
-                                <div class="col s1 m1 l1" *ngIf="doc.frontal.errors?.required">
-                                    <i class="material-icons icon-red">error_outline</i>
-                                </div>
-                                <div class="file-path-wrapper">
-                                    <input class="file-path validate" type="text"
-                                        placeholder="Archivos permitidos (PDF, JPG)">
-                                </div>
-                            </div>
-
-                        </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12 m12 l12">
@@ -303,59 +228,6 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="input-field col s12 m12 l12">
-                            <i class="material-icons prefix icon-gold">vpn_key</i>
-                            <label class="title black-text"><b class="title col s12 m12 l12">Firma de
-                                    Documentos</b></label>
-                            <p><br></p>
-                            <p>Selecciona los archivos de tu firma electrónica avanzada (FIEL)</p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="file-field input-field col s12 m6 l6">
-                            <div class="teal darken-4 btn">
-                                <i class="material-icons right">attachment</i>Archivo .key
-
-
-                                <input type="file" (change)="ValidateSize('fiel')" accept=".key" id="fiel" required
-                                    class="validate"> <!-- formControlName="fiel" -->
-
-                                <div class="red-text" *ngIf="fi.fiel.errors?.required">
-                                </div>
-                            </div>
-                            <div class="file-path-wrapper">
-                                <input class="file-path validate" type="text">
-                            </div>
-                        </div>
-                        <div>
-
-                            <div class="file-field input-field col s12 m6 l6">
-                                <div class="teal darken-4 btn">
-                                    <i class="material-icons right">attachment</i>Archivo .cer
-
-                                    <input type="file" (change)="ValidateSize('cer')" id="cer" accept=".cer" required
-                                        class="validate"> <!-- formControlName="cer" -->
-
-                                    <div class="red-text" *ngIf="fi.cer.errors?.required">
-                                    </div>
-                                </div>
-                                <div class="file-path-wrapper">
-                                    <input class="file-path validate" type="text">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="input-field col s12 m12 l12">
-                            <i class="material-icons prefix">lock</i>
-                            <input id="password" type="password" name="password" required class="validate">
-                            <!-- formControlName="password" -->
-                            <label for="password">Contraseña de tu FIEL</label>
-                            <div class="col s1 m1 l1" *ngIf="fi.password.errors?.required"></div>
-                        </div>
-
-                    </div>
 
                     <div class="input-field col s12 m12 l12">
                         <label><span><i class="material-icons icon-red left">error_outline</i>
@@ -364,35 +236,16 @@
                     </div><br><br>
 
                     <div class="row">
-                        <div class="row">
-                            <div class="input-field col s12 m12 l12">
-                                <label><input class="with-gap teal darken-4" required formControlName="autorizobc"
-                                        name="autorizobc" type="checkbox" [(ngModel)]="bc" />
-                                    <span>
-                                        <label class="waves-effect modal-trigger subrayar" href="#autorizo">
-                                            <span class="blue-text text-darken-4" style="font-size: 14px;">Autorizo la
-                                                consulta a
-                                                sociedades de información crediticia</span>
-                                        </label>
-
-                                        <!--  <label>
-                                            <span class="black-text" style="font-size: 14px;">Autorizo la consulta a
-                                                sociedades de información crediticia</span>
-                                        </label> -->
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
-                        <br>
+                        
                         <div class="row">
                             <div class="input-field col s12 m12 l12">
                                 <label> <input class="with-gap teal darken-4" required formControlName="termcond"
-                                        name="termcond" type="checkbox" [(ngModel)]="term" />
+                                        id="termcond" name="Términos y condiciones" type="checkbox" [(ngModel)]="term" />
                                     <span>
-
+    
                                         <label class="waves-effect modal-trigger subrayar" href="#terminos">
                                             <span class="blue-text text-darken-4" style="font-size: 14px;">Acepto
-                                                Términos y Condiciones</span>
+                                                Términos y Condiciones. *</span>
                                         </label>
                                     </span>
                                 </label>
@@ -402,13 +255,13 @@
                         <div class="row">
                             <div class="input-field col s12 m12 l12">
                                 <label><input class="with-gap teal darken-4" formControlName="aprivacidad"
-                                        name="A privacidad" id="aprivacidad" type="checkbox" [(ngModel)]="aviso"
+                                        name="Aviso de Privacidad" id="aprivacidad" type="checkbox" [(ngModel)]="aviso"
                                         required />
                                     <span>
-
+    
                                         <label class="waves-effect modal-trigger subrayar" href="#aviso">
                                             <span class="blue-text text-darken-4" style="font-size: 14px;">He Leído la
-                                                Política de Privacidad. </span>
+                                                Política de Privacidad. *</span>
                                         </label>
                                     </span>
                                 </label>
@@ -418,7 +271,7 @@
                         <br><br>
                 
                         <div class="col s12">
-                       
+                        
                             <button class="waves-effect teal darken-4 btn right " type="submit">Enviar
                                 <!--revisar nextstep igual en ts-->
                                 <i class="material-icons prefix right">arrow_forward_ios</i>

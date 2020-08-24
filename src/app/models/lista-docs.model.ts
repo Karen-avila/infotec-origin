@@ -9,7 +9,7 @@ export class ListaDocs{
         docs(){
             let docs:any = [
                 {
-                    name: "Ver Caratula de Contrato",
+                    name: "Ver Carátula de Contrato",
                     ref: "#ccontrato"
                 },
                 {
@@ -25,7 +25,7 @@ export class ListaDocs{
                     ref: "#aprivintegral"
                 },
                 {
-                    name: "Ver Autorización para investigación de Crédito",
+                    name: "Ver Autorización para Investigación de Crédito",
                     ref: "#autorizo"
                 },
                 {
@@ -33,7 +33,7 @@ export class ListaDocs{
                     ref: "#solcred"
                 },
                 {
-                    name: "Ver Contrato de Adheción",
+                    name: "Ver Contrato de Adhesión",
                     ref: "#contratcred"
                 }
             ]

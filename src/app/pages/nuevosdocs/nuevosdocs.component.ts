@@ -17,12 +17,14 @@ import { EventManager } from '@angular/platform-browser';
   styleUrls: ['./nuevosdocs.component.css']
 })
 export class NuevosdocsComponent implements OnInit {
+  
 popup;
+aviso;
+term;
 formDocumentos: FormGroup;
 formFiel: FormGroup;
 terms = false;
 autorizobc = false;
-aprivacidad = false;
 termcond = false;
 listaDocs=new ListaDocs();
 typeId = 'ine';
@@ -44,43 +46,32 @@ alrt = [
     this.popup = M.Modal.init(elems);
   
 
-  this.formDocumentos = new FormGroup({
-    paso: new FormControl("4", Validators.required),
-    clientid: new FormControl(localStorage.getItem('clientid'), Validators.required),
-    typeId: new FormControl(null, Validators.required),
-    frontal: new FormControl(null, Validators.required),
-    reverso: new FormControl(null, Validators.required),
-    comprobante: new FormControl(null, Validators.required),
-    comprobanten: new FormControl(null, Validators.required),
-    estado: new FormControl(null, Validators.required),
-    declaracion: new FormControl(null, Validators.required),
-    curpd: new FormControl(null, Validators.required),
-    fiscal: new FormControl(null, Validators.required),
-    autorizobc: new FormControl(false, Validators.required),
-    termcond: new FormControl(false, Validators.required),
-    //fiel: new FormControl(null, Validators.required),
-    //cer: new FormControl(null, Validators.required),
-    //password: new FormControl(null, Validators.required)
-    //buro: new FormControl(null, Validators.required),
-    aprivacidad: new FormControl(null, Validators.required)
-    
-  });
+    this.formDocumentos = new FormGroup({
+      paso: new FormControl("4", Validators.required),
+      clientid: new FormControl(localStorage.getItem('clientid'), Validators.required),
+      typeId: new FormControl("ine", Validators.required),
+      frontal: new FormControl(null, Validators.required),
+      reverso: new FormControl(null, Validators.required),
+      comprobante: new FormControl(null, Validators.required),
+      comprobanten: new FormControl(null, Validators.required),
+      estado: new FormControl(null, Validators.required),
+      declaracion: new FormControl(null, Validators.required),
+      curpd: new FormControl(null, Validators.required),
+      fiscal: new FormControl(null, Validators.required),
+      //autorizobc: new FormControl(true, [Validators.required]),
+      termcond: new FormControl(true, Validators.required),
+      //fiel: new FormControl(null, Validators.required),
+      //cer: new FormControl(null, Validators.required),
+      //password: new FormControl(null, Validators.required)
+      //buro: new FormControl(null, Validators.required),
+      aprivacidad: new FormControl(true, Validators.required)
+      
+    });
 
 }
 get doc() { return this.formDocumentos.controls; }
 get fi() { return this.formFiel.controls; }
 
-dfiel() {
-  // ////console.log('formFiel is valid?', this.formFiel.valid);
-  if (this.formFiel.valid) {
-    // ////console.log('formFiel', this.formFiel.value);
-    this.router.navigate(["home"]);
-    // enviar datos a back
-    this.popup[0].open();
-  } else {
-    swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
-  }
-}
 
 ValidateSize(file) {
   // // ////console.log("onchanges")
@@ -108,7 +99,7 @@ typeIdFun() {
     // ////console.log("cambiooo..",this.typeId);
   } */
   if (this.typeId) {
-    this.formDocumentos.get('reverso').setValue('N/A');
+    //this.formDocumentos.get('reverso').setValue('N/A');
   }
 }
 
@@ -129,7 +120,7 @@ ddocumentos() {
         //console.log("esto responde el servicio documents", res); //revisar res.user p.ej y hacer un if(uid){openmodal}
           //swal("¡Documentos Guardados!", "Continuar", "success");
         });
-      swal("¡Documentos Guardados!", "Continuar", "success");
+      swal("¡Documentos Guardados!", "Solicitud Registrada: Tu solicitud ha sido enviada a un proceso de evaluación, te mantendremos al tanto a través del correo registrado.", "success");
       //this.stepper.openStep(4);
       this.router.navigate(["home"]);
       //this.popup[9].close();
