@@ -8,6 +8,7 @@ import * as _ from 'underscore';
 declare const MStepper: any;
 import * as M from 'materialize-css';
 import swal from 'sweetalert';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-question',
@@ -974,28 +975,28 @@ export class QuestionComponent implements OnInit {
       preg149: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg1410: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg15: new FormControl('', Validators.required),  
-      preg15_00: new FormControl(null,[Validators.required, Validators.min(0), Validators.max(10000000)]),
-      preg15_01: new FormControl(null,[Validators.required, Validators.min(0), Validators.max(10000000)]),
-      preg15_02: new FormControl(null,[Validators.required, Validators.min(0), Validators.max(10000000)]),
-      preg15_03: new FormControl(null,[Validators.required, Validators.min(0), Validators.max(10000000)]),
-      preg15_04: new FormControl(null,[Validators.required, Validators.min(0), Validators.max(10000000)]),
-      preg15_05: new FormControl(null,[Validators.required, Validators.min(0), Validators.max(10000000)]),
-      preg15_06: new FormControl(null,[Validators.required, Validators.min(0), Validators.max(10000000)]),
+      preg15_00: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
+      preg15_01: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
+      preg15_02: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
+      preg15_03: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
+      preg15_04: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
+      preg15_05: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
+      preg15_06: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
       preg16: new FormControl('',[Validators.required]), 
-      preg16_00: new FormControl(null,[Validators.required, Validators.min(0), Validators.max(10000000)]),
-      preg16_01: new FormControl(null,[Validators.required, Validators.min(0), Validators.max(10000000)]),
-      preg16_02: new FormControl(null,[Validators.required, Validators.min(0), Validators.max(10000000)]),
-      preg16_03: new FormControl(null,[Validators.required, Validators.min(0), Validators.max(10000000)]),
-      preg16_04: new FormControl(null,[Validators.required, Validators.min(0), Validators.max(10000000)]),
-      preg16_05: new FormControl(null,[Validators.required, Validators.min(0), Validators.max(10000000)]),
-      preg16_06: new FormControl(null,[Validators.required, Validators.min(0), Validators.max(10000000)]),
+      preg16_00: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
+      preg16_01: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
+      preg16_02: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
+      preg16_03: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
+      preg16_04: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
+      preg16_05: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
+      preg16_06: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
       preg17: new FormControl('',[Validators.required]), 
-      preg17_00: new FormControl(null,[Validators.required, Validators.min(0), Validators.max(10000000)]),
-      preg17_01: new FormControl(null,[Validators.required, Validators.min(0), Validators.max(10000000)]),
-      preg17_02: new FormControl(null,[Validators.required, Validators.min(0), Validators.max(10000000)]),
-      preg17_03: new FormControl(null,[Validators.required, Validators.min(0), Validators.max(10000000)]),
-      preg17_04: new FormControl(null,[Validators.required, Validators.min(0), Validators.max(10000000)]),
-      preg17_05: new FormControl(null,[Validators.required, Validators.min(0), Validators.max(10000000)]),
+      preg17_00: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
+      preg17_01: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
+      preg17_02: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
+      preg17_03: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
+      preg17_04: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
+      preg17_05: new FormControl(null,[Validators.min(0), Validators.max(10000000)]),
       preg180: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg181: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
       preg182: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(2000000)]),
@@ -1021,11 +1022,12 @@ export class QuestionComponent implements OnInit {
     }); 
 
   
-   this.llenaDireccion(this.scrDir);
-   this.llenaReputacion(this.scrRep);
-   this.llenaPerfMerc(this.scrPerMer); 
+   
+   
+   
    this.llenaPerfNeg(this.scrPerNeg); 
-   this.llenaquerconocerte(this.qcQc);
+ 
+   /* this.llenaquerconocerte(this.qcQc);
    this.llenaquerconocerte1(this.qcQc01);
    this.llenaquerconocerte2(this.qcQc02);
    this.llenaquerconocerte0(this.qcQc10); 
@@ -1048,19 +1050,40 @@ export class QuestionComponent implements OnInit {
    this.llenaqctn30(this.preg30); 
    this.llenaqctn31(this.preg31);
    this.llenaqctn32(this.preg32);
-   this.llenaqctn33(this.preg33);
+   this.llenaqctn33(this.preg33); */
 
 
   }
   
   get f() { return this.formQcQcn.controls; }
 
+  errPerfNeg(dataCode,preConf){
+
+   /*  this.userService.getDataCode(dataCode).subscribe(
+      data => {
+        element.question = data.description;
+        let options = [];
+        _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
+          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+        });
+        element.options = options;
+              
+      },
+      error => {
+        console.log('There was an error getting code values ' + element.dataCode, error);
+        this.errPerfNeg(element.dataCode);
+      }
+    ); */
+
+  }
+
   llenaPerfNeg(scrPerNeg){
     // Cuestionario PerfilNegocio -- scrPerNeg
     let preConf = scrPerNeg;
     let questions:any = []; 
     preConf.forEach(function (element) {
-      this.userService.getDataCode(element.dataCode).subscribe(
+      if(element.dataCode!=''){
+        this.userService.getDataCode(element.dataCode).subscribe(
         data => {
           element.question = data.description;
           let options = [];
@@ -1068,22 +1091,37 @@ export class QuestionComponent implements OnInit {
             options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
           });
           element.options = options;
+                
         },
         error => {
-          console.error('There was an error getting code values ' + element.dataCode, error);
+          console.log('There was an error getting code values ' + element.dataCode, error);
+          console.log('fallo' + element.dataCode);
+          /* this.errPerfNeg(element.dataCode); */
+          this.PerfNeg(this.scrPerMer); 
         }
       );
+      }
       questions.push(element);
     }, this);
     this.scrPerNeg = questions;
+   
+
+
+
+// expected output: true
+
+ 
+    this.llenaPerfMerc(this.scrPerMer); 
     // Cuestionario PerfilNegocio -- Fin
   }
 
   llenaPerfMerc(scrPerMer){
+    let opera;
     // Cuestionario PerfilMercado -- scrPerMer
     let preConf = scrPerMer;
     let questions:any = []; 
     preConf.forEach(function (element) {
+      if(element.dataCode!=''){
       this.userService.getDataCode(element.dataCode).subscribe(
         data => {
           element.question = data.description;
@@ -1094,20 +1132,29 @@ export class QuestionComponent implements OnInit {
           element.options = options;
         },
         error => {
-          console.error('There was an error getting code values ' + element.dataCode, error);
+          opera.unsubscribe();
+          console.log('There was an error getting code values ' + element.dataCode, error);
+          this.llenaPerfMerc(this.scrPerMer); 
         }
       );
+      }
       questions.push(element);
+      
+      
     }, this);
     this.scrPerMer = questions;
+    console.log("perfil de mercado",this.scrPerMer)
+    this.llenaReputacion(this.scrRep);
     // Cuestionario PerfilMercado -- Fin
   }
 
   llenaReputacion(scrRep){
+    let opera;
     // Cuestionario Reputacion -- scrRep
     let preConf = scrRep;
     let questions:any = []; 
     preConf.forEach(function (element) {
+      if(element.dataCode!=''){
       this.userService.getDataCode(element.dataCode).subscribe(
         data => {
           element.question = data.description;
@@ -1116,23 +1163,31 @@ export class QuestionComponent implements OnInit {
             options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
           });
           element.options = options;
+          
         },
         error => {
-          console.error('There was an error getting code values ' + element.dataCode, error);
+          opera.unsubscribe();
+          console.log('There was an error getting code values ' + element.dataCode, error);
+          this.llenaReputacion(this.scrRep);
         }
       );
+      }
       questions.push(element);
     }, this);
     this.scrRep = questions;
+    console.log("reputa",this.scrRep)
+    this.llenaDireccion(this.scrDir);
     // Cuestionario Reputacion -- Fin
   }
 
 llenaDireccion(scrDir){
+  let opera;
    // Read DataCodes Values
     // Cuestionario Direccion -- scrDir
     let preConf = scrDir;
     let questions:any = []; 
     preConf.forEach(function (element) {
+      if(element.dataCode!=''){
       this.userService.getDataCode(element.dataCode).subscribe(
         data => {
           element.question = data.description;
@@ -1143,12 +1198,16 @@ llenaDireccion(scrDir){
           element.options = options;
         },
         error => {
-          console.error('There was an error getting code values ' + element.dataCode, error);
+          opera.unsubscribe();
+          console.log('There was an error getting code values ' + element.dataCode, error);
+          this.llenaDireccion(this.scrDir);
         }
       );
+      }
       questions.push(element);
     }, this);
     this.scrDir = questions;
+    console.log("rdireccion",this.scrDir)
     // Cuestionario Direccion -- Fin
 }
 llenaquerconocerte(qcQc){
@@ -1156,6 +1215,7 @@ llenaquerconocerte(qcQc){
   let preConf = qcQc;
   let questions:any = []; 
   preConf.forEach(function (element) {
+    if(element.dataCode!=''){
     this.userService.getDataCode(element.dataCode).subscribe(
       data => {
         element.question = data.description;
@@ -1166,13 +1226,14 @@ llenaquerconocerte(qcQc){
         element.options = options;
       },
       error => {
-        console.error('There was an error getting code values ' + element.dataCode, error);
+        console.log('There was an error getting code values ' + element.dataCode, error);
       }
     );
+    }
     questions.push(element);
   }, this);
   this.qcQc = questions;
-  
+  console.log("queremos conocerte",this.qcQc)
 }
 
 llenaquerconocerte1(qcQc01){
@@ -1184,7 +1245,7 @@ llenaquerconocerte1(qcQc01){
     questions.push(element);
   }, this);
   this.qcQc01 = questions;
-  
+  console.log("queremos conocerte qcQc01",this.qcQc01)
 }
 
 llenaquerconocerte2(qcQc02){
@@ -1192,6 +1253,7 @@ llenaquerconocerte2(qcQc02){
   let preConf = qcQc02;
   let questions:any = []; 
   preConf.forEach(function (element) {
+    if(element.dataCode!=''){
     this.userService.getDataCode(element.dataCode).subscribe(
       data => {
         element.question = data.description;
@@ -1202,13 +1264,14 @@ llenaquerconocerte2(qcQc02){
         element.options = options;
       },
       error => {
-        console.error('There was an error getting code values ' + element.dataCode, error);
+        console.log('There was an error getting code values ' + element.dataCode, error);
       }
     );
+    }
     questions.push(element);
   }, this);
   this.qcQc02 = questions;
-  
+  console.log("queremos conocerte qcQc02",this.qcQc02)
 }
 
 
@@ -1220,6 +1283,7 @@ llenaquerconocerte0(qcQc10){
     questions.push(element);
   }, this);
   this.qcQc10 = questions;
+  console.log("queremos conocerte qcQc10",this.qcQc10)
 }
 llenaqctn1(preg1){
   let preConf = preg1;
@@ -1229,6 +1293,7 @@ llenaqctn1(preg1){
     questions.push(element);
   }, this);
   this.preg1 = questions;
+  console.log("queremos conocerte preg1",this.preg1)
 }
 
 llenaqctn2(preg2){
@@ -1239,6 +1304,7 @@ llenaqctn2(preg2){
     questions.push(element);
   }, this);
   this.preg2 = questions;
+  console.log("queremos conocerte preg2",this.preg2)
 }
 
 llenaqctn3(preg3){
@@ -1249,6 +1315,7 @@ llenaqctn3(preg3){
     questions.push(element);
   }, this);
   this.preg3 = questions;
+  console.log("queremos conocerte preg3",this.preg3)
 }
 
 llenaqctn4a5(preg4a5){
@@ -1259,6 +1326,7 @@ llenaqctn4a5(preg4a5){
     questions.push(element);
   }, this);
   this.preg4a5 = questions;
+  console.log("queremos conocerte preg4a5",this.preg4a5)
 }
 
 llenaqctn6a11(preg6a11){
@@ -1269,6 +1337,7 @@ llenaqctn6a11(preg6a11){
     questions.push(element);
   }, this);
   this.preg6a11 = questions;
+  console.log("queremos conocerte preg6a11",this.preg6a11)
 }
 
 llenaqctn12a13(preg12a13){
@@ -1285,12 +1354,13 @@ llenaqctn12a13(preg12a13){
         element.options = options;
       },
       error => {
-        console.error('There was an error getting code values ' + element.dataCode, error);
+        console.log('There was an error getting code values ' + element.dataCode, error);
       }
     );
     questions.push(element);
   }, this);
   this.preg12a13 = questions;
+  console.log("queremos conocerte preg12a13",this.preg12a13)
 }
 
 llenaqctn14(preg14){
@@ -1301,6 +1371,7 @@ llenaqctn14(preg14){
     questions.push(element);
   }, this);
   this.preg14 = questions;
+  console.log("queremos conocerte preg14",this.preg14)
 }
 
 llenaqctn15(preg15){
@@ -1311,6 +1382,7 @@ llenaqctn15(preg15){
     questions.push(element);
   }, this);
   this.preg15 = questions;
+  console.log("queremos conocerte preg15",this.preg15)
 }
 
 
@@ -1322,6 +1394,7 @@ llenaqctn15_0(preg15_0){
     questions.push(element);
   }, this);
   this.preg15_0 = questions;
+  console.log("queremos conocerte preg15_0",this.preg15_0)
 }
 
 llenaqctn16(preg16){
@@ -1332,6 +1405,7 @@ llenaqctn16(preg16){
     questions.push(element);
   }, this);
   this.preg16 = questions;
+  console.log("queremos conocerte preg16",this.preg16)
 }
 
 llenaqctn16_0(preg16_0){
@@ -1342,6 +1416,7 @@ llenaqctn16_0(preg16_0){
     questions.push(element);
   }, this);
   this.preg16_0 = questions;
+  console.log("queremos conocerte preg16_0",this.preg16_0)
 }
 
 llenaqctn17(preg17){
@@ -1352,6 +1427,7 @@ llenaqctn17(preg17){
     questions.push(element);
   }, this);
   this.preg17 = questions;
+  console.log("queremos conocerte preg17",this.preg17)
 }
 
 llenaqctn17_0(preg17_0){
@@ -1362,6 +1438,7 @@ llenaqctn17_0(preg17_0){
     questions.push(element);
   }, this);
   this.preg17_0 = questions;
+  console.log("queremos conocerte preg17_0",this.preg17_0)
 }
 
 llenaqctn18(preg18){
@@ -1372,12 +1449,14 @@ llenaqctn18(preg18){
     questions.push(element);
   }, this);
   this.preg18 = questions;
+  console.log("queremos conocerte preg17",this.preg18)
 }
 
 llenaqctn19a28(preg19a28){
   let preConf = preg19a28;
   let questions:any = []; 
   preConf.forEach(function (element) {
+    if(element.dataCode!=''){
     this.userService.getDataCode(element.dataCode).subscribe(
       data => {
         element.question = data.description;
@@ -1388,12 +1467,14 @@ llenaqctn19a28(preg19a28){
         element.options = options;
       },
       error => {
-        console.error('There was an error getting code values ' + element.dataCode, error);
+        console.log('There was an error getting code values ' + element.dataCode, error);
       }
     );
+    }
     questions.push(element);
   }, this);
   this.preg19a28 = questions;
+  console.log("queremos conocerte preg19a28",this.preg19a28)
 }
 
 llenaqctn29(preg29){
@@ -1405,6 +1486,7 @@ llenaqctn29(preg29){
   }, this);
   this.preg29 = questions;
   //console.log("ver",this.preg29)
+  console.log("queremos conocerte preg29",this.preg29)
 }
 
 llenaqctn30(preg30){
@@ -1416,6 +1498,7 @@ llenaqctn30(preg30){
   }, this);
   this.preg30 = questions;
   //console.log("ver",this.preg29)
+  console.log("queremos conocerte preg30",this.preg30)
 }
 
 llenaqctn31(preg31){
@@ -1427,6 +1510,7 @@ llenaqctn31(preg31){
   }, this);
   this.preg31 = questions;
   //console.log("ver",this.preg29)
+  console.log("queremos conocerte preg31",this.preg31)
 }
 
 llenaqctn32(preg32){
@@ -1438,6 +1522,7 @@ llenaqctn32(preg32){
   }, this);
   this.preg32 = questions;
   //console.log("ver",this.preg29)
+  console.log("queremos conocerte preg32",this.preg32)
 }
 
 llenaqctn33(preg33){
@@ -1449,6 +1534,7 @@ llenaqctn33(preg33){
   }, this);
   this.preg33 = questions;
   //console.log("ver",this.preg29)
+  console.log("queremos conocerte preg33",this.preg33)
 }
 
   changedPerNeg(j, i) {

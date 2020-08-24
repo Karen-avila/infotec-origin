@@ -65,9 +65,9 @@ export class CalcComponent implements OnInit {
       // Monto del Prestamo
       const montoCapital = 20000 * -1;
       // Tasa de Interes Anual
-      const tasaInteresAnual = 0.12; // cambio a 12
+      const tasaInteresAnual = 0.10; // cambio a 12
       // Tasa de Interes Mensual
-      const tasaInteresMensual = tasaInteresAnual / 12;
+      const tasaInteresMensual = tasaInteresAnual / 12; // #meses
       // Plazo del Credito
       const plazoCredito = 18;
       // Monto del Pago Mensual

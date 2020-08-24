@@ -5,7 +5,6 @@ import {Subject} from 'rxjs/Subject';
 
 import { environment } from '../../../environments/environment';
 
-import swal from 'sweetalert';
 
 @Injectable({
   providedIn: 'root'
@@ -68,35 +67,35 @@ export class LoanDataService {
       })
   }
 
-  /* sendContract(payload){
+  sendContract(payload){
+    console.log("el payload",payload)
     const formData: FormData = new FormData();
 
     for (const key in payload) {
       formData.append(key, payload[key]);    
     }
 
-    let url = environment.apis_url + '/V1.0/banbi/creditosimple/firmadocumentos';
+    let url = environment.apis_url + '/V1.0/banbi/firma';
     let headers = environment.headers_apis;
     let api_keys = environment.gravitee_api_keys;
-    headers['X-Gravitee-Api-Key'] = api_keys['sign']; //falta api de firma
-
-   
-    return this.http.post(url, formData, { headers }).map((res: any) => {
-      // ////console.log("creado", res)
-      swal("¡Felicidades!", "Documentos Firmados correctamente.", "success");
-
-      return true;
-    }).catch(err => {
-      swal('Existio un error' + err.status);
-      return err;
+    const httpHeaders = new HttpHeaders({ 'X-Gravitee-Api-Key': api_keys['firma'] });
+    
+    const req = new HttpRequest('POST', url, formData, {
+      reportProgress: true,
+      responseType: 'json',
+      headers: httpHeaders
     });
 
+   
 
-  } */
+   return this.http.request(req);
 
-  sendContract(){
-    this.firma.next("123qwe123wqesafsgt5gggyhd");
+
   }
+
+  /* sendContract(){
+    this.firma.next("123qwe123wqesafsgt5gggyhd");
+  } */
 
 
 }

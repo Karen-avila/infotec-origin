@@ -7,10 +7,10 @@
           <div class="row" id="PDFpagare">
             <img class="responsive-img logo-bdb" src="../../../assets/logo.png">
             <span class="card-title titulos black-text"><b>PAGARÉ</b></span><br>
-            <div class="valor">VALOR: {{ loanData.principal | currency:"MXN":"symbol" }}</div>
+            <div class="valor">VALOR: <!-- {{ loanData.principal | currency:"MXN":"symbol" }} --></div>
             <div class="justificacion">
               <div class="col s12 separa">
-                Por el presente pagaré del valor recibido, el suscrito <b>{{ loanData.clientName }}</b>
+                Por el presente pagaré del valor recibido, el suscrito <b><!-- {{ loanData.clientName }} --></b>
                <!--  <div class="input-field inline">
                   <input type="text" class="validate" value=>
                 </div> -->
@@ -20,7 +20,7 @@
                <!--  <div class="input-field inline">
                   <input id="cantidad_numero" type="text" class="validate">
                 </div> -->
-                <b>({{ loanData.principal | currency:"MXN":"symbol" }} ,
+                <b>(<!-- {{ loanData.principal | currency:"MXN":"symbol" }} --> ,
                 <!-- <div class="input-field inline">
                   <input id="cantidad_letra" type="text" class="validate">
                 </div> -->
@@ -84,7 +84,7 @@
                 <!-- [ESPACIO PARA INCORPORAR LA CADENA GENERADA AL FIRMARSE EL PAGARÉ] -->
               </div>
               <div class="col s12 separa">
-                <b>{{ loanData.clientName }}</b>
+                <!-- <b>{{ loanData.clientName }}</b> -->
               </div>
               <div class="col s12 separa">
                 El Cliente firma el presente título de crédito con su firma electrónica avanzada vigente
