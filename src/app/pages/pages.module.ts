@@ -36,6 +36,7 @@ import { CreditodirectoComponent } from './creditodirecto/creditodirecto.compone
 import { ContratodecreditoComponent } from './contratodecredito/contratodecredito.component';
 import { SolicituddecreditoComponent } from './solicituddecredito/solicituddecredito.component';
 import { TerminosycondicionesComponent } from './terminosycondiciones/terminosycondiciones.component';
+import { NuevosdocsComponent } from './nuevosdocs/nuevosdocs.component';
 
 @NgModule({
     declarations:[
@@ -60,7 +61,8 @@ import { TerminosycondicionesComponent } from './terminosycondiciones/terminosyc
         CreditodirectoComponent,
         ContratodecreditoComponent,
         SolicituddecreditoComponent,
-        TerminosycondicionesComponent
+        TerminosycondicionesComponent,
+        NuevosdocsComponent
     ],
     imports:[
         GooglePlaceModule,

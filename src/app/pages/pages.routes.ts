@@ -21,7 +21,7 @@ import { CreditodirectoComponent } from './creditodirecto/creditodirecto.compone
 import { ContratodecreditoComponent } from './contratodecredito/contratodecredito.component';
 import { SolicituddecreditoComponent } from './solicituddecredito/solicituddecredito.component';
 import { TerminosycondicionesComponent } from './terminosycondiciones/terminosycondiciones.component';
-
+import { NuevosdocsComponent } from './nuevosdocs/nuevosdocs.component';
 const pagesRoutes: Routes = [
     {
         path: '', 
@@ -46,7 +46,8 @@ const pagesRoutes: Routes = [
           {path: 'credito', component: CreditodirectoComponent},
           {path: 'contratodecredito', component: ContratodecreditoComponent },
           {path: 'terminosycondiciones', component: TerminosycondicionesComponent},
-          {path: 'calc', component: CalcComponent}
+          {path: 'calc', component: CalcComponent},
+          {path: 'nuevosdocumentos', component: NuevosdocsComponent}
         ]
       },
 ];
