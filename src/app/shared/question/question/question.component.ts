@@ -341,7 +341,7 @@ export class QuestionComponent implements OnInit {
     {
       dataCode: "",
       columnId: "campo_1",
-      question: "¿Fecha en que inició su actividad productiva? *",
+      question: "Fecha en que inició su actividad productiva. *",
       resp: "",
       options: []
     }];
@@ -350,7 +350,7 @@ export class QuestionComponent implements OnInit {
     {
       dataCode: "",
       columnId: "campo_3",
-      question: "¿Registre el total de ingresos que obtuvo el negocio durante el ejercicio fiscal anterior. Por favor incluya tanto los ingresos derivados como los no derivados de la actividad, además de los apoyos del gobierno que haya recibido.?*",
+      question: "Registre el total de ingresos que obtuvo el negocio durante el ejercicio fiscal anterior. Por favor, incluya tanto los ingresos derivados como los no derivados de la actividad, además de los apoyos del gobierno que haya recibido.*",
       resp: "",
       options: []
     }];
@@ -1208,6 +1208,10 @@ llenaDireccion(scrDir){
     }, this);
     this.scrDir = questions;
     console.log("rdireccion",this.scrDir)
+    this.llenaquerconocerte(this.qcQc);
+   this.llenaquerconocerte1(this.qcQc01);
+   this.llenaquerconocerte2(this.qcQc02);
+   this.llenaquerconocerte0(this.qcQc10); 
     // Cuestionario Direccion -- Fin
 }
 llenaquerconocerte(qcQc){
@@ -1234,6 +1238,13 @@ llenaquerconocerte(qcQc){
   }, this);
   this.qcQc = questions;
   console.log("queremos conocerte",this.qcQc)
+  this.llenaqctn1(this.preg1); 
+   this.llenaqctn2(this.preg2); 
+   this.llenaqctn3(this.preg3); 
+   this.llenaqctn4a5(this.preg4a5); 
+   this.llenaqctn6a11(this.preg6a11); 
+   this.llenaqctn12a13(this.preg12a13); 
+   
 }
 
 llenaquerconocerte1(qcQc01){
@@ -1272,6 +1283,13 @@ llenaquerconocerte2(qcQc02){
   }, this);
   this.qcQc02 = questions;
   console.log("queremos conocerte qcQc02",this.qcQc02)
+  this.llenaqctn14(this.preg14); 
+   this.llenaqctn15(this.preg15); 
+   this.llenaqctn15_0(this.preg15_0); 
+   this.llenaqctn16(this.preg16); 
+   this.llenaqctn16_0(this.preg16_0);
+   this.llenaqctn17(this.preg17); 
+   this.llenaqctn17_0(this.preg17_0);
 }
 
 
@@ -1284,6 +1302,13 @@ llenaquerconocerte0(qcQc10){
   }, this);
   this.qcQc10 = questions;
   console.log("queremos conocerte qcQc10",this.qcQc10)
+  this.llenaqctn18(this.preg18); 
+   this.llenaqctn19a28(this.preg19a28); 
+   this.llenaqctn29(this.preg29);
+   this.llenaqctn30(this.preg30); 
+   this.llenaqctn31(this.preg31);
+   this.llenaqctn32(this.preg32);
+   this.llenaqctn33(this.preg33);
 }
 llenaqctn1(preg1){
   let preConf = preg1;

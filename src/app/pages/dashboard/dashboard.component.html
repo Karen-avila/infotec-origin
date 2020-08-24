@@ -756,11 +756,11 @@
                             <label class="title black-text"><b class="title col s12 m12 l12">Identificación
                                     Oficial</b></label>
                             <p><br></p>
-                            <p>Selecciona el tipo de identificación que usarás, estos archivos podrán ser (PDF, imagen).
+                            <p>Estos archivos podrán ser (PDF, imagen).
                             </p>
                         </div>
 
-                        <div class="input-field col s12 m4">
+                       <!--  <div class="input-field col s12 m4">
                             <p>
                                 <label>
                                     <input class="with-gap teal darken-4" (change)="typeIdFun()"
@@ -779,7 +779,7 @@
                                     <span>Pasaporte</span>
                                 </label>
                             </p>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="row">
                         <!--                     <div>
@@ -835,7 +835,7 @@
 
                         </div>
 
-                        <div *ngIf="typeId==='pasaporte'">
+                        <!-- <div *ngIf="typeId==='pasaporte'">
 
                             <div class="col s12 m2 l2">
                                 <span>Identificación Oficial (Pasaporte)</span>
@@ -858,7 +858,7 @@
                                 </div>
                             </div>
 
-                        </div>
+                        </div> -->
                     </div>
                     <div class="row">
                         <div class="input-field col s12 m12 l12">
@@ -1452,6 +1452,9 @@
 <div id="pagare" class="modal">
     <div class="modal-content">
         <app-pagare (prpPagare)="recibePagare($event)"></app-pagare>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect teal darken-4 white-text btn-flat">Cerrar</a>
     </div>
     <div class="footer-copyright teal darken-3">
         <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">

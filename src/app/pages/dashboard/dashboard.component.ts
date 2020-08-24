@@ -322,7 +322,7 @@ export class DashboardComponent implements OnInit {
     this.formDocumentos = new FormGroup({
       paso: new FormControl("4", Validators.required),
       clientid: new FormControl(localStorage.getItem('clientid'), Validators.required),
-      typeId: new FormControl(null, Validators.required),
+      typeId: new FormControl("ine", Validators.required),
       frontal: new FormControl(null, Validators.required),
       reverso: new FormControl(null, Validators.required),
       comprobante: new FormControl(null, Validators.required),
@@ -720,7 +720,7 @@ findInvalidControls() {
   const controls = this.form.controls;
   for (const name in controls) {
     if (controls[name].invalid) {
-      ////console.log("Invalid: " + name);
+      console.log("Invalid: " + name);
       if (document.getElementById(name) != null) {
         document.getElementById(name).classList.add('invalid');
         var x = document.getElementById(name);
@@ -784,6 +784,7 @@ findInvalidControls() {
           });
 
         });
+      
       this.popup[9].close();
       this.stepper.openStep(3);
     } else {  
@@ -794,7 +795,9 @@ findInvalidControls() {
         message=message+err[i]+', ';
       }
       swal('¡Cuidado!',`Para poder continuar, completa correctamente todos los campos:\n ${message}`, 'error');
+      
      }
+     
   }
 
 
@@ -835,7 +838,7 @@ findInvalidControls() {
   }
 
   ddocumentos() {
-    //console.log("documents",this.formDocumentos.value)
+    console.log("documents",this.formDocumentos.value)
     this.popup[9].open(); //revisar donde cierra
     let documents = ['frontal', 'reverso', 'comprobante', 'comprobanten', 'estado', 'declaracion', 'curpd', 'fiscal'];
     if (this.formDocumentos.valid) {
@@ -980,8 +983,8 @@ findInvalidControls() {
       // ////console.log("cambiooo..",this.typeId);
     } */
     if (this.typeId) {
-      this.formDocumentos.get('reverso').setValue('N/A');
-    }
+      
+    } 
   }
 
   // Pick Address

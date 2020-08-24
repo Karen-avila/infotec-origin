@@ -7,10 +7,10 @@
           <div class="row" id="PDFpagare">
             <img class="responsive-img logo-bdb" src="../../../assets/logo.png">
             <span class="card-title titulos black-text"><b>PAGARÉ</b></span><br>
-            <div class="valor">VALOR: <!-- {{ loanData.principal | currency:"MXN":"symbol" }} --></div>
+            <div class="valor">VALOR: {{ loanData.principal | currency:"MXN":"symbol" }}</div>
             <div class="justificacion">
               <div class="col s12 separa">
-                Por el presente pagaré del valor recibido, el suscrito <b><!-- {{ loanData.clientName }} --></b>
+                Por el presente pagaré del valor recibido, el suscrito <b>{{ loanData.clientName }}</b>
                <!--  <div class="input-field inline">
                   <input type="text" class="validate" value=>
                 </div> -->
@@ -20,7 +20,7 @@
                <!--  <div class="input-field inline">
                   <input id="cantidad_numero" type="text" class="validate">
                 </div> -->
-                <b>(<!-- {{ loanData.principal | currency:"MXN":"symbol" }} --> ,
+                <b>({{ loanData.principal | currency:"MXN":"symbol" }} ,
                 <!-- <div class="input-field inline">
                   <input id="cantidad_letra" type="text" class="validate">
                 </div> -->
@@ -83,8 +83,8 @@
               <div class="col s12 separa">
                 <!-- [ESPACIO PARA INCORPORAR LA CADENA GENERADA AL FIRMARSE EL PAGARÉ] -->
               </div>
-              <div class="col s12 separa">
-                <!-- <b>{{ loanData.clientName }}</b> -->
+              <div class="col s12 separa center">
+                <b>{{ loanData.clientName }}</b>
               </div>
               <div class="col s12 separa">
                 El Cliente firma el presente título de crédito con su firma electrónica avanzada vigente
@@ -101,22 +101,21 @@
       </div>
     </div>
   </div>
-  <div class="row">
+  <!-- <div class="row">
     <ul>
       <li>
-       <!--  <button class="waves-effect teal btn darken-4 modal-trigger left ml-3" (click)="downloadPDF($event, 'pagare')">
+        <button class="waves-effect teal btn darken-4 modal-trigger left ml-3" (click)="downloadPDF($event, 'pagare')">
           <span class="white-text text-darken-4" style="font-size: 14px;">
             Aceptar
           </span>
-        </button> -->
-
+        </button> 
         <div class="modal-footer">
-          <a (click)="downloadPDF($event, 'pagare')" class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>
+         <a (click)="downloadPDF($event, 'pagare')"  class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>
       </div>
 
-      <!-- <input type="text" [(ngModel)]="pagareB64">
-  <button (click)="sendPagare()">Propagar</button> -->
+       <input type="text" [(ngModel)]="pagareB64">
+  <button (click)="sendPagare()">Propagar</button> 
       </li>
     </ul>
-  </div>
+  </div> -->
 </div>

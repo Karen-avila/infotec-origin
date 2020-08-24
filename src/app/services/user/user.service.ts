@@ -193,7 +193,7 @@ export class UserService {
 
     formData.append('file', file);
     formData.append('name', name);
-    // ////console.log("Document Service");
+    console.log("Document Service");
     let clientid = localStorage.getItem('clientid');
     let url = environment.apis_url + '/V1.0/fineract-protected/clients/' + clientid + '/documents';
     let api_keys = environment.gravitee_api_keys;
