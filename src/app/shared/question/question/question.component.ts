@@ -341,7 +341,7 @@ export class QuestionComponent implements OnInit {
     {
       dataCode: "",
       columnId: "campo_1",
-      question: "¿Fecha en que inició su actividad productiva? *",
+      question: "Fecha en que inició su actividad productiva. *",
       resp: "",
       options: []
     }];
@@ -350,7 +350,7 @@ export class QuestionComponent implements OnInit {
     {
       dataCode: "",
       columnId: "campo_3",
-      question: "¿Registre el total de ingresos que obtuvo el negocio durante el ejercicio fiscal anterior. Por favor incluya tanto los ingresos derivados como los no derivados de la actividad, además de los apoyos del gobierno que haya recibido.?*",
+      question: "Registre el total de ingresos que obtuvo el negocio durante el ejercicio fiscal anterior. Por favor, incluya tanto los ingresos derivados como los no derivados de la actividad, además de los apoyos del gobierno que haya recibido.*",
       resp: "",
       options: []
     }];
@@ -1198,7 +1198,6 @@ llenaDireccion(scrDir){
     this.scrDir = questions;
     console.log("rdireccion",this.scrDir)
     this.llenaquerconocerte(this.qcQc);
-
     // Cuestionario Direccion -- Fin
 }
 llenaquerconocerte(qcQc){
@@ -1283,6 +1282,13 @@ llenaquerconocerte0(qcQc10){
   }, this);
   this.qcQc10 = questions;
   console.log("queremos conocerte qcQc10",this.qcQc10)
+  this.llenaqctn18(this.preg18); 
+   this.llenaqctn19a28(this.preg19a28); 
+   this.llenaqctn29(this.preg29);
+   this.llenaqctn30(this.preg30); 
+   this.llenaqctn31(this.preg31);
+   this.llenaqctn32(this.preg32);
+   this.llenaqctn33(this.preg33);
 }
 llenaqctn1(preg1){
   let preConf = preg1;

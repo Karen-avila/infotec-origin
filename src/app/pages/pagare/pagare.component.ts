@@ -26,6 +26,10 @@ export class PagareComponent implements OnInit {
   constructor(public loanService: LoanDataService) { }
 
   ngOnInit() {
+    this.loanService.nombre.subscribe((value) => {
+      this.loanData = value; 
+  });
+  
     this.date = moment().locale('es').format('Do MMMM YYYY');
         
         /* this.loanService.getLoanData().subscribe(

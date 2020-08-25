@@ -67,7 +67,7 @@ car = this.carr();
     // Monto del Prestamo
     var montoCapital = 20000 * -1;
     // Tasa de Interes Anual
-    var tasaInteresAnual = 0.12; //cambie a 12
+    var tasaInteresAnual = 0.10; //cambie a 12
     // Tasa de Interes Mensual
     var tasaInteresMensual = tasaInteresAnual / 12;
     // Plazo del Credito
