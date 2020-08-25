@@ -5,7 +5,7 @@ import * as M from 'materialize-css';
 import swal from 'sweetalert';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { UserService } from '../../services/service.index';
+import { UserService, CaptchaService } from '../../services/service.index';
 import { User } from '../../models/user.model';
 
 import { environment } from '../../../environments/environment';
@@ -37,7 +37,7 @@ export class ApplyComponent implements OnInit {
 
 
 
-  constructor(public userService: UserService, private router: Router) {
+  constructor(public userService: UserService, private router: Router, private captchaService:CaptchaService) {
 
   }
 
@@ -97,7 +97,12 @@ export class ApplyComponent implements OnInit {
   //------------
 
   resolved(captchaResponse: string) {
-    ////console.log(`Resolved response token: ${captchaResponse}`);
+    /* console.log(`Resolved response token: ${captchaResponse}`);
+    this.captchaService.review({token:captchaResponse}).subscribe(res=>{
+      console.log(`Resolved: ${res}`);
+    },err=>{
+      console.log(`Resolved err: ${err}`);
+    }) */
     // this.form.get('token').setValue(captchaResponse);
 
     ////console.log(this.form.value);
