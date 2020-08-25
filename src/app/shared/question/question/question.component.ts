@@ -1022,21 +1022,15 @@ export class QuestionComponent implements OnInit {
     }); 
 
   
-   
-   
-   
    this.llenaPerfNeg(this.scrPerNeg); 
  
-   /* this.llenaquerconocerte(this.qcQc);
    this.llenaquerconocerte1(this.qcQc01);
-   this.llenaquerconocerte2(this.qcQc02);
    this.llenaquerconocerte0(this.qcQc10); 
    this.llenaqctn1(this.preg1); 
    this.llenaqctn2(this.preg2); 
    this.llenaqctn3(this.preg3); 
    this.llenaqctn4a5(this.preg4a5); 
    this.llenaqctn6a11(this.preg6a11); 
-   this.llenaqctn12a13(this.preg12a13); 
    this.llenaqctn14(this.preg14); 
    this.llenaqctn15(this.preg15); 
    this.llenaqctn15_0(this.preg15_0); 
@@ -1045,35 +1039,36 @@ export class QuestionComponent implements OnInit {
    this.llenaqctn17(this.preg17); 
    this.llenaqctn17_0(this.preg17_0);
    this.llenaqctn18(this.preg18); 
-   this.llenaqctn19a28(this.preg19a28); 
    this.llenaqctn29(this.preg29);
    this.llenaqctn30(this.preg30); 
    this.llenaqctn31(this.preg31);
    this.llenaqctn32(this.preg32);
-   this.llenaqctn33(this.preg33); */
+   this.llenaqctn33(this.preg33);
 
 
   }
   
   get f() { return this.formQcQcn.controls; }
 
-  errPerfNeg(dataCode,preConf){
+  errPerfNeg(dataCode,obj){
+    let ver = this[obj].findIndex(x => x.dataCode === dataCode );
+    console.log("index de object perfNeg", ver);
 
-   /*  this.userService.getDataCode(dataCode).subscribe(
+    this.userService.getDataCode(dataCode).subscribe(
       data => {
-        element.question = data.description;
+        this[obj][ver].question = data.description;
         let options = [];
         _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
           options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
         });
-        element.options = options;
-              
+        this[obj][ver].options = options;
+          console.log("estos es lo que trajo despues del error",this.scrPerNeg[ver])    
       },
       error => {
-        console.log('There was an error getting code values ' + element.dataCode, error);
-        this.errPerfNeg(element.dataCode);
+        console.log('There was an error getting code values ' + dataCode, error);
+        this.errPerfNeg(dataCode,obj);
       }
-    ); */
+    );
 
   }
 
@@ -1096,8 +1091,8 @@ export class QuestionComponent implements OnInit {
         error => {
           console.log('There was an error getting code values ' + element.dataCode, error);
           console.log('fallo' + element.dataCode);
-          /* this.errPerfNeg(element.dataCode); */
-          this.PerfNeg(this.scrPerMer); 
+          this.errPerfNeg(element.dataCode,"scrPerNeg");
+          /* this.PerfNeg(this.scrPerMer);  */
         }
       );
       }
@@ -1105,18 +1100,13 @@ export class QuestionComponent implements OnInit {
     }, this);
     this.scrPerNeg = questions;
    
-
-
-
 // expected output: true
 
- 
     this.llenaPerfMerc(this.scrPerMer); 
     // Cuestionario PerfilNegocio -- Fin
   }
 
   llenaPerfMerc(scrPerMer){
-    let opera;
     // Cuestionario PerfilMercado -- scrPerMer
     let preConf = scrPerMer;
     let questions:any = []; 
@@ -1132,9 +1122,9 @@ export class QuestionComponent implements OnInit {
           element.options = options;
         },
         error => {
-          opera.unsubscribe();
           console.log('There was an error getting code values ' + element.dataCode, error);
-          this.llenaPerfMerc(this.scrPerMer); 
+          console.log('fallo' + element.dataCode);
+          this.errPerfNeg(element.dataCode,"scrPerMer");
         }
       );
       }
@@ -1149,7 +1139,6 @@ export class QuestionComponent implements OnInit {
   }
 
   llenaReputacion(scrRep){
-    let opera;
     // Cuestionario Reputacion -- scrRep
     let preConf = scrRep;
     let questions:any = []; 
@@ -1166,9 +1155,9 @@ export class QuestionComponent implements OnInit {
           
         },
         error => {
-          opera.unsubscribe();
           console.log('There was an error getting code values ' + element.dataCode, error);
-          this.llenaReputacion(this.scrRep);
+          console.log('fallo' + element.dataCode);
+          this.errPerfNeg(element.dataCode,"scrRep");
         }
       );
       }
@@ -1198,9 +1187,9 @@ llenaDireccion(scrDir){
           element.options = options;
         },
         error => {
-          opera.unsubscribe();
           console.log('There was an error getting code values ' + element.dataCode, error);
-          this.llenaDireccion(this.scrDir);
+          console.log('fallo' + element.dataCode);
+          this.errPerfNeg(element.dataCode,"scrDir");
         }
       );
       }
@@ -1208,6 +1197,8 @@ llenaDireccion(scrDir){
     }, this);
     this.scrDir = questions;
     console.log("rdireccion",this.scrDir)
+    this.llenaquerconocerte(this.qcQc);
+
     // Cuestionario Direccion -- Fin
 }
 llenaquerconocerte(qcQc){
@@ -1227,6 +1218,8 @@ llenaquerconocerte(qcQc){
       },
       error => {
         console.log('There was an error getting code values ' + element.dataCode, error);
+        console.log('fallo' + element.dataCode);
+        this.errPerfNeg(element.dataCode,"qcQc");
       }
     );
     }
@@ -1234,6 +1227,8 @@ llenaquerconocerte(qcQc){
   }, this);
   this.qcQc = questions;
   console.log("queremos conocerte",this.qcQc)
+  this.llenaquerconocerte2(this.qcQc02);
+
 }
 
 llenaquerconocerte1(qcQc01){
@@ -1265,6 +1260,8 @@ llenaquerconocerte2(qcQc02){
       },
       error => {
         console.log('There was an error getting code values ' + element.dataCode, error);
+        console.log('fallo' + element.dataCode);
+        this.errPerfNeg(element.dataCode,"qcQc02");
       }
     );
     }
@@ -1272,6 +1269,8 @@ llenaquerconocerte2(qcQc02){
   }, this);
   this.qcQc02 = questions;
   console.log("queremos conocerte qcQc02",this.qcQc02)
+  this.llenaqctn12a13(this.preg12a13);
+  
 }
 
 
@@ -1355,12 +1354,15 @@ llenaqctn12a13(preg12a13){
       },
       error => {
         console.log('There was an error getting code values ' + element.dataCode, error);
+        console.log('fallo' + element.dataCode);
+        this.errPerfNeg(element.dataCode,"preg12a13");
       }
     );
     questions.push(element);
   }, this);
   this.preg12a13 = questions;
   console.log("queremos conocerte preg12a13",this.preg12a13)
+  this.llenaqctn19a28(this.preg19a28);
 }
 
 llenaqctn14(preg14){
@@ -1468,6 +1470,8 @@ llenaqctn19a28(preg19a28){
       },
       error => {
         console.log('There was an error getting code values ' + element.dataCode, error);
+        console.log('fallo' + element.dataCode);
+        this.errPerfNeg(element.dataCode,"preg19a28");
       }
     );
     }
