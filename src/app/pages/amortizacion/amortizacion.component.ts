@@ -14,7 +14,7 @@ import * as moment from 'moment';
 })
 export class AmortizacionComponent implements OnInit {
 
-  loanData={
+  /* loanData={
     principal:'',
     clientName:'',
     numberOfRepayments:'',
@@ -22,7 +22,8 @@ export class AmortizacionComponent implements OnInit {
     originalSchedule:{periods:''}
     
 
-  }
+  } */
+  loanData;
   pagareB64;
   date;
   firma;
