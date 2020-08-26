@@ -24,10 +24,10 @@ export class ListaDocs{
                     name: "Ver Aviso de Privacidad Integral",
                     ref: "#aprivintegral"
                 },
-                {
+                /* {
                     name: "Ver Autorización para Investigación de Crédito",
                     ref: "#autorizo"
-                },
+                }, */
                 {
                     name: "Ver Solicitud de Contratación",
                     ref: "#solcred"

@@ -6,6 +6,7 @@ import {Subject} from 'rxjs/Subject';
 import { environment } from '../../../environments/environment';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -31,7 +32,7 @@ export class LoanDataService {
   firma: Subject<any> = new Subject<any>();
   /*  */
 
-
+  
   constructor(public http: HttpClient) { 
 
   }
@@ -48,9 +49,6 @@ export class LoanDataService {
     let headers = environment.provisional_header;
     return this.http.get<any>(url, { headers: headers }); */
 
-
-    /* PREPROD */
-
       //let loanid = localStorage.getItem('loanid');
       let loanid = '180106';
       let url = environment.apis_url + '/V1.0/fineract-protected/loans/' + loanid + '/?associations=all&exclude=guarantors,futureSchedule';
@@ -65,6 +63,7 @@ export class LoanDataService {
       },err=>{
 
       })
+
   }
 
   sendContract(payload){
