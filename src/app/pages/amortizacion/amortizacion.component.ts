@@ -13,16 +13,7 @@ import * as moment from 'moment';
   styleUrls: ['./amortizacion.component.css']
 })
 export class AmortizacionComponent implements OnInit {
-
-  /* loanData={
-    principal:'',
-    clientName:'',
-    numberOfRepayments:'',
-    summary:{totalExpectedRepayment:''},
-    originalSchedule:{periods:''}
-    
-
-  } */
+  
   loanData;
   pagareB64;
   date;
