@@ -171,6 +171,7 @@ export class DashboardComponent implements OnInit {
   ) {
     /*  */
     this.loanService.getLoanData(); //Esto ira en login cuando reciba loanid
+    this.loanService. getPersonalData(); //Esto ira en login cuando reciba loanid
     /*  */
     this.re = localStorage.getItem('step');
     /* this.re=5; */

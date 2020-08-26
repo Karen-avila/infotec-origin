@@ -14,10 +14,12 @@ import { Finance } from 'financejs';
   styleUrls: ['./ccontrato.component.css']
 })
 export class CcontratoComponent implements OnInit {
+  personalData;
   loanData;
   date;
   finance = new Finance();
   catPorcentaje = 0;
+  
 
   constructor(public loanService: LoanDataService) { 
     // Monto del Prestamo
@@ -47,6 +49,11 @@ export class CcontratoComponent implements OnInit {
     this.loanService.nombre.subscribe((value) => {
       this.loanData = value; 
   });
+  this.loanService.personalData.subscribe((value) => {
+    this.personalData = value; 
+});
+
+  
 
  
     //anualInterestRate  --> interes anual
