@@ -17,19 +17,19 @@
               <tr>
                 <td class="justificacion espacio" colspan="1">
                   <p class="center"><b>CAT (Costo Anual Total)</b></p><br><br>
-                  <p class="center"><b> %</b></p>
+                  <p class="center"><b> {{ catPorcentaje.toFixed(2) }} %</b></p>
                 </td>
                 <td class="justificacion espacio" colspan="1">
                   <p class="center"><b>TASA DE INTERÉS ANUAL FIJA</b></p><br><br>
-                  <p class="center"><b>Ordinaria %</b></p>
+                  <p class="center"><b>{{ loanData.annualInterestRate }}%</b></p>
                 </td>
                 <td class="justificacion espacio" colspan="1">
                   <p class="center"><b>MONTO DEL CRÉDITO</b></p><br><br>
-                  <p class="center"><b>$ M.N</b></p>
+                  <p class="center"><b>{{ loanData.principal | currency:"MXN":"symbol" }}</b></p>
                 </td>
                 <td class="justificacion espacio" colspan="1">
                   <p class="center"><b>MONTO TOTAL A PAGAR</b></p><br><br>
-                  <p class="center"><b>$ M.N</b></p>
+                  <p class="center"><b>{{ loanData.summary.totalExpectedRepayment | currency:"MXN":"symbol" }}</b></p>
                 </td>
               </tr>
               <tr>
@@ -42,7 +42,7 @@
               </tr>
               <tr>
                 <td class="justificacion" colspan="1">
-                  <p><b>PLAZO DEL CRÉDITO:</b></p>
+                  <p><b>PLAZO DEL CRÉDITO: {{ loanData.numberOfRepayments }} Meses.</b></p>
                 </td>
                 <td class="justificacion" colspan="3">
                   <p><b>Fecha límite de pago:</b></p>
@@ -124,25 +124,22 @@
 
             </table>
             <div class="container">
-              <p class="titulos">Cudad de México, a <b>dd</b> del <b>mm</b> de <b>aaaa</b></p><br><br>
+              <p class="titulos">Cudad de México, a <b>{{date}}</b></p><br><br>
               <div class="row">
-                <div class="col s6">
-                  <p class="titulos"><b>EL BANCO</b></p>
+                <div class="col s12">
+                  <p class="center"><b>EL CLIENTE</b></p>
+                </div><br><br><br>
+                <div class="col s12 center">
+                  <b>{{ loanData.clientName }}</b>
                 </div>
-                <div class="col s6">
-                  <p class="titulos"><b>EL CLIENTE</b></p>
-                </div>
-                <br><br><br><br>
-                <div class="col s6">
-                  <hr>
-                </div>
-                <div class="col s6">
-                  <hr>
-                </div>
-                <div class="col s6">
-                  <p class="center">Representante legal</p>
-                </div>
-                <div class="col s6">
+
+                <br><br>
+                <div class="col s12">
+                  <p class="center"><b>EL BANCO</b></p>
+                </div><br><br><br>
+               
+                <div class="col s12">
+                  <p class="center">(Firma del Representante legal)</p>
                 </div>
               </div>
             </div>
