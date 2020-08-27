@@ -37,6 +37,7 @@ import { ContratodecreditoComponent } from './contratodecredito/contratodecredit
 import { SolicituddecreditoComponent } from './solicituddecredito/solicituddecredito.component';
 import { TerminosycondicionesComponent } from './terminosycondiciones/terminosycondiciones.component';
 import { NuevosdocsComponent } from './nuevosdocs/nuevosdocs.component';
+import { CartapresentacionComponent } from './cartapresentacion/cartapresentacion.component'
 
 @NgModule({
     declarations:[
@@ -62,7 +63,8 @@ import { NuevosdocsComponent } from './nuevosdocs/nuevosdocs.component';
         ContratodecreditoComponent,
         SolicituddecreditoComponent,
         TerminosycondicionesComponent,
-        NuevosdocsComponent
+        NuevosdocsComponent,
+        CartapresentacionComponent
     ],
     imports:[
         GooglePlaceModule,
