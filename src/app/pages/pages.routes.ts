@@ -22,6 +22,7 @@ import { ContratodecreditoComponent } from './contratodecredito/contratodecredit
 import { SolicituddecreditoComponent } from './solicituddecredito/solicituddecredito.component';
 import { TerminosycondicionesComponent } from './terminosycondiciones/terminosycondiciones.component';
 import { NuevosdocsComponent } from './nuevosdocs/nuevosdocs.component';
+import { CartapresentacionComponent } from './cartapresentacion/cartapresentacion.component';
 const pagesRoutes: Routes = [
     {
         path: '', 
@@ -47,7 +48,9 @@ const pagesRoutes: Routes = [
           {path: 'contratodecredito', component: ContratodecreditoComponent },
           {path: 'terminosycondiciones', component: TerminosycondicionesComponent},
           {path: 'calc', component: CalcComponent},
-          {path: 'nuevosdocumentos', component: NuevosdocsComponent, canActivate: [LoginGuardGuard]}
+          {path: 'nuevosdocumentos', component: NuevosdocsComponent, canActivate: [LoginGuardGuard]},
+          {path: 'cartapresentacion', component: CartapresentacionComponent },
+          {path: 'solicituddecredito', component: SolicituddecreditoComponent }
         ]
       },
 ];

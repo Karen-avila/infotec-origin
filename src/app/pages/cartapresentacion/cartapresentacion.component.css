@@ -1,0 +1,154 @@
+.justificacion{
+    text-align: justify;
+}
+.alineacion{
+    text-align:right;
+}
+.logo-d {
+    width: 350px;
+}
+.subrayar{
+    text-decoration: underline;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    width: 25%;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    padding: 0.3em;
+    caption-side: bottom;
+}
+
+
+th {
+    background: #eee;
+}
+
+.titulos {
+    text-align: center;
+    font-weight: 600;
+}
+
+.titulo {
+    text-align: center;
+}
+
+.espacio {
+    height: 100px;
+}
+
+i.icon-gold {
+    color: #BC955C;
+}
+
+p{
+    font-size: small;
+    margin:0;
+}
+hr{
+    width: 190px;
+    size: 5;
+}
+.trr{
+    background-color:#385623;
+    color:white;
+    text-align:center;
+}
+
+.letras{
+    font-size:14px;
+    color: #385623;
+}
+.letras2{
+    font-size:18px;
+    color: #ecb10a;
+    font-weight: bold;
+}
+.letras3{
+    font-size:18px;
+    color: #385623;
+    font-weight: bold;
+
+}
+.circle li{
+    list-style-type: disc;
+    font-size: 13px;
+    text-align: justify;
+}
+.spann{
+    background:#385623;
+    border-radius: 0.8em;
+    -moz-border-radius: 0.8em;
+    -webkit-border-radius: 0.8em;
+    color: #fff;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 1.6em;
+    margin-right: 15px;
+    text-align: center;
+    width: 1.6em; 
+  }
+
+  .spann2{
+    background:#DCDCDC;
+    border-radius: 0.8em;
+    -moz-border-radius: 0.8em;
+    -webkit-border-radius: 0.8em;
+    color: #385623;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 1.6em;
+    margin-right: 15px;
+    text-align: center;
+    width: 1.6em; 
+  }
+/*tabla*/
+  .contenedor {
+    display: table;
+    width: 333px;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+}
+.contenidos {
+    display: table-row;
+}
+
+.columna0, .columna6 {
+    display: table-cell;
+    border: 1px solid #C8C6C6;
+    vertical-align: middle;
+    width: 50%;
+    padding: 10px;
+  
+}
+.columna1, .columna3 {
+    display: table-cell;
+    border: 1px solid #C8C6C6;
+    vertical-align: middle;
+    width: 10%;
+    padding: 10px;
+}
+.columna2, .columna4 {
+    display: table-cell;
+    border: 1px solid #C8C6C6;
+    vertical-align: middle;
+    padding: 10px;;
+    width: 40%;
+}
+.col3-lin1{
+    
+    width: auto;
+    
+}
+.col3-lin2{
+    
+    width:auto;
+}
