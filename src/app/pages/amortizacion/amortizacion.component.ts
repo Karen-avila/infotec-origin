@@ -55,12 +55,12 @@ export class AmortizacionComponent implements OnInit {
       const imgData = await canvas.toDataURL('image/png');
       const doc = new jsPDF('p', 'mm','a4');
     
-doc.addImage(imgData, 'PNG', 10, 10);
-var base = doc.output('datauristring');  //Base 64 pdf
-/* var base = imgData; */
-////console.log("base64 amort png",base);
-this.pagareB64 = base;
-doc.save(`${target}.pdf`);  //descarga Pdf
+    doc.addImage(imgData, 'PNG', 10, 10);
+    var base = doc.output('datauristring');  //Base 64 pdf
+    /* var base = imgData; */
+    ////console.log("base64 amort png",base);
+    this.pagareB64 = base;
+    doc.save(`${target}.pdf`);  //descarga Pdf
 
  
     });
