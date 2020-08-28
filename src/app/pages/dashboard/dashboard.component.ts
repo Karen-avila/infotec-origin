@@ -139,6 +139,7 @@ export class DashboardComponent implements OnInit {
   formDocumentos: FormGroup;
   formFiel: FormGroup;
   formFielFirm: FormGroup;
+  loanData;
   dic = [
     "apañar",
     "cagar",
@@ -175,6 +176,9 @@ export class DashboardComponent implements OnInit {
     /*  */
     this.re = localStorage.getItem('step');
     /* this.re=5; */
+    this.loanService.nombre.subscribe((value) => {
+      this.loanData = value; 
+  });
 
     this.eventManager.addGlobalEventListener(
       'window',

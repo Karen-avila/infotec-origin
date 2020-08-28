@@ -1,22 +1,22 @@
-<div class="container">
-    <div class="row">
+
+    <div class="row" id="PDFcartapresentacion">
         <div class="col s12 m12">
           <div class="card">
             <div class="card-content">
                 <br><br>
                 <img class="responsive-img logo-d" src="../../../assets/logo2.png">
-                    <p class="alineacion">Ciudad de México, a [00 de mes de] 2020</p><br>
-                        Estimado(a) <b class="letras">[[nombre acreditado]]:</b> 
+                    <p class="alineacion">Ciudad de México, a {{date}}</p><br>
+                        Estimado(a) <b class="letras">{{ loanData.clientName }}:</b> 
                         <br><br><br>
                         <p class="justificacion">
                         El <b class="letras">Banco del Bienestar</b> ha establecido inmejorables condiciones crediticias para ti, con la
                         tasa de interés más baja del mercado <b class="letras">(10% anual)</b> y tu primer pago hasta tres meses después de haberte
-                        depositado [fecha primer mes de pago].Esperamos que tu actividad económica se fortalezca.
+                        depositado {{loanData.originalSchedule.periods[4].dueDate[2] + "/" + loanData.originalSchedule.periods[4].dueDate[1]  + "/" + loanData.originalSchedule.periods[4].dueDate[0]}}.Esperamos que tu actividad económica se fortalezca.
                         </p>
                         <br><br>
                         <table>
                           <tr>
-                        <td colspan="4"> El día [fecha_depósito] transferimos [monto_dispersado] pesos a tu cuenta con <b class="letras">CLABE</b>
+                        <td colspan="4"> El día {{loanData.timeline.expectedDisbursementDate[2] + "/" + loanData.timeline.expectedDisbursementDate[1] + "/" + loanData.timeline.expectedDisbursementDate[0]}} transferimos {{ loanData.principal | currency:"MXN":"symbol"}} a tu cuenta con <b class="letras">CLABE</b>
                         interbancaria [clave_interbancaria] como nos indicaste.</td>
                       </tr>
                       </table>
@@ -30,7 +30,7 @@
                       <div class="contenedor">
                         <div class="contenidos">
                             <div class="columna1"><img src="../../../assets/hucha.png"> </div>
-                            <div class="columna2 justificacion">Realizarás <b class="letras">tu pago</b> a más tardar los días <b class="letras">[25]* </b>de cada mes</div>
+                            <div class="columna2 justificacion">Realizarás <b class="letras">tu pago</b> a más tardar los días <b class="letras">{{loanData.timeline.expectedDisbursementDate[2]}}* </b>de cada mes</div>
                             <div class="columna3"><p class="spann2 center">1</p></div>
                             <div class="columna4 justificacion"><b class="letras">Sin salir de tu casa </b>, mediante transferencia electrónica desde cualquier portal electrónico
                               bancario, para realizar un SPEI (a través de computadora o aplicación móvil) a tu crédito.</div>
@@ -60,7 +60,7 @@
                             <tr>
                               <td colspan="1"><p class="center">Banco del Bienestar</p></td>
                               <td colspan="1"><p class="center">[[CLABE]]</p></td>
-                              <td colspan="1"><p class="center">[[nombre acreditado]]</p></td>
+                              <td colspan="1"><p class="center">{{ loanData.clientName }}</p></td>
                             </tr>
                             </table>
                             <br><br>
@@ -124,5 +124,16 @@
             </div>
           </div>
         </div>
+        <!-- <div class="row">
+          <ul>
+            <li>
+              <button class="waves-effect teal btn darken-4 modal-trigger left ml-3"
+                (click)="downloadPDF($event, 'cartapresentacion')">
+                <span class="white-text text-darken-4" style="font-size: 14px;">
+                  DESCARGAR PDF
+                </span>
+              </button>
+            </li>
+          </ul>
+        </div> -->
     </div>
-</div>

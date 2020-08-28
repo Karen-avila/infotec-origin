@@ -62,27 +62,26 @@ export class CalcComponent implements OnInit {
   catPorcentaje = 0;
 
   constructor() { 
-      // Monto del Prestamo
-      const montoCapital = 20000 * -1;
-      // Tasa de Interes Anual
-      const tasaInteresAnual = 0.10; // cambio a 12
-      // Tasa de Interes Mensual
-      const tasaInteresMensual = tasaInteresAnual / 12; // #meses
-      // Plazo del Credito
-      const plazoCredito = 18;
-      // Monto del Pago Mensual
-      const pmt = this.finance.PMT(tasaInteresMensual, plazoCredito, montoCapital);
-      // // ////console.log("PAGO MENSUAL ", pmt.toFixed(2));
-      const pagos = [];
-      pagos.push(montoCapital);
-      for (let i = 0; i < plazoCredito; i++) {
-        pagos.push(pmt);
-      }
-      const tirMensual = this.finance.IRR.apply(this, pagos);
-     
-      
-      this.catPorcentaje = ((Math.pow((1 + (tirMensual / 100)), 12)) - 1) * 100;
-      // // ////console.log("CAT "+ this.catPorcentaje.toFixed(2)+"%");
+    const montoCapital = 20000 * -1;
+    // Tasa de Interes Anual
+    const tasaInteresAnual = 0.10; // cambio a 12
+    // Tasa de Interes Mensual
+    const tasaInteresMensual = tasaInteresAnual / 12; // #meses
+    // Plazo del Credito
+    const plazoCredito = 18;
+    // Monto del Pago Mensual
+    const pmt = this.finance.PMT(tasaInteresMensual, plazoCredito, montoCapital);
+    console.log("PAGO MENSUAL ", pmt);
+    const pagos = [montoCapital,0,0,0];
+    //pagos.push(montoCapital);
+    for (let i = 0; i < plazoCredito; i++) {
+      pagos.push(pmt);
+    }
+    const tirMensual = this.finance.IRR.apply(this, pagos);
+   
+    
+    this.catPorcentaje = ((Math.pow((1 + (tirMensual / 100)), 12)) - 1) * 100;
+    //console.log("CAT "+ this.catPorcentaje.toFixed(2)+"%");
   }
 
   ngOnInit() {

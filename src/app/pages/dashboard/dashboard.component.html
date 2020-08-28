@@ -1113,7 +1113,7 @@
                     <div class="card-content">
                         <div class="row center">
                             <h3><b>¡Felicidades tu crédito fue aprobado!</b></h3>
-                            <p class="flow-text">Por un monto de {{ dummyAmmount | currency:"MXN":"symbol" }}</p>
+                            <p class="flow-text">Por un monto de {{ loanData.principal | currency:"MXN":"symbol" }}</p>
                         </div>
                         <div class="row center">
 
@@ -1448,6 +1448,18 @@
 <div id="contratcred" class="modal">
     <div class="modal-content">
         <app-contratodecredito></app-contratodecredito>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect teal darken-4 white-text btn-flat">Cerrar</a>
+    </div>
+    <div class="footer-copyright teal darken-3">
+        <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
+    </div>
+</div>
+
+<div id="cpresentacion" class="modal">
+    <div class="modal-content">
+        <app-cartapresentacion></app-cartapresentacion>
     </div>
     <div class="modal-footer">
         <a class="modal-close waves-effect teal darken-4 white-text btn-flat">Cerrar</a>
