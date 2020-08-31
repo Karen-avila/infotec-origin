@@ -3,7 +3,7 @@
     <div class="col s12 m12">
       <div class="card">
         <div class="card-content">
-          <div class="container">
+          
             <div class="row">
               <table style="border: hidden">
                 <tr>
@@ -25,45 +25,45 @@
                 </tr>
                 <tr>
                   <td colspan="1">
-                    <br><br>Apellido Paterno:
+                    <br><br><b>Apellido Paterno:</b> {{personalData.lastname}}
                   </td>
                   <td colspan="1">
-                    <br><br>Apellido Materno:
+                    <br><br><b>Apellido Materno:</b> {{personalData.surname}}
                   </td>
                   <td colspan="1">
-                    <br><br>Nombre(s):
+                    <br><br><b>Nombre(s): </b> {{personalData.firstname}}
                   </td>
                   <td colspan="1">
-                    Fecha Nacimiento:
+                    <b>Fecha Nacimiento:</b> {{personalData.dateOfBirth[2] + "/" + personalData.dateOfBirth[1] + "/" + personalData.dateOfBirth[0]}}
                     <br>
-                    Entidad Federativa de Nacimiento:
+                    <b>Entidad Federativa de Nacimiento:</b> {{personalData.birthplace.name}}
                     <br>
-                    País de Nacimiento:
+                    <b>País de Nacimiento:</b> México
                   </td>
                 </tr>
                 <tr>
                   <td colspan="2">Dirección: Calle/Número/Colonia</td>
                   <td colspan="1">Nacionalidad:</td>
-                  <td colspan="1">Género:</td>
+                  <td colspan="1"><b>Género:</b> {{personalData.gender.name}}</td>
                 </tr>
                 <tr>
-                  <td colspan="1">Estado:</td>
-                  <td colspan="1">Población:</td>
-                  <td colspan="1">Código Postal:</td>
-                  <td colspan="1">Teléfono móvil:</td>
+                  <td colspan="1"><b>Estado:</b>{{personalData.birthplace.name}}</td>
+                  <td colspan="1"><b>Población:</b></td>
+                  <td colspan="1"><b>Código Postal:</b></td>
+                  <td colspan="1"><b>Teléfono móvil:</b>{{personalData.mobileNo}}</td>
                 </tr>
                 <tr>
-                  <td colspan="1">Tipo de identificación:</td>
-                  <td colspan="1">Número de identificación:</td>
-                  <td colspan="2">Correo electrónico:</td>
+                  <td colspan="1"><b>Tipo de identificación:</b></td>
+                  <td colspan="1"><b>Número de identificación:</b></td>
+                  <td colspan="2"><b>Correo electrónico:</b></td>
                 </tr>
                 <tr>
                   <td colspan="1">
-                    R.F.C. con homoclave:
+                    <b>R.F.C. con homoclave:</b> {{personalData.rfc}}
                     <br><br>
-                    Firma Electrónica (FIEL):
+                    <b>Firma Electrónica (FIEL):</b>
                   </td>
-                  <td colspan="3"><br>CURP:<br></td>
+                  <td colspan="3"><br><b>CURP:</b><br> {{personalData.uniqueId}}</td>
                 </tr>
                 <tr>
                   <td colspan="4">
@@ -71,13 +71,13 @@
                   </td>
                 </tr>
                 <tr>
-                  <td colspan="1"><br>Número Cuenta:<br><br></td>
+                  <td colspan="1"><br><b>Número Cuenta:</b><br><br></td>
                   <td colspan="3">
-                    Banco:
+                    <b>Banco:</b>
                     <br>
-                    Clabe:
+                    <b>Clabe:</b>
                     <br>
-                    Destino del crédito:
+                    <b>Destino del crédito:</b>
                   </td>
                 </tr>
                 <tr>
@@ -357,7 +357,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          
         </div>
       </div>
     </div>

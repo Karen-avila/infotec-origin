@@ -15,6 +15,8 @@ export class HomeComponent implements OnInit {
 tim;
 car = this.carr();
 
+  monte;
+
   valueMon: number = 20000;
   optionsMon: Options = {
     floor: 0,
@@ -24,10 +26,11 @@ car = this.carr();
     translate: (value: number, label: LabelType): string => {
       switch (label) {
         case LabelType.Low:
-          return '<b>Si te Prestamos: </b>MX' +  value.toLocaleString('es-MX', {
+          this.monte = value.toLocaleString('es-MX', {
             style: 'currency',
             currency: 'MXN',
-          }); 
+          });
+          return '<b>Si te Prestamos: </b>MX' + this.monte;
         case LabelType.Ceil:
           return '<b>Monto Máximo: </b>MX' + value.toLocaleString('es-MX', {
             style: 'currency',
@@ -36,9 +39,10 @@ car = this.carr();
         default:
           return '<b>Monto</b>';
       }
-          //return '<b>Si te Prestamos:</b> $' + value;
+      //return '<b>Si te Prestamos:</b> $' + value;
     }
   };
+
   valuePlaz: number = 18;
   optionsPlaz: Options = {
     floor: 0,
@@ -55,7 +59,7 @@ car = this.carr();
         default:
           return '<b>Plazo</b>';
       }
-          //return '<b>Si te Prestamos:</b> $' + value;
+      //return '<b>Si te Prestamos:</b> $' + value;
     }
   };
   
@@ -64,32 +68,26 @@ car = this.carr();
 
 
   constructor() { 
-    // Monto del Prestamo
-    var montoCapital = 20000 * -1;
+    const montoCapital = 20000 * -1;
     // Tasa de Interes Anual
-    var tasaInteresAnual = 0.12; //cambie a 12
+    const tasaInteresAnual = 0.10; // cambio a 12
     // Tasa de Interes Mensual
-    var tasaInteresMensual = tasaInteresAnual / 12;
+    const tasaInteresMensual = tasaInteresAnual / 12; // #meses
     // Plazo del Credito
-    var plazoCredito = 18;
+    const plazoCredito = 18;
     // Monto del Pago Mensual
-    /* var pmt = this.finance.PMT(tasaInteresMensual, plazoCredito, montoCapital); */
-    var pmt = parseInt(this.finance.PMT(0.01,this.valuePlaz,-this.valueMon).toFixed(2));
-    //// ////console.log("PAGO MENSUAL ", pmt.toFixed(2));
-    var pagos = [montoCapital,0,0,0];
-    console.log("el monto capital",this.finance.PMT(0.01,this.valuePlaz,-this.valueMon))
+    const pmt = this.finance.PMT(tasaInteresMensual, plazoCredito, montoCapital);
+    console.log("PAGO MENSUAL ", pmt);
+    const pagos = [montoCapital,0,0,0];
     //pagos.push(montoCapital);
-    for (var i = 0; i < plazoCredito; i++) {
-        pagos.push(pmt);
+    for (let i = 0; i < plazoCredito; i++) {
+      pagos.push(pmt);
     }
-    var tirMensual = this.finance.IRR.apply(this, pagos);
-    //// ////console.log("TIR MENSUAL " +tirMensual.toFixed(2) +"%");
-    var tirAnual = tirMensual * 12;
-    //// ////console.log("TIR ANUAL "+ tirAnual.toFixed(2)+"%");
-    var cat = (Math.pow((1 + (tirMensual / 100)), 12)) - 1;
-    console.log("CAT "+cat.toFixed(2)+"%");
-    this.catPorcentaje  = ((Math.pow((1 + (tirMensual / 100)), 12)) - 1) * 100;    
-    console.log("CAT "+ this.catPorcentaje.toFixed(2)+"%");
+    const tirMensual = this.finance.IRR.apply(this, pagos);
+   
+    
+    this.catPorcentaje = ((Math.pow((1 + (tirMensual / 100)), 12)) - 1) * 100;
+    //console.log("CAT "+ this.catPorcentaje.toFixed(2)+"%");
   }
 
   ngOnInit() {

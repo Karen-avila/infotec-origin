@@ -25,9 +25,9 @@ export class ListaDocs{
                     ref: "#aprivintegral"
                 },
                 {
-                    name: "Ver Autorización para Investigación de Crédito",
-                    ref: "#autorizo"
-                },
+                    name: "Ver Carta Presentación",
+                    ref: "#cpresentacion"
+                }, 
                 {
                     name: "Ver Solicitud de Contratación",
                     ref: "#solcred"

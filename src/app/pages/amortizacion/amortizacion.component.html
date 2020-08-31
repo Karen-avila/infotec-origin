@@ -27,7 +27,7 @@
                 <p class="titulo">Plazo: <b>{{ loanData.numberOfRepayments }} Meses.</b></p>
                 <p class="titulo">Periodicidad del pago: <b>Mensual</b></p>
                 <br>
-                <p class="titulo">Total: <b>{{ loanData.summary.totalExpectedRepayment | currency:"MXN":"symbol" }}</b></p>
+                <p class="titulo">Total: <b>{{ loanData.originalSchedule.totalRepaymentExpected | currency:"MXN":"symbol" }}</b></p>
                 <!-- <p class="titulo"><b>{{ loanData.summary.totalExpectedRepayment | currency:"MXN":"symbol" }}</b></p> -->
               </div>
             </div>
@@ -59,7 +59,7 @@
             </table>
             <br>
             <div class="col s12">
-              <p class="right"><b>Total a pagar: </b>{{ loanData.summary.totalExpectedRepayment | currency:"MXN":"symbol" }}</p>
+              <p class="right"><b>Total a pagar: </b>{{ loanData.originalSchedule.totalRepaymentExpected | currency:"MXN":"symbol" }}</p>
             </div>
             <br>
             <br>
