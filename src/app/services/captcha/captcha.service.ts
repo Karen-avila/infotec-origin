@@ -22,12 +22,12 @@ export class CaptchaService {
     let url = environment.apis_url + '/V1.0/google/recaptcha';
     let api_keys = environment.gravitee_api_keys;
     let headers = environment.headers_apis;
-    headers['X-Gravitee-Api-Key'] = api_keys['firma'];
+   // headers['X-Gravitee-Api-Key'] = api_keys['firma'];
 
     const object = JSON.stringify(token);
 
     
-/*     return this.http.post(url, token,{headers}).pipe(
+    return this.http.post(url, token,{headers}).pipe(
       map(res => {
         console.log("se envia",res)
         return true;
@@ -37,10 +37,10 @@ export class CaptchaService {
         console.log("se envia err",err)
         return throwError(err);
       })
-    ); */
+    );
 
 
-    return this.http.post(url, object, { headers }).pipe(
+/*     return this.http.post(url, object, { headers }).pipe(
       map((res: any) => {
         console.log("login",res)
         return true;
@@ -49,7 +49,7 @@ export class CaptchaService {
         console.log("error",err)
         return throwError(err);
       })
-    );
+    ); */
 
 /*     return this.http.post(url, object, { headers }).map((res: any) => {
       console.log("creado", res)
