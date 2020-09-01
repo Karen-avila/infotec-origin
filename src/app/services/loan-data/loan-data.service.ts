@@ -82,7 +82,6 @@ export class LoanDataService {
       })
 
   }
-
   getAddressData() {
     /* DESARROLLO */
    /*  let loanid = '90246';   
