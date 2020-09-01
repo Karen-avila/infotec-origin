@@ -366,8 +366,8 @@ export class DashboardComponent implements OnInit {
     var dataCode = 'STATE';
     this.userService.getDataCode('STATE').subscribe(
       data => {
-        this.stateOptions = _.sortBy(data.codeValues, 'name');
-        ////console.log("states",this.stateOptions)
+        this.stateOptions = _.sortBy(data.codeValues, 'value');
+        console.log("states",this.stateOptions)
       },
       error => console.error('There was an error getting code values ' + dataCode, error)
     )
@@ -754,6 +754,7 @@ findInvalidControls() {
     this.popup[9].open(); //revisar donde se cierra
     //////console.log(this.form.value);
     /* if (this.form.valid) */
+    let message=' ';
     if (this.form.valid) {
       let ref1 = new PersonalReferences(this.form.value.ref1nombre,this.form.value.ref1apaterno + " " + this.form.value.ref1amaterno, 93, 17, 31, 120060, "31 octubre 1991", "es-mx", "dd MMM yyyy", "551212121212", this.form.value.ref1nombre2);
       let ref2 = new PersonalReferences(this.form.value.ref2nombre,this.form.value.ref2apaterno + " " + this.form.value.ref2amaterno, 93, 17, 31, 120060, "31 octubre 1991", "es-mx", "dd MMM yyyy", "51212121212", this.form.value.ref2nombre2);
@@ -798,11 +799,20 @@ findInvalidControls() {
     } else {  
       this.popup[9].close();    
       let err=this.findInvalidControls();
-      let message=' ';
+      message = ' ';
       for(let i=0;i<err.length;i++){
-        message=message+err[i]+', ';
+        message = message + err[i]+', ';
       }
-      swal('¡Cuidado!',`Para poder continuar, completa correctamente todos los campos:\n ${message}`, 'error');
+      /* swal('¡Cuidado!',`Para poder continuar, completa correctamente todos los campos:\n ${message}`, 'error').then((val) => {
+        if(val){
+        console.log("boton aceptar swal");
+        message = ' ';
+        }
+      }); */
+      swal('¡Cuidado!',`Para poder continuar, completa correctamente todos los campos:\n ${message}`, 'error')
+.then(() => {
+  this.viewError = [];
+});
       
      }
      

@@ -154,3 +154,7 @@ th {
 #loader{
     top: 30% !important;
 }
+
+.input-field.col label{
+  z-index: -1;
+}

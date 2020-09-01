@@ -77,6 +77,8 @@ scorePerfNeg(payload) {
 
 }
 
+/* SOCIOECONOMICOS */
+
 queremosConocerte(payload) {
 
   let clientid = localStorage.getItem('clientid');
@@ -92,11 +94,28 @@ queremosConocerte(payload) {
 
 }
 
-
 queremosConocerNegocio(payload) {
 
   let clientid = localStorage.getItem('clientid');
   let url = environment.apis_url + '/V1.0/fineract-protected/datatables/analisis_de_negocio/' + clientid;
+  let api_keys = environment.gravitee_api_keys;
+  let headers = environment.headers_apis;
+  headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
+  return this.http.post(url, payload, { headers: headers }).map((res: any) => {
+    return res;
+  }).catch(err => {
+    return err;
+  });
+
+}
+
+/* CAPACIDAD DE PAGO */
+
+
+capacidadPago(payload) {
+
+  let clientid = localStorage.getItem('clientid');
+  let url = environment.apis_url + '/V1.0/fineract-protected/datatables/capacidad_pago/' + clientid;
   let api_keys = environment.gravitee_api_keys;
   let headers = environment.headers_apis;
   headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
