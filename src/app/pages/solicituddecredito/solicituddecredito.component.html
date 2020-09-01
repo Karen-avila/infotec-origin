@@ -1,5 +1,5 @@
 <div class="">
-  <div class="row">
+  <div class="row" id="PDFsolicitudcontratacion">
     <div class="col s12 m12">
       <div class="card">
         <div class="card-content">
@@ -42,15 +42,15 @@
                   </td>
                 </tr>
                 <tr>
-                  <td colspan="2">Dirección: Calle/Número/Colonia</td>
-                  <td colspan="1">Nacionalidad:</td>
+                  <td colspan="2"><b>Dirección: Calle/Número/Colonia</b></td>
+                  <td colspan="1"><b>Nacionalidad:</b></td>
                   <td colspan="1"><b>Género:</b> {{personalData.gender.name}}</td>
                 </tr>
                 <tr>
-                  <td colspan="1"><b>Estado:</b>{{personalData.birthplace.name}}</td>
+                  <td colspan="1"><b>Estado:</b> {{personalData.birthplace.name}}</td>
                   <td colspan="1"><b>Población:</b></td>
                   <td colspan="1"><b>Código Postal:</b></td>
-                  <td colspan="1"><b>Teléfono móvil:</b>{{personalData.mobileNo}}</td>
+                  <td colspan="1"><b>Teléfono móvil:</b> {{personalData.mobileNo}}</td>
                 </tr>
                 <tr>
                   <td colspan="1"><b>Tipo de identificación:</b></td>
@@ -136,6 +136,9 @@
                     <div class="container">
                       <div class="center">
                         <div class="col s12">
+                          <b>{{ loanData.clientName }}</b>
+                        </div>
+                        <div class="col s12">
                           <hr>
                         </div>
                         <div class="col s12">
@@ -173,25 +176,32 @@
                   target="_blank" href="https://www.gob.mx/bancodelbienestar">https://www.gob.mx/bancodelbienestar</a>
               </p>
               <br><br>
-              <div class="container">
+              
                 <div class="row">
-                  <div class="col s6">
+                
+                  <div class="col s12">
                     <p class="center"><b>NOMBRE Y FIRMA DEL CLIENTE</b></p>
+                  </div><br><br><br>
+                  <div class="col s12 center">
+                    <b>{{ loanData.clientName }}</b>
                   </div>
-                  <div class="col s6">
+  
+                  <br><br>
+                  <div class="col s12">
                     <p class="center"><b>POR BANCO DEL BIENESTAR</b></p>
+                  </div><br><br><br>
+                 
+                  <div class="col s12">
+                    <p class="center">(Firma del Representante legal)</p>
                   </div>
-                  <br><br><br><br>
-                  <div class="col s6">
-                    <hr>
-                  </div>
-                  <div class="col s6">
-                    <hr>
-                  </div>
+                  
                 </div>
-              </div>
+             
+              
+             <!--  
               <div style="overflow-x:auto;">
-              <table>
+              
+                <table>
                 <tr>
                   <td colspan="4">
                     <p class="center trr"><b>INFORMACIÓN DE LA CUENTA ASOCIADA</b></p>
@@ -337,7 +347,7 @@
                   </td>
                 </tr>
               </table>
-             </div>
+             </div> 
               <br>
               <br>
               <div class="container">
@@ -355,11 +365,24 @@
                     <p class="center"><b>Funcionario(s) Autorizado (s) de BANCO DEL BIENESTAR</b></p>
                   </div>
                 </div>
-              </div>
+              </div>-->
             </div>
-          
         </div>
       </div>
     </div>
   </div>
+
+  <!-- <div class="row">
+    <ul>
+      <li>
+        <button class="waves-effect teal btn darken-4 modal-trigger left ml-3"
+          (click)="downloadPDF($event, 'solicitudcontratacion')">
+          <span class="white-text text-darken-4" style="font-size: 14px;">
+            DESCARGAR PDF
+          </span>
+        </button>
+      </li>
+    </ul>
+  </div> -->
+
 </div>
