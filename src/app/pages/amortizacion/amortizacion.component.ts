@@ -53,9 +53,9 @@ export class AmortizacionComponent implements OnInit {
       scale: .75
     }).then(async (canvas) => {
       const imgData = await canvas.toDataURL('image/png');
-      const doc = new jsPDF('p', 'mm','a4');
+      const doc = new jsPDF('p', 'pt','a4');
     
-    doc.addImage(imgData, 'PNG', 10, 10);
+    doc.addImage(imgData, 'PNG', 10, 10, 572, 770);
     var base = doc.output('datauristring');  //Base 64 pdf
     /* var base = imgData; */
     ////console.log("base64 amort png",base);

@@ -17,6 +17,7 @@ export class LoanDataService {
   /*  */
   nombre: Subject<any> = new Subject<any>();
   personalData: Subject<any> = new Subject<any>();
+  addressData: Subject<any> = new Subject<any>();
   
   /*  */
 
@@ -71,11 +72,34 @@ export class LoanDataService {
       let api_keys = environment.gravitee_api_keys;
       let headers = environment.headers_apis;
       headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
-      console.log("aqwertyuio",url);
+      //console.log("urlpersonaldata",url);
       /* return this.http.get<any>(url, { headers: headers }); */
       this.http.get<any>(url, { headers: headers }).subscribe(res=>{
         console.log("personalData",res);
         this.personalData.next(res);
+      },err=>{
+
+      })
+
+  }
+  getAddressData() {
+    /* DESARROLLO */
+   /*  let loanid = '90246';   
+    let url = environment.mifos_url + '/fineract-provider/api/v1/loans/' + loanid + '/?associations=all&exclude=guarantors,futureSchedule';
+    let headers = environment.provisional_header;
+    return this.http.get<any>(url, { headers: headers }); */
+
+      //let loanid = localStorage.getItem('loanid');
+      let clientid = '90724';
+      let url = environment.apis_url + '/V1.0/fineract-protected/client/' + clientid + '/addresses';
+      let api_keys = environment.gravitee_api_keys;
+      let headers = environment.headers_apis;
+      headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
+      console.log("aqwertyuio",url);
+      /* return this.http.get<any>(url, { headers: headers }); */
+      this.http.get<any>(url, { headers: headers }).subscribe(res=>{
+        console.log("addressData",res);
+        this.addressData.next(res);
       },err=>{
 
       })
