@@ -82,7 +82,7 @@
                         <input class="validate" id="clabeinter" type="text" (keypress)="numberOnly($event)"
                             formControlName="clabeinterconf" name="Clabe Interbancaria (Confirmación) *" minlength="18"
                             maxlength="18" required>
-                        <label for="text">Clabe Interbancaria (Confirmación)</label>
+                        <label for="text" class="active">Confirmar Clabe *</label>
 
                         <div class="red-text col s12" *ngIf="form.errors?.isValid && !form.pristine">
                             <p>Las clabes interbancarias no son iguales.</p>
@@ -200,7 +200,7 @@
                         <select class="browser-default" [(ngModel)]="entidadNac" formControlName="entidadfednaci"
                             name="Entidad Federativa de Nacimiento" id="entidadfednaci">
                             <option value="" disabled selected>Selecciona una opción</option>
-                            <option [value]="state.name" *ngFor="let state of stateOptions">{{state.name}}</option>
+                            <option [value]="state.value" *ngFor="let state of stateOptions">{{state.value}}</option>
                         </select>
                         <!-- <label>Entidad Federativa de Nacimiento *</label> -->
                         <div class="blue-text" *ngIf="f.entidadfednaci.errors"></div>
