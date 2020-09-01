@@ -88,7 +88,7 @@ export class CalcComponent implements OnInit {
   }
 
   sendMonto(){
-    this.montPlaz.emit({valueMon:this.valueMon,valuePlaz:this.valuePlaz});
+    this.montPlaz.emit({valueMon:this.valueMon,valuePlaz:this.valuePlaz,catPorcentaje:this.catPorcentaje.toFixed(2)});
   }
 
 

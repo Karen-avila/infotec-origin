@@ -40,6 +40,7 @@ export class DashboardComponent implements OnInit {
 
   valuePlaz='';
   valueMon='';
+  catPorcentaje='';
   listaDocs=new ListaDocs();
 
   entidadNac;
@@ -173,6 +174,7 @@ export class DashboardComponent implements OnInit {
     /*  */
     this.loanService.getLoanData(); //Esto ira en login cuando reciba loanid
     this.loanService. getPersonalData(); //Esto ira en login cuando reciba loanid
+    this.loanService. getAddressData(); //Esto ira en login cuando reciba loanid
     /*  */
     this.re = localStorage.getItem('step');
     /* this.re=5; */
@@ -290,6 +292,7 @@ export class DashboardComponent implements OnInit {
       ref2tiporelacion: new FormControl(null, Validators.required),
       montocredito: new FormControl(),
       plazocredito: new FormControl(),
+      catPorcentaje: new FormControl(),
       termcond: new FormControl(false, Validators.required),
       aprivacidad: new FormControl(null, Validators.required)
     }, { validators: this.compareClabe('clabeinter', 'clabeinterconf'), }
@@ -1161,6 +1164,7 @@ findInvalidControls() {
     console.log(mensaje);
     this.valuePlaz = mensaje.valuePlaz;
     this.valueMon = mensaje.valueMon;
+    this.catPorcentaje = mensaje.catPorcentaje;
   }
 
 

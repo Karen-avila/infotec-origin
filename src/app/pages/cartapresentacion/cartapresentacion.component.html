@@ -16,7 +16,7 @@
                         <br><br>
                         <table>
                           <tr>
-                        <td colspan="4"> El día {{loanData.timeline.expectedDisbursementDate[2] + "/" + loanData.timeline.expectedDisbursementDate[1] + "/" + loanData.timeline.expectedDisbursementDate[0]}} transferimos {{ loanData.principal | currency:"MXN":"symbol"}} a tu cuenta con <b class="letras">CLABE</b>
+                        <td colspan="4"> De aceptar esta autorización, transferiremos {{ loanData.principal | currency:"MXN":"symbol"}} a tu cuenta con <b class="letras">CLABE</b>
                         interbancaria [clave_interbancaria] como nos indicaste.</td>
                       </tr>
                       </table>
@@ -37,7 +37,7 @@
                         </div>
                         <div class="contenidos">
                             <div class="columna1"><i class="material-icons small">calculate</i></div>
-                            <div class="columna2 justificacion">18 pagos de <b class="letras">[pago mensual],</b> a partir del <b class="letras">[fecha inicial de pago]</b></div>
+                            <div class="columna2 justificacion">18 pagos de <b class="letras">{{loanData.originalSchedule.periods[4].totalInstallmentAmountForPeriod | currency:"MXN":"symbol"}},</b> a partir del <b class="letras">{{loanData.originalSchedule.periods[4].dueDate[2] + "/" + loanData.originalSchedule.periods[4].dueDate[1] + "/" + loanData.originalSchedule.periods[4].dueDate[0]}}</b></div>
                             <div class="columna3"><p class="spann2">2</p></div>
                             <div class="columna4 justificacion"><b class="letras">Acudiendo al banco de tu preferencia,</b> donde tengas cuenta y solicitando un SPEI, a tu crédito.</div>
                         </div>
@@ -124,16 +124,16 @@
             </div>
           </div>
         </div>
-        <!-- <div class="row">
-          <ul>
-            <li>
-              <button class="waves-effect teal btn darken-4 modal-trigger left ml-3"
-                (click)="downloadPDF($event, 'cartapresentacion')">
-                <span class="white-text text-darken-4" style="font-size: 14px;">
-                  DESCARGAR PDF
-                </span>
-              </button>
-            </li>
-          </ul>
-        </div> -->
     </div>
+  <!--   <div class="row">
+      <ul>
+        <li>
+          <button class="waves-effect teal btn darken-4 modal-trigger left ml-3"
+            (click)="downloadPDF($event, 'cartapresentacion')">
+            <span class="white-text text-darken-4" style="font-size: 14px;">
+              DESCARGAR PDF
+            </span>
+          </button>
+        </li>
+      </ul>
+    </div> -->

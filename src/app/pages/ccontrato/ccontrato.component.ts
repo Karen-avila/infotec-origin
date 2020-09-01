@@ -15,6 +15,7 @@ import { Finance } from 'financejs';
 })
 export class CcontratoComponent implements OnInit {
   personalData;
+  pagareB64;
   loanData;
   date;
   finance = new Finance();
@@ -22,7 +23,6 @@ export class CcontratoComponent implements OnInit {
   
 
   constructor(public loanService: LoanDataService) { 
-    // Monto del Prestamo
     const montoCapital = 20000 * -1;
     // Tasa de Interes Anual
     const tasaInteresAnual = 0.10; // cambio a 12
@@ -32,9 +32,9 @@ export class CcontratoComponent implements OnInit {
     const plazoCredito = 18;
     // Monto del Pago Mensual
     const pmt = this.finance.PMT(tasaInteresMensual, plazoCredito, montoCapital);
-    // // ////console.log("PAGO MENSUAL ", pmt.toFixed(2));
-    const pagos = [];
-    pagos.push(montoCapital);
+    console.log("PAGO MENSUAL ", pmt);
+    const pagos = [montoCapital,0,0,0];
+    //pagos.push(montoCapital);
     for (let i = 0; i < plazoCredito; i++) {
       pagos.push(pmt);
     }
@@ -42,7 +42,7 @@ export class CcontratoComponent implements OnInit {
    
     
     this.catPorcentaje = ((Math.pow((1 + (tirMensual / 100)), 12)) - 1) * 100;
-    // // ////console.log("CAT "+ this.catPorcentaje.toFixed(2)+"%");
+    //console.log("CAT "+ this.catPorcentaje.toFixed(2)+"%");
   }
 
   ngOnInit() {
@@ -71,8 +71,10 @@ export class CcontratoComponent implements OnInit {
       scale: .75
     }).then(async (canvas) => {
       const imgData = await canvas.toDataURL('image/png');
-      const doc = new jsPDF('p', 'mm');
-      doc.addImage(imgData, 'PNG', 10, 10);
+      const doc = new jsPDF('p', 'pt','a4');
+      doc.addImage(imgData, 'PNG', 10, 10, 572, 770);
+      var base = doc.output('datauristring');  //Base 64 pdf
+      this.pagareB64 = base;
       doc.save(`${target}.pdf`);
     });
   }
