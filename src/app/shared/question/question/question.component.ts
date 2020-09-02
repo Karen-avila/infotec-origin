@@ -1866,7 +1866,9 @@ llenaqctn33(preg33){
      // console.log(this.formQcQcn)
     if (this.formScrPerNeg.valid && this.formScrPerMer.valid
     && this.formScrRep.valid && this.formScrDir.valid &&
-    this.formQcQcn.valid){
+    this.formQcQcn.valid &&
+    this.formQcQc.valid){
+
       let sumPreg15 = 0;
       this.preg15_0.forEach(function(res) {
         sumPreg15 = sumPreg15 + parseInt(res.resp)
@@ -1878,8 +1880,8 @@ llenaqctn33(preg33){
       let payload="{";
       payload = payload + `"campo_1":"${this.preg6a11[4].resp}","campo_2":"${this.preg6a11[3].resp}","campo_3":"${this.preg12a13[0].resp}","campo_4":"${this.preg6a11[5].resp}","campo_5":"${this.preg14[0].resp}","campo_6":"${sumPreg15}",`;
       payload = payload + `"locale": "es-mx", "dateFormat": "yyyy-MM-dd"}`
-      //console.log("view", payload)
-
+      console.log("view suma", payload)
+      this.instance[1].open();
       /* 
       {"campo_1:""2000,""campo_2:""2000,""campo_3:""240060,""campo_4:""2000,""campo_5:""2000,""campo_6:"",""locale": "es-mx", "dateFormat": "yyyy-MM-dd"}
       
@@ -1887,6 +1889,7 @@ llenaqctn33(preg33){
      this.instance[0].close();
 /*       this.questionsServices.capacidadPago(payload).subscribe(res=>{
         console.log("res senddir",res)
+        this.instance[1].open();
         this.instance[0].close(); //checar esto
       },err=>{
         console.log("err senddir",err)
