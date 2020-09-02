@@ -1864,10 +1864,9 @@ llenaqctn33(preg33){
     // ////console.log(this.formScrPerNeg.valid,this.formScrPerMer.valid,this.formScrRep.valid,this.formScrDir.valid,this.formQcQc.valid,this.formQcQcn.valid)
     /* if (this.formScrPerNeg.valid){ */
      // console.log(this.formQcQcn)
-    /* if (this.formScrPerNeg.valid && this.formScrPerMer.valid
+    if (this.formScrPerNeg.valid && this.formScrPerMer.valid
     && this.formScrRep.valid && this.formScrDir.valid &&
-    this.formQcQcn.valid) */ 
-    if(true){
+    this.formQcQcn.valid){
       let sumPreg15 = 0;
       this.preg15_0.forEach(function(res) {
         sumPreg15 = sumPreg15 + parseInt(res.resp)
@@ -1886,13 +1885,13 @@ llenaqctn33(preg33){
       
       */
      this.instance[0].close();
-      this.questionsServices.capacidadPago(payload).subscribe(res=>{
+/*       this.questionsServices.capacidadPago(payload).subscribe(res=>{
         console.log("res senddir",res)
         this.instance[0].close(); //checar esto
       },err=>{
         console.log("err senddir",err)
         this.instance[0].close(); //checar esto
-      });
+      }); */
     } else {
       this.instance[0].close();
       swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
