@@ -201,7 +201,7 @@
                         <select class="browser-default" [(ngModel)]="entidadNac" formControlName="entidadfednaci"
                             name="Entidad Federativa de Nacimiento" id="entidadfednaci">
                             <option value="" disabled selected>Selecciona una opción</option>
-                            <option [value]="state.value" *ngFor="let state of stateOptions">{{state.value}}</option>
+                            <option [value]="state.name" *ngFor="let state of stateOptions">{{state.name}}</option>
                         </select>
                         <!-- <label>Entidad Federativa de Nacimiento *</label> -->
                         <div class="blue-text" *ngIf="f.entidadfednaci.errors"></div>
