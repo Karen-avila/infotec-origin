@@ -154,3 +154,15 @@ th {
 #loader{
     top: 30% !important;
 }
+
+.input-field.col label{
+  z-index: -1;
+}
+
+.entidad{
+  z-index: 0 !important;
+}
+
+.input-field.check2 label{
+  z-index: 0 !important;
+}

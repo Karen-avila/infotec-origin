@@ -1059,7 +1059,7 @@ export class QuestionComponent implements OnInit {
         this[obj][ver].question = data.description;
         let options = [];
         _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
-          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+          options.push({id: codeValue.id, name: codeValue.description, score: codeValue.score, position: codeValue.position});
         });
         this[obj][ver].options = options;
           console.log("estos es lo que trajo despues del error",this.scrPerNeg[ver])    
@@ -1083,7 +1083,7 @@ export class QuestionComponent implements OnInit {
           element.question = data.description;
           let options = [];
           _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
-            options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+            options.push({id: codeValue.id, name: codeValue.description, score: codeValue.score, position: codeValue.position});
           });
           element.options = options;
                 
@@ -1117,7 +1117,7 @@ export class QuestionComponent implements OnInit {
           element.question = data.description;
           let options = [];
           _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
-            options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+            options.push({id: codeValue.id, name: codeValue.description, score: codeValue.score, position: codeValue.position});
           });
           element.options = options;
         },
@@ -1149,7 +1149,7 @@ export class QuestionComponent implements OnInit {
           element.question = data.description;
           let options = [];
           _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
-            options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+            options.push({id: codeValue.id, name: codeValue.description, score: codeValue.score, position: codeValue.position});
           });
           element.options = options;
           
@@ -1182,7 +1182,7 @@ llenaDireccion(scrDir){
           element.question = data.description;
           let options = [];
           _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
-            options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+            options.push({id: codeValue.id, name: codeValue.description, score: codeValue.score, position: codeValue.position});
           });
           element.options = options;
         },
@@ -1211,7 +1211,7 @@ llenaquerconocerte(qcQc){
         element.question = data.description;
         let options = [];
         _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
-          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+          options.push({id: codeValue.id, name: codeValue.description, score: codeValue.score, position: codeValue.position});
         });
         element.options = options;
       },
@@ -1254,7 +1254,7 @@ llenaquerconocerte2(qcQc02){
         element.question = data.description;
         let options = [];
         _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
-          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+          options.push({id: codeValue.id, name: codeValue.description, score: codeValue.score, position: codeValue.position});
         });
         element.options = options;
       },
@@ -1355,7 +1355,7 @@ llenaqctn12a13(preg12a13){
         element.question = data.description;
         let options = [];
         _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
-          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+          options.push({id: codeValue.id, name: codeValue.description, score: codeValue.score, position: codeValue.position});
         });
         element.options = options;
       },
@@ -1471,7 +1471,7 @@ llenaqctn19a28(preg19a28){
         element.question = data.description;
         let options = [];
         _.sortBy(data.codeValues, 'position').forEach(function(codeValue) {
-          options.push({id: codeValue.id, name: codeValue.name, score: codeValue.score, position: codeValue.position});
+          options.push({id: codeValue.id, name: codeValue.description, score: codeValue.score, position: codeValue.position});
         });
         element.options = options;
       },
@@ -1568,7 +1568,7 @@ llenaqctn33(preg33){
        
       }
       payload = payload + `"locale": "es-mx", "dateFormat": "dd MMMM yyyy"}`
-      //console.log("view", payload)
+      console.log("view perfil de mercado payload", payload)
       this.questionsServices.scorePerfNeg(payload).subscribe(res=>{
         //console.log("res PerNeg",res)
       },err=>{
@@ -1865,47 +1865,38 @@ llenaqctn33(preg33){
     // ////console.log(this.formScrPerNeg.valid,this.formScrPerMer.valid,this.formScrRep.valid,this.formScrDir.valid,this.formQcQc.valid,this.formQcQcn.valid)
     /* if (this.formScrPerNeg.valid){ */
      // console.log(this.formQcQcn)
-    if (((this.formScrPerNeg.valid) && (this.formScrPerMer.valid)
-    && (this.formScrRep.valid) && (this.formScrDir.valid)&&
-    this.formQcQc.valid)&& (this.formQcQcn.valid)) {
+    if (this.formScrPerNeg.valid && this.formScrPerMer.valid
+    && this.formScrRep.valid && this.formScrDir.valid &&
+    this.formQcQcn.valid &&
+    this.formQcQc.valid){
 
-
-        this.instance[1].open();
-        this.instance[0].close();
-        const questionForm = {
-        questions: true,
-
-        scrPerNeg: this.scrPerNeg,
-        scrPerMer: this.scrPerMer,
-        scrRep: this.scrRep,
-        scrDir: this.scrDir,
-        //Queremos conocerte
-        qcQc: this.qcQc,
-        qcQc10: this.qcQc10
-        //Queremos conocer tu negocio 
-        /* preg1: this.preg1,
-        preg2:this.preg2,
-        preg2_0:this.preg2_0,
-        preg3: this.preg3,
-        preg4a5: this.preg4a5,
-        preg6a11: this.preg6a11,
-        preg12a13: this.preg12a13,
-        preg14: this.preg14,
-        preg15: this.preg15,
-        preg15_0:this.preg15_0,
-        preg16:this.preg16,
-        preg16_0:this.preg16_0,
-        preg17:this.preg17,
-        preg17_0:this.preg17_0,
-        preg18:this.preg18,
-        preg19a28: this.preg19a28,
-        preg29a33: this.preg29a33,
-        */
+      let sumPreg15 = 0;
+      this.preg15_0.forEach(function(res) {
+        sumPreg15 = sumPreg15 + parseInt(res.resp)
+      });
+      if (isNaN(sumPreg15)) {
+        sumPreg15 = 0;
       }
-      window.parent.postMessage(questionForm, '*');
-    }
-
-    else {
+      //las pregs 6a11[4] y [3] se sumaran e iran en parametro 1, 12a13[0] parametro 2, 6a11[5] + suma preg14 +suma preg15 parametro 3, clientId parametro 4
+      let payload="{";
+      payload = payload + `"campo_1":"${this.preg6a11[4].resp}","campo_2":"${this.preg6a11[3].resp}","campo_3":"${this.preg12a13[0].resp}","campo_4":"${this.preg6a11[5].resp}","campo_5":"${this.preg14[0].resp}","campo_6":"${sumPreg15}",`;
+      payload = payload + `"locale": "es-mx", "dateFormat": "yyyy-MM-dd"}`
+      console.log("view suma", payload)
+      this.instance[1].open();
+      /* 
+      {"campo_1:""2000,""campo_2:""2000,""campo_3:""240060,""campo_4:""2000,""campo_5:""2000,""campo_6:"",""locale": "es-mx", "dateFormat": "yyyy-MM-dd"}
+      
+      */
+     this.instance[0].close();
+/*       this.questionsServices.capacidadPago(payload).subscribe(res=>{
+        console.log("res senddir",res)
+        this.instance[1].open();
+        this.instance[0].close(); //checar esto
+      },err=>{
+        console.log("err senddir",err)
+        this.instance[0].close(); //checar esto
+      }); */
+    } else {
       this.instance[0].close();
       swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
       //this.instQrmCnct.open(1); // no ira aqui solo para no completar form

@@ -97,12 +97,12 @@ export class ApplyComponent implements OnInit {
   //------------
 
   resolved(captchaResponse: string) {
-    /* console.log(`Resolved response token: ${captchaResponse}`);
+    console.log(`Resolved response token: ${captchaResponse}`);
     this.captchaService.review({token:captchaResponse}).subscribe(res=>{
       console.log(`Resolved: ${res}`);
     },err=>{
       console.log(`Resolved err: ${err}`);
-    }) */
+    })
     // this.form.get('token').setValue(captchaResponse);
 
     ////console.log(this.form.value);

@@ -83,7 +83,7 @@
                         <input class="validate" id="clabeinter" type="text" (keypress)="numberOnly($event)"
                             formControlName="clabeinterconf" name="Clabe Interbancaria (Confirmación) *" minlength="18"
                             maxlength="18" required>
-                        <label for="text">Clabe Interbancaria (Confirmación)</label>
+                        <label for="text" class="active">Confirmar Clabe *</label>
 
                         <div class="red-text col s12" *ngIf="form.errors?.isValid && !form.pristine">
                             <p>Las clabes interbancarias no son iguales.</p>
@@ -197,7 +197,7 @@
                     </div>
 
                     <div class="input-field col s12 m6 l6">
-                        <label *ngIf="!entidadNac">Entidad Federativa de Nacimiento *</label>
+                        <label class="entidad" *ngIf="!entidadNac">Entidad Federativa de Nacimiento *</label>
                         <select class="browser-default" [(ngModel)]="entidadNac" formControlName="entidadfednaci"
                             name="Entidad Federativa de Nacimiento" id="entidadfednaci">
                             <option value="" disabled selected>Selecciona una opción</option>
@@ -676,7 +676,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="input-field col s12 m12 l12">
+                        <div class="input-field check2 col s12 m12 l12">
                             <label><input class="with-gap teal darken-4" formControlName="aprivacidad"
                                     name="Aviso de Privacidad" id="aprivacidad" type="checkbox" [(ngModel)]="aviso"
                                     required />
@@ -692,7 +692,7 @@
                     </div>
                     <br>
                     <div class="row">
-                        <div class="input-field col s12 m12 l12">
+                        <div class="input-field check2 col s12 m12 l12">
                             <label> <input class="with-gap teal darken-4" required formControlName="termcond"
                                     id="termcond" name="Términos y condiciones" type="checkbox" [(ngModel)]="term" />
                                 <span>
@@ -1017,7 +1017,7 @@
 
                     <div class="row">
                         <div class="row">
-                            <div class="input-field col s12 m12 l12">
+                            <div class="input-field check2 col s12 m12 l12">
                                 <label><input class="with-gap teal darken-4" required formControlName="autorizobc"
                                         name="autorizobc" type="checkbox" [(ngModel)]="bc" />
                                     <span>
@@ -1037,7 +1037,7 @@
                         </div>
                         <br>
                         <div class="row">
-                            <div class="input-field col s12 m12 l12">
+                            <div class="input-field check2 col s12 m12 l12">
                                 <label> <input class="with-gap teal darken-4" required formControlName="termcond"
                                         name="termcond" type="checkbox" [(ngModel)]="term" />
                                     <span>
@@ -1052,7 +1052,7 @@
                         </div>
                         <br>
                         <div class="row">
-                            <div class="input-field col s12 m12 l12">
+                            <div class="input-field check2 col s12 m12 l12">
                                 <label><input class="with-gap teal darken-4" formControlName="aprivacidad"
                                         name="A privacidad" id="aprivacidad" type="checkbox" [(ngModel)]="aviso"
                                         required />
@@ -1235,7 +1235,7 @@
                                         </div>
 
                                         <div class="row">
-                                            <div class="input-field col s12 m12 l12">
+                                            <div class="input-field check2 col s12 m12 l12">
                                                 <label> <input class="with-gap teal darken-4" required
                                                         formControlName="termcond" name="termcond" type="checkbox"
                                                         [(ngModel)]="term" />
@@ -1253,7 +1253,7 @@
                                         </div>
                                         <br>
                                         <div class="row">
-                                            <div class="input-field col s12 m12 l12">
+                                            <div class="input-field check2 col s12 m12 l12">
                                                 <label><input class="with-gap teal darken-4"
                                                         formControlName="aprivacidad" name="A privacidad"
                                                         id="aprivacidad" type="checkbox" [(ngModel)]="aviso" required />
