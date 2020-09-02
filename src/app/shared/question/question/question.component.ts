@@ -1024,7 +1024,7 @@ export class QuestionComponent implements OnInit {
   
    this.llenaPerfNeg(this.scrPerNeg); 
  
-   this.llenaquerconocerte1(this.qcQc01);
+   
    this.llenaquerconocerte0(this.qcQc10); 
    this.llenaqctn1(this.preg1); 
    this.llenaqctn2(this.preg2); 
@@ -1226,6 +1226,7 @@ llenaquerconocerte(qcQc){
   }, this);
   this.qcQc = questions;
   console.log("queremos conocerte",this.qcQc)
+  this.llenaquerconocerte1(this.qcQc01);
   this.llenaquerconocerte2(this.qcQc02);
 
 }
@@ -1866,7 +1867,7 @@ llenaqctn33(preg33){
      // console.log(this.formQcQcn)
     if (((this.formScrPerNeg.valid) && (this.formScrPerMer.valid)
     && (this.formScrRep.valid) && (this.formScrDir.valid)&&
-    this.formQcQcn.valid)&& (this.formQcQcn.valid)) {
+    this.formQcQc.valid)&& (this.formQcQcn.valid)) {
 
 
         this.instance[1].open();
