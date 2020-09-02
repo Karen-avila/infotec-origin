@@ -157,10 +157,26 @@
 
                                     </li>
 
-                                    <li class="collection-item avatar"  *ngFor="let qcQc01 of qcQc01; index as i;">
+                                    <li class="collection-item avatar" >
+                                        <label class="title black-text">En su vida diaria, ¿tiene dificultad al realizar las siguientes actividades? (Seleccionar una o varias opciones)*</label>
+
+                                        <select multiple formControlName="qcQc01" name="qcQc01" id="qcQc01">
+                                            <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
+                                                <option  value="Caminar, moverse subir o bajar">Caminar, moverse subir o bajar</option>
+                                                <option  value="Ver, aun usando lentes">Ver, aun usando lentes</option>
+                                                <option  value="Hablar, comunicarse o conversar">Hablar, comunicarse o conversar</option>
+                                                <option  value="Oir, aun usando aparato auditivo">Oir, aun usando aparato auditivo</option>
+                                                <option value="Vestirse, bañarse o comer">Vestirse, bañarse o comer</option>
+                                                <option value="Poner atención o aprender cosas sencillas">Poner atención o aprender cosas sencillas</option>
+                                                <option  value="Tiene alguna limitación mental">Tiene alguna limitación mental</option>
+                                                <option  value="No tiene dificultad física o mental">No tiene dificultad física o mental</option>
+                                        </select>
+                                    </li>
+
+                                    <!-- <li class="collection-item avatar"  *ngFor="let qcQc01 of qcQc01; index as i;">
                                         <label class="title black-text">{{qcQc01.question}}</label>
                                         <p>
-                                            <select multiple formControlName="qcQc01" name="qcQc01" id="qcQc01">
+                                             <select multiple formControlName="qcQc01" name="qcQc01" id="qcQc01">
                                                 <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
                                                 <option  value="Caminar, moverse subir o bajar">Caminar, moverse subir o bajar</option>
                                                 <option  value="Ver, aun usando lentes">Ver, aun usando lentes</option>
@@ -170,9 +186,9 @@
                                                 <option value="Poner atención o aprender cosas sencillas">Poner atención o aprender cosas sencillas</option>
                                                 <option  value="Tiene alguna limitación mental">Tiene alguna limitación mental</option>
                                                 <option  value="No tiene dificultad física o mental">No tiene dificultad física o mental</option>
-                                              </select>
+                                              </select> 
                                         </p>
-                                    </li>
+                                    </li> -->
 
                                     <li class="collection-item avatar" *ngFor="let qcQc02 of qcQc02; index as i;">
                                         <span class="title">{{qcQc02.question}}*</span>
@@ -415,8 +431,8 @@
 
                         </li>
 
-                        <li class="collection-item avatar"  *ngFor="let preg29 of preg29; index as i;">
-                            <label class="title black-text">{{preg29.question}}</label>
+                        <li class="collection-item avatar">
+                            <label class="title black-text">¿En la empresa se realizan actualmente algunas de las siguientes actividades? (seleccionar una o más de las siguientes opciones)*</label>
                             <p>
                                 <select multiple formControlName="preg29" name="preg29" id="preg29">
                                     <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
@@ -430,8 +446,8 @@
                             </p>
                         </li>
 
-                        <li class="collection-item avatar"  *ngFor="let preg30 of preg30; index as i;">
-                            <label class="title black-text">{{preg30.question}}</label>
+                        <li class="collection-item avatar" >
+                            <label class="title black-text">¿Cuál es el motivo principal por el que se inició en este negocio o actividad? (Seleccionar una o varias opciones)*</label>
                             <p>
                                 <select multiple formControlName="preg30" name="preg30" id="preg30">
                                     <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
@@ -452,8 +468,8 @@
                             </p>
                         </li>
 
-                        <li class="collection-item avatar"  *ngFor="let preg31 of preg31; index as i;">
-                            <label class="title black-text">{{preg31.question}}</label>
+                        <li class="collection-item avatar" >
+                            <label class="title black-text">En su negocio o actividad, ¿cuenta con un local para trabajar sea o no de su propiedad? (Seleccione una opción o más de una si tiene varios locales)*</label>
                             <p>
                                 <select multiple formControlName="preg31" name="preg31" id="preg31">
                                     <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
@@ -464,8 +480,8 @@
                             </p>
                         </li>
 
-                        <li class="collection-item avatar"  *ngFor="let preg32 of preg32; index as i;">
-                            <label class="title black-text">{{preg32.question}}</label>
+                        <li class="collection-item avatar" >
+                            <label class="title black-text">En caso de ser local independiente (fuera de un techo común), ¿éste es? (Seleccionar una o varias opciones)*</label>
                             <p>
                                 <select multiple formControlName="preg32" name="preg32" id="preg32">
                                     <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
@@ -477,8 +493,8 @@
                             </p>
                         </li>
 
-                        <li class="collection-item avatar"  *ngFor="let preg33 of preg33; index as i;">
-                            <label class="title black-text">{{preg33.question}}</label>
+                        <li class="collection-item avatar">
+                            <label class="title black-text">Si no cuenta con un local, ¿en dónde se realizan las actividades de su negocio? (Seleccionar una o varias opciones)*</label>
                             <p>
                                 <select multiple formControlName="preg33" name="preg33" id="preg33">
                                     <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>

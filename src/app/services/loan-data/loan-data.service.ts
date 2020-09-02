@@ -48,7 +48,7 @@ export class LoanDataService {
       let api_keys = environment.gravitee_api_keys;
       let headers = environment.headers_apis;
       headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
-  
+      console.log("urlloandData",url);
       /* return this.http.get<any>(url, { headers: headers }); */
       this.http.get<any>(url, { headers: headers }).subscribe(res=>{
         console.log("loandData",res);

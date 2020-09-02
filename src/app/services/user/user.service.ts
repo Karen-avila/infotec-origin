@@ -130,7 +130,7 @@ export class UserService {
     let headers = environment.headers_mifos;
     let api_keys = environment.gravitee_api_keys;
     headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
-    ////console.log(user);
+    console.log(user);
     const object = JSON.stringify(user);
 
     // ////console.log("Esto es lo que enviare a donde lo tenga que enviar", object);
