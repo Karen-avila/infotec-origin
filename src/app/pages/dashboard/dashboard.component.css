@@ -160,5 +160,9 @@ th {
 }
 
 .entidad{
-  z-index: 1 !important;
+  z-index: 0 !important;
+}
+
+.input-field.check2 label{
+  z-index: 0 !important;
 }
