@@ -197,11 +197,11 @@
                     </div>
 
                     <div class="input-field col s12 m6 l6">
-                        <label *ngIf="!entidadNac">Entidad Federativa de Nacimiento *</label>
+                        <label class="entidad" *ngIf="!entidadNac">Entidad Federativa de Nacimiento *</label>
                         <select class="browser-default" [(ngModel)]="entidadNac" formControlName="entidadfednaci"
                             name="Entidad Federativa de Nacimiento" id="entidadfednaci">
                             <option value="" disabled selected>Selecciona una opción</option>
-                            <option [value]="state.value" *ngFor="let state of stateOptions">{{state.value}}</option>
+                            <option [value]="state.name" *ngFor="let state of stateOptions">{{state.name}}</option>
                         </select>
                         <!-- <label>Entidad Federativa de Nacimiento *</label> -->
                         <div class="blue-text" *ngIf="f.entidadfednaci.errors"></div>
