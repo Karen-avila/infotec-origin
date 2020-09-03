@@ -38,24 +38,24 @@
                     <br>
                     <b>Entidad Federativa de Nacimiento:</b> {{personalData.birthplace.name}}
                     <br>
-                    <b>País de Nacimiento:</b> México
+                    <b>País de Nacimiento:</b> MÉXICO
                   </td>
                 </tr>
                 <tr>
-                  <td colspan="2"><b>Dirección: Calle/Número/Colonia</b></td>
-                  <td colspan="1"><b>Nacionalidad:</b></td>
+                  <td colspan="2"><b>Dirección:</b>{{ addressData.street + "/" +  addressData.addressLine1 + "/" + addressData.addressLine3}} </td>
+                  <td colspan="1"><b>Nacionalidad:</b> MEXICANA</td>
                   <td colspan="1"><b>Género:</b> {{personalData.gender.name}}</td>
                 </tr>
                 <tr>
                   <td colspan="1"><b>Estado:</b> {{personalData.birthplace.name}}</td>
                   <td colspan="1"><b>Población:</b></td>
-                  <td colspan="1"><b>Código Postal:</b></td>
+                  <td colspan="1"><b>Código Postal:</b> {{addressData.postalCode}}</td>
                   <td colspan="1"><b>Teléfono móvil:</b> {{personalData.mobileNo}}</td>
                 </tr>
                 <tr>
                   <td colspan="1"><b>Tipo de identificación:</b></td>
                   <td colspan="1"><b>Número de identificación:</b></td>
-                  <td colspan="2"><b>Correo electrónico:</b></td>
+                  <td colspan="2"><b>Correo electrónico:</b> {{email}}</td>
                 </tr>
                 <tr>
                   <td colspan="1">
@@ -63,7 +63,7 @@
                     <br><br>
                     <b>Firma Electrónica (FIEL):</b>
                   </td>
-                  <td colspan="3"><br><b>CURP:</b><br> {{personalData.uniqueId}}</td>
+                  <td colspan="3"><br><b>CURP: </b> {{personalData.uniqueId}}<br></td>
                 </tr>
                 <tr>
                   <td colspan="4">
@@ -101,11 +101,11 @@
                     <div class="center">
                       <p>
                         <label>
-                          <input class="with-gap teal darken-4" type="radio" />
+                          <input class="with-gap teal darken-4" type="radio" id="radio1" disabled/>
                           <span>SI</span>
                         </label>&nbsp;&nbsp;&nbsp;
                         <label>
-                          <input class="with-gap teal darken-4" type="radio" />
+                          <input class="with-gap teal darken-4" type="radio" id="radio1" checked/>
                           <span>NO</span>
                         </label>
                       </p>
@@ -123,11 +123,11 @@
                     <div class="center">
                       <p>
                         <label>
-                          <input class="with-gap teal darken-4" type="radio" />
+                          <input class="with-gap teal darken-4" type="radio" id="radio2" disabled/>
                           <span>SI</span>
                         </label>&nbsp;&nbsp;&nbsp;
                         <label>
-                          <input class="with-gap teal darken-4" type="radio" />
+                          <input class="with-gap teal darken-4" type="radio" id="radio2" checked/>
                           <span>NO</span>
                         </label>
                       </p>
@@ -153,11 +153,11 @@
                     <b> ACEPTACIÓN:</b><br>
                     El CLIENTE está de acuerdo en contratar el Servicio de banca electrónica:
                     <label>
-                      <input class="with-gap teal darken-4" type="radio" />
+                      <input class="with-gap teal darken-4" type="radio" id="radio3" checked/>
                       <span>SI</span>
                     </label>&nbsp;&nbsp;&nbsp;
                     <label>
-                      <input class="with-gap teal darken-4" type="radio" />
+                      <input class="with-gap teal darken-4" type="radio" id="radio3" disabled/>
                       <span>NO</span>
                     </label>
                   </td>
