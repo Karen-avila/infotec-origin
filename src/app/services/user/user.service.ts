@@ -142,6 +142,7 @@ export class UserService {
         localStorage.setItem('clientid', res.clientId);
         localStorage.setItem('token', res.authenticated);
         localStorage.setItem('authkey', res.base64EncodedAuthenticationKey);
+        localStorage.setItem('email', res.email);
         return true;
       }),
       catchError(err => {

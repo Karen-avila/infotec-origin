@@ -90,7 +90,7 @@ export class LoanDataService {
     return this.http.get<any>(url, { headers: headers }); */
 
       //let loanid = localStorage.getItem('loanid');
-      let clientid = '90724';
+      let clientid = '120881';
       let url = environment.apis_url + '/V1.0/fineract-protected/client/' + clientid + '/addresses';
       let api_keys = environment.gravitee_api_keys;
       let headers = environment.headers_apis;

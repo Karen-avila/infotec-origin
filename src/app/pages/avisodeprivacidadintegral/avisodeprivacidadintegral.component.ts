@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
-
 
 import { LoanDataService } from '../../services/service.index';
 
@@ -32,21 +31,10 @@ export class AvisodeprivacidadintegralComponent implements OnInit {
   });
   
     this.date = moment().locale('es').format('Do MMMM YYYY');
-        
-        /* this.loanService.getLoanData().subscribe(
-          data => {
-            this.loanData = data;
-            this.expiredDate = moment(data.timeline.expectedMaturityDate[0] + "/" + data.timeline.expectedMaturityDate[1] + "/" + data.timeline.expectedMaturityDate[2]).locale('es').format('Do MMMM YYYY');
-            this.date = moment().locale('es').format('Do MMMM YYYY');
-          },
-          error => console.error('error en data loan ')
-        ) */
+ 
         
   }
 
-  /* sendPagare() {
-    this.prpPagare.emit(this.pagareB64);
-  } */
 
   downloadPDF($event, target) {
     html2canvas(document.querySelector(`#PDF${target}`), {
@@ -66,3 +54,5 @@ export class AvisodeprivacidadintegralComponent implements OnInit {
 
 
 }
+
+
