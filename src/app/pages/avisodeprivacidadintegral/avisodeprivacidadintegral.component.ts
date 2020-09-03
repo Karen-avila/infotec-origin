@@ -36,9 +36,6 @@ export class AvisodeprivacidadintegralComponent implements OnInit {
         
   }
 
-  /* sendPagare() {
-    this.prpPagare.emit(this.pagareB64);
-  } */
 
   downloadPDF($event, target) {
     html2canvas(document.querySelector(`#PDF${target}`), {
