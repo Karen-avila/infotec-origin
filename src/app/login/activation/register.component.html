@@ -4,13 +4,14 @@
     <div id="token" class="col card s6 offset-s3 m6 offset-m3 l6 offset-l4">
         <div class="container">
             <form ngNativeValidate [formGroup]="form" (ngSubmit)="validacion()">
-                <br><br><p>El código de activación fue enviado al correo electrónico registrado anteriormente.</p><br><br>
+                <br><br><p>El código de activación <b>XXXXX-XXXX</b> fue enviado al correo electrónico registrado anteriormente.</p><br><br>
                 <div class="row">
                     <div class="input-field col s10">
                         <i class="material-icons prefix">no_encryption</i>
-                        <input placeholder="xxxxxx-xxxx" class="validate" id="codigo" type="text" formControlName="codigo" name="codigo" maxlength="12" required>
+                        <input placeholder="XXXXX-XXXX" class="validate" id="codigo" type="text" formControlName="codigo" name="codigo" 
+                        pattern="[0-9]{5}-[0-9]{4}" maxlength="10" minlength="10" required>
                         <label class="active" for="codigo">Código de Activación</label>
-                        <!--<div class="blue-text" *ngIf="fo.codigo.errors?.required">Máximo 3 caracteres</div>-->
+                        
                     </div>
 
                     <div class="row">
