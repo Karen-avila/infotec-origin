@@ -19,6 +19,9 @@
       "dom"
     ]
   },
+  "types": [
+    "node"
+  ],
   "exclude": [
     "node_modules"
   ],

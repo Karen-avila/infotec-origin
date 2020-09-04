@@ -14,6 +14,10 @@ import { environment } from 'src/environments/environment';
 import { User } from 'src/app/models/user.model';
 import { ForgotPassword } from 'src/app/models/forgot-password.module';
 
+
+import { StorageService } from '../../services/storage/storage.service'
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -31,8 +35,11 @@ export class LoginComponent implements OnInit {
   passType = "password";
   icon:boolean=true;
 
-step
-  constructor(public userService:UserService, private router: Router) {
+  step
+  stepper={
+    step:'1'
+  }
+  constructor(public storageService:StorageService, public userService:UserService, private router: Router) {
     /*this.userService.localStep().subscribe(res=>{
 
       this.re = res[0].step;
@@ -42,9 +49,11 @@ step
     this.step = localStorage.getItem('step'); */
 // ////console.log("")
     if(localStorage.getItem('step')){
-      this.step = localStorage.getItem('step');
+      //this.step = localStorage.getItem('step');
+      this.step = this.storageService.getJsonValue('stepper')
     }else{
-      localStorage.setItem('step','1');
+      //localStorage.setItem('step','1');
+      this.storageService.setJsonValue('stepper', this.stepper)
     }
   }
 
