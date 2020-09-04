@@ -1228,11 +1228,19 @@
 
                                         <div class="input-field col s12 m4 l4">
                                             <i class="material-icons prefix">lock</i>
+                                            <input id="passwordFirm" type="password" name="passwordFirm" required class="validate"
+                                             formControlName="passwordFirm" >
+                                             <label class="entidad">Contraseña de tu FIEL</label>
+                                            <div class="col s1 m1 l1" *ngIf="fir.passwordFirm.errors?.required"></div>
+                                        </div>
+
+                                       <!--  <div class="input-field col s12 m4 l4">
+                                            <i class="material-icons prefix">lock</i>
                                             <input id="passwordFirm" type="password" name="passwordFirm"
                                                 formControlName="passwordFirm" required class="validate">
                                             <label for="password">Contraseña de tu FIEL</label>
                                             <div class="col s1 m1 l1" *ngIf="fir.passwordFirm.errors?.required"></div>
-                                        </div>
+                                        </div> -->
 
                                         <div class="row">
                                             <div class="input-field check2 col s12 m12 l12">
