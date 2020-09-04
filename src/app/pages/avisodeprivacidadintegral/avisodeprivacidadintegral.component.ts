@@ -7,7 +7,6 @@ import { LoanDataService } from '../../services/service.index';
 
 import * as moment from 'moment';
 
-
 @Component({
   selector: 'app-avisodeprivacidadintegral',
   templateUrl: './avisodeprivacidadintegral.component.html',
@@ -52,6 +51,7 @@ export class AvisodeprivacidadintegralComponent implements OnInit {
     doc.save(`${target}.pdf`);  //descarga Pdf
   });
 }
+
 
 }
 

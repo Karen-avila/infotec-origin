@@ -12,6 +12,8 @@ import swal from 'sweetalert';
 import activitiesService from './service/activities.service';
 import { EventManager } from '@angular/platform-browser';
 
+import { StorageService } from '../../services/storage/storage.service'
+
 import * as _ from 'underscore';
 
 import {Subject} from 'rxjs/Subject';
@@ -164,6 +166,7 @@ export class DashboardComponent implements OnInit {
   finance = new Finance();
   // -------------------
   constructor(
+    public storageService:StorageService,
     public loanService: LoanDataService,
     public userService: UserService,
     private curpService: CurpService,
@@ -176,7 +179,8 @@ export class DashboardComponent implements OnInit {
     this.loanService. getPersonalData(); //Esto ira en login cuando reciba loanid
     this.loanService. getAddressData(); //Esto ira en login cuando reciba loanid
     /*  */
-    this.re = localStorage.getItem('step');
+    //this.re = localStorage.getItem('step');
+    this.re = this.storageService.getJsonValue('stepper')
     /* this.re=5; */
     this.loanService.nombre.subscribe((value) => {
       this.loanData = value; 
@@ -215,7 +219,7 @@ export class DashboardComponent implements OnInit {
     //// ////console.log(stepperDiv);
     this.stepper = new MStepper(stepperDiv, {
       // Default active step.
-      firstActive: this.re, //api regresa paso a activar siempre debe empezar minimo en 1
+      firstActive: this.re.step, //api regresa paso a activar siempre debe empezar minimo en 1
       // Allow navigation by clicking on the next and previous steps on linear steppers.
       linearStepsNavigation: true,
       // Auto focus on first input of each step.

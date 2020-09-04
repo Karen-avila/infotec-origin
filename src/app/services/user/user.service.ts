@@ -16,10 +16,17 @@ import { ForgotPassword } from 'src/app/models/forgot-password.module';
 import { map, catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
+import { StorageService } from '../storage/storage.service'
+
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+
+  userdo={
+    nombre:"nombre",
+    apellido:"apellido"
+  }
 
   token: string;
   email: string;
@@ -28,9 +35,11 @@ export class UserService {
 
   prosessing: Boolean = false;
 
-  constructor(public http: HttpClient, private router: Router) {
+  constructor(public storageService:StorageService, public http: HttpClient, private router: Router) {
     this.getStorage();
   }
+
+  
 
   createHash(text: any): string {
     const shaObj = new jsSHA("SHA-256", "TEXT", { encoding: "UTF8" });
@@ -143,6 +152,8 @@ export class UserService {
         localStorage.setItem('token', res.authenticated);
         localStorage.setItem('authkey', res.base64EncodedAuthenticationKey);
         localStorage.setItem('email', res.email);
+        this.storageService.setJsonValue('userrr', this.userdo);
+        console.log("acaaaaaa",this.storageService.getJsonValue('userrr'));
         return true;
       }),
       catchError(err => {
