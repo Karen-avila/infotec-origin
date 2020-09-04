@@ -181,7 +181,7 @@ export class DashboardComponent implements OnInit {
     /*  */
     //this.re = localStorage.getItem('step');
     this.re = this.storageService.getJsonValue('stepper')
-    /* this.re=5; */
+    //this.re=4;
     this.loanService.nombre.subscribe((value) => {
       this.loanData = value; 
   });
