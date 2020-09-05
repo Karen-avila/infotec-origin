@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import swal from 'sweetalert';
-import { UserService } from '../../services/user/user.service';
+import { UserService, CaptchaService } from '../../services/service.index';
 import { UserActivate } from '../../models/user-activate.model';
 import { environment } from 'src/environments/environment';
 import * as M from 'materialize-css';
@@ -17,8 +17,9 @@ export class RegisterComponent implements OnInit {
   instance;
   form:FormGroup;
   reCaptchaKey:string;
+  butt=false;
 
-  constructor(public userService:UserService, private router: Router) { }
+  constructor(public userService:UserService, private router: Router, private captchaService:CaptchaService) { }
 
   ngOnInit() {
 
@@ -36,12 +37,21 @@ export class RegisterComponent implements OnInit {
   }
   get fo() { return this.form.controls; }
 
+
   resolved(captchaResponse: string) {
-    ////console.log(`Resolved response token: ${captchaResponse}`);
-    // this.form.get('token').setValue(captchaResponse);
-
-    ////console.log(this.form.value);
-
+    console.log(`Resolved response token: ${captchaResponse}`);
+    this.captchaService.review({response:captchaResponse}).subscribe(res=>{
+      console.log(`Resolved: ${res}`);
+      if(res){
+        this.butt=res;
+      }else{
+        this.butt=false;
+      }
+      
+    },err=>{
+      console.log(`Resolved err: ${err}`);
+    })
+    
   }
 
   validacion(){
