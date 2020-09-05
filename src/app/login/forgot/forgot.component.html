@@ -4,12 +4,12 @@
     <div id="forgot" class="col card s6 offset-s3 m6 offset-m3 l6 offset-l4">
         <div class="container">
             <form ngNativeValidate [formGroup]="form" (ngSubmit)="validacion()">
-                <br><br><p>Se enviaran instrucciones al correo electrónico registrado, para la recuperación de contraseña.</p><br><br>
+                <br><br><p>Se enviaron instrucciones al correo electrónico registrado, para la recuperación de contraseña.</p><br><br>
                 <div class="row">
                     <div class="input-field col s10">
                         <i class="material-icons prefix">no_encryption</i>
-                        <input placeholder="xxxxxx-xxxx" class="validate" id="codigo" type="text" formControlName="codigo" name="codigo" maxlength="12" required>
-                        <label class="active" for="codigo">Código de activación</label>
+                        <input placeholder="S8BQFYY9VL" class="validate" id="codigo" type="text" formControlName="codigo" name="codigo" maxlength="12" required>
+                        <label class="active" for="codigo">Código de Autenticación</label>
                         <!--<div class="blue-text" *ngIf="fo.codigo.errors?.required">Máximo 3 caracteres</div>-->
                     </div>
 
@@ -37,7 +37,7 @@
                     <div class="red-text col s12" *ngIf="form.errors?.isMatch">
                         <p>palabrota</p>
                     </div>
-<!-- 
+
                     <div class="row">
                         <div class="col s12 col m6 offset-m3" >
                           <div style="padding-left: 2vw;">
@@ -46,10 +46,10 @@
                             </re-captcha>
                           </div>
                         </div>
-                      </div> -->
+                      </div>
 
                     <div class="input-field col s5 offset-s7">
-                        <button class="waves-light btn red darken-3 right" type="submit">Aceptar
+                        <button [disabled]="!butt" class="waves-light btn red darken-3 right" type="submit">Aceptar
                             <i class="material-icons right">send</i></button>
                     </div>
                 </div>
