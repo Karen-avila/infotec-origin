@@ -129,12 +129,22 @@
                     <div class="red-text" *ngIf="fgt.curp.errors?.curp"></div>
                 </div>
 
+                <div class="row">
+                  <div class="col s12 col m6 offset-m3" >
+                    <div style="padding-left: 2vw;">
+                      <re-captcha (resolved)="resolvedForgot($event)"
+                        [siteKey]="reCaptchaKey">
+                      </re-captcha>
+                    </div>
+                  </div>
+              </div>
+
                   <br>
                   <div class="row">
                       <div class="col s6 m5 offset-m1">
                           <!--<button (click)="recuperar()" type="submit" ng-click=”recuperar()” class="waves-effect waves-light btn red darken-3 right"> 
               Recuperar <i class="material-icons right">send</i> </button>-->
-                          <button class="waves-effect red darken-3 btn right" type="submit">Recuperar
+                          <button [disabled]="!buttForgot" class="waves-effect red darken-3 btn right" type="submit">Recuperar
                   <i class="material-icons right">send</i>
                 </button>
                       </div>
