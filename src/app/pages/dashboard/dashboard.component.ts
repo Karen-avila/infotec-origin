@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService, CurpService, LoanDataService } from '../../services/service.index';
 import { PersonalReferences } from '../../models/personal-references.model' ;
 import { ListaDocs } from '../../models/lista-docs.model' ;
 import { ActivatedRoute } from '@angular/router';
-import { Options, LabelType } from 'ng5-slider';
 import { Finance } from 'financejs';
 import * as M from 'materialize-css';
 import swal from 'sweetalert';
@@ -15,8 +14,6 @@ import { EventManager } from '@angular/platform-browser';
 import { StorageService } from '../../services/storage/storage.service'
 
 import * as _ from 'underscore';
-
-import {Subject} from 'rxjs/Subject';
 
 declare const MStepper: any;
 

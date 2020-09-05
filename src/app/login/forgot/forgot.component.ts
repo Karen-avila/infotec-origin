@@ -3,8 +3,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import swal from 'sweetalert';
 import * as M from 'materialize-css';
-import { UserService } from '../../services/user/user.service';
-import { UserActivate } from '../../models/user-activate.model'
+import { UserService, CaptchaService } from '../../services/service.index';
+import { UserRenew } from '../../models/user-renew.model'
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -21,9 +21,10 @@ export class ForgotComponent implements OnInit {
   icon:boolean=true;
   reIcon:boolean=true;
   instance
+  butt=false;
 
 
-  constructor() { }
+  constructor(public userService: UserService, private captchaService:CaptchaService, private router: Router) { }
 
   ngOnInit() {
     var elems = document.querySelectorAll('.modal');
@@ -45,12 +46,21 @@ export class ForgotComponent implements OnInit {
   }
   get f() { return this.form.controls; }
 
+
   resolved(captchaResponse: string) {
-    ////console.log(`Resolved response token: ${captchaResponse}`);
-    // this.form.get('token').setValue(captchaResponse);
-
-    ////console.log(this.form.value);
-
+    console.log(`Resolved response token: ${captchaResponse}`);
+    this.captchaService.review({response:captchaResponse}).subscribe(res=>{
+      console.log(`Resolved: ${res}`);
+      if(res){
+        this.butt=res;
+      }else{
+        this.butt=false;
+      }
+      
+    },err=>{
+      console.log(`Resolved err: ${err}`);
+    })
+    
   }
 
   equalPass(p1:string,p2:string){
@@ -91,9 +101,21 @@ export class ForgotComponent implements OnInit {
 
   validacion(){
     this.instance[0].open();
-let user = new UserActivate(this.form.value.codigo,"2");
+let user;
 
-////console.log("form is valid", this.form.value);
+
+
+/*  */
+if(environment.passwordShaded){
+  user = new UserRenew(this.form.value.codigo,
+    this.userService.createHash(this.form.value.password),
+    this.userService.createHash(this.form.value.rePassword),environment.passwordShaded);
+} else {
+  user = new UserRenew(this.form.value.codigo,
+    this.form.value.password,
+    this.form.value.rePassword,environment.passwordShaded);
+}
+/*  */
 if(this.form.valid){
   this.instance[0].close(); //revisar donde se cierra
   
@@ -102,7 +124,16 @@ if(this.form.valid){
       swal("¡Felicidades!", "Usuario activo.", "success");
       this.router.navigate(["login"]);
     }); */
+    this.userService.newPass(user)
+    .subscribe(res=>{
+     this.instance[0].open();
+      this.instance[1].close();
+      swal("Felicidades", "Contraseña cambiada con éxito.", "success");
+      this.router.navigate(["login"]); 
 
+   },err=>{
+      this.instance[1].close();
+    });
 
 
 
