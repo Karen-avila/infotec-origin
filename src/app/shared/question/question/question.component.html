@@ -173,23 +173,7 @@
                                         </select>
                                     </li>
 
-                                    <!-- <li class="collection-item avatar"  *ngFor="let qcQc01 of qcQc01; index as i;">
-                                        <label class="title black-text">{{qcQc01.question}}</label>
-                                        <p>
-                                             <select multiple formControlName="qcQc01" name="qcQc01" id="qcQc01">
-                                                <option  value=null disabled selected>seleccionar una o más de las siguientes opciones</option>
-                                                <option  value="Caminar, moverse subir o bajar">Caminar, moverse subir o bajar</option>
-                                                <option  value="Ver, aun usando lentes">Ver, aun usando lentes</option>
-                                                <option  value="Hablar, comunicarse o conversar">Hablar, comunicarse o conversar</option>
-                                                <option  value="Oir, aun usando aparato auditivo">Oir, aun usando aparato auditivo</option>
-                                                <option value="Vestirse, bañarse o comer">Vestirse, bañarse o comer</option>
-                                                <option value="Poner atención o aprender cosas sencillas">Poner atención o aprender cosas sencillas</option>
-                                                <option  value="Tiene alguna limitación mental">Tiene alguna limitación mental</option>
-                                                <option  value="No tiene dificultad física o mental">No tiene dificultad física o mental</option>
-                                              </select> 
-                                        </p>
-                                    </li> -->
-
+                                  
                                     <li class="collection-item avatar" *ngFor="let qcQc02 of qcQc02; index as i;">
                                         <span class="title">{{qcQc02.question}}*</span>
 
@@ -210,7 +194,7 @@
 
                                             <label>
                                                 <input  [(ngModel)]="qcQc10.resp" class="validate" formControlName="qcQc10" name="qcQc10" id="qcQc10" max="38" 
-                                                type="number" min='0' (keypress)="numberOnly($event)" title="El número de máximo de dependientes económicos por hogar es 38." >
+                                                type="number" min='0' step="1" (keypress)="numberOnly($event)" title="El número de máximo de dependientes económicos por hogar es 38." >
                                             </label>
                                         </div>
                                     </li>
@@ -266,7 +250,7 @@
                                         <span>MONTO</span>
                                         <label>
                                             <input  [(ngModel)]="sfina2"  class="validate" formControlName="preg2" name="preg2" id="preg2" type="number"
-                                             placeholder='$' min='0' max='2000000' (keypress)="numberOnly($event)" step='0.01'>
+                                             placeholder='$0' min='0' max='2000000' (keypress)="numberOnly($event)" step='1'>
                                         </label>
                                       </p> 
                             
@@ -299,7 +283,7 @@
                           <p>
                             <label>
                                 <input  [(ngModel)]="preg6a11.resp" class="validate" (keypress)="numberOnly($event)" formControlName="{{'preg6a11'+i}}" name="{{'preg6a11'+i}}" id="{{'preg6a11'+i}}" type="number"
-                                min='0' max='2000000' step='0.01' placeholder='$'>
+                                min='0' max='2000000' step='1' placeholder='$'>
                             </label>
                           </p>
                     </li>
@@ -324,7 +308,7 @@
                           <p>
                             <label>
                                 <input  [(ngModel)]="preg14.resp" (keypress)="numberOnly($event)" formControlName="{{'preg14'+i}}" class="validate" name="{{'preg14'+i}}" id="{{'preg14'+i}}" type="number"
-                                min='0' max='2000000' step='0.01' placeholder='$'>
+                                min='0' max='2000000' step='1' placeholder='$'>
                             </label>
                           </p>
                         </li>
@@ -349,7 +333,7 @@
                             <p>
                                 <label>
                                 <input  [(ngModel)]="preg15_0.resp" formControlName="{{'preg15_0'+i}}"  class="validate" (keypress)="numberOnly($event)"  name="{{'preg15_0'+i}}" id="{{'preg15_0'+i}}" type="number"
-                                min='0' max='10000000' step='0.01' placeholder='$'>
+                                min='0' max='10000000' step='1' placeholder='$0'>
                                 </label>
                             </p>
                         </li>
@@ -376,7 +360,7 @@
                         <p>
                             <label>
                             <input  [(ngModel)]="preg16_0.resp" formControlName="{{'preg16_0'+i}}"  class="validate" name="{{'preg16_0'+i}}" id="{{'preg16_0'+i}}" type="number"
-                            min='0' max='10000000' (keypress)="numberOnly($event)" step='0.01' placeholder='$'>
+                            min='0' max='10000000' (keypress)="numberOnly($event)" step='1' placeholder='$0'>
                             </label>
                         </p>
                     </li>
@@ -401,7 +385,7 @@
                     <p>
                         <label>
                         <input  [(ngModel)]="preg17_0.resp" formControlName="{{'preg17_0'+i}}" class="validate" (keypress)="numberOnly($event)" name="{{'preg17_0'+i}}" id="{{'preg17_0'+i}}" type="number"
-                        min='0' max='10000000' step='0.01' placeholder='$'>
+                        min='0' max='10000000' step='1' placeholder='$0'>
                         </label>
                     </p>
                 </li>
@@ -412,7 +396,7 @@
                           <p>
                             <label>
                                 <input  [(ngModel)]="preg18.resp"  class="validate" (keypress)="numberOnly($event)" formControlName="{{'preg18'+i}}" name="{{'preg18'+i}}" id="{{'preg18'+i}}" type="number"
-                                min='0' max='2000000' step='0.01' placeholder='$'>
+                                min='0' max='2000000' step='1' placeholder='$'>
                             </label>
                           </p>
                         </li>
