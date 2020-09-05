@@ -51,7 +51,7 @@
                 <div class="row">
 
                   <div class="col s12 col m6 offset-m3">
-                    <button style="margin-right: 3rem; float: left;" type="submit" class="waves-light btn red darken-3">
+                    <button [disabled]="!butt" style="margin-right: 3rem; float: left;" type="submit" class="waves-light btn red darken-3">
                       Ingresar <i class="material-icons right">send</i> </button>
 
 
@@ -73,7 +73,7 @@
         <p class="flow-text">Para continuar, revisa el correo que nos proporcionaste y encontraras las instrucciones para restablecer tu contraseña.</p>
     </div>
     <div class="modal-footer">
-        <a routerLink="/home" class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>
+        <a routerLink="/recuperar" class="modal-close waves-effect teal darken-4 white-text btn-flat">Aceptar</a>
     </div>
     <div class="footer-copyright teal darken-3">
         <img class="responsive-img" src="https://framework-gb.cdn.gob.mx/landing/img/pleca.svg">
@@ -96,7 +96,7 @@
     </div>    
 </div>
 
-<div id="forgot" class="hide valign-wrapper row login-box ">
+<div id="forgot" class="hide valign-wrapper row login-box">
 
   <div class="col card s11 offset-s1 m9 offset-m2 l9 offset-l2 mycolor">
       <br>
@@ -113,21 +113,38 @@
                   </div>
                   <div class="input-field col s12 l10">
                     <i class="material-icons prefix icon-white">aspect_ratio</i>
-                    <input id="curp" type="text" formControlName="curp"
+                    <!-- <input id="curp" type="text" formControlName="curp"
                         (keyup)="form.patchValue({curp: $event.target.value.toUpperCase()})"
                         pattern="^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$"
 
-                        required class="validate mayu" name="curp" minlength="18" maxlength="18" />
+                        required class="validate mayu" name="curp" minlength="18" maxlength="18" /> -->
+
+                        <input id="curp" type="text" formControlName="curp" 
+                        (keyup)="form1.patchValue({curp: $event.target.value.toUpperCase()})"
+                        pattern="^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$"
+                        required class="validate" name="curp" minlength="18" maxlength="18" />
+
+
                     <label class="white-text" for="curp">CURP</label>
                     <div class="red-text" *ngIf="fgt.curp.errors?.curp"></div>
                 </div>
+
+                <div class="row">
+                  <div class="col s12 col m6 offset-m3" >
+                    <div style="padding-left: 2vw;">
+                      <re-captcha (resolved)="resolvedForgot($event)"
+                        [siteKey]="reCaptchaKey">
+                      </re-captcha>
+                    </div>
+                  </div>
+              </div>
 
                   <br>
                   <div class="row">
                       <div class="col s6 m5 offset-m1">
                           <!--<button (click)="recuperar()" type="submit" ng-click=”recuperar()” class="waves-effect waves-light btn red darken-3 right"> 
               Recuperar <i class="material-icons right">send</i> </button>-->
-                          <button class="waves-effect red darken-3 btn right" type="submit">Recuperar
+                          <button [disabled]="!buttForgot" class="waves-effect red darken-3 btn right" type="submit">Recuperar
                   <i class="material-icons right">send</i>
                 </button>
                       </div>

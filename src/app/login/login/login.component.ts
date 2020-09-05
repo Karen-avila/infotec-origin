@@ -6,13 +6,11 @@ import { Router } from '@angular/router';
 
 import * as M from 'materialize-css';
 
-import { UserService } from '../../services/service.index';
+import { UserService, CaptchaService } from '../../services/service.index';
 import { UserLog } from '../../models/user-log.model';
 
 import swal from 'sweetalert';
 import { environment } from 'src/environments/environment';
-import { User } from 'src/app/models/user.model';
-import { ForgotPassword } from 'src/app/models/forgot-password.module';
 
 
 import { StorageService } from '../../services/storage/storage.service'
@@ -39,7 +37,10 @@ export class LoginComponent implements OnInit {
   stepper={
     step:'1'
   }
-  constructor(public storageService:StorageService, public userService:UserService, private router: Router) {
+  butt=false;
+  buttForgot=false;
+
+  constructor(public storageService:StorageService, public userService:UserService, private router: Router, private captchaService:CaptchaService) {
     /*this.userService.localStep().subscribe(res=>{
 
       this.re = res[0].step;
@@ -85,19 +86,19 @@ export class LoginComponent implements OnInit {
   get fgt() { return this.form1.controls; }
 
   recuperarpsw(){
+    this.instance[1].open();
     if(this.form1.valid){
       //enviar datos a back
- /*  this.userService.login(data)
+  this.userService.forgot(this.form1.value)
     .subscribe(res=>{
-      this.instance[0].open();
-      this.router.navigate(["dashboard",{email:this.form.value.email}]);
+     this.instance[0].open();
       this.instance[1].close();
-     /*  this.router.navigate(["dashboard"]);  */
+      //this.router.navigate(["recuperar"]); 
       //this.router.navigate(["register",{id:this.step}]); ///revisar donde quedara
 
-   /*  },err=>{
+   },err=>{
       this.instance[1].close();
-    }); */
+    });
    
 } else{
   this.instance[1].close();
@@ -120,11 +121,35 @@ this.router.navigate(["dashboard"]);
   }
 
   resolved(captchaResponse: string) {
-    ////console.log(`Resolved response token: ${captchaResponse}`);
-    // this.form.get('token').setValue(captchaResponse);
+    console.log(`Resolved response token: ${captchaResponse}`);
+    this.captchaService.review({response:captchaResponse}).subscribe(res=>{
+      console.log(`Resolved: ${res}`);
+      if(res){
+        this.butt=res;
+      }else{
+        this.butt=false;
+      }
+      
+    },err=>{
+      console.log(`Resolved err: ${err}`);
+    })
+    
+  }
 
-    ////console.log(this.form.value);
-
+  resolvedForgot(captchaResponse: string) {
+    console.log(`Resolved response token: ${captchaResponse}`);
+    this.captchaService.review({response:captchaResponse}).subscribe(res=>{
+      console.log(`Resolved: ${res}`);
+      if(res){
+        this.buttForgot=res;
+      }else{
+        this.buttForgot=false;
+      }
+      
+    },err=>{
+      console.log(`Resolved err: ${err}`);
+    })
+    
   }
 
   cancel(){
