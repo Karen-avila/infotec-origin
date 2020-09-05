@@ -35,7 +35,7 @@ export class ApplyComponent implements OnInit {
   reIcon:boolean=true;
   reCaptchaKey:string;
 
-
+butt=false;
 
   constructor(public userService: UserService, private router: Router, private captchaService:CaptchaService) {
 
@@ -98,15 +98,18 @@ export class ApplyComponent implements OnInit {
 
   resolved(captchaResponse: string) {
     console.log(`Resolved response token: ${captchaResponse}`);
-    this.captchaService.review({token:captchaResponse}).subscribe(res=>{
+    this.captchaService.review({response:captchaResponse}).subscribe(res=>{
       console.log(`Resolved: ${res}`);
+      if(res){
+        this.butt=res;
+      }else{
+        this.butt=false;
+      }
+      
     },err=>{
       console.log(`Resolved err: ${err}`);
     })
-    // this.form.get('token').setValue(captchaResponse);
-
-    ////console.log(this.form.value);
-
+    
   }
 
 equalPass(p1:string,p2:string){

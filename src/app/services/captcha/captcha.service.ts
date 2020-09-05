@@ -25,12 +25,12 @@ export class CaptchaService {
    // headers['X-Gravitee-Api-Key'] = api_keys['firma'];
 
     const object = JSON.stringify(token);
-
+    console.log("se enviara",object)
     
-    return this.http.post(url, token,{headers}).pipe(
-      map(res => {
-        console.log("se envia",res)
-        return true;
+    return this.http.post(url, object,{headers}).pipe(
+      map((res:any) => {
+        console.log("se envia",res.success)
+        return res.success;
       }),
       catchError(err => {
         // //console.log(err)
