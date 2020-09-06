@@ -406,14 +406,14 @@ export class QuestionComponent implements OnInit {
       {
         dataCode: "",
         columnId: "campo_10",
-        question: "Pensando en los últimos 6 meses, en promedio, ¿a cuánto ascienden, cada mes, otros ingresos obtenidos además de los generados por su actividad principal del negocio? *",
+        question: "Pensando en los últimos 6 meses, en promedio, ¿cuánto vende o ingresa por la realización de sus servicios cada mes sin descontar los gastos? *",
         resp: "",
         options: []
       },
       {
         dataCode: "",
         columnId: "campo_11",
-        question: "Pensando en los últimos 6 meses, en promedio, ¿cuánto vende o ingresa por la realización de sus servicios cada mes sin descontar los gastos? *",
+        question: "Pensando en los últimos 6 meses, en promedio, ¿a cuánto ascienden, cada mes, otros ingresos obtenidos además de los generados por su actividad principal del negocio? *",
         resp: "",
         options: [] 
       },
@@ -1877,16 +1877,22 @@ llenaqctn33(preg33){
       if (isNaN(sumPreg15)) {
         sumPreg15 = 0;
       }
-      //las pregs 6a11[4] y [3] se sumaran e iran en parametro 1, 12a13[0] parametro 2, 6a11[5] + suma preg14 +suma preg15 parametro 3, clientId parametro 4
+      let sumPreg14 = 0;
+      /* this.preg14.forEach(function(res) { */
+      for (let i = 1; i<this.preg14.length; i++){
+        sumPreg14 = sumPreg14 + parseInt(this.preg14[i].resp)
+        console.log("wesa",this.preg14[i])
+      }
+      if (isNaN(sumPreg14)) {
+        sumPreg14 = 0;
+      }
+      //las pregs 6a11[4] y [3] se sumaran e iran en parametro 1, 12a13[0] parametro 2, 6a11[5] + suma preg14 + suma preg15 parametro 3, clientId parametro 4
       let payload="{";
-      payload = payload + `"campo_1":"${this.preg6a11[4].resp}","campo_2":"${this.preg6a11[3].resp}","campo_3":"${this.preg12a13[0].resp}","campo_4":"${this.preg6a11[5].resp}","campo_5":"${this.preg14[0].resp}","campo_6":"${sumPreg15}",`;
+      payload = payload + `"capacidadpago1":"${this.preg6a11[4].resp}","capacidadpago2":"${this.preg6a11[3].resp}","capacidadpago3":"${this.preg12a13[0].resp}","userid":"${this.preg6a11[5].resp}",`;
       payload = payload + `"locale": "es-mx", "dateFormat": "yyyy-MM-dd"}`
       console.log("view suma", payload)
       this.instance[1].open();
-      /* 
-      {"campo_1:""2000,""campo_2:""2000,""campo_3:""240060,""campo_4:""2000,""campo_5:""2000,""campo_6:"",""locale": "es-mx", "dateFormat": "yyyy-MM-dd"}
-      
-      */
+
      this.instance[0].close();
 /*       this.questionsServices.capacidadPago(payload).subscribe(res=>{
         console.log("res senddir",res)
