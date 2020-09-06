@@ -149,6 +149,7 @@ export class UserService {
         console.log("login",res)
         swal("¡Felicidades!", "Inicio de sesión exitoso.", "success");
         localStorage.setItem('clientid', res.clientId);
+        localStorage.setItem('userid', res.userId);
         localStorage.setItem('token', res.authenticated);
         localStorage.setItem('authkey', res.base64EncodedAuthenticationKey);
         localStorage.setItem('email', res.email);

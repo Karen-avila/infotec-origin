@@ -885,11 +885,13 @@ export class QuestionComponent implements OnInit {
   instance
   base64EncodedAuthenticationKey;
   clientid;
+  userid;
 
   constructor(public userService: UserService, public questionsServices:QuestionsService) {}
 
   ngOnInit() {
     this.clientid=localStorage.getItem('clientid');
+    this.userid=localStorage.getItem('userid');
     this.base64EncodedAuthenticationKey=localStorage.getItem('authkey');
 
     var elems = document.querySelectorAll('.modal');
@@ -1892,8 +1894,8 @@ llenaqctn33(preg33){
       }
       //las pregs 6a11[4] y [3] se sumaran e iran en parametro 1, 12a13[0] parametro 2, 6a11[5] + suma preg14 + suma preg15 parametro 3, clientId parametro 4
       let payload="{";
-      payload = payload + `"capacidadpago1":"${this.preg6a11[4].resp + this.preg6a11[3].resp}","capacidadpago2":"${this.preg12a13[0].resp}","capacidadpago3":"${this.preg6a11[5].resp+sumPreg14+sumPreg15}",`;
-      payload = payload + `"paso":"5","clientid":"${this.clientid}", "base64EncodedAuthenticationKey": "${this.base64EncodedAuthenticationKey}"}`
+      payload = payload + `"capacidadpago1":"${this.preg6a11[4].resp + this.preg6a11[3].resp}","capacidadpago2":"${this.preg12a13[0].resp}","capacidadpago3":"${this.preg6a11[5].resp}","capacidadpago4":"${sumPreg14+sumPreg15}",`;
+      payload = payload + `"paso":"5","clientid":"${this.clientid}", "userid":"${this.userid}", "base64EncodedAuthenticationKey": "${this.base64EncodedAuthenticationKey}"}`
       console.log("view suma", payload)
       //this.instance[1].open();
 
