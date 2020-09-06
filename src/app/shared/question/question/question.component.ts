@@ -883,11 +883,15 @@ export class QuestionComponent implements OnInit {
   instQrmCnct;
   prins;
   instance
+  base64EncodedAuthenticationKey;
+  clientid;
 
-  constructor(
-    public userService: UserService, public questionsServices:QuestionsService) { }
+  constructor(public userService: UserService, public questionsServices:QuestionsService) {}
 
   ngOnInit() {
+    this.clientid=localStorage.getItem('clientid');
+    this.base64EncodedAuthenticationKey=localStorage.getItem('authkey');
+
     var elems = document.querySelectorAll('.modal');
     this.instance = M.Modal.init(elems);
     M.AutoInit();
@@ -1888,20 +1892,20 @@ llenaqctn33(preg33){
       }
       //las pregs 6a11[4] y [3] se sumaran e iran en parametro 1, 12a13[0] parametro 2, 6a11[5] + suma preg14 + suma preg15 parametro 3, clientId parametro 4
       let payload="{";
-      payload = payload + `"capacidadpago1":"${this.preg6a11[4].resp}","capacidadpago2":"${this.preg6a11[3].resp}","capacidadpago3":"${this.preg12a13[0].resp}","userid":"${this.preg6a11[5].resp}",`;
-      payload = payload + `"locale": "es-mx", "dateFormat": "yyyy-MM-dd"}`
+      payload = payload + `"capacidadpago1":"${this.preg6a11[4].resp + this.preg6a11[3].resp}","capacidadpago2":"${this.preg12a13[0].resp}","capacidadpago3":"${this.preg6a11[5].resp+sumPreg14+sumPreg15}",`;
+      payload = payload + `"paso":"5","clientid":"${this.clientid}", "base64EncodedAuthenticationKey": "${this.base64EncodedAuthenticationKey}"}`
       console.log("view suma", payload)
-      this.instance[1].open();
+      //this.instance[1].open();
 
      this.instance[0].close();
-/*       this.questionsServices.capacidadPago(payload).subscribe(res=>{
+      this.questionsServices.capacidadPago(payload).subscribe(res=>{
         console.log("res senddir",res)
         this.instance[1].open();
         this.instance[0].close(); //checar esto
       },err=>{
         console.log("err senddir",err)
         this.instance[0].close(); //checar esto
-      }); */
+      });
     } else {
       this.instance[0].close();
       swal('¡Cuidado!', 'Para poder continuar, completa correctamente todos los campos.', 'error');
