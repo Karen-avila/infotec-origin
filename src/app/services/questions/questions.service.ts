@@ -114,16 +114,23 @@ queremosConocerNegocio(payload) {
 
 capacidadPago(payload) {
 
-  let clientid = localStorage.getItem('clientid');
-  let url = environment.apis_url + '/V1.0/fineract-protected/datatables/capacidad_pago/' + clientid;
-  let api_keys = environment.gravitee_api_keys;
+  let url = environment.apis_url + '/V1.0/banbi/creditosimple/registro';
   let headers = environment.headers_apis;
-  headers['X-Gravitee-Api-Key'] = api_keys['fineract'];
-  return this.http.post(url, payload, { headers: headers }).map((res: any) => {
-    return res;
-  }).catch(err => {
-    return err;
-  });
+  let api_keys = environment.gravitee_api_keys;
+  headers['X-Gravitee-Api-Key'] = api_keys['registro'];
+ 
+
+
+  return this.http.post(url, payload, { headers }).pipe(
+    map((res: any) => {
+     // //console.log(res)
+      return true;
+    }),
+    catchError(err => {
+      // //console.log(err)
+      return throwError(err);
+    })
+  );
 
 }
 
